@@ -1,0 +1,25 @@
+syntax = "proto3";
+package tiappb;
+
+import "aprpcpb.proto";
+import "gogoproto/gogo.proto";
+
+option (gogoproto.sizer_all) = true;
+option (gogoproto.marshaler_all) = true;
+option (gogoproto.unmarshaler_all) = true;
+
+// Key/value store API for TiAP.
+service Tiap {
+    rpc RawGet(aprpcpb.RawGetRequest) returns (aprpcpb.RawGetResponse) {}
+    rpc RawGetKeyTTL(aprpcpb.RawGetKeyTTLRequest) returns (aprpcpb.RawGetKeyTTLResponse) {}
+    rpc RawPut(aprpcpb.RawPutRequest) returns (aprpcpb.RawPutResponse) {}
+    rpc RawPutWithTTL(aprpcpb.RawPutWithTTLRequest) returns (aprpcpb.RawPutWithTTLResponse) {}
+    rpc RawDelete(aprpcpb.RawDeleteRequest) returns (aprpcpb.RawDeleteResponse) {}
+    rpc RawDeleteRange(aprpcpb.RawDeleteRangeRequest) returns (aprpcpb.RawDeleteRangeResponse) {}
+    rpc RawScan(aprpcpb.RawScanRequest) returns (aprpcpb.RawScanResponse) {}
+    rpc RawReverseScan(aprpcpb.RawScanRequest) returns (aprpcpb.RawScanResponse) {}
+    rpc RawCompareAndSwap(aprpcpb.RawCASRequest) returns (aprpcpb.RawCASResponse) {}
+    rpc RawBatchGet(aprpcpb.RawBatchGetRequest) returns (aprpcpb.RawBatchGetResponse) {}
+    rpc RawBatchPut(aprpcpb.RawBatchPutRequest) returns (aprpcpb.RawBatchPutResponse) {}
+    rpc RawBatchDelete(aprpcpb.RawBatchDeleteRequest) returns (aprpcpb.RawBatchDeleteResponse) {}
+}

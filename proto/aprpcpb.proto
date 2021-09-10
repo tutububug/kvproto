@@ -1,0 +1,116 @@
+syntax = "proto3";
+package aprpcpb;
+
+import "gogoproto/gogo.proto";
+
+option (gogoproto.marshaler_all) = true;
+option (gogoproto.sizer_all) = true;
+option (gogoproto.unmarshaler_all) = true;
+
+message RawGetRequest {
+    bytes key = 1;
+}
+
+message RawGetResponse {
+    string error = 1;
+    bytes value = 2;
+}
+
+message RawGetKeyTTLRequest {
+    bytes key = 1;
+}
+
+message RawGetKeyTTLResponse {
+    string error = 1;
+    uint64 ttl = 2;
+}
+
+message RawPutRequest {
+    bytes key = 1;
+    bytes value = 2;
+}
+
+message RawPutResponse {
+    string error = 1;
+}
+
+message RawPutWithTTLRequest {
+    bytes key = 1;
+    bytes value = 2;
+    uint64 ttl = 3;
+}
+
+message RawPutWithTTLResponse {
+    string error = 1;
+}
+
+message RawDeleteRequest {
+    bytes key = 1;
+}
+
+message RawDeleteResponse {
+    string error = 1;
+}
+
+message RawDeleteRangeRequest {
+    bytes start_key = 1;
+    bytes end_key = 2;
+}
+
+message RawDeleteRangeResponse {
+    string error = 1;
+}
+
+message RawScanRequest {
+    bytes start_key = 1;
+    uint32 limit = 2;
+    bool key_only = 3;
+    bytes end_key = 4;
+}
+
+message RawScanResponse {
+    repeated bytes keys = 1;
+    repeated bytes values = 2;
+}
+
+message RawCASRequest {
+    bytes key = 1;
+    bytes value = 2;
+    bool previous_not_exist = 3;
+    bytes previous_value = 4;
+    uint64 ttl = 5;
+}
+
+message RawCASResponse {
+    string error = 1;
+    bool succeed = 2;
+    // The previous value regardless of whether the comparison is succeed.
+    bool previous_not_exist = 3;
+    bytes previous_value = 4;
+}
+
+message RawBatchGetRequest {
+    repeated bytes keys = 1;
+}
+
+message RawBatchGetResponse {
+    string error = 1;
+    repeated bytes values = 2;
+}
+
+message RawBatchPutRequest {
+    repeated bytes keys = 1;
+    repeated bytes values = 2;
+}
+
+message RawBatchPutResponse {
+    string error = 1;
+}
+
+message RawBatchDeleteRequest {
+    repeated bytes keys = 1;
+}
+
+message RawBatchDeleteResponse {
+    string error = 1;
+}
