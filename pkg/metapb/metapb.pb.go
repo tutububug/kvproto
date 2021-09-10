@@ -12,7 +12,7 @@ import (
 
 	_ "github.com/gogo/protobuf/gogoproto"
 
-	encryptionpb "github.com/pingcap/kvproto/pkg/encryptionpb"
+	encryptionpb "github.com/tutububug/kvproto/pkg/encryptionpb"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.

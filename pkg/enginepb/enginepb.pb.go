@@ -10,11 +10,11 @@ import (
 
 	proto "github.com/golang/protobuf/proto"
 
-	metapb "github.com/pingcap/kvproto/pkg/metapb"
+	metapb "github.com/tutububug/kvproto/pkg/metapb"
 
-	raft_cmdpb "github.com/pingcap/kvproto/pkg/raft_cmdpb"
+	raft_cmdpb "github.com/tutububug/kvproto/pkg/raft_cmdpb"
 
-	raft_serverpb "github.com/pingcap/kvproto/pkg/raft_serverpb"
+	raft_serverpb "github.com/tutububug/kvproto/pkg/raft_serverpb"
 
 	context "golang.org/x/net/context"
 

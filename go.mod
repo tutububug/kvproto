@@ -4,6 +4,7 @@ require (
 	github.com/gogo/protobuf v1.3.1
 	github.com/golang/protobuf v1.3.2
 	github.com/grpc-ecosystem/grpc-gateway v1.12.1
+	github.com/pingcap/kvproto v0.0.0-20210908084104-b553b0e1e262
 	golang.org/x/net v0.0.0-20191002035440-2ec189313ef0
 	google.golang.org/genproto v0.0.0-20190927181202-20e1ac93f88c
 	google.golang.org/grpc v1.24.0

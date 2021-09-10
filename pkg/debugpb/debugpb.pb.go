@@ -12,11 +12,11 @@ import (
 
 	_ "github.com/gogo/protobuf/gogoproto"
 
-	eraftpb "github.com/pingcap/kvproto/pkg/eraftpb"
+	eraftpb "github.com/tutububug/kvproto/pkg/eraftpb"
 
-	kvrpcpb "github.com/pingcap/kvproto/pkg/kvrpcpb"
+	kvrpcpb "github.com/tutububug/kvproto/pkg/kvrpcpb"
 
-	raft_serverpb "github.com/pingcap/kvproto/pkg/raft_serverpb"
+	raft_serverpb "github.com/tutububug/kvproto/pkg/raft_serverpb"
 
 	context "golang.org/x/net/context"
 

@@ -12,7 +12,7 @@ import (
 
 	_ "github.com/gogo/protobuf/gogoproto"
 
-	import_sstpb "github.com/pingcap/kvproto/pkg/import_sstpb"
+	import_sstpb "github.com/tutububug/kvproto/pkg/import_sstpb"
 
 	context "golang.org/x/net/context"
 

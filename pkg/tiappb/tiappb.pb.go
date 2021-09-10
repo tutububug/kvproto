@@ -11,7 +11,7 @@ import (
 
 	_ "github.com/gogo/protobuf/gogoproto"
 
-	aprpcpb "github.com/pingcap/kvproto/pkg/aprpcpb"
+	aprpcpb "github.com/tutububug/kvproto/pkg/aprpcpb"
 
 	context "golang.org/x/net/context"
 

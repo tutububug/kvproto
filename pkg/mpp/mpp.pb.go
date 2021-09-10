@@ -12,9 +12,9 @@ import (
 
 	_ "github.com/gogo/protobuf/gogoproto"
 
-	coprocessor "github.com/pingcap/kvproto/pkg/coprocessor"
+	coprocessor "github.com/tutububug/kvproto/pkg/coprocessor"
 
-	metapb "github.com/pingcap/kvproto/pkg/metapb"
+	metapb "github.com/tutububug/kvproto/pkg/metapb"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.

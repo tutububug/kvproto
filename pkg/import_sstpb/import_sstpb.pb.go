@@ -12,13 +12,13 @@ import (
 
 	_ "github.com/gogo/protobuf/gogoproto"
 
-	backup "github.com/pingcap/kvproto/pkg/backup"
+	backup "github.com/tutububug/kvproto/pkg/backup"
 
-	errorpb "github.com/pingcap/kvproto/pkg/errorpb"
+	errorpb "github.com/tutububug/kvproto/pkg/errorpb"
 
-	kvrpcpb "github.com/pingcap/kvproto/pkg/kvrpcpb"
+	kvrpcpb "github.com/tutububug/kvproto/pkg/kvrpcpb"
 
-	metapb "github.com/pingcap/kvproto/pkg/metapb"
+	metapb "github.com/tutububug/kvproto/pkg/metapb"
 
 	context "golang.org/x/net/context"
 

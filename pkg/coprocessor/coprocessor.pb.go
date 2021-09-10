@@ -12,13 +12,13 @@ import (
 
 	_ "github.com/gogo/protobuf/gogoproto"
 
-	errorpb "github.com/pingcap/kvproto/pkg/errorpb"
+	errorpb "github.com/tutububug/kvproto/pkg/errorpb"
 
-	kvrpcpb "github.com/pingcap/kvproto/pkg/kvrpcpb"
+	kvrpcpb "github.com/tutububug/kvproto/pkg/kvrpcpb"
 
-	metapb "github.com/pingcap/kvproto/pkg/metapb"
+	metapb "github.com/tutububug/kvproto/pkg/metapb"
 
-	span "github.com/pingcap/kvproto/pkg/span"
+	span "github.com/tutububug/kvproto/pkg/span"
 
 	github_com_pingcap_kvproto_pkg_sharedbytes "github.com/pingcap/kvproto/pkg/sharedbytes"
 )

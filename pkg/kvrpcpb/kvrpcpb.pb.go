@@ -12,9 +12,9 @@ import (
 
 	_ "github.com/gogo/protobuf/gogoproto"
 
-	errorpb "github.com/pingcap/kvproto/pkg/errorpb"
+	errorpb "github.com/tutububug/kvproto/pkg/errorpb"
 
-	metapb "github.com/pingcap/kvproto/pkg/metapb"
+	metapb "github.com/tutububug/kvproto/pkg/metapb"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.

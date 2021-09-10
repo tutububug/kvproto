@@ -12,9 +12,9 @@ import (
 
 	_ "github.com/gogo/protobuf/gogoproto"
 
-	errorpb "github.com/pingcap/kvproto/pkg/errorpb"
+	errorpb "github.com/tutububug/kvproto/pkg/errorpb"
 
-	kvrpcpb "github.com/pingcap/kvproto/pkg/kvrpcpb"
+	kvrpcpb "github.com/tutububug/kvproto/pkg/kvrpcpb"
 
 	context "golang.org/x/net/context"
 

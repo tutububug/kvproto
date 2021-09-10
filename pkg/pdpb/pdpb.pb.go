@@ -12,11 +12,11 @@ import (
 
 	_ "github.com/gogo/protobuf/gogoproto"
 
-	eraftpb "github.com/pingcap/kvproto/pkg/eraftpb"
+	eraftpb "github.com/tutububug/kvproto/pkg/eraftpb"
 
-	metapb "github.com/pingcap/kvproto/pkg/metapb"
+	metapb "github.com/tutububug/kvproto/pkg/metapb"
 
-	replication_modepb "github.com/pingcap/kvproto/pkg/replication_modepb"
+	replication_modepb "github.com/tutububug/kvproto/pkg/replication_modepb"
 
 	context "golang.org/x/net/context"
 

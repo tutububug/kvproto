@@ -12,13 +12,13 @@ import (
 
 	_ "github.com/gogo/protobuf/gogoproto"
 
-	errorpb "github.com/pingcap/kvproto/pkg/errorpb"
+	errorpb "github.com/tutububug/kvproto/pkg/errorpb"
 
-	kvrpcpb "github.com/pingcap/kvproto/pkg/kvrpcpb"
+	kvrpcpb "github.com/tutububug/kvproto/pkg/kvrpcpb"
 
-	metapb "github.com/pingcap/kvproto/pkg/metapb"
+	metapb "github.com/tutububug/kvproto/pkg/metapb"
 
-	raft_cmdpb "github.com/pingcap/kvproto/pkg/raft_cmdpb"
+	raft_cmdpb "github.com/tutububug/kvproto/pkg/raft_cmdpb"
 
 	context "golang.org/x/net/context"
 

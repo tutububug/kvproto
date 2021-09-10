@@ -10,15 +10,15 @@ import (
 
 	proto "github.com/golang/protobuf/proto"
 
-	eraftpb "github.com/pingcap/kvproto/pkg/eraftpb"
+	eraftpb "github.com/tutububug/kvproto/pkg/eraftpb"
 
-	errorpb "github.com/pingcap/kvproto/pkg/errorpb"
+	errorpb "github.com/tutububug/kvproto/pkg/errorpb"
 
-	import_sstpb "github.com/pingcap/kvproto/pkg/import_sstpb"
+	import_sstpb "github.com/tutububug/kvproto/pkg/import_sstpb"
 
-	kvrpcpb "github.com/pingcap/kvproto/pkg/kvrpcpb"
+	kvrpcpb "github.com/tutububug/kvproto/pkg/kvrpcpb"
 
-	metapb "github.com/pingcap/kvproto/pkg/metapb"
+	metapb "github.com/tutububug/kvproto/pkg/metapb"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
