@@ -1,0 +1,141 @@
+syntax = "proto3";
+package tiap_raw_kvrpcpb;
+
+import "gogoproto/gogo.proto";
+import "tiap_kvrpcpb.proto";
+
+option (gogoproto.marshaler_all) = true;
+option (gogoproto.sizer_all) = true;
+option (gogoproto.unmarshaler_all) = true;
+
+message KVRequest {
+    tiap_kvrpcpb.KVRequestHeader header      = 1;
+    oneof req {
+        GetRequest get_req                   = 2;
+        GetKeyTTLRequest get_key_ttl_req     = 3;
+        PutRequest put_req                   = 4;
+        PutWithTTLRequest put_with_ttl_req   = 5;
+        DeleteRequest delete_req             = 6;
+        DeleteRangeRequest delete_range_req  = 7;
+        ScanRequest scan_req                 = 8;
+        CASRequest cas_req                   = 9;
+        BatchGetRequest batch_get_req        = 10;
+        BatchPutRequest batch_put_req        = 11;
+        BatchDeleteRequest batch_delete_req  = 12;
+    }
+}
+
+message KVResponse {
+    tiap_kvrpcpb.KVResponseHeader header         = 1;
+    oneof resp {
+        GetResponse get_resp                     = 2;
+        GetKeyTTLResponse get_key_ttl_resp       = 3;
+        PutResponse put_resp                     = 4;
+        PutWithTTLResponse put_with_ttl_resp     = 5;
+        DeleteResponse delete_resp               = 6;
+        DeleteRangeResponse delete_range_resp    = 7;
+        ScanResponse scan_resp                   = 8;
+        CASResponse cas_resp                     = 9;
+        BatchGetResponse batch_get_resp          = 10;
+        BatchPutResponse batch_put_resp          = 11;
+        BatchDeleteResponse batch_delete_resp    = 12;
+    }
+}
+
+message GetRequest {
+    bytes key = 1;
+}
+
+message GetResponse {
+    bytes value = 1;
+}
+
+message GetKeyTTLRequest {
+    bytes key = 1;
+}
+
+message GetKeyTTLResponse {
+    uint64 ttl = 1;
+}
+
+message PutRequest {
+    bytes key = 1;
+    bytes value = 2;
+}
+
+message PutResponse {
+}
+
+message PutWithTTLRequest {
+    bytes key = 1;
+    bytes value = 2;
+    uint64 ttl = 3;
+}
+
+message PutWithTTLResponse {
+}
+
+message DeleteRequest {
+    bytes key = 1;
+}
+
+message DeleteResponse {
+}
+
+message DeleteRangeRequest {
+    bytes start_key = 1;
+    bytes end_key = 2;
+}
+
+message DeleteRangeResponse {
+}
+
+message ScanRequest {
+    bytes start_key = 1;
+    uint32 limit = 2;
+    bool key_only = 3;
+    bytes end_key = 4;
+}
+
+message ScanResponse {
+    repeated bytes keys = 1;
+    repeated bytes values = 2;
+}
+
+message CASRequest {
+    bytes key = 1;
+    bytes value = 2;
+    bool previous_not_exist = 3;
+    bytes previous_value = 4;
+    uint64 ttl = 5;
+}
+
+message CASResponse {
+    bool succeed = 1;
+    // The previous value regardless of whether the comparison is succeed.
+    bool previous_not_exist = 2;
+    bytes previous_value = 3;
+}
+
+message BatchGetRequest {
+    repeated bytes keys = 1;
+}
+
+message BatchGetResponse {
+    repeated bytes values = 1;
+}
+
+message BatchPutRequest {
+    repeated bytes keys = 1;
+    repeated bytes values = 2;
+}
+
+message BatchPutResponse {
+}
+
+message BatchDeleteRequest {
+    repeated bytes keys = 1;
+}
+
+message BatchDeleteResponse {
+}

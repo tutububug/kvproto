@@ -1,0 +1,162 @@
+syntax = "proto3";
+package tiap_hbaselike_kvrpcpb;
+
+import "gogoproto/gogo.proto";
+import "tiap_kvrpcpb.proto";
+
+option (gogoproto.marshaler_all) = true;
+option (gogoproto.sizer_all) = true;
+option (gogoproto.unmarshaler_all) = true;
+
+message KVRequest {
+  tiap_kvrpcpb.KVRequestHeader header                         = 1;
+  oneof req {
+    GetCellRequest get_cell_req                               = 2;
+    PutCellRequest put_cell_req                               = 3;
+    DeleteCellRequest delete_cell_req                         = 4;
+    BatchGetCellRequest batch_get_cell_req                    = 5;
+    BatchPutCellRequest batch_put_cell_req                    = 6;
+    BatchDeleteCellRequest batch_delete_cell_req              = 7;
+    GetAllRowOfFamilyRequest get_all_row_of_family_req        = 8;
+    DeleteAllRowOfFamilyRequest delete_all_row_of_family_req  = 9;
+    GetOneRowOfFamilyRequest get_one_row_of_family_req        = 10;
+    DeleteOneRowOfFamilyRequest delete_one_row_of_family_req  = 11;
+    GetOneColumnOfFamilyRequest get_one_column_of_family_req  = 12;
+  }
+}
+
+message KVResponse {
+  tiap_kvrpcpb.KVResponseHeader header                          = 1;
+  oneof resp {
+    GetCellResponse get_cell_resp                               = 2;
+    PutCellResponse put_cell_resp                               = 3;
+    DeleteCellResponse delete_cell_resp                         = 4;
+    BatchGetCellResponse batch_get_cell_resp                    = 5;
+    BatchPutCellResponse batch_put_cell_resp                    = 6;
+    BatchDeleteCellResponse batch_delete_cell_resp              = 7;
+    GetAllRowOfFamilyResponse get_all_row_of_family_resp        = 8;
+    DeleteAllRowOfFamilyResponse delete_all_row_of_family_resp  = 9;
+    GetOneRowOfFamilyResponse get_one_row_of_family_resp        = 10;
+    DeleteOneRowOfFamilyResponse delete_one_row_of_family_resp  = 11;
+    GetOneColumnOfFamilyResponse get_one_column_of_family_resp  = 12;
+  }
+}
+
+message Cell {
+  string family = 1;
+  bytes row_key = 2;
+  string column = 3;
+  int64 version = 4;
+}
+
+message RowResult {
+  bytes row_key                   = 1;
+  repeated ColumnInfo column_info = 2;
+}
+
+message ColumnInfo {
+  string column_name = 1;
+  bytes column_value = 2;
+  int64 version      = 3;
+}
+
+message ColumnResult {
+  string column_name        = 1;
+  repeated RowInfo row_info = 2;
+}
+
+message RowInfo {
+  bytes row_key      = 1;
+  bytes column_value = 2;
+}
+
+message GetCellRequest {
+  Cell cell = 1;
+}
+
+message GetCellResponse {
+  bytes value = 1;
+}
+
+message PutCellRequest {
+  Cell cell   = 1;
+  bytes value = 2;
+}
+
+message PutCellResponse {
+}
+
+message DeleteCellRequest {
+  Cell cell = 1;
+}
+
+message DeleteCellResponse {
+}
+
+message BatchGetCellRequest {
+  repeated Cell cells = 1;
+}
+
+message BatchGetCellResponse {
+  repeated bytes values = 1;
+}
+
+message BatchPutCellRequest {
+  repeated Cell cells   = 1;
+  repeated bytes values = 2;
+}
+
+message BatchPutCellResponse {
+}
+
+message BatchDeleteCellRequest {
+  repeated Cell cells = 1;
+}
+
+message BatchDeleteCellResponse {
+}
+
+message GetAllRowOfFamilyRequest {
+  string family = 1;
+}
+
+message GetAllRowOfFamilyResponse {
+  repeated RowResult rows = 1;
+}
+
+message DeleteAllRowOfFamilyRequest {
+  string family = 1;
+}
+
+message DeleteAllRowOfFamilyResponse {
+}
+
+message GetOneRowOfFamilyRequest {
+  string family = 1;
+  bytes row_key = 2;
+}
+
+message GetOneRowOfFamilyResponse {
+  RowResult row = 1;
+}
+
+message DeleteOneRowOfFamilyRequest {
+  string family = 1;
+  bytes row_key = 2;
+}
+
+message DeleteOneRowOfFamilyResponse {
+}
+
+message GetOneColumnOfFamilyRequest {
+  string family       = 1;
+  string column       = 2;
+  bytes start_row_key = 3;
+  bytes end_row_key   = 4;
+  int64 limit         = 5;
+}
+
+message GetOneColumnOfFamilyResponse {
+  ColumnResult column = 1;
+  bytes last_row_key  = 2;
+}

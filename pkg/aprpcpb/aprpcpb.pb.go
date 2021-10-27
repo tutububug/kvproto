@@ -35,7 +35,7 @@ func (m *RawGetRequest) Reset()         { *m = RawGetRequest{} }
 func (m *RawGetRequest) String() string { return proto.CompactTextString(m) }
 func (*RawGetRequest) ProtoMessage()    {}
 func (*RawGetRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_aprpcpb_5191a9426ded1204, []int{0}
+	return fileDescriptor_aprpcpb_33490105f808480f, []int{0}
 }
 func (m *RawGetRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -83,7 +83,7 @@ func (m *RawGetResponse) Reset()         { *m = RawGetResponse{} }
 func (m *RawGetResponse) String() string { return proto.CompactTextString(m) }
 func (*RawGetResponse) ProtoMessage()    {}
 func (*RawGetResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_aprpcpb_5191a9426ded1204, []int{1}
+	return fileDescriptor_aprpcpb_33490105f808480f, []int{1}
 }
 func (m *RawGetResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -137,7 +137,7 @@ func (m *RawGetKeyTTLRequest) Reset()         { *m = RawGetKeyTTLRequest{} }
 func (m *RawGetKeyTTLRequest) String() string { return proto.CompactTextString(m) }
 func (*RawGetKeyTTLRequest) ProtoMessage()    {}
 func (*RawGetKeyTTLRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_aprpcpb_5191a9426ded1204, []int{2}
+	return fileDescriptor_aprpcpb_33490105f808480f, []int{2}
 }
 func (m *RawGetKeyTTLRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -185,7 +185,7 @@ func (m *RawGetKeyTTLResponse) Reset()         { *m = RawGetKeyTTLResponse{} }
 func (m *RawGetKeyTTLResponse) String() string { return proto.CompactTextString(m) }
 func (*RawGetKeyTTLResponse) ProtoMessage()    {}
 func (*RawGetKeyTTLResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_aprpcpb_5191a9426ded1204, []int{3}
+	return fileDescriptor_aprpcpb_33490105f808480f, []int{3}
 }
 func (m *RawGetKeyTTLResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -240,7 +240,7 @@ func (m *RawPutRequest) Reset()         { *m = RawPutRequest{} }
 func (m *RawPutRequest) String() string { return proto.CompactTextString(m) }
 func (*RawPutRequest) ProtoMessage()    {}
 func (*RawPutRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_aprpcpb_5191a9426ded1204, []int{4}
+	return fileDescriptor_aprpcpb_33490105f808480f, []int{4}
 }
 func (m *RawPutRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -294,7 +294,7 @@ func (m *RawPutResponse) Reset()         { *m = RawPutResponse{} }
 func (m *RawPutResponse) String() string { return proto.CompactTextString(m) }
 func (*RawPutResponse) ProtoMessage()    {}
 func (*RawPutResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_aprpcpb_5191a9426ded1204, []int{5}
+	return fileDescriptor_aprpcpb_33490105f808480f, []int{5}
 }
 func (m *RawPutResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -343,7 +343,7 @@ func (m *RawPutWithTTLRequest) Reset()         { *m = RawPutWithTTLRequest{} }
 func (m *RawPutWithTTLRequest) String() string { return proto.CompactTextString(m) }
 func (*RawPutWithTTLRequest) ProtoMessage()    {}
 func (*RawPutWithTTLRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_aprpcpb_5191a9426ded1204, []int{6}
+	return fileDescriptor_aprpcpb_33490105f808480f, []int{6}
 }
 func (m *RawPutWithTTLRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -404,7 +404,7 @@ func (m *RawPutWithTTLResponse) Reset()         { *m = RawPutWithTTLResponse{} }
 func (m *RawPutWithTTLResponse) String() string { return proto.CompactTextString(m) }
 func (*RawPutWithTTLResponse) ProtoMessage()    {}
 func (*RawPutWithTTLResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_aprpcpb_5191a9426ded1204, []int{7}
+	return fileDescriptor_aprpcpb_33490105f808480f, []int{7}
 }
 func (m *RawPutWithTTLResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -451,7 +451,7 @@ func (m *RawDeleteRequest) Reset()         { *m = RawDeleteRequest{} }
 func (m *RawDeleteRequest) String() string { return proto.CompactTextString(m) }
 func (*RawDeleteRequest) ProtoMessage()    {}
 func (*RawDeleteRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_aprpcpb_5191a9426ded1204, []int{8}
+	return fileDescriptor_aprpcpb_33490105f808480f, []int{8}
 }
 func (m *RawDeleteRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -498,7 +498,7 @@ func (m *RawDeleteResponse) Reset()         { *m = RawDeleteResponse{} }
 func (m *RawDeleteResponse) String() string { return proto.CompactTextString(m) }
 func (*RawDeleteResponse) ProtoMessage()    {}
 func (*RawDeleteResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_aprpcpb_5191a9426ded1204, []int{9}
+	return fileDescriptor_aprpcpb_33490105f808480f, []int{9}
 }
 func (m *RawDeleteResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -546,7 +546,7 @@ func (m *RawDeleteRangeRequest) Reset()         { *m = RawDeleteRangeRequest{} }
 func (m *RawDeleteRangeRequest) String() string { return proto.CompactTextString(m) }
 func (*RawDeleteRangeRequest) ProtoMessage()    {}
 func (*RawDeleteRangeRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_aprpcpb_5191a9426ded1204, []int{10}
+	return fileDescriptor_aprpcpb_33490105f808480f, []int{10}
 }
 func (m *RawDeleteRangeRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -600,7 +600,7 @@ func (m *RawDeleteRangeResponse) Reset()         { *m = RawDeleteRangeResponse{}
 func (m *RawDeleteRangeResponse) String() string { return proto.CompactTextString(m) }
 func (*RawDeleteRangeResponse) ProtoMessage()    {}
 func (*RawDeleteRangeResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_aprpcpb_5191a9426ded1204, []int{11}
+	return fileDescriptor_aprpcpb_33490105f808480f, []int{11}
 }
 func (m *RawDeleteRangeResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -650,7 +650,7 @@ func (m *RawScanRequest) Reset()         { *m = RawScanRequest{} }
 func (m *RawScanRequest) String() string { return proto.CompactTextString(m) }
 func (*RawScanRequest) ProtoMessage()    {}
 func (*RawScanRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_aprpcpb_5191a9426ded1204, []int{12}
+	return fileDescriptor_aprpcpb_33490105f808480f, []int{12}
 }
 func (m *RawScanRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -719,7 +719,7 @@ func (m *RawScanResponse) Reset()         { *m = RawScanResponse{} }
 func (m *RawScanResponse) String() string { return proto.CompactTextString(m) }
 func (*RawScanResponse) ProtoMessage()    {}
 func (*RawScanResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_aprpcpb_5191a9426ded1204, []int{13}
+	return fileDescriptor_aprpcpb_33490105f808480f, []int{13}
 }
 func (m *RawScanResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -777,7 +777,7 @@ func (m *RawCASRequest) Reset()         { *m = RawCASRequest{} }
 func (m *RawCASRequest) String() string { return proto.CompactTextString(m) }
 func (*RawCASRequest) ProtoMessage()    {}
 func (*RawCASRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_aprpcpb_5191a9426ded1204, []int{14}
+	return fileDescriptor_aprpcpb_33490105f808480f, []int{14}
 }
 func (m *RawCASRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -856,7 +856,7 @@ func (m *RawCASResponse) Reset()         { *m = RawCASResponse{} }
 func (m *RawCASResponse) String() string { return proto.CompactTextString(m) }
 func (*RawCASResponse) ProtoMessage()    {}
 func (*RawCASResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_aprpcpb_5191a9426ded1204, []int{15}
+	return fileDescriptor_aprpcpb_33490105f808480f, []int{15}
 }
 func (m *RawCASResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -924,7 +924,7 @@ func (m *RawBatchGetRequest) Reset()         { *m = RawBatchGetRequest{} }
 func (m *RawBatchGetRequest) String() string { return proto.CompactTextString(m) }
 func (*RawBatchGetRequest) ProtoMessage()    {}
 func (*RawBatchGetRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_aprpcpb_5191a9426ded1204, []int{16}
+	return fileDescriptor_aprpcpb_33490105f808480f, []int{16}
 }
 func (m *RawBatchGetRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -972,7 +972,7 @@ func (m *RawBatchGetResponse) Reset()         { *m = RawBatchGetResponse{} }
 func (m *RawBatchGetResponse) String() string { return proto.CompactTextString(m) }
 func (*RawBatchGetResponse) ProtoMessage()    {}
 func (*RawBatchGetResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_aprpcpb_5191a9426ded1204, []int{17}
+	return fileDescriptor_aprpcpb_33490105f808480f, []int{17}
 }
 func (m *RawBatchGetResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1027,7 +1027,7 @@ func (m *RawBatchPutRequest) Reset()         { *m = RawBatchPutRequest{} }
 func (m *RawBatchPutRequest) String() string { return proto.CompactTextString(m) }
 func (*RawBatchPutRequest) ProtoMessage()    {}
 func (*RawBatchPutRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_aprpcpb_5191a9426ded1204, []int{18}
+	return fileDescriptor_aprpcpb_33490105f808480f, []int{18}
 }
 func (m *RawBatchPutRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1081,7 +1081,7 @@ func (m *RawBatchPutResponse) Reset()         { *m = RawBatchPutResponse{} }
 func (m *RawBatchPutResponse) String() string { return proto.CompactTextString(m) }
 func (*RawBatchPutResponse) ProtoMessage()    {}
 func (*RawBatchPutResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_aprpcpb_5191a9426ded1204, []int{19}
+	return fileDescriptor_aprpcpb_33490105f808480f, []int{19}
 }
 func (m *RawBatchPutResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1128,7 +1128,7 @@ func (m *RawBatchDeleteRequest) Reset()         { *m = RawBatchDeleteRequest{} }
 func (m *RawBatchDeleteRequest) String() string { return proto.CompactTextString(m) }
 func (*RawBatchDeleteRequest) ProtoMessage()    {}
 func (*RawBatchDeleteRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_aprpcpb_5191a9426ded1204, []int{20}
+	return fileDescriptor_aprpcpb_33490105f808480f, []int{20}
 }
 func (m *RawBatchDeleteRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1175,7 +1175,7 @@ func (m *RawBatchDeleteResponse) Reset()         { *m = RawBatchDeleteResponse{}
 func (m *RawBatchDeleteResponse) String() string { return proto.CompactTextString(m) }
 func (*RawBatchDeleteResponse) ProtoMessage()    {}
 func (*RawBatchDeleteResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_aprpcpb_5191a9426ded1204, []int{21}
+	return fileDescriptor_aprpcpb_33490105f808480f, []int{21}
 }
 func (m *RawBatchDeleteResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -4731,9 +4731,9 @@ var (
 	ErrIntOverflowAprpcpb   = fmt.Errorf("proto: integer overflow")
 )
 
-func init() { proto.RegisterFile("aprpcpb.proto", fileDescriptor_aprpcpb_5191a9426ded1204) }
+func init() { proto.RegisterFile("aprpcpb.proto", fileDescriptor_aprpcpb_33490105f808480f) }
 
-var fileDescriptor_aprpcpb_5191a9426ded1204 = []byte{
+var fileDescriptor_aprpcpb_33490105f808480f = []byte{
 	// 530 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xb4, 0x54, 0xcd, 0x6e, 0xd3, 0x40,
 	0x10, 0xc6, 0xcd, 0x6f, 0x47, 0x4d, 0x31, 0x4b, 0x28, 0x06, 0xa4, 0xa8, 0x58, 0xfc, 0x04, 0x15,

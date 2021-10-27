@@ -1,0 +1,18 @@
+syntax = "proto3";
+package tiap_kvrpcpb;
+
+import "gogoproto/gogo.proto";
+
+option (gogoproto.marshaler_all) = true;
+option (gogoproto.sizer_all) = true;
+option (gogoproto.unmarshaler_all) = true;
+
+message KVRequestHeader {
+  string db_name    = 1;
+  string table_name = 2;
+  string token      = 3;
+}
+
+message KVResponseHeader {
+  string error = 1;
+}
