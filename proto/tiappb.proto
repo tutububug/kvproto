@@ -1,0 +1,26 @@
+syntax = "proto3";
+package tiap_servicepb;
+
+import "gogoproto/gogo.proto";
+import "tiap_raw_kvrpcpb.proto";
+import "tiap_hbaselike_kvrpcpb.proto";
+import "tiap_adminrpcpb.proto";
+import "tiap_raw_adminrpcpb.proto";
+import "tiap_hbaselike_adminrpcpb.proto";
+
+option (gogoproto.sizer_all) = true;
+option (gogoproto.marshaler_all) = true;
+option (gogoproto.unmarshaler_all) = true;
+
+// Key/value store API for TiAP.
+service TiapKV {
+    rpc RawKV(tiap_raw_kvrpcpb.KVRequest) returns (tiap_raw_kvrpcpb.KVResponse) {}
+    rpc HBaseLikeKV(tiap_hbaselike_kvrpcpb.KVRequest) returns(tiap_hbaselike_kvrpcpb.KVResponse) {}
+}
+
+// DB/Table admin API for TiAP
+service TiapAdmin {
+    rpc DBAdmin(tiap_adminrpcpb.AdminRequest) returns (tiap_adminrpcpb.AdminResponse) {}
+    rpc RawTableAdmin(tiap_raw_adminrpcpb.AdminRequest) returns (tiap_raw_adminrpcpb.AdminResponse) {}
+    rpc HBaseLikeTableAdmin(tiap_hbaselike_adminrpcpb.AdminRequest) returns (tiap_hbaselike_adminrpcpb.AdminResponse) {}
+}

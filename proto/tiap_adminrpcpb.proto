@@ -1,0 +1,120 @@
+syntax = "proto3";
+package tiap_adminrpcpb;
+
+import "gogoproto/gogo.proto";
+
+option (gogoproto.marshaler_all) = true;
+option (gogoproto.sizer_all) = true;
+option (gogoproto.unmarshaler_all) = true;
+
+message AdminRequestHeader {
+  int64 timestamp  = 1;
+  string client_id = 2;
+  string user      = 3;
+}
+
+message AdminResponseHeader {
+  string error = 1;
+}
+
+message AdminRequest {
+  AdminRequestHeader header       = 1;
+  oneof req {
+    CreateDBRequest create_db_req = 2;
+    GetDBRequest get_db_req       = 3;
+    ListDBsRequest list_dbs_req   = 4;
+    DropDBRequest drop_db_req     = 5;
+  }
+}
+
+message AdminResponse {
+  AdminResponseHeader header        = 1;
+  oneof resp {
+    CreateDBResponse create_db_resp = 2;
+    GetDBResponse get_db_resp       = 3;
+    ListDBsResponse list_dbs_resp   = 4;
+    DropDBResponse drop_db_resp     = 5;
+  }
+}
+
+message DBInfo {
+  string name   = 1;
+  int32 id      = 2;
+  DBState state = 3;
+  DBQuota quota = 4;
+  repeated string comment = 5;
+}
+
+message TableInfo {
+  string name       = 1;
+  int32 id          = 2;
+  int32 db_id       = 3;
+  string token      = 4;
+  TableType type    = 5;
+  TableState state  = 6;
+  TableQuota quota  = 7;
+  repeated string comment = 8;
+}
+
+enum TableType {
+  TableType_Invalid   = 0;
+  TableType_Raw       = 1;
+  TableType_HBaseLike = 2;
+}
+
+enum TableState {
+  TableState_Creating  = 0;
+  TableState_Created   = 1;
+  TableState_Tombstone = 2;
+  TableState_Deleting  = 3;
+  TableState_Deleted   = 4;
+}
+
+enum DBState {
+  DBState_Creating  = 0;
+  DBState_Created   = 1;
+  DBState_Tombstone = 2;
+  DBState_Deleting  = 3;
+  DBState_Deleted   = 4;
+}
+
+message DBQuota {
+  uint32 table_number     = 1;
+  uint64 storage_capacity = 2;
+  uint64 max_qps          = 3;
+}
+
+message TableQuota {
+  uint64 storage_capacity = 1;
+  uint64 max_qps          = 2;
+}
+
+message CreateDBRequest {
+  string name   = 1;
+  DBQuota quota = 2;
+}
+
+message CreateDBResponse {
+}
+
+message GetDBRequest {
+  string name = 1;
+}
+
+message GetDBResponse {
+  DBInfo info = 1;
+}
+
+message ListDBsRequest {
+}
+
+message ListDBsResponse {
+  repeated DBInfo infos = 1;
+}
+
+message DropDBRequest {
+  string name = 1;
+}
+
+message DropDBResponse {
+}

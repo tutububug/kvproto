@@ -17,11 +17,11 @@ message KVRequest {
     BatchGetCellRequest batch_get_cell_req                    = 5;
     BatchPutCellRequest batch_put_cell_req                    = 6;
     BatchDeleteCellRequest batch_delete_cell_req              = 7;
-    GetAllRowOfFamilyRequest get_all_row_of_family_req        = 8;
-    DeleteAllRowOfFamilyRequest delete_all_row_of_family_req  = 9;
-    GetOneRowOfFamilyRequest get_one_row_of_family_req        = 10;
-    DeleteOneRowOfFamilyRequest delete_one_row_of_family_req  = 11;
-    GetOneColumnOfFamilyRequest get_one_column_of_family_req  = 12;
+    GetAllRowOfColumnFamilyRequest get_all_row_of_cf_req      = 8;
+    DeleteAllRowOfColumnFamilyRequest delete_all_row_of_cf_req  = 9;
+    GetOneRowOfColumnFamilyRequest get_one_row_of_cf_req        = 10;
+    DeleteOneRowOfColumnFamilyRequest delete_one_row_of_cf_req  = 11;
+    GetOneColumnOfColumnFamilyRequest get_one_column_of_cf_req  = 12;
   }
 }
 
@@ -34,11 +34,11 @@ message KVResponse {
     BatchGetCellResponse batch_get_cell_resp                    = 5;
     BatchPutCellResponse batch_put_cell_resp                    = 6;
     BatchDeleteCellResponse batch_delete_cell_resp              = 7;
-    GetAllRowOfFamilyResponse get_all_row_of_family_resp        = 8;
-    DeleteAllRowOfFamilyResponse delete_all_row_of_family_resp  = 9;
-    GetOneRowOfFamilyResponse get_one_row_of_family_resp        = 10;
-    DeleteOneRowOfFamilyResponse delete_one_row_of_family_resp  = 11;
-    GetOneColumnOfFamilyResponse get_one_column_of_family_resp  = 12;
+    GetAllRowOfColumnFamilyResponse get_all_row_of_cf_resp        = 8;
+    DeleteAllRowOfColumnFamilyResponse delete_all_row_of_cf_resp  = 9;
+    GetOneRowOfColumnFamilyResponse get_one_row_of_cf_resp        = 10;
+    DeleteOneRowOfColumnFamilyResponse delete_one_row_of_cf_resp  = 11;
+    GetOneColumnOfColumnFamilyResponse get_one_column_of_cf_resp  = 12;
   }
 }
 
@@ -116,39 +116,39 @@ message BatchDeleteCellRequest {
 message BatchDeleteCellResponse {
 }
 
-message GetAllRowOfFamilyRequest {
+message GetAllRowOfColumnFamilyRequest {
   string family = 1;
 }
 
-message GetAllRowOfFamilyResponse {
+message GetAllRowOfColumnFamilyResponse {
   repeated RowResult rows = 1;
 }
 
-message DeleteAllRowOfFamilyRequest {
+message DeleteAllRowOfColumnFamilyRequest {
   string family = 1;
 }
 
-message DeleteAllRowOfFamilyResponse {
+message DeleteAllRowOfColumnFamilyResponse {
 }
 
-message GetOneRowOfFamilyRequest {
+message GetOneRowOfColumnFamilyRequest {
   string family = 1;
   bytes row_key = 2;
 }
 
-message GetOneRowOfFamilyResponse {
+message GetOneRowOfColumnFamilyResponse {
   RowResult row = 1;
 }
 
-message DeleteOneRowOfFamilyRequest {
+message DeleteOneRowOfColumnFamilyRequest {
   string family = 1;
   bytes row_key = 2;
 }
 
-message DeleteOneRowOfFamilyResponse {
+message DeleteOneRowOfColumnFamilyResponse {
 }
 
-message GetOneColumnOfFamilyRequest {
+message GetOneColumnOfColumnFamilyRequest {
   string family       = 1;
   string column       = 2;
   bytes start_row_key = 3;
@@ -156,7 +156,7 @@ message GetOneColumnOfFamilyRequest {
   int64 limit         = 5;
 }
 
-message GetOneColumnOfFamilyResponse {
+message GetOneColumnOfColumnFamilyResponse {
   ColumnResult column = 1;
   bytes last_row_key  = 2;
 }

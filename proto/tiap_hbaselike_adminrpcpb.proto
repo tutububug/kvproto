@@ -1,0 +1,101 @@
+syntax = "proto3";
+package tiap_hbaselike_adminrpcpb;
+
+import "gogoproto/gogo.proto";
+import "tiap_adminrpcpb.proto";
+
+option (gogoproto.marshaler_all) = true;
+option (gogoproto.sizer_all) = true;
+option (gogoproto.unmarshaler_all) = true;
+
+message AdminRequest {
+  tiap_adminrpcpb.AdminRequestHeader header = 1;
+  oneof req {
+    CreateTableRequest create_table_req     = 2;
+    GetTableRequest get_table_req           = 3;
+    ListTablesRequest list_tables_req       = 4;
+    DropTableRequest drop_table_req         = 5;
+    AddColumnFamilyRequest add_cf_req       = 6;
+    ListColumnFamiliesRequest list_cfs_req  = 7;
+    DeleteColumnFamilyRequest delete_cf_req = 8;
+  }
+}
+
+message AdminResponse {
+  tiap_adminrpcpb.AdminResponseHeader header = 1;
+  oneof resp {
+    CreateTableResponse create_table_resp    = 2;
+    GetTableResponse get_table_resp          = 3;
+    ListTablesResponse list_tables_resp      = 4;
+    DropTableResponse drop_table_resp        = 5;
+    AddColumnFamilyResponse add_cf_resp       = 6;
+    ListColumnFamiliesResponse list_cfs_resp  = 7;
+    DeleteColumnFamilyResponse delete_cf_resp = 8;
+  }
+}
+
+message TableInfo {
+  tiap_adminrpcpb.TableInfo info = 1;
+  bool salted = 2;
+  map<string, string> families = 3;
+}
+
+message CreateTableRequest {
+  string db_name  = 1;
+  string name     = 2;
+}
+
+message CreateTableResponse {
+}
+
+message GetTableRequest {
+  string db_name  = 1;
+  string name     = 2;
+}
+
+message GetTableResponse {
+  TableInfo info = 1;
+}
+
+message ListTablesRequest {
+  string db_name = 1;
+}
+
+message ListTablesResponse {
+  repeated TableInfo infos = 1;
+}
+
+message DropTableRequest {
+  string db_name  = 1;
+  string name     = 2;
+}
+
+message DropTableResponse {
+}
+
+message AddColumnFamilyRequest {
+  string db_name    = 1;
+  string table_name = 2;
+  string family     = 3;
+}
+
+message AddColumnFamilyResponse {
+}
+
+message ListColumnFamiliesRequest {
+  string db_name    = 1;
+  string table_name = 2;
+}
+
+message ListColumnFamiliesResponse {
+  repeated string families = 1;
+}
+
+message DeleteColumnFamilyRequest {
+  string db_name    = 1;
+  string table_name = 2;
+  string family     = 3;
+}
+
+message DeleteColumnFamilyResponse {
+}

@@ -8,9 +8,9 @@ option (gogoproto.sizer_all) = true;
 option (gogoproto.unmarshaler_all) = true;
 
 message KVRequestHeader {
-  string db_name    = 1;
-  string table_name = 2;
-  string token      = 3;
+  string db_name     = 1;
+  string table_name  = 2;
+  string table_token = 3;
 }
 
 message KVResponseHeader {
