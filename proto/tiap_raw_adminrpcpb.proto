@@ -3,6 +3,7 @@ package tiap_raw_adminrpcpb;
 
 import "gogoproto/gogo.proto";
 import "tiap_adminrpcpb.proto";
+option java_package = "com.shopee.di.kvstore.proto";
 
 option (gogoproto.marshaler_all) = true;
 option (gogoproto.sizer_all) = true;

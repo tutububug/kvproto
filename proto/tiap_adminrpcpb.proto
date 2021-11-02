@@ -6,6 +6,7 @@ import "gogoproto/gogo.proto";
 option (gogoproto.marshaler_all) = true;
 option (gogoproto.sizer_all) = true;
 option (gogoproto.unmarshaler_all) = true;
+option java_package = "com.shopee.di.kvstore.proto";
 
 message AdminRequestHeader {
   int64 timestamp  = 1;

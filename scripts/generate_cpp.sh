@@ -10,7 +10,7 @@ GRPC_INCLUDE=.:../include
 
 cd $KVPROTO_ROOT
 rm -rf proto-cpp && mkdir -p proto-cpp
-rm -rf cpp/kvproto && mkdir cpp/kvproto
+rm -rf cpp/kvproto && mkdir -p cpp/kvproto
 
 cp proto/* proto-cpp/
 
