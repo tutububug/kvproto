@@ -10,154 +10,113 @@ option (gogoproto.unmarshaler_all) = true;
 option java_package = "com.shopee.di.kvstore.proto";
 
 message KVRequest {
-  tiap_kvrpcpb.KVRequestHeader header                         = 1;
+  tiap_kvrpcpb.KVRequestHeader header = 1;
   oneof req {
-    GetCellRequest get_cell_req                               = 2;
-    PutCellRequest put_cell_req                               = 3;
-    DeleteCellRequest delete_cell_req                         = 4;
-    BatchGetCellRequest batch_get_cell_req                    = 5;
-    BatchPutCellRequest batch_put_cell_req                    = 6;
-    BatchDeleteCellRequest batch_delete_cell_req              = 7;
-    GetAllRowOfColumnFamilyRequest get_all_row_of_cf_req      = 8;
-    DeleteAllRowOfColumnFamilyRequest delete_all_row_of_cf_req  = 9;
-    GetOneRowOfColumnFamilyRequest get_one_row_of_cf_req        = 10;
-    DeleteOneRowOfColumnFamilyRequest delete_one_row_of_cf_req  = 11;
-    GetOneColumnOfColumnFamilyRequest get_one_column_of_cf_req  = 12;
+    GetRowRequest get_row_req = 2;
+    PutRowRequest put_row_req = 3;
+    DeleteRowRequest delete_row_req = 4;
+    BatchGetRowRequest batch_get_row_req = 5;
+    BatchPutRowRequest batch_put_row_req = 6;
+    BatchDeleteRowRequest batch_delete_row_req = 7;
   }
 }
 
 message KVResponse {
-  tiap_kvrpcpb.KVResponseHeader header                          = 1;
+  tiap_kvrpcpb.KVResponseHeader header = 1;
   oneof resp {
-    GetCellResponse get_cell_resp                               = 2;
-    PutCellResponse put_cell_resp                               = 3;
-    DeleteCellResponse delete_cell_resp                         = 4;
-    BatchGetCellResponse batch_get_cell_resp                    = 5;
-    BatchPutCellResponse batch_put_cell_resp                    = 6;
-    BatchDeleteCellResponse batch_delete_cell_resp              = 7;
-    GetAllRowOfColumnFamilyResponse get_all_row_of_cf_resp        = 8;
-    DeleteAllRowOfColumnFamilyResponse delete_all_row_of_cf_resp  = 9;
-    GetOneRowOfColumnFamilyResponse get_one_row_of_cf_resp        = 10;
-    DeleteOneRowOfColumnFamilyResponse delete_one_row_of_cf_resp  = 11;
-    GetOneColumnOfColumnFamilyResponse get_one_column_of_cf_resp  = 12;
+    GetRowResponse get_row_resp = 2;
+    PutRowResponse put_row_resp = 3;
+    DeleteRowResponse delete_row_resp = 4;
+    BatchGetRowResponse batch_get_row_resp = 5;
+    BatchPutRowResponse batch_put_row_resp = 6;
+    BatchDeleteRowResponse batch_delete_row_resp = 7;
   }
 }
 
-message Cell {
-  string family = 1;
-  bytes row_key = 2;
-  string column = 3;
-  int64 version = 4;
+message GetRowRequest {
+  Row row = 1;
 }
 
-message RowResult {
-  bytes row_key                   = 1;
-  repeated ColumnInfo column_info = 2;
+message GetRowResponse {
+  RowValue row_value = 1;
 }
 
-message ColumnInfo {
-  string column_name = 1;
-  bytes column_value = 2;
-  int64 version      = 3;
+message BatchGetRowRequest {
+  repeated Row rows = 1;
 }
 
-message ColumnResult {
-  string column_name        = 1;
-  repeated RowInfo row_info = 2;
+message BatchGetRowResponse {
+  repeated RowValue row_values = 1;
 }
 
-message RowInfo {
-  bytes row_key      = 1;
-  bytes column_value = 2;
+message PutRowRequest {
+  RowValue row_value = 1;
 }
 
-message GetCellRequest {
-  Cell cell = 1;
+message PutRowResponse {
 }
 
-message GetCellResponse {
-  bytes value = 1;
+message BatchPutRowRequest {
+  repeated RowValue row_values = 1;
 }
 
-message PutCellRequest {
-  Cell cell   = 1;
+message BatchPutRowResponse {
+}
+
+message DeleteRowRequest {
+  Row row = 1;
+}
+
+message DeleteRowResponse {
+}
+
+message BatchDeleteRowRequest {
+  repeated Row rows = 1;
+}
+
+message BatchDeleteRowResponse {
+}
+
+message Row {
+  string db_name = 1;
+  string table_name = 2;
+  bytes row_key = 3;
+  ColumnFamily families = 4;
+  int64 ttl = 5;
+}
+
+message ColumnFamily {
+  map<string, Columns> m = 1;
+}
+
+message Columns {
+  repeated Column columns = 1;
+}
+
+message Column {
+  string name = 1;
+  int64 min_stamp = 2;
+  int64 max_stamp = 3;
+}
+
+message RowValue {
+  string db_name = 1;
+  string table_name = 2;
+  bytes row_key = 3;
+  ColumnFamilyValue family_values = 4;
+}
+
+message ColumnFamilyValue {
+  map<string, ColumnValues> m = 1;
+}
+
+message ColumnValues {
+  repeated ColumnValue column_values = 1;
+}
+
+message ColumnValue {
+  string name = 1;
   bytes value = 2;
-}
-
-message PutCellResponse {
-}
-
-message DeleteCellRequest {
-  Cell cell = 1;
-}
-
-message DeleteCellResponse {
-}
-
-message BatchGetCellRequest {
-  repeated Cell cells = 1;
-}
-
-message BatchGetCellResponse {
-  repeated bytes values = 1;
-}
-
-message BatchPutCellRequest {
-  repeated Cell cells   = 1;
-  repeated bytes values = 2;
-}
-
-message BatchPutCellResponse {
-}
-
-message BatchDeleteCellRequest {
-  repeated Cell cells = 1;
-}
-
-message BatchDeleteCellResponse {
-}
-
-message GetAllRowOfColumnFamilyRequest {
-  string family = 1;
-}
-
-message GetAllRowOfColumnFamilyResponse {
-  repeated RowResult rows = 1;
-}
-
-message DeleteAllRowOfColumnFamilyRequest {
-  string family = 1;
-}
-
-message DeleteAllRowOfColumnFamilyResponse {
-}
-
-message GetOneRowOfColumnFamilyRequest {
-  string family = 1;
-  bytes row_key = 2;
-}
-
-message GetOneRowOfColumnFamilyResponse {
-  RowResult row = 1;
-}
-
-message DeleteOneRowOfColumnFamilyRequest {
-  string family = 1;
-  bytes row_key = 2;
-}
-
-message DeleteOneRowOfColumnFamilyResponse {
-}
-
-message GetOneColumnOfColumnFamilyRequest {
-  string family       = 1;
-  string column       = 2;
-  bytes start_row_key = 3;
-  bytes end_row_key   = 4;
-  int64 limit         = 5;
-}
-
-message GetOneColumnOfColumnFamilyResponse {
-  ColumnResult column = 1;
-  bytes last_row_key  = 2;
+  int64 timestamp = 3;
+  int64 ttl = 4;
 }

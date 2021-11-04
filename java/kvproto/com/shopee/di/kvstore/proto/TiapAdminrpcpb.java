@@ -4991,10 +4991,10 @@ public final class TiapAdminrpcpb {
         getNameBytes();
 
     /**
-     * <code>int32 id = 2;</code>
+     * <code>int64 id = 2;</code>
      * @return The id.
      */
-    int getId();
+    long getId();
 
     /**
      * <code>.tiap_adminrpcpb.DBState state = 3;</code>
@@ -5104,7 +5104,7 @@ public final class TiapAdminrpcpb {
             }
             case 16: {
 
-              id_ = input.readInt32();
+              id_ = input.readInt64();
               break;
             }
             case 24: {
@@ -5209,13 +5209,13 @@ public final class TiapAdminrpcpb {
     }
 
     public static final int ID_FIELD_NUMBER = 2;
-    private int id_;
+    private long id_;
     /**
-     * <code>int32 id = 2;</code>
+     * <code>int64 id = 2;</code>
      * @return The id.
      */
     @java.lang.Override
-    public int getId() {
+    public long getId() {
       return id_;
     }
 
@@ -5316,8 +5316,8 @@ public final class TiapAdminrpcpb {
       if (!getNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
       }
-      if (id_ != 0) {
-        output.writeInt32(2, id_);
+      if (id_ != 0L) {
+        output.writeInt64(2, id_);
       }
       if (state_ != com.shopee.di.kvstore.proto.TiapAdminrpcpb.DBState.DBState_Creating.getNumber()) {
         output.writeEnum(3, state_);
@@ -5340,9 +5340,9 @@ public final class TiapAdminrpcpb {
       if (!getNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
       }
-      if (id_ != 0) {
+      if (id_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, id_);
+          .computeInt64Size(2, id_);
       }
       if (state_ != com.shopee.di.kvstore.proto.TiapAdminrpcpb.DBState.DBState_Creating.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
@@ -5401,7 +5401,8 @@ public final class TiapAdminrpcpb {
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
       hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getId());
       hash = (37 * hash) + STATE_FIELD_NUMBER;
       hash = (53 * hash) + state_;
       if (hasQuota()) {
@@ -5547,7 +5548,7 @@ public final class TiapAdminrpcpb {
         super.clear();
         name_ = "";
 
-        id_ = 0;
+        id_ = 0L;
 
         state_ = 0;
 
@@ -5651,7 +5652,7 @@ public final class TiapAdminrpcpb {
           name_ = other.name_;
           onChanged();
         }
-        if (other.getId() != 0) {
+        if (other.getId() != 0L) {
           setId(other.getId());
         }
         if (other.state_ != 0) {
@@ -5776,33 +5777,33 @@ public final class TiapAdminrpcpb {
         return this;
       }
 
-      private int id_ ;
+      private long id_ ;
       /**
-       * <code>int32 id = 2;</code>
+       * <code>int64 id = 2;</code>
        * @return The id.
        */
       @java.lang.Override
-      public int getId() {
+      public long getId() {
         return id_;
       }
       /**
-       * <code>int32 id = 2;</code>
+       * <code>int64 id = 2;</code>
        * @param value The id to set.
        * @return This builder for chaining.
        */
-      public Builder setId(int value) {
+      public Builder setId(long value) {
         
         id_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 id = 2;</code>
+       * <code>int64 id = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearId() {
         
-        id_ = 0;
+        id_ = 0L;
         onChanged();
         return this;
       }
@@ -6159,16 +6160,16 @@ public final class TiapAdminrpcpb {
         getNameBytes();
 
     /**
-     * <code>int32 id = 2;</code>
+     * <code>int64 id = 2;</code>
      * @return The id.
      */
-    int getId();
+    long getId();
 
     /**
-     * <code>int32 db_id = 3;</code>
+     * <code>int64 db_id = 3;</code>
      * @return The dbId.
      */
-    int getDbId();
+    long getDbId();
 
     /**
      * <code>string token = 4;</code>
@@ -6303,12 +6304,12 @@ public final class TiapAdminrpcpb {
             }
             case 16: {
 
-              id_ = input.readInt32();
+              id_ = input.readInt64();
               break;
             }
             case 24: {
 
-              dbId_ = input.readInt32();
+              dbId_ = input.readInt64();
               break;
             }
             case 34: {
@@ -6425,24 +6426,24 @@ public final class TiapAdminrpcpb {
     }
 
     public static final int ID_FIELD_NUMBER = 2;
-    private int id_;
+    private long id_;
     /**
-     * <code>int32 id = 2;</code>
+     * <code>int64 id = 2;</code>
      * @return The id.
      */
     @java.lang.Override
-    public int getId() {
+    public long getId() {
       return id_;
     }
 
     public static final int DB_ID_FIELD_NUMBER = 3;
-    private int dbId_;
+    private long dbId_;
     /**
-     * <code>int32 db_id = 3;</code>
+     * <code>int64 db_id = 3;</code>
      * @return The dbId.
      */
     @java.lang.Override
-    public int getDbId() {
+    public long getDbId() {
       return dbId_;
     }
 
@@ -6600,11 +6601,11 @@ public final class TiapAdminrpcpb {
       if (!getNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
       }
-      if (id_ != 0) {
-        output.writeInt32(2, id_);
+      if (id_ != 0L) {
+        output.writeInt64(2, id_);
       }
-      if (dbId_ != 0) {
-        output.writeInt32(3, dbId_);
+      if (dbId_ != 0L) {
+        output.writeInt64(3, dbId_);
       }
       if (!getTokenBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, token_);
@@ -6633,13 +6634,13 @@ public final class TiapAdminrpcpb {
       if (!getNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
       }
-      if (id_ != 0) {
+      if (id_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, id_);
+          .computeInt64Size(2, id_);
       }
-      if (dbId_ != 0) {
+      if (dbId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, dbId_);
+          .computeInt64Size(3, dbId_);
       }
       if (!getTokenBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, token_);
@@ -6710,9 +6711,11 @@ public final class TiapAdminrpcpb {
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
       hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getId());
       hash = (37 * hash) + DB_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getDbId();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getDbId());
       hash = (37 * hash) + TOKEN_FIELD_NUMBER;
       hash = (53 * hash) + getToken().hashCode();
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
@@ -6862,9 +6865,9 @@ public final class TiapAdminrpcpb {
         super.clear();
         name_ = "";
 
-        id_ = 0;
+        id_ = 0L;
 
-        dbId_ = 0;
+        dbId_ = 0L;
 
         token_ = "";
 
@@ -6975,10 +6978,10 @@ public final class TiapAdminrpcpb {
           name_ = other.name_;
           onChanged();
         }
-        if (other.getId() != 0) {
+        if (other.getId() != 0L) {
           setId(other.getId());
         }
-        if (other.getDbId() != 0) {
+        if (other.getDbId() != 0L) {
           setDbId(other.getDbId());
         }
         if (!other.getToken().isEmpty()) {
@@ -7110,64 +7113,64 @@ public final class TiapAdminrpcpb {
         return this;
       }
 
-      private int id_ ;
+      private long id_ ;
       /**
-       * <code>int32 id = 2;</code>
+       * <code>int64 id = 2;</code>
        * @return The id.
        */
       @java.lang.Override
-      public int getId() {
+      public long getId() {
         return id_;
       }
       /**
-       * <code>int32 id = 2;</code>
+       * <code>int64 id = 2;</code>
        * @param value The id to set.
        * @return This builder for chaining.
        */
-      public Builder setId(int value) {
+      public Builder setId(long value) {
         
         id_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 id = 2;</code>
+       * <code>int64 id = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearId() {
         
-        id_ = 0;
+        id_ = 0L;
         onChanged();
         return this;
       }
 
-      private int dbId_ ;
+      private long dbId_ ;
       /**
-       * <code>int32 db_id = 3;</code>
+       * <code>int64 db_id = 3;</code>
        * @return The dbId.
        */
       @java.lang.Override
-      public int getDbId() {
+      public long getDbId() {
         return dbId_;
       }
       /**
-       * <code>int32 db_id = 3;</code>
+       * <code>int64 db_id = 3;</code>
        * @param value The dbId to set.
        * @return This builder for chaining.
        */
-      public Builder setDbId(int value) {
+      public Builder setDbId(long value) {
         
         dbId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 db_id = 3;</code>
+       * <code>int64 db_id = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearDbId() {
         
-        dbId_ = 0;
+        dbId_ = 0L;
         onChanged();
         return this;
       }
@@ -7642,10 +7645,10 @@ public final class TiapAdminrpcpb {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 table_number = 1;</code>
+     * <code>uint64 table_number = 1;</code>
      * @return The tableNumber.
      */
-    int getTableNumber();
+    long getTableNumber();
 
     /**
      * <code>uint64 storage_capacity = 2;</code>
@@ -7706,7 +7709,7 @@ public final class TiapAdminrpcpb {
               break;
             case 8: {
 
-              tableNumber_ = input.readUInt32();
+              tableNumber_ = input.readUInt64();
               break;
             }
             case 16: {
@@ -7752,13 +7755,13 @@ public final class TiapAdminrpcpb {
     }
 
     public static final int TABLE_NUMBER_FIELD_NUMBER = 1;
-    private int tableNumber_;
+    private long tableNumber_;
     /**
-     * <code>uint32 table_number = 1;</code>
+     * <code>uint64 table_number = 1;</code>
      * @return The tableNumber.
      */
     @java.lang.Override
-    public int getTableNumber() {
+    public long getTableNumber() {
       return tableNumber_;
     }
 
@@ -7798,8 +7801,8 @@ public final class TiapAdminrpcpb {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (tableNumber_ != 0) {
-        output.writeUInt32(1, tableNumber_);
+      if (tableNumber_ != 0L) {
+        output.writeUInt64(1, tableNumber_);
       }
       if (storageCapacity_ != 0L) {
         output.writeUInt64(2, storageCapacity_);
@@ -7816,9 +7819,9 @@ public final class TiapAdminrpcpb {
       if (size != -1) return size;
 
       size = 0;
-      if (tableNumber_ != 0) {
+      if (tableNumber_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, tableNumber_);
+          .computeUInt64Size(1, tableNumber_);
       }
       if (storageCapacity_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
@@ -7861,7 +7864,8 @@ public final class TiapAdminrpcpb {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + TABLE_NUMBER_FIELD_NUMBER;
-      hash = (53 * hash) + getTableNumber();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTableNumber());
       hash = (37 * hash) + STORAGE_CAPACITY_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getStorageCapacity());
@@ -8001,7 +8005,7 @@ public final class TiapAdminrpcpb {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        tableNumber_ = 0;
+        tableNumber_ = 0L;
 
         storageCapacity_ = 0L;
 
@@ -8084,7 +8088,7 @@ public final class TiapAdminrpcpb {
 
       public Builder mergeFrom(com.shopee.di.kvstore.proto.TiapAdminrpcpb.DBQuota other) {
         if (other == com.shopee.di.kvstore.proto.TiapAdminrpcpb.DBQuota.getDefaultInstance()) return this;
-        if (other.getTableNumber() != 0) {
+        if (other.getTableNumber() != 0L) {
           setTableNumber(other.getTableNumber());
         }
         if (other.getStorageCapacity() != 0L) {
@@ -8122,33 +8126,33 @@ public final class TiapAdminrpcpb {
         return this;
       }
 
-      private int tableNumber_ ;
+      private long tableNumber_ ;
       /**
-       * <code>uint32 table_number = 1;</code>
+       * <code>uint64 table_number = 1;</code>
        * @return The tableNumber.
        */
       @java.lang.Override
-      public int getTableNumber() {
+      public long getTableNumber() {
         return tableNumber_;
       }
       /**
-       * <code>uint32 table_number = 1;</code>
+       * <code>uint64 table_number = 1;</code>
        * @param value The tableNumber to set.
        * @return This builder for chaining.
        */
-      public Builder setTableNumber(int value) {
+      public Builder setTableNumber(long value) {
         
         tableNumber_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 table_number = 1;</code>
+       * <code>uint64 table_number = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearTableNumber() {
         
-        tableNumber_ = 0;
+        tableNumber_ = 0L;
         onChanged();
         return this;
       }
@@ -13511,15 +13515,15 @@ public final class TiapAdminrpcpb {
       "b.ListDBsResponseH\000\0227\n\014drop_db_resp\030\005 \001(" +
       "\0132\037.tiap_adminrpcpb.DropDBResponseH\000B\006\n\004" +
       "resp\"\205\001\n\006DBInfo\022\014\n\004name\030\001 \001(\t\022\n\n\002id\030\002 \001(" +
-      "\005\022\'\n\005state\030\003 \001(\0162\030.tiap_adminrpcpb.DBSta" +
+      "\003\022\'\n\005state\030\003 \001(\0162\030.tiap_adminrpcpb.DBSta" +
       "te\022\'\n\005quota\030\004 \001(\0132\030.tiap_adminrpcpb.DBQu" +
       "ota\022\017\n\007comment\030\005 \003(\t\"\326\001\n\tTableInfo\022\014\n\004na" +
-      "me\030\001 \001(\t\022\n\n\002id\030\002 \001(\005\022\r\n\005db_id\030\003 \001(\005\022\r\n\005t" +
+      "me\030\001 \001(\t\022\n\n\002id\030\002 \001(\003\022\r\n\005db_id\030\003 \001(\003\022\r\n\005t" +
       "oken\030\004 \001(\t\022(\n\004type\030\005 \001(\0162\032.tiap_adminrpc" +
       "pb.TableType\022*\n\005state\030\006 \001(\0162\033.tiap_admin" +
       "rpcpb.TableState\022*\n\005quota\030\007 \001(\0132\033.tiap_a" +
       "dminrpcpb.TableQuota\022\017\n\007comment\030\010 \003(\t\"J\n" +
-      "\007DBQuota\022\024\n\014table_number\030\001 \001(\r\022\030\n\020storag" +
+      "\007DBQuota\022\024\n\014table_number\030\001 \001(\004\022\030\n\020storag" +
       "e_capacity\030\002 \001(\004\022\017\n\007max_qps\030\003 \001(\004\"7\n\nTab" +
       "leQuota\022\030\n\020storage_capacity\030\001 \001(\004\022\017\n\007max" +
       "_qps\030\002 \001(\004\"H\n\017CreateDBRequest\022\014\n\004name\030\001 " +
