@@ -29,10 +29,6 @@ message AdminResponse {
   }
 }
 
-message TableInfo {
-  tiap_adminrpcpb.TableInfo common = 1;
-}
-
 message CreateTableRequest {
   string db_name  = 1;
   string name     = 2;
@@ -49,7 +45,7 @@ message GetTableRequest {
 }
 
 message GetTableResponse {
-  TableInfo info = 1;
+  tiap_adminrpcpb.TableInfo info = 1;
 }
 
 message ListTablesRequest {
@@ -57,7 +53,7 @@ message ListTablesRequest {
 }
 
 message ListTablesResponse {
-  repeated TableInfo infos = 1;
+  repeated tiap_adminrpcpb.TableInfo infos = 1;
 }
 
 message DropTableRequest {

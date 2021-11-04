@@ -55,6 +55,17 @@ message TableInfo {
   TableState state  = 6;
   TableQuota quota  = 7;
   repeated string comment = 8;
+  RawTableExtraInfo raw_extra = 9;
+  HBaseLikeTableInfo hbase_like_extra = 10;
+}
+
+message RawTableExtraInfo {
+}
+
+message HBaseLikeTableInfo {
+  map<string, string> families = 1;
+  bool salted = 2;
+  bool multi_version = 3;
 }
 
 enum TableType {

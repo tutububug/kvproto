@@ -3230,627 +3230,6 @@ public final class TiapRawAdminrpcpb {
 
   }
 
-  public interface TableInfoOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:tiap_raw_adminrpcpb.TableInfo)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>.tiap_adminrpcpb.TableInfo common = 1;</code>
-     * @return Whether the common field is set.
-     */
-    boolean hasCommon();
-    /**
-     * <code>.tiap_adminrpcpb.TableInfo common = 1;</code>
-     * @return The common.
-     */
-    com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo getCommon();
-    /**
-     * <code>.tiap_adminrpcpb.TableInfo common = 1;</code>
-     */
-    com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfoOrBuilder getCommonOrBuilder();
-  }
-  /**
-   * Protobuf type {@code tiap_raw_adminrpcpb.TableInfo}
-   */
-  public static final class TableInfo extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:tiap_raw_adminrpcpb.TableInfo)
-      TableInfoOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use TableInfo.newBuilder() to construct.
-    private TableInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private TableInfo() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new TableInfo();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private TableInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo.Builder subBuilder = null;
-              if (common_ != null) {
-                subBuilder = common_.toBuilder();
-              }
-              common_ = input.readMessage(com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(common_);
-                common_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.internal_static_tiap_raw_adminrpcpb_TableInfo_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.internal_static_tiap_raw_adminrpcpb_TableInfo_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo.class, com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo.Builder.class);
-    }
-
-    public static final int COMMON_FIELD_NUMBER = 1;
-    private com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo common_;
-    /**
-     * <code>.tiap_adminrpcpb.TableInfo common = 1;</code>
-     * @return Whether the common field is set.
-     */
-    @java.lang.Override
-    public boolean hasCommon() {
-      return common_ != null;
-    }
-    /**
-     * <code>.tiap_adminrpcpb.TableInfo common = 1;</code>
-     * @return The common.
-     */
-    @java.lang.Override
-    public com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo getCommon() {
-      return common_ == null ? com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo.getDefaultInstance() : common_;
-    }
-    /**
-     * <code>.tiap_adminrpcpb.TableInfo common = 1;</code>
-     */
-    @java.lang.Override
-    public com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfoOrBuilder getCommonOrBuilder() {
-      return getCommon();
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (common_ != null) {
-        output.writeMessage(1, getCommon());
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (common_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getCommon());
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo)) {
-        return super.equals(obj);
-      }
-      com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo other = (com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo) obj;
-
-      if (hasCommon() != other.hasCommon()) return false;
-      if (hasCommon()) {
-        if (!getCommon()
-            .equals(other.getCommon())) return false;
-      }
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasCommon()) {
-        hash = (37 * hash) + COMMON_FIELD_NUMBER;
-        hash = (53 * hash) + getCommon().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code tiap_raw_adminrpcpb.TableInfo}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:tiap_raw_adminrpcpb.TableInfo)
-        com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfoOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.internal_static_tiap_raw_adminrpcpb_TableInfo_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.internal_static_tiap_raw_adminrpcpb_TableInfo_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo.class, com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo.Builder.class);
-      }
-
-      // Construct using com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        if (commonBuilder_ == null) {
-          common_ = null;
-        } else {
-          common_ = null;
-          commonBuilder_ = null;
-        }
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.internal_static_tiap_raw_adminrpcpb_TableInfo_descriptor;
-      }
-
-      @java.lang.Override
-      public com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo getDefaultInstanceForType() {
-        return com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo build() {
-        com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo buildPartial() {
-        com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo result = new com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo(this);
-        if (commonBuilder_ == null) {
-          result.common_ = common_;
-        } else {
-          result.common_ = commonBuilder_.build();
-        }
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo) {
-          return mergeFrom((com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo other) {
-        if (other == com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo.getDefaultInstance()) return this;
-        if (other.hasCommon()) {
-          mergeCommon(other.getCommon());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo common_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo, com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo.Builder, com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfoOrBuilder> commonBuilder_;
-      /**
-       * <code>.tiap_adminrpcpb.TableInfo common = 1;</code>
-       * @return Whether the common field is set.
-       */
-      public boolean hasCommon() {
-        return commonBuilder_ != null || common_ != null;
-      }
-      /**
-       * <code>.tiap_adminrpcpb.TableInfo common = 1;</code>
-       * @return The common.
-       */
-      public com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo getCommon() {
-        if (commonBuilder_ == null) {
-          return common_ == null ? com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo.getDefaultInstance() : common_;
-        } else {
-          return commonBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.tiap_adminrpcpb.TableInfo common = 1;</code>
-       */
-      public Builder setCommon(com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo value) {
-        if (commonBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          common_ = value;
-          onChanged();
-        } else {
-          commonBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.tiap_adminrpcpb.TableInfo common = 1;</code>
-       */
-      public Builder setCommon(
-          com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo.Builder builderForValue) {
-        if (commonBuilder_ == null) {
-          common_ = builderForValue.build();
-          onChanged();
-        } else {
-          commonBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.tiap_adminrpcpb.TableInfo common = 1;</code>
-       */
-      public Builder mergeCommon(com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo value) {
-        if (commonBuilder_ == null) {
-          if (common_ != null) {
-            common_ =
-              com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo.newBuilder(common_).mergeFrom(value).buildPartial();
-          } else {
-            common_ = value;
-          }
-          onChanged();
-        } else {
-          commonBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.tiap_adminrpcpb.TableInfo common = 1;</code>
-       */
-      public Builder clearCommon() {
-        if (commonBuilder_ == null) {
-          common_ = null;
-          onChanged();
-        } else {
-          common_ = null;
-          commonBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.tiap_adminrpcpb.TableInfo common = 1;</code>
-       */
-      public com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo.Builder getCommonBuilder() {
-        
-        onChanged();
-        return getCommonFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.tiap_adminrpcpb.TableInfo common = 1;</code>
-       */
-      public com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfoOrBuilder getCommonOrBuilder() {
-        if (commonBuilder_ != null) {
-          return commonBuilder_.getMessageOrBuilder();
-        } else {
-          return common_ == null ?
-              com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo.getDefaultInstance() : common_;
-        }
-      }
-      /**
-       * <code>.tiap_adminrpcpb.TableInfo common = 1;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo, com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo.Builder, com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfoOrBuilder> 
-          getCommonFieldBuilder() {
-        if (commonBuilder_ == null) {
-          commonBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo, com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo.Builder, com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfoOrBuilder>(
-                  getCommon(),
-                  getParentForChildren(),
-                  isClean());
-          common_ = null;
-        }
-        return commonBuilder_;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:tiap_raw_adminrpcpb.TableInfo)
-    }
-
-    // @@protoc_insertion_point(class_scope:tiap_raw_adminrpcpb.TableInfo)
-    private static final com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo();
-    }
-
-    public static com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<TableInfo>
-        PARSER = new com.google.protobuf.AbstractParser<TableInfo>() {
-      @java.lang.Override
-      public TableInfo parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TableInfo(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<TableInfo> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<TableInfo> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
   public interface CreateTableRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:tiap_raw_adminrpcpb.CreateTableRequest)
       com.google.protobuf.MessageOrBuilder {
@@ -6063,19 +5442,19 @@ public final class TiapRawAdminrpcpb {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.tiap_raw_adminrpcpb.TableInfo info = 1;</code>
+     * <code>.tiap_adminrpcpb.TableInfo info = 1;</code>
      * @return Whether the info field is set.
      */
     boolean hasInfo();
     /**
-     * <code>.tiap_raw_adminrpcpb.TableInfo info = 1;</code>
+     * <code>.tiap_adminrpcpb.TableInfo info = 1;</code>
      * @return The info.
      */
-    com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo getInfo();
+    com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo getInfo();
     /**
-     * <code>.tiap_raw_adminrpcpb.TableInfo info = 1;</code>
+     * <code>.tiap_adminrpcpb.TableInfo info = 1;</code>
      */
-    com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfoOrBuilder getInfoOrBuilder();
+    com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfoOrBuilder getInfoOrBuilder();
   }
   /**
    * Protobuf type {@code tiap_raw_adminrpcpb.GetTableResponse}
@@ -6123,11 +5502,11 @@ public final class TiapRawAdminrpcpb {
               done = true;
               break;
             case 10: {
-              com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo.Builder subBuilder = null;
+              com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo.Builder subBuilder = null;
               if (info_ != null) {
                 subBuilder = info_.toBuilder();
               }
-              info_ = input.readMessage(com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo.parser(), extensionRegistry);
+              info_ = input.readMessage(com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(info_);
                 info_ = subBuilder.buildPartial();
@@ -6168,9 +5547,9 @@ public final class TiapRawAdminrpcpb {
     }
 
     public static final int INFO_FIELD_NUMBER = 1;
-    private com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo info_;
+    private com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo info_;
     /**
-     * <code>.tiap_raw_adminrpcpb.TableInfo info = 1;</code>
+     * <code>.tiap_adminrpcpb.TableInfo info = 1;</code>
      * @return Whether the info field is set.
      */
     @java.lang.Override
@@ -6178,18 +5557,18 @@ public final class TiapRawAdminrpcpb {
       return info_ != null;
     }
     /**
-     * <code>.tiap_raw_adminrpcpb.TableInfo info = 1;</code>
+     * <code>.tiap_adminrpcpb.TableInfo info = 1;</code>
      * @return The info.
      */
     @java.lang.Override
-    public com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo getInfo() {
-      return info_ == null ? com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo.getDefaultInstance() : info_;
+    public com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo getInfo() {
+      return info_ == null ? com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo.getDefaultInstance() : info_;
     }
     /**
-     * <code>.tiap_raw_adminrpcpb.TableInfo info = 1;</code>
+     * <code>.tiap_adminrpcpb.TableInfo info = 1;</code>
      */
     @java.lang.Override
-    public com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfoOrBuilder getInfoOrBuilder() {
+    public com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfoOrBuilder getInfoOrBuilder() {
       return getInfo();
     }
 
@@ -6508,31 +5887,31 @@ public final class TiapRawAdminrpcpb {
         return this;
       }
 
-      private com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo info_;
+      private com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo info_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo, com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo.Builder, com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfoOrBuilder> infoBuilder_;
+          com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo, com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo.Builder, com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfoOrBuilder> infoBuilder_;
       /**
-       * <code>.tiap_raw_adminrpcpb.TableInfo info = 1;</code>
+       * <code>.tiap_adminrpcpb.TableInfo info = 1;</code>
        * @return Whether the info field is set.
        */
       public boolean hasInfo() {
         return infoBuilder_ != null || info_ != null;
       }
       /**
-       * <code>.tiap_raw_adminrpcpb.TableInfo info = 1;</code>
+       * <code>.tiap_adminrpcpb.TableInfo info = 1;</code>
        * @return The info.
        */
-      public com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo getInfo() {
+      public com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo getInfo() {
         if (infoBuilder_ == null) {
-          return info_ == null ? com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo.getDefaultInstance() : info_;
+          return info_ == null ? com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo.getDefaultInstance() : info_;
         } else {
           return infoBuilder_.getMessage();
         }
       }
       /**
-       * <code>.tiap_raw_adminrpcpb.TableInfo info = 1;</code>
+       * <code>.tiap_adminrpcpb.TableInfo info = 1;</code>
        */
-      public Builder setInfo(com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo value) {
+      public Builder setInfo(com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo value) {
         if (infoBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -6546,10 +5925,10 @@ public final class TiapRawAdminrpcpb {
         return this;
       }
       /**
-       * <code>.tiap_raw_adminrpcpb.TableInfo info = 1;</code>
+       * <code>.tiap_adminrpcpb.TableInfo info = 1;</code>
        */
       public Builder setInfo(
-          com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo.Builder builderForValue) {
+          com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo.Builder builderForValue) {
         if (infoBuilder_ == null) {
           info_ = builderForValue.build();
           onChanged();
@@ -6560,13 +5939,13 @@ public final class TiapRawAdminrpcpb {
         return this;
       }
       /**
-       * <code>.tiap_raw_adminrpcpb.TableInfo info = 1;</code>
+       * <code>.tiap_adminrpcpb.TableInfo info = 1;</code>
        */
-      public Builder mergeInfo(com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo value) {
+      public Builder mergeInfo(com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo value) {
         if (infoBuilder_ == null) {
           if (info_ != null) {
             info_ =
-              com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo.newBuilder(info_).mergeFrom(value).buildPartial();
+              com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo.newBuilder(info_).mergeFrom(value).buildPartial();
           } else {
             info_ = value;
           }
@@ -6578,7 +5957,7 @@ public final class TiapRawAdminrpcpb {
         return this;
       }
       /**
-       * <code>.tiap_raw_adminrpcpb.TableInfo info = 1;</code>
+       * <code>.tiap_adminrpcpb.TableInfo info = 1;</code>
        */
       public Builder clearInfo() {
         if (infoBuilder_ == null) {
@@ -6592,33 +5971,33 @@ public final class TiapRawAdminrpcpb {
         return this;
       }
       /**
-       * <code>.tiap_raw_adminrpcpb.TableInfo info = 1;</code>
+       * <code>.tiap_adminrpcpb.TableInfo info = 1;</code>
        */
-      public com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo.Builder getInfoBuilder() {
+      public com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo.Builder getInfoBuilder() {
         
         onChanged();
         return getInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>.tiap_raw_adminrpcpb.TableInfo info = 1;</code>
+       * <code>.tiap_adminrpcpb.TableInfo info = 1;</code>
        */
-      public com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfoOrBuilder getInfoOrBuilder() {
+      public com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfoOrBuilder getInfoOrBuilder() {
         if (infoBuilder_ != null) {
           return infoBuilder_.getMessageOrBuilder();
         } else {
           return info_ == null ?
-              com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo.getDefaultInstance() : info_;
+              com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo.getDefaultInstance() : info_;
         }
       }
       /**
-       * <code>.tiap_raw_adminrpcpb.TableInfo info = 1;</code>
+       * <code>.tiap_adminrpcpb.TableInfo info = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo, com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo.Builder, com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfoOrBuilder> 
+          com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo, com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo.Builder, com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfoOrBuilder> 
           getInfoFieldBuilder() {
         if (infoBuilder_ == null) {
           infoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo, com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo.Builder, com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfoOrBuilder>(
+              com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo, com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo.Builder, com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfoOrBuilder>(
                   getInfo(),
                   getParentForChildren(),
                   isClean());
@@ -7252,27 +6631,27 @@ public final class TiapRawAdminrpcpb {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .tiap_raw_adminrpcpb.TableInfo infos = 1;</code>
+     * <code>repeated .tiap_adminrpcpb.TableInfo infos = 1;</code>
      */
-    java.util.List<com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo> 
+    java.util.List<com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo> 
         getInfosList();
     /**
-     * <code>repeated .tiap_raw_adminrpcpb.TableInfo infos = 1;</code>
+     * <code>repeated .tiap_adminrpcpb.TableInfo infos = 1;</code>
      */
-    com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo getInfos(int index);
+    com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo getInfos(int index);
     /**
-     * <code>repeated .tiap_raw_adminrpcpb.TableInfo infos = 1;</code>
+     * <code>repeated .tiap_adminrpcpb.TableInfo infos = 1;</code>
      */
     int getInfosCount();
     /**
-     * <code>repeated .tiap_raw_adminrpcpb.TableInfo infos = 1;</code>
+     * <code>repeated .tiap_adminrpcpb.TableInfo infos = 1;</code>
      */
-    java.util.List<? extends com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfoOrBuilder> 
+    java.util.List<? extends com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfoOrBuilder> 
         getInfosOrBuilderList();
     /**
-     * <code>repeated .tiap_raw_adminrpcpb.TableInfo infos = 1;</code>
+     * <code>repeated .tiap_adminrpcpb.TableInfo infos = 1;</code>
      */
-    com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfoOrBuilder getInfosOrBuilder(
+    com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfoOrBuilder getInfosOrBuilder(
         int index);
   }
   /**
@@ -7324,11 +6703,11 @@ public final class TiapRawAdminrpcpb {
               break;
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                infos_ = new java.util.ArrayList<com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo>();
+                infos_ = new java.util.ArrayList<com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo>();
                 mutable_bitField0_ |= 0x00000001;
               }
               infos_.add(
-                  input.readMessage(com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo.parser(), extensionRegistry));
+                  input.readMessage(com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -7367,41 +6746,41 @@ public final class TiapRawAdminrpcpb {
     }
 
     public static final int INFOS_FIELD_NUMBER = 1;
-    private java.util.List<com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo> infos_;
+    private java.util.List<com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo> infos_;
     /**
-     * <code>repeated .tiap_raw_adminrpcpb.TableInfo infos = 1;</code>
+     * <code>repeated .tiap_adminrpcpb.TableInfo infos = 1;</code>
      */
     @java.lang.Override
-    public java.util.List<com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo> getInfosList() {
+    public java.util.List<com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo> getInfosList() {
       return infos_;
     }
     /**
-     * <code>repeated .tiap_raw_adminrpcpb.TableInfo infos = 1;</code>
+     * <code>repeated .tiap_adminrpcpb.TableInfo infos = 1;</code>
      */
     @java.lang.Override
-    public java.util.List<? extends com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfoOrBuilder> 
+    public java.util.List<? extends com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfoOrBuilder> 
         getInfosOrBuilderList() {
       return infos_;
     }
     /**
-     * <code>repeated .tiap_raw_adminrpcpb.TableInfo infos = 1;</code>
+     * <code>repeated .tiap_adminrpcpb.TableInfo infos = 1;</code>
      */
     @java.lang.Override
     public int getInfosCount() {
       return infos_.size();
     }
     /**
-     * <code>repeated .tiap_raw_adminrpcpb.TableInfo infos = 1;</code>
+     * <code>repeated .tiap_adminrpcpb.TableInfo infos = 1;</code>
      */
     @java.lang.Override
-    public com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo getInfos(int index) {
+    public com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo getInfos(int index) {
       return infos_.get(index);
     }
     /**
-     * <code>repeated .tiap_raw_adminrpcpb.TableInfo infos = 1;</code>
+     * <code>repeated .tiap_adminrpcpb.TableInfo infos = 1;</code>
      */
     @java.lang.Override
-    public com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfoOrBuilder getInfosOrBuilder(
+    public com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfoOrBuilder getInfosOrBuilder(
         int index) {
       return infos_.get(index);
     }
@@ -7748,22 +7127,22 @@ public final class TiapRawAdminrpcpb {
       }
       private int bitField0_;
 
-      private java.util.List<com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo> infos_ =
+      private java.util.List<com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo> infos_ =
         java.util.Collections.emptyList();
       private void ensureInfosIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          infos_ = new java.util.ArrayList<com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo>(infos_);
+          infos_ = new java.util.ArrayList<com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo>(infos_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo, com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo.Builder, com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfoOrBuilder> infosBuilder_;
+          com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo, com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo.Builder, com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfoOrBuilder> infosBuilder_;
 
       /**
-       * <code>repeated .tiap_raw_adminrpcpb.TableInfo infos = 1;</code>
+       * <code>repeated .tiap_adminrpcpb.TableInfo infos = 1;</code>
        */
-      public java.util.List<com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo> getInfosList() {
+      public java.util.List<com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo> getInfosList() {
         if (infosBuilder_ == null) {
           return java.util.Collections.unmodifiableList(infos_);
         } else {
@@ -7771,7 +7150,7 @@ public final class TiapRawAdminrpcpb {
         }
       }
       /**
-       * <code>repeated .tiap_raw_adminrpcpb.TableInfo infos = 1;</code>
+       * <code>repeated .tiap_adminrpcpb.TableInfo infos = 1;</code>
        */
       public int getInfosCount() {
         if (infosBuilder_ == null) {
@@ -7781,9 +7160,9 @@ public final class TiapRawAdminrpcpb {
         }
       }
       /**
-       * <code>repeated .tiap_raw_adminrpcpb.TableInfo infos = 1;</code>
+       * <code>repeated .tiap_adminrpcpb.TableInfo infos = 1;</code>
        */
-      public com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo getInfos(int index) {
+      public com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo getInfos(int index) {
         if (infosBuilder_ == null) {
           return infos_.get(index);
         } else {
@@ -7791,10 +7170,10 @@ public final class TiapRawAdminrpcpb {
         }
       }
       /**
-       * <code>repeated .tiap_raw_adminrpcpb.TableInfo infos = 1;</code>
+       * <code>repeated .tiap_adminrpcpb.TableInfo infos = 1;</code>
        */
       public Builder setInfos(
-          int index, com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo value) {
+          int index, com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo value) {
         if (infosBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -7808,10 +7187,10 @@ public final class TiapRawAdminrpcpb {
         return this;
       }
       /**
-       * <code>repeated .tiap_raw_adminrpcpb.TableInfo infos = 1;</code>
+       * <code>repeated .tiap_adminrpcpb.TableInfo infos = 1;</code>
        */
       public Builder setInfos(
-          int index, com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo.Builder builderForValue) {
+          int index, com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo.Builder builderForValue) {
         if (infosBuilder_ == null) {
           ensureInfosIsMutable();
           infos_.set(index, builderForValue.build());
@@ -7822,9 +7201,9 @@ public final class TiapRawAdminrpcpb {
         return this;
       }
       /**
-       * <code>repeated .tiap_raw_adminrpcpb.TableInfo infos = 1;</code>
+       * <code>repeated .tiap_adminrpcpb.TableInfo infos = 1;</code>
        */
-      public Builder addInfos(com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo value) {
+      public Builder addInfos(com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo value) {
         if (infosBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -7838,10 +7217,10 @@ public final class TiapRawAdminrpcpb {
         return this;
       }
       /**
-       * <code>repeated .tiap_raw_adminrpcpb.TableInfo infos = 1;</code>
+       * <code>repeated .tiap_adminrpcpb.TableInfo infos = 1;</code>
        */
       public Builder addInfos(
-          int index, com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo value) {
+          int index, com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo value) {
         if (infosBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -7855,10 +7234,10 @@ public final class TiapRawAdminrpcpb {
         return this;
       }
       /**
-       * <code>repeated .tiap_raw_adminrpcpb.TableInfo infos = 1;</code>
+       * <code>repeated .tiap_adminrpcpb.TableInfo infos = 1;</code>
        */
       public Builder addInfos(
-          com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo.Builder builderForValue) {
+          com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo.Builder builderForValue) {
         if (infosBuilder_ == null) {
           ensureInfosIsMutable();
           infos_.add(builderForValue.build());
@@ -7869,10 +7248,10 @@ public final class TiapRawAdminrpcpb {
         return this;
       }
       /**
-       * <code>repeated .tiap_raw_adminrpcpb.TableInfo infos = 1;</code>
+       * <code>repeated .tiap_adminrpcpb.TableInfo infos = 1;</code>
        */
       public Builder addInfos(
-          int index, com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo.Builder builderForValue) {
+          int index, com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo.Builder builderForValue) {
         if (infosBuilder_ == null) {
           ensureInfosIsMutable();
           infos_.add(index, builderForValue.build());
@@ -7883,10 +7262,10 @@ public final class TiapRawAdminrpcpb {
         return this;
       }
       /**
-       * <code>repeated .tiap_raw_adminrpcpb.TableInfo infos = 1;</code>
+       * <code>repeated .tiap_adminrpcpb.TableInfo infos = 1;</code>
        */
       public Builder addAllInfos(
-          java.lang.Iterable<? extends com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo> values) {
+          java.lang.Iterable<? extends com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo> values) {
         if (infosBuilder_ == null) {
           ensureInfosIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -7898,7 +7277,7 @@ public final class TiapRawAdminrpcpb {
         return this;
       }
       /**
-       * <code>repeated .tiap_raw_adminrpcpb.TableInfo infos = 1;</code>
+       * <code>repeated .tiap_adminrpcpb.TableInfo infos = 1;</code>
        */
       public Builder clearInfos() {
         if (infosBuilder_ == null) {
@@ -7911,7 +7290,7 @@ public final class TiapRawAdminrpcpb {
         return this;
       }
       /**
-       * <code>repeated .tiap_raw_adminrpcpb.TableInfo infos = 1;</code>
+       * <code>repeated .tiap_adminrpcpb.TableInfo infos = 1;</code>
        */
       public Builder removeInfos(int index) {
         if (infosBuilder_ == null) {
@@ -7924,16 +7303,16 @@ public final class TiapRawAdminrpcpb {
         return this;
       }
       /**
-       * <code>repeated .tiap_raw_adminrpcpb.TableInfo infos = 1;</code>
+       * <code>repeated .tiap_adminrpcpb.TableInfo infos = 1;</code>
        */
-      public com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo.Builder getInfosBuilder(
+      public com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo.Builder getInfosBuilder(
           int index) {
         return getInfosFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .tiap_raw_adminrpcpb.TableInfo infos = 1;</code>
+       * <code>repeated .tiap_adminrpcpb.TableInfo infos = 1;</code>
        */
-      public com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfoOrBuilder getInfosOrBuilder(
+      public com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfoOrBuilder getInfosOrBuilder(
           int index) {
         if (infosBuilder_ == null) {
           return infos_.get(index);  } else {
@@ -7941,9 +7320,9 @@ public final class TiapRawAdminrpcpb {
         }
       }
       /**
-       * <code>repeated .tiap_raw_adminrpcpb.TableInfo infos = 1;</code>
+       * <code>repeated .tiap_adminrpcpb.TableInfo infos = 1;</code>
        */
-      public java.util.List<? extends com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfoOrBuilder> 
+      public java.util.List<? extends com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfoOrBuilder> 
            getInfosOrBuilderList() {
         if (infosBuilder_ != null) {
           return infosBuilder_.getMessageOrBuilderList();
@@ -7952,33 +7331,33 @@ public final class TiapRawAdminrpcpb {
         }
       }
       /**
-       * <code>repeated .tiap_raw_adminrpcpb.TableInfo infos = 1;</code>
+       * <code>repeated .tiap_adminrpcpb.TableInfo infos = 1;</code>
        */
-      public com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo.Builder addInfosBuilder() {
+      public com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo.Builder addInfosBuilder() {
         return getInfosFieldBuilder().addBuilder(
-            com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo.getDefaultInstance());
+            com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .tiap_raw_adminrpcpb.TableInfo infos = 1;</code>
+       * <code>repeated .tiap_adminrpcpb.TableInfo infos = 1;</code>
        */
-      public com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo.Builder addInfosBuilder(
+      public com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo.Builder addInfosBuilder(
           int index) {
         return getInfosFieldBuilder().addBuilder(
-            index, com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo.getDefaultInstance());
+            index, com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .tiap_raw_adminrpcpb.TableInfo infos = 1;</code>
+       * <code>repeated .tiap_adminrpcpb.TableInfo infos = 1;</code>
        */
-      public java.util.List<com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo.Builder> 
+      public java.util.List<com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo.Builder> 
            getInfosBuilderList() {
         return getInfosFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo, com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo.Builder, com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfoOrBuilder> 
+          com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo, com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo.Builder, com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfoOrBuilder> 
           getInfosFieldBuilder() {
         if (infosBuilder_ == null) {
           infosBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo, com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfo.Builder, com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.TableInfoOrBuilder>(
+              com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo, com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfo.Builder, com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableInfoOrBuilder>(
                   infos_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
@@ -9187,11 +8566,6 @@ public final class TiapRawAdminrpcpb {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_tiap_raw_adminrpcpb_AdminResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_tiap_raw_adminrpcpb_TableInfo_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_tiap_raw_adminrpcpb_TableInfo_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_tiap_raw_adminrpcpb_CreateTableRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -9259,20 +8633,18 @@ public final class TiapRawAdminrpcpb {
       "\030\004 \001(\0132\'.tiap_raw_adminrpcpb.ListTablesR" +
       "esponseH\000\022A\n\017drop_table_resp\030\005 \001(\0132&.tia" +
       "p_raw_adminrpcpb.DropTableResponseH\000B\006\n\004" +
-      "resp\"7\n\tTableInfo\022*\n\006common\030\001 \001(\0132\032.tiap" +
-      "_adminrpcpb.TableInfo\"_\n\022CreateTableRequ" +
-      "est\022\017\n\007db_name\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022*\n\005qu" +
-      "ota\030\003 \001(\0132\033.tiap_adminrpcpb.TableQuota\"$" +
-      "\n\023CreateTableResponse\022\r\n\005token\030\001 \001(\t\"0\n\017" +
-      "GetTableRequest\022\017\n\007db_name\030\001 \001(\t\022\014\n\004name" +
-      "\030\002 \001(\t\"@\n\020GetTableResponse\022,\n\004info\030\001 \001(\013" +
-      "2\036.tiap_raw_adminrpcpb.TableInfo\"$\n\021List" +
-      "TablesRequest\022\017\n\007db_name\030\001 \001(\t\"C\n\022ListTa" +
-      "blesResponse\022-\n\005infos\030\001 \003(\0132\036.tiap_raw_a" +
-      "dminrpcpb.TableInfo\"1\n\020DropTableRequest\022" +
-      "\017\n\007db_name\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\"\023\n\021DropTa" +
-      "bleResponseB\035\n\033com.shopee.di.kvstore.pro" +
-      "tob\006proto3"
+      "resp\"_\n\022CreateTableRequest\022\017\n\007db_name\030\001 " +
+      "\001(\t\022\014\n\004name\030\002 \001(\t\022*\n\005quota\030\003 \001(\0132\033.tiap_" +
+      "adminrpcpb.TableQuota\"$\n\023CreateTableResp" +
+      "onse\022\r\n\005token\030\001 \001(\t\"0\n\017GetTableRequest\022\017" +
+      "\n\007db_name\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\"<\n\020GetTabl" +
+      "eResponse\022(\n\004info\030\001 \001(\0132\032.tiap_adminrpcp" +
+      "b.TableInfo\"$\n\021ListTablesRequest\022\017\n\007db_n" +
+      "ame\030\001 \001(\t\"?\n\022ListTablesResponse\022)\n\005infos" +
+      "\030\001 \003(\0132\032.tiap_adminrpcpb.TableInfo\"1\n\020Dr" +
+      "opTableRequest\022\017\n\007db_name\030\001 \001(\t\022\014\n\004name\030" +
+      "\002 \001(\t\"\023\n\021DropTableResponseB\035\n\033com.shopee" +
+      ".di.kvstore.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -9291,56 +8663,50 @@ public final class TiapRawAdminrpcpb {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tiap_raw_adminrpcpb_AdminResponse_descriptor,
         new java.lang.String[] { "Header", "CreateTableResp", "GetTableResp", "ListTablesResp", "DropTableResp", "Resp", });
-    internal_static_tiap_raw_adminrpcpb_TableInfo_descriptor =
-      getDescriptor().getMessageTypes().get(2);
-    internal_static_tiap_raw_adminrpcpb_TableInfo_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_tiap_raw_adminrpcpb_TableInfo_descriptor,
-        new java.lang.String[] { "Common", });
     internal_static_tiap_raw_adminrpcpb_CreateTableRequest_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(2);
     internal_static_tiap_raw_adminrpcpb_CreateTableRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tiap_raw_adminrpcpb_CreateTableRequest_descriptor,
         new java.lang.String[] { "DbName", "Name", "Quota", });
     internal_static_tiap_raw_adminrpcpb_CreateTableResponse_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_tiap_raw_adminrpcpb_CreateTableResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tiap_raw_adminrpcpb_CreateTableResponse_descriptor,
         new java.lang.String[] { "Token", });
     internal_static_tiap_raw_adminrpcpb_GetTableRequest_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_tiap_raw_adminrpcpb_GetTableRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tiap_raw_adminrpcpb_GetTableRequest_descriptor,
         new java.lang.String[] { "DbName", "Name", });
     internal_static_tiap_raw_adminrpcpb_GetTableResponse_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_tiap_raw_adminrpcpb_GetTableResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tiap_raw_adminrpcpb_GetTableResponse_descriptor,
         new java.lang.String[] { "Info", });
     internal_static_tiap_raw_adminrpcpb_ListTablesRequest_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_tiap_raw_adminrpcpb_ListTablesRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tiap_raw_adminrpcpb_ListTablesRequest_descriptor,
         new java.lang.String[] { "DbName", });
     internal_static_tiap_raw_adminrpcpb_ListTablesResponse_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_tiap_raw_adminrpcpb_ListTablesResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tiap_raw_adminrpcpb_ListTablesResponse_descriptor,
         new java.lang.String[] { "Infos", });
     internal_static_tiap_raw_adminrpcpb_DropTableRequest_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_tiap_raw_adminrpcpb_DropTableRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tiap_raw_adminrpcpb_DropTableRequest_descriptor,
         new java.lang.String[] { "DbName", "Name", });
     internal_static_tiap_raw_adminrpcpb_DropTableResponse_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_tiap_raw_adminrpcpb_DropTableResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tiap_raw_adminrpcpb_DropTableResponse_descriptor,
