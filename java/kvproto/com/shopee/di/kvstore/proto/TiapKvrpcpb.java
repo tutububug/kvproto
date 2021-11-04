@@ -43,16 +43,40 @@ public final class TiapKvrpcpb {
         getTableNameBytes();
 
     /**
-     * <code>string table_token = 3;</code>
-     * @return The tableToken.
+     * <code>string token = 3;</code>
+     * @return The token.
      */
-    java.lang.String getTableToken();
+    java.lang.String getToken();
     /**
-     * <code>string table_token = 3;</code>
-     * @return The bytes for tableToken.
+     * <code>string token = 3;</code>
+     * @return The bytes for token.
      */
     com.google.protobuf.ByteString
-        getTableTokenBytes();
+        getTokenBytes();
+
+    /**
+     * <code>string app_name = 4;</code>
+     * @return The appName.
+     */
+    java.lang.String getAppName();
+    /**
+     * <code>string app_name = 4;</code>
+     * @return The bytes for appName.
+     */
+    com.google.protobuf.ByteString
+        getAppNameBytes();
+
+    /**
+     * <code>string ext_json = 5;</code>
+     * @return The extJson.
+     */
+    java.lang.String getExtJson();
+    /**
+     * <code>string ext_json = 5;</code>
+     * @return The bytes for extJson.
+     */
+    com.google.protobuf.ByteString
+        getExtJsonBytes();
   }
   /**
    * Protobuf type {@code tiap_kvrpcpb.KVRequestHeader}
@@ -69,7 +93,9 @@ public final class TiapKvrpcpb {
     private KVRequestHeader() {
       dbName_ = "";
       tableName_ = "";
-      tableToken_ = "";
+      token_ = "";
+      appName_ = "";
+      extJson_ = "";
     }
 
     @java.lang.Override
@@ -117,7 +143,19 @@ public final class TiapKvrpcpb {
             case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              tableToken_ = s;
+              token_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              appName_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              extJson_ = s;
               break;
             }
             default: {
@@ -228,38 +266,114 @@ public final class TiapKvrpcpb {
       }
     }
 
-    public static final int TABLE_TOKEN_FIELD_NUMBER = 3;
-    private volatile java.lang.Object tableToken_;
+    public static final int TOKEN_FIELD_NUMBER = 3;
+    private volatile java.lang.Object token_;
     /**
-     * <code>string table_token = 3;</code>
-     * @return The tableToken.
+     * <code>string token = 3;</code>
+     * @return The token.
      */
     @java.lang.Override
-    public java.lang.String getTableToken() {
-      java.lang.Object ref = tableToken_;
+    public java.lang.String getToken() {
+      java.lang.Object ref = token_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        tableToken_ = s;
+        token_ = s;
         return s;
       }
     }
     /**
-     * <code>string table_token = 3;</code>
-     * @return The bytes for tableToken.
+     * <code>string token = 3;</code>
+     * @return The bytes for token.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getTableTokenBytes() {
-      java.lang.Object ref = tableToken_;
+        getTokenBytes() {
+      java.lang.Object ref = token_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        tableToken_ = b;
+        token_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int APP_NAME_FIELD_NUMBER = 4;
+    private volatile java.lang.Object appName_;
+    /**
+     * <code>string app_name = 4;</code>
+     * @return The appName.
+     */
+    @java.lang.Override
+    public java.lang.String getAppName() {
+      java.lang.Object ref = appName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        appName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string app_name = 4;</code>
+     * @return The bytes for appName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAppNameBytes() {
+      java.lang.Object ref = appName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        appName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int EXT_JSON_FIELD_NUMBER = 5;
+    private volatile java.lang.Object extJson_;
+    /**
+     * <code>string ext_json = 5;</code>
+     * @return The extJson.
+     */
+    @java.lang.Override
+    public java.lang.String getExtJson() {
+      java.lang.Object ref = extJson_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        extJson_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string ext_json = 5;</code>
+     * @return The bytes for extJson.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getExtJsonBytes() {
+      java.lang.Object ref = extJson_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        extJson_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -286,8 +400,14 @@ public final class TiapKvrpcpb {
       if (!getTableNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, tableName_);
       }
-      if (!getTableTokenBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, tableToken_);
+      if (!getTokenBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, token_);
+      }
+      if (!getAppNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, appName_);
+      }
+      if (!getExtJsonBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, extJson_);
       }
       unknownFields.writeTo(output);
     }
@@ -304,8 +424,14 @@ public final class TiapKvrpcpb {
       if (!getTableNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, tableName_);
       }
-      if (!getTableTokenBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, tableToken_);
+      if (!getTokenBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, token_);
+      }
+      if (!getAppNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, appName_);
+      }
+      if (!getExtJsonBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, extJson_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -326,8 +452,12 @@ public final class TiapKvrpcpb {
           .equals(other.getDbName())) return false;
       if (!getTableName()
           .equals(other.getTableName())) return false;
-      if (!getTableToken()
-          .equals(other.getTableToken())) return false;
+      if (!getToken()
+          .equals(other.getToken())) return false;
+      if (!getAppName()
+          .equals(other.getAppName())) return false;
+      if (!getExtJson()
+          .equals(other.getExtJson())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -343,8 +473,12 @@ public final class TiapKvrpcpb {
       hash = (53 * hash) + getDbName().hashCode();
       hash = (37 * hash) + TABLE_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getTableName().hashCode();
-      hash = (37 * hash) + TABLE_TOKEN_FIELD_NUMBER;
-      hash = (53 * hash) + getTableToken().hashCode();
+      hash = (37 * hash) + TOKEN_FIELD_NUMBER;
+      hash = (53 * hash) + getToken().hashCode();
+      hash = (37 * hash) + APP_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getAppName().hashCode();
+      hash = (37 * hash) + EXT_JSON_FIELD_NUMBER;
+      hash = (53 * hash) + getExtJson().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -482,7 +616,11 @@ public final class TiapKvrpcpb {
 
         tableName_ = "";
 
-        tableToken_ = "";
+        token_ = "";
+
+        appName_ = "";
+
+        extJson_ = "";
 
         return this;
       }
@@ -512,7 +650,9 @@ public final class TiapKvrpcpb {
         com.shopee.di.kvstore.proto.TiapKvrpcpb.KVRequestHeader result = new com.shopee.di.kvstore.proto.TiapKvrpcpb.KVRequestHeader(this);
         result.dbName_ = dbName_;
         result.tableName_ = tableName_;
-        result.tableToken_ = tableToken_;
+        result.token_ = token_;
+        result.appName_ = appName_;
+        result.extJson_ = extJson_;
         onBuilt();
         return result;
       }
@@ -569,8 +709,16 @@ public final class TiapKvrpcpb {
           tableName_ = other.tableName_;
           onChanged();
         }
-        if (!other.getTableToken().isEmpty()) {
-          tableToken_ = other.tableToken_;
+        if (!other.getToken().isEmpty()) {
+          token_ = other.token_;
+          onChanged();
+        }
+        if (!other.getAppName().isEmpty()) {
+          appName_ = other.appName_;
+          onChanged();
+        }
+        if (!other.getExtJson().isEmpty()) {
+          extJson_ = other.extJson_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -754,78 +902,230 @@ public final class TiapKvrpcpb {
         return this;
       }
 
-      private java.lang.Object tableToken_ = "";
+      private java.lang.Object token_ = "";
       /**
-       * <code>string table_token = 3;</code>
-       * @return The tableToken.
+       * <code>string token = 3;</code>
+       * @return The token.
        */
-      public java.lang.String getTableToken() {
-        java.lang.Object ref = tableToken_;
+      public java.lang.String getToken() {
+        java.lang.Object ref = token_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          tableToken_ = s;
+          token_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string table_token = 3;</code>
-       * @return The bytes for tableToken.
+       * <code>string token = 3;</code>
+       * @return The bytes for token.
        */
       public com.google.protobuf.ByteString
-          getTableTokenBytes() {
-        java.lang.Object ref = tableToken_;
+          getTokenBytes() {
+        java.lang.Object ref = token_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          tableToken_ = b;
+          token_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string table_token = 3;</code>
-       * @param value The tableToken to set.
+       * <code>string token = 3;</code>
+       * @param value The token to set.
        * @return This builder for chaining.
        */
-      public Builder setTableToken(
+      public Builder setToken(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        tableToken_ = value;
+        token_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string table_token = 3;</code>
+       * <code>string token = 3;</code>
        * @return This builder for chaining.
        */
-      public Builder clearTableToken() {
+      public Builder clearToken() {
         
-        tableToken_ = getDefaultInstance().getTableToken();
+        token_ = getDefaultInstance().getToken();
         onChanged();
         return this;
       }
       /**
-       * <code>string table_token = 3;</code>
-       * @param value The bytes for tableToken to set.
+       * <code>string token = 3;</code>
+       * @param value The bytes for token to set.
        * @return This builder for chaining.
        */
-      public Builder setTableTokenBytes(
+      public Builder setTokenBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        tableToken_ = value;
+        token_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object appName_ = "";
+      /**
+       * <code>string app_name = 4;</code>
+       * @return The appName.
+       */
+      public java.lang.String getAppName() {
+        java.lang.Object ref = appName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          appName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string app_name = 4;</code>
+       * @return The bytes for appName.
+       */
+      public com.google.protobuf.ByteString
+          getAppNameBytes() {
+        java.lang.Object ref = appName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          appName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string app_name = 4;</code>
+       * @param value The appName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAppName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        appName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string app_name = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAppName() {
+        
+        appName_ = getDefaultInstance().getAppName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string app_name = 4;</code>
+       * @param value The bytes for appName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAppNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        appName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object extJson_ = "";
+      /**
+       * <code>string ext_json = 5;</code>
+       * @return The extJson.
+       */
+      public java.lang.String getExtJson() {
+        java.lang.Object ref = extJson_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          extJson_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string ext_json = 5;</code>
+       * @return The bytes for extJson.
+       */
+      public com.google.protobuf.ByteString
+          getExtJsonBytes() {
+        java.lang.Object ref = extJson_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          extJson_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string ext_json = 5;</code>
+       * @param value The extJson to set.
+       * @return This builder for chaining.
+       */
+      public Builder setExtJson(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        extJson_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string ext_json = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearExtJson() {
+        
+        extJson_ = getDefaultInstance().getExtJson();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string ext_json = 5;</code>
+       * @param value The bytes for extJson to set.
+       * @return This builder for chaining.
+       */
+      public Builder setExtJsonBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        extJson_ = value;
         onChanged();
         return this;
       }
@@ -897,6 +1197,18 @@ public final class TiapKvrpcpb {
      */
     com.google.protobuf.ByteString
         getErrorBytes();
+
+    /**
+     * <code>string ext_json = 2;</code>
+     * @return The extJson.
+     */
+    java.lang.String getExtJson();
+    /**
+     * <code>string ext_json = 2;</code>
+     * @return The bytes for extJson.
+     */
+    com.google.protobuf.ByteString
+        getExtJsonBytes();
   }
   /**
    * Protobuf type {@code tiap_kvrpcpb.KVResponseHeader}
@@ -912,6 +1224,7 @@ public final class TiapKvrpcpb {
     }
     private KVResponseHeader() {
       error_ = "";
+      extJson_ = "";
     }
 
     @java.lang.Override
@@ -948,6 +1261,12 @@ public final class TiapKvrpcpb {
               java.lang.String s = input.readStringRequireUtf8();
 
               error_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              extJson_ = s;
               break;
             }
             default: {
@@ -1020,6 +1339,44 @@ public final class TiapKvrpcpb {
       }
     }
 
+    public static final int EXT_JSON_FIELD_NUMBER = 2;
+    private volatile java.lang.Object extJson_;
+    /**
+     * <code>string ext_json = 2;</code>
+     * @return The extJson.
+     */
+    @java.lang.Override
+    public java.lang.String getExtJson() {
+      java.lang.Object ref = extJson_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        extJson_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string ext_json = 2;</code>
+     * @return The bytes for extJson.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getExtJsonBytes() {
+      java.lang.Object ref = extJson_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        extJson_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1037,6 +1394,9 @@ public final class TiapKvrpcpb {
       if (!getErrorBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, error_);
       }
+      if (!getExtJsonBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, extJson_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -1048,6 +1408,9 @@ public final class TiapKvrpcpb {
       size = 0;
       if (!getErrorBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, error_);
+      }
+      if (!getExtJsonBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, extJson_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1066,6 +1429,8 @@ public final class TiapKvrpcpb {
 
       if (!getError()
           .equals(other.getError())) return false;
+      if (!getExtJson()
+          .equals(other.getExtJson())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1079,6 +1444,8 @@ public final class TiapKvrpcpb {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ERROR_FIELD_NUMBER;
       hash = (53 * hash) + getError().hashCode();
+      hash = (37 * hash) + EXT_JSON_FIELD_NUMBER;
+      hash = (53 * hash) + getExtJson().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1214,6 +1581,8 @@ public final class TiapKvrpcpb {
         super.clear();
         error_ = "";
 
+        extJson_ = "";
+
         return this;
       }
 
@@ -1241,6 +1610,7 @@ public final class TiapKvrpcpb {
       public com.shopee.di.kvstore.proto.TiapKvrpcpb.KVResponseHeader buildPartial() {
         com.shopee.di.kvstore.proto.TiapKvrpcpb.KVResponseHeader result = new com.shopee.di.kvstore.proto.TiapKvrpcpb.KVResponseHeader(this);
         result.error_ = error_;
+        result.extJson_ = extJson_;
         onBuilt();
         return result;
       }
@@ -1291,6 +1661,10 @@ public final class TiapKvrpcpb {
         if (other == com.shopee.di.kvstore.proto.TiapKvrpcpb.KVResponseHeader.getDefaultInstance()) return this;
         if (!other.getError().isEmpty()) {
           error_ = other.error_;
+          onChanged();
+        }
+        if (!other.getExtJson().isEmpty()) {
+          extJson_ = other.extJson_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -1397,6 +1771,82 @@ public final class TiapKvrpcpb {
         onChanged();
         return this;
       }
+
+      private java.lang.Object extJson_ = "";
+      /**
+       * <code>string ext_json = 2;</code>
+       * @return The extJson.
+       */
+      public java.lang.String getExtJson() {
+        java.lang.Object ref = extJson_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          extJson_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string ext_json = 2;</code>
+       * @return The bytes for extJson.
+       */
+      public com.google.protobuf.ByteString
+          getExtJsonBytes() {
+        java.lang.Object ref = extJson_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          extJson_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string ext_json = 2;</code>
+       * @param value The extJson to set.
+       * @return This builder for chaining.
+       */
+      public Builder setExtJson(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        extJson_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string ext_json = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearExtJson() {
+        
+        extJson_ = getDefaultInstance().getExtJson();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string ext_json = 2;</code>
+       * @param value The bytes for extJson to set.
+       * @return This builder for chaining.
+       */
+      public Builder setExtJsonBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        extJson_ = value;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1469,11 +1919,12 @@ public final class TiapKvrpcpb {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\022tiap_kvrpcpb.proto\022\014tiap_kvrpcpb\"K\n\017KV" +
+      "\n\022tiap_kvrpcpb.proto\022\014tiap_kvrpcpb\"i\n\017KV" +
       "RequestHeader\022\017\n\007db_name\030\001 \001(\t\022\022\n\ntable_" +
-      "name\030\002 \001(\t\022\023\n\013table_token\030\003 \001(\t\"!\n\020KVRes" +
-      "ponseHeader\022\r\n\005error\030\001 \001(\tB\035\n\033com.shopee" +
-      ".di.kvstore.protob\006proto3"
+      "name\030\002 \001(\t\022\r\n\005token\030\003 \001(\t\022\020\n\010app_name\030\004 " +
+      "\001(\t\022\020\n\010ext_json\030\005 \001(\t\"3\n\020KVResponseHeade" +
+      "r\022\r\n\005error\030\001 \001(\t\022\020\n\010ext_json\030\002 \001(\tB\035\n\033co" +
+      "m.shopee.di.kvstore.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1484,13 +1935,13 @@ public final class TiapKvrpcpb {
     internal_static_tiap_kvrpcpb_KVRequestHeader_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tiap_kvrpcpb_KVRequestHeader_descriptor,
-        new java.lang.String[] { "DbName", "TableName", "TableToken", });
+        new java.lang.String[] { "DbName", "TableName", "Token", "AppName", "ExtJson", });
     internal_static_tiap_kvrpcpb_KVResponseHeader_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_tiap_kvrpcpb_KVResponseHeader_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tiap_kvrpcpb_KVResponseHeader_descriptor,
-        new java.lang.String[] { "Error", });
+        new java.lang.String[] { "Error", "ExtJson", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -9,11 +9,14 @@ option (gogoproto.unmarshaler_all) = true;
 option java_package = "com.shopee.di.kvstore.proto";
 
 message KVRequestHeader {
-  string db_name     = 1;
-  string table_name  = 2;
-  string table_token = 3;
+  string db_name = 1;
+  string table_name = 2;
+  string token = 3;
+  string app_name = 4;
+  string ext_json = 5;
 }
 
 message KVResponseHeader {
   string error = 1;
+  string ext_json = 2;
 }

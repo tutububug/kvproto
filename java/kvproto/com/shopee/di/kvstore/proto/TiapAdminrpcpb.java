@@ -412,16 +412,16 @@ public final class TiapAdminrpcpb {
     long getTimestamp();
 
     /**
-     * <code>string client_id = 2;</code>
-     * @return The clientId.
+     * <code>string app_name = 2;</code>
+     * @return The appName.
      */
-    java.lang.String getClientId();
+    java.lang.String getAppName();
     /**
-     * <code>string client_id = 2;</code>
-     * @return The bytes for clientId.
+     * <code>string app_name = 2;</code>
+     * @return The bytes for appName.
      */
     com.google.protobuf.ByteString
-        getClientIdBytes();
+        getAppNameBytes();
 
     /**
      * <code>string user = 3;</code>
@@ -448,7 +448,7 @@ public final class TiapAdminrpcpb {
       super(builder);
     }
     private AdminRequestHeader() {
-      clientId_ = "";
+      appName_ = "";
       user_ = "";
     }
 
@@ -490,7 +490,7 @@ public final class TiapAdminrpcpb {
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              clientId_ = s;
+              appName_ = s;
               break;
             }
             case 26: {
@@ -542,38 +542,38 @@ public final class TiapAdminrpcpb {
       return timestamp_;
     }
 
-    public static final int CLIENT_ID_FIELD_NUMBER = 2;
-    private volatile java.lang.Object clientId_;
+    public static final int APP_NAME_FIELD_NUMBER = 2;
+    private volatile java.lang.Object appName_;
     /**
-     * <code>string client_id = 2;</code>
-     * @return The clientId.
+     * <code>string app_name = 2;</code>
+     * @return The appName.
      */
     @java.lang.Override
-    public java.lang.String getClientId() {
-      java.lang.Object ref = clientId_;
+    public java.lang.String getAppName() {
+      java.lang.Object ref = appName_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        clientId_ = s;
+        appName_ = s;
         return s;
       }
     }
     /**
-     * <code>string client_id = 2;</code>
-     * @return The bytes for clientId.
+     * <code>string app_name = 2;</code>
+     * @return The bytes for appName.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getClientIdBytes() {
-      java.lang.Object ref = clientId_;
+        getAppNameBytes() {
+      java.lang.Object ref = appName_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        clientId_ = b;
+        appName_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -635,8 +635,8 @@ public final class TiapAdminrpcpb {
       if (timestamp_ != 0L) {
         output.writeInt64(1, timestamp_);
       }
-      if (!getClientIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, clientId_);
+      if (!getAppNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, appName_);
       }
       if (!getUserBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, user_);
@@ -654,8 +654,8 @@ public final class TiapAdminrpcpb {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(1, timestamp_);
       }
-      if (!getClientIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, clientId_);
+      if (!getAppNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, appName_);
       }
       if (!getUserBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, user_);
@@ -677,8 +677,8 @@ public final class TiapAdminrpcpb {
 
       if (getTimestamp()
           != other.getTimestamp()) return false;
-      if (!getClientId()
-          .equals(other.getClientId())) return false;
+      if (!getAppName()
+          .equals(other.getAppName())) return false;
       if (!getUser()
           .equals(other.getUser())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -695,8 +695,8 @@ public final class TiapAdminrpcpb {
       hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTimestamp());
-      hash = (37 * hash) + CLIENT_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getClientId().hashCode();
+      hash = (37 * hash) + APP_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getAppName().hashCode();
       hash = (37 * hash) + USER_FIELD_NUMBER;
       hash = (53 * hash) + getUser().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -834,7 +834,7 @@ public final class TiapAdminrpcpb {
         super.clear();
         timestamp_ = 0L;
 
-        clientId_ = "";
+        appName_ = "";
 
         user_ = "";
 
@@ -865,7 +865,7 @@ public final class TiapAdminrpcpb {
       public com.shopee.di.kvstore.proto.TiapAdminrpcpb.AdminRequestHeader buildPartial() {
         com.shopee.di.kvstore.proto.TiapAdminrpcpb.AdminRequestHeader result = new com.shopee.di.kvstore.proto.TiapAdminrpcpb.AdminRequestHeader(this);
         result.timestamp_ = timestamp_;
-        result.clientId_ = clientId_;
+        result.appName_ = appName_;
         result.user_ = user_;
         onBuilt();
         return result;
@@ -918,8 +918,8 @@ public final class TiapAdminrpcpb {
         if (other.getTimestamp() != 0L) {
           setTimestamp(other.getTimestamp());
         }
-        if (!other.getClientId().isEmpty()) {
-          clientId_ = other.clientId_;
+        if (!other.getAppName().isEmpty()) {
+          appName_ = other.appName_;
           onChanged();
         }
         if (!other.getUser().isEmpty()) {
@@ -986,78 +986,78 @@ public final class TiapAdminrpcpb {
         return this;
       }
 
-      private java.lang.Object clientId_ = "";
+      private java.lang.Object appName_ = "";
       /**
-       * <code>string client_id = 2;</code>
-       * @return The clientId.
+       * <code>string app_name = 2;</code>
+       * @return The appName.
        */
-      public java.lang.String getClientId() {
-        java.lang.Object ref = clientId_;
+      public java.lang.String getAppName() {
+        java.lang.Object ref = appName_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          clientId_ = s;
+          appName_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string client_id = 2;</code>
-       * @return The bytes for clientId.
+       * <code>string app_name = 2;</code>
+       * @return The bytes for appName.
        */
       public com.google.protobuf.ByteString
-          getClientIdBytes() {
-        java.lang.Object ref = clientId_;
+          getAppNameBytes() {
+        java.lang.Object ref = appName_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          clientId_ = b;
+          appName_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string client_id = 2;</code>
-       * @param value The clientId to set.
+       * <code>string app_name = 2;</code>
+       * @param value The appName to set.
        * @return This builder for chaining.
        */
-      public Builder setClientId(
+      public Builder setAppName(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        clientId_ = value;
+        appName_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string client_id = 2;</code>
+       * <code>string app_name = 2;</code>
        * @return This builder for chaining.
        */
-      public Builder clearClientId() {
+      public Builder clearAppName() {
         
-        clientId_ = getDefaultInstance().getClientId();
+        appName_ = getDefaultInstance().getAppName();
         onChanged();
         return this;
       }
       /**
-       * <code>string client_id = 2;</code>
-       * @param value The bytes for clientId to set.
+       * <code>string app_name = 2;</code>
+       * @param value The bytes for appName to set.
        * @return This builder for chaining.
        */
-      public Builder setClientIdBytes(
+      public Builder setAppNameBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        clientId_ = value;
+        appName_ = value;
         onChanged();
         return this;
       }
@@ -13492,54 +13492,54 @@ public final class TiapAdminrpcpb {
   static {
     java.lang.String[] descriptorData = {
       "\n\025tiap_adminrpcpb.proto\022\017tiap_adminrpcpb" +
-      "\"H\n\022AdminRequestHeader\022\021\n\ttimestamp\030\001 \001(" +
-      "\003\022\021\n\tclient_id\030\002 \001(\t\022\014\n\004user\030\003 \001(\t\"$\n\023Ad" +
-      "minResponseHeader\022\r\n\005error\030\001 \001(\t\"\252\002\n\014Adm" +
-      "inRequest\0223\n\006header\030\001 \001(\0132#.tiap_adminrp" +
-      "cpb.AdminRequestHeader\0229\n\rcreate_db_req\030" +
-      "\002 \001(\0132 .tiap_adminrpcpb.CreateDBRequestH" +
-      "\000\0223\n\nget_db_req\030\003 \001(\0132\035.tiap_adminrpcpb." +
-      "GetDBRequestH\000\0227\n\014list_dbs_req\030\004 \001(\0132\037.t" +
-      "iap_adminrpcpb.ListDBsRequestH\000\0225\n\013drop_" +
-      "db_req\030\005 \001(\0132\036.tiap_adminrpcpb.DropDBReq" +
-      "uestH\000B\005\n\003req\"\265\002\n\rAdminResponse\0224\n\006heade" +
-      "r\030\001 \001(\0132$.tiap_adminrpcpb.AdminResponseH" +
-      "eader\022;\n\016create_db_resp\030\002 \001(\0132!.tiap_adm" +
-      "inrpcpb.CreateDBResponseH\000\0225\n\013get_db_res" +
-      "p\030\003 \001(\0132\036.tiap_adminrpcpb.GetDBResponseH" +
-      "\000\0229\n\rlist_dbs_resp\030\004 \001(\0132 .tiap_adminrpc" +
-      "pb.ListDBsResponseH\000\0227\n\014drop_db_resp\030\005 \001" +
-      "(\0132\037.tiap_adminrpcpb.DropDBResponseH\000B\006\n" +
-      "\004resp\"\205\001\n\006DBInfo\022\014\n\004name\030\001 \001(\t\022\n\n\002id\030\002 \001" +
-      "(\005\022\'\n\005state\030\003 \001(\0162\030.tiap_adminrpcpb.DBSt" +
-      "ate\022\'\n\005quota\030\004 \001(\0132\030.tiap_adminrpcpb.DBQ" +
-      "uota\022\017\n\007comment\030\005 \003(\t\"\326\001\n\tTableInfo\022\014\n\004n" +
-      "ame\030\001 \001(\t\022\n\n\002id\030\002 \001(\005\022\r\n\005db_id\030\003 \001(\005\022\r\n\005" +
-      "token\030\004 \001(\t\022(\n\004type\030\005 \001(\0162\032.tiap_adminrp" +
-      "cpb.TableType\022*\n\005state\030\006 \001(\0162\033.tiap_admi" +
-      "nrpcpb.TableState\022*\n\005quota\030\007 \001(\0132\033.tiap_" +
-      "adminrpcpb.TableQuota\022\017\n\007comment\030\010 \003(\t\"J" +
-      "\n\007DBQuota\022\024\n\014table_number\030\001 \001(\r\022\030\n\020stora" +
-      "ge_capacity\030\002 \001(\004\022\017\n\007max_qps\030\003 \001(\004\"7\n\nTa" +
-      "bleQuota\022\030\n\020storage_capacity\030\001 \001(\004\022\017\n\007ma" +
-      "x_qps\030\002 \001(\004\"H\n\017CreateDBRequest\022\014\n\004name\030\001" +
-      " \001(\t\022\'\n\005quota\030\002 \001(\0132\030.tiap_adminrpcpb.DB" +
-      "Quota\"\022\n\020CreateDBResponse\"\034\n\014GetDBReques" +
-      "t\022\014\n\004name\030\001 \001(\t\"6\n\rGetDBResponse\022%\n\004info" +
-      "\030\001 \001(\0132\027.tiap_adminrpcpb.DBInfo\"\020\n\016ListD" +
-      "BsRequest\"9\n\017ListDBsResponse\022&\n\005infos\030\001 " +
-      "\003(\0132\027.tiap_adminrpcpb.DBInfo\"\035\n\rDropDBRe" +
-      "quest\022\014\n\004name\030\001 \001(\t\"\020\n\016DropDBResponse*N\n" +
-      "\tTableType\022\025\n\021TableType_Invalid\020\000\022\021\n\rTab" +
-      "leType_Raw\020\001\022\027\n\023TableType_HBaseLike\020\002*\210\001" +
-      "\n\nTableState\022\027\n\023TableState_Creating\020\000\022\026\n" +
-      "\022TableState_Created\020\001\022\030\n\024TableState_Tomb" +
-      "stone\020\002\022\027\n\023TableState_Deleting\020\003\022\026\n\022Tabl" +
-      "eState_Deleted\020\004*v\n\007DBState\022\024\n\020DBState_C" +
-      "reating\020\000\022\023\n\017DBState_Created\020\001\022\025\n\021DBStat" +
-      "e_Tombstone\020\002\022\024\n\020DBState_Deleting\020\003\022\023\n\017D" +
-      "BState_Deleted\020\004B\035\n\033com.shopee.di.kvstor" +
-      "e.protob\006proto3"
+      "\"G\n\022AdminRequestHeader\022\021\n\ttimestamp\030\001 \001(" +
+      "\003\022\020\n\010app_name\030\002 \001(\t\022\014\n\004user\030\003 \001(\t\"$\n\023Adm" +
+      "inResponseHeader\022\r\n\005error\030\001 \001(\t\"\252\002\n\014Admi" +
+      "nRequest\0223\n\006header\030\001 \001(\0132#.tiap_adminrpc" +
+      "pb.AdminRequestHeader\0229\n\rcreate_db_req\030\002" +
+      " \001(\0132 .tiap_adminrpcpb.CreateDBRequestH\000" +
+      "\0223\n\nget_db_req\030\003 \001(\0132\035.tiap_adminrpcpb.G" +
+      "etDBRequestH\000\0227\n\014list_dbs_req\030\004 \001(\0132\037.ti" +
+      "ap_adminrpcpb.ListDBsRequestH\000\0225\n\013drop_d" +
+      "b_req\030\005 \001(\0132\036.tiap_adminrpcpb.DropDBRequ" +
+      "estH\000B\005\n\003req\"\265\002\n\rAdminResponse\0224\n\006header" +
+      "\030\001 \001(\0132$.tiap_adminrpcpb.AdminResponseHe" +
+      "ader\022;\n\016create_db_resp\030\002 \001(\0132!.tiap_admi" +
+      "nrpcpb.CreateDBResponseH\000\0225\n\013get_db_resp" +
+      "\030\003 \001(\0132\036.tiap_adminrpcpb.GetDBResponseH\000" +
+      "\0229\n\rlist_dbs_resp\030\004 \001(\0132 .tiap_adminrpcp" +
+      "b.ListDBsResponseH\000\0227\n\014drop_db_resp\030\005 \001(" +
+      "\0132\037.tiap_adminrpcpb.DropDBResponseH\000B\006\n\004" +
+      "resp\"\205\001\n\006DBInfo\022\014\n\004name\030\001 \001(\t\022\n\n\002id\030\002 \001(" +
+      "\005\022\'\n\005state\030\003 \001(\0162\030.tiap_adminrpcpb.DBSta" +
+      "te\022\'\n\005quota\030\004 \001(\0132\030.tiap_adminrpcpb.DBQu" +
+      "ota\022\017\n\007comment\030\005 \003(\t\"\326\001\n\tTableInfo\022\014\n\004na" +
+      "me\030\001 \001(\t\022\n\n\002id\030\002 \001(\005\022\r\n\005db_id\030\003 \001(\005\022\r\n\005t" +
+      "oken\030\004 \001(\t\022(\n\004type\030\005 \001(\0162\032.tiap_adminrpc" +
+      "pb.TableType\022*\n\005state\030\006 \001(\0162\033.tiap_admin" +
+      "rpcpb.TableState\022*\n\005quota\030\007 \001(\0132\033.tiap_a" +
+      "dminrpcpb.TableQuota\022\017\n\007comment\030\010 \003(\t\"J\n" +
+      "\007DBQuota\022\024\n\014table_number\030\001 \001(\r\022\030\n\020storag" +
+      "e_capacity\030\002 \001(\004\022\017\n\007max_qps\030\003 \001(\004\"7\n\nTab" +
+      "leQuota\022\030\n\020storage_capacity\030\001 \001(\004\022\017\n\007max" +
+      "_qps\030\002 \001(\004\"H\n\017CreateDBRequest\022\014\n\004name\030\001 " +
+      "\001(\t\022\'\n\005quota\030\002 \001(\0132\030.tiap_adminrpcpb.DBQ" +
+      "uota\"\022\n\020CreateDBResponse\"\034\n\014GetDBRequest" +
+      "\022\014\n\004name\030\001 \001(\t\"6\n\rGetDBResponse\022%\n\004info\030" +
+      "\001 \001(\0132\027.tiap_adminrpcpb.DBInfo\"\020\n\016ListDB" +
+      "sRequest\"9\n\017ListDBsResponse\022&\n\005infos\030\001 \003" +
+      "(\0132\027.tiap_adminrpcpb.DBInfo\"\035\n\rDropDBReq" +
+      "uest\022\014\n\004name\030\001 \001(\t\"\020\n\016DropDBResponse*N\n\t" +
+      "TableType\022\025\n\021TableType_Invalid\020\000\022\021\n\rTabl" +
+      "eType_Raw\020\001\022\027\n\023TableType_HBaseLike\020\002*\210\001\n" +
+      "\nTableState\022\027\n\023TableState_Creating\020\000\022\026\n\022" +
+      "TableState_Created\020\001\022\030\n\024TableState_Tombs" +
+      "tone\020\002\022\027\n\023TableState_Deleting\020\003\022\026\n\022Table" +
+      "State_Deleted\020\004*v\n\007DBState\022\024\n\020DBState_Cr" +
+      "eating\020\000\022\023\n\017DBState_Created\020\001\022\025\n\021DBState" +
+      "_Tombstone\020\002\022\024\n\020DBState_Deleting\020\003\022\023\n\017DB" +
+      "State_Deleted\020\004B\035\n\033com.shopee.di.kvstore" +
+      ".protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -13550,7 +13550,7 @@ public final class TiapAdminrpcpb {
     internal_static_tiap_adminrpcpb_AdminRequestHeader_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tiap_adminrpcpb_AdminRequestHeader_descriptor,
-        new java.lang.String[] { "Timestamp", "ClientId", "User", });
+        new java.lang.String[] { "Timestamp", "AppName", "User", });
     internal_static_tiap_adminrpcpb_AdminResponseHeader_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_tiap_adminrpcpb_AdminResponseHeader_fieldAccessorTable = new

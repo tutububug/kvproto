@@ -27,7 +27,9 @@ const _ = proto.ProtoPackageIsVersion2 // please upgrade the proto package
 type KVRequestHeader struct {
 	DbName               string   `protobuf:"bytes,1,opt,name=db_name,json=dbName,proto3" json:"db_name,omitempty"`
 	TableName            string   `protobuf:"bytes,2,opt,name=table_name,json=tableName,proto3" json:"table_name,omitempty"`
-	TableToken           string   `protobuf:"bytes,3,opt,name=table_token,json=tableToken,proto3" json:"table_token,omitempty"`
+	Token                string   `protobuf:"bytes,3,opt,name=token,proto3" json:"token,omitempty"`
+	AppName              string   `protobuf:"bytes,4,opt,name=app_name,json=appName,proto3" json:"app_name,omitempty"`
+	ExtJson              string   `protobuf:"bytes,5,opt,name=ext_json,json=extJson,proto3" json:"ext_json,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -37,7 +39,7 @@ func (m *KVRequestHeader) Reset()         { *m = KVRequestHeader{} }
 func (m *KVRequestHeader) String() string { return proto.CompactTextString(m) }
 func (*KVRequestHeader) ProtoMessage()    {}
 func (*KVRequestHeader) Descriptor() ([]byte, []int) {
-	return fileDescriptor_tiap_kvrpcpb_557b631460eca9ca, []int{0}
+	return fileDescriptor_tiap_kvrpcpb_74ef2ae9114e2d6a, []int{0}
 }
 func (m *KVRequestHeader) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -80,15 +82,30 @@ func (m *KVRequestHeader) GetTableName() string {
 	return ""
 }
 
-func (m *KVRequestHeader) GetTableToken() string {
+func (m *KVRequestHeader) GetToken() string {
 	if m != nil {
-		return m.TableToken
+		return m.Token
+	}
+	return ""
+}
+
+func (m *KVRequestHeader) GetAppName() string {
+	if m != nil {
+		return m.AppName
+	}
+	return ""
+}
+
+func (m *KVRequestHeader) GetExtJson() string {
+	if m != nil {
+		return m.ExtJson
 	}
 	return ""
 }
 
 type KVResponseHeader struct {
 	Error                string   `protobuf:"bytes,1,opt,name=error,proto3" json:"error,omitempty"`
+	ExtJson              string   `protobuf:"bytes,2,opt,name=ext_json,json=extJson,proto3" json:"ext_json,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -98,7 +115,7 @@ func (m *KVResponseHeader) Reset()         { *m = KVResponseHeader{} }
 func (m *KVResponseHeader) String() string { return proto.CompactTextString(m) }
 func (*KVResponseHeader) ProtoMessage()    {}
 func (*KVResponseHeader) Descriptor() ([]byte, []int) {
-	return fileDescriptor_tiap_kvrpcpb_557b631460eca9ca, []int{1}
+	return fileDescriptor_tiap_kvrpcpb_74ef2ae9114e2d6a, []int{1}
 }
 func (m *KVResponseHeader) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -134,6 +151,13 @@ func (m *KVResponseHeader) GetError() string {
 	return ""
 }
 
+func (m *KVResponseHeader) GetExtJson() string {
+	if m != nil {
+		return m.ExtJson
+	}
+	return ""
+}
+
 func init() {
 	proto.RegisterType((*KVRequestHeader)(nil), "tiap_kvrpcpb.KVRequestHeader")
 	proto.RegisterType((*KVResponseHeader)(nil), "tiap_kvrpcpb.KVResponseHeader")
@@ -165,11 +189,23 @@ func (m *KVRequestHeader) MarshalTo(dAtA []byte) (int, error) {
 		i = encodeVarintTiapKvrpcpb(dAtA, i, uint64(len(m.TableName)))
 		i += copy(dAtA[i:], m.TableName)
 	}
-	if len(m.TableToken) > 0 {
+	if len(m.Token) > 0 {
 		dAtA[i] = 0x1a
 		i++
-		i = encodeVarintTiapKvrpcpb(dAtA, i, uint64(len(m.TableToken)))
-		i += copy(dAtA[i:], m.TableToken)
+		i = encodeVarintTiapKvrpcpb(dAtA, i, uint64(len(m.Token)))
+		i += copy(dAtA[i:], m.Token)
+	}
+	if len(m.AppName) > 0 {
+		dAtA[i] = 0x22
+		i++
+		i = encodeVarintTiapKvrpcpb(dAtA, i, uint64(len(m.AppName)))
+		i += copy(dAtA[i:], m.AppName)
+	}
+	if len(m.ExtJson) > 0 {
+		dAtA[i] = 0x2a
+		i++
+		i = encodeVarintTiapKvrpcpb(dAtA, i, uint64(len(m.ExtJson)))
+		i += copy(dAtA[i:], m.ExtJson)
 	}
 	if m.XXX_unrecognized != nil {
 		i += copy(dAtA[i:], m.XXX_unrecognized)
@@ -198,6 +234,12 @@ func (m *KVResponseHeader) MarshalTo(dAtA []byte) (int, error) {
 		i = encodeVarintTiapKvrpcpb(dAtA, i, uint64(len(m.Error)))
 		i += copy(dAtA[i:], m.Error)
 	}
+	if len(m.ExtJson) > 0 {
+		dAtA[i] = 0x12
+		i++
+		i = encodeVarintTiapKvrpcpb(dAtA, i, uint64(len(m.ExtJson)))
+		i += copy(dAtA[i:], m.ExtJson)
+	}
 	if m.XXX_unrecognized != nil {
 		i += copy(dAtA[i:], m.XXX_unrecognized)
 	}
@@ -224,7 +266,15 @@ func (m *KVRequestHeader) Size() (n int) {
 	if l > 0 {
 		n += 1 + l + sovTiapKvrpcpb(uint64(l))
 	}
-	l = len(m.TableToken)
+	l = len(m.Token)
+	if l > 0 {
+		n += 1 + l + sovTiapKvrpcpb(uint64(l))
+	}
+	l = len(m.AppName)
+	if l > 0 {
+		n += 1 + l + sovTiapKvrpcpb(uint64(l))
+	}
+	l = len(m.ExtJson)
 	if l > 0 {
 		n += 1 + l + sovTiapKvrpcpb(uint64(l))
 	}
@@ -238,6 +288,10 @@ func (m *KVResponseHeader) Size() (n int) {
 	var l int
 	_ = l
 	l = len(m.Error)
+	if l > 0 {
+		n += 1 + l + sovTiapKvrpcpb(uint64(l))
+	}
+	l = len(m.ExtJson)
 	if l > 0 {
 		n += 1 + l + sovTiapKvrpcpb(uint64(l))
 	}
@@ -349,7 +403,7 @@ func (m *KVRequestHeader) Unmarshal(dAtA []byte) error {
 			iNdEx = postIndex
 		case 3:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field TableToken", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field Token", wireType)
 			}
 			var stringLen uint64
 			for shift := uint(0); ; shift += 7 {
@@ -374,7 +428,65 @@ func (m *KVRequestHeader) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.TableToken = string(dAtA[iNdEx:postIndex])
+			m.Token = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 4:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field AppName", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTiapKvrpcpb
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= (uint64(b) & 0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTiapKvrpcpb
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.AppName = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 5:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field ExtJson", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTiapKvrpcpb
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= (uint64(b) & 0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTiapKvrpcpb
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.ExtJson = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		default:
 			iNdEx = preIndex
@@ -455,6 +567,35 @@ func (m *KVResponseHeader) Unmarshal(dAtA []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			m.Error = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 2:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field ExtJson", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTiapKvrpcpb
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= (uint64(b) & 0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTiapKvrpcpb
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.ExtJson = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		default:
 			iNdEx = preIndex
@@ -583,22 +724,24 @@ var (
 	ErrIntOverflowTiapKvrpcpb   = fmt.Errorf("proto: integer overflow")
 )
 
-func init() { proto.RegisterFile("tiap_kvrpcpb.proto", fileDescriptor_tiap_kvrpcpb_557b631460eca9ca) }
+func init() { proto.RegisterFile("tiap_kvrpcpb.proto", fileDescriptor_tiap_kvrpcpb_74ef2ae9114e2d6a) }
 
-var fileDescriptor_tiap_kvrpcpb_557b631460eca9ca = []byte{
-	// 217 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe2, 0x12, 0x2a, 0xc9, 0x4c, 0x2c,
-	0x88, 0xcf, 0x2e, 0x2b, 0x2a, 0x48, 0x2e, 0x48, 0xd2, 0x2b, 0x28, 0xca, 0x2f, 0xc9, 0x17, 0xe2,
-	0x41, 0x16, 0x93, 0x12, 0x49, 0xcf, 0x4f, 0xcf, 0x07, 0x4b, 0xe8, 0x83, 0x58, 0x10, 0x35, 0x4a,
-	0x59, 0x5c, 0xfc, 0xde, 0x61, 0x41, 0xa9, 0x85, 0xa5, 0xa9, 0xc5, 0x25, 0x1e, 0xa9, 0x89, 0x29,
-	0xa9, 0x45, 0x42, 0xe2, 0x5c, 0xec, 0x29, 0x49, 0xf1, 0x79, 0x89, 0xb9, 0xa9, 0x12, 0x8c, 0x0a,
-	0x8c, 0x1a, 0x9c, 0x41, 0x6c, 0x29, 0x49, 0x7e, 0x89, 0xb9, 0xa9, 0x42, 0xb2, 0x5c, 0x5c, 0x25,
-	0x89, 0x49, 0x39, 0xa9, 0x10, 0x39, 0x26, 0xb0, 0x1c, 0x27, 0x58, 0x04, 0x2c, 0x2d, 0xcf, 0xc5,
-	0x0d, 0x91, 0x2e, 0xc9, 0xcf, 0x4e, 0xcd, 0x93, 0x60, 0x06, 0xcb, 0x43, 0x74, 0x84, 0x80, 0x44,
-	0x94, 0x34, 0xb8, 0x04, 0x40, 0x76, 0x15, 0x17, 0xe4, 0xe7, 0x15, 0xa7, 0x42, 0x2d, 0x13, 0xe1,
-	0x62, 0x4d, 0x2d, 0x2a, 0xca, 0x2f, 0x82, 0x5a, 0x05, 0xe1, 0x38, 0xe9, 0x9e, 0x78, 0x24, 0xc7,
-	0x78, 0xe1, 0x91, 0x1c, 0xe3, 0x83, 0x47, 0x72, 0x8c, 0x33, 0x1e, 0xcb, 0x31, 0x70, 0x49, 0x27,
-	0xe7, 0xe7, 0xea, 0x15, 0x67, 0xe4, 0x17, 0xa4, 0xa6, 0xea, 0xa5, 0x64, 0xea, 0x65, 0x97, 0x15,
-	0x97, 0xe4, 0x17, 0xa5, 0x42, 0x3c, 0x91, 0xc4, 0x06, 0xa6, 0x8c, 0x01, 0x01, 0x00, 0x00, 0xff,
-	0xff, 0x8f, 0xa4, 0xed, 0x37, 0x05, 0x01, 0x00, 0x00,
+var fileDescriptor_tiap_kvrpcpb_74ef2ae9114e2d6a = []byte{
+	// 255 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x54, 0x90, 0xcd, 0x4a, 0x03, 0x31,
+	0x14, 0x85, 0x4d, 0x75, 0xfa, 0x73, 0x11, 0x94, 0x30, 0xe0, 0x54, 0x71, 0x90, 0xae, 0xdc, 0x38,
+	0x2e, 0x7c, 0x03, 0xdd, 0x88, 0x82, 0x8b, 0x2e, 0xdc, 0x0e, 0x49, 0x73, 0xa9, 0x75, 0x9c, 0xdc,
+	0x6b, 0x12, 0x4b, 0x5f, 0x44, 0xf0, 0x91, 0x5c, 0xfa, 0x08, 0x32, 0xbe, 0x88, 0x34, 0xe9, 0xa2,
+	0x5d, 0x25, 0xe7, 0x7c, 0x39, 0x87, 0x43, 0x40, 0x86, 0x85, 0xe2, 0xba, 0x59, 0x3a, 0x9e, 0xb1,
+	0xae, 0xd8, 0x51, 0x20, 0x79, 0xb8, 0xed, 0x9d, 0xe6, 0x73, 0x9a, 0x53, 0x04, 0xd7, 0xeb, 0x5b,
+	0x7a, 0x33, 0xf9, 0x14, 0x70, 0xf4, 0xf8, 0x3c, 0xc5, 0xf7, 0x0f, 0xf4, 0xe1, 0x1e, 0x95, 0x41,
+	0x27, 0x4f, 0x60, 0x60, 0x74, 0x6d, 0x55, 0x8b, 0x85, 0xb8, 0x10, 0x97, 0xa3, 0x69, 0xdf, 0xe8,
+	0x27, 0xd5, 0xa2, 0x3c, 0x07, 0x08, 0x4a, 0xbf, 0x61, 0x62, 0xbd, 0xc8, 0x46, 0xd1, 0x89, 0x38,
+	0x87, 0x2c, 0x50, 0x83, 0xb6, 0xd8, 0x8f, 0x24, 0x09, 0x39, 0x86, 0xa1, 0x62, 0x4e, 0x91, 0x83,
+	0x08, 0x06, 0x8a, 0x39, 0x06, 0xc6, 0x30, 0xc4, 0x55, 0xa8, 0x5f, 0x3d, 0xd9, 0x22, 0x4b, 0x08,
+	0x57, 0xe1, 0xc1, 0x93, 0x9d, 0xdc, 0xc1, 0xf1, 0x7a, 0x96, 0x67, 0xb2, 0x1e, 0x37, 0xbb, 0x72,
+	0xc8, 0xd0, 0x39, 0x72, 0x9b, 0x55, 0x49, 0xec, 0x94, 0xf4, 0x76, 0x4a, 0x6e, 0xaf, 0xbe, 0xbb,
+	0x52, 0xfc, 0x74, 0xa5, 0xf8, 0xed, 0x4a, 0xf1, 0xf5, 0x57, 0xee, 0xc1, 0xd9, 0x8c, 0xda, 0xca,
+	0xbf, 0x10, 0x23, 0x56, 0x66, 0x51, 0x35, 0x4b, 0x1f, 0xc8, 0x61, 0xfa, 0x0b, 0xdd, 0x8f, 0xc7,
+	0xcd, 0x7f, 0x00, 0x00, 0x00, 0xff, 0xff, 0xaa, 0xef, 0xf1, 0x89, 0x4c, 0x01, 0x00, 0x00,
 }
