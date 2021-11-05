@@ -34,92 +34,47 @@ public final class TiapHbaselikeKvrpcpb {
     com.shopee.di.kvstore.proto.TiapKvrpcpb.KVRequestHeaderOrBuilder getHeaderOrBuilder();
 
     /**
-     * <code>.tiap_hbaselike_kvrpcpb.GetRowRequest get_row_req = 2;</code>
-     * @return Whether the getRowReq field is set.
-     */
-    boolean hasGetRowReq();
-    /**
-     * <code>.tiap_hbaselike_kvrpcpb.GetRowRequest get_row_req = 2;</code>
-     * @return The getRowReq.
-     */
-    com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest getGetRowReq();
-    /**
-     * <code>.tiap_hbaselike_kvrpcpb.GetRowRequest get_row_req = 2;</code>
-     */
-    com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequestOrBuilder getGetRowReqOrBuilder();
-
-    /**
-     * <code>.tiap_hbaselike_kvrpcpb.PutRowRequest put_row_req = 3;</code>
-     * @return Whether the putRowReq field is set.
-     */
-    boolean hasPutRowReq();
-    /**
-     * <code>.tiap_hbaselike_kvrpcpb.PutRowRequest put_row_req = 3;</code>
-     * @return The putRowReq.
-     */
-    com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest getPutRowReq();
-    /**
-     * <code>.tiap_hbaselike_kvrpcpb.PutRowRequest put_row_req = 3;</code>
-     */
-    com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequestOrBuilder getPutRowReqOrBuilder();
-
-    /**
-     * <code>.tiap_hbaselike_kvrpcpb.DeleteRowRequest delete_row_req = 4;</code>
-     * @return Whether the deleteRowReq field is set.
-     */
-    boolean hasDeleteRowReq();
-    /**
-     * <code>.tiap_hbaselike_kvrpcpb.DeleteRowRequest delete_row_req = 4;</code>
-     * @return The deleteRowReq.
-     */
-    com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest getDeleteRowReq();
-    /**
-     * <code>.tiap_hbaselike_kvrpcpb.DeleteRowRequest delete_row_req = 4;</code>
-     */
-    com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequestOrBuilder getDeleteRowReqOrBuilder();
-
-    /**
-     * <code>.tiap_hbaselike_kvrpcpb.BatchGetRowRequest batch_get_row_req = 5;</code>
+     * <code>.tiap_hbaselike_kvrpcpb.BatchGetRowRequest batch_get_row_req = 2;</code>
      * @return Whether the batchGetRowReq field is set.
      */
     boolean hasBatchGetRowReq();
     /**
-     * <code>.tiap_hbaselike_kvrpcpb.BatchGetRowRequest batch_get_row_req = 5;</code>
+     * <code>.tiap_hbaselike_kvrpcpb.BatchGetRowRequest batch_get_row_req = 2;</code>
      * @return The batchGetRowReq.
      */
     com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowRequest getBatchGetRowReq();
     /**
-     * <code>.tiap_hbaselike_kvrpcpb.BatchGetRowRequest batch_get_row_req = 5;</code>
+     * <code>.tiap_hbaselike_kvrpcpb.BatchGetRowRequest batch_get_row_req = 2;</code>
      */
     com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowRequestOrBuilder getBatchGetRowReqOrBuilder();
 
     /**
-     * <code>.tiap_hbaselike_kvrpcpb.BatchPutRowRequest batch_put_row_req = 6;</code>
+     * <code>.tiap_hbaselike_kvrpcpb.BatchPutRowRequest batch_put_row_req = 3;</code>
      * @return Whether the batchPutRowReq field is set.
      */
     boolean hasBatchPutRowReq();
     /**
-     * <code>.tiap_hbaselike_kvrpcpb.BatchPutRowRequest batch_put_row_req = 6;</code>
+     * <code>.tiap_hbaselike_kvrpcpb.BatchPutRowRequest batch_put_row_req = 3;</code>
      * @return The batchPutRowReq.
      */
     com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowRequest getBatchPutRowReq();
     /**
-     * <code>.tiap_hbaselike_kvrpcpb.BatchPutRowRequest batch_put_row_req = 6;</code>
+     * <code>.tiap_hbaselike_kvrpcpb.BatchPutRowRequest batch_put_row_req = 3;</code>
      */
     com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowRequestOrBuilder getBatchPutRowReqOrBuilder();
 
     /**
-     * <code>.tiap_hbaselike_kvrpcpb.BatchDeleteRowRequest batch_delete_row_req = 7;</code>
+     * <code>.tiap_hbaselike_kvrpcpb.BatchDeleteRowRequest batch_delete_row_req = 4;</code>
      * @return Whether the batchDeleteRowReq field is set.
      */
     boolean hasBatchDeleteRowReq();
     /**
-     * <code>.tiap_hbaselike_kvrpcpb.BatchDeleteRowRequest batch_delete_row_req = 7;</code>
+     * <code>.tiap_hbaselike_kvrpcpb.BatchDeleteRowRequest batch_delete_row_req = 4;</code>
      * @return The batchDeleteRowReq.
      */
     com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowRequest getBatchDeleteRowReq();
     /**
-     * <code>.tiap_hbaselike_kvrpcpb.BatchDeleteRowRequest batch_delete_row_req = 7;</code>
+     * <code>.tiap_hbaselike_kvrpcpb.BatchDeleteRowRequest batch_delete_row_req = 4;</code>
      */
     com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowRequestOrBuilder getBatchDeleteRowReqOrBuilder();
 
@@ -184,50 +139,8 @@ public final class TiapHbaselikeKvrpcpb {
               break;
             }
             case 18: {
-              com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest.Builder subBuilder = null;
-              if (reqCase_ == 2) {
-                subBuilder = ((com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest) req_).toBuilder();
-              }
-              req_ =
-                  input.readMessage(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest) req_);
-                req_ = subBuilder.buildPartial();
-              }
-              reqCase_ = 2;
-              break;
-            }
-            case 26: {
-              com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest.Builder subBuilder = null;
-              if (reqCase_ == 3) {
-                subBuilder = ((com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest) req_).toBuilder();
-              }
-              req_ =
-                  input.readMessage(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest) req_);
-                req_ = subBuilder.buildPartial();
-              }
-              reqCase_ = 3;
-              break;
-            }
-            case 34: {
-              com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest.Builder subBuilder = null;
-              if (reqCase_ == 4) {
-                subBuilder = ((com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest) req_).toBuilder();
-              }
-              req_ =
-                  input.readMessage(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest) req_);
-                req_ = subBuilder.buildPartial();
-              }
-              reqCase_ = 4;
-              break;
-            }
-            case 42: {
               com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowRequest.Builder subBuilder = null;
-              if (reqCase_ == 5) {
+              if (reqCase_ == 2) {
                 subBuilder = ((com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowRequest) req_).toBuilder();
               }
               req_ =
@@ -236,12 +149,12 @@ public final class TiapHbaselikeKvrpcpb {
                 subBuilder.mergeFrom((com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowRequest) req_);
                 req_ = subBuilder.buildPartial();
               }
-              reqCase_ = 5;
+              reqCase_ = 2;
               break;
             }
-            case 50: {
+            case 26: {
               com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowRequest.Builder subBuilder = null;
-              if (reqCase_ == 6) {
+              if (reqCase_ == 3) {
                 subBuilder = ((com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowRequest) req_).toBuilder();
               }
               req_ =
@@ -250,12 +163,12 @@ public final class TiapHbaselikeKvrpcpb {
                 subBuilder.mergeFrom((com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowRequest) req_);
                 req_ = subBuilder.buildPartial();
               }
-              reqCase_ = 6;
+              reqCase_ = 3;
               break;
             }
-            case 58: {
+            case 34: {
               com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowRequest.Builder subBuilder = null;
-              if (reqCase_ == 7) {
+              if (reqCase_ == 4) {
                 subBuilder = ((com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowRequest) req_).toBuilder();
               }
               req_ =
@@ -264,7 +177,7 @@ public final class TiapHbaselikeKvrpcpb {
                 subBuilder.mergeFrom((com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowRequest) req_);
                 req_ = subBuilder.buildPartial();
               }
-              reqCase_ = 7;
+              reqCase_ = 4;
               break;
             }
             default: {
@@ -304,12 +217,9 @@ public final class TiapHbaselikeKvrpcpb {
     public enum ReqCase
         implements com.google.protobuf.Internal.EnumLite,
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
-      GET_ROW_REQ(2),
-      PUT_ROW_REQ(3),
-      DELETE_ROW_REQ(4),
-      BATCH_GET_ROW_REQ(5),
-      BATCH_PUT_ROW_REQ(6),
-      BATCH_DELETE_ROW_REQ(7),
+      BATCH_GET_ROW_REQ(2),
+      BATCH_PUT_ROW_REQ(3),
+      BATCH_DELETE_ROW_REQ(4),
       REQ_NOT_SET(0);
       private final int value;
       private ReqCase(int value) {
@@ -327,12 +237,9 @@ public final class TiapHbaselikeKvrpcpb {
 
       public static ReqCase forNumber(int value) {
         switch (value) {
-          case 2: return GET_ROW_REQ;
-          case 3: return PUT_ROW_REQ;
-          case 4: return DELETE_ROW_REQ;
-          case 5: return BATCH_GET_ROW_REQ;
-          case 6: return BATCH_PUT_ROW_REQ;
-          case 7: return BATCH_DELETE_ROW_REQ;
+          case 2: return BATCH_GET_ROW_REQ;
+          case 3: return BATCH_PUT_ROW_REQ;
+          case 4: return BATCH_DELETE_ROW_REQ;
           case 0: return REQ_NOT_SET;
           default: return null;
         }
@@ -374,187 +281,94 @@ public final class TiapHbaselikeKvrpcpb {
       return getHeader();
     }
 
-    public static final int GET_ROW_REQ_FIELD_NUMBER = 2;
+    public static final int BATCH_GET_ROW_REQ_FIELD_NUMBER = 2;
     /**
-     * <code>.tiap_hbaselike_kvrpcpb.GetRowRequest get_row_req = 2;</code>
-     * @return Whether the getRowReq field is set.
-     */
-    @java.lang.Override
-    public boolean hasGetRowReq() {
-      return reqCase_ == 2;
-    }
-    /**
-     * <code>.tiap_hbaselike_kvrpcpb.GetRowRequest get_row_req = 2;</code>
-     * @return The getRowReq.
-     */
-    @java.lang.Override
-    public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest getGetRowReq() {
-      if (reqCase_ == 2) {
-         return (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest) req_;
-      }
-      return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest.getDefaultInstance();
-    }
-    /**
-     * <code>.tiap_hbaselike_kvrpcpb.GetRowRequest get_row_req = 2;</code>
-     */
-    @java.lang.Override
-    public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequestOrBuilder getGetRowReqOrBuilder() {
-      if (reqCase_ == 2) {
-         return (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest) req_;
-      }
-      return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest.getDefaultInstance();
-    }
-
-    public static final int PUT_ROW_REQ_FIELD_NUMBER = 3;
-    /**
-     * <code>.tiap_hbaselike_kvrpcpb.PutRowRequest put_row_req = 3;</code>
-     * @return Whether the putRowReq field is set.
-     */
-    @java.lang.Override
-    public boolean hasPutRowReq() {
-      return reqCase_ == 3;
-    }
-    /**
-     * <code>.tiap_hbaselike_kvrpcpb.PutRowRequest put_row_req = 3;</code>
-     * @return The putRowReq.
-     */
-    @java.lang.Override
-    public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest getPutRowReq() {
-      if (reqCase_ == 3) {
-         return (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest) req_;
-      }
-      return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest.getDefaultInstance();
-    }
-    /**
-     * <code>.tiap_hbaselike_kvrpcpb.PutRowRequest put_row_req = 3;</code>
-     */
-    @java.lang.Override
-    public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequestOrBuilder getPutRowReqOrBuilder() {
-      if (reqCase_ == 3) {
-         return (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest) req_;
-      }
-      return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest.getDefaultInstance();
-    }
-
-    public static final int DELETE_ROW_REQ_FIELD_NUMBER = 4;
-    /**
-     * <code>.tiap_hbaselike_kvrpcpb.DeleteRowRequest delete_row_req = 4;</code>
-     * @return Whether the deleteRowReq field is set.
-     */
-    @java.lang.Override
-    public boolean hasDeleteRowReq() {
-      return reqCase_ == 4;
-    }
-    /**
-     * <code>.tiap_hbaselike_kvrpcpb.DeleteRowRequest delete_row_req = 4;</code>
-     * @return The deleteRowReq.
-     */
-    @java.lang.Override
-    public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest getDeleteRowReq() {
-      if (reqCase_ == 4) {
-         return (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest) req_;
-      }
-      return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest.getDefaultInstance();
-    }
-    /**
-     * <code>.tiap_hbaselike_kvrpcpb.DeleteRowRequest delete_row_req = 4;</code>
-     */
-    @java.lang.Override
-    public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequestOrBuilder getDeleteRowReqOrBuilder() {
-      if (reqCase_ == 4) {
-         return (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest) req_;
-      }
-      return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest.getDefaultInstance();
-    }
-
-    public static final int BATCH_GET_ROW_REQ_FIELD_NUMBER = 5;
-    /**
-     * <code>.tiap_hbaselike_kvrpcpb.BatchGetRowRequest batch_get_row_req = 5;</code>
+     * <code>.tiap_hbaselike_kvrpcpb.BatchGetRowRequest batch_get_row_req = 2;</code>
      * @return Whether the batchGetRowReq field is set.
      */
     @java.lang.Override
     public boolean hasBatchGetRowReq() {
-      return reqCase_ == 5;
+      return reqCase_ == 2;
     }
     /**
-     * <code>.tiap_hbaselike_kvrpcpb.BatchGetRowRequest batch_get_row_req = 5;</code>
+     * <code>.tiap_hbaselike_kvrpcpb.BatchGetRowRequest batch_get_row_req = 2;</code>
      * @return The batchGetRowReq.
      */
     @java.lang.Override
     public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowRequest getBatchGetRowReq() {
-      if (reqCase_ == 5) {
+      if (reqCase_ == 2) {
          return (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowRequest) req_;
       }
       return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowRequest.getDefaultInstance();
     }
     /**
-     * <code>.tiap_hbaselike_kvrpcpb.BatchGetRowRequest batch_get_row_req = 5;</code>
+     * <code>.tiap_hbaselike_kvrpcpb.BatchGetRowRequest batch_get_row_req = 2;</code>
      */
     @java.lang.Override
     public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowRequestOrBuilder getBatchGetRowReqOrBuilder() {
-      if (reqCase_ == 5) {
+      if (reqCase_ == 2) {
          return (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowRequest) req_;
       }
       return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowRequest.getDefaultInstance();
     }
 
-    public static final int BATCH_PUT_ROW_REQ_FIELD_NUMBER = 6;
+    public static final int BATCH_PUT_ROW_REQ_FIELD_NUMBER = 3;
     /**
-     * <code>.tiap_hbaselike_kvrpcpb.BatchPutRowRequest batch_put_row_req = 6;</code>
+     * <code>.tiap_hbaselike_kvrpcpb.BatchPutRowRequest batch_put_row_req = 3;</code>
      * @return Whether the batchPutRowReq field is set.
      */
     @java.lang.Override
     public boolean hasBatchPutRowReq() {
-      return reqCase_ == 6;
+      return reqCase_ == 3;
     }
     /**
-     * <code>.tiap_hbaselike_kvrpcpb.BatchPutRowRequest batch_put_row_req = 6;</code>
+     * <code>.tiap_hbaselike_kvrpcpb.BatchPutRowRequest batch_put_row_req = 3;</code>
      * @return The batchPutRowReq.
      */
     @java.lang.Override
     public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowRequest getBatchPutRowReq() {
-      if (reqCase_ == 6) {
+      if (reqCase_ == 3) {
          return (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowRequest) req_;
       }
       return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowRequest.getDefaultInstance();
     }
     /**
-     * <code>.tiap_hbaselike_kvrpcpb.BatchPutRowRequest batch_put_row_req = 6;</code>
+     * <code>.tiap_hbaselike_kvrpcpb.BatchPutRowRequest batch_put_row_req = 3;</code>
      */
     @java.lang.Override
     public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowRequestOrBuilder getBatchPutRowReqOrBuilder() {
-      if (reqCase_ == 6) {
+      if (reqCase_ == 3) {
          return (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowRequest) req_;
       }
       return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowRequest.getDefaultInstance();
     }
 
-    public static final int BATCH_DELETE_ROW_REQ_FIELD_NUMBER = 7;
+    public static final int BATCH_DELETE_ROW_REQ_FIELD_NUMBER = 4;
     /**
-     * <code>.tiap_hbaselike_kvrpcpb.BatchDeleteRowRequest batch_delete_row_req = 7;</code>
+     * <code>.tiap_hbaselike_kvrpcpb.BatchDeleteRowRequest batch_delete_row_req = 4;</code>
      * @return Whether the batchDeleteRowReq field is set.
      */
     @java.lang.Override
     public boolean hasBatchDeleteRowReq() {
-      return reqCase_ == 7;
+      return reqCase_ == 4;
     }
     /**
-     * <code>.tiap_hbaselike_kvrpcpb.BatchDeleteRowRequest batch_delete_row_req = 7;</code>
+     * <code>.tiap_hbaselike_kvrpcpb.BatchDeleteRowRequest batch_delete_row_req = 4;</code>
      * @return The batchDeleteRowReq.
      */
     @java.lang.Override
     public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowRequest getBatchDeleteRowReq() {
-      if (reqCase_ == 7) {
+      if (reqCase_ == 4) {
          return (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowRequest) req_;
       }
       return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowRequest.getDefaultInstance();
     }
     /**
-     * <code>.tiap_hbaselike_kvrpcpb.BatchDeleteRowRequest batch_delete_row_req = 7;</code>
+     * <code>.tiap_hbaselike_kvrpcpb.BatchDeleteRowRequest batch_delete_row_req = 4;</code>
      */
     @java.lang.Override
     public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowRequestOrBuilder getBatchDeleteRowReqOrBuilder() {
-      if (reqCase_ == 7) {
+      if (reqCase_ == 4) {
          return (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowRequest) req_;
       }
       return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowRequest.getDefaultInstance();
@@ -578,22 +392,13 @@ public final class TiapHbaselikeKvrpcpb {
         output.writeMessage(1, getHeader());
       }
       if (reqCase_ == 2) {
-        output.writeMessage(2, (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest) req_);
+        output.writeMessage(2, (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowRequest) req_);
       }
       if (reqCase_ == 3) {
-        output.writeMessage(3, (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest) req_);
+        output.writeMessage(3, (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowRequest) req_);
       }
       if (reqCase_ == 4) {
-        output.writeMessage(4, (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest) req_);
-      }
-      if (reqCase_ == 5) {
-        output.writeMessage(5, (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowRequest) req_);
-      }
-      if (reqCase_ == 6) {
-        output.writeMessage(6, (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowRequest) req_);
-      }
-      if (reqCase_ == 7) {
-        output.writeMessage(7, (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowRequest) req_);
+        output.writeMessage(4, (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowRequest) req_);
       }
       unknownFields.writeTo(output);
     }
@@ -610,27 +415,15 @@ public final class TiapHbaselikeKvrpcpb {
       }
       if (reqCase_ == 2) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest) req_);
+          .computeMessageSize(2, (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowRequest) req_);
       }
       if (reqCase_ == 3) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest) req_);
+          .computeMessageSize(3, (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowRequest) req_);
       }
       if (reqCase_ == 4) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest) req_);
-      }
-      if (reqCase_ == 5) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowRequest) req_);
-      }
-      if (reqCase_ == 6) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowRequest) req_);
-      }
-      if (reqCase_ == 7) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowRequest) req_);
+          .computeMessageSize(4, (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowRequest) req_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -655,26 +448,14 @@ public final class TiapHbaselikeKvrpcpb {
       if (!getReqCase().equals(other.getReqCase())) return false;
       switch (reqCase_) {
         case 2:
-          if (!getGetRowReq()
-              .equals(other.getGetRowReq())) return false;
-          break;
-        case 3:
-          if (!getPutRowReq()
-              .equals(other.getPutRowReq())) return false;
-          break;
-        case 4:
-          if (!getDeleteRowReq()
-              .equals(other.getDeleteRowReq())) return false;
-          break;
-        case 5:
           if (!getBatchGetRowReq()
               .equals(other.getBatchGetRowReq())) return false;
           break;
-        case 6:
+        case 3:
           if (!getBatchPutRowReq()
               .equals(other.getBatchPutRowReq())) return false;
           break;
-        case 7:
+        case 4:
           if (!getBatchDeleteRowReq()
               .equals(other.getBatchDeleteRowReq())) return false;
           break;
@@ -698,26 +479,14 @@ public final class TiapHbaselikeKvrpcpb {
       }
       switch (reqCase_) {
         case 2:
-          hash = (37 * hash) + GET_ROW_REQ_FIELD_NUMBER;
-          hash = (53 * hash) + getGetRowReq().hashCode();
-          break;
-        case 3:
-          hash = (37 * hash) + PUT_ROW_REQ_FIELD_NUMBER;
-          hash = (53 * hash) + getPutRowReq().hashCode();
-          break;
-        case 4:
-          hash = (37 * hash) + DELETE_ROW_REQ_FIELD_NUMBER;
-          hash = (53 * hash) + getDeleteRowReq().hashCode();
-          break;
-        case 5:
           hash = (37 * hash) + BATCH_GET_ROW_REQ_FIELD_NUMBER;
           hash = (53 * hash) + getBatchGetRowReq().hashCode();
           break;
-        case 6:
+        case 3:
           hash = (37 * hash) + BATCH_PUT_ROW_REQ_FIELD_NUMBER;
           hash = (53 * hash) + getBatchPutRowReq().hashCode();
           break;
-        case 7:
+        case 4:
           hash = (37 * hash) + BATCH_DELETE_ROW_REQ_FIELD_NUMBER;
           hash = (53 * hash) + getBatchDeleteRowReq().hashCode();
           break;
@@ -897,41 +666,20 @@ public final class TiapHbaselikeKvrpcpb {
           result.header_ = headerBuilder_.build();
         }
         if (reqCase_ == 2) {
-          if (getRowReqBuilder_ == null) {
-            result.req_ = req_;
-          } else {
-            result.req_ = getRowReqBuilder_.build();
-          }
-        }
-        if (reqCase_ == 3) {
-          if (putRowReqBuilder_ == null) {
-            result.req_ = req_;
-          } else {
-            result.req_ = putRowReqBuilder_.build();
-          }
-        }
-        if (reqCase_ == 4) {
-          if (deleteRowReqBuilder_ == null) {
-            result.req_ = req_;
-          } else {
-            result.req_ = deleteRowReqBuilder_.build();
-          }
-        }
-        if (reqCase_ == 5) {
           if (batchGetRowReqBuilder_ == null) {
             result.req_ = req_;
           } else {
             result.req_ = batchGetRowReqBuilder_.build();
           }
         }
-        if (reqCase_ == 6) {
+        if (reqCase_ == 3) {
           if (batchPutRowReqBuilder_ == null) {
             result.req_ = req_;
           } else {
             result.req_ = batchPutRowReqBuilder_.build();
           }
         }
-        if (reqCase_ == 7) {
+        if (reqCase_ == 4) {
           if (batchDeleteRowReqBuilder_ == null) {
             result.req_ = req_;
           } else {
@@ -991,18 +739,6 @@ public final class TiapHbaselikeKvrpcpb {
           mergeHeader(other.getHeader());
         }
         switch (other.getReqCase()) {
-          case GET_ROW_REQ: {
-            mergeGetRowReq(other.getGetRowReq());
-            break;
-          }
-          case PUT_ROW_REQ: {
-            mergePutRowReq(other.getPutRowReq());
-            break;
-          }
-          case DELETE_ROW_REQ: {
-            mergeDeleteRowReq(other.getDeleteRowReq());
-            break;
-          }
           case BATCH_GET_ROW_REQ: {
             mergeBatchGetRowReq(other.getBatchGetRowReq());
             break;
@@ -1183,458 +919,35 @@ public final class TiapHbaselikeKvrpcpb {
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequestOrBuilder> getRowReqBuilder_;
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.GetRowRequest get_row_req = 2;</code>
-       * @return Whether the getRowReq field is set.
-       */
-      @java.lang.Override
-      public boolean hasGetRowReq() {
-        return reqCase_ == 2;
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.GetRowRequest get_row_req = 2;</code>
-       * @return The getRowReq.
-       */
-      @java.lang.Override
-      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest getGetRowReq() {
-        if (getRowReqBuilder_ == null) {
-          if (reqCase_ == 2) {
-            return (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest) req_;
-          }
-          return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest.getDefaultInstance();
-        } else {
-          if (reqCase_ == 2) {
-            return getRowReqBuilder_.getMessage();
-          }
-          return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.GetRowRequest get_row_req = 2;</code>
-       */
-      public Builder setGetRowReq(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest value) {
-        if (getRowReqBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          req_ = value;
-          onChanged();
-        } else {
-          getRowReqBuilder_.setMessage(value);
-        }
-        reqCase_ = 2;
-        return this;
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.GetRowRequest get_row_req = 2;</code>
-       */
-      public Builder setGetRowReq(
-          com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest.Builder builderForValue) {
-        if (getRowReqBuilder_ == null) {
-          req_ = builderForValue.build();
-          onChanged();
-        } else {
-          getRowReqBuilder_.setMessage(builderForValue.build());
-        }
-        reqCase_ = 2;
-        return this;
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.GetRowRequest get_row_req = 2;</code>
-       */
-      public Builder mergeGetRowReq(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest value) {
-        if (getRowReqBuilder_ == null) {
-          if (reqCase_ == 2 &&
-              req_ != com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest.getDefaultInstance()) {
-            req_ = com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest.newBuilder((com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest) req_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            req_ = value;
-          }
-          onChanged();
-        } else {
-          if (reqCase_ == 2) {
-            getRowReqBuilder_.mergeFrom(value);
-          }
-          getRowReqBuilder_.setMessage(value);
-        }
-        reqCase_ = 2;
-        return this;
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.GetRowRequest get_row_req = 2;</code>
-       */
-      public Builder clearGetRowReq() {
-        if (getRowReqBuilder_ == null) {
-          if (reqCase_ == 2) {
-            reqCase_ = 0;
-            req_ = null;
-            onChanged();
-          }
-        } else {
-          if (reqCase_ == 2) {
-            reqCase_ = 0;
-            req_ = null;
-          }
-          getRowReqBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.GetRowRequest get_row_req = 2;</code>
-       */
-      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest.Builder getGetRowReqBuilder() {
-        return getGetRowReqFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.GetRowRequest get_row_req = 2;</code>
-       */
-      @java.lang.Override
-      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequestOrBuilder getGetRowReqOrBuilder() {
-        if ((reqCase_ == 2) && (getRowReqBuilder_ != null)) {
-          return getRowReqBuilder_.getMessageOrBuilder();
-        } else {
-          if (reqCase_ == 2) {
-            return (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest) req_;
-          }
-          return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.GetRowRequest get_row_req = 2;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequestOrBuilder> 
-          getGetRowReqFieldBuilder() {
-        if (getRowReqBuilder_ == null) {
-          if (!(reqCase_ == 2)) {
-            req_ = com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest.getDefaultInstance();
-          }
-          getRowReqBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequestOrBuilder>(
-                  (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest) req_,
-                  getParentForChildren(),
-                  isClean());
-          req_ = null;
-        }
-        reqCase_ = 2;
-        onChanged();;
-        return getRowReqBuilder_;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequestOrBuilder> putRowReqBuilder_;
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.PutRowRequest put_row_req = 3;</code>
-       * @return Whether the putRowReq field is set.
-       */
-      @java.lang.Override
-      public boolean hasPutRowReq() {
-        return reqCase_ == 3;
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.PutRowRequest put_row_req = 3;</code>
-       * @return The putRowReq.
-       */
-      @java.lang.Override
-      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest getPutRowReq() {
-        if (putRowReqBuilder_ == null) {
-          if (reqCase_ == 3) {
-            return (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest) req_;
-          }
-          return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest.getDefaultInstance();
-        } else {
-          if (reqCase_ == 3) {
-            return putRowReqBuilder_.getMessage();
-          }
-          return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.PutRowRequest put_row_req = 3;</code>
-       */
-      public Builder setPutRowReq(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest value) {
-        if (putRowReqBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          req_ = value;
-          onChanged();
-        } else {
-          putRowReqBuilder_.setMessage(value);
-        }
-        reqCase_ = 3;
-        return this;
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.PutRowRequest put_row_req = 3;</code>
-       */
-      public Builder setPutRowReq(
-          com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest.Builder builderForValue) {
-        if (putRowReqBuilder_ == null) {
-          req_ = builderForValue.build();
-          onChanged();
-        } else {
-          putRowReqBuilder_.setMessage(builderForValue.build());
-        }
-        reqCase_ = 3;
-        return this;
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.PutRowRequest put_row_req = 3;</code>
-       */
-      public Builder mergePutRowReq(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest value) {
-        if (putRowReqBuilder_ == null) {
-          if (reqCase_ == 3 &&
-              req_ != com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest.getDefaultInstance()) {
-            req_ = com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest.newBuilder((com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest) req_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            req_ = value;
-          }
-          onChanged();
-        } else {
-          if (reqCase_ == 3) {
-            putRowReqBuilder_.mergeFrom(value);
-          }
-          putRowReqBuilder_.setMessage(value);
-        }
-        reqCase_ = 3;
-        return this;
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.PutRowRequest put_row_req = 3;</code>
-       */
-      public Builder clearPutRowReq() {
-        if (putRowReqBuilder_ == null) {
-          if (reqCase_ == 3) {
-            reqCase_ = 0;
-            req_ = null;
-            onChanged();
-          }
-        } else {
-          if (reqCase_ == 3) {
-            reqCase_ = 0;
-            req_ = null;
-          }
-          putRowReqBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.PutRowRequest put_row_req = 3;</code>
-       */
-      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest.Builder getPutRowReqBuilder() {
-        return getPutRowReqFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.PutRowRequest put_row_req = 3;</code>
-       */
-      @java.lang.Override
-      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequestOrBuilder getPutRowReqOrBuilder() {
-        if ((reqCase_ == 3) && (putRowReqBuilder_ != null)) {
-          return putRowReqBuilder_.getMessageOrBuilder();
-        } else {
-          if (reqCase_ == 3) {
-            return (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest) req_;
-          }
-          return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.PutRowRequest put_row_req = 3;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequestOrBuilder> 
-          getPutRowReqFieldBuilder() {
-        if (putRowReqBuilder_ == null) {
-          if (!(reqCase_ == 3)) {
-            req_ = com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest.getDefaultInstance();
-          }
-          putRowReqBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequestOrBuilder>(
-                  (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest) req_,
-                  getParentForChildren(),
-                  isClean());
-          req_ = null;
-        }
-        reqCase_ = 3;
-        onChanged();;
-        return putRowReqBuilder_;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequestOrBuilder> deleteRowReqBuilder_;
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.DeleteRowRequest delete_row_req = 4;</code>
-       * @return Whether the deleteRowReq field is set.
-       */
-      @java.lang.Override
-      public boolean hasDeleteRowReq() {
-        return reqCase_ == 4;
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.DeleteRowRequest delete_row_req = 4;</code>
-       * @return The deleteRowReq.
-       */
-      @java.lang.Override
-      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest getDeleteRowReq() {
-        if (deleteRowReqBuilder_ == null) {
-          if (reqCase_ == 4) {
-            return (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest) req_;
-          }
-          return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest.getDefaultInstance();
-        } else {
-          if (reqCase_ == 4) {
-            return deleteRowReqBuilder_.getMessage();
-          }
-          return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.DeleteRowRequest delete_row_req = 4;</code>
-       */
-      public Builder setDeleteRowReq(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest value) {
-        if (deleteRowReqBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          req_ = value;
-          onChanged();
-        } else {
-          deleteRowReqBuilder_.setMessage(value);
-        }
-        reqCase_ = 4;
-        return this;
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.DeleteRowRequest delete_row_req = 4;</code>
-       */
-      public Builder setDeleteRowReq(
-          com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest.Builder builderForValue) {
-        if (deleteRowReqBuilder_ == null) {
-          req_ = builderForValue.build();
-          onChanged();
-        } else {
-          deleteRowReqBuilder_.setMessage(builderForValue.build());
-        }
-        reqCase_ = 4;
-        return this;
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.DeleteRowRequest delete_row_req = 4;</code>
-       */
-      public Builder mergeDeleteRowReq(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest value) {
-        if (deleteRowReqBuilder_ == null) {
-          if (reqCase_ == 4 &&
-              req_ != com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest.getDefaultInstance()) {
-            req_ = com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest.newBuilder((com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest) req_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            req_ = value;
-          }
-          onChanged();
-        } else {
-          if (reqCase_ == 4) {
-            deleteRowReqBuilder_.mergeFrom(value);
-          }
-          deleteRowReqBuilder_.setMessage(value);
-        }
-        reqCase_ = 4;
-        return this;
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.DeleteRowRequest delete_row_req = 4;</code>
-       */
-      public Builder clearDeleteRowReq() {
-        if (deleteRowReqBuilder_ == null) {
-          if (reqCase_ == 4) {
-            reqCase_ = 0;
-            req_ = null;
-            onChanged();
-          }
-        } else {
-          if (reqCase_ == 4) {
-            reqCase_ = 0;
-            req_ = null;
-          }
-          deleteRowReqBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.DeleteRowRequest delete_row_req = 4;</code>
-       */
-      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest.Builder getDeleteRowReqBuilder() {
-        return getDeleteRowReqFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.DeleteRowRequest delete_row_req = 4;</code>
-       */
-      @java.lang.Override
-      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequestOrBuilder getDeleteRowReqOrBuilder() {
-        if ((reqCase_ == 4) && (deleteRowReqBuilder_ != null)) {
-          return deleteRowReqBuilder_.getMessageOrBuilder();
-        } else {
-          if (reqCase_ == 4) {
-            return (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest) req_;
-          }
-          return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.DeleteRowRequest delete_row_req = 4;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequestOrBuilder> 
-          getDeleteRowReqFieldBuilder() {
-        if (deleteRowReqBuilder_ == null) {
-          if (!(reqCase_ == 4)) {
-            req_ = com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest.getDefaultInstance();
-          }
-          deleteRowReqBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequestOrBuilder>(
-                  (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest) req_,
-                  getParentForChildren(),
-                  isClean());
-          req_ = null;
-        }
-        reqCase_ = 4;
-        onChanged();;
-        return deleteRowReqBuilder_;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
           com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowRequest, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowRequest.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowRequestOrBuilder> batchGetRowReqBuilder_;
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.BatchGetRowRequest batch_get_row_req = 5;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.BatchGetRowRequest batch_get_row_req = 2;</code>
        * @return Whether the batchGetRowReq field is set.
        */
       @java.lang.Override
       public boolean hasBatchGetRowReq() {
-        return reqCase_ == 5;
+        return reqCase_ == 2;
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.BatchGetRowRequest batch_get_row_req = 5;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.BatchGetRowRequest batch_get_row_req = 2;</code>
        * @return The batchGetRowReq.
        */
       @java.lang.Override
       public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowRequest getBatchGetRowReq() {
         if (batchGetRowReqBuilder_ == null) {
-          if (reqCase_ == 5) {
+          if (reqCase_ == 2) {
             return (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowRequest) req_;
           }
           return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowRequest.getDefaultInstance();
         } else {
-          if (reqCase_ == 5) {
+          if (reqCase_ == 2) {
             return batchGetRowReqBuilder_.getMessage();
           }
           return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowRequest.getDefaultInstance();
         }
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.BatchGetRowRequest batch_get_row_req = 5;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.BatchGetRowRequest batch_get_row_req = 2;</code>
        */
       public Builder setBatchGetRowReq(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowRequest value) {
         if (batchGetRowReqBuilder_ == null) {
@@ -1646,11 +959,11 @@ public final class TiapHbaselikeKvrpcpb {
         } else {
           batchGetRowReqBuilder_.setMessage(value);
         }
-        reqCase_ = 5;
+        reqCase_ = 2;
         return this;
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.BatchGetRowRequest batch_get_row_req = 5;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.BatchGetRowRequest batch_get_row_req = 2;</code>
        */
       public Builder setBatchGetRowReq(
           com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowRequest.Builder builderForValue) {
@@ -1660,15 +973,15 @@ public final class TiapHbaselikeKvrpcpb {
         } else {
           batchGetRowReqBuilder_.setMessage(builderForValue.build());
         }
-        reqCase_ = 5;
+        reqCase_ = 2;
         return this;
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.BatchGetRowRequest batch_get_row_req = 5;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.BatchGetRowRequest batch_get_row_req = 2;</code>
        */
       public Builder mergeBatchGetRowReq(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowRequest value) {
         if (batchGetRowReqBuilder_ == null) {
-          if (reqCase_ == 5 &&
+          if (reqCase_ == 2 &&
               req_ != com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowRequest.getDefaultInstance()) {
             req_ = com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowRequest.newBuilder((com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowRequest) req_)
                 .mergeFrom(value).buildPartial();
@@ -1677,26 +990,26 @@ public final class TiapHbaselikeKvrpcpb {
           }
           onChanged();
         } else {
-          if (reqCase_ == 5) {
+          if (reqCase_ == 2) {
             batchGetRowReqBuilder_.mergeFrom(value);
           }
           batchGetRowReqBuilder_.setMessage(value);
         }
-        reqCase_ = 5;
+        reqCase_ = 2;
         return this;
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.BatchGetRowRequest batch_get_row_req = 5;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.BatchGetRowRequest batch_get_row_req = 2;</code>
        */
       public Builder clearBatchGetRowReq() {
         if (batchGetRowReqBuilder_ == null) {
-          if (reqCase_ == 5) {
+          if (reqCase_ == 2) {
             reqCase_ = 0;
             req_ = null;
             onChanged();
           }
         } else {
-          if (reqCase_ == 5) {
+          if (reqCase_ == 2) {
             reqCase_ = 0;
             req_ = null;
           }
@@ -1705,33 +1018,33 @@ public final class TiapHbaselikeKvrpcpb {
         return this;
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.BatchGetRowRequest batch_get_row_req = 5;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.BatchGetRowRequest batch_get_row_req = 2;</code>
        */
       public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowRequest.Builder getBatchGetRowReqBuilder() {
         return getBatchGetRowReqFieldBuilder().getBuilder();
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.BatchGetRowRequest batch_get_row_req = 5;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.BatchGetRowRequest batch_get_row_req = 2;</code>
        */
       @java.lang.Override
       public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowRequestOrBuilder getBatchGetRowReqOrBuilder() {
-        if ((reqCase_ == 5) && (batchGetRowReqBuilder_ != null)) {
+        if ((reqCase_ == 2) && (batchGetRowReqBuilder_ != null)) {
           return batchGetRowReqBuilder_.getMessageOrBuilder();
         } else {
-          if (reqCase_ == 5) {
+          if (reqCase_ == 2) {
             return (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowRequest) req_;
           }
           return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowRequest.getDefaultInstance();
         }
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.BatchGetRowRequest batch_get_row_req = 5;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.BatchGetRowRequest batch_get_row_req = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowRequest, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowRequest.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowRequestOrBuilder> 
           getBatchGetRowReqFieldBuilder() {
         if (batchGetRowReqBuilder_ == null) {
-          if (!(reqCase_ == 5)) {
+          if (!(reqCase_ == 2)) {
             req_ = com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowRequest.getDefaultInstance();
           }
           batchGetRowReqBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -1741,7 +1054,7 @@ public final class TiapHbaselikeKvrpcpb {
                   isClean());
           req_ = null;
         }
-        reqCase_ = 5;
+        reqCase_ = 2;
         onChanged();;
         return batchGetRowReqBuilder_;
       }
@@ -1749,33 +1062,33 @@ public final class TiapHbaselikeKvrpcpb {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowRequest, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowRequest.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowRequestOrBuilder> batchPutRowReqBuilder_;
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.BatchPutRowRequest batch_put_row_req = 6;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.BatchPutRowRequest batch_put_row_req = 3;</code>
        * @return Whether the batchPutRowReq field is set.
        */
       @java.lang.Override
       public boolean hasBatchPutRowReq() {
-        return reqCase_ == 6;
+        return reqCase_ == 3;
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.BatchPutRowRequest batch_put_row_req = 6;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.BatchPutRowRequest batch_put_row_req = 3;</code>
        * @return The batchPutRowReq.
        */
       @java.lang.Override
       public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowRequest getBatchPutRowReq() {
         if (batchPutRowReqBuilder_ == null) {
-          if (reqCase_ == 6) {
+          if (reqCase_ == 3) {
             return (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowRequest) req_;
           }
           return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowRequest.getDefaultInstance();
         } else {
-          if (reqCase_ == 6) {
+          if (reqCase_ == 3) {
             return batchPutRowReqBuilder_.getMessage();
           }
           return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowRequest.getDefaultInstance();
         }
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.BatchPutRowRequest batch_put_row_req = 6;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.BatchPutRowRequest batch_put_row_req = 3;</code>
        */
       public Builder setBatchPutRowReq(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowRequest value) {
         if (batchPutRowReqBuilder_ == null) {
@@ -1787,11 +1100,11 @@ public final class TiapHbaselikeKvrpcpb {
         } else {
           batchPutRowReqBuilder_.setMessage(value);
         }
-        reqCase_ = 6;
+        reqCase_ = 3;
         return this;
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.BatchPutRowRequest batch_put_row_req = 6;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.BatchPutRowRequest batch_put_row_req = 3;</code>
        */
       public Builder setBatchPutRowReq(
           com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowRequest.Builder builderForValue) {
@@ -1801,15 +1114,15 @@ public final class TiapHbaselikeKvrpcpb {
         } else {
           batchPutRowReqBuilder_.setMessage(builderForValue.build());
         }
-        reqCase_ = 6;
+        reqCase_ = 3;
         return this;
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.BatchPutRowRequest batch_put_row_req = 6;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.BatchPutRowRequest batch_put_row_req = 3;</code>
        */
       public Builder mergeBatchPutRowReq(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowRequest value) {
         if (batchPutRowReqBuilder_ == null) {
-          if (reqCase_ == 6 &&
+          if (reqCase_ == 3 &&
               req_ != com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowRequest.getDefaultInstance()) {
             req_ = com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowRequest.newBuilder((com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowRequest) req_)
                 .mergeFrom(value).buildPartial();
@@ -1818,26 +1131,26 @@ public final class TiapHbaselikeKvrpcpb {
           }
           onChanged();
         } else {
-          if (reqCase_ == 6) {
+          if (reqCase_ == 3) {
             batchPutRowReqBuilder_.mergeFrom(value);
           }
           batchPutRowReqBuilder_.setMessage(value);
         }
-        reqCase_ = 6;
+        reqCase_ = 3;
         return this;
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.BatchPutRowRequest batch_put_row_req = 6;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.BatchPutRowRequest batch_put_row_req = 3;</code>
        */
       public Builder clearBatchPutRowReq() {
         if (batchPutRowReqBuilder_ == null) {
-          if (reqCase_ == 6) {
+          if (reqCase_ == 3) {
             reqCase_ = 0;
             req_ = null;
             onChanged();
           }
         } else {
-          if (reqCase_ == 6) {
+          if (reqCase_ == 3) {
             reqCase_ = 0;
             req_ = null;
           }
@@ -1846,33 +1159,33 @@ public final class TiapHbaselikeKvrpcpb {
         return this;
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.BatchPutRowRequest batch_put_row_req = 6;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.BatchPutRowRequest batch_put_row_req = 3;</code>
        */
       public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowRequest.Builder getBatchPutRowReqBuilder() {
         return getBatchPutRowReqFieldBuilder().getBuilder();
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.BatchPutRowRequest batch_put_row_req = 6;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.BatchPutRowRequest batch_put_row_req = 3;</code>
        */
       @java.lang.Override
       public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowRequestOrBuilder getBatchPutRowReqOrBuilder() {
-        if ((reqCase_ == 6) && (batchPutRowReqBuilder_ != null)) {
+        if ((reqCase_ == 3) && (batchPutRowReqBuilder_ != null)) {
           return batchPutRowReqBuilder_.getMessageOrBuilder();
         } else {
-          if (reqCase_ == 6) {
+          if (reqCase_ == 3) {
             return (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowRequest) req_;
           }
           return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowRequest.getDefaultInstance();
         }
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.BatchPutRowRequest batch_put_row_req = 6;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.BatchPutRowRequest batch_put_row_req = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowRequest, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowRequest.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowRequestOrBuilder> 
           getBatchPutRowReqFieldBuilder() {
         if (batchPutRowReqBuilder_ == null) {
-          if (!(reqCase_ == 6)) {
+          if (!(reqCase_ == 3)) {
             req_ = com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowRequest.getDefaultInstance();
           }
           batchPutRowReqBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -1882,7 +1195,7 @@ public final class TiapHbaselikeKvrpcpb {
                   isClean());
           req_ = null;
         }
-        reqCase_ = 6;
+        reqCase_ = 3;
         onChanged();;
         return batchPutRowReqBuilder_;
       }
@@ -1890,33 +1203,33 @@ public final class TiapHbaselikeKvrpcpb {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowRequest, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowRequest.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowRequestOrBuilder> batchDeleteRowReqBuilder_;
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.BatchDeleteRowRequest batch_delete_row_req = 7;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.BatchDeleteRowRequest batch_delete_row_req = 4;</code>
        * @return Whether the batchDeleteRowReq field is set.
        */
       @java.lang.Override
       public boolean hasBatchDeleteRowReq() {
-        return reqCase_ == 7;
+        return reqCase_ == 4;
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.BatchDeleteRowRequest batch_delete_row_req = 7;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.BatchDeleteRowRequest batch_delete_row_req = 4;</code>
        * @return The batchDeleteRowReq.
        */
       @java.lang.Override
       public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowRequest getBatchDeleteRowReq() {
         if (batchDeleteRowReqBuilder_ == null) {
-          if (reqCase_ == 7) {
+          if (reqCase_ == 4) {
             return (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowRequest) req_;
           }
           return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowRequest.getDefaultInstance();
         } else {
-          if (reqCase_ == 7) {
+          if (reqCase_ == 4) {
             return batchDeleteRowReqBuilder_.getMessage();
           }
           return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowRequest.getDefaultInstance();
         }
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.BatchDeleteRowRequest batch_delete_row_req = 7;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.BatchDeleteRowRequest batch_delete_row_req = 4;</code>
        */
       public Builder setBatchDeleteRowReq(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowRequest value) {
         if (batchDeleteRowReqBuilder_ == null) {
@@ -1928,11 +1241,11 @@ public final class TiapHbaselikeKvrpcpb {
         } else {
           batchDeleteRowReqBuilder_.setMessage(value);
         }
-        reqCase_ = 7;
+        reqCase_ = 4;
         return this;
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.BatchDeleteRowRequest batch_delete_row_req = 7;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.BatchDeleteRowRequest batch_delete_row_req = 4;</code>
        */
       public Builder setBatchDeleteRowReq(
           com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowRequest.Builder builderForValue) {
@@ -1942,15 +1255,15 @@ public final class TiapHbaselikeKvrpcpb {
         } else {
           batchDeleteRowReqBuilder_.setMessage(builderForValue.build());
         }
-        reqCase_ = 7;
+        reqCase_ = 4;
         return this;
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.BatchDeleteRowRequest batch_delete_row_req = 7;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.BatchDeleteRowRequest batch_delete_row_req = 4;</code>
        */
       public Builder mergeBatchDeleteRowReq(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowRequest value) {
         if (batchDeleteRowReqBuilder_ == null) {
-          if (reqCase_ == 7 &&
+          if (reqCase_ == 4 &&
               req_ != com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowRequest.getDefaultInstance()) {
             req_ = com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowRequest.newBuilder((com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowRequest) req_)
                 .mergeFrom(value).buildPartial();
@@ -1959,26 +1272,26 @@ public final class TiapHbaselikeKvrpcpb {
           }
           onChanged();
         } else {
-          if (reqCase_ == 7) {
+          if (reqCase_ == 4) {
             batchDeleteRowReqBuilder_.mergeFrom(value);
           }
           batchDeleteRowReqBuilder_.setMessage(value);
         }
-        reqCase_ = 7;
+        reqCase_ = 4;
         return this;
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.BatchDeleteRowRequest batch_delete_row_req = 7;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.BatchDeleteRowRequest batch_delete_row_req = 4;</code>
        */
       public Builder clearBatchDeleteRowReq() {
         if (batchDeleteRowReqBuilder_ == null) {
-          if (reqCase_ == 7) {
+          if (reqCase_ == 4) {
             reqCase_ = 0;
             req_ = null;
             onChanged();
           }
         } else {
-          if (reqCase_ == 7) {
+          if (reqCase_ == 4) {
             reqCase_ = 0;
             req_ = null;
           }
@@ -1987,33 +1300,33 @@ public final class TiapHbaselikeKvrpcpb {
         return this;
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.BatchDeleteRowRequest batch_delete_row_req = 7;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.BatchDeleteRowRequest batch_delete_row_req = 4;</code>
        */
       public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowRequest.Builder getBatchDeleteRowReqBuilder() {
         return getBatchDeleteRowReqFieldBuilder().getBuilder();
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.BatchDeleteRowRequest batch_delete_row_req = 7;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.BatchDeleteRowRequest batch_delete_row_req = 4;</code>
        */
       @java.lang.Override
       public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowRequestOrBuilder getBatchDeleteRowReqOrBuilder() {
-        if ((reqCase_ == 7) && (batchDeleteRowReqBuilder_ != null)) {
+        if ((reqCase_ == 4) && (batchDeleteRowReqBuilder_ != null)) {
           return batchDeleteRowReqBuilder_.getMessageOrBuilder();
         } else {
-          if (reqCase_ == 7) {
+          if (reqCase_ == 4) {
             return (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowRequest) req_;
           }
           return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowRequest.getDefaultInstance();
         }
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.BatchDeleteRowRequest batch_delete_row_req = 7;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.BatchDeleteRowRequest batch_delete_row_req = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowRequest, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowRequest.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowRequestOrBuilder> 
           getBatchDeleteRowReqFieldBuilder() {
         if (batchDeleteRowReqBuilder_ == null) {
-          if (!(reqCase_ == 7)) {
+          if (!(reqCase_ == 4)) {
             req_ = com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowRequest.getDefaultInstance();
           }
           batchDeleteRowReqBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -2023,7 +1336,7 @@ public final class TiapHbaselikeKvrpcpb {
                   isClean());
           req_ = null;
         }
-        reqCase_ = 7;
+        reqCase_ = 4;
         onChanged();;
         return batchDeleteRowReqBuilder_;
       }
@@ -2100,92 +1413,47 @@ public final class TiapHbaselikeKvrpcpb {
     com.shopee.di.kvstore.proto.TiapKvrpcpb.KVResponseHeaderOrBuilder getHeaderOrBuilder();
 
     /**
-     * <code>.tiap_hbaselike_kvrpcpb.GetRowResponse get_row_resp = 2;</code>
-     * @return Whether the getRowResp field is set.
-     */
-    boolean hasGetRowResp();
-    /**
-     * <code>.tiap_hbaselike_kvrpcpb.GetRowResponse get_row_resp = 2;</code>
-     * @return The getRowResp.
-     */
-    com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse getGetRowResp();
-    /**
-     * <code>.tiap_hbaselike_kvrpcpb.GetRowResponse get_row_resp = 2;</code>
-     */
-    com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponseOrBuilder getGetRowRespOrBuilder();
-
-    /**
-     * <code>.tiap_hbaselike_kvrpcpb.PutRowResponse put_row_resp = 3;</code>
-     * @return Whether the putRowResp field is set.
-     */
-    boolean hasPutRowResp();
-    /**
-     * <code>.tiap_hbaselike_kvrpcpb.PutRowResponse put_row_resp = 3;</code>
-     * @return The putRowResp.
-     */
-    com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse getPutRowResp();
-    /**
-     * <code>.tiap_hbaselike_kvrpcpb.PutRowResponse put_row_resp = 3;</code>
-     */
-    com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponseOrBuilder getPutRowRespOrBuilder();
-
-    /**
-     * <code>.tiap_hbaselike_kvrpcpb.DeleteRowResponse delete_row_resp = 4;</code>
-     * @return Whether the deleteRowResp field is set.
-     */
-    boolean hasDeleteRowResp();
-    /**
-     * <code>.tiap_hbaselike_kvrpcpb.DeleteRowResponse delete_row_resp = 4;</code>
-     * @return The deleteRowResp.
-     */
-    com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse getDeleteRowResp();
-    /**
-     * <code>.tiap_hbaselike_kvrpcpb.DeleteRowResponse delete_row_resp = 4;</code>
-     */
-    com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponseOrBuilder getDeleteRowRespOrBuilder();
-
-    /**
-     * <code>.tiap_hbaselike_kvrpcpb.BatchGetRowResponse batch_get_row_resp = 5;</code>
+     * <code>.tiap_hbaselike_kvrpcpb.BatchGetRowResponse batch_get_row_resp = 2;</code>
      * @return Whether the batchGetRowResp field is set.
      */
     boolean hasBatchGetRowResp();
     /**
-     * <code>.tiap_hbaselike_kvrpcpb.BatchGetRowResponse batch_get_row_resp = 5;</code>
+     * <code>.tiap_hbaselike_kvrpcpb.BatchGetRowResponse batch_get_row_resp = 2;</code>
      * @return The batchGetRowResp.
      */
     com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowResponse getBatchGetRowResp();
     /**
-     * <code>.tiap_hbaselike_kvrpcpb.BatchGetRowResponse batch_get_row_resp = 5;</code>
+     * <code>.tiap_hbaselike_kvrpcpb.BatchGetRowResponse batch_get_row_resp = 2;</code>
      */
     com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowResponseOrBuilder getBatchGetRowRespOrBuilder();
 
     /**
-     * <code>.tiap_hbaselike_kvrpcpb.BatchPutRowResponse batch_put_row_resp = 6;</code>
+     * <code>.tiap_hbaselike_kvrpcpb.BatchPutRowResponse batch_put_row_resp = 3;</code>
      * @return Whether the batchPutRowResp field is set.
      */
     boolean hasBatchPutRowResp();
     /**
-     * <code>.tiap_hbaselike_kvrpcpb.BatchPutRowResponse batch_put_row_resp = 6;</code>
+     * <code>.tiap_hbaselike_kvrpcpb.BatchPutRowResponse batch_put_row_resp = 3;</code>
      * @return The batchPutRowResp.
      */
     com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowResponse getBatchPutRowResp();
     /**
-     * <code>.tiap_hbaselike_kvrpcpb.BatchPutRowResponse batch_put_row_resp = 6;</code>
+     * <code>.tiap_hbaselike_kvrpcpb.BatchPutRowResponse batch_put_row_resp = 3;</code>
      */
     com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowResponseOrBuilder getBatchPutRowRespOrBuilder();
 
     /**
-     * <code>.tiap_hbaselike_kvrpcpb.BatchDeleteRowResponse batch_delete_row_resp = 7;</code>
+     * <code>.tiap_hbaselike_kvrpcpb.BatchDeleteRowResponse batch_delete_row_resp = 4;</code>
      * @return Whether the batchDeleteRowResp field is set.
      */
     boolean hasBatchDeleteRowResp();
     /**
-     * <code>.tiap_hbaselike_kvrpcpb.BatchDeleteRowResponse batch_delete_row_resp = 7;</code>
+     * <code>.tiap_hbaselike_kvrpcpb.BatchDeleteRowResponse batch_delete_row_resp = 4;</code>
      * @return The batchDeleteRowResp.
      */
     com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowResponse getBatchDeleteRowResp();
     /**
-     * <code>.tiap_hbaselike_kvrpcpb.BatchDeleteRowResponse batch_delete_row_resp = 7;</code>
+     * <code>.tiap_hbaselike_kvrpcpb.BatchDeleteRowResponse batch_delete_row_resp = 4;</code>
      */
     com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowResponseOrBuilder getBatchDeleteRowRespOrBuilder();
 
@@ -2250,50 +1518,8 @@ public final class TiapHbaselikeKvrpcpb {
               break;
             }
             case 18: {
-              com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse.Builder subBuilder = null;
-              if (respCase_ == 2) {
-                subBuilder = ((com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse) resp_).toBuilder();
-              }
-              resp_ =
-                  input.readMessage(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse) resp_);
-                resp_ = subBuilder.buildPartial();
-              }
-              respCase_ = 2;
-              break;
-            }
-            case 26: {
-              com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse.Builder subBuilder = null;
-              if (respCase_ == 3) {
-                subBuilder = ((com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse) resp_).toBuilder();
-              }
-              resp_ =
-                  input.readMessage(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse) resp_);
-                resp_ = subBuilder.buildPartial();
-              }
-              respCase_ = 3;
-              break;
-            }
-            case 34: {
-              com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse.Builder subBuilder = null;
-              if (respCase_ == 4) {
-                subBuilder = ((com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse) resp_).toBuilder();
-              }
-              resp_ =
-                  input.readMessage(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse) resp_);
-                resp_ = subBuilder.buildPartial();
-              }
-              respCase_ = 4;
-              break;
-            }
-            case 42: {
               com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowResponse.Builder subBuilder = null;
-              if (respCase_ == 5) {
+              if (respCase_ == 2) {
                 subBuilder = ((com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowResponse) resp_).toBuilder();
               }
               resp_ =
@@ -2302,12 +1528,12 @@ public final class TiapHbaselikeKvrpcpb {
                 subBuilder.mergeFrom((com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowResponse) resp_);
                 resp_ = subBuilder.buildPartial();
               }
-              respCase_ = 5;
+              respCase_ = 2;
               break;
             }
-            case 50: {
+            case 26: {
               com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowResponse.Builder subBuilder = null;
-              if (respCase_ == 6) {
+              if (respCase_ == 3) {
                 subBuilder = ((com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowResponse) resp_).toBuilder();
               }
               resp_ =
@@ -2316,12 +1542,12 @@ public final class TiapHbaselikeKvrpcpb {
                 subBuilder.mergeFrom((com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowResponse) resp_);
                 resp_ = subBuilder.buildPartial();
               }
-              respCase_ = 6;
+              respCase_ = 3;
               break;
             }
-            case 58: {
+            case 34: {
               com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowResponse.Builder subBuilder = null;
-              if (respCase_ == 7) {
+              if (respCase_ == 4) {
                 subBuilder = ((com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowResponse) resp_).toBuilder();
               }
               resp_ =
@@ -2330,7 +1556,7 @@ public final class TiapHbaselikeKvrpcpb {
                 subBuilder.mergeFrom((com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowResponse) resp_);
                 resp_ = subBuilder.buildPartial();
               }
-              respCase_ = 7;
+              respCase_ = 4;
               break;
             }
             default: {
@@ -2370,12 +1596,9 @@ public final class TiapHbaselikeKvrpcpb {
     public enum RespCase
         implements com.google.protobuf.Internal.EnumLite,
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
-      GET_ROW_RESP(2),
-      PUT_ROW_RESP(3),
-      DELETE_ROW_RESP(4),
-      BATCH_GET_ROW_RESP(5),
-      BATCH_PUT_ROW_RESP(6),
-      BATCH_DELETE_ROW_RESP(7),
+      BATCH_GET_ROW_RESP(2),
+      BATCH_PUT_ROW_RESP(3),
+      BATCH_DELETE_ROW_RESP(4),
       RESP_NOT_SET(0);
       private final int value;
       private RespCase(int value) {
@@ -2393,12 +1616,9 @@ public final class TiapHbaselikeKvrpcpb {
 
       public static RespCase forNumber(int value) {
         switch (value) {
-          case 2: return GET_ROW_RESP;
-          case 3: return PUT_ROW_RESP;
-          case 4: return DELETE_ROW_RESP;
-          case 5: return BATCH_GET_ROW_RESP;
-          case 6: return BATCH_PUT_ROW_RESP;
-          case 7: return BATCH_DELETE_ROW_RESP;
+          case 2: return BATCH_GET_ROW_RESP;
+          case 3: return BATCH_PUT_ROW_RESP;
+          case 4: return BATCH_DELETE_ROW_RESP;
           case 0: return RESP_NOT_SET;
           default: return null;
         }
@@ -2440,187 +1660,94 @@ public final class TiapHbaselikeKvrpcpb {
       return getHeader();
     }
 
-    public static final int GET_ROW_RESP_FIELD_NUMBER = 2;
+    public static final int BATCH_GET_ROW_RESP_FIELD_NUMBER = 2;
     /**
-     * <code>.tiap_hbaselike_kvrpcpb.GetRowResponse get_row_resp = 2;</code>
-     * @return Whether the getRowResp field is set.
-     */
-    @java.lang.Override
-    public boolean hasGetRowResp() {
-      return respCase_ == 2;
-    }
-    /**
-     * <code>.tiap_hbaselike_kvrpcpb.GetRowResponse get_row_resp = 2;</code>
-     * @return The getRowResp.
-     */
-    @java.lang.Override
-    public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse getGetRowResp() {
-      if (respCase_ == 2) {
-         return (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse) resp_;
-      }
-      return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse.getDefaultInstance();
-    }
-    /**
-     * <code>.tiap_hbaselike_kvrpcpb.GetRowResponse get_row_resp = 2;</code>
-     */
-    @java.lang.Override
-    public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponseOrBuilder getGetRowRespOrBuilder() {
-      if (respCase_ == 2) {
-         return (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse) resp_;
-      }
-      return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse.getDefaultInstance();
-    }
-
-    public static final int PUT_ROW_RESP_FIELD_NUMBER = 3;
-    /**
-     * <code>.tiap_hbaselike_kvrpcpb.PutRowResponse put_row_resp = 3;</code>
-     * @return Whether the putRowResp field is set.
-     */
-    @java.lang.Override
-    public boolean hasPutRowResp() {
-      return respCase_ == 3;
-    }
-    /**
-     * <code>.tiap_hbaselike_kvrpcpb.PutRowResponse put_row_resp = 3;</code>
-     * @return The putRowResp.
-     */
-    @java.lang.Override
-    public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse getPutRowResp() {
-      if (respCase_ == 3) {
-         return (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse) resp_;
-      }
-      return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse.getDefaultInstance();
-    }
-    /**
-     * <code>.tiap_hbaselike_kvrpcpb.PutRowResponse put_row_resp = 3;</code>
-     */
-    @java.lang.Override
-    public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponseOrBuilder getPutRowRespOrBuilder() {
-      if (respCase_ == 3) {
-         return (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse) resp_;
-      }
-      return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse.getDefaultInstance();
-    }
-
-    public static final int DELETE_ROW_RESP_FIELD_NUMBER = 4;
-    /**
-     * <code>.tiap_hbaselike_kvrpcpb.DeleteRowResponse delete_row_resp = 4;</code>
-     * @return Whether the deleteRowResp field is set.
-     */
-    @java.lang.Override
-    public boolean hasDeleteRowResp() {
-      return respCase_ == 4;
-    }
-    /**
-     * <code>.tiap_hbaselike_kvrpcpb.DeleteRowResponse delete_row_resp = 4;</code>
-     * @return The deleteRowResp.
-     */
-    @java.lang.Override
-    public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse getDeleteRowResp() {
-      if (respCase_ == 4) {
-         return (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse) resp_;
-      }
-      return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse.getDefaultInstance();
-    }
-    /**
-     * <code>.tiap_hbaselike_kvrpcpb.DeleteRowResponse delete_row_resp = 4;</code>
-     */
-    @java.lang.Override
-    public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponseOrBuilder getDeleteRowRespOrBuilder() {
-      if (respCase_ == 4) {
-         return (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse) resp_;
-      }
-      return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse.getDefaultInstance();
-    }
-
-    public static final int BATCH_GET_ROW_RESP_FIELD_NUMBER = 5;
-    /**
-     * <code>.tiap_hbaselike_kvrpcpb.BatchGetRowResponse batch_get_row_resp = 5;</code>
+     * <code>.tiap_hbaselike_kvrpcpb.BatchGetRowResponse batch_get_row_resp = 2;</code>
      * @return Whether the batchGetRowResp field is set.
      */
     @java.lang.Override
     public boolean hasBatchGetRowResp() {
-      return respCase_ == 5;
+      return respCase_ == 2;
     }
     /**
-     * <code>.tiap_hbaselike_kvrpcpb.BatchGetRowResponse batch_get_row_resp = 5;</code>
+     * <code>.tiap_hbaselike_kvrpcpb.BatchGetRowResponse batch_get_row_resp = 2;</code>
      * @return The batchGetRowResp.
      */
     @java.lang.Override
     public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowResponse getBatchGetRowResp() {
-      if (respCase_ == 5) {
+      if (respCase_ == 2) {
          return (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowResponse) resp_;
       }
       return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowResponse.getDefaultInstance();
     }
     /**
-     * <code>.tiap_hbaselike_kvrpcpb.BatchGetRowResponse batch_get_row_resp = 5;</code>
+     * <code>.tiap_hbaselike_kvrpcpb.BatchGetRowResponse batch_get_row_resp = 2;</code>
      */
     @java.lang.Override
     public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowResponseOrBuilder getBatchGetRowRespOrBuilder() {
-      if (respCase_ == 5) {
+      if (respCase_ == 2) {
          return (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowResponse) resp_;
       }
       return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowResponse.getDefaultInstance();
     }
 
-    public static final int BATCH_PUT_ROW_RESP_FIELD_NUMBER = 6;
+    public static final int BATCH_PUT_ROW_RESP_FIELD_NUMBER = 3;
     /**
-     * <code>.tiap_hbaselike_kvrpcpb.BatchPutRowResponse batch_put_row_resp = 6;</code>
+     * <code>.tiap_hbaselike_kvrpcpb.BatchPutRowResponse batch_put_row_resp = 3;</code>
      * @return Whether the batchPutRowResp field is set.
      */
     @java.lang.Override
     public boolean hasBatchPutRowResp() {
-      return respCase_ == 6;
+      return respCase_ == 3;
     }
     /**
-     * <code>.tiap_hbaselike_kvrpcpb.BatchPutRowResponse batch_put_row_resp = 6;</code>
+     * <code>.tiap_hbaselike_kvrpcpb.BatchPutRowResponse batch_put_row_resp = 3;</code>
      * @return The batchPutRowResp.
      */
     @java.lang.Override
     public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowResponse getBatchPutRowResp() {
-      if (respCase_ == 6) {
+      if (respCase_ == 3) {
          return (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowResponse) resp_;
       }
       return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowResponse.getDefaultInstance();
     }
     /**
-     * <code>.tiap_hbaselike_kvrpcpb.BatchPutRowResponse batch_put_row_resp = 6;</code>
+     * <code>.tiap_hbaselike_kvrpcpb.BatchPutRowResponse batch_put_row_resp = 3;</code>
      */
     @java.lang.Override
     public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowResponseOrBuilder getBatchPutRowRespOrBuilder() {
-      if (respCase_ == 6) {
+      if (respCase_ == 3) {
          return (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowResponse) resp_;
       }
       return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowResponse.getDefaultInstance();
     }
 
-    public static final int BATCH_DELETE_ROW_RESP_FIELD_NUMBER = 7;
+    public static final int BATCH_DELETE_ROW_RESP_FIELD_NUMBER = 4;
     /**
-     * <code>.tiap_hbaselike_kvrpcpb.BatchDeleteRowResponse batch_delete_row_resp = 7;</code>
+     * <code>.tiap_hbaselike_kvrpcpb.BatchDeleteRowResponse batch_delete_row_resp = 4;</code>
      * @return Whether the batchDeleteRowResp field is set.
      */
     @java.lang.Override
     public boolean hasBatchDeleteRowResp() {
-      return respCase_ == 7;
+      return respCase_ == 4;
     }
     /**
-     * <code>.tiap_hbaselike_kvrpcpb.BatchDeleteRowResponse batch_delete_row_resp = 7;</code>
+     * <code>.tiap_hbaselike_kvrpcpb.BatchDeleteRowResponse batch_delete_row_resp = 4;</code>
      * @return The batchDeleteRowResp.
      */
     @java.lang.Override
     public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowResponse getBatchDeleteRowResp() {
-      if (respCase_ == 7) {
+      if (respCase_ == 4) {
          return (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowResponse) resp_;
       }
       return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowResponse.getDefaultInstance();
     }
     /**
-     * <code>.tiap_hbaselike_kvrpcpb.BatchDeleteRowResponse batch_delete_row_resp = 7;</code>
+     * <code>.tiap_hbaselike_kvrpcpb.BatchDeleteRowResponse batch_delete_row_resp = 4;</code>
      */
     @java.lang.Override
     public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowResponseOrBuilder getBatchDeleteRowRespOrBuilder() {
-      if (respCase_ == 7) {
+      if (respCase_ == 4) {
          return (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowResponse) resp_;
       }
       return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowResponse.getDefaultInstance();
@@ -2644,22 +1771,13 @@ public final class TiapHbaselikeKvrpcpb {
         output.writeMessage(1, getHeader());
       }
       if (respCase_ == 2) {
-        output.writeMessage(2, (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse) resp_);
+        output.writeMessage(2, (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowResponse) resp_);
       }
       if (respCase_ == 3) {
-        output.writeMessage(3, (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse) resp_);
+        output.writeMessage(3, (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowResponse) resp_);
       }
       if (respCase_ == 4) {
-        output.writeMessage(4, (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse) resp_);
-      }
-      if (respCase_ == 5) {
-        output.writeMessage(5, (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowResponse) resp_);
-      }
-      if (respCase_ == 6) {
-        output.writeMessage(6, (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowResponse) resp_);
-      }
-      if (respCase_ == 7) {
-        output.writeMessage(7, (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowResponse) resp_);
+        output.writeMessage(4, (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowResponse) resp_);
       }
       unknownFields.writeTo(output);
     }
@@ -2676,27 +1794,15 @@ public final class TiapHbaselikeKvrpcpb {
       }
       if (respCase_ == 2) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse) resp_);
+          .computeMessageSize(2, (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowResponse) resp_);
       }
       if (respCase_ == 3) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse) resp_);
+          .computeMessageSize(3, (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowResponse) resp_);
       }
       if (respCase_ == 4) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse) resp_);
-      }
-      if (respCase_ == 5) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowResponse) resp_);
-      }
-      if (respCase_ == 6) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowResponse) resp_);
-      }
-      if (respCase_ == 7) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowResponse) resp_);
+          .computeMessageSize(4, (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowResponse) resp_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2721,26 +1827,14 @@ public final class TiapHbaselikeKvrpcpb {
       if (!getRespCase().equals(other.getRespCase())) return false;
       switch (respCase_) {
         case 2:
-          if (!getGetRowResp()
-              .equals(other.getGetRowResp())) return false;
-          break;
-        case 3:
-          if (!getPutRowResp()
-              .equals(other.getPutRowResp())) return false;
-          break;
-        case 4:
-          if (!getDeleteRowResp()
-              .equals(other.getDeleteRowResp())) return false;
-          break;
-        case 5:
           if (!getBatchGetRowResp()
               .equals(other.getBatchGetRowResp())) return false;
           break;
-        case 6:
+        case 3:
           if (!getBatchPutRowResp()
               .equals(other.getBatchPutRowResp())) return false;
           break;
-        case 7:
+        case 4:
           if (!getBatchDeleteRowResp()
               .equals(other.getBatchDeleteRowResp())) return false;
           break;
@@ -2764,26 +1858,14 @@ public final class TiapHbaselikeKvrpcpb {
       }
       switch (respCase_) {
         case 2:
-          hash = (37 * hash) + GET_ROW_RESP_FIELD_NUMBER;
-          hash = (53 * hash) + getGetRowResp().hashCode();
-          break;
-        case 3:
-          hash = (37 * hash) + PUT_ROW_RESP_FIELD_NUMBER;
-          hash = (53 * hash) + getPutRowResp().hashCode();
-          break;
-        case 4:
-          hash = (37 * hash) + DELETE_ROW_RESP_FIELD_NUMBER;
-          hash = (53 * hash) + getDeleteRowResp().hashCode();
-          break;
-        case 5:
           hash = (37 * hash) + BATCH_GET_ROW_RESP_FIELD_NUMBER;
           hash = (53 * hash) + getBatchGetRowResp().hashCode();
           break;
-        case 6:
+        case 3:
           hash = (37 * hash) + BATCH_PUT_ROW_RESP_FIELD_NUMBER;
           hash = (53 * hash) + getBatchPutRowResp().hashCode();
           break;
-        case 7:
+        case 4:
           hash = (37 * hash) + BATCH_DELETE_ROW_RESP_FIELD_NUMBER;
           hash = (53 * hash) + getBatchDeleteRowResp().hashCode();
           break;
@@ -2963,41 +2045,20 @@ public final class TiapHbaselikeKvrpcpb {
           result.header_ = headerBuilder_.build();
         }
         if (respCase_ == 2) {
-          if (getRowRespBuilder_ == null) {
-            result.resp_ = resp_;
-          } else {
-            result.resp_ = getRowRespBuilder_.build();
-          }
-        }
-        if (respCase_ == 3) {
-          if (putRowRespBuilder_ == null) {
-            result.resp_ = resp_;
-          } else {
-            result.resp_ = putRowRespBuilder_.build();
-          }
-        }
-        if (respCase_ == 4) {
-          if (deleteRowRespBuilder_ == null) {
-            result.resp_ = resp_;
-          } else {
-            result.resp_ = deleteRowRespBuilder_.build();
-          }
-        }
-        if (respCase_ == 5) {
           if (batchGetRowRespBuilder_ == null) {
             result.resp_ = resp_;
           } else {
             result.resp_ = batchGetRowRespBuilder_.build();
           }
         }
-        if (respCase_ == 6) {
+        if (respCase_ == 3) {
           if (batchPutRowRespBuilder_ == null) {
             result.resp_ = resp_;
           } else {
             result.resp_ = batchPutRowRespBuilder_.build();
           }
         }
-        if (respCase_ == 7) {
+        if (respCase_ == 4) {
           if (batchDeleteRowRespBuilder_ == null) {
             result.resp_ = resp_;
           } else {
@@ -3057,18 +2118,6 @@ public final class TiapHbaselikeKvrpcpb {
           mergeHeader(other.getHeader());
         }
         switch (other.getRespCase()) {
-          case GET_ROW_RESP: {
-            mergeGetRowResp(other.getGetRowResp());
-            break;
-          }
-          case PUT_ROW_RESP: {
-            mergePutRowResp(other.getPutRowResp());
-            break;
-          }
-          case DELETE_ROW_RESP: {
-            mergeDeleteRowResp(other.getDeleteRowResp());
-            break;
-          }
           case BATCH_GET_ROW_RESP: {
             mergeBatchGetRowResp(other.getBatchGetRowResp());
             break;
@@ -3249,458 +2298,35 @@ public final class TiapHbaselikeKvrpcpb {
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponseOrBuilder> getRowRespBuilder_;
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.GetRowResponse get_row_resp = 2;</code>
-       * @return Whether the getRowResp field is set.
-       */
-      @java.lang.Override
-      public boolean hasGetRowResp() {
-        return respCase_ == 2;
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.GetRowResponse get_row_resp = 2;</code>
-       * @return The getRowResp.
-       */
-      @java.lang.Override
-      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse getGetRowResp() {
-        if (getRowRespBuilder_ == null) {
-          if (respCase_ == 2) {
-            return (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse) resp_;
-          }
-          return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse.getDefaultInstance();
-        } else {
-          if (respCase_ == 2) {
-            return getRowRespBuilder_.getMessage();
-          }
-          return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.GetRowResponse get_row_resp = 2;</code>
-       */
-      public Builder setGetRowResp(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse value) {
-        if (getRowRespBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          resp_ = value;
-          onChanged();
-        } else {
-          getRowRespBuilder_.setMessage(value);
-        }
-        respCase_ = 2;
-        return this;
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.GetRowResponse get_row_resp = 2;</code>
-       */
-      public Builder setGetRowResp(
-          com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse.Builder builderForValue) {
-        if (getRowRespBuilder_ == null) {
-          resp_ = builderForValue.build();
-          onChanged();
-        } else {
-          getRowRespBuilder_.setMessage(builderForValue.build());
-        }
-        respCase_ = 2;
-        return this;
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.GetRowResponse get_row_resp = 2;</code>
-       */
-      public Builder mergeGetRowResp(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse value) {
-        if (getRowRespBuilder_ == null) {
-          if (respCase_ == 2 &&
-              resp_ != com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse.getDefaultInstance()) {
-            resp_ = com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse.newBuilder((com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse) resp_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            resp_ = value;
-          }
-          onChanged();
-        } else {
-          if (respCase_ == 2) {
-            getRowRespBuilder_.mergeFrom(value);
-          }
-          getRowRespBuilder_.setMessage(value);
-        }
-        respCase_ = 2;
-        return this;
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.GetRowResponse get_row_resp = 2;</code>
-       */
-      public Builder clearGetRowResp() {
-        if (getRowRespBuilder_ == null) {
-          if (respCase_ == 2) {
-            respCase_ = 0;
-            resp_ = null;
-            onChanged();
-          }
-        } else {
-          if (respCase_ == 2) {
-            respCase_ = 0;
-            resp_ = null;
-          }
-          getRowRespBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.GetRowResponse get_row_resp = 2;</code>
-       */
-      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse.Builder getGetRowRespBuilder() {
-        return getGetRowRespFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.GetRowResponse get_row_resp = 2;</code>
-       */
-      @java.lang.Override
-      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponseOrBuilder getGetRowRespOrBuilder() {
-        if ((respCase_ == 2) && (getRowRespBuilder_ != null)) {
-          return getRowRespBuilder_.getMessageOrBuilder();
-        } else {
-          if (respCase_ == 2) {
-            return (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse) resp_;
-          }
-          return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.GetRowResponse get_row_resp = 2;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponseOrBuilder> 
-          getGetRowRespFieldBuilder() {
-        if (getRowRespBuilder_ == null) {
-          if (!(respCase_ == 2)) {
-            resp_ = com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse.getDefaultInstance();
-          }
-          getRowRespBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponseOrBuilder>(
-                  (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse) resp_,
-                  getParentForChildren(),
-                  isClean());
-          resp_ = null;
-        }
-        respCase_ = 2;
-        onChanged();;
-        return getRowRespBuilder_;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponseOrBuilder> putRowRespBuilder_;
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.PutRowResponse put_row_resp = 3;</code>
-       * @return Whether the putRowResp field is set.
-       */
-      @java.lang.Override
-      public boolean hasPutRowResp() {
-        return respCase_ == 3;
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.PutRowResponse put_row_resp = 3;</code>
-       * @return The putRowResp.
-       */
-      @java.lang.Override
-      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse getPutRowResp() {
-        if (putRowRespBuilder_ == null) {
-          if (respCase_ == 3) {
-            return (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse) resp_;
-          }
-          return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse.getDefaultInstance();
-        } else {
-          if (respCase_ == 3) {
-            return putRowRespBuilder_.getMessage();
-          }
-          return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.PutRowResponse put_row_resp = 3;</code>
-       */
-      public Builder setPutRowResp(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse value) {
-        if (putRowRespBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          resp_ = value;
-          onChanged();
-        } else {
-          putRowRespBuilder_.setMessage(value);
-        }
-        respCase_ = 3;
-        return this;
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.PutRowResponse put_row_resp = 3;</code>
-       */
-      public Builder setPutRowResp(
-          com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse.Builder builderForValue) {
-        if (putRowRespBuilder_ == null) {
-          resp_ = builderForValue.build();
-          onChanged();
-        } else {
-          putRowRespBuilder_.setMessage(builderForValue.build());
-        }
-        respCase_ = 3;
-        return this;
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.PutRowResponse put_row_resp = 3;</code>
-       */
-      public Builder mergePutRowResp(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse value) {
-        if (putRowRespBuilder_ == null) {
-          if (respCase_ == 3 &&
-              resp_ != com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse.getDefaultInstance()) {
-            resp_ = com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse.newBuilder((com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse) resp_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            resp_ = value;
-          }
-          onChanged();
-        } else {
-          if (respCase_ == 3) {
-            putRowRespBuilder_.mergeFrom(value);
-          }
-          putRowRespBuilder_.setMessage(value);
-        }
-        respCase_ = 3;
-        return this;
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.PutRowResponse put_row_resp = 3;</code>
-       */
-      public Builder clearPutRowResp() {
-        if (putRowRespBuilder_ == null) {
-          if (respCase_ == 3) {
-            respCase_ = 0;
-            resp_ = null;
-            onChanged();
-          }
-        } else {
-          if (respCase_ == 3) {
-            respCase_ = 0;
-            resp_ = null;
-          }
-          putRowRespBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.PutRowResponse put_row_resp = 3;</code>
-       */
-      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse.Builder getPutRowRespBuilder() {
-        return getPutRowRespFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.PutRowResponse put_row_resp = 3;</code>
-       */
-      @java.lang.Override
-      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponseOrBuilder getPutRowRespOrBuilder() {
-        if ((respCase_ == 3) && (putRowRespBuilder_ != null)) {
-          return putRowRespBuilder_.getMessageOrBuilder();
-        } else {
-          if (respCase_ == 3) {
-            return (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse) resp_;
-          }
-          return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.PutRowResponse put_row_resp = 3;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponseOrBuilder> 
-          getPutRowRespFieldBuilder() {
-        if (putRowRespBuilder_ == null) {
-          if (!(respCase_ == 3)) {
-            resp_ = com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse.getDefaultInstance();
-          }
-          putRowRespBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponseOrBuilder>(
-                  (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse) resp_,
-                  getParentForChildren(),
-                  isClean());
-          resp_ = null;
-        }
-        respCase_ = 3;
-        onChanged();;
-        return putRowRespBuilder_;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponseOrBuilder> deleteRowRespBuilder_;
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.DeleteRowResponse delete_row_resp = 4;</code>
-       * @return Whether the deleteRowResp field is set.
-       */
-      @java.lang.Override
-      public boolean hasDeleteRowResp() {
-        return respCase_ == 4;
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.DeleteRowResponse delete_row_resp = 4;</code>
-       * @return The deleteRowResp.
-       */
-      @java.lang.Override
-      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse getDeleteRowResp() {
-        if (deleteRowRespBuilder_ == null) {
-          if (respCase_ == 4) {
-            return (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse) resp_;
-          }
-          return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse.getDefaultInstance();
-        } else {
-          if (respCase_ == 4) {
-            return deleteRowRespBuilder_.getMessage();
-          }
-          return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.DeleteRowResponse delete_row_resp = 4;</code>
-       */
-      public Builder setDeleteRowResp(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse value) {
-        if (deleteRowRespBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          resp_ = value;
-          onChanged();
-        } else {
-          deleteRowRespBuilder_.setMessage(value);
-        }
-        respCase_ = 4;
-        return this;
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.DeleteRowResponse delete_row_resp = 4;</code>
-       */
-      public Builder setDeleteRowResp(
-          com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse.Builder builderForValue) {
-        if (deleteRowRespBuilder_ == null) {
-          resp_ = builderForValue.build();
-          onChanged();
-        } else {
-          deleteRowRespBuilder_.setMessage(builderForValue.build());
-        }
-        respCase_ = 4;
-        return this;
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.DeleteRowResponse delete_row_resp = 4;</code>
-       */
-      public Builder mergeDeleteRowResp(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse value) {
-        if (deleteRowRespBuilder_ == null) {
-          if (respCase_ == 4 &&
-              resp_ != com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse.getDefaultInstance()) {
-            resp_ = com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse.newBuilder((com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse) resp_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            resp_ = value;
-          }
-          onChanged();
-        } else {
-          if (respCase_ == 4) {
-            deleteRowRespBuilder_.mergeFrom(value);
-          }
-          deleteRowRespBuilder_.setMessage(value);
-        }
-        respCase_ = 4;
-        return this;
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.DeleteRowResponse delete_row_resp = 4;</code>
-       */
-      public Builder clearDeleteRowResp() {
-        if (deleteRowRespBuilder_ == null) {
-          if (respCase_ == 4) {
-            respCase_ = 0;
-            resp_ = null;
-            onChanged();
-          }
-        } else {
-          if (respCase_ == 4) {
-            respCase_ = 0;
-            resp_ = null;
-          }
-          deleteRowRespBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.DeleteRowResponse delete_row_resp = 4;</code>
-       */
-      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse.Builder getDeleteRowRespBuilder() {
-        return getDeleteRowRespFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.DeleteRowResponse delete_row_resp = 4;</code>
-       */
-      @java.lang.Override
-      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponseOrBuilder getDeleteRowRespOrBuilder() {
-        if ((respCase_ == 4) && (deleteRowRespBuilder_ != null)) {
-          return deleteRowRespBuilder_.getMessageOrBuilder();
-        } else {
-          if (respCase_ == 4) {
-            return (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse) resp_;
-          }
-          return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.DeleteRowResponse delete_row_resp = 4;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponseOrBuilder> 
-          getDeleteRowRespFieldBuilder() {
-        if (deleteRowRespBuilder_ == null) {
-          if (!(respCase_ == 4)) {
-            resp_ = com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse.getDefaultInstance();
-          }
-          deleteRowRespBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponseOrBuilder>(
-                  (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse) resp_,
-                  getParentForChildren(),
-                  isClean());
-          resp_ = null;
-        }
-        respCase_ = 4;
-        onChanged();;
-        return deleteRowRespBuilder_;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
           com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowResponse, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowResponse.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowResponseOrBuilder> batchGetRowRespBuilder_;
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.BatchGetRowResponse batch_get_row_resp = 5;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.BatchGetRowResponse batch_get_row_resp = 2;</code>
        * @return Whether the batchGetRowResp field is set.
        */
       @java.lang.Override
       public boolean hasBatchGetRowResp() {
-        return respCase_ == 5;
+        return respCase_ == 2;
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.BatchGetRowResponse batch_get_row_resp = 5;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.BatchGetRowResponse batch_get_row_resp = 2;</code>
        * @return The batchGetRowResp.
        */
       @java.lang.Override
       public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowResponse getBatchGetRowResp() {
         if (batchGetRowRespBuilder_ == null) {
-          if (respCase_ == 5) {
+          if (respCase_ == 2) {
             return (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowResponse) resp_;
           }
           return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowResponse.getDefaultInstance();
         } else {
-          if (respCase_ == 5) {
+          if (respCase_ == 2) {
             return batchGetRowRespBuilder_.getMessage();
           }
           return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowResponse.getDefaultInstance();
         }
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.BatchGetRowResponse batch_get_row_resp = 5;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.BatchGetRowResponse batch_get_row_resp = 2;</code>
        */
       public Builder setBatchGetRowResp(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowResponse value) {
         if (batchGetRowRespBuilder_ == null) {
@@ -3712,11 +2338,11 @@ public final class TiapHbaselikeKvrpcpb {
         } else {
           batchGetRowRespBuilder_.setMessage(value);
         }
-        respCase_ = 5;
+        respCase_ = 2;
         return this;
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.BatchGetRowResponse batch_get_row_resp = 5;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.BatchGetRowResponse batch_get_row_resp = 2;</code>
        */
       public Builder setBatchGetRowResp(
           com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowResponse.Builder builderForValue) {
@@ -3726,15 +2352,15 @@ public final class TiapHbaselikeKvrpcpb {
         } else {
           batchGetRowRespBuilder_.setMessage(builderForValue.build());
         }
-        respCase_ = 5;
+        respCase_ = 2;
         return this;
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.BatchGetRowResponse batch_get_row_resp = 5;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.BatchGetRowResponse batch_get_row_resp = 2;</code>
        */
       public Builder mergeBatchGetRowResp(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowResponse value) {
         if (batchGetRowRespBuilder_ == null) {
-          if (respCase_ == 5 &&
+          if (respCase_ == 2 &&
               resp_ != com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowResponse.getDefaultInstance()) {
             resp_ = com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowResponse.newBuilder((com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowResponse) resp_)
                 .mergeFrom(value).buildPartial();
@@ -3743,26 +2369,26 @@ public final class TiapHbaselikeKvrpcpb {
           }
           onChanged();
         } else {
-          if (respCase_ == 5) {
+          if (respCase_ == 2) {
             batchGetRowRespBuilder_.mergeFrom(value);
           }
           batchGetRowRespBuilder_.setMessage(value);
         }
-        respCase_ = 5;
+        respCase_ = 2;
         return this;
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.BatchGetRowResponse batch_get_row_resp = 5;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.BatchGetRowResponse batch_get_row_resp = 2;</code>
        */
       public Builder clearBatchGetRowResp() {
         if (batchGetRowRespBuilder_ == null) {
-          if (respCase_ == 5) {
+          if (respCase_ == 2) {
             respCase_ = 0;
             resp_ = null;
             onChanged();
           }
         } else {
-          if (respCase_ == 5) {
+          if (respCase_ == 2) {
             respCase_ = 0;
             resp_ = null;
           }
@@ -3771,33 +2397,33 @@ public final class TiapHbaselikeKvrpcpb {
         return this;
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.BatchGetRowResponse batch_get_row_resp = 5;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.BatchGetRowResponse batch_get_row_resp = 2;</code>
        */
       public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowResponse.Builder getBatchGetRowRespBuilder() {
         return getBatchGetRowRespFieldBuilder().getBuilder();
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.BatchGetRowResponse batch_get_row_resp = 5;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.BatchGetRowResponse batch_get_row_resp = 2;</code>
        */
       @java.lang.Override
       public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowResponseOrBuilder getBatchGetRowRespOrBuilder() {
-        if ((respCase_ == 5) && (batchGetRowRespBuilder_ != null)) {
+        if ((respCase_ == 2) && (batchGetRowRespBuilder_ != null)) {
           return batchGetRowRespBuilder_.getMessageOrBuilder();
         } else {
-          if (respCase_ == 5) {
+          if (respCase_ == 2) {
             return (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowResponse) resp_;
           }
           return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowResponse.getDefaultInstance();
         }
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.BatchGetRowResponse batch_get_row_resp = 5;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.BatchGetRowResponse batch_get_row_resp = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowResponse, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowResponse.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowResponseOrBuilder> 
           getBatchGetRowRespFieldBuilder() {
         if (batchGetRowRespBuilder_ == null) {
-          if (!(respCase_ == 5)) {
+          if (!(respCase_ == 2)) {
             resp_ = com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowResponse.getDefaultInstance();
           }
           batchGetRowRespBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -3807,7 +2433,7 @@ public final class TiapHbaselikeKvrpcpb {
                   isClean());
           resp_ = null;
         }
-        respCase_ = 5;
+        respCase_ = 2;
         onChanged();;
         return batchGetRowRespBuilder_;
       }
@@ -3815,33 +2441,33 @@ public final class TiapHbaselikeKvrpcpb {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowResponse, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowResponse.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowResponseOrBuilder> batchPutRowRespBuilder_;
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.BatchPutRowResponse batch_put_row_resp = 6;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.BatchPutRowResponse batch_put_row_resp = 3;</code>
        * @return Whether the batchPutRowResp field is set.
        */
       @java.lang.Override
       public boolean hasBatchPutRowResp() {
-        return respCase_ == 6;
+        return respCase_ == 3;
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.BatchPutRowResponse batch_put_row_resp = 6;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.BatchPutRowResponse batch_put_row_resp = 3;</code>
        * @return The batchPutRowResp.
        */
       @java.lang.Override
       public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowResponse getBatchPutRowResp() {
         if (batchPutRowRespBuilder_ == null) {
-          if (respCase_ == 6) {
+          if (respCase_ == 3) {
             return (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowResponse) resp_;
           }
           return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowResponse.getDefaultInstance();
         } else {
-          if (respCase_ == 6) {
+          if (respCase_ == 3) {
             return batchPutRowRespBuilder_.getMessage();
           }
           return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowResponse.getDefaultInstance();
         }
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.BatchPutRowResponse batch_put_row_resp = 6;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.BatchPutRowResponse batch_put_row_resp = 3;</code>
        */
       public Builder setBatchPutRowResp(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowResponse value) {
         if (batchPutRowRespBuilder_ == null) {
@@ -3853,11 +2479,11 @@ public final class TiapHbaselikeKvrpcpb {
         } else {
           batchPutRowRespBuilder_.setMessage(value);
         }
-        respCase_ = 6;
+        respCase_ = 3;
         return this;
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.BatchPutRowResponse batch_put_row_resp = 6;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.BatchPutRowResponse batch_put_row_resp = 3;</code>
        */
       public Builder setBatchPutRowResp(
           com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowResponse.Builder builderForValue) {
@@ -3867,15 +2493,15 @@ public final class TiapHbaselikeKvrpcpb {
         } else {
           batchPutRowRespBuilder_.setMessage(builderForValue.build());
         }
-        respCase_ = 6;
+        respCase_ = 3;
         return this;
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.BatchPutRowResponse batch_put_row_resp = 6;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.BatchPutRowResponse batch_put_row_resp = 3;</code>
        */
       public Builder mergeBatchPutRowResp(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowResponse value) {
         if (batchPutRowRespBuilder_ == null) {
-          if (respCase_ == 6 &&
+          if (respCase_ == 3 &&
               resp_ != com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowResponse.getDefaultInstance()) {
             resp_ = com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowResponse.newBuilder((com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowResponse) resp_)
                 .mergeFrom(value).buildPartial();
@@ -3884,26 +2510,26 @@ public final class TiapHbaselikeKvrpcpb {
           }
           onChanged();
         } else {
-          if (respCase_ == 6) {
+          if (respCase_ == 3) {
             batchPutRowRespBuilder_.mergeFrom(value);
           }
           batchPutRowRespBuilder_.setMessage(value);
         }
-        respCase_ = 6;
+        respCase_ = 3;
         return this;
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.BatchPutRowResponse batch_put_row_resp = 6;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.BatchPutRowResponse batch_put_row_resp = 3;</code>
        */
       public Builder clearBatchPutRowResp() {
         if (batchPutRowRespBuilder_ == null) {
-          if (respCase_ == 6) {
+          if (respCase_ == 3) {
             respCase_ = 0;
             resp_ = null;
             onChanged();
           }
         } else {
-          if (respCase_ == 6) {
+          if (respCase_ == 3) {
             respCase_ = 0;
             resp_ = null;
           }
@@ -3912,33 +2538,33 @@ public final class TiapHbaselikeKvrpcpb {
         return this;
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.BatchPutRowResponse batch_put_row_resp = 6;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.BatchPutRowResponse batch_put_row_resp = 3;</code>
        */
       public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowResponse.Builder getBatchPutRowRespBuilder() {
         return getBatchPutRowRespFieldBuilder().getBuilder();
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.BatchPutRowResponse batch_put_row_resp = 6;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.BatchPutRowResponse batch_put_row_resp = 3;</code>
        */
       @java.lang.Override
       public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowResponseOrBuilder getBatchPutRowRespOrBuilder() {
-        if ((respCase_ == 6) && (batchPutRowRespBuilder_ != null)) {
+        if ((respCase_ == 3) && (batchPutRowRespBuilder_ != null)) {
           return batchPutRowRespBuilder_.getMessageOrBuilder();
         } else {
-          if (respCase_ == 6) {
+          if (respCase_ == 3) {
             return (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowResponse) resp_;
           }
           return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowResponse.getDefaultInstance();
         }
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.BatchPutRowResponse batch_put_row_resp = 6;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.BatchPutRowResponse batch_put_row_resp = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowResponse, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowResponse.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowResponseOrBuilder> 
           getBatchPutRowRespFieldBuilder() {
         if (batchPutRowRespBuilder_ == null) {
-          if (!(respCase_ == 6)) {
+          if (!(respCase_ == 3)) {
             resp_ = com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowResponse.getDefaultInstance();
           }
           batchPutRowRespBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -3948,7 +2574,7 @@ public final class TiapHbaselikeKvrpcpb {
                   isClean());
           resp_ = null;
         }
-        respCase_ = 6;
+        respCase_ = 3;
         onChanged();;
         return batchPutRowRespBuilder_;
       }
@@ -3956,33 +2582,33 @@ public final class TiapHbaselikeKvrpcpb {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowResponse, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowResponse.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowResponseOrBuilder> batchDeleteRowRespBuilder_;
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.BatchDeleteRowResponse batch_delete_row_resp = 7;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.BatchDeleteRowResponse batch_delete_row_resp = 4;</code>
        * @return Whether the batchDeleteRowResp field is set.
        */
       @java.lang.Override
       public boolean hasBatchDeleteRowResp() {
-        return respCase_ == 7;
+        return respCase_ == 4;
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.BatchDeleteRowResponse batch_delete_row_resp = 7;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.BatchDeleteRowResponse batch_delete_row_resp = 4;</code>
        * @return The batchDeleteRowResp.
        */
       @java.lang.Override
       public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowResponse getBatchDeleteRowResp() {
         if (batchDeleteRowRespBuilder_ == null) {
-          if (respCase_ == 7) {
+          if (respCase_ == 4) {
             return (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowResponse) resp_;
           }
           return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowResponse.getDefaultInstance();
         } else {
-          if (respCase_ == 7) {
+          if (respCase_ == 4) {
             return batchDeleteRowRespBuilder_.getMessage();
           }
           return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowResponse.getDefaultInstance();
         }
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.BatchDeleteRowResponse batch_delete_row_resp = 7;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.BatchDeleteRowResponse batch_delete_row_resp = 4;</code>
        */
       public Builder setBatchDeleteRowResp(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowResponse value) {
         if (batchDeleteRowRespBuilder_ == null) {
@@ -3994,11 +2620,11 @@ public final class TiapHbaselikeKvrpcpb {
         } else {
           batchDeleteRowRespBuilder_.setMessage(value);
         }
-        respCase_ = 7;
+        respCase_ = 4;
         return this;
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.BatchDeleteRowResponse batch_delete_row_resp = 7;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.BatchDeleteRowResponse batch_delete_row_resp = 4;</code>
        */
       public Builder setBatchDeleteRowResp(
           com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowResponse.Builder builderForValue) {
@@ -4008,15 +2634,15 @@ public final class TiapHbaselikeKvrpcpb {
         } else {
           batchDeleteRowRespBuilder_.setMessage(builderForValue.build());
         }
-        respCase_ = 7;
+        respCase_ = 4;
         return this;
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.BatchDeleteRowResponse batch_delete_row_resp = 7;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.BatchDeleteRowResponse batch_delete_row_resp = 4;</code>
        */
       public Builder mergeBatchDeleteRowResp(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowResponse value) {
         if (batchDeleteRowRespBuilder_ == null) {
-          if (respCase_ == 7 &&
+          if (respCase_ == 4 &&
               resp_ != com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowResponse.getDefaultInstance()) {
             resp_ = com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowResponse.newBuilder((com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowResponse) resp_)
                 .mergeFrom(value).buildPartial();
@@ -4025,26 +2651,26 @@ public final class TiapHbaselikeKvrpcpb {
           }
           onChanged();
         } else {
-          if (respCase_ == 7) {
+          if (respCase_ == 4) {
             batchDeleteRowRespBuilder_.mergeFrom(value);
           }
           batchDeleteRowRespBuilder_.setMessage(value);
         }
-        respCase_ = 7;
+        respCase_ = 4;
         return this;
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.BatchDeleteRowResponse batch_delete_row_resp = 7;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.BatchDeleteRowResponse batch_delete_row_resp = 4;</code>
        */
       public Builder clearBatchDeleteRowResp() {
         if (batchDeleteRowRespBuilder_ == null) {
-          if (respCase_ == 7) {
+          if (respCase_ == 4) {
             respCase_ = 0;
             resp_ = null;
             onChanged();
           }
         } else {
-          if (respCase_ == 7) {
+          if (respCase_ == 4) {
             respCase_ = 0;
             resp_ = null;
           }
@@ -4053,33 +2679,33 @@ public final class TiapHbaselikeKvrpcpb {
         return this;
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.BatchDeleteRowResponse batch_delete_row_resp = 7;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.BatchDeleteRowResponse batch_delete_row_resp = 4;</code>
        */
       public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowResponse.Builder getBatchDeleteRowRespBuilder() {
         return getBatchDeleteRowRespFieldBuilder().getBuilder();
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.BatchDeleteRowResponse batch_delete_row_resp = 7;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.BatchDeleteRowResponse batch_delete_row_resp = 4;</code>
        */
       @java.lang.Override
       public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowResponseOrBuilder getBatchDeleteRowRespOrBuilder() {
-        if ((respCase_ == 7) && (batchDeleteRowRespBuilder_ != null)) {
+        if ((respCase_ == 4) && (batchDeleteRowRespBuilder_ != null)) {
           return batchDeleteRowRespBuilder_.getMessageOrBuilder();
         } else {
-          if (respCase_ == 7) {
+          if (respCase_ == 4) {
             return (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowResponse) resp_;
           }
           return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowResponse.getDefaultInstance();
         }
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.BatchDeleteRowResponse batch_delete_row_resp = 7;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.BatchDeleteRowResponse batch_delete_row_resp = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowResponse, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowResponse.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowResponseOrBuilder> 
           getBatchDeleteRowRespFieldBuilder() {
         if (batchDeleteRowRespBuilder_ == null) {
-          if (!(respCase_ == 7)) {
+          if (!(respCase_ == 4)) {
             resp_ = com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowResponse.getDefaultInstance();
           }
           batchDeleteRowRespBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -4089,7 +2715,7 @@ public final class TiapHbaselikeKvrpcpb {
                   isClean());
           resp_ = null;
         }
-        respCase_ = 7;
+        respCase_ = 4;
         onChanged();;
         return batchDeleteRowRespBuilder_;
       }
@@ -4141,1248 +2767,6 @@ public final class TiapHbaselikeKvrpcpb {
 
     @java.lang.Override
     public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.KVResponse getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface GetRowRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:tiap_hbaselike_kvrpcpb.GetRowRequest)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>.tiap_hbaselike_kvrpcpb.Row row = 1;</code>
-     * @return Whether the row field is set.
-     */
-    boolean hasRow();
-    /**
-     * <code>.tiap_hbaselike_kvrpcpb.Row row = 1;</code>
-     * @return The row.
-     */
-    com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row getRow();
-    /**
-     * <code>.tiap_hbaselike_kvrpcpb.Row row = 1;</code>
-     */
-    com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowOrBuilder getRowOrBuilder();
-  }
-  /**
-   * Protobuf type {@code tiap_hbaselike_kvrpcpb.GetRowRequest}
-   */
-  public static final class GetRowRequest extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:tiap_hbaselike_kvrpcpb.GetRowRequest)
-      GetRowRequestOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use GetRowRequest.newBuilder() to construct.
-    private GetRowRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private GetRowRequest() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new GetRowRequest();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private GetRowRequest(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row.Builder subBuilder = null;
-              if (row_ != null) {
-                subBuilder = row_.toBuilder();
-              }
-              row_ = input.readMessage(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(row_);
-                row_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.internal_static_tiap_hbaselike_kvrpcpb_GetRowRequest_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.internal_static_tiap_hbaselike_kvrpcpb_GetRowRequest_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest.class, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest.Builder.class);
-    }
-
-    public static final int ROW_FIELD_NUMBER = 1;
-    private com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row row_;
-    /**
-     * <code>.tiap_hbaselike_kvrpcpb.Row row = 1;</code>
-     * @return Whether the row field is set.
-     */
-    @java.lang.Override
-    public boolean hasRow() {
-      return row_ != null;
-    }
-    /**
-     * <code>.tiap_hbaselike_kvrpcpb.Row row = 1;</code>
-     * @return The row.
-     */
-    @java.lang.Override
-    public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row getRow() {
-      return row_ == null ? com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row.getDefaultInstance() : row_;
-    }
-    /**
-     * <code>.tiap_hbaselike_kvrpcpb.Row row = 1;</code>
-     */
-    @java.lang.Override
-    public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowOrBuilder getRowOrBuilder() {
-      return getRow();
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (row_ != null) {
-        output.writeMessage(1, getRow());
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (row_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getRow());
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest)) {
-        return super.equals(obj);
-      }
-      com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest other = (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest) obj;
-
-      if (hasRow() != other.hasRow()) return false;
-      if (hasRow()) {
-        if (!getRow()
-            .equals(other.getRow())) return false;
-      }
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasRow()) {
-        hash = (37 * hash) + ROW_FIELD_NUMBER;
-        hash = (53 * hash) + getRow().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code tiap_hbaselike_kvrpcpb.GetRowRequest}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:tiap_hbaselike_kvrpcpb.GetRowRequest)
-        com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequestOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.internal_static_tiap_hbaselike_kvrpcpb_GetRowRequest_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.internal_static_tiap_hbaselike_kvrpcpb_GetRowRequest_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest.class, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest.Builder.class);
-      }
-
-      // Construct using com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        if (rowBuilder_ == null) {
-          row_ = null;
-        } else {
-          row_ = null;
-          rowBuilder_ = null;
-        }
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.internal_static_tiap_hbaselike_kvrpcpb_GetRowRequest_descriptor;
-      }
-
-      @java.lang.Override
-      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest getDefaultInstanceForType() {
-        return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest build() {
-        com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest buildPartial() {
-        com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest result = new com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest(this);
-        if (rowBuilder_ == null) {
-          result.row_ = row_;
-        } else {
-          result.row_ = rowBuilder_.build();
-        }
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest) {
-          return mergeFrom((com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest other) {
-        if (other == com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest.getDefaultInstance()) return this;
-        if (other.hasRow()) {
-          mergeRow(other.getRow());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row row_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowOrBuilder> rowBuilder_;
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.Row row = 1;</code>
-       * @return Whether the row field is set.
-       */
-      public boolean hasRow() {
-        return rowBuilder_ != null || row_ != null;
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.Row row = 1;</code>
-       * @return The row.
-       */
-      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row getRow() {
-        if (rowBuilder_ == null) {
-          return row_ == null ? com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row.getDefaultInstance() : row_;
-        } else {
-          return rowBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.Row row = 1;</code>
-       */
-      public Builder setRow(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row value) {
-        if (rowBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          row_ = value;
-          onChanged();
-        } else {
-          rowBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.Row row = 1;</code>
-       */
-      public Builder setRow(
-          com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row.Builder builderForValue) {
-        if (rowBuilder_ == null) {
-          row_ = builderForValue.build();
-          onChanged();
-        } else {
-          rowBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.Row row = 1;</code>
-       */
-      public Builder mergeRow(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row value) {
-        if (rowBuilder_ == null) {
-          if (row_ != null) {
-            row_ =
-              com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row.newBuilder(row_).mergeFrom(value).buildPartial();
-          } else {
-            row_ = value;
-          }
-          onChanged();
-        } else {
-          rowBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.Row row = 1;</code>
-       */
-      public Builder clearRow() {
-        if (rowBuilder_ == null) {
-          row_ = null;
-          onChanged();
-        } else {
-          row_ = null;
-          rowBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.Row row = 1;</code>
-       */
-      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row.Builder getRowBuilder() {
-        
-        onChanged();
-        return getRowFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.Row row = 1;</code>
-       */
-      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowOrBuilder getRowOrBuilder() {
-        if (rowBuilder_ != null) {
-          return rowBuilder_.getMessageOrBuilder();
-        } else {
-          return row_ == null ?
-              com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row.getDefaultInstance() : row_;
-        }
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.Row row = 1;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowOrBuilder> 
-          getRowFieldBuilder() {
-        if (rowBuilder_ == null) {
-          rowBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowOrBuilder>(
-                  getRow(),
-                  getParentForChildren(),
-                  isClean());
-          row_ = null;
-        }
-        return rowBuilder_;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:tiap_hbaselike_kvrpcpb.GetRowRequest)
-    }
-
-    // @@protoc_insertion_point(class_scope:tiap_hbaselike_kvrpcpb.GetRowRequest)
-    private static final com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest();
-    }
-
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<GetRowRequest>
-        PARSER = new com.google.protobuf.AbstractParser<GetRowRequest>() {
-      @java.lang.Override
-      public GetRowRequest parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GetRowRequest(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<GetRowRequest> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<GetRowRequest> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowRequest getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface GetRowResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:tiap_hbaselike_kvrpcpb.GetRowResponse)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>.tiap_hbaselike_kvrpcpb.RowValue row_value = 1;</code>
-     * @return Whether the rowValue field is set.
-     */
-    boolean hasRowValue();
-    /**
-     * <code>.tiap_hbaselike_kvrpcpb.RowValue row_value = 1;</code>
-     * @return The rowValue.
-     */
-    com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue getRowValue();
-    /**
-     * <code>.tiap_hbaselike_kvrpcpb.RowValue row_value = 1;</code>
-     */
-    com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValueOrBuilder getRowValueOrBuilder();
-  }
-  /**
-   * Protobuf type {@code tiap_hbaselike_kvrpcpb.GetRowResponse}
-   */
-  public static final class GetRowResponse extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:tiap_hbaselike_kvrpcpb.GetRowResponse)
-      GetRowResponseOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use GetRowResponse.newBuilder() to construct.
-    private GetRowResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private GetRowResponse() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new GetRowResponse();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private GetRowResponse(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue.Builder subBuilder = null;
-              if (rowValue_ != null) {
-                subBuilder = rowValue_.toBuilder();
-              }
-              rowValue_ = input.readMessage(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(rowValue_);
-                rowValue_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.internal_static_tiap_hbaselike_kvrpcpb_GetRowResponse_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.internal_static_tiap_hbaselike_kvrpcpb_GetRowResponse_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse.class, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse.Builder.class);
-    }
-
-    public static final int ROW_VALUE_FIELD_NUMBER = 1;
-    private com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue rowValue_;
-    /**
-     * <code>.tiap_hbaselike_kvrpcpb.RowValue row_value = 1;</code>
-     * @return Whether the rowValue field is set.
-     */
-    @java.lang.Override
-    public boolean hasRowValue() {
-      return rowValue_ != null;
-    }
-    /**
-     * <code>.tiap_hbaselike_kvrpcpb.RowValue row_value = 1;</code>
-     * @return The rowValue.
-     */
-    @java.lang.Override
-    public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue getRowValue() {
-      return rowValue_ == null ? com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue.getDefaultInstance() : rowValue_;
-    }
-    /**
-     * <code>.tiap_hbaselike_kvrpcpb.RowValue row_value = 1;</code>
-     */
-    @java.lang.Override
-    public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValueOrBuilder getRowValueOrBuilder() {
-      return getRowValue();
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (rowValue_ != null) {
-        output.writeMessage(1, getRowValue());
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (rowValue_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getRowValue());
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse)) {
-        return super.equals(obj);
-      }
-      com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse other = (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse) obj;
-
-      if (hasRowValue() != other.hasRowValue()) return false;
-      if (hasRowValue()) {
-        if (!getRowValue()
-            .equals(other.getRowValue())) return false;
-      }
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasRowValue()) {
-        hash = (37 * hash) + ROW_VALUE_FIELD_NUMBER;
-        hash = (53 * hash) + getRowValue().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code tiap_hbaselike_kvrpcpb.GetRowResponse}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:tiap_hbaselike_kvrpcpb.GetRowResponse)
-        com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponseOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.internal_static_tiap_hbaselike_kvrpcpb_GetRowResponse_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.internal_static_tiap_hbaselike_kvrpcpb_GetRowResponse_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse.class, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse.Builder.class);
-      }
-
-      // Construct using com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        if (rowValueBuilder_ == null) {
-          rowValue_ = null;
-        } else {
-          rowValue_ = null;
-          rowValueBuilder_ = null;
-        }
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.internal_static_tiap_hbaselike_kvrpcpb_GetRowResponse_descriptor;
-      }
-
-      @java.lang.Override
-      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse getDefaultInstanceForType() {
-        return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse build() {
-        com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse buildPartial() {
-        com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse result = new com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse(this);
-        if (rowValueBuilder_ == null) {
-          result.rowValue_ = rowValue_;
-        } else {
-          result.rowValue_ = rowValueBuilder_.build();
-        }
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse) {
-          return mergeFrom((com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse other) {
-        if (other == com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse.getDefaultInstance()) return this;
-        if (other.hasRowValue()) {
-          mergeRowValue(other.getRowValue());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue rowValue_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValueOrBuilder> rowValueBuilder_;
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.RowValue row_value = 1;</code>
-       * @return Whether the rowValue field is set.
-       */
-      public boolean hasRowValue() {
-        return rowValueBuilder_ != null || rowValue_ != null;
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.RowValue row_value = 1;</code>
-       * @return The rowValue.
-       */
-      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue getRowValue() {
-        if (rowValueBuilder_ == null) {
-          return rowValue_ == null ? com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue.getDefaultInstance() : rowValue_;
-        } else {
-          return rowValueBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.RowValue row_value = 1;</code>
-       */
-      public Builder setRowValue(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue value) {
-        if (rowValueBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          rowValue_ = value;
-          onChanged();
-        } else {
-          rowValueBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.RowValue row_value = 1;</code>
-       */
-      public Builder setRowValue(
-          com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue.Builder builderForValue) {
-        if (rowValueBuilder_ == null) {
-          rowValue_ = builderForValue.build();
-          onChanged();
-        } else {
-          rowValueBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.RowValue row_value = 1;</code>
-       */
-      public Builder mergeRowValue(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue value) {
-        if (rowValueBuilder_ == null) {
-          if (rowValue_ != null) {
-            rowValue_ =
-              com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue.newBuilder(rowValue_).mergeFrom(value).buildPartial();
-          } else {
-            rowValue_ = value;
-          }
-          onChanged();
-        } else {
-          rowValueBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.RowValue row_value = 1;</code>
-       */
-      public Builder clearRowValue() {
-        if (rowValueBuilder_ == null) {
-          rowValue_ = null;
-          onChanged();
-        } else {
-          rowValue_ = null;
-          rowValueBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.RowValue row_value = 1;</code>
-       */
-      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue.Builder getRowValueBuilder() {
-        
-        onChanged();
-        return getRowValueFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.RowValue row_value = 1;</code>
-       */
-      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValueOrBuilder getRowValueOrBuilder() {
-        if (rowValueBuilder_ != null) {
-          return rowValueBuilder_.getMessageOrBuilder();
-        } else {
-          return rowValue_ == null ?
-              com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue.getDefaultInstance() : rowValue_;
-        }
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.RowValue row_value = 1;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValueOrBuilder> 
-          getRowValueFieldBuilder() {
-        if (rowValueBuilder_ == null) {
-          rowValueBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValueOrBuilder>(
-                  getRowValue(),
-                  getParentForChildren(),
-                  isClean());
-          rowValue_ = null;
-        }
-        return rowValueBuilder_;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:tiap_hbaselike_kvrpcpb.GetRowResponse)
-    }
-
-    // @@protoc_insertion_point(class_scope:tiap_hbaselike_kvrpcpb.GetRowResponse)
-    private static final com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse();
-    }
-
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<GetRowResponse>
-        PARSER = new com.google.protobuf.AbstractParser<GetRowResponse>() {
-      @java.lang.Override
-      public GetRowResponse parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GetRowResponse(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<GetRowResponse> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<GetRowResponse> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -6974,1045 +4358,6 @@ public final class TiapHbaselikeKvrpcpb {
 
   }
 
-  public interface PutRowRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:tiap_hbaselike_kvrpcpb.PutRowRequest)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>.tiap_hbaselike_kvrpcpb.RowValue row_value = 1;</code>
-     * @return Whether the rowValue field is set.
-     */
-    boolean hasRowValue();
-    /**
-     * <code>.tiap_hbaselike_kvrpcpb.RowValue row_value = 1;</code>
-     * @return The rowValue.
-     */
-    com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue getRowValue();
-    /**
-     * <code>.tiap_hbaselike_kvrpcpb.RowValue row_value = 1;</code>
-     */
-    com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValueOrBuilder getRowValueOrBuilder();
-  }
-  /**
-   * Protobuf type {@code tiap_hbaselike_kvrpcpb.PutRowRequest}
-   */
-  public static final class PutRowRequest extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:tiap_hbaselike_kvrpcpb.PutRowRequest)
-      PutRowRequestOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use PutRowRequest.newBuilder() to construct.
-    private PutRowRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private PutRowRequest() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new PutRowRequest();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private PutRowRequest(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue.Builder subBuilder = null;
-              if (rowValue_ != null) {
-                subBuilder = rowValue_.toBuilder();
-              }
-              rowValue_ = input.readMessage(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(rowValue_);
-                rowValue_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.internal_static_tiap_hbaselike_kvrpcpb_PutRowRequest_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.internal_static_tiap_hbaselike_kvrpcpb_PutRowRequest_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest.class, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest.Builder.class);
-    }
-
-    public static final int ROW_VALUE_FIELD_NUMBER = 1;
-    private com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue rowValue_;
-    /**
-     * <code>.tiap_hbaselike_kvrpcpb.RowValue row_value = 1;</code>
-     * @return Whether the rowValue field is set.
-     */
-    @java.lang.Override
-    public boolean hasRowValue() {
-      return rowValue_ != null;
-    }
-    /**
-     * <code>.tiap_hbaselike_kvrpcpb.RowValue row_value = 1;</code>
-     * @return The rowValue.
-     */
-    @java.lang.Override
-    public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue getRowValue() {
-      return rowValue_ == null ? com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue.getDefaultInstance() : rowValue_;
-    }
-    /**
-     * <code>.tiap_hbaselike_kvrpcpb.RowValue row_value = 1;</code>
-     */
-    @java.lang.Override
-    public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValueOrBuilder getRowValueOrBuilder() {
-      return getRowValue();
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (rowValue_ != null) {
-        output.writeMessage(1, getRowValue());
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (rowValue_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getRowValue());
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest)) {
-        return super.equals(obj);
-      }
-      com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest other = (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest) obj;
-
-      if (hasRowValue() != other.hasRowValue()) return false;
-      if (hasRowValue()) {
-        if (!getRowValue()
-            .equals(other.getRowValue())) return false;
-      }
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasRowValue()) {
-        hash = (37 * hash) + ROW_VALUE_FIELD_NUMBER;
-        hash = (53 * hash) + getRowValue().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code tiap_hbaselike_kvrpcpb.PutRowRequest}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:tiap_hbaselike_kvrpcpb.PutRowRequest)
-        com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequestOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.internal_static_tiap_hbaselike_kvrpcpb_PutRowRequest_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.internal_static_tiap_hbaselike_kvrpcpb_PutRowRequest_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest.class, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest.Builder.class);
-      }
-
-      // Construct using com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        if (rowValueBuilder_ == null) {
-          rowValue_ = null;
-        } else {
-          rowValue_ = null;
-          rowValueBuilder_ = null;
-        }
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.internal_static_tiap_hbaselike_kvrpcpb_PutRowRequest_descriptor;
-      }
-
-      @java.lang.Override
-      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest getDefaultInstanceForType() {
-        return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest build() {
-        com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest buildPartial() {
-        com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest result = new com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest(this);
-        if (rowValueBuilder_ == null) {
-          result.rowValue_ = rowValue_;
-        } else {
-          result.rowValue_ = rowValueBuilder_.build();
-        }
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest) {
-          return mergeFrom((com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest other) {
-        if (other == com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest.getDefaultInstance()) return this;
-        if (other.hasRowValue()) {
-          mergeRowValue(other.getRowValue());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue rowValue_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValueOrBuilder> rowValueBuilder_;
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.RowValue row_value = 1;</code>
-       * @return Whether the rowValue field is set.
-       */
-      public boolean hasRowValue() {
-        return rowValueBuilder_ != null || rowValue_ != null;
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.RowValue row_value = 1;</code>
-       * @return The rowValue.
-       */
-      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue getRowValue() {
-        if (rowValueBuilder_ == null) {
-          return rowValue_ == null ? com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue.getDefaultInstance() : rowValue_;
-        } else {
-          return rowValueBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.RowValue row_value = 1;</code>
-       */
-      public Builder setRowValue(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue value) {
-        if (rowValueBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          rowValue_ = value;
-          onChanged();
-        } else {
-          rowValueBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.RowValue row_value = 1;</code>
-       */
-      public Builder setRowValue(
-          com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue.Builder builderForValue) {
-        if (rowValueBuilder_ == null) {
-          rowValue_ = builderForValue.build();
-          onChanged();
-        } else {
-          rowValueBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.RowValue row_value = 1;</code>
-       */
-      public Builder mergeRowValue(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue value) {
-        if (rowValueBuilder_ == null) {
-          if (rowValue_ != null) {
-            rowValue_ =
-              com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue.newBuilder(rowValue_).mergeFrom(value).buildPartial();
-          } else {
-            rowValue_ = value;
-          }
-          onChanged();
-        } else {
-          rowValueBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.RowValue row_value = 1;</code>
-       */
-      public Builder clearRowValue() {
-        if (rowValueBuilder_ == null) {
-          rowValue_ = null;
-          onChanged();
-        } else {
-          rowValue_ = null;
-          rowValueBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.RowValue row_value = 1;</code>
-       */
-      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue.Builder getRowValueBuilder() {
-        
-        onChanged();
-        return getRowValueFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.RowValue row_value = 1;</code>
-       */
-      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValueOrBuilder getRowValueOrBuilder() {
-        if (rowValueBuilder_ != null) {
-          return rowValueBuilder_.getMessageOrBuilder();
-        } else {
-          return rowValue_ == null ?
-              com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue.getDefaultInstance() : rowValue_;
-        }
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.RowValue row_value = 1;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValueOrBuilder> 
-          getRowValueFieldBuilder() {
-        if (rowValueBuilder_ == null) {
-          rowValueBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValueOrBuilder>(
-                  getRowValue(),
-                  getParentForChildren(),
-                  isClean());
-          rowValue_ = null;
-        }
-        return rowValueBuilder_;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:tiap_hbaselike_kvrpcpb.PutRowRequest)
-    }
-
-    // @@protoc_insertion_point(class_scope:tiap_hbaselike_kvrpcpb.PutRowRequest)
-    private static final com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest();
-    }
-
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<PutRowRequest>
-        PARSER = new com.google.protobuf.AbstractParser<PutRowRequest>() {
-      @java.lang.Override
-      public PutRowRequest parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PutRowRequest(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<PutRowRequest> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<PutRowRequest> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowRequest getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface PutRowResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:tiap_hbaselike_kvrpcpb.PutRowResponse)
-      com.google.protobuf.MessageOrBuilder {
-  }
-  /**
-   * Protobuf type {@code tiap_hbaselike_kvrpcpb.PutRowResponse}
-   */
-  public static final class PutRowResponse extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:tiap_hbaselike_kvrpcpb.PutRowResponse)
-      PutRowResponseOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use PutRowResponse.newBuilder() to construct.
-    private PutRowResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private PutRowResponse() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new PutRowResponse();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private PutRowResponse(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.internal_static_tiap_hbaselike_kvrpcpb_PutRowResponse_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.internal_static_tiap_hbaselike_kvrpcpb_PutRowResponse_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse.class, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse.Builder.class);
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse)) {
-        return super.equals(obj);
-      }
-      com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse other = (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse) obj;
-
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code tiap_hbaselike_kvrpcpb.PutRowResponse}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:tiap_hbaselike_kvrpcpb.PutRowResponse)
-        com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponseOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.internal_static_tiap_hbaselike_kvrpcpb_PutRowResponse_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.internal_static_tiap_hbaselike_kvrpcpb_PutRowResponse_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse.class, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse.Builder.class);
-      }
-
-      // Construct using com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.internal_static_tiap_hbaselike_kvrpcpb_PutRowResponse_descriptor;
-      }
-
-      @java.lang.Override
-      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse getDefaultInstanceForType() {
-        return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse build() {
-        com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse buildPartial() {
-        com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse result = new com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse(this);
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse) {
-          return mergeFrom((com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse other) {
-        if (other == com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse.getDefaultInstance()) return this;
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:tiap_hbaselike_kvrpcpb.PutRowResponse)
-    }
-
-    // @@protoc_insertion_point(class_scope:tiap_hbaselike_kvrpcpb.PutRowResponse)
-    private static final com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse();
-    }
-
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<PutRowResponse>
-        PARSER = new com.google.protobuf.AbstractParser<PutRowResponse>() {
-      @java.lang.Override
-      public PutRowResponse parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PutRowResponse(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<PutRowResponse> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<PutRowResponse> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.PutRowResponse getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
   public interface BatchPutRowRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:tiap_hbaselike_kvrpcpb.BatchPutRowRequest)
       com.google.protobuf.MessageOrBuilder {
@@ -9219,1045 +5564,6 @@ public final class TiapHbaselikeKvrpcpb {
 
     @java.lang.Override
     public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchPutRowResponse getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface DeleteRowRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:tiap_hbaselike_kvrpcpb.DeleteRowRequest)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>.tiap_hbaselike_kvrpcpb.Row row = 1;</code>
-     * @return Whether the row field is set.
-     */
-    boolean hasRow();
-    /**
-     * <code>.tiap_hbaselike_kvrpcpb.Row row = 1;</code>
-     * @return The row.
-     */
-    com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row getRow();
-    /**
-     * <code>.tiap_hbaselike_kvrpcpb.Row row = 1;</code>
-     */
-    com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowOrBuilder getRowOrBuilder();
-  }
-  /**
-   * Protobuf type {@code tiap_hbaselike_kvrpcpb.DeleteRowRequest}
-   */
-  public static final class DeleteRowRequest extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:tiap_hbaselike_kvrpcpb.DeleteRowRequest)
-      DeleteRowRequestOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use DeleteRowRequest.newBuilder() to construct.
-    private DeleteRowRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private DeleteRowRequest() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new DeleteRowRequest();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private DeleteRowRequest(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row.Builder subBuilder = null;
-              if (row_ != null) {
-                subBuilder = row_.toBuilder();
-              }
-              row_ = input.readMessage(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(row_);
-                row_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.internal_static_tiap_hbaselike_kvrpcpb_DeleteRowRequest_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.internal_static_tiap_hbaselike_kvrpcpb_DeleteRowRequest_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest.class, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest.Builder.class);
-    }
-
-    public static final int ROW_FIELD_NUMBER = 1;
-    private com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row row_;
-    /**
-     * <code>.tiap_hbaselike_kvrpcpb.Row row = 1;</code>
-     * @return Whether the row field is set.
-     */
-    @java.lang.Override
-    public boolean hasRow() {
-      return row_ != null;
-    }
-    /**
-     * <code>.tiap_hbaselike_kvrpcpb.Row row = 1;</code>
-     * @return The row.
-     */
-    @java.lang.Override
-    public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row getRow() {
-      return row_ == null ? com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row.getDefaultInstance() : row_;
-    }
-    /**
-     * <code>.tiap_hbaselike_kvrpcpb.Row row = 1;</code>
-     */
-    @java.lang.Override
-    public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowOrBuilder getRowOrBuilder() {
-      return getRow();
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (row_ != null) {
-        output.writeMessage(1, getRow());
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (row_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getRow());
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest)) {
-        return super.equals(obj);
-      }
-      com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest other = (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest) obj;
-
-      if (hasRow() != other.hasRow()) return false;
-      if (hasRow()) {
-        if (!getRow()
-            .equals(other.getRow())) return false;
-      }
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasRow()) {
-        hash = (37 * hash) + ROW_FIELD_NUMBER;
-        hash = (53 * hash) + getRow().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code tiap_hbaselike_kvrpcpb.DeleteRowRequest}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:tiap_hbaselike_kvrpcpb.DeleteRowRequest)
-        com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequestOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.internal_static_tiap_hbaselike_kvrpcpb_DeleteRowRequest_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.internal_static_tiap_hbaselike_kvrpcpb_DeleteRowRequest_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest.class, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest.Builder.class);
-      }
-
-      // Construct using com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        if (rowBuilder_ == null) {
-          row_ = null;
-        } else {
-          row_ = null;
-          rowBuilder_ = null;
-        }
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.internal_static_tiap_hbaselike_kvrpcpb_DeleteRowRequest_descriptor;
-      }
-
-      @java.lang.Override
-      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest getDefaultInstanceForType() {
-        return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest build() {
-        com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest buildPartial() {
-        com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest result = new com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest(this);
-        if (rowBuilder_ == null) {
-          result.row_ = row_;
-        } else {
-          result.row_ = rowBuilder_.build();
-        }
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest) {
-          return mergeFrom((com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest other) {
-        if (other == com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest.getDefaultInstance()) return this;
-        if (other.hasRow()) {
-          mergeRow(other.getRow());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row row_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowOrBuilder> rowBuilder_;
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.Row row = 1;</code>
-       * @return Whether the row field is set.
-       */
-      public boolean hasRow() {
-        return rowBuilder_ != null || row_ != null;
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.Row row = 1;</code>
-       * @return The row.
-       */
-      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row getRow() {
-        if (rowBuilder_ == null) {
-          return row_ == null ? com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row.getDefaultInstance() : row_;
-        } else {
-          return rowBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.Row row = 1;</code>
-       */
-      public Builder setRow(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row value) {
-        if (rowBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          row_ = value;
-          onChanged();
-        } else {
-          rowBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.Row row = 1;</code>
-       */
-      public Builder setRow(
-          com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row.Builder builderForValue) {
-        if (rowBuilder_ == null) {
-          row_ = builderForValue.build();
-          onChanged();
-        } else {
-          rowBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.Row row = 1;</code>
-       */
-      public Builder mergeRow(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row value) {
-        if (rowBuilder_ == null) {
-          if (row_ != null) {
-            row_ =
-              com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row.newBuilder(row_).mergeFrom(value).buildPartial();
-          } else {
-            row_ = value;
-          }
-          onChanged();
-        } else {
-          rowBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.Row row = 1;</code>
-       */
-      public Builder clearRow() {
-        if (rowBuilder_ == null) {
-          row_ = null;
-          onChanged();
-        } else {
-          row_ = null;
-          rowBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.Row row = 1;</code>
-       */
-      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row.Builder getRowBuilder() {
-        
-        onChanged();
-        return getRowFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.Row row = 1;</code>
-       */
-      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowOrBuilder getRowOrBuilder() {
-        if (rowBuilder_ != null) {
-          return rowBuilder_.getMessageOrBuilder();
-        } else {
-          return row_ == null ?
-              com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row.getDefaultInstance() : row_;
-        }
-      }
-      /**
-       * <code>.tiap_hbaselike_kvrpcpb.Row row = 1;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowOrBuilder> 
-          getRowFieldBuilder() {
-        if (rowBuilder_ == null) {
-          rowBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowOrBuilder>(
-                  getRow(),
-                  getParentForChildren(),
-                  isClean());
-          row_ = null;
-        }
-        return rowBuilder_;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:tiap_hbaselike_kvrpcpb.DeleteRowRequest)
-    }
-
-    // @@protoc_insertion_point(class_scope:tiap_hbaselike_kvrpcpb.DeleteRowRequest)
-    private static final com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest();
-    }
-
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<DeleteRowRequest>
-        PARSER = new com.google.protobuf.AbstractParser<DeleteRowRequest>() {
-      @java.lang.Override
-      public DeleteRowRequest parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new DeleteRowRequest(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<DeleteRowRequest> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<DeleteRowRequest> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowRequest getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface DeleteRowResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:tiap_hbaselike_kvrpcpb.DeleteRowResponse)
-      com.google.protobuf.MessageOrBuilder {
-  }
-  /**
-   * Protobuf type {@code tiap_hbaselike_kvrpcpb.DeleteRowResponse}
-   */
-  public static final class DeleteRowResponse extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:tiap_hbaselike_kvrpcpb.DeleteRowResponse)
-      DeleteRowResponseOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use DeleteRowResponse.newBuilder() to construct.
-    private DeleteRowResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private DeleteRowResponse() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new DeleteRowResponse();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private DeleteRowResponse(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.internal_static_tiap_hbaselike_kvrpcpb_DeleteRowResponse_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.internal_static_tiap_hbaselike_kvrpcpb_DeleteRowResponse_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse.class, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse.Builder.class);
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse)) {
-        return super.equals(obj);
-      }
-      com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse other = (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse) obj;
-
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code tiap_hbaselike_kvrpcpb.DeleteRowResponse}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:tiap_hbaselike_kvrpcpb.DeleteRowResponse)
-        com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponseOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.internal_static_tiap_hbaselike_kvrpcpb_DeleteRowResponse_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.internal_static_tiap_hbaselike_kvrpcpb_DeleteRowResponse_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse.class, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse.Builder.class);
-      }
-
-      // Construct using com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.internal_static_tiap_hbaselike_kvrpcpb_DeleteRowResponse_descriptor;
-      }
-
-      @java.lang.Override
-      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse getDefaultInstanceForType() {
-        return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse build() {
-        com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse buildPartial() {
-        com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse result = new com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse(this);
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse) {
-          return mergeFrom((com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse other) {
-        if (other == com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse.getDefaultInstance()) return this;
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:tiap_hbaselike_kvrpcpb.DeleteRowResponse)
-    }
-
-    // @@protoc_insertion_point(class_scope:tiap_hbaselike_kvrpcpb.DeleteRowResponse)
-    private static final com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse();
-    }
-
-    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<DeleteRowResponse>
-        PARSER = new com.google.protobuf.AbstractParser<DeleteRowResponse>() {
-      @java.lang.Override
-      public DeleteRowResponse parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new DeleteRowResponse(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<DeleteRowResponse> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<DeleteRowResponse> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.DeleteRowResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -14088,16 +9394,16 @@ public final class TiapHbaselikeKvrpcpb {
         getNameBytes();
 
     /**
-     * <code>int64 min_stamp = 2;</code>
-     * @return The minStamp.
+     * <code>int64 timestamp = 2;</code>
+     * @return The timestamp.
      */
-    long getMinStamp();
+    long getTimestamp();
 
     /**
-     * <code>int64 max_stamp = 3;</code>
-     * @return The maxStamp.
+     * <code>int64 limit = 3;</code>
+     * @return The limit.
      */
-    long getMaxStamp();
+    long getLimit();
   }
   /**
    * Protobuf type {@code tiap_hbaselike_kvrpcpb.Column}
@@ -14153,12 +9459,12 @@ public final class TiapHbaselikeKvrpcpb {
             }
             case 16: {
 
-              minStamp_ = input.readInt64();
+              timestamp_ = input.readInt64();
               break;
             }
             case 24: {
 
-              maxStamp_ = input.readInt64();
+              limit_ = input.readInt64();
               break;
             }
             default: {
@@ -14231,26 +9537,26 @@ public final class TiapHbaselikeKvrpcpb {
       }
     }
 
-    public static final int MIN_STAMP_FIELD_NUMBER = 2;
-    private long minStamp_;
+    public static final int TIMESTAMP_FIELD_NUMBER = 2;
+    private long timestamp_;
     /**
-     * <code>int64 min_stamp = 2;</code>
-     * @return The minStamp.
+     * <code>int64 timestamp = 2;</code>
+     * @return The timestamp.
      */
     @java.lang.Override
-    public long getMinStamp() {
-      return minStamp_;
+    public long getTimestamp() {
+      return timestamp_;
     }
 
-    public static final int MAX_STAMP_FIELD_NUMBER = 3;
-    private long maxStamp_;
+    public static final int LIMIT_FIELD_NUMBER = 3;
+    private long limit_;
     /**
-     * <code>int64 max_stamp = 3;</code>
-     * @return The maxStamp.
+     * <code>int64 limit = 3;</code>
+     * @return The limit.
      */
     @java.lang.Override
-    public long getMaxStamp() {
-      return maxStamp_;
+    public long getLimit() {
+      return limit_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -14270,11 +9576,11 @@ public final class TiapHbaselikeKvrpcpb {
       if (!getNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
       }
-      if (minStamp_ != 0L) {
-        output.writeInt64(2, minStamp_);
+      if (timestamp_ != 0L) {
+        output.writeInt64(2, timestamp_);
       }
-      if (maxStamp_ != 0L) {
-        output.writeInt64(3, maxStamp_);
+      if (limit_ != 0L) {
+        output.writeInt64(3, limit_);
       }
       unknownFields.writeTo(output);
     }
@@ -14288,13 +9594,13 @@ public final class TiapHbaselikeKvrpcpb {
       if (!getNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
       }
-      if (minStamp_ != 0L) {
+      if (timestamp_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, minStamp_);
+          .computeInt64Size(2, timestamp_);
       }
-      if (maxStamp_ != 0L) {
+      if (limit_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(3, maxStamp_);
+          .computeInt64Size(3, limit_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -14313,10 +9619,10 @@ public final class TiapHbaselikeKvrpcpb {
 
       if (!getName()
           .equals(other.getName())) return false;
-      if (getMinStamp()
-          != other.getMinStamp()) return false;
-      if (getMaxStamp()
-          != other.getMaxStamp()) return false;
+      if (getTimestamp()
+          != other.getTimestamp()) return false;
+      if (getLimit()
+          != other.getLimit()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -14330,12 +9636,12 @@ public final class TiapHbaselikeKvrpcpb {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
-      hash = (37 * hash) + MIN_STAMP_FIELD_NUMBER;
+      hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getMinStamp());
-      hash = (37 * hash) + MAX_STAMP_FIELD_NUMBER;
+          getTimestamp());
+      hash = (37 * hash) + LIMIT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getMaxStamp());
+          getLimit());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -14471,9 +9777,9 @@ public final class TiapHbaselikeKvrpcpb {
         super.clear();
         name_ = "";
 
-        minStamp_ = 0L;
+        timestamp_ = 0L;
 
-        maxStamp_ = 0L;
+        limit_ = 0L;
 
         return this;
       }
@@ -14502,8 +9808,8 @@ public final class TiapHbaselikeKvrpcpb {
       public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Column buildPartial() {
         com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Column result = new com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Column(this);
         result.name_ = name_;
-        result.minStamp_ = minStamp_;
-        result.maxStamp_ = maxStamp_;
+        result.timestamp_ = timestamp_;
+        result.limit_ = limit_;
         onBuilt();
         return result;
       }
@@ -14556,11 +9862,11 @@ public final class TiapHbaselikeKvrpcpb {
           name_ = other.name_;
           onChanged();
         }
-        if (other.getMinStamp() != 0L) {
-          setMinStamp(other.getMinStamp());
+        if (other.getTimestamp() != 0L) {
+          setTimestamp(other.getTimestamp());
         }
-        if (other.getMaxStamp() != 0L) {
-          setMaxStamp(other.getMaxStamp());
+        if (other.getLimit() != 0L) {
+          setLimit(other.getLimit());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -14667,64 +9973,64 @@ public final class TiapHbaselikeKvrpcpb {
         return this;
       }
 
-      private long minStamp_ ;
+      private long timestamp_ ;
       /**
-       * <code>int64 min_stamp = 2;</code>
-       * @return The minStamp.
+       * <code>int64 timestamp = 2;</code>
+       * @return The timestamp.
        */
       @java.lang.Override
-      public long getMinStamp() {
-        return minStamp_;
+      public long getTimestamp() {
+        return timestamp_;
       }
       /**
-       * <code>int64 min_stamp = 2;</code>
-       * @param value The minStamp to set.
+       * <code>int64 timestamp = 2;</code>
+       * @param value The timestamp to set.
        * @return This builder for chaining.
        */
-      public Builder setMinStamp(long value) {
+      public Builder setTimestamp(long value) {
         
-        minStamp_ = value;
+        timestamp_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int64 min_stamp = 2;</code>
+       * <code>int64 timestamp = 2;</code>
        * @return This builder for chaining.
        */
-      public Builder clearMinStamp() {
+      public Builder clearTimestamp() {
         
-        minStamp_ = 0L;
+        timestamp_ = 0L;
         onChanged();
         return this;
       }
 
-      private long maxStamp_ ;
+      private long limit_ ;
       /**
-       * <code>int64 max_stamp = 3;</code>
-       * @return The maxStamp.
+       * <code>int64 limit = 3;</code>
+       * @return The limit.
        */
       @java.lang.Override
-      public long getMaxStamp() {
-        return maxStamp_;
+      public long getLimit() {
+        return limit_;
       }
       /**
-       * <code>int64 max_stamp = 3;</code>
-       * @param value The maxStamp to set.
+       * <code>int64 limit = 3;</code>
+       * @param value The limit to set.
        * @return This builder for chaining.
        */
-      public Builder setMaxStamp(long value) {
+      public Builder setLimit(long value) {
         
-        maxStamp_ = value;
+        limit_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int64 max_stamp = 3;</code>
+       * <code>int64 limit = 3;</code>
        * @return This builder for chaining.
        */
-      public Builder clearMaxStamp() {
+      public Builder clearLimit() {
         
-        maxStamp_ = 0L;
+        limit_ = 0L;
         onChanged();
         return this;
       }
@@ -18102,16 +13408,6 @@ public final class TiapHbaselikeKvrpcpb {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_tiap_hbaselike_kvrpcpb_KVResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_tiap_hbaselike_kvrpcpb_GetRowRequest_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_tiap_hbaselike_kvrpcpb_GetRowRequest_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_tiap_hbaselike_kvrpcpb_GetRowResponse_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_tiap_hbaselike_kvrpcpb_GetRowResponse_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_tiap_hbaselike_kvrpcpb_BatchGetRowRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -18122,16 +13418,6 @@ public final class TiapHbaselikeKvrpcpb {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_tiap_hbaselike_kvrpcpb_BatchGetRowResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_tiap_hbaselike_kvrpcpb_PutRowRequest_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_tiap_hbaselike_kvrpcpb_PutRowRequest_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_tiap_hbaselike_kvrpcpb_PutRowResponse_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_tiap_hbaselike_kvrpcpb_PutRowResponse_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_tiap_hbaselike_kvrpcpb_BatchPutRowRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -18141,16 +13427,6 @@ public final class TiapHbaselikeKvrpcpb {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_tiap_hbaselike_kvrpcpb_BatchPutRowResponse_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_tiap_hbaselike_kvrpcpb_DeleteRowRequest_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_tiap_hbaselike_kvrpcpb_DeleteRowRequest_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_tiap_hbaselike_kvrpcpb_DeleteRowResponse_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_tiap_hbaselike_kvrpcpb_DeleteRowResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_tiap_hbaselike_kvrpcpb_BatchDeleteRowRequest_descriptor;
   private static final 
@@ -18221,70 +13497,53 @@ public final class TiapHbaselikeKvrpcpb {
   static {
     java.lang.String[] descriptorData = {
       "\n\034tiap_hbaselike_kvrpcpb.proto\022\026tiap_hba" +
-      "selike_kvrpcpb\032\022tiap_kvrpcpb.proto\"\342\003\n\tK" +
+      "selike_kvrpcpb\032\022tiap_kvrpcpb.proto\"\242\002\n\tK" +
       "VRequest\022-\n\006header\030\001 \001(\0132\035.tiap_kvrpcpb." +
-      "KVRequestHeader\022<\n\013get_row_req\030\002 \001(\0132%.t" +
-      "iap_hbaselike_kvrpcpb.GetRowRequestH\000\022<\n" +
-      "\013put_row_req\030\003 \001(\0132%.tiap_hbaselike_kvrp" +
-      "cpb.PutRowRequestH\000\022B\n\016delete_row_req\030\004 " +
-      "\001(\0132(.tiap_hbaselike_kvrpcpb.DeleteRowRe" +
-      "questH\000\022G\n\021batch_get_row_req\030\005 \001(\0132*.tia" +
-      "p_hbaselike_kvrpcpb.BatchGetRowRequestH\000" +
-      "\022G\n\021batch_put_row_req\030\006 \001(\0132*.tiap_hbase" +
-      "like_kvrpcpb.BatchPutRowRequestH\000\022M\n\024bat" +
-      "ch_delete_row_req\030\007 \001(\0132-.tiap_hbaselike" +
-      "_kvrpcpb.BatchDeleteRowRequestH\000B\005\n\003req\"" +
-      "\361\003\n\nKVResponse\022.\n\006header\030\001 \001(\0132\036.tiap_kv" +
-      "rpcpb.KVResponseHeader\022>\n\014get_row_resp\030\002" +
-      " \001(\0132&.tiap_hbaselike_kvrpcpb.GetRowResp" +
-      "onseH\000\022>\n\014put_row_resp\030\003 \001(\0132&.tiap_hbas" +
-      "elike_kvrpcpb.PutRowResponseH\000\022D\n\017delete" +
-      "_row_resp\030\004 \001(\0132).tiap_hbaselike_kvrpcpb" +
-      ".DeleteRowResponseH\000\022I\n\022batch_get_row_re" +
-      "sp\030\005 \001(\0132+.tiap_hbaselike_kvrpcpb.BatchG" +
-      "etRowResponseH\000\022I\n\022batch_put_row_resp\030\006 " +
-      "\001(\0132+.tiap_hbaselike_kvrpcpb.BatchPutRow" +
-      "ResponseH\000\022O\n\025batch_delete_row_resp\030\007 \001(" +
-      "\0132..tiap_hbaselike_kvrpcpb.BatchDeleteRo" +
-      "wResponseH\000B\006\n\004resp\"9\n\rGetRowRequest\022(\n\003" +
-      "row\030\001 \001(\0132\033.tiap_hbaselike_kvrpcpb.Row\"E" +
-      "\n\016GetRowResponse\0223\n\trow_value\030\001 \001(\0132 .ti" +
-      "ap_hbaselike_kvrpcpb.RowValue\"?\n\022BatchGe" +
+      "KVRequestHeader\022G\n\021batch_get_row_req\030\002 \001" +
+      "(\0132*.tiap_hbaselike_kvrpcpb.BatchGetRowR" +
+      "equestH\000\022G\n\021batch_put_row_req\030\003 \001(\0132*.ti" +
+      "ap_hbaselike_kvrpcpb.BatchPutRowRequestH" +
+      "\000\022M\n\024batch_delete_row_req\030\004 \001(\0132-.tiap_h" +
+      "baselike_kvrpcpb.BatchDeleteRowRequestH\000" +
+      "B\005\n\003req\"\253\002\n\nKVResponse\022.\n\006header\030\001 \001(\0132\036" +
+      ".tiap_kvrpcpb.KVResponseHeader\022I\n\022batch_" +
+      "get_row_resp\030\002 \001(\0132+.tiap_hbaselike_kvrp" +
+      "cpb.BatchGetRowResponseH\000\022I\n\022batch_put_r" +
+      "ow_resp\030\003 \001(\0132+.tiap_hbaselike_kvrpcpb.B" +
+      "atchPutRowResponseH\000\022O\n\025batch_delete_row" +
+      "_resp\030\004 \001(\0132..tiap_hbaselike_kvrpcpb.Bat" +
+      "chDeleteRowResponseH\000B\006\n\004resp\"?\n\022BatchGe" +
       "tRowRequest\022)\n\004rows\030\001 \003(\0132\033.tiap_hbaseli" +
       "ke_kvrpcpb.Row\"K\n\023BatchGetRowResponse\0224\n" +
       "\nrow_values\030\001 \003(\0132 .tiap_hbaselike_kvrpc" +
-      "pb.RowValue\"D\n\rPutRowRequest\0223\n\trow_valu" +
-      "e\030\001 \001(\0132 .tiap_hbaselike_kvrpcpb.RowValu" +
-      "e\"\020\n\016PutRowResponse\"J\n\022BatchPutRowReques" +
-      "t\0224\n\nrow_values\030\001 \003(\0132 .tiap_hbaselike_k" +
-      "vrpcpb.RowValue\"\025\n\023BatchPutRowResponse\"<" +
-      "\n\020DeleteRowRequest\022(\n\003row\030\001 \001(\0132\033.tiap_h" +
-      "baselike_kvrpcpb.Row\"\023\n\021DeleteRowRespons" +
-      "e\"B\n\025BatchDeleteRowRequest\022)\n\004rows\030\001 \003(\013" +
-      "2\033.tiap_hbaselike_kvrpcpb.Row\"\030\n\026BatchDe" +
-      "leteRowResponse\"\200\001\n\003Row\022\017\n\007db_name\030\001 \001(\t" +
-      "\022\022\n\ntable_name\030\002 \001(\t\022\017\n\007row_key\030\003 \001(\014\0226\n" +
-      "\010families\030\004 \001(\0132$.tiap_hbaselike_kvrpcpb" +
-      ".ColumnFamily\022\013\n\003ttl\030\005 \001(\003\"\221\001\n\014ColumnFam" +
-      "ily\0226\n\001m\030\001 \003(\0132+.tiap_hbaselike_kvrpcpb." +
-      "ColumnFamily.MEntry\032I\n\006MEntry\022\013\n\003key\030\001 \001" +
-      "(\t\022.\n\005value\030\002 \001(\0132\037.tiap_hbaselike_kvrpc" +
-      "pb.Columns:\0028\001\":\n\007Columns\022/\n\007columns\030\001 \003" +
-      "(\0132\036.tiap_hbaselike_kvrpcpb.Column\"<\n\006Co" +
-      "lumn\022\014\n\004name\030\001 \001(\t\022\021\n\tmin_stamp\030\002 \001(\003\022\021\n" +
-      "\tmax_stamp\030\003 \001(\003\"\202\001\n\010RowValue\022\017\n\007db_name" +
-      "\030\001 \001(\t\022\022\n\ntable_name\030\002 \001(\t\022\017\n\007row_key\030\003 " +
-      "\001(\014\022@\n\rfamily_values\030\004 \001(\0132).tiap_hbasel" +
-      "ike_kvrpcpb.ColumnFamilyValue\"\240\001\n\021Column" +
-      "FamilyValue\022;\n\001m\030\001 \003(\01320.tiap_hbaselike_" +
-      "kvrpcpb.ColumnFamilyValue.MEntry\032N\n\006MEnt" +
-      "ry\022\013\n\003key\030\001 \001(\t\0223\n\005value\030\002 \001(\0132$.tiap_hb" +
-      "aselike_kvrpcpb.ColumnValues:\0028\001\"J\n\014Colu" +
-      "mnValues\022:\n\rcolumn_values\030\001 \003(\0132#.tiap_h" +
-      "baselike_kvrpcpb.ColumnValue\"J\n\013ColumnVa" +
-      "lue\022\014\n\004name\030\001 \001(\t\022\r\n\005value\030\002 \001(\014\022\021\n\ttime" +
-      "stamp\030\003 \001(\003\022\013\n\003ttl\030\004 \001(\003B\035\n\033com.shopee.d" +
-      "i.kvstore.protob\006proto3"
+      "pb.RowValue\"J\n\022BatchPutRowRequest\0224\n\nrow" +
+      "_values\030\001 \003(\0132 .tiap_hbaselike_kvrpcpb.R" +
+      "owValue\"\025\n\023BatchPutRowResponse\"B\n\025BatchD" +
+      "eleteRowRequest\022)\n\004rows\030\001 \003(\0132\033.tiap_hba" +
+      "selike_kvrpcpb.Row\"\030\n\026BatchDeleteRowResp" +
+      "onse\"\200\001\n\003Row\022\017\n\007db_name\030\001 \001(\t\022\022\n\ntable_n" +
+      "ame\030\002 \001(\t\022\017\n\007row_key\030\003 \001(\014\0226\n\010families\030\004" +
+      " \001(\0132$.tiap_hbaselike_kvrpcpb.ColumnFami" +
+      "ly\022\013\n\003ttl\030\005 \001(\003\"\221\001\n\014ColumnFamily\0226\n\001m\030\001 " +
+      "\003(\0132+.tiap_hbaselike_kvrpcpb.ColumnFamil" +
+      "y.MEntry\032I\n\006MEntry\022\013\n\003key\030\001 \001(\t\022.\n\005value" +
+      "\030\002 \001(\0132\037.tiap_hbaselike_kvrpcpb.Columns:" +
+      "\0028\001\":\n\007Columns\022/\n\007columns\030\001 \003(\0132\036.tiap_h" +
+      "baselike_kvrpcpb.Column\"8\n\006Column\022\014\n\004nam" +
+      "e\030\001 \001(\t\022\021\n\ttimestamp\030\002 \001(\003\022\r\n\005limit\030\003 \001(" +
+      "\003\"\202\001\n\010RowValue\022\017\n\007db_name\030\001 \001(\t\022\022\n\ntable" +
+      "_name\030\002 \001(\t\022\017\n\007row_key\030\003 \001(\014\022@\n\rfamily_v" +
+      "alues\030\004 \001(\0132).tiap_hbaselike_kvrpcpb.Col" +
+      "umnFamilyValue\"\240\001\n\021ColumnFamilyValue\022;\n\001" +
+      "m\030\001 \003(\01320.tiap_hbaselike_kvrpcpb.ColumnF" +
+      "amilyValue.MEntry\032N\n\006MEntry\022\013\n\003key\030\001 \001(\t" +
+      "\0223\n\005value\030\002 \001(\0132$.tiap_hbaselike_kvrpcpb" +
+      ".ColumnValues:\0028\001\"J\n\014ColumnValues\022:\n\rcol" +
+      "umn_values\030\001 \003(\0132#.tiap_hbaselike_kvrpcp" +
+      "b.ColumnValue\"J\n\013ColumnValue\022\014\n\004name\030\001 \001" +
+      "(\t\022\r\n\005value\030\002 \001(\014\022\021\n\ttimestamp\030\003 \001(\003\022\013\n\003" +
+      "ttl\030\004 \001(\003B\035\n\033com.shopee.di.kvstore.proto" +
+      "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -18296,93 +13555,57 @@ public final class TiapHbaselikeKvrpcpb {
     internal_static_tiap_hbaselike_kvrpcpb_KVRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tiap_hbaselike_kvrpcpb_KVRequest_descriptor,
-        new java.lang.String[] { "Header", "GetRowReq", "PutRowReq", "DeleteRowReq", "BatchGetRowReq", "BatchPutRowReq", "BatchDeleteRowReq", "Req", });
+        new java.lang.String[] { "Header", "BatchGetRowReq", "BatchPutRowReq", "BatchDeleteRowReq", "Req", });
     internal_static_tiap_hbaselike_kvrpcpb_KVResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_tiap_hbaselike_kvrpcpb_KVResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tiap_hbaselike_kvrpcpb_KVResponse_descriptor,
-        new java.lang.String[] { "Header", "GetRowResp", "PutRowResp", "DeleteRowResp", "BatchGetRowResp", "BatchPutRowResp", "BatchDeleteRowResp", "Resp", });
-    internal_static_tiap_hbaselike_kvrpcpb_GetRowRequest_descriptor =
-      getDescriptor().getMessageTypes().get(2);
-    internal_static_tiap_hbaselike_kvrpcpb_GetRowRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_tiap_hbaselike_kvrpcpb_GetRowRequest_descriptor,
-        new java.lang.String[] { "Row", });
-    internal_static_tiap_hbaselike_kvrpcpb_GetRowResponse_descriptor =
-      getDescriptor().getMessageTypes().get(3);
-    internal_static_tiap_hbaselike_kvrpcpb_GetRowResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_tiap_hbaselike_kvrpcpb_GetRowResponse_descriptor,
-        new java.lang.String[] { "RowValue", });
+        new java.lang.String[] { "Header", "BatchGetRowResp", "BatchPutRowResp", "BatchDeleteRowResp", "Resp", });
     internal_static_tiap_hbaselike_kvrpcpb_BatchGetRowRequest_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(2);
     internal_static_tiap_hbaselike_kvrpcpb_BatchGetRowRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tiap_hbaselike_kvrpcpb_BatchGetRowRequest_descriptor,
         new java.lang.String[] { "Rows", });
     internal_static_tiap_hbaselike_kvrpcpb_BatchGetRowResponse_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_tiap_hbaselike_kvrpcpb_BatchGetRowResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tiap_hbaselike_kvrpcpb_BatchGetRowResponse_descriptor,
         new java.lang.String[] { "RowValues", });
-    internal_static_tiap_hbaselike_kvrpcpb_PutRowRequest_descriptor =
-      getDescriptor().getMessageTypes().get(6);
-    internal_static_tiap_hbaselike_kvrpcpb_PutRowRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_tiap_hbaselike_kvrpcpb_PutRowRequest_descriptor,
-        new java.lang.String[] { "RowValue", });
-    internal_static_tiap_hbaselike_kvrpcpb_PutRowResponse_descriptor =
-      getDescriptor().getMessageTypes().get(7);
-    internal_static_tiap_hbaselike_kvrpcpb_PutRowResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_tiap_hbaselike_kvrpcpb_PutRowResponse_descriptor,
-        new java.lang.String[] { });
     internal_static_tiap_hbaselike_kvrpcpb_BatchPutRowRequest_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_tiap_hbaselike_kvrpcpb_BatchPutRowRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tiap_hbaselike_kvrpcpb_BatchPutRowRequest_descriptor,
         new java.lang.String[] { "RowValues", });
     internal_static_tiap_hbaselike_kvrpcpb_BatchPutRowResponse_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_tiap_hbaselike_kvrpcpb_BatchPutRowResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tiap_hbaselike_kvrpcpb_BatchPutRowResponse_descriptor,
         new java.lang.String[] { });
-    internal_static_tiap_hbaselike_kvrpcpb_DeleteRowRequest_descriptor =
-      getDescriptor().getMessageTypes().get(10);
-    internal_static_tiap_hbaselike_kvrpcpb_DeleteRowRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_tiap_hbaselike_kvrpcpb_DeleteRowRequest_descriptor,
-        new java.lang.String[] { "Row", });
-    internal_static_tiap_hbaselike_kvrpcpb_DeleteRowResponse_descriptor =
-      getDescriptor().getMessageTypes().get(11);
-    internal_static_tiap_hbaselike_kvrpcpb_DeleteRowResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_tiap_hbaselike_kvrpcpb_DeleteRowResponse_descriptor,
-        new java.lang.String[] { });
     internal_static_tiap_hbaselike_kvrpcpb_BatchDeleteRowRequest_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_tiap_hbaselike_kvrpcpb_BatchDeleteRowRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tiap_hbaselike_kvrpcpb_BatchDeleteRowRequest_descriptor,
         new java.lang.String[] { "Rows", });
     internal_static_tiap_hbaselike_kvrpcpb_BatchDeleteRowResponse_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_tiap_hbaselike_kvrpcpb_BatchDeleteRowResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tiap_hbaselike_kvrpcpb_BatchDeleteRowResponse_descriptor,
         new java.lang.String[] { });
     internal_static_tiap_hbaselike_kvrpcpb_Row_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_tiap_hbaselike_kvrpcpb_Row_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tiap_hbaselike_kvrpcpb_Row_descriptor,
         new java.lang.String[] { "DbName", "TableName", "RowKey", "Families", "Ttl", });
     internal_static_tiap_hbaselike_kvrpcpb_ColumnFamily_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_tiap_hbaselike_kvrpcpb_ColumnFamily_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tiap_hbaselike_kvrpcpb_ColumnFamily_descriptor,
@@ -18394,25 +13617,25 @@ public final class TiapHbaselikeKvrpcpb {
         internal_static_tiap_hbaselike_kvrpcpb_ColumnFamily_MEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_tiap_hbaselike_kvrpcpb_Columns_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_tiap_hbaselike_kvrpcpb_Columns_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tiap_hbaselike_kvrpcpb_Columns_descriptor,
         new java.lang.String[] { "Columns", });
     internal_static_tiap_hbaselike_kvrpcpb_Column_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_tiap_hbaselike_kvrpcpb_Column_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tiap_hbaselike_kvrpcpb_Column_descriptor,
-        new java.lang.String[] { "Name", "MinStamp", "MaxStamp", });
+        new java.lang.String[] { "Name", "Timestamp", "Limit", });
     internal_static_tiap_hbaselike_kvrpcpb_RowValue_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_tiap_hbaselike_kvrpcpb_RowValue_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tiap_hbaselike_kvrpcpb_RowValue_descriptor,
         new java.lang.String[] { "DbName", "TableName", "RowKey", "FamilyValues", });
     internal_static_tiap_hbaselike_kvrpcpb_ColumnFamilyValue_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_tiap_hbaselike_kvrpcpb_ColumnFamilyValue_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tiap_hbaselike_kvrpcpb_ColumnFamilyValue_descriptor,
@@ -18424,13 +13647,13 @@ public final class TiapHbaselikeKvrpcpb {
         internal_static_tiap_hbaselike_kvrpcpb_ColumnFamilyValue_MEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_tiap_hbaselike_kvrpcpb_ColumnValues_descriptor =
-      getDescriptor().getMessageTypes().get(20);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_tiap_hbaselike_kvrpcpb_ColumnValues_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tiap_hbaselike_kvrpcpb_ColumnValues_descriptor,
         new java.lang.String[] { "ColumnValues", });
     internal_static_tiap_hbaselike_kvrpcpb_ColumnValue_descriptor =
-      getDescriptor().getMessageTypes().get(21);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_tiap_hbaselike_kvrpcpb_ColumnValue_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tiap_hbaselike_kvrpcpb_ColumnValue_descriptor,

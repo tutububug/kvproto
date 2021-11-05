@@ -12,33 +12,19 @@ option java_package = "com.shopee.di.kvstore.proto";
 message KVRequest {
   tiap_kvrpcpb.KVRequestHeader header = 1;
   oneof req {
-    GetRowRequest get_row_req = 2;
-    PutRowRequest put_row_req = 3;
-    DeleteRowRequest delete_row_req = 4;
-    BatchGetRowRequest batch_get_row_req = 5;
-    BatchPutRowRequest batch_put_row_req = 6;
-    BatchDeleteRowRequest batch_delete_row_req = 7;
+    BatchGetRowRequest batch_get_row_req = 2;
+    BatchPutRowRequest batch_put_row_req = 3;
+    BatchDeleteRowRequest batch_delete_row_req = 4;
   }
 }
 
 message KVResponse {
   tiap_kvrpcpb.KVResponseHeader header = 1;
   oneof resp {
-    GetRowResponse get_row_resp = 2;
-    PutRowResponse put_row_resp = 3;
-    DeleteRowResponse delete_row_resp = 4;
-    BatchGetRowResponse batch_get_row_resp = 5;
-    BatchPutRowResponse batch_put_row_resp = 6;
-    BatchDeleteRowResponse batch_delete_row_resp = 7;
+    BatchGetRowResponse batch_get_row_resp = 2;
+    BatchPutRowResponse batch_put_row_resp = 3;
+    BatchDeleteRowResponse batch_delete_row_resp = 4;
   }
-}
-
-message GetRowRequest {
-  Row row = 1;
-}
-
-message GetRowResponse {
-  RowValue row_value = 1;
 }
 
 message BatchGetRowRequest {
@@ -49,25 +35,11 @@ message BatchGetRowResponse {
   repeated RowValue row_values = 1;
 }
 
-message PutRowRequest {
-  RowValue row_value = 1;
-}
-
-message PutRowResponse {
-}
-
 message BatchPutRowRequest {
   repeated RowValue row_values = 1;
 }
 
 message BatchPutRowResponse {
-}
-
-message DeleteRowRequest {
-  Row row = 1;
-}
-
-message DeleteRowResponse {
 }
 
 message BatchDeleteRowRequest {
@@ -95,8 +67,8 @@ message Columns {
 
 message Column {
   string name = 1;
-  int64 min_stamp = 2;
-  int64 max_stamp = 3;
+  int64 timestamp = 2;
+  int64 limit = 3;
 }
 
 message RowValue {

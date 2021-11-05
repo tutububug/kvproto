@@ -29,9 +29,6 @@ const _ = proto.ProtoPackageIsVersion2 // please upgrade the proto package
 type KVRequest struct {
 	Header *tiap_kvrpcpb.KVRequestHeader `protobuf:"bytes,1,opt,name=header" json:"header,omitempty"`
 	// Types that are valid to be assigned to Req:
-	//	*KVRequest_GetRowReq
-	//	*KVRequest_PutRowReq
-	//	*KVRequest_DeleteRowReq
 	//	*KVRequest_BatchGetRowReq
 	//	*KVRequest_BatchPutRowReq
 	//	*KVRequest_BatchDeleteRowReq
@@ -45,7 +42,7 @@ func (m *KVRequest) Reset()         { *m = KVRequest{} }
 func (m *KVRequest) String() string { return proto.CompactTextString(m) }
 func (*KVRequest) ProtoMessage()    {}
 func (*KVRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_tiap_hbaselike_kvrpcpb_94912e67f547294f, []int{0}
+	return fileDescriptor_tiap_hbaselike_kvrpcpb_f0956854503d9385, []int{0}
 }
 func (m *KVRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -80,28 +77,16 @@ type isKVRequest_Req interface {
 	Size() int
 }
 
-type KVRequest_GetRowReq struct {
-	GetRowReq *GetRowRequest `protobuf:"bytes,2,opt,name=get_row_req,json=getRowReq,oneof"`
-}
-type KVRequest_PutRowReq struct {
-	PutRowReq *PutRowRequest `protobuf:"bytes,3,opt,name=put_row_req,json=putRowReq,oneof"`
-}
-type KVRequest_DeleteRowReq struct {
-	DeleteRowReq *DeleteRowRequest `protobuf:"bytes,4,opt,name=delete_row_req,json=deleteRowReq,oneof"`
-}
 type KVRequest_BatchGetRowReq struct {
-	BatchGetRowReq *BatchGetRowRequest `protobuf:"bytes,5,opt,name=batch_get_row_req,json=batchGetRowReq,oneof"`
+	BatchGetRowReq *BatchGetRowRequest `protobuf:"bytes,2,opt,name=batch_get_row_req,json=batchGetRowReq,oneof"`
 }
 type KVRequest_BatchPutRowReq struct {
-	BatchPutRowReq *BatchPutRowRequest `protobuf:"bytes,6,opt,name=batch_put_row_req,json=batchPutRowReq,oneof"`
+	BatchPutRowReq *BatchPutRowRequest `protobuf:"bytes,3,opt,name=batch_put_row_req,json=batchPutRowReq,oneof"`
 }
 type KVRequest_BatchDeleteRowReq struct {
-	BatchDeleteRowReq *BatchDeleteRowRequest `protobuf:"bytes,7,opt,name=batch_delete_row_req,json=batchDeleteRowReq,oneof"`
+	BatchDeleteRowReq *BatchDeleteRowRequest `protobuf:"bytes,4,opt,name=batch_delete_row_req,json=batchDeleteRowReq,oneof"`
 }
 
-func (*KVRequest_GetRowReq) isKVRequest_Req()         {}
-func (*KVRequest_PutRowReq) isKVRequest_Req()         {}
-func (*KVRequest_DeleteRowReq) isKVRequest_Req()      {}
 func (*KVRequest_BatchGetRowReq) isKVRequest_Req()    {}
 func (*KVRequest_BatchPutRowReq) isKVRequest_Req()    {}
 func (*KVRequest_BatchDeleteRowReq) isKVRequest_Req() {}
@@ -116,27 +101,6 @@ func (m *KVRequest) GetReq() isKVRequest_Req {
 func (m *KVRequest) GetHeader() *tiap_kvrpcpb.KVRequestHeader {
 	if m != nil {
 		return m.Header
-	}
-	return nil
-}
-
-func (m *KVRequest) GetGetRowReq() *GetRowRequest {
-	if x, ok := m.GetReq().(*KVRequest_GetRowReq); ok {
-		return x.GetRowReq
-	}
-	return nil
-}
-
-func (m *KVRequest) GetPutRowReq() *PutRowRequest {
-	if x, ok := m.GetReq().(*KVRequest_PutRowReq); ok {
-		return x.PutRowReq
-	}
-	return nil
-}
-
-func (m *KVRequest) GetDeleteRowReq() *DeleteRowRequest {
-	if x, ok := m.GetReq().(*KVRequest_DeleteRowReq); ok {
-		return x.DeleteRowReq
 	}
 	return nil
 }
@@ -165,9 +129,6 @@ func (m *KVRequest) GetBatchDeleteRowReq() *BatchDeleteRowRequest {
 // XXX_OneofFuncs is for the internal use of the proto package.
 func (*KVRequest) XXX_OneofFuncs() (func(msg proto.Message, b *proto.Buffer) error, func(msg proto.Message, tag, wire int, b *proto.Buffer) (bool, error), func(msg proto.Message) (n int), []interface{}) {
 	return _KVRequest_OneofMarshaler, _KVRequest_OneofUnmarshaler, _KVRequest_OneofSizer, []interface{}{
-		(*KVRequest_GetRowReq)(nil),
-		(*KVRequest_PutRowReq)(nil),
-		(*KVRequest_DeleteRowReq)(nil),
 		(*KVRequest_BatchGetRowReq)(nil),
 		(*KVRequest_BatchPutRowReq)(nil),
 		(*KVRequest_BatchDeleteRowReq)(nil),
@@ -178,33 +139,18 @@ func _KVRequest_OneofMarshaler(msg proto.Message, b *proto.Buffer) error {
 	m := msg.(*KVRequest)
 	// req
 	switch x := m.Req.(type) {
-	case *KVRequest_GetRowReq:
-		_ = b.EncodeVarint(2<<3 | proto.WireBytes)
-		if err := b.EncodeMessage(x.GetRowReq); err != nil {
-			return err
-		}
-	case *KVRequest_PutRowReq:
-		_ = b.EncodeVarint(3<<3 | proto.WireBytes)
-		if err := b.EncodeMessage(x.PutRowReq); err != nil {
-			return err
-		}
-	case *KVRequest_DeleteRowReq:
-		_ = b.EncodeVarint(4<<3 | proto.WireBytes)
-		if err := b.EncodeMessage(x.DeleteRowReq); err != nil {
-			return err
-		}
 	case *KVRequest_BatchGetRowReq:
-		_ = b.EncodeVarint(5<<3 | proto.WireBytes)
+		_ = b.EncodeVarint(2<<3 | proto.WireBytes)
 		if err := b.EncodeMessage(x.BatchGetRowReq); err != nil {
 			return err
 		}
 	case *KVRequest_BatchPutRowReq:
-		_ = b.EncodeVarint(6<<3 | proto.WireBytes)
+		_ = b.EncodeVarint(3<<3 | proto.WireBytes)
 		if err := b.EncodeMessage(x.BatchPutRowReq); err != nil {
 			return err
 		}
 	case *KVRequest_BatchDeleteRowReq:
-		_ = b.EncodeVarint(7<<3 | proto.WireBytes)
+		_ = b.EncodeVarint(4<<3 | proto.WireBytes)
 		if err := b.EncodeMessage(x.BatchDeleteRowReq); err != nil {
 			return err
 		}
@@ -218,31 +164,7 @@ func _KVRequest_OneofMarshaler(msg proto.Message, b *proto.Buffer) error {
 func _KVRequest_OneofUnmarshaler(msg proto.Message, tag, wire int, b *proto.Buffer) (bool, error) {
 	m := msg.(*KVRequest)
 	switch tag {
-	case 2: // req.get_row_req
-		if wire != proto.WireBytes {
-			return true, proto.ErrInternalBadWireType
-		}
-		msg := new(GetRowRequest)
-		err := b.DecodeMessage(msg)
-		m.Req = &KVRequest_GetRowReq{msg}
-		return true, err
-	case 3: // req.put_row_req
-		if wire != proto.WireBytes {
-			return true, proto.ErrInternalBadWireType
-		}
-		msg := new(PutRowRequest)
-		err := b.DecodeMessage(msg)
-		m.Req = &KVRequest_PutRowReq{msg}
-		return true, err
-	case 4: // req.delete_row_req
-		if wire != proto.WireBytes {
-			return true, proto.ErrInternalBadWireType
-		}
-		msg := new(DeleteRowRequest)
-		err := b.DecodeMessage(msg)
-		m.Req = &KVRequest_DeleteRowReq{msg}
-		return true, err
-	case 5: // req.batch_get_row_req
+	case 2: // req.batch_get_row_req
 		if wire != proto.WireBytes {
 			return true, proto.ErrInternalBadWireType
 		}
@@ -250,7 +172,7 @@ func _KVRequest_OneofUnmarshaler(msg proto.Message, tag, wire int, b *proto.Buff
 		err := b.DecodeMessage(msg)
 		m.Req = &KVRequest_BatchGetRowReq{msg}
 		return true, err
-	case 6: // req.batch_put_row_req
+	case 3: // req.batch_put_row_req
 		if wire != proto.WireBytes {
 			return true, proto.ErrInternalBadWireType
 		}
@@ -258,7 +180,7 @@ func _KVRequest_OneofUnmarshaler(msg proto.Message, tag, wire int, b *proto.Buff
 		err := b.DecodeMessage(msg)
 		m.Req = &KVRequest_BatchPutRowReq{msg}
 		return true, err
-	case 7: // req.batch_delete_row_req
+	case 4: // req.batch_delete_row_req
 		if wire != proto.WireBytes {
 			return true, proto.ErrInternalBadWireType
 		}
@@ -275,21 +197,6 @@ func _KVRequest_OneofSizer(msg proto.Message) (n int) {
 	m := msg.(*KVRequest)
 	// req
 	switch x := m.Req.(type) {
-	case *KVRequest_GetRowReq:
-		s := proto.Size(x.GetRowReq)
-		n += 1 // tag and wire
-		n += proto.SizeVarint(uint64(s))
-		n += s
-	case *KVRequest_PutRowReq:
-		s := proto.Size(x.PutRowReq)
-		n += 1 // tag and wire
-		n += proto.SizeVarint(uint64(s))
-		n += s
-	case *KVRequest_DeleteRowReq:
-		s := proto.Size(x.DeleteRowReq)
-		n += 1 // tag and wire
-		n += proto.SizeVarint(uint64(s))
-		n += s
 	case *KVRequest_BatchGetRowReq:
 		s := proto.Size(x.BatchGetRowReq)
 		n += 1 // tag and wire
@@ -315,9 +222,6 @@ func _KVRequest_OneofSizer(msg proto.Message) (n int) {
 type KVResponse struct {
 	Header *tiap_kvrpcpb.KVResponseHeader `protobuf:"bytes,1,opt,name=header" json:"header,omitempty"`
 	// Types that are valid to be assigned to Resp:
-	//	*KVResponse_GetRowResp
-	//	*KVResponse_PutRowResp
-	//	*KVResponse_DeleteRowResp
 	//	*KVResponse_BatchGetRowResp
 	//	*KVResponse_BatchPutRowResp
 	//	*KVResponse_BatchDeleteRowResp
@@ -331,7 +235,7 @@ func (m *KVResponse) Reset()         { *m = KVResponse{} }
 func (m *KVResponse) String() string { return proto.CompactTextString(m) }
 func (*KVResponse) ProtoMessage()    {}
 func (*KVResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_tiap_hbaselike_kvrpcpb_94912e67f547294f, []int{1}
+	return fileDescriptor_tiap_hbaselike_kvrpcpb_f0956854503d9385, []int{1}
 }
 func (m *KVResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -366,28 +270,16 @@ type isKVResponse_Resp interface {
 	Size() int
 }
 
-type KVResponse_GetRowResp struct {
-	GetRowResp *GetRowResponse `protobuf:"bytes,2,opt,name=get_row_resp,json=getRowResp,oneof"`
-}
-type KVResponse_PutRowResp struct {
-	PutRowResp *PutRowResponse `protobuf:"bytes,3,opt,name=put_row_resp,json=putRowResp,oneof"`
-}
-type KVResponse_DeleteRowResp struct {
-	DeleteRowResp *DeleteRowResponse `protobuf:"bytes,4,opt,name=delete_row_resp,json=deleteRowResp,oneof"`
-}
 type KVResponse_BatchGetRowResp struct {
-	BatchGetRowResp *BatchGetRowResponse `protobuf:"bytes,5,opt,name=batch_get_row_resp,json=batchGetRowResp,oneof"`
+	BatchGetRowResp *BatchGetRowResponse `protobuf:"bytes,2,opt,name=batch_get_row_resp,json=batchGetRowResp,oneof"`
 }
 type KVResponse_BatchPutRowResp struct {
-	BatchPutRowResp *BatchPutRowResponse `protobuf:"bytes,6,opt,name=batch_put_row_resp,json=batchPutRowResp,oneof"`
+	BatchPutRowResp *BatchPutRowResponse `protobuf:"bytes,3,opt,name=batch_put_row_resp,json=batchPutRowResp,oneof"`
 }
 type KVResponse_BatchDeleteRowResp struct {
-	BatchDeleteRowResp *BatchDeleteRowResponse `protobuf:"bytes,7,opt,name=batch_delete_row_resp,json=batchDeleteRowResp,oneof"`
+	BatchDeleteRowResp *BatchDeleteRowResponse `protobuf:"bytes,4,opt,name=batch_delete_row_resp,json=batchDeleteRowResp,oneof"`
 }
 
-func (*KVResponse_GetRowResp) isKVResponse_Resp()         {}
-func (*KVResponse_PutRowResp) isKVResponse_Resp()         {}
-func (*KVResponse_DeleteRowResp) isKVResponse_Resp()      {}
 func (*KVResponse_BatchGetRowResp) isKVResponse_Resp()    {}
 func (*KVResponse_BatchPutRowResp) isKVResponse_Resp()    {}
 func (*KVResponse_BatchDeleteRowResp) isKVResponse_Resp() {}
@@ -402,27 +294,6 @@ func (m *KVResponse) GetResp() isKVResponse_Resp {
 func (m *KVResponse) GetHeader() *tiap_kvrpcpb.KVResponseHeader {
 	if m != nil {
 		return m.Header
-	}
-	return nil
-}
-
-func (m *KVResponse) GetGetRowResp() *GetRowResponse {
-	if x, ok := m.GetResp().(*KVResponse_GetRowResp); ok {
-		return x.GetRowResp
-	}
-	return nil
-}
-
-func (m *KVResponse) GetPutRowResp() *PutRowResponse {
-	if x, ok := m.GetResp().(*KVResponse_PutRowResp); ok {
-		return x.PutRowResp
-	}
-	return nil
-}
-
-func (m *KVResponse) GetDeleteRowResp() *DeleteRowResponse {
-	if x, ok := m.GetResp().(*KVResponse_DeleteRowResp); ok {
-		return x.DeleteRowResp
 	}
 	return nil
 }
@@ -451,9 +322,6 @@ func (m *KVResponse) GetBatchDeleteRowResp() *BatchDeleteRowResponse {
 // XXX_OneofFuncs is for the internal use of the proto package.
 func (*KVResponse) XXX_OneofFuncs() (func(msg proto.Message, b *proto.Buffer) error, func(msg proto.Message, tag, wire int, b *proto.Buffer) (bool, error), func(msg proto.Message) (n int), []interface{}) {
 	return _KVResponse_OneofMarshaler, _KVResponse_OneofUnmarshaler, _KVResponse_OneofSizer, []interface{}{
-		(*KVResponse_GetRowResp)(nil),
-		(*KVResponse_PutRowResp)(nil),
-		(*KVResponse_DeleteRowResp)(nil),
 		(*KVResponse_BatchGetRowResp)(nil),
 		(*KVResponse_BatchPutRowResp)(nil),
 		(*KVResponse_BatchDeleteRowResp)(nil),
@@ -464,33 +332,18 @@ func _KVResponse_OneofMarshaler(msg proto.Message, b *proto.Buffer) error {
 	m := msg.(*KVResponse)
 	// resp
 	switch x := m.Resp.(type) {
-	case *KVResponse_GetRowResp:
-		_ = b.EncodeVarint(2<<3 | proto.WireBytes)
-		if err := b.EncodeMessage(x.GetRowResp); err != nil {
-			return err
-		}
-	case *KVResponse_PutRowResp:
-		_ = b.EncodeVarint(3<<3 | proto.WireBytes)
-		if err := b.EncodeMessage(x.PutRowResp); err != nil {
-			return err
-		}
-	case *KVResponse_DeleteRowResp:
-		_ = b.EncodeVarint(4<<3 | proto.WireBytes)
-		if err := b.EncodeMessage(x.DeleteRowResp); err != nil {
-			return err
-		}
 	case *KVResponse_BatchGetRowResp:
-		_ = b.EncodeVarint(5<<3 | proto.WireBytes)
+		_ = b.EncodeVarint(2<<3 | proto.WireBytes)
 		if err := b.EncodeMessage(x.BatchGetRowResp); err != nil {
 			return err
 		}
 	case *KVResponse_BatchPutRowResp:
-		_ = b.EncodeVarint(6<<3 | proto.WireBytes)
+		_ = b.EncodeVarint(3<<3 | proto.WireBytes)
 		if err := b.EncodeMessage(x.BatchPutRowResp); err != nil {
 			return err
 		}
 	case *KVResponse_BatchDeleteRowResp:
-		_ = b.EncodeVarint(7<<3 | proto.WireBytes)
+		_ = b.EncodeVarint(4<<3 | proto.WireBytes)
 		if err := b.EncodeMessage(x.BatchDeleteRowResp); err != nil {
 			return err
 		}
@@ -504,31 +357,7 @@ func _KVResponse_OneofMarshaler(msg proto.Message, b *proto.Buffer) error {
 func _KVResponse_OneofUnmarshaler(msg proto.Message, tag, wire int, b *proto.Buffer) (bool, error) {
 	m := msg.(*KVResponse)
 	switch tag {
-	case 2: // resp.get_row_resp
-		if wire != proto.WireBytes {
-			return true, proto.ErrInternalBadWireType
-		}
-		msg := new(GetRowResponse)
-		err := b.DecodeMessage(msg)
-		m.Resp = &KVResponse_GetRowResp{msg}
-		return true, err
-	case 3: // resp.put_row_resp
-		if wire != proto.WireBytes {
-			return true, proto.ErrInternalBadWireType
-		}
-		msg := new(PutRowResponse)
-		err := b.DecodeMessage(msg)
-		m.Resp = &KVResponse_PutRowResp{msg}
-		return true, err
-	case 4: // resp.delete_row_resp
-		if wire != proto.WireBytes {
-			return true, proto.ErrInternalBadWireType
-		}
-		msg := new(DeleteRowResponse)
-		err := b.DecodeMessage(msg)
-		m.Resp = &KVResponse_DeleteRowResp{msg}
-		return true, err
-	case 5: // resp.batch_get_row_resp
+	case 2: // resp.batch_get_row_resp
 		if wire != proto.WireBytes {
 			return true, proto.ErrInternalBadWireType
 		}
@@ -536,7 +365,7 @@ func _KVResponse_OneofUnmarshaler(msg proto.Message, tag, wire int, b *proto.Buf
 		err := b.DecodeMessage(msg)
 		m.Resp = &KVResponse_BatchGetRowResp{msg}
 		return true, err
-	case 6: // resp.batch_put_row_resp
+	case 3: // resp.batch_put_row_resp
 		if wire != proto.WireBytes {
 			return true, proto.ErrInternalBadWireType
 		}
@@ -544,7 +373,7 @@ func _KVResponse_OneofUnmarshaler(msg proto.Message, tag, wire int, b *proto.Buf
 		err := b.DecodeMessage(msg)
 		m.Resp = &KVResponse_BatchPutRowResp{msg}
 		return true, err
-	case 7: // resp.batch_delete_row_resp
+	case 4: // resp.batch_delete_row_resp
 		if wire != proto.WireBytes {
 			return true, proto.ErrInternalBadWireType
 		}
@@ -561,21 +390,6 @@ func _KVResponse_OneofSizer(msg proto.Message) (n int) {
 	m := msg.(*KVResponse)
 	// resp
 	switch x := m.Resp.(type) {
-	case *KVResponse_GetRowResp:
-		s := proto.Size(x.GetRowResp)
-		n += 1 // tag and wire
-		n += proto.SizeVarint(uint64(s))
-		n += s
-	case *KVResponse_PutRowResp:
-		s := proto.Size(x.PutRowResp)
-		n += 1 // tag and wire
-		n += proto.SizeVarint(uint64(s))
-		n += s
-	case *KVResponse_DeleteRowResp:
-		s := proto.Size(x.DeleteRowResp)
-		n += 1 // tag and wire
-		n += proto.SizeVarint(uint64(s))
-		n += s
 	case *KVResponse_BatchGetRowResp:
 		s := proto.Size(x.BatchGetRowResp)
 		n += 1 // tag and wire
@@ -598,100 +412,6 @@ func _KVResponse_OneofSizer(msg proto.Message) (n int) {
 	return n
 }
 
-type GetRowRequest struct {
-	Row                  *Row     `protobuf:"bytes,1,opt,name=row" json:"row,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
-}
-
-func (m *GetRowRequest) Reset()         { *m = GetRowRequest{} }
-func (m *GetRowRequest) String() string { return proto.CompactTextString(m) }
-func (*GetRowRequest) ProtoMessage()    {}
-func (*GetRowRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_tiap_hbaselike_kvrpcpb_94912e67f547294f, []int{2}
-}
-func (m *GetRowRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
-func (m *GetRowRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_GetRowRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalTo(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
-}
-func (dst *GetRowRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_GetRowRequest.Merge(dst, src)
-}
-func (m *GetRowRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *GetRowRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_GetRowRequest.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_GetRowRequest proto.InternalMessageInfo
-
-func (m *GetRowRequest) GetRow() *Row {
-	if m != nil {
-		return m.Row
-	}
-	return nil
-}
-
-type GetRowResponse struct {
-	RowValue             *RowValue `protobuf:"bytes,1,opt,name=row_value,json=rowValue" json:"row_value,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}  `json:"-"`
-	XXX_unrecognized     []byte    `json:"-"`
-	XXX_sizecache        int32     `json:"-"`
-}
-
-func (m *GetRowResponse) Reset()         { *m = GetRowResponse{} }
-func (m *GetRowResponse) String() string { return proto.CompactTextString(m) }
-func (*GetRowResponse) ProtoMessage()    {}
-func (*GetRowResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_tiap_hbaselike_kvrpcpb_94912e67f547294f, []int{3}
-}
-func (m *GetRowResponse) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
-func (m *GetRowResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_GetRowResponse.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalTo(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
-}
-func (dst *GetRowResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_GetRowResponse.Merge(dst, src)
-}
-func (m *GetRowResponse) XXX_Size() int {
-	return m.Size()
-}
-func (m *GetRowResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_GetRowResponse.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_GetRowResponse proto.InternalMessageInfo
-
-func (m *GetRowResponse) GetRowValue() *RowValue {
-	if m != nil {
-		return m.RowValue
-	}
-	return nil
-}
-
 type BatchGetRowRequest struct {
 	Rows                 []*Row   `protobuf:"bytes,1,rep,name=rows" json:"rows,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
@@ -703,7 +423,7 @@ func (m *BatchGetRowRequest) Reset()         { *m = BatchGetRowRequest{} }
 func (m *BatchGetRowRequest) String() string { return proto.CompactTextString(m) }
 func (*BatchGetRowRequest) ProtoMessage()    {}
 func (*BatchGetRowRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_tiap_hbaselike_kvrpcpb_94912e67f547294f, []int{4}
+	return fileDescriptor_tiap_hbaselike_kvrpcpb_f0956854503d9385, []int{2}
 }
 func (m *BatchGetRowRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -750,7 +470,7 @@ func (m *BatchGetRowResponse) Reset()         { *m = BatchGetRowResponse{} }
 func (m *BatchGetRowResponse) String() string { return proto.CompactTextString(m) }
 func (*BatchGetRowResponse) ProtoMessage()    {}
 func (*BatchGetRowResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_tiap_hbaselike_kvrpcpb_94912e67f547294f, []int{5}
+	return fileDescriptor_tiap_hbaselike_kvrpcpb_f0956854503d9385, []int{3}
 }
 func (m *BatchGetRowResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -786,92 +506,6 @@ func (m *BatchGetRowResponse) GetRowValues() []*RowValue {
 	return nil
 }
 
-type PutRowRequest struct {
-	RowValue             *RowValue `protobuf:"bytes,1,opt,name=row_value,json=rowValue" json:"row_value,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}  `json:"-"`
-	XXX_unrecognized     []byte    `json:"-"`
-	XXX_sizecache        int32     `json:"-"`
-}
-
-func (m *PutRowRequest) Reset()         { *m = PutRowRequest{} }
-func (m *PutRowRequest) String() string { return proto.CompactTextString(m) }
-func (*PutRowRequest) ProtoMessage()    {}
-func (*PutRowRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_tiap_hbaselike_kvrpcpb_94912e67f547294f, []int{6}
-}
-func (m *PutRowRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
-func (m *PutRowRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_PutRowRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalTo(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
-}
-func (dst *PutRowRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_PutRowRequest.Merge(dst, src)
-}
-func (m *PutRowRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *PutRowRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_PutRowRequest.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_PutRowRequest proto.InternalMessageInfo
-
-func (m *PutRowRequest) GetRowValue() *RowValue {
-	if m != nil {
-		return m.RowValue
-	}
-	return nil
-}
-
-type PutRowResponse struct {
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
-}
-
-func (m *PutRowResponse) Reset()         { *m = PutRowResponse{} }
-func (m *PutRowResponse) String() string { return proto.CompactTextString(m) }
-func (*PutRowResponse) ProtoMessage()    {}
-func (*PutRowResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_tiap_hbaselike_kvrpcpb_94912e67f547294f, []int{7}
-}
-func (m *PutRowResponse) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
-func (m *PutRowResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_PutRowResponse.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalTo(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
-}
-func (dst *PutRowResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_PutRowResponse.Merge(dst, src)
-}
-func (m *PutRowResponse) XXX_Size() int {
-	return m.Size()
-}
-func (m *PutRowResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_PutRowResponse.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_PutRowResponse proto.InternalMessageInfo
-
 type BatchPutRowRequest struct {
 	RowValues            []*RowValue `protobuf:"bytes,1,rep,name=row_values,json=rowValues" json:"row_values,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}    `json:"-"`
@@ -883,7 +517,7 @@ func (m *BatchPutRowRequest) Reset()         { *m = BatchPutRowRequest{} }
 func (m *BatchPutRowRequest) String() string { return proto.CompactTextString(m) }
 func (*BatchPutRowRequest) ProtoMessage()    {}
 func (*BatchPutRowRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_tiap_hbaselike_kvrpcpb_94912e67f547294f, []int{8}
+	return fileDescriptor_tiap_hbaselike_kvrpcpb_f0956854503d9385, []int{4}
 }
 func (m *BatchPutRowRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -929,7 +563,7 @@ func (m *BatchPutRowResponse) Reset()         { *m = BatchPutRowResponse{} }
 func (m *BatchPutRowResponse) String() string { return proto.CompactTextString(m) }
 func (*BatchPutRowResponse) ProtoMessage()    {}
 func (*BatchPutRowResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_tiap_hbaselike_kvrpcpb_94912e67f547294f, []int{9}
+	return fileDescriptor_tiap_hbaselike_kvrpcpb_f0956854503d9385, []int{5}
 }
 func (m *BatchPutRowResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -958,92 +592,6 @@ func (m *BatchPutRowResponse) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_BatchPutRowResponse proto.InternalMessageInfo
 
-type DeleteRowRequest struct {
-	Row                  *Row     `protobuf:"bytes,1,opt,name=row" json:"row,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
-}
-
-func (m *DeleteRowRequest) Reset()         { *m = DeleteRowRequest{} }
-func (m *DeleteRowRequest) String() string { return proto.CompactTextString(m) }
-func (*DeleteRowRequest) ProtoMessage()    {}
-func (*DeleteRowRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_tiap_hbaselike_kvrpcpb_94912e67f547294f, []int{10}
-}
-func (m *DeleteRowRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
-func (m *DeleteRowRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_DeleteRowRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalTo(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
-}
-func (dst *DeleteRowRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_DeleteRowRequest.Merge(dst, src)
-}
-func (m *DeleteRowRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *DeleteRowRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_DeleteRowRequest.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_DeleteRowRequest proto.InternalMessageInfo
-
-func (m *DeleteRowRequest) GetRow() *Row {
-	if m != nil {
-		return m.Row
-	}
-	return nil
-}
-
-type DeleteRowResponse struct {
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
-}
-
-func (m *DeleteRowResponse) Reset()         { *m = DeleteRowResponse{} }
-func (m *DeleteRowResponse) String() string { return proto.CompactTextString(m) }
-func (*DeleteRowResponse) ProtoMessage()    {}
-func (*DeleteRowResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_tiap_hbaselike_kvrpcpb_94912e67f547294f, []int{11}
-}
-func (m *DeleteRowResponse) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
-func (m *DeleteRowResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_DeleteRowResponse.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalTo(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
-}
-func (dst *DeleteRowResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_DeleteRowResponse.Merge(dst, src)
-}
-func (m *DeleteRowResponse) XXX_Size() int {
-	return m.Size()
-}
-func (m *DeleteRowResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_DeleteRowResponse.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_DeleteRowResponse proto.InternalMessageInfo
-
 type BatchDeleteRowRequest struct {
 	Rows                 []*Row   `protobuf:"bytes,1,rep,name=rows" json:"rows,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
@@ -1055,7 +603,7 @@ func (m *BatchDeleteRowRequest) Reset()         { *m = BatchDeleteRowRequest{} }
 func (m *BatchDeleteRowRequest) String() string { return proto.CompactTextString(m) }
 func (*BatchDeleteRowRequest) ProtoMessage()    {}
 func (*BatchDeleteRowRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_tiap_hbaselike_kvrpcpb_94912e67f547294f, []int{12}
+	return fileDescriptor_tiap_hbaselike_kvrpcpb_f0956854503d9385, []int{6}
 }
 func (m *BatchDeleteRowRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1101,7 +649,7 @@ func (m *BatchDeleteRowResponse) Reset()         { *m = BatchDeleteRowResponse{}
 func (m *BatchDeleteRowResponse) String() string { return proto.CompactTextString(m) }
 func (*BatchDeleteRowResponse) ProtoMessage()    {}
 func (*BatchDeleteRowResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_tiap_hbaselike_kvrpcpb_94912e67f547294f, []int{13}
+	return fileDescriptor_tiap_hbaselike_kvrpcpb_f0956854503d9385, []int{7}
 }
 func (m *BatchDeleteRowResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1145,7 +693,7 @@ func (m *Row) Reset()         { *m = Row{} }
 func (m *Row) String() string { return proto.CompactTextString(m) }
 func (*Row) ProtoMessage()    {}
 func (*Row) Descriptor() ([]byte, []int) {
-	return fileDescriptor_tiap_hbaselike_kvrpcpb_94912e67f547294f, []int{14}
+	return fileDescriptor_tiap_hbaselike_kvrpcpb_f0956854503d9385, []int{8}
 }
 func (m *Row) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1220,7 +768,7 @@ func (m *ColumnFamily) Reset()         { *m = ColumnFamily{} }
 func (m *ColumnFamily) String() string { return proto.CompactTextString(m) }
 func (*ColumnFamily) ProtoMessage()    {}
 func (*ColumnFamily) Descriptor() ([]byte, []int) {
-	return fileDescriptor_tiap_hbaselike_kvrpcpb_94912e67f547294f, []int{15}
+	return fileDescriptor_tiap_hbaselike_kvrpcpb_f0956854503d9385, []int{9}
 }
 func (m *ColumnFamily) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1267,7 +815,7 @@ func (m *Columns) Reset()         { *m = Columns{} }
 func (m *Columns) String() string { return proto.CompactTextString(m) }
 func (*Columns) ProtoMessage()    {}
 func (*Columns) Descriptor() ([]byte, []int) {
-	return fileDescriptor_tiap_hbaselike_kvrpcpb_94912e67f547294f, []int{16}
+	return fileDescriptor_tiap_hbaselike_kvrpcpb_f0956854503d9385, []int{10}
 }
 func (m *Columns) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1305,8 +853,8 @@ func (m *Columns) GetColumns() []*Column {
 
 type Column struct {
 	Name                 string   `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	MinStamp             int64    `protobuf:"varint,2,opt,name=min_stamp,json=minStamp,proto3" json:"min_stamp,omitempty"`
-	MaxStamp             int64    `protobuf:"varint,3,opt,name=max_stamp,json=maxStamp,proto3" json:"max_stamp,omitempty"`
+	Timestamp            int64    `protobuf:"varint,2,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
+	Limit                int64    `protobuf:"varint,3,opt,name=limit,proto3" json:"limit,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -1316,7 +864,7 @@ func (m *Column) Reset()         { *m = Column{} }
 func (m *Column) String() string { return proto.CompactTextString(m) }
 func (*Column) ProtoMessage()    {}
 func (*Column) Descriptor() ([]byte, []int) {
-	return fileDescriptor_tiap_hbaselike_kvrpcpb_94912e67f547294f, []int{17}
+	return fileDescriptor_tiap_hbaselike_kvrpcpb_f0956854503d9385, []int{11}
 }
 func (m *Column) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1352,16 +900,16 @@ func (m *Column) GetName() string {
 	return ""
 }
 
-func (m *Column) GetMinStamp() int64 {
+func (m *Column) GetTimestamp() int64 {
 	if m != nil {
-		return m.MinStamp
+		return m.Timestamp
 	}
 	return 0
 }
 
-func (m *Column) GetMaxStamp() int64 {
+func (m *Column) GetLimit() int64 {
 	if m != nil {
-		return m.MaxStamp
+		return m.Limit
 	}
 	return 0
 }
@@ -1380,7 +928,7 @@ func (m *RowValue) Reset()         { *m = RowValue{} }
 func (m *RowValue) String() string { return proto.CompactTextString(m) }
 func (*RowValue) ProtoMessage()    {}
 func (*RowValue) Descriptor() ([]byte, []int) {
-	return fileDescriptor_tiap_hbaselike_kvrpcpb_94912e67f547294f, []int{18}
+	return fileDescriptor_tiap_hbaselike_kvrpcpb_f0956854503d9385, []int{12}
 }
 func (m *RowValue) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1448,7 +996,7 @@ func (m *ColumnFamilyValue) Reset()         { *m = ColumnFamilyValue{} }
 func (m *ColumnFamilyValue) String() string { return proto.CompactTextString(m) }
 func (*ColumnFamilyValue) ProtoMessage()    {}
 func (*ColumnFamilyValue) Descriptor() ([]byte, []int) {
-	return fileDescriptor_tiap_hbaselike_kvrpcpb_94912e67f547294f, []int{19}
+	return fileDescriptor_tiap_hbaselike_kvrpcpb_f0956854503d9385, []int{13}
 }
 func (m *ColumnFamilyValue) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1495,7 +1043,7 @@ func (m *ColumnValues) Reset()         { *m = ColumnValues{} }
 func (m *ColumnValues) String() string { return proto.CompactTextString(m) }
 func (*ColumnValues) ProtoMessage()    {}
 func (*ColumnValues) Descriptor() ([]byte, []int) {
-	return fileDescriptor_tiap_hbaselike_kvrpcpb_94912e67f547294f, []int{20}
+	return fileDescriptor_tiap_hbaselike_kvrpcpb_f0956854503d9385, []int{14}
 }
 func (m *ColumnValues) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1545,7 +1093,7 @@ func (m *ColumnValue) Reset()         { *m = ColumnValue{} }
 func (m *ColumnValue) String() string { return proto.CompactTextString(m) }
 func (*ColumnValue) ProtoMessage()    {}
 func (*ColumnValue) Descriptor() ([]byte, []int) {
-	return fileDescriptor_tiap_hbaselike_kvrpcpb_94912e67f547294f, []int{21}
+	return fileDescriptor_tiap_hbaselike_kvrpcpb_f0956854503d9385, []int{15}
 }
 func (m *ColumnValue) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1605,16 +1153,10 @@ func (m *ColumnValue) GetTtl() int64 {
 func init() {
 	proto.RegisterType((*KVRequest)(nil), "tiap_hbaselike_kvrpcpb.KVRequest")
 	proto.RegisterType((*KVResponse)(nil), "tiap_hbaselike_kvrpcpb.KVResponse")
-	proto.RegisterType((*GetRowRequest)(nil), "tiap_hbaselike_kvrpcpb.GetRowRequest")
-	proto.RegisterType((*GetRowResponse)(nil), "tiap_hbaselike_kvrpcpb.GetRowResponse")
 	proto.RegisterType((*BatchGetRowRequest)(nil), "tiap_hbaselike_kvrpcpb.BatchGetRowRequest")
 	proto.RegisterType((*BatchGetRowResponse)(nil), "tiap_hbaselike_kvrpcpb.BatchGetRowResponse")
-	proto.RegisterType((*PutRowRequest)(nil), "tiap_hbaselike_kvrpcpb.PutRowRequest")
-	proto.RegisterType((*PutRowResponse)(nil), "tiap_hbaselike_kvrpcpb.PutRowResponse")
 	proto.RegisterType((*BatchPutRowRequest)(nil), "tiap_hbaselike_kvrpcpb.BatchPutRowRequest")
 	proto.RegisterType((*BatchPutRowResponse)(nil), "tiap_hbaselike_kvrpcpb.BatchPutRowResponse")
-	proto.RegisterType((*DeleteRowRequest)(nil), "tiap_hbaselike_kvrpcpb.DeleteRowRequest")
-	proto.RegisterType((*DeleteRowResponse)(nil), "tiap_hbaselike_kvrpcpb.DeleteRowResponse")
 	proto.RegisterType((*BatchDeleteRowRequest)(nil), "tiap_hbaselike_kvrpcpb.BatchDeleteRowRequest")
 	proto.RegisterType((*BatchDeleteRowResponse)(nil), "tiap_hbaselike_kvrpcpb.BatchDeleteRowResponse")
 	proto.RegisterType((*Row)(nil), "tiap_hbaselike_kvrpcpb.Row")
@@ -1666,13 +1208,13 @@ func (m *KVRequest) MarshalTo(dAtA []byte) (int, error) {
 	return i, nil
 }
 
-func (m *KVRequest_GetRowReq) MarshalTo(dAtA []byte) (int, error) {
+func (m *KVRequest_BatchGetRowReq) MarshalTo(dAtA []byte) (int, error) {
 	i := 0
-	if m.GetRowReq != nil {
+	if m.BatchGetRowReq != nil {
 		dAtA[i] = 0x12
 		i++
-		i = encodeVarintTiapHbaselikeKvrpcpb(dAtA, i, uint64(m.GetRowReq.Size()))
-		n3, err := m.GetRowReq.MarshalTo(dAtA[i:])
+		i = encodeVarintTiapHbaselikeKvrpcpb(dAtA, i, uint64(m.BatchGetRowReq.Size()))
+		n3, err := m.BatchGetRowReq.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
@@ -1680,13 +1222,13 @@ func (m *KVRequest_GetRowReq) MarshalTo(dAtA []byte) (int, error) {
 	}
 	return i, nil
 }
-func (m *KVRequest_PutRowReq) MarshalTo(dAtA []byte) (int, error) {
+func (m *KVRequest_BatchPutRowReq) MarshalTo(dAtA []byte) (int, error) {
 	i := 0
-	if m.PutRowReq != nil {
+	if m.BatchPutRowReq != nil {
 		dAtA[i] = 0x1a
 		i++
-		i = encodeVarintTiapHbaselikeKvrpcpb(dAtA, i, uint64(m.PutRowReq.Size()))
-		n4, err := m.PutRowReq.MarshalTo(dAtA[i:])
+		i = encodeVarintTiapHbaselikeKvrpcpb(dAtA, i, uint64(m.BatchPutRowReq.Size()))
+		n4, err := m.BatchPutRowReq.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
@@ -1694,59 +1236,17 @@ func (m *KVRequest_PutRowReq) MarshalTo(dAtA []byte) (int, error) {
 	}
 	return i, nil
 }
-func (m *KVRequest_DeleteRowReq) MarshalTo(dAtA []byte) (int, error) {
+func (m *KVRequest_BatchDeleteRowReq) MarshalTo(dAtA []byte) (int, error) {
 	i := 0
-	if m.DeleteRowReq != nil {
+	if m.BatchDeleteRowReq != nil {
 		dAtA[i] = 0x22
 		i++
-		i = encodeVarintTiapHbaselikeKvrpcpb(dAtA, i, uint64(m.DeleteRowReq.Size()))
-		n5, err := m.DeleteRowReq.MarshalTo(dAtA[i:])
+		i = encodeVarintTiapHbaselikeKvrpcpb(dAtA, i, uint64(m.BatchDeleteRowReq.Size()))
+		n5, err := m.BatchDeleteRowReq.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
 		i += n5
-	}
-	return i, nil
-}
-func (m *KVRequest_BatchGetRowReq) MarshalTo(dAtA []byte) (int, error) {
-	i := 0
-	if m.BatchGetRowReq != nil {
-		dAtA[i] = 0x2a
-		i++
-		i = encodeVarintTiapHbaselikeKvrpcpb(dAtA, i, uint64(m.BatchGetRowReq.Size()))
-		n6, err := m.BatchGetRowReq.MarshalTo(dAtA[i:])
-		if err != nil {
-			return 0, err
-		}
-		i += n6
-	}
-	return i, nil
-}
-func (m *KVRequest_BatchPutRowReq) MarshalTo(dAtA []byte) (int, error) {
-	i := 0
-	if m.BatchPutRowReq != nil {
-		dAtA[i] = 0x32
-		i++
-		i = encodeVarintTiapHbaselikeKvrpcpb(dAtA, i, uint64(m.BatchPutRowReq.Size()))
-		n7, err := m.BatchPutRowReq.MarshalTo(dAtA[i:])
-		if err != nil {
-			return 0, err
-		}
-		i += n7
-	}
-	return i, nil
-}
-func (m *KVRequest_BatchDeleteRowReq) MarshalTo(dAtA []byte) (int, error) {
-	i := 0
-	if m.BatchDeleteRowReq != nil {
-		dAtA[i] = 0x3a
-		i++
-		i = encodeVarintTiapHbaselikeKvrpcpb(dAtA, i, uint64(m.BatchDeleteRowReq.Size()))
-		n8, err := m.BatchDeleteRowReq.MarshalTo(dAtA[i:])
-		if err != nil {
-			return 0, err
-		}
-		i += n8
 	}
 	return i, nil
 }
@@ -1769,18 +1269,18 @@ func (m *KVResponse) MarshalTo(dAtA []byte) (int, error) {
 		dAtA[i] = 0xa
 		i++
 		i = encodeVarintTiapHbaselikeKvrpcpb(dAtA, i, uint64(m.Header.Size()))
-		n9, err := m.Header.MarshalTo(dAtA[i:])
+		n6, err := m.Header.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
-		i += n9
+		i += n6
 	}
 	if m.Resp != nil {
-		nn10, err := m.Resp.MarshalTo(dAtA[i:])
+		nn7, err := m.Resp.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
-		i += nn10
+		i += nn7
 	}
 	if m.XXX_unrecognized != nil {
 		i += copy(dAtA[i:], m.XXX_unrecognized)
@@ -1788,152 +1288,48 @@ func (m *KVResponse) MarshalTo(dAtA []byte) (int, error) {
 	return i, nil
 }
 
-func (m *KVResponse_GetRowResp) MarshalTo(dAtA []byte) (int, error) {
-	i := 0
-	if m.GetRowResp != nil {
-		dAtA[i] = 0x12
-		i++
-		i = encodeVarintTiapHbaselikeKvrpcpb(dAtA, i, uint64(m.GetRowResp.Size()))
-		n11, err := m.GetRowResp.MarshalTo(dAtA[i:])
-		if err != nil {
-			return 0, err
-		}
-		i += n11
-	}
-	return i, nil
-}
-func (m *KVResponse_PutRowResp) MarshalTo(dAtA []byte) (int, error) {
-	i := 0
-	if m.PutRowResp != nil {
-		dAtA[i] = 0x1a
-		i++
-		i = encodeVarintTiapHbaselikeKvrpcpb(dAtA, i, uint64(m.PutRowResp.Size()))
-		n12, err := m.PutRowResp.MarshalTo(dAtA[i:])
-		if err != nil {
-			return 0, err
-		}
-		i += n12
-	}
-	return i, nil
-}
-func (m *KVResponse_DeleteRowResp) MarshalTo(dAtA []byte) (int, error) {
-	i := 0
-	if m.DeleteRowResp != nil {
-		dAtA[i] = 0x22
-		i++
-		i = encodeVarintTiapHbaselikeKvrpcpb(dAtA, i, uint64(m.DeleteRowResp.Size()))
-		n13, err := m.DeleteRowResp.MarshalTo(dAtA[i:])
-		if err != nil {
-			return 0, err
-		}
-		i += n13
-	}
-	return i, nil
-}
 func (m *KVResponse_BatchGetRowResp) MarshalTo(dAtA []byte) (int, error) {
 	i := 0
 	if m.BatchGetRowResp != nil {
-		dAtA[i] = 0x2a
+		dAtA[i] = 0x12
 		i++
 		i = encodeVarintTiapHbaselikeKvrpcpb(dAtA, i, uint64(m.BatchGetRowResp.Size()))
-		n14, err := m.BatchGetRowResp.MarshalTo(dAtA[i:])
+		n8, err := m.BatchGetRowResp.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
-		i += n14
+		i += n8
 	}
 	return i, nil
 }
 func (m *KVResponse_BatchPutRowResp) MarshalTo(dAtA []byte) (int, error) {
 	i := 0
 	if m.BatchPutRowResp != nil {
-		dAtA[i] = 0x32
+		dAtA[i] = 0x1a
 		i++
 		i = encodeVarintTiapHbaselikeKvrpcpb(dAtA, i, uint64(m.BatchPutRowResp.Size()))
-		n15, err := m.BatchPutRowResp.MarshalTo(dAtA[i:])
+		n9, err := m.BatchPutRowResp.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
-		i += n15
+		i += n9
 	}
 	return i, nil
 }
 func (m *KVResponse_BatchDeleteRowResp) MarshalTo(dAtA []byte) (int, error) {
 	i := 0
 	if m.BatchDeleteRowResp != nil {
-		dAtA[i] = 0x3a
+		dAtA[i] = 0x22
 		i++
 		i = encodeVarintTiapHbaselikeKvrpcpb(dAtA, i, uint64(m.BatchDeleteRowResp.Size()))
-		n16, err := m.BatchDeleteRowResp.MarshalTo(dAtA[i:])
+		n10, err := m.BatchDeleteRowResp.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
-		i += n16
+		i += n10
 	}
 	return i, nil
 }
-func (m *GetRowRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalTo(dAtA)
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
-}
-
-func (m *GetRowRequest) MarshalTo(dAtA []byte) (int, error) {
-	var i int
-	_ = i
-	var l int
-	_ = l
-	if m.Row != nil {
-		dAtA[i] = 0xa
-		i++
-		i = encodeVarintTiapHbaselikeKvrpcpb(dAtA, i, uint64(m.Row.Size()))
-		n17, err := m.Row.MarshalTo(dAtA[i:])
-		if err != nil {
-			return 0, err
-		}
-		i += n17
-	}
-	if m.XXX_unrecognized != nil {
-		i += copy(dAtA[i:], m.XXX_unrecognized)
-	}
-	return i, nil
-}
-
-func (m *GetRowResponse) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalTo(dAtA)
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
-}
-
-func (m *GetRowResponse) MarshalTo(dAtA []byte) (int, error) {
-	var i int
-	_ = i
-	var l int
-	_ = l
-	if m.RowValue != nil {
-		dAtA[i] = 0xa
-		i++
-		i = encodeVarintTiapHbaselikeKvrpcpb(dAtA, i, uint64(m.RowValue.Size()))
-		n18, err := m.RowValue.MarshalTo(dAtA[i:])
-		if err != nil {
-			return 0, err
-		}
-		i += n18
-	}
-	if m.XXX_unrecognized != nil {
-		i += copy(dAtA[i:], m.XXX_unrecognized)
-	}
-	return i, nil
-}
-
 func (m *BatchGetRowRequest) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
@@ -2000,58 +1396,6 @@ func (m *BatchGetRowResponse) MarshalTo(dAtA []byte) (int, error) {
 	return i, nil
 }
 
-func (m *PutRowRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalTo(dAtA)
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
-}
-
-func (m *PutRowRequest) MarshalTo(dAtA []byte) (int, error) {
-	var i int
-	_ = i
-	var l int
-	_ = l
-	if m.RowValue != nil {
-		dAtA[i] = 0xa
-		i++
-		i = encodeVarintTiapHbaselikeKvrpcpb(dAtA, i, uint64(m.RowValue.Size()))
-		n19, err := m.RowValue.MarshalTo(dAtA[i:])
-		if err != nil {
-			return 0, err
-		}
-		i += n19
-	}
-	if m.XXX_unrecognized != nil {
-		i += copy(dAtA[i:], m.XXX_unrecognized)
-	}
-	return i, nil
-}
-
-func (m *PutRowResponse) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalTo(dAtA)
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
-}
-
-func (m *PutRowResponse) MarshalTo(dAtA []byte) (int, error) {
-	var i int
-	_ = i
-	var l int
-	_ = l
-	if m.XXX_unrecognized != nil {
-		i += copy(dAtA[i:], m.XXX_unrecognized)
-	}
-	return i, nil
-}
-
 func (m *BatchPutRowRequest) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
@@ -2096,58 +1440,6 @@ func (m *BatchPutRowResponse) Marshal() (dAtA []byte, err error) {
 }
 
 func (m *BatchPutRowResponse) MarshalTo(dAtA []byte) (int, error) {
-	var i int
-	_ = i
-	var l int
-	_ = l
-	if m.XXX_unrecognized != nil {
-		i += copy(dAtA[i:], m.XXX_unrecognized)
-	}
-	return i, nil
-}
-
-func (m *DeleteRowRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalTo(dAtA)
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
-}
-
-func (m *DeleteRowRequest) MarshalTo(dAtA []byte) (int, error) {
-	var i int
-	_ = i
-	var l int
-	_ = l
-	if m.Row != nil {
-		dAtA[i] = 0xa
-		i++
-		i = encodeVarintTiapHbaselikeKvrpcpb(dAtA, i, uint64(m.Row.Size()))
-		n20, err := m.Row.MarshalTo(dAtA[i:])
-		if err != nil {
-			return 0, err
-		}
-		i += n20
-	}
-	if m.XXX_unrecognized != nil {
-		i += copy(dAtA[i:], m.XXX_unrecognized)
-	}
-	return i, nil
-}
-
-func (m *DeleteRowResponse) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalTo(dAtA)
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
-}
-
-func (m *DeleteRowResponse) MarshalTo(dAtA []byte) (int, error) {
 	var i int
 	_ = i
 	var l int
@@ -2249,11 +1541,11 @@ func (m *Row) MarshalTo(dAtA []byte) (int, error) {
 		dAtA[i] = 0x22
 		i++
 		i = encodeVarintTiapHbaselikeKvrpcpb(dAtA, i, uint64(m.Families.Size()))
-		n21, err := m.Families.MarshalTo(dAtA[i:])
+		n11, err := m.Families.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
-		i += n21
+		i += n11
 	}
 	if m.Ttl != 0 {
 		dAtA[i] = 0x28
@@ -2301,11 +1593,11 @@ func (m *ColumnFamily) MarshalTo(dAtA []byte) (int, error) {
 				dAtA[i] = 0x12
 				i++
 				i = encodeVarintTiapHbaselikeKvrpcpb(dAtA, i, uint64(v.Size()))
-				n22, err := v.MarshalTo(dAtA[i:])
+				n12, err := v.MarshalTo(dAtA[i:])
 				if err != nil {
 					return 0, err
 				}
-				i += n22
+				i += n12
 			}
 		}
 	}
@@ -2369,15 +1661,15 @@ func (m *Column) MarshalTo(dAtA []byte) (int, error) {
 		i = encodeVarintTiapHbaselikeKvrpcpb(dAtA, i, uint64(len(m.Name)))
 		i += copy(dAtA[i:], m.Name)
 	}
-	if m.MinStamp != 0 {
+	if m.Timestamp != 0 {
 		dAtA[i] = 0x10
 		i++
-		i = encodeVarintTiapHbaselikeKvrpcpb(dAtA, i, uint64(m.MinStamp))
+		i = encodeVarintTiapHbaselikeKvrpcpb(dAtA, i, uint64(m.Timestamp))
 	}
-	if m.MaxStamp != 0 {
+	if m.Limit != 0 {
 		dAtA[i] = 0x18
 		i++
-		i = encodeVarintTiapHbaselikeKvrpcpb(dAtA, i, uint64(m.MaxStamp))
+		i = encodeVarintTiapHbaselikeKvrpcpb(dAtA, i, uint64(m.Limit))
 	}
 	if m.XXX_unrecognized != nil {
 		i += copy(dAtA[i:], m.XXX_unrecognized)
@@ -2422,11 +1714,11 @@ func (m *RowValue) MarshalTo(dAtA []byte) (int, error) {
 		dAtA[i] = 0x22
 		i++
 		i = encodeVarintTiapHbaselikeKvrpcpb(dAtA, i, uint64(m.FamilyValues.Size()))
-		n23, err := m.FamilyValues.MarshalTo(dAtA[i:])
+		n13, err := m.FamilyValues.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
-		i += n23
+		i += n13
 	}
 	if m.XXX_unrecognized != nil {
 		i += copy(dAtA[i:], m.XXX_unrecognized)
@@ -2469,11 +1761,11 @@ func (m *ColumnFamilyValue) MarshalTo(dAtA []byte) (int, error) {
 				dAtA[i] = 0x12
 				i++
 				i = encodeVarintTiapHbaselikeKvrpcpb(dAtA, i, uint64(v.Size()))
-				n24, err := v.MarshalTo(dAtA[i:])
+				n14, err := v.MarshalTo(dAtA[i:])
 				if err != nil {
 					return 0, err
 				}
-				i += n24
+				i += n14
 			}
 		}
 	}
@@ -2584,33 +1876,6 @@ func (m *KVRequest) Size() (n int) {
 	return n
 }
 
-func (m *KVRequest_GetRowReq) Size() (n int) {
-	var l int
-	_ = l
-	if m.GetRowReq != nil {
-		l = m.GetRowReq.Size()
-		n += 1 + l + sovTiapHbaselikeKvrpcpb(uint64(l))
-	}
-	return n
-}
-func (m *KVRequest_PutRowReq) Size() (n int) {
-	var l int
-	_ = l
-	if m.PutRowReq != nil {
-		l = m.PutRowReq.Size()
-		n += 1 + l + sovTiapHbaselikeKvrpcpb(uint64(l))
-	}
-	return n
-}
-func (m *KVRequest_DeleteRowReq) Size() (n int) {
-	var l int
-	_ = l
-	if m.DeleteRowReq != nil {
-		l = m.DeleteRowReq.Size()
-		n += 1 + l + sovTiapHbaselikeKvrpcpb(uint64(l))
-	}
-	return n
-}
 func (m *KVRequest_BatchGetRowReq) Size() (n int) {
 	var l int
 	_ = l
@@ -2654,33 +1919,6 @@ func (m *KVResponse) Size() (n int) {
 	return n
 }
 
-func (m *KVResponse_GetRowResp) Size() (n int) {
-	var l int
-	_ = l
-	if m.GetRowResp != nil {
-		l = m.GetRowResp.Size()
-		n += 1 + l + sovTiapHbaselikeKvrpcpb(uint64(l))
-	}
-	return n
-}
-func (m *KVResponse_PutRowResp) Size() (n int) {
-	var l int
-	_ = l
-	if m.PutRowResp != nil {
-		l = m.PutRowResp.Size()
-		n += 1 + l + sovTiapHbaselikeKvrpcpb(uint64(l))
-	}
-	return n
-}
-func (m *KVResponse_DeleteRowResp) Size() (n int) {
-	var l int
-	_ = l
-	if m.DeleteRowResp != nil {
-		l = m.DeleteRowResp.Size()
-		n += 1 + l + sovTiapHbaselikeKvrpcpb(uint64(l))
-	}
-	return n
-}
 func (m *KVResponse_BatchGetRowResp) Size() (n int) {
 	var l int
 	_ = l
@@ -2708,32 +1946,6 @@ func (m *KVResponse_BatchDeleteRowResp) Size() (n int) {
 	}
 	return n
 }
-func (m *GetRowRequest) Size() (n int) {
-	var l int
-	_ = l
-	if m.Row != nil {
-		l = m.Row.Size()
-		n += 1 + l + sovTiapHbaselikeKvrpcpb(uint64(l))
-	}
-	if m.XXX_unrecognized != nil {
-		n += len(m.XXX_unrecognized)
-	}
-	return n
-}
-
-func (m *GetRowResponse) Size() (n int) {
-	var l int
-	_ = l
-	if m.RowValue != nil {
-		l = m.RowValue.Size()
-		n += 1 + l + sovTiapHbaselikeKvrpcpb(uint64(l))
-	}
-	if m.XXX_unrecognized != nil {
-		n += len(m.XXX_unrecognized)
-	}
-	return n
-}
-
 func (m *BatchGetRowRequest) Size() (n int) {
 	var l int
 	_ = l
@@ -2764,28 +1976,6 @@ func (m *BatchGetRowResponse) Size() (n int) {
 	return n
 }
 
-func (m *PutRowRequest) Size() (n int) {
-	var l int
-	_ = l
-	if m.RowValue != nil {
-		l = m.RowValue.Size()
-		n += 1 + l + sovTiapHbaselikeKvrpcpb(uint64(l))
-	}
-	if m.XXX_unrecognized != nil {
-		n += len(m.XXX_unrecognized)
-	}
-	return n
-}
-
-func (m *PutRowResponse) Size() (n int) {
-	var l int
-	_ = l
-	if m.XXX_unrecognized != nil {
-		n += len(m.XXX_unrecognized)
-	}
-	return n
-}
-
 func (m *BatchPutRowRequest) Size() (n int) {
 	var l int
 	_ = l
@@ -2802,28 +1992,6 @@ func (m *BatchPutRowRequest) Size() (n int) {
 }
 
 func (m *BatchPutRowResponse) Size() (n int) {
-	var l int
-	_ = l
-	if m.XXX_unrecognized != nil {
-		n += len(m.XXX_unrecognized)
-	}
-	return n
-}
-
-func (m *DeleteRowRequest) Size() (n int) {
-	var l int
-	_ = l
-	if m.Row != nil {
-		l = m.Row.Size()
-		n += 1 + l + sovTiapHbaselikeKvrpcpb(uint64(l))
-	}
-	if m.XXX_unrecognized != nil {
-		n += len(m.XXX_unrecognized)
-	}
-	return n
-}
-
-func (m *DeleteRowResponse) Size() (n int) {
 	var l int
 	_ = l
 	if m.XXX_unrecognized != nil {
@@ -2928,11 +2096,11 @@ func (m *Column) Size() (n int) {
 	if l > 0 {
 		n += 1 + l + sovTiapHbaselikeKvrpcpb(uint64(l))
 	}
-	if m.MinStamp != 0 {
-		n += 1 + sovTiapHbaselikeKvrpcpb(uint64(m.MinStamp))
+	if m.Timestamp != 0 {
+		n += 1 + sovTiapHbaselikeKvrpcpb(uint64(m.Timestamp))
 	}
-	if m.MaxStamp != 0 {
-		n += 1 + sovTiapHbaselikeKvrpcpb(uint64(m.MaxStamp))
+	if m.Limit != 0 {
+		n += 1 + sovTiapHbaselikeKvrpcpb(uint64(m.Limit))
 	}
 	if m.XXX_unrecognized != nil {
 		n += len(m.XXX_unrecognized)
@@ -3102,102 +2270,6 @@ func (m *KVRequest) Unmarshal(dAtA []byte) error {
 			iNdEx = postIndex
 		case 2:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field GetRowReq", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowTiapHbaselikeKvrpcpb
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= (int(b) & 0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthTiapHbaselikeKvrpcpb
-			}
-			postIndex := iNdEx + msglen
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			v := &GetRowRequest{}
-			if err := v.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			m.Req = &KVRequest_GetRowReq{v}
-			iNdEx = postIndex
-		case 3:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field PutRowReq", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowTiapHbaselikeKvrpcpb
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= (int(b) & 0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthTiapHbaselikeKvrpcpb
-			}
-			postIndex := iNdEx + msglen
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			v := &PutRowRequest{}
-			if err := v.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			m.Req = &KVRequest_PutRowReq{v}
-			iNdEx = postIndex
-		case 4:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field DeleteRowReq", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowTiapHbaselikeKvrpcpb
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= (int(b) & 0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthTiapHbaselikeKvrpcpb
-			}
-			postIndex := iNdEx + msglen
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			v := &DeleteRowRequest{}
-			if err := v.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			m.Req = &KVRequest_DeleteRowReq{v}
-			iNdEx = postIndex
-		case 5:
-			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field BatchGetRowReq", wireType)
 			}
 			var msglen int
@@ -3228,7 +2300,7 @@ func (m *KVRequest) Unmarshal(dAtA []byte) error {
 			}
 			m.Req = &KVRequest_BatchGetRowReq{v}
 			iNdEx = postIndex
-		case 6:
+		case 3:
 			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field BatchPutRowReq", wireType)
 			}
@@ -3260,7 +2332,7 @@ func (m *KVRequest) Unmarshal(dAtA []byte) error {
 			}
 			m.Req = &KVRequest_BatchPutRowReq{v}
 			iNdEx = postIndex
-		case 7:
+		case 4:
 			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field BatchDeleteRowReq", wireType)
 			}
@@ -3378,102 +2450,6 @@ func (m *KVResponse) Unmarshal(dAtA []byte) error {
 			iNdEx = postIndex
 		case 2:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field GetRowResp", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowTiapHbaselikeKvrpcpb
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= (int(b) & 0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthTiapHbaselikeKvrpcpb
-			}
-			postIndex := iNdEx + msglen
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			v := &GetRowResponse{}
-			if err := v.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			m.Resp = &KVResponse_GetRowResp{v}
-			iNdEx = postIndex
-		case 3:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field PutRowResp", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowTiapHbaselikeKvrpcpb
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= (int(b) & 0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthTiapHbaselikeKvrpcpb
-			}
-			postIndex := iNdEx + msglen
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			v := &PutRowResponse{}
-			if err := v.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			m.Resp = &KVResponse_PutRowResp{v}
-			iNdEx = postIndex
-		case 4:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field DeleteRowResp", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowTiapHbaselikeKvrpcpb
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= (int(b) & 0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthTiapHbaselikeKvrpcpb
-			}
-			postIndex := iNdEx + msglen
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			v := &DeleteRowResponse{}
-			if err := v.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			m.Resp = &KVResponse_DeleteRowResp{v}
-			iNdEx = postIndex
-		case 5:
-			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field BatchGetRowResp", wireType)
 			}
 			var msglen int
@@ -3504,7 +2480,7 @@ func (m *KVResponse) Unmarshal(dAtA []byte) error {
 			}
 			m.Resp = &KVResponse_BatchGetRowResp{v}
 			iNdEx = postIndex
-		case 6:
+		case 3:
 			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field BatchPutRowResp", wireType)
 			}
@@ -3536,7 +2512,7 @@ func (m *KVResponse) Unmarshal(dAtA []byte) error {
 			}
 			m.Resp = &KVResponse_BatchPutRowResp{v}
 			iNdEx = postIndex
-		case 7:
+		case 4:
 			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field BatchDeleteRowResp", wireType)
 			}
@@ -3567,174 +2543,6 @@ func (m *KVResponse) Unmarshal(dAtA []byte) error {
 				return err
 			}
 			m.Resp = &KVResponse_BatchDeleteRowResp{v}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipTiapHbaselikeKvrpcpb(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if skippy < 0 {
-				return ErrInvalidLengthTiapHbaselikeKvrpcpb
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.XXX_unrecognized = append(m.XXX_unrecognized, dAtA[iNdEx:iNdEx+skippy]...)
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *GetRowRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowTiapHbaselikeKvrpcpb
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= (uint64(b) & 0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: GetRowRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: GetRowRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Row", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowTiapHbaselikeKvrpcpb
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= (int(b) & 0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthTiapHbaselikeKvrpcpb
-			}
-			postIndex := iNdEx + msglen
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Row == nil {
-				m.Row = &Row{}
-			}
-			if err := m.Row.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipTiapHbaselikeKvrpcpb(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if skippy < 0 {
-				return ErrInvalidLengthTiapHbaselikeKvrpcpb
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.XXX_unrecognized = append(m.XXX_unrecognized, dAtA[iNdEx:iNdEx+skippy]...)
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *GetRowResponse) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowTiapHbaselikeKvrpcpb
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= (uint64(b) & 0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: GetRowResponse: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: GetRowResponse: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field RowValue", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowTiapHbaselikeKvrpcpb
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= (int(b) & 0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthTiapHbaselikeKvrpcpb
-			}
-			postIndex := iNdEx + msglen
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.RowValue == nil {
-				m.RowValue = &RowValue{}
-			}
-			if err := m.RowValue.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
 			iNdEx = postIndex
 		default:
 			iNdEx = preIndex
@@ -3922,141 +2730,6 @@ func (m *BatchGetRowResponse) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-func (m *PutRowRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowTiapHbaselikeKvrpcpb
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= (uint64(b) & 0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: PutRowRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: PutRowRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field RowValue", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowTiapHbaselikeKvrpcpb
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= (int(b) & 0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthTiapHbaselikeKvrpcpb
-			}
-			postIndex := iNdEx + msglen
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.RowValue == nil {
-				m.RowValue = &RowValue{}
-			}
-			if err := m.RowValue.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipTiapHbaselikeKvrpcpb(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if skippy < 0 {
-				return ErrInvalidLengthTiapHbaselikeKvrpcpb
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.XXX_unrecognized = append(m.XXX_unrecognized, dAtA[iNdEx:iNdEx+skippy]...)
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *PutRowResponse) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowTiapHbaselikeKvrpcpb
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= (uint64(b) & 0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: PutRowResponse: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: PutRowResponse: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		default:
-			iNdEx = preIndex
-			skippy, err := skipTiapHbaselikeKvrpcpb(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if skippy < 0 {
-				return ErrInvalidLengthTiapHbaselikeKvrpcpb
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.XXX_unrecognized = append(m.XXX_unrecognized, dAtA[iNdEx:iNdEx+skippy]...)
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
 func (m *BatchPutRowRequest) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
@@ -4166,141 +2839,6 @@ func (m *BatchPutRowResponse) Unmarshal(dAtA []byte) error {
 		}
 		if fieldNum <= 0 {
 			return fmt.Errorf("proto: BatchPutRowResponse: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		default:
-			iNdEx = preIndex
-			skippy, err := skipTiapHbaselikeKvrpcpb(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if skippy < 0 {
-				return ErrInvalidLengthTiapHbaselikeKvrpcpb
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.XXX_unrecognized = append(m.XXX_unrecognized, dAtA[iNdEx:iNdEx+skippy]...)
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *DeleteRowRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowTiapHbaselikeKvrpcpb
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= (uint64(b) & 0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: DeleteRowRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: DeleteRowRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Row", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowTiapHbaselikeKvrpcpb
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= (int(b) & 0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthTiapHbaselikeKvrpcpb
-			}
-			postIndex := iNdEx + msglen
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Row == nil {
-				m.Row = &Row{}
-			}
-			if err := m.Row.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipTiapHbaselikeKvrpcpb(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if skippy < 0 {
-				return ErrInvalidLengthTiapHbaselikeKvrpcpb
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.XXX_unrecognized = append(m.XXX_unrecognized, dAtA[iNdEx:iNdEx+skippy]...)
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *DeleteRowResponse) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowTiapHbaselikeKvrpcpb
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= (uint64(b) & 0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: DeleteRowResponse: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: DeleteRowResponse: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
 		default:
@@ -4966,9 +3504,9 @@ func (m *Column) Unmarshal(dAtA []byte) error {
 			iNdEx = postIndex
 		case 2:
 			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field MinStamp", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field Timestamp", wireType)
 			}
-			m.MinStamp = 0
+			m.Timestamp = 0
 			for shift := uint(0); ; shift += 7 {
 				if shift >= 64 {
 					return ErrIntOverflowTiapHbaselikeKvrpcpb
@@ -4978,16 +3516,16 @@ func (m *Column) Unmarshal(dAtA []byte) error {
 				}
 				b := dAtA[iNdEx]
 				iNdEx++
-				m.MinStamp |= (int64(b) & 0x7F) << shift
+				m.Timestamp |= (int64(b) & 0x7F) << shift
 				if b < 0x80 {
 					break
 				}
 			}
 		case 3:
 			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field MaxStamp", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field Limit", wireType)
 			}
-			m.MaxStamp = 0
+			m.Limit = 0
 			for shift := uint(0); ; shift += 7 {
 				if shift >= 64 {
 					return ErrIntOverflowTiapHbaselikeKvrpcpb
@@ -4997,7 +3535,7 @@ func (m *Column) Unmarshal(dAtA []byte) error {
 				}
 				b := dAtA[iNdEx]
 				iNdEx++
-				m.MaxStamp |= (int64(b) & 0x7F) << shift
+				m.Limit |= (int64(b) & 0x7F) << shift
 				if b < 0x80 {
 					break
 				}
@@ -5708,67 +4246,57 @@ var (
 )
 
 func init() {
-	proto.RegisterFile("tiap_hbaselike_kvrpcpb.proto", fileDescriptor_tiap_hbaselike_kvrpcpb_94912e67f547294f)
+	proto.RegisterFile("tiap_hbaselike_kvrpcpb.proto", fileDescriptor_tiap_hbaselike_kvrpcpb_f0956854503d9385)
 }
 
-var fileDescriptor_tiap_hbaselike_kvrpcpb_94912e67f547294f = []byte{
-	// 928 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xac, 0x96, 0x5b, 0x6f, 0x1b, 0x45,
-	0x14, 0xc7, 0xb3, 0x59, 0x67, 0x9d, 0x3d, 0xb1, 0x73, 0x99, 0x26, 0x6d, 0x94, 0xb4, 0x26, 0x1a,
-	0xa0, 0x2a, 0x54, 0xd9, 0x22, 0x50, 0x51, 0xa9, 0x44, 0x81, 0x94, 0xd2, 0x88, 0x8a, 0x50, 0x4d,
-	0x55, 0x83, 0xfa, 0x62, 0x76, 0xed, 0xa9, 0xbd, 0xb2, 0xd7, 0xbb, 0xd9, 0x59, 0xc7, 0xf5, 0x37,
-	0xe1, 0x91, 0x67, 0x78, 0xe0, 0x33, 0xf0, 0xc6, 0x23, 0x4f, 0x3c, 0xa3, 0xf0, 0x45, 0xd0, 0x5c,
-	0xf6, 0xea, 0xdb, 0x56, 0xe1, 0x29, 0xb3, 0xe7, 0x9c, 0xf9, 0xcd, 0x99, 0x73, 0xfe, 0x73, 0x1c,
-	0xb8, 0x19, 0xb9, 0x76, 0xd0, 0xea, 0x39, 0x36, 0xa3, 0x03, 0xb7, 0x4f, 0x5b, 0xfd, 0x8b, 0x30,
-	0x68, 0x07, 0x8e, 0x15, 0x84, 0x7e, 0xe4, 0xa3, 0xeb, 0xb3, 0xbd, 0x07, 0xbb, 0x5d, 0xbf, 0xeb,
-	0x8b, 0x90, 0x7b, 0x7c, 0x25, 0xa3, 0x0f, 0x90, 0x88, 0xce, 0x11, 0xf0, 0x1f, 0x15, 0x30, 0x9f,
-	0x35, 0x09, 0x3d, 0x1f, 0x51, 0x16, 0xa1, 0xfb, 0x60, 0xf4, 0xa8, 0xdd, 0xa1, 0xe1, 0xbe, 0x76,
-	0xa4, 0xdd, 0xd9, 0xf8, 0xf8, 0x96, 0x95, 0xdb, 0x92, 0x04, 0x9e, 0x8a, 0x20, 0xa2, 0x82, 0xd1,
-	0x53, 0xd8, 0xe8, 0xd2, 0xa8, 0x15, 0xfa, 0xe3, 0x56, 0x48, 0xcf, 0xf7, 0x57, 0xc5, 0xde, 0xf7,
-	0xad, 0x39, 0xa9, 0x3f, 0xa5, 0x11, 0xf1, 0xc7, 0x31, 0x69, 0x85, 0x98, 0xdd, 0xd8, 0xc0, 0x41,
-	0xc1, 0x28, 0x05, 0xe9, 0x8b, 0x41, 0xcf, 0x47, 0x05, 0x50, 0x10, 0x1b, 0xd0, 0x73, 0xd8, 0xec,
-	0xd0, 0x01, 0x8d, 0x68, 0xc2, 0xaa, 0x08, 0xd6, 0x9d, 0x79, 0xac, 0xaf, 0x45, 0x74, 0x0e, 0x57,
-	0xeb, 0x64, 0x6c, 0xe8, 0x07, 0xd8, 0x71, 0xec, 0xa8, 0xdd, 0x6b, 0x65, 0x6f, 0xba, 0x26, 0xa0,
-	0x1f, 0xce, 0x83, 0x9e, 0xf0, 0x0d, 0xc5, 0xeb, 0x6e, 0x3a, 0x39, 0x6b, 0x0a, 0xce, 0xde, 0xdc,
-	0x28, 0x01, 0x2e, 0x5e, 0x5f, 0x82, 0x13, 0x2b, 0xfa, 0x09, 0x76, 0x25, 0xb8, 0x50, 0x89, 0xaa,
-	0x60, 0x1f, 0x2f, 0x64, 0xcf, 0x28, 0x87, 0xcc, 0x32, 0xeb, 0x38, 0x59, 0x03, 0x3d, 0xa4, 0xe7,
-	0xf8, 0xef, 0x0a, 0x00, 0x97, 0x06, 0x0b, 0xfc, 0x21, 0xa3, 0xe8, 0xd3, 0x82, 0x88, 0x1a, 0xd3,
-	0x22, 0x92, 0x91, 0x05, 0x15, 0x7d, 0x0b, 0xb5, 0xb4, 0xb6, 0x2c, 0x50, 0x32, 0xba, 0xbd, 0x4c,
-	0x46, 0x8a, 0xb5, 0x42, 0xa0, 0x9b, 0x58, 0x38, 0x2b, 0x2d, 0x27, 0x0b, 0x94, 0x92, 0x6e, 0x2f,
-	0x53, 0x52, 0xca, 0x0a, 0x12, 0x0b, 0x7a, 0x01, 0x5b, 0xb9, 0x0a, 0xb2, 0x40, 0x89, 0xe9, 0x83,
-	0x12, 0x62, 0x4a, 0x88, 0xf5, 0x4e, 0xd6, 0x88, 0x5e, 0x01, 0x2a, 0xca, 0x89, 0x05, 0x4a, 0x4f,
-	0x77, 0x4b, 0xe9, 0x29, 0x21, 0x6f, 0x39, 0x79, 0x73, 0xca, 0xce, 0x95, 0xc0, 0x28, 0xc1, 0x9e,
-	0xaa, 0xc3, 0x96, 0x93, 0x37, 0xa3, 0x36, 0xec, 0xcd, 0x10, 0x15, 0x0b, 0x94, 0xaa, 0xac, 0xb2,
-	0xaa, 0x4a, 0x4e, 0x40, 0xce, 0x94, 0xe7, 0xc4, 0x80, 0x0a, 0x67, 0xe2, 0x47, 0x50, 0xcf, 0xbd,
-	0x1e, 0x74, 0x0c, 0x7a, 0xe8, 0x8f, 0x95, 0xae, 0x0e, 0xe7, 0x9d, 0xc5, 0x37, 0xf0, 0x38, 0xfc,
-	0x3d, 0x6c, 0xe6, 0xab, 0x85, 0x3e, 0x07, 0x93, 0x67, 0x7c, 0x61, 0x0f, 0x46, 0x54, 0x61, 0x8e,
-	0x16, 0x60, 0x9a, 0x3c, 0x8e, 0xac, 0x87, 0x6a, 0x85, 0x9f, 0x00, 0x9a, 0x7e, 0xd3, 0xe8, 0x1e,
-	0x54, 0x42, 0x7f, 0xcc, 0xf6, 0xb5, 0x23, 0x7d, 0x59, 0x5a, 0x22, 0x10, 0x37, 0xe1, 0xda, 0x8c,
-	0x56, 0xa2, 0x2f, 0x00, 0x92, 0xe4, 0x62, 0xda, 0xf2, 0xec, 0xcc, 0x38, 0x3b, 0x86, 0xcf, 0xa0,
-	0x9e, 0x1b, 0x0a, 0x57, 0xbd, 0xee, 0x36, 0x6c, 0xe6, 0x15, 0x81, 0x5f, 0xaa, 0x02, 0xe4, 0x8f,
-	0xb9, 0x72, 0xe2, 0x7b, 0xaa, 0x20, 0x85, 0xd3, 0xbe, 0x82, 0xed, 0xe2, 0x20, 0x7a, 0x5b, 0x09,
-	0x5c, 0x83, 0x9d, 0x29, 0xd5, 0xe1, 0x53, 0xd8, 0x9b, 0x39, 0xe5, 0xde, 0xbe, 0x93, 0xfb, 0x70,
-	0x7d, 0xb6, 0xb2, 0xf1, 0xaf, 0x1a, 0xe8, 0xc4, 0x1f, 0xa3, 0x1b, 0x50, 0xed, 0x38, 0xad, 0xa1,
-	0xed, 0xc9, 0x06, 0x98, 0xc4, 0xe8, 0x38, 0x67, 0xb6, 0x47, 0xd1, 0x2d, 0x80, 0xc8, 0x76, 0x06,
-	0x54, 0xfa, 0x56, 0x85, 0xcf, 0x14, 0x16, 0xe1, 0xbe, 0x01, 0x55, 0x5e, 0xd3, 0x3e, 0x9d, 0x88,
-	0xe1, 0x55, 0x23, 0x46, 0xe8, 0x8f, 0x9f, 0xd1, 0x09, 0xfa, 0x12, 0xd6, 0x5f, 0xdb, 0x9e, 0x3b,
-	0x70, 0x29, 0x53, 0x73, 0xe8, 0xbd, 0x79, 0x79, 0x3e, 0xf6, 0x07, 0x23, 0x6f, 0xf8, 0x0d, 0x8f,
-	0x9e, 0x90, 0x64, 0x17, 0xda, 0x06, 0x3d, 0x8a, 0x06, 0x62, 0xd8, 0xe8, 0x84, 0x2f, 0xf1, 0x2f,
-	0x1a, 0xd4, 0xb2, 0xc1, 0xe8, 0x33, 0xd0, 0x3c, 0x55, 0x85, 0xbb, 0x65, 0xe8, 0xd6, 0x77, 0x4f,
-	0x86, 0x51, 0x38, 0x21, 0x9a, 0x77, 0xf0, 0x12, 0x0c, 0xf9, 0xc1, 0xcf, 0xe1, 0xe9, 0xcb, 0x6b,
-	0xf3, 0x25, 0xba, 0x0f, 0x6b, 0x52, 0x8b, 0x72, 0xb6, 0xbf, 0xb3, 0x18, 0xcd, 0x88, 0x8c, 0x7e,
-	0xb8, 0xfa, 0x40, 0xc3, 0x8f, 0xa1, 0xaa, 0xac, 0xe8, 0x01, 0x54, 0xdb, 0x72, 0xa9, 0x52, 0x6c,
-	0x2c, 0xe6, 0x90, 0x38, 0x1c, 0x37, 0xc1, 0x90, 0x26, 0x84, 0xa0, 0x92, 0xe9, 0x89, 0x58, 0xa3,
-	0x43, 0x30, 0x3d, 0x77, 0xd8, 0x62, 0x91, 0xed, 0xc9, 0x5f, 0x1f, 0x9d, 0xac, 0x7b, 0xee, 0xf0,
-	0x05, 0xff, 0x16, 0x4e, 0xfb, 0x8d, 0x72, 0xea, 0xca, 0x69, 0xbf, 0x11, 0x4e, 0xfc, 0x9b, 0x06,
-	0xeb, 0xb1, 0xae, 0xff, 0xff, 0x8e, 0x9f, 0x41, 0x5d, 0xf4, 0x6e, 0x12, 0xbf, 0xb0, 0x25, 0x3f,
-	0x3f, 0xd9, 0xc6, 0xc8, 0xa7, 0x56, 0x7b, 0x9d, 0x7e, 0x30, 0xfc, 0xbb, 0x06, 0x3b, 0x53, 0x31,
-	0xe8, 0x51, 0xda, 0xf2, 0x8f, 0x4a, 0x93, 0x33, 0x7d, 0x7f, 0xb5, 0xa0, 0xef, 0x0f, 0xf3, 0x7d,
-	0x5f, 0x22, 0x58, 0x99, 0x66, 0xb6, 0xf9, 0x3f, 0xc6, 0xf2, 0x94, 0x2e, 0x74, 0x0a, 0x75, 0xd9,
-	0xd2, 0xfc, 0xcc, 0x79, 0xb7, 0x04, 0x97, 0xd4, 0xda, 0x19, 0x12, 0xee, 0xc2, 0x46, 0xc6, 0x39,
-	0x53, 0x16, 0xbb, 0xd9, 0xe4, 0x6b, 0x2a, 0x2d, 0x74, 0x13, 0xcc, 0xc8, 0xf5, 0x68, 0x56, 0x0f,
-	0xa9, 0x21, 0x7e, 0x62, 0x95, 0xe4, 0x89, 0x9d, 0x1c, 0xff, 0x79, 0xd9, 0xd0, 0xfe, 0xba, 0x6c,
-	0x68, 0xff, 0x5c, 0x36, 0xb4, 0x9f, 0xff, 0x6d, 0xac, 0xc0, 0x61, 0xdb, 0xf7, 0x2c, 0xd6, 0xf3,
-	0x03, 0x4a, 0xad, 0x8e, 0x6b, 0xf5, 0x2f, 0x58, 0xe4, 0x87, 0x54, 0xfe, 0x5f, 0xee, 0x18, 0xe2,
-	0xcf, 0x27, 0xff, 0x05, 0x00, 0x00, 0xff, 0xff, 0xdf, 0x97, 0x21, 0xbf, 0x00, 0x0c, 0x00, 0x00,
+var fileDescriptor_tiap_hbaselike_kvrpcpb_f0956854503d9385 = []byte{
+	// 763 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xac, 0x56, 0xcd, 0x6e, 0xd3, 0x4a,
+	0x18, 0xad, 0xe3, 0xfc, 0x34, 0x5f, 0xd3, 0x7b, 0x6f, 0xe7, 0xa6, 0x6d, 0xd4, 0x9f, 0xdc, 0xc8,
+	0x97, 0x45, 0xa1, 0xaa, 0x8b, 0x8a, 0x8a, 0x4a, 0x17, 0x80, 0x52, 0x0a, 0x95, 0x2a, 0xaa, 0x6a,
+	0xa4, 0x16, 0xd4, 0x4d, 0xb0, 0x93, 0x69, 0x62, 0xc5, 0x8e, 0x5d, 0xcf, 0xa4, 0x51, 0xde, 0x84,
+	0x25, 0x6b, 0x58, 0xf0, 0x1a, 0x2c, 0x79, 0x01, 0x24, 0x54, 0x56, 0xbc, 0x05, 0xf2, 0xcc, 0x24,
+	0xb6, 0x93, 0x34, 0x18, 0xc1, 0x2a, 0xe3, 0xef, 0x3b, 0x73, 0xfc, 0xcd, 0x39, 0x67, 0xac, 0xc0,
+	0x1a, 0xb3, 0x0c, 0xaf, 0xd6, 0x32, 0x0d, 0x4a, 0x6c, 0xab, 0x4d, 0x6a, 0xed, 0x6b, 0xdf, 0xab,
+	0x7b, 0xa6, 0xee, 0xf9, 0x2e, 0x73, 0xd1, 0xd2, 0xe4, 0xee, 0x4a, 0xb1, 0xe9, 0x36, 0x5d, 0x0e,
+	0xd9, 0x0e, 0x56, 0x02, 0xbd, 0x82, 0x38, 0x3a, 0xc6, 0xa0, 0x7d, 0x49, 0x41, 0xfe, 0xf8, 0x1c,
+	0x93, 0xab, 0x2e, 0xa1, 0x0c, 0xed, 0x42, 0xb6, 0x45, 0x8c, 0x06, 0xf1, 0x4b, 0x4a, 0x45, 0xd9,
+	0x98, 0xdb, 0x59, 0xd7, 0x63, 0x5b, 0x86, 0xc0, 0x23, 0x0e, 0xc2, 0x12, 0x8c, 0x5e, 0xc1, 0x82,
+	0x69, 0xb0, 0x7a, 0xab, 0xd6, 0x24, 0xac, 0xe6, 0xbb, 0xbd, 0x9a, 0x4f, 0xae, 0x4a, 0x29, 0xce,
+	0x70, 0x4f, 0xbf, 0xe5, 0x00, 0xd5, 0x60, 0xc3, 0x0b, 0xc2, 0xb0, 0xdb, 0x1b, 0x90, 0xce, 0xe0,
+	0xbf, 0xcc, 0x58, 0x35, 0x24, 0xf6, 0xba, 0x21, 0xb1, 0x9a, 0x80, 0xf8, 0xb4, 0x3b, 0x89, 0x78,
+	0x58, 0x45, 0x6f, 0xa0, 0x28, 0x88, 0x1b, 0xc4, 0x26, 0x8c, 0x0c, 0xb9, 0xd3, 0x9c, 0x7b, 0x6b,
+	0x2a, 0xf7, 0x33, 0xbe, 0x25, 0x46, 0x2f, 0xa6, 0x8c, 0x36, 0xaa, 0x19, 0x50, 0x7d, 0x72, 0xa5,
+	0x7d, 0x4f, 0x01, 0x04, 0xb2, 0x51, 0xcf, 0xed, 0x50, 0x82, 0x1e, 0x8e, 0x08, 0x5c, 0x1e, 0x17,
+	0x58, 0x20, 0x47, 0x14, 0xbe, 0x00, 0x34, 0xaa, 0x30, 0xf5, 0xa4, 0xc4, 0x9b, 0x89, 0x24, 0x96,
+	0xb4, 0x33, 0xf8, 0x6f, 0x33, 0x5e, 0x0e, 0xb9, 0x43, 0x91, 0xa9, 0x27, 0x55, 0xde, 0x4c, 0xa4,
+	0xf2, 0x08, 0x77, 0x58, 0x46, 0x75, 0x58, 0x9c, 0xa0, 0x33, 0xf5, 0xa4, 0xd0, 0x7a, 0x52, 0xa1,
+	0x87, 0x6f, 0x40, 0xe6, 0x58, 0xa7, 0x9a, 0x85, 0x74, 0xc0, 0xa9, 0x1d, 0x02, 0x1a, 0x4f, 0x15,
+	0xda, 0x86, 0xb4, 0xef, 0xf6, 0x68, 0x49, 0xa9, 0xa8, 0x1b, 0x73, 0x3b, 0xab, 0xb7, 0xbd, 0x31,
+	0xd8, 0xc1, 0x81, 0xda, 0x39, 0xfc, 0x3b, 0x41, 0x39, 0xf4, 0x04, 0x20, 0x98, 0xfe, 0xda, 0xb0,
+	0xbb, 0x64, 0xc0, 0x56, 0x99, 0xc2, 0x76, 0x1e, 0x00, 0x71, 0xde, 0x97, 0x2b, 0xaa, 0x9d, 0xc9,
+	0xf1, 0x62, 0xd9, 0xfc, 0x7d, 0xda, 0x45, 0x39, 0x6e, 0xdc, 0x0c, 0xed, 0x08, 0x16, 0x27, 0xa6,
+	0xf5, 0xd7, 0xf5, 0x28, 0xc1, 0xd2, 0x64, 0x3b, 0xb4, 0xf7, 0x0a, 0xa8, 0xd8, 0xed, 0xa1, 0x65,
+	0xc8, 0x35, 0xcc, 0x5a, 0xc7, 0x70, 0x08, 0x8f, 0x75, 0x1e, 0x67, 0x1b, 0xe6, 0x89, 0xe1, 0x10,
+	0xb4, 0x0e, 0xc0, 0x0c, 0xd3, 0x26, 0xa2, 0x97, 0xe2, 0xbd, 0x3c, 0xaf, 0xf0, 0xf6, 0x32, 0xe4,
+	0x82, 0xb3, 0xb7, 0x49, 0x9f, 0xc7, 0xad, 0x80, 0xb3, 0xbe, 0xdb, 0x3b, 0x26, 0x7d, 0xf4, 0x14,
+	0x66, 0x2f, 0x0d, 0xc7, 0xb2, 0x2d, 0x42, 0x65, 0x52, 0xee, 0xdc, 0x36, 0xe7, 0x81, 0x6b, 0x77,
+	0x9d, 0xce, 0xf3, 0x00, 0xdd, 0xc7, 0xc3, 0x5d, 0xe8, 0x1f, 0x50, 0x19, 0xb3, 0x4b, 0x99, 0x8a,
+	0xb2, 0xa1, 0xe2, 0x60, 0xa9, 0xbd, 0x53, 0xa0, 0x10, 0x05, 0xa3, 0x47, 0xa0, 0x38, 0x52, 0x85,
+	0xcd, 0x24, 0xec, 0xfa, 0xcb, 0xc3, 0x0e, 0xf3, 0xfb, 0x58, 0x71, 0x56, 0xce, 0x20, 0x2b, 0x1e,
+	0x82, 0xf7, 0x04, 0xe3, 0x8b, 0x63, 0x07, 0x4b, 0xb4, 0x0b, 0x19, 0x6e, 0xa6, 0xbc, 0x9d, 0xff,
+	0x4d, 0xa7, 0xa6, 0x58, 0xa0, 0xf7, 0x53, 0x7b, 0x8a, 0x76, 0x00, 0x39, 0x59, 0x45, 0x7b, 0x90,
+	0xab, 0x8b, 0xa5, 0x1c, 0xb1, 0x3c, 0x9d, 0x07, 0x0f, 0xe0, 0xda, 0x29, 0x64, 0x45, 0x09, 0x21,
+	0x48, 0x47, 0x3c, 0xe1, 0x6b, 0xb4, 0x06, 0x79, 0x66, 0x39, 0x84, 0x32, 0xc3, 0x11, 0xdf, 0x0f,
+	0x15, 0x87, 0x05, 0x54, 0x84, 0x8c, 0x6d, 0x39, 0x16, 0xe3, 0x76, 0xa8, 0x58, 0x3c, 0x68, 0x1f,
+	0x14, 0x98, 0x1d, 0x24, 0xef, 0xcf, 0x7b, 0x7d, 0x02, 0xf3, 0xdc, 0xb5, 0xfe, 0xe0, 0x0e, 0x08,
+	0xc3, 0xef, 0x26, 0xb1, 0x44, 0x5c, 0x86, 0xc2, 0x65, 0xf8, 0x40, 0xb5, 0x8f, 0x0a, 0x2c, 0x8c,
+	0x61, 0xd0, 0xe3, 0xd0, 0xec, 0xfb, 0x89, 0x99, 0x23, 0x8e, 0x5f, 0x4c, 0x71, 0x7c, 0x3f, 0xee,
+	0xf8, 0x4f, 0xa2, 0x2a, 0xc6, 0x8c, 0xda, 0xfe, 0x7a, 0x10, 0x4c, 0xd1, 0x42, 0x47, 0x30, 0x2f,
+	0xcc, 0x8c, 0x7f, 0x15, 0xfe, 0x4f, 0xc0, 0x8b, 0x0b, 0xf5, 0x08, 0x93, 0xd6, 0x84, 0xb9, 0x48,
+	0x73, 0x62, 0x20, 0x8a, 0xd1, 0xe1, 0x0b, 0x72, 0xac, 0x78, 0x4c, 0xd4, 0xd1, 0x98, 0xc8, 0xcb,
+	0x95, 0x1e, 0x5e, 0xae, 0xea, 0xd6, 0xa7, 0x9b, 0xb2, 0xf2, 0xf9, 0xa6, 0xac, 0x7c, 0xbd, 0x29,
+	0x2b, 0x6f, 0xbf, 0x95, 0x67, 0x60, 0xb5, 0xee, 0x3a, 0x3a, 0x6d, 0xb9, 0x1e, 0x21, 0x7a, 0xc3,
+	0xd2, 0xdb, 0xd7, 0x94, 0xb9, 0x3e, 0x11, 0xff, 0x3a, 0xcc, 0x2c, 0xff, 0x79, 0xf0, 0x23, 0x00,
+	0x00, 0xff, 0xff, 0xcb, 0xe2, 0xa9, 0x90, 0xde, 0x08, 0x00, 0x00,
 }
