@@ -4648,35 +4648,41 @@ public final class TiapHbaselikeAdminrpcpb {
     com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableQuotaOrBuilder getQuotaOrBuilder();
 
     /**
-     * <code>bool salted = 4;</code>
-     * @return The salted.
-     */
-    boolean getSalted();
-
-    /**
-     * <code>repeated string column_families = 5;</code>
+     * <code>repeated string column_families = 4;</code>
      * @return A list containing the columnFamilies.
      */
     java.util.List<java.lang.String>
         getColumnFamiliesList();
     /**
-     * <code>repeated string column_families = 5;</code>
+     * <code>repeated string column_families = 4;</code>
      * @return The count of columnFamilies.
      */
     int getColumnFamiliesCount();
     /**
-     * <code>repeated string column_families = 5;</code>
+     * <code>repeated string column_families = 4;</code>
      * @param index The index of the element to return.
      * @return The columnFamilies at the given index.
      */
     java.lang.String getColumnFamilies(int index);
     /**
-     * <code>repeated string column_families = 5;</code>
+     * <code>repeated string column_families = 4;</code>
      * @param index The index of the value to return.
      * @return The bytes of the columnFamilies at the given index.
      */
     com.google.protobuf.ByteString
         getColumnFamiliesBytes(int index);
+
+    /**
+     * <code>bool salted = 5;</code>
+     * @return The salted.
+     */
+    boolean getSalted();
+
+    /**
+     * <code>bool multi_version = 6;</code>
+     * @return The multiVersion.
+     */
+    boolean getMultiVersion();
   }
   /**
    * Protobuf type {@code tiap_hbaselike_adminrpcpb.CreateTableRequest}
@@ -4752,18 +4758,23 @@ public final class TiapHbaselikeAdminrpcpb {
 
               break;
             }
-            case 32: {
-
-              salted_ = input.readBool();
-              break;
-            }
-            case 42: {
+            case 34: {
               java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 columnFamilies_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000001;
               }
               columnFamilies_.add(s);
+              break;
+            }
+            case 40: {
+
+              salted_ = input.readBool();
+              break;
+            }
+            case 48: {
+
+              multiVersion_ = input.readBool();
               break;
             }
             default: {
@@ -4903,21 +4914,10 @@ public final class TiapHbaselikeAdminrpcpb {
       return getQuota();
     }
 
-    public static final int SALTED_FIELD_NUMBER = 4;
-    private boolean salted_;
-    /**
-     * <code>bool salted = 4;</code>
-     * @return The salted.
-     */
-    @java.lang.Override
-    public boolean getSalted() {
-      return salted_;
-    }
-
-    public static final int COLUMN_FAMILIES_FIELD_NUMBER = 5;
+    public static final int COLUMN_FAMILIES_FIELD_NUMBER = 4;
     private com.google.protobuf.LazyStringList columnFamilies_;
     /**
-     * <code>repeated string column_families = 5;</code>
+     * <code>repeated string column_families = 4;</code>
      * @return A list containing the columnFamilies.
      */
     public com.google.protobuf.ProtocolStringList
@@ -4925,14 +4925,14 @@ public final class TiapHbaselikeAdminrpcpb {
       return columnFamilies_;
     }
     /**
-     * <code>repeated string column_families = 5;</code>
+     * <code>repeated string column_families = 4;</code>
      * @return The count of columnFamilies.
      */
     public int getColumnFamiliesCount() {
       return columnFamilies_.size();
     }
     /**
-     * <code>repeated string column_families = 5;</code>
+     * <code>repeated string column_families = 4;</code>
      * @param index The index of the element to return.
      * @return The columnFamilies at the given index.
      */
@@ -4940,13 +4940,35 @@ public final class TiapHbaselikeAdminrpcpb {
       return columnFamilies_.get(index);
     }
     /**
-     * <code>repeated string column_families = 5;</code>
+     * <code>repeated string column_families = 4;</code>
      * @param index The index of the value to return.
      * @return The bytes of the columnFamilies at the given index.
      */
     public com.google.protobuf.ByteString
         getColumnFamiliesBytes(int index) {
       return columnFamilies_.getByteString(index);
+    }
+
+    public static final int SALTED_FIELD_NUMBER = 5;
+    private boolean salted_;
+    /**
+     * <code>bool salted = 5;</code>
+     * @return The salted.
+     */
+    @java.lang.Override
+    public boolean getSalted() {
+      return salted_;
+    }
+
+    public static final int MULTI_VERSION_FIELD_NUMBER = 6;
+    private boolean multiVersion_;
+    /**
+     * <code>bool multi_version = 6;</code>
+     * @return The multiVersion.
+     */
+    @java.lang.Override
+    public boolean getMultiVersion() {
+      return multiVersion_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -4972,11 +4994,14 @@ public final class TiapHbaselikeAdminrpcpb {
       if (quota_ != null) {
         output.writeMessage(3, getQuota());
       }
-      if (salted_ != false) {
-        output.writeBool(4, salted_);
-      }
       for (int i = 0; i < columnFamilies_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, columnFamilies_.getRaw(i));
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, columnFamilies_.getRaw(i));
+      }
+      if (salted_ != false) {
+        output.writeBool(5, salted_);
+      }
+      if (multiVersion_ != false) {
+        output.writeBool(6, multiVersion_);
       }
       unknownFields.writeTo(output);
     }
@@ -4997,10 +5022,6 @@ public final class TiapHbaselikeAdminrpcpb {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getQuota());
       }
-      if (salted_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(4, salted_);
-      }
       {
         int dataSize = 0;
         for (int i = 0; i < columnFamilies_.size(); i++) {
@@ -5008,6 +5029,14 @@ public final class TiapHbaselikeAdminrpcpb {
         }
         size += dataSize;
         size += 1 * getColumnFamiliesList().size();
+      }
+      if (salted_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(5, salted_);
+      }
+      if (multiVersion_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(6, multiVersion_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5033,10 +5062,12 @@ public final class TiapHbaselikeAdminrpcpb {
         if (!getQuota()
             .equals(other.getQuota())) return false;
       }
-      if (getSalted()
-          != other.getSalted()) return false;
       if (!getColumnFamiliesList()
           .equals(other.getColumnFamiliesList())) return false;
+      if (getSalted()
+          != other.getSalted()) return false;
+      if (getMultiVersion()
+          != other.getMultiVersion()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -5056,13 +5087,16 @@ public final class TiapHbaselikeAdminrpcpb {
         hash = (37 * hash) + QUOTA_FIELD_NUMBER;
         hash = (53 * hash) + getQuota().hashCode();
       }
-      hash = (37 * hash) + SALTED_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getSalted());
       if (getColumnFamiliesCount() > 0) {
         hash = (37 * hash) + COLUMN_FAMILIES_FIELD_NUMBER;
         hash = (53 * hash) + getColumnFamiliesList().hashCode();
       }
+      hash = (37 * hash) + SALTED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getSalted());
+      hash = (37 * hash) + MULTI_VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getMultiVersion());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -5206,10 +5240,12 @@ public final class TiapHbaselikeAdminrpcpb {
           quota_ = null;
           quotaBuilder_ = null;
         }
-        salted_ = false;
-
         columnFamilies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
+        salted_ = false;
+
+        multiVersion_ = false;
+
         return this;
       }
 
@@ -5244,12 +5280,13 @@ public final class TiapHbaselikeAdminrpcpb {
         } else {
           result.quota_ = quotaBuilder_.build();
         }
-        result.salted_ = salted_;
         if (((bitField0_ & 0x00000001) != 0)) {
           columnFamilies_ = columnFamilies_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.columnFamilies_ = columnFamilies_;
+        result.salted_ = salted_;
+        result.multiVersion_ = multiVersion_;
         onBuilt();
         return result;
       }
@@ -5309,9 +5346,6 @@ public final class TiapHbaselikeAdminrpcpb {
         if (other.hasQuota()) {
           mergeQuota(other.getQuota());
         }
-        if (other.getSalted() != false) {
-          setSalted(other.getSalted());
-        }
         if (!other.columnFamilies_.isEmpty()) {
           if (columnFamilies_.isEmpty()) {
             columnFamilies_ = other.columnFamilies_;
@@ -5321,6 +5355,12 @@ public final class TiapHbaselikeAdminrpcpb {
             columnFamilies_.addAll(other.columnFamilies_);
           }
           onChanged();
+        }
+        if (other.getSalted() != false) {
+          setSalted(other.getSalted());
+        }
+        if (other.getMultiVersion() != false) {
+          setMultiVersion(other.getMultiVersion());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -5623,37 +5663,6 @@ public final class TiapHbaselikeAdminrpcpb {
         return quotaBuilder_;
       }
 
-      private boolean salted_ ;
-      /**
-       * <code>bool salted = 4;</code>
-       * @return The salted.
-       */
-      @java.lang.Override
-      public boolean getSalted() {
-        return salted_;
-      }
-      /**
-       * <code>bool salted = 4;</code>
-       * @param value The salted to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSalted(boolean value) {
-        
-        salted_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool salted = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSalted() {
-        
-        salted_ = false;
-        onChanged();
-        return this;
-      }
-
       private com.google.protobuf.LazyStringList columnFamilies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensureColumnFamiliesIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
@@ -5662,7 +5671,7 @@ public final class TiapHbaselikeAdminrpcpb {
          }
       }
       /**
-       * <code>repeated string column_families = 5;</code>
+       * <code>repeated string column_families = 4;</code>
        * @return A list containing the columnFamilies.
        */
       public com.google.protobuf.ProtocolStringList
@@ -5670,14 +5679,14 @@ public final class TiapHbaselikeAdminrpcpb {
         return columnFamilies_.getUnmodifiableView();
       }
       /**
-       * <code>repeated string column_families = 5;</code>
+       * <code>repeated string column_families = 4;</code>
        * @return The count of columnFamilies.
        */
       public int getColumnFamiliesCount() {
         return columnFamilies_.size();
       }
       /**
-       * <code>repeated string column_families = 5;</code>
+       * <code>repeated string column_families = 4;</code>
        * @param index The index of the element to return.
        * @return The columnFamilies at the given index.
        */
@@ -5685,7 +5694,7 @@ public final class TiapHbaselikeAdminrpcpb {
         return columnFamilies_.get(index);
       }
       /**
-       * <code>repeated string column_families = 5;</code>
+       * <code>repeated string column_families = 4;</code>
        * @param index The index of the value to return.
        * @return The bytes of the columnFamilies at the given index.
        */
@@ -5694,7 +5703,7 @@ public final class TiapHbaselikeAdminrpcpb {
         return columnFamilies_.getByteString(index);
       }
       /**
-       * <code>repeated string column_families = 5;</code>
+       * <code>repeated string column_families = 4;</code>
        * @param index The index to set the value at.
        * @param value The columnFamilies to set.
        * @return This builder for chaining.
@@ -5710,7 +5719,7 @@ public final class TiapHbaselikeAdminrpcpb {
         return this;
       }
       /**
-       * <code>repeated string column_families = 5;</code>
+       * <code>repeated string column_families = 4;</code>
        * @param value The columnFamilies to add.
        * @return This builder for chaining.
        */
@@ -5725,7 +5734,7 @@ public final class TiapHbaselikeAdminrpcpb {
         return this;
       }
       /**
-       * <code>repeated string column_families = 5;</code>
+       * <code>repeated string column_families = 4;</code>
        * @param values The columnFamilies to add.
        * @return This builder for chaining.
        */
@@ -5738,7 +5747,7 @@ public final class TiapHbaselikeAdminrpcpb {
         return this;
       }
       /**
-       * <code>repeated string column_families = 5;</code>
+       * <code>repeated string column_families = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearColumnFamilies() {
@@ -5748,7 +5757,7 @@ public final class TiapHbaselikeAdminrpcpb {
         return this;
       }
       /**
-       * <code>repeated string column_families = 5;</code>
+       * <code>repeated string column_families = 4;</code>
        * @param value The bytes of the columnFamilies to add.
        * @return This builder for chaining.
        */
@@ -5760,6 +5769,68 @@ public final class TiapHbaselikeAdminrpcpb {
   checkByteStringIsUtf8(value);
         ensureColumnFamiliesIsMutable();
         columnFamilies_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private boolean salted_ ;
+      /**
+       * <code>bool salted = 5;</code>
+       * @return The salted.
+       */
+      @java.lang.Override
+      public boolean getSalted() {
+        return salted_;
+      }
+      /**
+       * <code>bool salted = 5;</code>
+       * @param value The salted to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSalted(boolean value) {
+        
+        salted_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool salted = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSalted() {
+        
+        salted_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean multiVersion_ ;
+      /**
+       * <code>bool multi_version = 6;</code>
+       * @return The multiVersion.
+       */
+      @java.lang.Override
+      public boolean getMultiVersion() {
+        return multiVersion_;
+      }
+      /**
+       * <code>bool multi_version = 6;</code>
+       * @param value The multiVersion to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMultiVersion(boolean value) {
+        
+        multiVersion_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool multi_version = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMultiVersion() {
+        
+        multiVersion_ = false;
         onChanged();
         return this;
       }
@@ -5819,18 +5890,6 @@ public final class TiapHbaselikeAdminrpcpb {
   public interface CreateTableResponseOrBuilder extends
       // @@protoc_insertion_point(interface_extends:tiap_hbaselike_adminrpcpb.CreateTableResponse)
       com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>string token = 1;</code>
-     * @return The token.
-     */
-    java.lang.String getToken();
-    /**
-     * <code>string token = 1;</code>
-     * @return The bytes for token.
-     */
-    com.google.protobuf.ByteString
-        getTokenBytes();
   }
   /**
    * Protobuf type {@code tiap_hbaselike_adminrpcpb.CreateTableResponse}
@@ -5845,7 +5904,6 @@ public final class TiapHbaselikeAdminrpcpb {
       super(builder);
     }
     private CreateTableResponse() {
-      token_ = "";
     }
 
     @java.lang.Override
@@ -5878,12 +5936,6 @@ public final class TiapHbaselikeAdminrpcpb {
             case 0:
               done = true;
               break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              token_ = s;
-              break;
-            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -5916,44 +5968,6 @@ public final class TiapHbaselikeAdminrpcpb {
               com.shopee.di.kvstore.proto.TiapHbaselikeAdminrpcpb.CreateTableResponse.class, com.shopee.di.kvstore.proto.TiapHbaselikeAdminrpcpb.CreateTableResponse.Builder.class);
     }
 
-    public static final int TOKEN_FIELD_NUMBER = 1;
-    private volatile java.lang.Object token_;
-    /**
-     * <code>string token = 1;</code>
-     * @return The token.
-     */
-    @java.lang.Override
-    public java.lang.String getToken() {
-      java.lang.Object ref = token_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        token_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string token = 1;</code>
-     * @return The bytes for token.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getTokenBytes() {
-      java.lang.Object ref = token_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        token_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -5968,9 +5982,6 @@ public final class TiapHbaselikeAdminrpcpb {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getTokenBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, token_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -5980,9 +5991,6 @@ public final class TiapHbaselikeAdminrpcpb {
       if (size != -1) return size;
 
       size = 0;
-      if (!getTokenBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, token_);
-      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -5998,8 +6006,6 @@ public final class TiapHbaselikeAdminrpcpb {
       }
       com.shopee.di.kvstore.proto.TiapHbaselikeAdminrpcpb.CreateTableResponse other = (com.shopee.di.kvstore.proto.TiapHbaselikeAdminrpcpb.CreateTableResponse) obj;
 
-      if (!getToken()
-          .equals(other.getToken())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -6011,8 +6017,6 @@ public final class TiapHbaselikeAdminrpcpb {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + TOKEN_FIELD_NUMBER;
-      hash = (53 * hash) + getToken().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -6146,8 +6150,6 @@ public final class TiapHbaselikeAdminrpcpb {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        token_ = "";
-
         return this;
       }
 
@@ -6174,7 +6176,6 @@ public final class TiapHbaselikeAdminrpcpb {
       @java.lang.Override
       public com.shopee.di.kvstore.proto.TiapHbaselikeAdminrpcpb.CreateTableResponse buildPartial() {
         com.shopee.di.kvstore.proto.TiapHbaselikeAdminrpcpb.CreateTableResponse result = new com.shopee.di.kvstore.proto.TiapHbaselikeAdminrpcpb.CreateTableResponse(this);
-        result.token_ = token_;
         onBuilt();
         return result;
       }
@@ -6223,10 +6224,6 @@ public final class TiapHbaselikeAdminrpcpb {
 
       public Builder mergeFrom(com.shopee.di.kvstore.proto.TiapHbaselikeAdminrpcpb.CreateTableResponse other) {
         if (other == com.shopee.di.kvstore.proto.TiapHbaselikeAdminrpcpb.CreateTableResponse.getDefaultInstance()) return this;
-        if (!other.getToken().isEmpty()) {
-          token_ = other.token_;
-          onChanged();
-        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -6253,82 +6250,6 @@ public final class TiapHbaselikeAdminrpcpb {
             mergeFrom(parsedMessage);
           }
         }
-        return this;
-      }
-
-      private java.lang.Object token_ = "";
-      /**
-       * <code>string token = 1;</code>
-       * @return The token.
-       */
-      public java.lang.String getToken() {
-        java.lang.Object ref = token_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          token_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string token = 1;</code>
-       * @return The bytes for token.
-       */
-      public com.google.protobuf.ByteString
-          getTokenBytes() {
-        java.lang.Object ref = token_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          token_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string token = 1;</code>
-       * @param value The token to set.
-       * @return This builder for chaining.
-       */
-      public Builder setToken(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        token_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string token = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearToken() {
-        
-        token_ = getDefaultInstance().getToken();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string token = 1;</code>
-       * @param value The bytes for token to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTokenBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        token_ = value;
-        onChanged();
         return this;
       }
       @java.lang.Override
@@ -14269,28 +14190,28 @@ public final class TiapHbaselikeAdminrpcpb {
       "e_adminrpcpb.ListColumnFamiliesResponseH" +
       "\000\022O\n\016delete_cf_resp\030\010 \001(\01325.tiap_hbaseli" +
       "ke_adminrpcpb.DeleteColumnFamilyResponse" +
-      "H\000B\006\n\004resp\"\210\001\n\022CreateTableRequest\022\017\n\007db_" +
+      "H\000B\006\n\004resp\"\237\001\n\022CreateTableRequest\022\017\n\007db_" +
       "name\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022*\n\005quota\030\003 \001(\0132" +
-      "\033.tiap_adminrpcpb.TableQuota\022\016\n\006salted\030\004" +
-      " \001(\010\022\027\n\017column_families\030\005 \003(\t\"$\n\023CreateT" +
-      "ableResponse\022\r\n\005token\030\001 \001(\t\"0\n\017GetTableR" +
-      "equest\022\017\n\007db_name\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\"<\n" +
-      "\020GetTableResponse\022(\n\004info\030\001 \001(\0132\032.tiap_a" +
-      "dminrpcpb.TableInfo\"$\n\021ListTablesRequest" +
-      "\022\017\n\007db_name\030\001 \001(\t\"?\n\022ListTablesResponse\022" +
-      ")\n\005infos\030\001 \003(\0132\032.tiap_adminrpcpb.TableIn" +
-      "fo\"1\n\020DropTableRequest\022\017\n\007db_name\030\001 \001(\t\022" +
-      "\014\n\004name\030\002 \001(\t\"\023\n\021DropTableResponse\"M\n\026Ad" +
-      "dColumnFamilyRequest\022\017\n\007db_name\030\001 \001(\t\022\022\n" +
-      "\ntable_name\030\002 \001(\t\022\016\n\006family\030\003 \001(\t\"\031\n\027Add" +
-      "ColumnFamilyResponse\"@\n\031ListColumnFamili" +
-      "esRequest\022\017\n\007db_name\030\001 \001(\t\022\022\n\ntable_name" +
-      "\030\002 \001(\t\".\n\032ListColumnFamiliesResponse\022\020\n\010" +
-      "families\030\001 \003(\t\"P\n\031DeleteColumnFamilyRequ" +
-      "est\022\017\n\007db_name\030\001 \001(\t\022\022\n\ntable_name\030\002 \001(\t" +
-      "\022\016\n\006family\030\003 \001(\t\"\034\n\032DeleteColumnFamilyRe" +
-      "sponseB\035\n\033com.shopee.di.kvstore.protob\006p" +
-      "roto3"
+      "\033.tiap_adminrpcpb.TableQuota\022\027\n\017column_f" +
+      "amilies\030\004 \003(\t\022\016\n\006salted\030\005 \001(\010\022\025\n\rmulti_v" +
+      "ersion\030\006 \001(\010\"\025\n\023CreateTableResponse\"0\n\017G" +
+      "etTableRequest\022\017\n\007db_name\030\001 \001(\t\022\014\n\004name\030" +
+      "\002 \001(\t\"<\n\020GetTableResponse\022(\n\004info\030\001 \001(\0132" +
+      "\032.tiap_adminrpcpb.TableInfo\"$\n\021ListTable" +
+      "sRequest\022\017\n\007db_name\030\001 \001(\t\"?\n\022ListTablesR" +
+      "esponse\022)\n\005infos\030\001 \003(\0132\032.tiap_adminrpcpb" +
+      ".TableInfo\"1\n\020DropTableRequest\022\017\n\007db_nam" +
+      "e\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\"\023\n\021DropTableRespon" +
+      "se\"M\n\026AddColumnFamilyRequest\022\017\n\007db_name\030" +
+      "\001 \001(\t\022\022\n\ntable_name\030\002 \001(\t\022\016\n\006family\030\003 \001(" +
+      "\t\"\031\n\027AddColumnFamilyResponse\"@\n\031ListColu" +
+      "mnFamiliesRequest\022\017\n\007db_name\030\001 \001(\t\022\022\n\nta" +
+      "ble_name\030\002 \001(\t\".\n\032ListColumnFamiliesResp" +
+      "onse\022\020\n\010families\030\001 \003(\t\"P\n\031DeleteColumnFa" +
+      "milyRequest\022\017\n\007db_name\030\001 \001(\t\022\022\n\ntable_na" +
+      "me\030\002 \001(\t\022\016\n\006family\030\003 \001(\t\"\034\n\032DeleteColumn" +
+      "FamilyResponseB\035\n\033com.shopee.di.kvstore." +
+      "protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -14314,13 +14235,13 @@ public final class TiapHbaselikeAdminrpcpb {
     internal_static_tiap_hbaselike_adminrpcpb_CreateTableRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tiap_hbaselike_adminrpcpb_CreateTableRequest_descriptor,
-        new java.lang.String[] { "DbName", "Name", "Quota", "Salted", "ColumnFamilies", });
+        new java.lang.String[] { "DbName", "Name", "Quota", "ColumnFamilies", "Salted", "MultiVersion", });
     internal_static_tiap_hbaselike_adminrpcpb_CreateTableResponse_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_tiap_hbaselike_adminrpcpb_CreateTableResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tiap_hbaselike_adminrpcpb_CreateTableResponse_descriptor,
-        new java.lang.String[] { "Token", });
+        new java.lang.String[] { });
     internal_static_tiap_hbaselike_adminrpcpb_GetTableRequest_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_tiap_hbaselike_adminrpcpb_GetTableRequest_fieldAccessorTable = new

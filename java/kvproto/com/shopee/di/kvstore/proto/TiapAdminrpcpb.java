@@ -5023,29 +5023,41 @@ public final class TiapAdminrpcpb {
     com.shopee.di.kvstore.proto.TiapAdminrpcpb.DBQuotaOrBuilder getQuotaOrBuilder();
 
     /**
-     * <code>repeated string comment = 5;</code>
-     * @return A list containing the comment.
+     * <code>string token = 5;</code>
+     * @return The token.
      */
-    java.util.List<java.lang.String>
-        getCommentList();
+    java.lang.String getToken();
     /**
-     * <code>repeated string comment = 5;</code>
-     * @return The count of comment.
-     */
-    int getCommentCount();
-    /**
-     * <code>repeated string comment = 5;</code>
-     * @param index The index of the element to return.
-     * @return The comment at the given index.
-     */
-    java.lang.String getComment(int index);
-    /**
-     * <code>repeated string comment = 5;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the comment at the given index.
+     * <code>string token = 5;</code>
+     * @return The bytes for token.
      */
     com.google.protobuf.ByteString
-        getCommentBytes(int index);
+        getTokenBytes();
+
+    /**
+     * <code>repeated string comments = 6;</code>
+     * @return A list containing the comments.
+     */
+    java.util.List<java.lang.String>
+        getCommentsList();
+    /**
+     * <code>repeated string comments = 6;</code>
+     * @return The count of comments.
+     */
+    int getCommentsCount();
+    /**
+     * <code>repeated string comments = 6;</code>
+     * @param index The index of the element to return.
+     * @return The comments at the given index.
+     */
+    java.lang.String getComments(int index);
+    /**
+     * <code>repeated string comments = 6;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the comments at the given index.
+     */
+    com.google.protobuf.ByteString
+        getCommentsBytes(int index);
   }
   /**
    * Protobuf type {@code tiap_adminrpcpb.DBInfo}
@@ -5062,7 +5074,8 @@ public final class TiapAdminrpcpb {
     private DBInfo() {
       name_ = "";
       state_ = 0;
-      comment_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      token_ = "";
+      comments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
     @java.lang.Override
@@ -5128,11 +5141,17 @@ public final class TiapAdminrpcpb {
             }
             case 42: {
               java.lang.String s = input.readStringRequireUtf8();
+
+              token_ = s;
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                comment_ = new com.google.protobuf.LazyStringArrayList();
+                comments_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000001;
               }
-              comment_.add(s);
+              comments_.add(s);
               break;
             }
             default: {
@@ -5151,7 +5170,7 @@ public final class TiapAdminrpcpb {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          comment_ = comment_.getUnmodifiableView();
+          comments_ = comments_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -5264,39 +5283,77 @@ public final class TiapAdminrpcpb {
       return getQuota();
     }
 
-    public static final int COMMENT_FIELD_NUMBER = 5;
-    private com.google.protobuf.LazyStringList comment_;
+    public static final int TOKEN_FIELD_NUMBER = 5;
+    private volatile java.lang.Object token_;
     /**
-     * <code>repeated string comment = 5;</code>
-     * @return A list containing the comment.
+     * <code>string token = 5;</code>
+     * @return The token.
+     */
+    @java.lang.Override
+    public java.lang.String getToken() {
+      java.lang.Object ref = token_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        token_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string token = 5;</code>
+     * @return The bytes for token.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getTokenBytes() {
+      java.lang.Object ref = token_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        token_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int COMMENTS_FIELD_NUMBER = 6;
+    private com.google.protobuf.LazyStringList comments_;
+    /**
+     * <code>repeated string comments = 6;</code>
+     * @return A list containing the comments.
      */
     public com.google.protobuf.ProtocolStringList
-        getCommentList() {
-      return comment_;
+        getCommentsList() {
+      return comments_;
     }
     /**
-     * <code>repeated string comment = 5;</code>
-     * @return The count of comment.
+     * <code>repeated string comments = 6;</code>
+     * @return The count of comments.
      */
-    public int getCommentCount() {
-      return comment_.size();
+    public int getCommentsCount() {
+      return comments_.size();
     }
     /**
-     * <code>repeated string comment = 5;</code>
+     * <code>repeated string comments = 6;</code>
      * @param index The index of the element to return.
-     * @return The comment at the given index.
+     * @return The comments at the given index.
      */
-    public java.lang.String getComment(int index) {
-      return comment_.get(index);
+    public java.lang.String getComments(int index) {
+      return comments_.get(index);
     }
     /**
-     * <code>repeated string comment = 5;</code>
+     * <code>repeated string comments = 6;</code>
      * @param index The index of the value to return.
-     * @return The bytes of the comment at the given index.
+     * @return The bytes of the comments at the given index.
      */
     public com.google.protobuf.ByteString
-        getCommentBytes(int index) {
-      return comment_.getByteString(index);
+        getCommentsBytes(int index) {
+      return comments_.getByteString(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -5325,8 +5382,11 @@ public final class TiapAdminrpcpb {
       if (quota_ != null) {
         output.writeMessage(4, getQuota());
       }
-      for (int i = 0; i < comment_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, comment_.getRaw(i));
+      if (!getTokenBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, token_);
+      }
+      for (int i = 0; i < comments_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, comments_.getRaw(i));
       }
       unknownFields.writeTo(output);
     }
@@ -5352,13 +5412,16 @@ public final class TiapAdminrpcpb {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, getQuota());
       }
+      if (!getTokenBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, token_);
+      }
       {
         int dataSize = 0;
-        for (int i = 0; i < comment_.size(); i++) {
-          dataSize += computeStringSizeNoTag(comment_.getRaw(i));
+        for (int i = 0; i < comments_.size(); i++) {
+          dataSize += computeStringSizeNoTag(comments_.getRaw(i));
         }
         size += dataSize;
-        size += 1 * getCommentList().size();
+        size += 1 * getCommentsList().size();
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5385,8 +5448,10 @@ public final class TiapAdminrpcpb {
         if (!getQuota()
             .equals(other.getQuota())) return false;
       }
-      if (!getCommentList()
-          .equals(other.getCommentList())) return false;
+      if (!getToken()
+          .equals(other.getToken())) return false;
+      if (!getCommentsList()
+          .equals(other.getCommentsList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -5409,9 +5474,11 @@ public final class TiapAdminrpcpb {
         hash = (37 * hash) + QUOTA_FIELD_NUMBER;
         hash = (53 * hash) + getQuota().hashCode();
       }
-      if (getCommentCount() > 0) {
-        hash = (37 * hash) + COMMENT_FIELD_NUMBER;
-        hash = (53 * hash) + getCommentList().hashCode();
+      hash = (37 * hash) + TOKEN_FIELD_NUMBER;
+      hash = (53 * hash) + getToken().hashCode();
+      if (getCommentsCount() > 0) {
+        hash = (37 * hash) + COMMENTS_FIELD_NUMBER;
+        hash = (53 * hash) + getCommentsList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -5558,7 +5625,9 @@ public final class TiapAdminrpcpb {
           quota_ = null;
           quotaBuilder_ = null;
         }
-        comment_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        token_ = "";
+
+        comments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
@@ -5595,11 +5664,12 @@ public final class TiapAdminrpcpb {
         } else {
           result.quota_ = quotaBuilder_.build();
         }
+        result.token_ = token_;
         if (((bitField0_ & 0x00000001) != 0)) {
-          comment_ = comment_.getUnmodifiableView();
+          comments_ = comments_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
-        result.comment_ = comment_;
+        result.comments_ = comments_;
         onBuilt();
         return result;
       }
@@ -5661,13 +5731,17 @@ public final class TiapAdminrpcpb {
         if (other.hasQuota()) {
           mergeQuota(other.getQuota());
         }
-        if (!other.comment_.isEmpty()) {
-          if (comment_.isEmpty()) {
-            comment_ = other.comment_;
+        if (!other.getToken().isEmpty()) {
+          token_ = other.token_;
+          onChanged();
+        }
+        if (!other.comments_.isEmpty()) {
+          if (comments_.isEmpty()) {
+            comments_ = other.comments_;
             bitField0_ = (bitField0_ & ~0x00000001);
           } else {
-            ensureCommentIsMutable();
-            comment_.addAll(other.comment_);
+            ensureCommentsIsMutable();
+            comments_.addAll(other.comments_);
           }
           onChanged();
         }
@@ -5981,112 +6055,188 @@ public final class TiapAdminrpcpb {
         return quotaBuilder_;
       }
 
-      private com.google.protobuf.LazyStringList comment_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      private void ensureCommentIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          comment_ = new com.google.protobuf.LazyStringArrayList(comment_);
-          bitField0_ |= 0x00000001;
-         }
-      }
+      private java.lang.Object token_ = "";
       /**
-       * <code>repeated string comment = 5;</code>
-       * @return A list containing the comment.
+       * <code>string token = 5;</code>
+       * @return The token.
        */
-      public com.google.protobuf.ProtocolStringList
-          getCommentList() {
-        return comment_.getUnmodifiableView();
+      public java.lang.String getToken() {
+        java.lang.Object ref = token_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          token_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>repeated string comment = 5;</code>
-       * @return The count of comment.
-       */
-      public int getCommentCount() {
-        return comment_.size();
-      }
-      /**
-       * <code>repeated string comment = 5;</code>
-       * @param index The index of the element to return.
-       * @return The comment at the given index.
-       */
-      public java.lang.String getComment(int index) {
-        return comment_.get(index);
-      }
-      /**
-       * <code>repeated string comment = 5;</code>
-       * @param index The index of the value to return.
-       * @return The bytes of the comment at the given index.
+       * <code>string token = 5;</code>
+       * @return The bytes for token.
        */
       public com.google.protobuf.ByteString
-          getCommentBytes(int index) {
-        return comment_.getByteString(index);
+          getTokenBytes() {
+        java.lang.Object ref = token_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          token_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
       }
       /**
-       * <code>repeated string comment = 5;</code>
-       * @param index The index to set the value at.
-       * @param value The comment to set.
+       * <code>string token = 5;</code>
+       * @param value The token to set.
        * @return This builder for chaining.
        */
-      public Builder setComment(
-          int index, java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureCommentIsMutable();
-        comment_.set(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string comment = 5;</code>
-       * @param value The comment to add.
-       * @return This builder for chaining.
-       */
-      public Builder addComment(
+      public Builder setToken(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  ensureCommentIsMutable();
-        comment_.add(value);
+  
+        token_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>repeated string comment = 5;</code>
-       * @param values The comment to add.
+       * <code>string token = 5;</code>
        * @return This builder for chaining.
        */
-      public Builder addAllComment(
-          java.lang.Iterable<java.lang.String> values) {
-        ensureCommentIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, comment_);
+      public Builder clearToken() {
+        
+        token_ = getDefaultInstance().getToken();
         onChanged();
         return this;
       }
       /**
-       * <code>repeated string comment = 5;</code>
+       * <code>string token = 5;</code>
+       * @param value The bytes for token to set.
        * @return This builder for chaining.
        */
-      public Builder clearComment() {
-        comment_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string comment = 5;</code>
-       * @param value The bytes of the comment to add.
-       * @return This builder for chaining.
-       */
-      public Builder addCommentBytes(
+      public Builder setTokenBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        ensureCommentIsMutable();
-        comment_.add(value);
+        
+        token_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList comments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureCommentsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          comments_ = new com.google.protobuf.LazyStringArrayList(comments_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <code>repeated string comments = 6;</code>
+       * @return A list containing the comments.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getCommentsList() {
+        return comments_.getUnmodifiableView();
+      }
+      /**
+       * <code>repeated string comments = 6;</code>
+       * @return The count of comments.
+       */
+      public int getCommentsCount() {
+        return comments_.size();
+      }
+      /**
+       * <code>repeated string comments = 6;</code>
+       * @param index The index of the element to return.
+       * @return The comments at the given index.
+       */
+      public java.lang.String getComments(int index) {
+        return comments_.get(index);
+      }
+      /**
+       * <code>repeated string comments = 6;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the comments at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getCommentsBytes(int index) {
+        return comments_.getByteString(index);
+      }
+      /**
+       * <code>repeated string comments = 6;</code>
+       * @param index The index to set the value at.
+       * @param value The comments to set.
+       * @return This builder for chaining.
+       */
+      public Builder setComments(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureCommentsIsMutable();
+        comments_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string comments = 6;</code>
+       * @param value The comments to add.
+       * @return This builder for chaining.
+       */
+      public Builder addComments(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureCommentsIsMutable();
+        comments_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string comments = 6;</code>
+       * @param values The comments to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllComments(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureCommentsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, comments_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string comments = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearComments() {
+        comments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string comments = 6;</code>
+       * @param value The bytes of the comments to add.
+       * @return This builder for chaining.
+       */
+      public Builder addCommentsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureCommentsIsMutable();
+        comments_.add(value);
         onChanged();
         return this;
       }
@@ -6172,18 +6322,6 @@ public final class TiapAdminrpcpb {
     long getDbId();
 
     /**
-     * <code>string token = 4;</code>
-     * @return The token.
-     */
-    java.lang.String getToken();
-    /**
-     * <code>string token = 4;</code>
-     * @return The bytes for token.
-     */
-    com.google.protobuf.ByteString
-        getTokenBytes();
-
-    /**
      * <code>.tiap_adminrpcpb.TableType type = 5;</code>
      * @return The enum numeric value on the wire for type.
      */
@@ -6221,59 +6359,59 @@ public final class TiapAdminrpcpb {
     com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableQuotaOrBuilder getQuotaOrBuilder();
 
     /**
-     * <code>repeated string comment = 8;</code>
-     * @return A list containing the comment.
+     * <code>repeated string comments = 8;</code>
+     * @return A list containing the comments.
      */
     java.util.List<java.lang.String>
-        getCommentList();
+        getCommentsList();
     /**
-     * <code>repeated string comment = 8;</code>
-     * @return The count of comment.
+     * <code>repeated string comments = 8;</code>
+     * @return The count of comments.
      */
-    int getCommentCount();
+    int getCommentsCount();
     /**
-     * <code>repeated string comment = 8;</code>
+     * <code>repeated string comments = 8;</code>
      * @param index The index of the element to return.
-     * @return The comment at the given index.
+     * @return The comments at the given index.
      */
-    java.lang.String getComment(int index);
+    java.lang.String getComments(int index);
     /**
-     * <code>repeated string comment = 8;</code>
+     * <code>repeated string comments = 8;</code>
      * @param index The index of the value to return.
-     * @return The bytes of the comment at the given index.
+     * @return The bytes of the comments at the given index.
      */
     com.google.protobuf.ByteString
-        getCommentBytes(int index);
+        getCommentsBytes(int index);
 
     /**
-     * <code>.tiap_adminrpcpb.RawTableExtraInfo raw_extra = 9;</code>
-     * @return Whether the rawExtra field is set.
+     * <code>.tiap_adminrpcpb.RawTableExtendInfo raw_ext_info = 9;</code>
+     * @return Whether the rawExtInfo field is set.
      */
-    boolean hasRawExtra();
+    boolean hasRawExtInfo();
     /**
-     * <code>.tiap_adminrpcpb.RawTableExtraInfo raw_extra = 9;</code>
-     * @return The rawExtra.
+     * <code>.tiap_adminrpcpb.RawTableExtendInfo raw_ext_info = 9;</code>
+     * @return The rawExtInfo.
      */
-    com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtraInfo getRawExtra();
+    com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtendInfo getRawExtInfo();
     /**
-     * <code>.tiap_adminrpcpb.RawTableExtraInfo raw_extra = 9;</code>
+     * <code>.tiap_adminrpcpb.RawTableExtendInfo raw_ext_info = 9;</code>
      */
-    com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtraInfoOrBuilder getRawExtraOrBuilder();
+    com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtendInfoOrBuilder getRawExtInfoOrBuilder();
 
     /**
-     * <code>.tiap_adminrpcpb.HBaseLikeTableInfo hbase_like_extra = 10;</code>
-     * @return Whether the hbaseLikeExtra field is set.
+     * <code>.tiap_adminrpcpb.HBaseLikeTableExtendInfo hbase_like_ext_info = 10;</code>
+     * @return Whether the hbaseLikeExtInfo field is set.
      */
-    boolean hasHbaseLikeExtra();
+    boolean hasHbaseLikeExtInfo();
     /**
-     * <code>.tiap_adminrpcpb.HBaseLikeTableInfo hbase_like_extra = 10;</code>
-     * @return The hbaseLikeExtra.
+     * <code>.tiap_adminrpcpb.HBaseLikeTableExtendInfo hbase_like_ext_info = 10;</code>
+     * @return The hbaseLikeExtInfo.
      */
-    com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableInfo getHbaseLikeExtra();
+    com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableExtendInfo getHbaseLikeExtInfo();
     /**
-     * <code>.tiap_adminrpcpb.HBaseLikeTableInfo hbase_like_extra = 10;</code>
+     * <code>.tiap_adminrpcpb.HBaseLikeTableExtendInfo hbase_like_ext_info = 10;</code>
      */
-    com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableInfoOrBuilder getHbaseLikeExtraOrBuilder();
+    com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableExtendInfoOrBuilder getHbaseLikeExtInfoOrBuilder();
   }
   /**
    * Protobuf type {@code tiap_adminrpcpb.TableInfo}
@@ -6289,10 +6427,9 @@ public final class TiapAdminrpcpb {
     }
     private TableInfo() {
       name_ = "";
-      token_ = "";
       type_ = 0;
       state_ = 0;
-      comment_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      comments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
     @java.lang.Override
@@ -6342,12 +6479,6 @@ public final class TiapAdminrpcpb {
               dbId_ = input.readInt64();
               break;
             }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              token_ = s;
-              break;
-            }
             case 40: {
               int rawValue = input.readEnum();
 
@@ -6376,34 +6507,34 @@ public final class TiapAdminrpcpb {
             case 66: {
               java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                comment_ = new com.google.protobuf.LazyStringArrayList();
+                comments_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000001;
               }
-              comment_.add(s);
+              comments_.add(s);
               break;
             }
             case 74: {
-              com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtraInfo.Builder subBuilder = null;
-              if (rawExtra_ != null) {
-                subBuilder = rawExtra_.toBuilder();
+              com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtendInfo.Builder subBuilder = null;
+              if (rawExtInfo_ != null) {
+                subBuilder = rawExtInfo_.toBuilder();
               }
-              rawExtra_ = input.readMessage(com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtraInfo.parser(), extensionRegistry);
+              rawExtInfo_ = input.readMessage(com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtendInfo.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(rawExtra_);
-                rawExtra_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(rawExtInfo_);
+                rawExtInfo_ = subBuilder.buildPartial();
               }
 
               break;
             }
             case 82: {
-              com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableInfo.Builder subBuilder = null;
-              if (hbaseLikeExtra_ != null) {
-                subBuilder = hbaseLikeExtra_.toBuilder();
+              com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableExtendInfo.Builder subBuilder = null;
+              if (hbaseLikeExtInfo_ != null) {
+                subBuilder = hbaseLikeExtInfo_.toBuilder();
               }
-              hbaseLikeExtra_ = input.readMessage(com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableInfo.parser(), extensionRegistry);
+              hbaseLikeExtInfo_ = input.readMessage(com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableExtendInfo.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(hbaseLikeExtra_);
-                hbaseLikeExtra_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(hbaseLikeExtInfo_);
+                hbaseLikeExtInfo_ = subBuilder.buildPartial();
               }
 
               break;
@@ -6424,7 +6555,7 @@ public final class TiapAdminrpcpb {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          comment_ = comment_.getUnmodifiableView();
+          comments_ = comments_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -6503,44 +6634,6 @@ public final class TiapAdminrpcpb {
       return dbId_;
     }
 
-    public static final int TOKEN_FIELD_NUMBER = 4;
-    private volatile java.lang.Object token_;
-    /**
-     * <code>string token = 4;</code>
-     * @return The token.
-     */
-    @java.lang.Override
-    public java.lang.String getToken() {
-      java.lang.Object ref = token_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        token_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string token = 4;</code>
-     * @return The bytes for token.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getTokenBytes() {
-      java.lang.Object ref = token_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        token_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     public static final int TYPE_FIELD_NUMBER = 5;
     private int type_;
     /**
@@ -6605,91 +6698,91 @@ public final class TiapAdminrpcpb {
       return getQuota();
     }
 
-    public static final int COMMENT_FIELD_NUMBER = 8;
-    private com.google.protobuf.LazyStringList comment_;
+    public static final int COMMENTS_FIELD_NUMBER = 8;
+    private com.google.protobuf.LazyStringList comments_;
     /**
-     * <code>repeated string comment = 8;</code>
-     * @return A list containing the comment.
+     * <code>repeated string comments = 8;</code>
+     * @return A list containing the comments.
      */
     public com.google.protobuf.ProtocolStringList
-        getCommentList() {
-      return comment_;
+        getCommentsList() {
+      return comments_;
     }
     /**
-     * <code>repeated string comment = 8;</code>
-     * @return The count of comment.
+     * <code>repeated string comments = 8;</code>
+     * @return The count of comments.
      */
-    public int getCommentCount() {
-      return comment_.size();
+    public int getCommentsCount() {
+      return comments_.size();
     }
     /**
-     * <code>repeated string comment = 8;</code>
+     * <code>repeated string comments = 8;</code>
      * @param index The index of the element to return.
-     * @return The comment at the given index.
+     * @return The comments at the given index.
      */
-    public java.lang.String getComment(int index) {
-      return comment_.get(index);
+    public java.lang.String getComments(int index) {
+      return comments_.get(index);
     }
     /**
-     * <code>repeated string comment = 8;</code>
+     * <code>repeated string comments = 8;</code>
      * @param index The index of the value to return.
-     * @return The bytes of the comment at the given index.
+     * @return The bytes of the comments at the given index.
      */
     public com.google.protobuf.ByteString
-        getCommentBytes(int index) {
-      return comment_.getByteString(index);
+        getCommentsBytes(int index) {
+      return comments_.getByteString(index);
     }
 
-    public static final int RAW_EXTRA_FIELD_NUMBER = 9;
-    private com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtraInfo rawExtra_;
+    public static final int RAW_EXT_INFO_FIELD_NUMBER = 9;
+    private com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtendInfo rawExtInfo_;
     /**
-     * <code>.tiap_adminrpcpb.RawTableExtraInfo raw_extra = 9;</code>
-     * @return Whether the rawExtra field is set.
+     * <code>.tiap_adminrpcpb.RawTableExtendInfo raw_ext_info = 9;</code>
+     * @return Whether the rawExtInfo field is set.
      */
     @java.lang.Override
-    public boolean hasRawExtra() {
-      return rawExtra_ != null;
+    public boolean hasRawExtInfo() {
+      return rawExtInfo_ != null;
     }
     /**
-     * <code>.tiap_adminrpcpb.RawTableExtraInfo raw_extra = 9;</code>
-     * @return The rawExtra.
+     * <code>.tiap_adminrpcpb.RawTableExtendInfo raw_ext_info = 9;</code>
+     * @return The rawExtInfo.
      */
     @java.lang.Override
-    public com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtraInfo getRawExtra() {
-      return rawExtra_ == null ? com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtraInfo.getDefaultInstance() : rawExtra_;
+    public com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtendInfo getRawExtInfo() {
+      return rawExtInfo_ == null ? com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtendInfo.getDefaultInstance() : rawExtInfo_;
     }
     /**
-     * <code>.tiap_adminrpcpb.RawTableExtraInfo raw_extra = 9;</code>
+     * <code>.tiap_adminrpcpb.RawTableExtendInfo raw_ext_info = 9;</code>
      */
     @java.lang.Override
-    public com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtraInfoOrBuilder getRawExtraOrBuilder() {
-      return getRawExtra();
+    public com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtendInfoOrBuilder getRawExtInfoOrBuilder() {
+      return getRawExtInfo();
     }
 
-    public static final int HBASE_LIKE_EXTRA_FIELD_NUMBER = 10;
-    private com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableInfo hbaseLikeExtra_;
+    public static final int HBASE_LIKE_EXT_INFO_FIELD_NUMBER = 10;
+    private com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableExtendInfo hbaseLikeExtInfo_;
     /**
-     * <code>.tiap_adminrpcpb.HBaseLikeTableInfo hbase_like_extra = 10;</code>
-     * @return Whether the hbaseLikeExtra field is set.
+     * <code>.tiap_adminrpcpb.HBaseLikeTableExtendInfo hbase_like_ext_info = 10;</code>
+     * @return Whether the hbaseLikeExtInfo field is set.
      */
     @java.lang.Override
-    public boolean hasHbaseLikeExtra() {
-      return hbaseLikeExtra_ != null;
+    public boolean hasHbaseLikeExtInfo() {
+      return hbaseLikeExtInfo_ != null;
     }
     /**
-     * <code>.tiap_adminrpcpb.HBaseLikeTableInfo hbase_like_extra = 10;</code>
-     * @return The hbaseLikeExtra.
+     * <code>.tiap_adminrpcpb.HBaseLikeTableExtendInfo hbase_like_ext_info = 10;</code>
+     * @return The hbaseLikeExtInfo.
      */
     @java.lang.Override
-    public com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableInfo getHbaseLikeExtra() {
-      return hbaseLikeExtra_ == null ? com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableInfo.getDefaultInstance() : hbaseLikeExtra_;
+    public com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableExtendInfo getHbaseLikeExtInfo() {
+      return hbaseLikeExtInfo_ == null ? com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableExtendInfo.getDefaultInstance() : hbaseLikeExtInfo_;
     }
     /**
-     * <code>.tiap_adminrpcpb.HBaseLikeTableInfo hbase_like_extra = 10;</code>
+     * <code>.tiap_adminrpcpb.HBaseLikeTableExtendInfo hbase_like_ext_info = 10;</code>
      */
     @java.lang.Override
-    public com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableInfoOrBuilder getHbaseLikeExtraOrBuilder() {
-      return getHbaseLikeExtra();
+    public com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableExtendInfoOrBuilder getHbaseLikeExtInfoOrBuilder() {
+      return getHbaseLikeExtInfo();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -6715,9 +6808,6 @@ public final class TiapAdminrpcpb {
       if (dbId_ != 0L) {
         output.writeInt64(3, dbId_);
       }
-      if (!getTokenBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, token_);
-      }
       if (type_ != com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableType.TableType_Invalid.getNumber()) {
         output.writeEnum(5, type_);
       }
@@ -6727,14 +6817,14 @@ public final class TiapAdminrpcpb {
       if (quota_ != null) {
         output.writeMessage(7, getQuota());
       }
-      for (int i = 0; i < comment_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, comment_.getRaw(i));
+      for (int i = 0; i < comments_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, comments_.getRaw(i));
       }
-      if (rawExtra_ != null) {
-        output.writeMessage(9, getRawExtra());
+      if (rawExtInfo_ != null) {
+        output.writeMessage(9, getRawExtInfo());
       }
-      if (hbaseLikeExtra_ != null) {
-        output.writeMessage(10, getHbaseLikeExtra());
+      if (hbaseLikeExtInfo_ != null) {
+        output.writeMessage(10, getHbaseLikeExtInfo());
       }
       unknownFields.writeTo(output);
     }
@@ -6756,9 +6846,6 @@ public final class TiapAdminrpcpb {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(3, dbId_);
       }
-      if (!getTokenBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, token_);
-      }
       if (type_ != com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableType.TableType_Invalid.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(5, type_);
@@ -6773,19 +6860,19 @@ public final class TiapAdminrpcpb {
       }
       {
         int dataSize = 0;
-        for (int i = 0; i < comment_.size(); i++) {
-          dataSize += computeStringSizeNoTag(comment_.getRaw(i));
+        for (int i = 0; i < comments_.size(); i++) {
+          dataSize += computeStringSizeNoTag(comments_.getRaw(i));
         }
         size += dataSize;
-        size += 1 * getCommentList().size();
+        size += 1 * getCommentsList().size();
       }
-      if (rawExtra_ != null) {
+      if (rawExtInfo_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, getRawExtra());
+          .computeMessageSize(9, getRawExtInfo());
       }
-      if (hbaseLikeExtra_ != null) {
+      if (hbaseLikeExtInfo_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, getHbaseLikeExtra());
+          .computeMessageSize(10, getHbaseLikeExtInfo());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -6808,8 +6895,6 @@ public final class TiapAdminrpcpb {
           != other.getId()) return false;
       if (getDbId()
           != other.getDbId()) return false;
-      if (!getToken()
-          .equals(other.getToken())) return false;
       if (type_ != other.type_) return false;
       if (state_ != other.state_) return false;
       if (hasQuota() != other.hasQuota()) return false;
@@ -6817,17 +6902,17 @@ public final class TiapAdminrpcpb {
         if (!getQuota()
             .equals(other.getQuota())) return false;
       }
-      if (!getCommentList()
-          .equals(other.getCommentList())) return false;
-      if (hasRawExtra() != other.hasRawExtra()) return false;
-      if (hasRawExtra()) {
-        if (!getRawExtra()
-            .equals(other.getRawExtra())) return false;
+      if (!getCommentsList()
+          .equals(other.getCommentsList())) return false;
+      if (hasRawExtInfo() != other.hasRawExtInfo()) return false;
+      if (hasRawExtInfo()) {
+        if (!getRawExtInfo()
+            .equals(other.getRawExtInfo())) return false;
       }
-      if (hasHbaseLikeExtra() != other.hasHbaseLikeExtra()) return false;
-      if (hasHbaseLikeExtra()) {
-        if (!getHbaseLikeExtra()
-            .equals(other.getHbaseLikeExtra())) return false;
+      if (hasHbaseLikeExtInfo() != other.hasHbaseLikeExtInfo()) return false;
+      if (hasHbaseLikeExtInfo()) {
+        if (!getHbaseLikeExtInfo()
+            .equals(other.getHbaseLikeExtInfo())) return false;
       }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -6848,8 +6933,6 @@ public final class TiapAdminrpcpb {
       hash = (37 * hash) + DB_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getDbId());
-      hash = (37 * hash) + TOKEN_FIELD_NUMBER;
-      hash = (53 * hash) + getToken().hashCode();
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
       hash = (53 * hash) + type_;
       hash = (37 * hash) + STATE_FIELD_NUMBER;
@@ -6858,17 +6941,17 @@ public final class TiapAdminrpcpb {
         hash = (37 * hash) + QUOTA_FIELD_NUMBER;
         hash = (53 * hash) + getQuota().hashCode();
       }
-      if (getCommentCount() > 0) {
-        hash = (37 * hash) + COMMENT_FIELD_NUMBER;
-        hash = (53 * hash) + getCommentList().hashCode();
+      if (getCommentsCount() > 0) {
+        hash = (37 * hash) + COMMENTS_FIELD_NUMBER;
+        hash = (53 * hash) + getCommentsList().hashCode();
       }
-      if (hasRawExtra()) {
-        hash = (37 * hash) + RAW_EXTRA_FIELD_NUMBER;
-        hash = (53 * hash) + getRawExtra().hashCode();
+      if (hasRawExtInfo()) {
+        hash = (37 * hash) + RAW_EXT_INFO_FIELD_NUMBER;
+        hash = (53 * hash) + getRawExtInfo().hashCode();
       }
-      if (hasHbaseLikeExtra()) {
-        hash = (37 * hash) + HBASE_LIKE_EXTRA_FIELD_NUMBER;
-        hash = (53 * hash) + getHbaseLikeExtra().hashCode();
+      if (hasHbaseLikeExtInfo()) {
+        hash = (37 * hash) + HBASE_LIKE_EXT_INFO_FIELD_NUMBER;
+        hash = (53 * hash) + getHbaseLikeExtInfo().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -7009,8 +7092,6 @@ public final class TiapAdminrpcpb {
 
         dbId_ = 0L;
 
-        token_ = "";
-
         type_ = 0;
 
         state_ = 0;
@@ -7021,19 +7102,19 @@ public final class TiapAdminrpcpb {
           quota_ = null;
           quotaBuilder_ = null;
         }
-        comment_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        comments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
-        if (rawExtraBuilder_ == null) {
-          rawExtra_ = null;
+        if (rawExtInfoBuilder_ == null) {
+          rawExtInfo_ = null;
         } else {
-          rawExtra_ = null;
-          rawExtraBuilder_ = null;
+          rawExtInfo_ = null;
+          rawExtInfoBuilder_ = null;
         }
-        if (hbaseLikeExtraBuilder_ == null) {
-          hbaseLikeExtra_ = null;
+        if (hbaseLikeExtInfoBuilder_ == null) {
+          hbaseLikeExtInfo_ = null;
         } else {
-          hbaseLikeExtra_ = null;
-          hbaseLikeExtraBuilder_ = null;
+          hbaseLikeExtInfo_ = null;
+          hbaseLikeExtInfoBuilder_ = null;
         }
         return this;
       }
@@ -7065,7 +7146,6 @@ public final class TiapAdminrpcpb {
         result.name_ = name_;
         result.id_ = id_;
         result.dbId_ = dbId_;
-        result.token_ = token_;
         result.type_ = type_;
         result.state_ = state_;
         if (quotaBuilder_ == null) {
@@ -7074,19 +7154,19 @@ public final class TiapAdminrpcpb {
           result.quota_ = quotaBuilder_.build();
         }
         if (((bitField0_ & 0x00000001) != 0)) {
-          comment_ = comment_.getUnmodifiableView();
+          comments_ = comments_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
-        result.comment_ = comment_;
-        if (rawExtraBuilder_ == null) {
-          result.rawExtra_ = rawExtra_;
+        result.comments_ = comments_;
+        if (rawExtInfoBuilder_ == null) {
+          result.rawExtInfo_ = rawExtInfo_;
         } else {
-          result.rawExtra_ = rawExtraBuilder_.build();
+          result.rawExtInfo_ = rawExtInfoBuilder_.build();
         }
-        if (hbaseLikeExtraBuilder_ == null) {
-          result.hbaseLikeExtra_ = hbaseLikeExtra_;
+        if (hbaseLikeExtInfoBuilder_ == null) {
+          result.hbaseLikeExtInfo_ = hbaseLikeExtInfo_;
         } else {
-          result.hbaseLikeExtra_ = hbaseLikeExtraBuilder_.build();
+          result.hbaseLikeExtInfo_ = hbaseLikeExtInfoBuilder_.build();
         }
         onBuilt();
         return result;
@@ -7146,10 +7226,6 @@ public final class TiapAdminrpcpb {
         if (other.getDbId() != 0L) {
           setDbId(other.getDbId());
         }
-        if (!other.getToken().isEmpty()) {
-          token_ = other.token_;
-          onChanged();
-        }
         if (other.type_ != 0) {
           setTypeValue(other.getTypeValue());
         }
@@ -7159,21 +7235,21 @@ public final class TiapAdminrpcpb {
         if (other.hasQuota()) {
           mergeQuota(other.getQuota());
         }
-        if (!other.comment_.isEmpty()) {
-          if (comment_.isEmpty()) {
-            comment_ = other.comment_;
+        if (!other.comments_.isEmpty()) {
+          if (comments_.isEmpty()) {
+            comments_ = other.comments_;
             bitField0_ = (bitField0_ & ~0x00000001);
           } else {
-            ensureCommentIsMutable();
-            comment_.addAll(other.comment_);
+            ensureCommentsIsMutable();
+            comments_.addAll(other.comments_);
           }
           onChanged();
         }
-        if (other.hasRawExtra()) {
-          mergeRawExtra(other.getRawExtra());
+        if (other.hasRawExtInfo()) {
+          mergeRawExtInfo(other.getRawExtInfo());
         }
-        if (other.hasHbaseLikeExtra()) {
-          mergeHbaseLikeExtra(other.getHbaseLikeExtra());
+        if (other.hasHbaseLikeExtInfo()) {
+          mergeHbaseLikeExtInfo(other.getHbaseLikeExtInfo());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -7339,82 +7415,6 @@ public final class TiapAdminrpcpb {
       public Builder clearDbId() {
         
         dbId_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object token_ = "";
-      /**
-       * <code>string token = 4;</code>
-       * @return The token.
-       */
-      public java.lang.String getToken() {
-        java.lang.Object ref = token_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          token_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string token = 4;</code>
-       * @return The bytes for token.
-       */
-      public com.google.protobuf.ByteString
-          getTokenBytes() {
-        java.lang.Object ref = token_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          token_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string token = 4;</code>
-       * @param value The token to set.
-       * @return This builder for chaining.
-       */
-      public Builder setToken(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        token_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string token = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearToken() {
-        
-        token_ = getDefaultInstance().getToken();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string token = 4;</code>
-       * @param value The bytes for token to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTokenBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        token_ = value;
         onChanged();
         return this;
       }
@@ -7646,352 +7646,352 @@ public final class TiapAdminrpcpb {
         return quotaBuilder_;
       }
 
-      private com.google.protobuf.LazyStringList comment_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      private void ensureCommentIsMutable() {
+      private com.google.protobuf.LazyStringList comments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureCommentsIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          comment_ = new com.google.protobuf.LazyStringArrayList(comment_);
+          comments_ = new com.google.protobuf.LazyStringArrayList(comments_);
           bitField0_ |= 0x00000001;
          }
       }
       /**
-       * <code>repeated string comment = 8;</code>
-       * @return A list containing the comment.
+       * <code>repeated string comments = 8;</code>
+       * @return A list containing the comments.
        */
       public com.google.protobuf.ProtocolStringList
-          getCommentList() {
-        return comment_.getUnmodifiableView();
+          getCommentsList() {
+        return comments_.getUnmodifiableView();
       }
       /**
-       * <code>repeated string comment = 8;</code>
-       * @return The count of comment.
+       * <code>repeated string comments = 8;</code>
+       * @return The count of comments.
        */
-      public int getCommentCount() {
-        return comment_.size();
+      public int getCommentsCount() {
+        return comments_.size();
       }
       /**
-       * <code>repeated string comment = 8;</code>
+       * <code>repeated string comments = 8;</code>
        * @param index The index of the element to return.
-       * @return The comment at the given index.
+       * @return The comments at the given index.
        */
-      public java.lang.String getComment(int index) {
-        return comment_.get(index);
+      public java.lang.String getComments(int index) {
+        return comments_.get(index);
       }
       /**
-       * <code>repeated string comment = 8;</code>
+       * <code>repeated string comments = 8;</code>
        * @param index The index of the value to return.
-       * @return The bytes of the comment at the given index.
+       * @return The bytes of the comments at the given index.
        */
       public com.google.protobuf.ByteString
-          getCommentBytes(int index) {
-        return comment_.getByteString(index);
+          getCommentsBytes(int index) {
+        return comments_.getByteString(index);
       }
       /**
-       * <code>repeated string comment = 8;</code>
+       * <code>repeated string comments = 8;</code>
        * @param index The index to set the value at.
-       * @param value The comment to set.
+       * @param value The comments to set.
        * @return This builder for chaining.
        */
-      public Builder setComment(
+      public Builder setComments(
           int index, java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  ensureCommentIsMutable();
-        comment_.set(index, value);
+  ensureCommentsIsMutable();
+        comments_.set(index, value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated string comment = 8;</code>
-       * @param value The comment to add.
+       * <code>repeated string comments = 8;</code>
+       * @param value The comments to add.
        * @return This builder for chaining.
        */
-      public Builder addComment(
+      public Builder addComments(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  ensureCommentIsMutable();
-        comment_.add(value);
+  ensureCommentsIsMutable();
+        comments_.add(value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated string comment = 8;</code>
-       * @param values The comment to add.
+       * <code>repeated string comments = 8;</code>
+       * @param values The comments to add.
        * @return This builder for chaining.
        */
-      public Builder addAllComment(
+      public Builder addAllComments(
           java.lang.Iterable<java.lang.String> values) {
-        ensureCommentIsMutable();
+        ensureCommentsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, comment_);
+            values, comments_);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated string comment = 8;</code>
+       * <code>repeated string comments = 8;</code>
        * @return This builder for chaining.
        */
-      public Builder clearComment() {
-        comment_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      public Builder clearComments() {
+        comments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated string comment = 8;</code>
-       * @param value The bytes of the comment to add.
+       * <code>repeated string comments = 8;</code>
+       * @param value The bytes of the comments to add.
        * @return This builder for chaining.
        */
-      public Builder addCommentBytes(
+      public Builder addCommentsBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        ensureCommentIsMutable();
-        comment_.add(value);
+        ensureCommentsIsMutable();
+        comments_.add(value);
         onChanged();
         return this;
       }
 
-      private com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtraInfo rawExtra_;
+      private com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtendInfo rawExtInfo_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtraInfo, com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtraInfo.Builder, com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtraInfoOrBuilder> rawExtraBuilder_;
+          com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtendInfo, com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtendInfo.Builder, com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtendInfoOrBuilder> rawExtInfoBuilder_;
       /**
-       * <code>.tiap_adminrpcpb.RawTableExtraInfo raw_extra = 9;</code>
-       * @return Whether the rawExtra field is set.
+       * <code>.tiap_adminrpcpb.RawTableExtendInfo raw_ext_info = 9;</code>
+       * @return Whether the rawExtInfo field is set.
        */
-      public boolean hasRawExtra() {
-        return rawExtraBuilder_ != null || rawExtra_ != null;
+      public boolean hasRawExtInfo() {
+        return rawExtInfoBuilder_ != null || rawExtInfo_ != null;
       }
       /**
-       * <code>.tiap_adminrpcpb.RawTableExtraInfo raw_extra = 9;</code>
-       * @return The rawExtra.
+       * <code>.tiap_adminrpcpb.RawTableExtendInfo raw_ext_info = 9;</code>
+       * @return The rawExtInfo.
        */
-      public com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtraInfo getRawExtra() {
-        if (rawExtraBuilder_ == null) {
-          return rawExtra_ == null ? com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtraInfo.getDefaultInstance() : rawExtra_;
+      public com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtendInfo getRawExtInfo() {
+        if (rawExtInfoBuilder_ == null) {
+          return rawExtInfo_ == null ? com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtendInfo.getDefaultInstance() : rawExtInfo_;
         } else {
-          return rawExtraBuilder_.getMessage();
+          return rawExtInfoBuilder_.getMessage();
         }
       }
       /**
-       * <code>.tiap_adminrpcpb.RawTableExtraInfo raw_extra = 9;</code>
+       * <code>.tiap_adminrpcpb.RawTableExtendInfo raw_ext_info = 9;</code>
        */
-      public Builder setRawExtra(com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtraInfo value) {
-        if (rawExtraBuilder_ == null) {
+      public Builder setRawExtInfo(com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtendInfo value) {
+        if (rawExtInfoBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          rawExtra_ = value;
+          rawExtInfo_ = value;
           onChanged();
         } else {
-          rawExtraBuilder_.setMessage(value);
+          rawExtInfoBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
-       * <code>.tiap_adminrpcpb.RawTableExtraInfo raw_extra = 9;</code>
+       * <code>.tiap_adminrpcpb.RawTableExtendInfo raw_ext_info = 9;</code>
        */
-      public Builder setRawExtra(
-          com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtraInfo.Builder builderForValue) {
-        if (rawExtraBuilder_ == null) {
-          rawExtra_ = builderForValue.build();
+      public Builder setRawExtInfo(
+          com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtendInfo.Builder builderForValue) {
+        if (rawExtInfoBuilder_ == null) {
+          rawExtInfo_ = builderForValue.build();
           onChanged();
         } else {
-          rawExtraBuilder_.setMessage(builderForValue.build());
+          rawExtInfoBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
-       * <code>.tiap_adminrpcpb.RawTableExtraInfo raw_extra = 9;</code>
+       * <code>.tiap_adminrpcpb.RawTableExtendInfo raw_ext_info = 9;</code>
        */
-      public Builder mergeRawExtra(com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtraInfo value) {
-        if (rawExtraBuilder_ == null) {
-          if (rawExtra_ != null) {
-            rawExtra_ =
-              com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtraInfo.newBuilder(rawExtra_).mergeFrom(value).buildPartial();
+      public Builder mergeRawExtInfo(com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtendInfo value) {
+        if (rawExtInfoBuilder_ == null) {
+          if (rawExtInfo_ != null) {
+            rawExtInfo_ =
+              com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtendInfo.newBuilder(rawExtInfo_).mergeFrom(value).buildPartial();
           } else {
-            rawExtra_ = value;
+            rawExtInfo_ = value;
           }
           onChanged();
         } else {
-          rawExtraBuilder_.mergeFrom(value);
+          rawExtInfoBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
-       * <code>.tiap_adminrpcpb.RawTableExtraInfo raw_extra = 9;</code>
+       * <code>.tiap_adminrpcpb.RawTableExtendInfo raw_ext_info = 9;</code>
        */
-      public Builder clearRawExtra() {
-        if (rawExtraBuilder_ == null) {
-          rawExtra_ = null;
+      public Builder clearRawExtInfo() {
+        if (rawExtInfoBuilder_ == null) {
+          rawExtInfo_ = null;
           onChanged();
         } else {
-          rawExtra_ = null;
-          rawExtraBuilder_ = null;
+          rawExtInfo_ = null;
+          rawExtInfoBuilder_ = null;
         }
 
         return this;
       }
       /**
-       * <code>.tiap_adminrpcpb.RawTableExtraInfo raw_extra = 9;</code>
+       * <code>.tiap_adminrpcpb.RawTableExtendInfo raw_ext_info = 9;</code>
        */
-      public com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtraInfo.Builder getRawExtraBuilder() {
+      public com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtendInfo.Builder getRawExtInfoBuilder() {
         
         onChanged();
-        return getRawExtraFieldBuilder().getBuilder();
+        return getRawExtInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>.tiap_adminrpcpb.RawTableExtraInfo raw_extra = 9;</code>
+       * <code>.tiap_adminrpcpb.RawTableExtendInfo raw_ext_info = 9;</code>
        */
-      public com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtraInfoOrBuilder getRawExtraOrBuilder() {
-        if (rawExtraBuilder_ != null) {
-          return rawExtraBuilder_.getMessageOrBuilder();
+      public com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtendInfoOrBuilder getRawExtInfoOrBuilder() {
+        if (rawExtInfoBuilder_ != null) {
+          return rawExtInfoBuilder_.getMessageOrBuilder();
         } else {
-          return rawExtra_ == null ?
-              com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtraInfo.getDefaultInstance() : rawExtra_;
+          return rawExtInfo_ == null ?
+              com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtendInfo.getDefaultInstance() : rawExtInfo_;
         }
       }
       /**
-       * <code>.tiap_adminrpcpb.RawTableExtraInfo raw_extra = 9;</code>
+       * <code>.tiap_adminrpcpb.RawTableExtendInfo raw_ext_info = 9;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtraInfo, com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtraInfo.Builder, com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtraInfoOrBuilder> 
-          getRawExtraFieldBuilder() {
-        if (rawExtraBuilder_ == null) {
-          rawExtraBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtraInfo, com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtraInfo.Builder, com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtraInfoOrBuilder>(
-                  getRawExtra(),
+          com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtendInfo, com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtendInfo.Builder, com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtendInfoOrBuilder> 
+          getRawExtInfoFieldBuilder() {
+        if (rawExtInfoBuilder_ == null) {
+          rawExtInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtendInfo, com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtendInfo.Builder, com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtendInfoOrBuilder>(
+                  getRawExtInfo(),
                   getParentForChildren(),
                   isClean());
-          rawExtra_ = null;
+          rawExtInfo_ = null;
         }
-        return rawExtraBuilder_;
+        return rawExtInfoBuilder_;
       }
 
-      private com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableInfo hbaseLikeExtra_;
+      private com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableExtendInfo hbaseLikeExtInfo_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableInfo, com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableInfo.Builder, com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableInfoOrBuilder> hbaseLikeExtraBuilder_;
+          com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableExtendInfo, com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableExtendInfo.Builder, com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableExtendInfoOrBuilder> hbaseLikeExtInfoBuilder_;
       /**
-       * <code>.tiap_adminrpcpb.HBaseLikeTableInfo hbase_like_extra = 10;</code>
-       * @return Whether the hbaseLikeExtra field is set.
+       * <code>.tiap_adminrpcpb.HBaseLikeTableExtendInfo hbase_like_ext_info = 10;</code>
+       * @return Whether the hbaseLikeExtInfo field is set.
        */
-      public boolean hasHbaseLikeExtra() {
-        return hbaseLikeExtraBuilder_ != null || hbaseLikeExtra_ != null;
+      public boolean hasHbaseLikeExtInfo() {
+        return hbaseLikeExtInfoBuilder_ != null || hbaseLikeExtInfo_ != null;
       }
       /**
-       * <code>.tiap_adminrpcpb.HBaseLikeTableInfo hbase_like_extra = 10;</code>
-       * @return The hbaseLikeExtra.
+       * <code>.tiap_adminrpcpb.HBaseLikeTableExtendInfo hbase_like_ext_info = 10;</code>
+       * @return The hbaseLikeExtInfo.
        */
-      public com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableInfo getHbaseLikeExtra() {
-        if (hbaseLikeExtraBuilder_ == null) {
-          return hbaseLikeExtra_ == null ? com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableInfo.getDefaultInstance() : hbaseLikeExtra_;
+      public com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableExtendInfo getHbaseLikeExtInfo() {
+        if (hbaseLikeExtInfoBuilder_ == null) {
+          return hbaseLikeExtInfo_ == null ? com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableExtendInfo.getDefaultInstance() : hbaseLikeExtInfo_;
         } else {
-          return hbaseLikeExtraBuilder_.getMessage();
+          return hbaseLikeExtInfoBuilder_.getMessage();
         }
       }
       /**
-       * <code>.tiap_adminrpcpb.HBaseLikeTableInfo hbase_like_extra = 10;</code>
+       * <code>.tiap_adminrpcpb.HBaseLikeTableExtendInfo hbase_like_ext_info = 10;</code>
        */
-      public Builder setHbaseLikeExtra(com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableInfo value) {
-        if (hbaseLikeExtraBuilder_ == null) {
+      public Builder setHbaseLikeExtInfo(com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableExtendInfo value) {
+        if (hbaseLikeExtInfoBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          hbaseLikeExtra_ = value;
+          hbaseLikeExtInfo_ = value;
           onChanged();
         } else {
-          hbaseLikeExtraBuilder_.setMessage(value);
+          hbaseLikeExtInfoBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
-       * <code>.tiap_adminrpcpb.HBaseLikeTableInfo hbase_like_extra = 10;</code>
+       * <code>.tiap_adminrpcpb.HBaseLikeTableExtendInfo hbase_like_ext_info = 10;</code>
        */
-      public Builder setHbaseLikeExtra(
-          com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableInfo.Builder builderForValue) {
-        if (hbaseLikeExtraBuilder_ == null) {
-          hbaseLikeExtra_ = builderForValue.build();
+      public Builder setHbaseLikeExtInfo(
+          com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableExtendInfo.Builder builderForValue) {
+        if (hbaseLikeExtInfoBuilder_ == null) {
+          hbaseLikeExtInfo_ = builderForValue.build();
           onChanged();
         } else {
-          hbaseLikeExtraBuilder_.setMessage(builderForValue.build());
+          hbaseLikeExtInfoBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
-       * <code>.tiap_adminrpcpb.HBaseLikeTableInfo hbase_like_extra = 10;</code>
+       * <code>.tiap_adminrpcpb.HBaseLikeTableExtendInfo hbase_like_ext_info = 10;</code>
        */
-      public Builder mergeHbaseLikeExtra(com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableInfo value) {
-        if (hbaseLikeExtraBuilder_ == null) {
-          if (hbaseLikeExtra_ != null) {
-            hbaseLikeExtra_ =
-              com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableInfo.newBuilder(hbaseLikeExtra_).mergeFrom(value).buildPartial();
+      public Builder mergeHbaseLikeExtInfo(com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableExtendInfo value) {
+        if (hbaseLikeExtInfoBuilder_ == null) {
+          if (hbaseLikeExtInfo_ != null) {
+            hbaseLikeExtInfo_ =
+              com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableExtendInfo.newBuilder(hbaseLikeExtInfo_).mergeFrom(value).buildPartial();
           } else {
-            hbaseLikeExtra_ = value;
+            hbaseLikeExtInfo_ = value;
           }
           onChanged();
         } else {
-          hbaseLikeExtraBuilder_.mergeFrom(value);
+          hbaseLikeExtInfoBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
-       * <code>.tiap_adminrpcpb.HBaseLikeTableInfo hbase_like_extra = 10;</code>
+       * <code>.tiap_adminrpcpb.HBaseLikeTableExtendInfo hbase_like_ext_info = 10;</code>
        */
-      public Builder clearHbaseLikeExtra() {
-        if (hbaseLikeExtraBuilder_ == null) {
-          hbaseLikeExtra_ = null;
+      public Builder clearHbaseLikeExtInfo() {
+        if (hbaseLikeExtInfoBuilder_ == null) {
+          hbaseLikeExtInfo_ = null;
           onChanged();
         } else {
-          hbaseLikeExtra_ = null;
-          hbaseLikeExtraBuilder_ = null;
+          hbaseLikeExtInfo_ = null;
+          hbaseLikeExtInfoBuilder_ = null;
         }
 
         return this;
       }
       /**
-       * <code>.tiap_adminrpcpb.HBaseLikeTableInfo hbase_like_extra = 10;</code>
+       * <code>.tiap_adminrpcpb.HBaseLikeTableExtendInfo hbase_like_ext_info = 10;</code>
        */
-      public com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableInfo.Builder getHbaseLikeExtraBuilder() {
+      public com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableExtendInfo.Builder getHbaseLikeExtInfoBuilder() {
         
         onChanged();
-        return getHbaseLikeExtraFieldBuilder().getBuilder();
+        return getHbaseLikeExtInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>.tiap_adminrpcpb.HBaseLikeTableInfo hbase_like_extra = 10;</code>
+       * <code>.tiap_adminrpcpb.HBaseLikeTableExtendInfo hbase_like_ext_info = 10;</code>
        */
-      public com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableInfoOrBuilder getHbaseLikeExtraOrBuilder() {
-        if (hbaseLikeExtraBuilder_ != null) {
-          return hbaseLikeExtraBuilder_.getMessageOrBuilder();
+      public com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableExtendInfoOrBuilder getHbaseLikeExtInfoOrBuilder() {
+        if (hbaseLikeExtInfoBuilder_ != null) {
+          return hbaseLikeExtInfoBuilder_.getMessageOrBuilder();
         } else {
-          return hbaseLikeExtra_ == null ?
-              com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableInfo.getDefaultInstance() : hbaseLikeExtra_;
+          return hbaseLikeExtInfo_ == null ?
+              com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableExtendInfo.getDefaultInstance() : hbaseLikeExtInfo_;
         }
       }
       /**
-       * <code>.tiap_adminrpcpb.HBaseLikeTableInfo hbase_like_extra = 10;</code>
+       * <code>.tiap_adminrpcpb.HBaseLikeTableExtendInfo hbase_like_ext_info = 10;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableInfo, com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableInfo.Builder, com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableInfoOrBuilder> 
-          getHbaseLikeExtraFieldBuilder() {
-        if (hbaseLikeExtraBuilder_ == null) {
-          hbaseLikeExtraBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableInfo, com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableInfo.Builder, com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableInfoOrBuilder>(
-                  getHbaseLikeExtra(),
+          com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableExtendInfo, com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableExtendInfo.Builder, com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableExtendInfoOrBuilder> 
+          getHbaseLikeExtInfoFieldBuilder() {
+        if (hbaseLikeExtInfoBuilder_ == null) {
+          hbaseLikeExtInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableExtendInfo, com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableExtendInfo.Builder, com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableExtendInfoOrBuilder>(
+                  getHbaseLikeExtInfo(),
                   getParentForChildren(),
                   isClean());
-          hbaseLikeExtra_ = null;
+          hbaseLikeExtInfo_ = null;
         }
-        return hbaseLikeExtraBuilder_;
+        return hbaseLikeExtInfoBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -8046,30 +8046,30 @@ public final class TiapAdminrpcpb {
 
   }
 
-  public interface RawTableExtraInfoOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:tiap_adminrpcpb.RawTableExtraInfo)
+  public interface RawTableExtendInfoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:tiap_adminrpcpb.RawTableExtendInfo)
       com.google.protobuf.MessageOrBuilder {
   }
   /**
-   * Protobuf type {@code tiap_adminrpcpb.RawTableExtraInfo}
+   * Protobuf type {@code tiap_adminrpcpb.RawTableExtendInfo}
    */
-  public static final class RawTableExtraInfo extends
+  public static final class RawTableExtendInfo extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:tiap_adminrpcpb.RawTableExtraInfo)
-      RawTableExtraInfoOrBuilder {
+      // @@protoc_insertion_point(message_implements:tiap_adminrpcpb.RawTableExtendInfo)
+      RawTableExtendInfoOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use RawTableExtraInfo.newBuilder() to construct.
-    private RawTableExtraInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use RawTableExtendInfo.newBuilder() to construct.
+    private RawTableExtendInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private RawTableExtraInfo() {
+    private RawTableExtendInfo() {
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new RawTableExtraInfo();
+      return new RawTableExtendInfo();
     }
 
     @java.lang.Override
@@ -8077,7 +8077,7 @@ public final class TiapAdminrpcpb {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private RawTableExtraInfo(
+    private RawTableExtendInfo(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -8116,15 +8116,15 @@ public final class TiapAdminrpcpb {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.shopee.di.kvstore.proto.TiapAdminrpcpb.internal_static_tiap_adminrpcpb_RawTableExtraInfo_descriptor;
+      return com.shopee.di.kvstore.proto.TiapAdminrpcpb.internal_static_tiap_adminrpcpb_RawTableExtendInfo_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.shopee.di.kvstore.proto.TiapAdminrpcpb.internal_static_tiap_adminrpcpb_RawTableExtraInfo_fieldAccessorTable
+      return com.shopee.di.kvstore.proto.TiapAdminrpcpb.internal_static_tiap_adminrpcpb_RawTableExtendInfo_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtraInfo.class, com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtraInfo.Builder.class);
+              com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtendInfo.class, com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtendInfo.Builder.class);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -8160,10 +8160,10 @@ public final class TiapAdminrpcpb {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtraInfo)) {
+      if (!(obj instanceof com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtendInfo)) {
         return super.equals(obj);
       }
-      com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtraInfo other = (com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtraInfo) obj;
+      com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtendInfo other = (com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtendInfo) obj;
 
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -8181,69 +8181,69 @@ public final class TiapAdminrpcpb {
       return hash;
     }
 
-    public static com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtraInfo parseFrom(
+    public static com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtendInfo parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtraInfo parseFrom(
+    public static com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtendInfo parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtraInfo parseFrom(
+    public static com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtendInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtraInfo parseFrom(
+    public static com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtendInfo parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtraInfo parseFrom(byte[] data)
+    public static com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtendInfo parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtraInfo parseFrom(
+    public static com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtendInfo parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtraInfo parseFrom(java.io.InputStream input)
+    public static com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtendInfo parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtraInfo parseFrom(
+    public static com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtendInfo parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtraInfo parseDelimitedFrom(java.io.InputStream input)
+    public static com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtendInfo parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtraInfo parseDelimitedFrom(
+    public static com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtendInfo parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtraInfo parseFrom(
+    public static com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtendInfo parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtraInfo parseFrom(
+    public static com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtendInfo parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -8256,7 +8256,7 @@ public final class TiapAdminrpcpb {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtraInfo prototype) {
+    public static Builder newBuilder(com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtendInfo prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -8272,26 +8272,26 @@ public final class TiapAdminrpcpb {
       return builder;
     }
     /**
-     * Protobuf type {@code tiap_adminrpcpb.RawTableExtraInfo}
+     * Protobuf type {@code tiap_adminrpcpb.RawTableExtendInfo}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:tiap_adminrpcpb.RawTableExtraInfo)
-        com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtraInfoOrBuilder {
+        // @@protoc_insertion_point(builder_implements:tiap_adminrpcpb.RawTableExtendInfo)
+        com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtendInfoOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.shopee.di.kvstore.proto.TiapAdminrpcpb.internal_static_tiap_adminrpcpb_RawTableExtraInfo_descriptor;
+        return com.shopee.di.kvstore.proto.TiapAdminrpcpb.internal_static_tiap_adminrpcpb_RawTableExtendInfo_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.shopee.di.kvstore.proto.TiapAdminrpcpb.internal_static_tiap_adminrpcpb_RawTableExtraInfo_fieldAccessorTable
+        return com.shopee.di.kvstore.proto.TiapAdminrpcpb.internal_static_tiap_adminrpcpb_RawTableExtendInfo_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtraInfo.class, com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtraInfo.Builder.class);
+                com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtendInfo.class, com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtendInfo.Builder.class);
       }
 
-      // Construct using com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtraInfo.newBuilder()
+      // Construct using com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtendInfo.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -8315,17 +8315,17 @@ public final class TiapAdminrpcpb {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.shopee.di.kvstore.proto.TiapAdminrpcpb.internal_static_tiap_adminrpcpb_RawTableExtraInfo_descriptor;
+        return com.shopee.di.kvstore.proto.TiapAdminrpcpb.internal_static_tiap_adminrpcpb_RawTableExtendInfo_descriptor;
       }
 
       @java.lang.Override
-      public com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtraInfo getDefaultInstanceForType() {
-        return com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtraInfo.getDefaultInstance();
+      public com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtendInfo getDefaultInstanceForType() {
+        return com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtendInfo.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtraInfo build() {
-        com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtraInfo result = buildPartial();
+      public com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtendInfo build() {
+        com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtendInfo result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -8333,8 +8333,8 @@ public final class TiapAdminrpcpb {
       }
 
       @java.lang.Override
-      public com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtraInfo buildPartial() {
-        com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtraInfo result = new com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtraInfo(this);
+      public com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtendInfo buildPartial() {
+        com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtendInfo result = new com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtendInfo(this);
         onBuilt();
         return result;
       }
@@ -8373,16 +8373,16 @@ public final class TiapAdminrpcpb {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtraInfo) {
-          return mergeFrom((com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtraInfo)other);
+        if (other instanceof com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtendInfo) {
+          return mergeFrom((com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtendInfo)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtraInfo other) {
-        if (other == com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtraInfo.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtendInfo other) {
+        if (other == com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtendInfo.getDefaultInstance()) return this;
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -8398,11 +8398,11 @@ public final class TiapAdminrpcpb {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtraInfo parsedMessage = null;
+        com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtendInfo parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtraInfo) e.getUnfinishedMessage();
+          parsedMessage = (com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtendInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -8424,48 +8424,48 @@ public final class TiapAdminrpcpb {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:tiap_adminrpcpb.RawTableExtraInfo)
+      // @@protoc_insertion_point(builder_scope:tiap_adminrpcpb.RawTableExtendInfo)
     }
 
-    // @@protoc_insertion_point(class_scope:tiap_adminrpcpb.RawTableExtraInfo)
-    private static final com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtraInfo DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:tiap_adminrpcpb.RawTableExtendInfo)
+    private static final com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtendInfo DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtraInfo();
+      DEFAULT_INSTANCE = new com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtendInfo();
     }
 
-    public static com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtraInfo getDefaultInstance() {
+    public static com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtendInfo getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<RawTableExtraInfo>
-        PARSER = new com.google.protobuf.AbstractParser<RawTableExtraInfo>() {
+    private static final com.google.protobuf.Parser<RawTableExtendInfo>
+        PARSER = new com.google.protobuf.AbstractParser<RawTableExtendInfo>() {
       @java.lang.Override
-      public RawTableExtraInfo parsePartialFrom(
+      public RawTableExtendInfo parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new RawTableExtraInfo(input, extensionRegistry);
+        return new RawTableExtendInfo(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<RawTableExtraInfo> parser() {
+    public static com.google.protobuf.Parser<RawTableExtendInfo> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<RawTableExtraInfo> getParserForType() {
+    public com.google.protobuf.Parser<RawTableExtendInfo> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtraInfo getDefaultInstanceForType() {
+    public com.shopee.di.kvstore.proto.TiapAdminrpcpb.RawTableExtendInfo getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface HBaseLikeTableInfoOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:tiap_adminrpcpb.HBaseLikeTableInfo)
+  public interface HBaseLikeTableExtendInfoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:tiap_adminrpcpb.HBaseLikeTableExtendInfo)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -8515,25 +8515,25 @@ public final class TiapAdminrpcpb {
     boolean getMultiVersion();
   }
   /**
-   * Protobuf type {@code tiap_adminrpcpb.HBaseLikeTableInfo}
+   * Protobuf type {@code tiap_adminrpcpb.HBaseLikeTableExtendInfo}
    */
-  public static final class HBaseLikeTableInfo extends
+  public static final class HBaseLikeTableExtendInfo extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:tiap_adminrpcpb.HBaseLikeTableInfo)
-      HBaseLikeTableInfoOrBuilder {
+      // @@protoc_insertion_point(message_implements:tiap_adminrpcpb.HBaseLikeTableExtendInfo)
+      HBaseLikeTableExtendInfoOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use HBaseLikeTableInfo.newBuilder() to construct.
-    private HBaseLikeTableInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use HBaseLikeTableExtendInfo.newBuilder() to construct.
+    private HBaseLikeTableExtendInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private HBaseLikeTableInfo() {
+    private HBaseLikeTableExtendInfo() {
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new HBaseLikeTableInfo();
+      return new HBaseLikeTableExtendInfo();
     }
 
     @java.lang.Override
@@ -8541,7 +8541,7 @@ public final class TiapAdminrpcpb {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private HBaseLikeTableInfo(
+    private HBaseLikeTableExtendInfo(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -8604,7 +8604,7 @@ public final class TiapAdminrpcpb {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.shopee.di.kvstore.proto.TiapAdminrpcpb.internal_static_tiap_adminrpcpb_HBaseLikeTableInfo_descriptor;
+      return com.shopee.di.kvstore.proto.TiapAdminrpcpb.internal_static_tiap_adminrpcpb_HBaseLikeTableExtendInfo_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
@@ -8622,9 +8622,9 @@ public final class TiapAdminrpcpb {
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.shopee.di.kvstore.proto.TiapAdminrpcpb.internal_static_tiap_adminrpcpb_HBaseLikeTableInfo_fieldAccessorTable
+      return com.shopee.di.kvstore.proto.TiapAdminrpcpb.internal_static_tiap_adminrpcpb_HBaseLikeTableExtendInfo_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableInfo.class, com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableInfo.Builder.class);
+              com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableExtendInfo.class, com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableExtendInfo.Builder.class);
     }
 
     public static final int FAMILIES_FIELD_NUMBER = 1;
@@ -8633,7 +8633,7 @@ public final class TiapAdminrpcpb {
           java.lang.String, java.lang.String> defaultEntry =
               com.google.protobuf.MapEntry
               .<java.lang.String, java.lang.String>newDefaultInstance(
-                  com.shopee.di.kvstore.proto.TiapAdminrpcpb.internal_static_tiap_adminrpcpb_HBaseLikeTableInfo_FamiliesEntry_descriptor, 
+                  com.shopee.di.kvstore.proto.TiapAdminrpcpb.internal_static_tiap_adminrpcpb_HBaseLikeTableExtendInfo_FamiliesEntry_descriptor, 
                   com.google.protobuf.WireFormat.FieldType.STRING,
                   "",
                   com.google.protobuf.WireFormat.FieldType.STRING,
@@ -8793,10 +8793,10 @@ public final class TiapAdminrpcpb {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableInfo)) {
+      if (!(obj instanceof com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableExtendInfo)) {
         return super.equals(obj);
       }
-      com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableInfo other = (com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableInfo) obj;
+      com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableExtendInfo other = (com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableExtendInfo) obj;
 
       if (!internalGetFamilies().equals(
           other.internalGetFamilies())) return false;
@@ -8830,69 +8830,69 @@ public final class TiapAdminrpcpb {
       return hash;
     }
 
-    public static com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableInfo parseFrom(
+    public static com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableExtendInfo parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableInfo parseFrom(
+    public static com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableExtendInfo parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableInfo parseFrom(
+    public static com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableExtendInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableInfo parseFrom(
+    public static com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableExtendInfo parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableInfo parseFrom(byte[] data)
+    public static com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableExtendInfo parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableInfo parseFrom(
+    public static com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableExtendInfo parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableInfo parseFrom(java.io.InputStream input)
+    public static com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableExtendInfo parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableInfo parseFrom(
+    public static com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableExtendInfo parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableInfo parseDelimitedFrom(java.io.InputStream input)
+    public static com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableExtendInfo parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableInfo parseDelimitedFrom(
+    public static com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableExtendInfo parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableInfo parseFrom(
+    public static com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableExtendInfo parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableInfo parseFrom(
+    public static com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableExtendInfo parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -8905,7 +8905,7 @@ public final class TiapAdminrpcpb {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableInfo prototype) {
+    public static Builder newBuilder(com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableExtendInfo prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -8921,15 +8921,15 @@ public final class TiapAdminrpcpb {
       return builder;
     }
     /**
-     * Protobuf type {@code tiap_adminrpcpb.HBaseLikeTableInfo}
+     * Protobuf type {@code tiap_adminrpcpb.HBaseLikeTableExtendInfo}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:tiap_adminrpcpb.HBaseLikeTableInfo)
-        com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableInfoOrBuilder {
+        // @@protoc_insertion_point(builder_implements:tiap_adminrpcpb.HBaseLikeTableExtendInfo)
+        com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableExtendInfoOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.shopee.di.kvstore.proto.TiapAdminrpcpb.internal_static_tiap_adminrpcpb_HBaseLikeTableInfo_descriptor;
+        return com.shopee.di.kvstore.proto.TiapAdminrpcpb.internal_static_tiap_adminrpcpb_HBaseLikeTableExtendInfo_descriptor;
       }
 
       @SuppressWarnings({"rawtypes"})
@@ -8957,12 +8957,12 @@ public final class TiapAdminrpcpb {
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.shopee.di.kvstore.proto.TiapAdminrpcpb.internal_static_tiap_adminrpcpb_HBaseLikeTableInfo_fieldAccessorTable
+        return com.shopee.di.kvstore.proto.TiapAdminrpcpb.internal_static_tiap_adminrpcpb_HBaseLikeTableExtendInfo_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableInfo.class, com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableInfo.Builder.class);
+                com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableExtendInfo.class, com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableExtendInfo.Builder.class);
       }
 
-      // Construct using com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableInfo.newBuilder()
+      // Construct using com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableExtendInfo.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -8991,17 +8991,17 @@ public final class TiapAdminrpcpb {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.shopee.di.kvstore.proto.TiapAdminrpcpb.internal_static_tiap_adminrpcpb_HBaseLikeTableInfo_descriptor;
+        return com.shopee.di.kvstore.proto.TiapAdminrpcpb.internal_static_tiap_adminrpcpb_HBaseLikeTableExtendInfo_descriptor;
       }
 
       @java.lang.Override
-      public com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableInfo getDefaultInstanceForType() {
-        return com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableInfo.getDefaultInstance();
+      public com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableExtendInfo getDefaultInstanceForType() {
+        return com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableExtendInfo.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableInfo build() {
-        com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableInfo result = buildPartial();
+      public com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableExtendInfo build() {
+        com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableExtendInfo result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -9009,8 +9009,8 @@ public final class TiapAdminrpcpb {
       }
 
       @java.lang.Override
-      public com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableInfo buildPartial() {
-        com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableInfo result = new com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableInfo(this);
+      public com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableExtendInfo buildPartial() {
+        com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableExtendInfo result = new com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableExtendInfo(this);
         int from_bitField0_ = bitField0_;
         result.families_ = internalGetFamilies();
         result.families_.makeImmutable();
@@ -9054,16 +9054,16 @@ public final class TiapAdminrpcpb {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableInfo) {
-          return mergeFrom((com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableInfo)other);
+        if (other instanceof com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableExtendInfo) {
+          return mergeFrom((com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableExtendInfo)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableInfo other) {
-        if (other == com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableInfo.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableExtendInfo other) {
+        if (other == com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableExtendInfo.getDefaultInstance()) return this;
         internalGetMutableFamilies().mergeFrom(
             other.internalGetFamilies());
         if (other.getSalted() != false) {
@@ -9087,11 +9087,11 @@ public final class TiapAdminrpcpb {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableInfo parsedMessage = null;
+        com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableExtendInfo parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableInfo) e.getUnfinishedMessage();
+          parsedMessage = (com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableExtendInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -9304,41 +9304,41 @@ public final class TiapAdminrpcpb {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:tiap_adminrpcpb.HBaseLikeTableInfo)
+      // @@protoc_insertion_point(builder_scope:tiap_adminrpcpb.HBaseLikeTableExtendInfo)
     }
 
-    // @@protoc_insertion_point(class_scope:tiap_adminrpcpb.HBaseLikeTableInfo)
-    private static final com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableInfo DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:tiap_adminrpcpb.HBaseLikeTableExtendInfo)
+    private static final com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableExtendInfo DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableInfo();
+      DEFAULT_INSTANCE = new com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableExtendInfo();
     }
 
-    public static com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableInfo getDefaultInstance() {
+    public static com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableExtendInfo getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<HBaseLikeTableInfo>
-        PARSER = new com.google.protobuf.AbstractParser<HBaseLikeTableInfo>() {
+    private static final com.google.protobuf.Parser<HBaseLikeTableExtendInfo>
+        PARSER = new com.google.protobuf.AbstractParser<HBaseLikeTableExtendInfo>() {
       @java.lang.Override
-      public HBaseLikeTableInfo parsePartialFrom(
+      public HBaseLikeTableExtendInfo parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new HBaseLikeTableInfo(input, extensionRegistry);
+        return new HBaseLikeTableExtendInfo(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<HBaseLikeTableInfo> parser() {
+    public static com.google.protobuf.Parser<HBaseLikeTableExtendInfo> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<HBaseLikeTableInfo> getParserForType() {
+    public com.google.protobuf.Parser<HBaseLikeTableExtendInfo> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableInfo getDefaultInstanceForType() {
+    public com.shopee.di.kvstore.proto.TiapAdminrpcpb.HBaseLikeTableExtendInfo getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -11309,6 +11309,18 @@ public final class TiapAdminrpcpb {
   public interface CreateDBResponseOrBuilder extends
       // @@protoc_insertion_point(interface_extends:tiap_adminrpcpb.CreateDBResponse)
       com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string token = 1;</code>
+     * @return The token.
+     */
+    java.lang.String getToken();
+    /**
+     * <code>string token = 1;</code>
+     * @return The bytes for token.
+     */
+    com.google.protobuf.ByteString
+        getTokenBytes();
   }
   /**
    * Protobuf type {@code tiap_adminrpcpb.CreateDBResponse}
@@ -11323,6 +11335,7 @@ public final class TiapAdminrpcpb {
       super(builder);
     }
     private CreateDBResponse() {
+      token_ = "";
     }
 
     @java.lang.Override
@@ -11355,6 +11368,12 @@ public final class TiapAdminrpcpb {
             case 0:
               done = true;
               break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              token_ = s;
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -11387,6 +11406,44 @@ public final class TiapAdminrpcpb {
               com.shopee.di.kvstore.proto.TiapAdminrpcpb.CreateDBResponse.class, com.shopee.di.kvstore.proto.TiapAdminrpcpb.CreateDBResponse.Builder.class);
     }
 
+    public static final int TOKEN_FIELD_NUMBER = 1;
+    private volatile java.lang.Object token_;
+    /**
+     * <code>string token = 1;</code>
+     * @return The token.
+     */
+    @java.lang.Override
+    public java.lang.String getToken() {
+      java.lang.Object ref = token_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        token_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string token = 1;</code>
+     * @return The bytes for token.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getTokenBytes() {
+      java.lang.Object ref = token_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        token_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -11401,6 +11458,9 @@ public final class TiapAdminrpcpb {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (!getTokenBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, token_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -11410,6 +11470,9 @@ public final class TiapAdminrpcpb {
       if (size != -1) return size;
 
       size = 0;
+      if (!getTokenBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, token_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -11425,6 +11488,8 @@ public final class TiapAdminrpcpb {
       }
       com.shopee.di.kvstore.proto.TiapAdminrpcpb.CreateDBResponse other = (com.shopee.di.kvstore.proto.TiapAdminrpcpb.CreateDBResponse) obj;
 
+      if (!getToken()
+          .equals(other.getToken())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -11436,6 +11501,8 @@ public final class TiapAdminrpcpb {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TOKEN_FIELD_NUMBER;
+      hash = (53 * hash) + getToken().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -11569,6 +11636,8 @@ public final class TiapAdminrpcpb {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        token_ = "";
+
         return this;
       }
 
@@ -11595,6 +11664,7 @@ public final class TiapAdminrpcpb {
       @java.lang.Override
       public com.shopee.di.kvstore.proto.TiapAdminrpcpb.CreateDBResponse buildPartial() {
         com.shopee.di.kvstore.proto.TiapAdminrpcpb.CreateDBResponse result = new com.shopee.di.kvstore.proto.TiapAdminrpcpb.CreateDBResponse(this);
+        result.token_ = token_;
         onBuilt();
         return result;
       }
@@ -11643,6 +11713,10 @@ public final class TiapAdminrpcpb {
 
       public Builder mergeFrom(com.shopee.di.kvstore.proto.TiapAdminrpcpb.CreateDBResponse other) {
         if (other == com.shopee.di.kvstore.proto.TiapAdminrpcpb.CreateDBResponse.getDefaultInstance()) return this;
+        if (!other.getToken().isEmpty()) {
+          token_ = other.token_;
+          onChanged();
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -11669,6 +11743,82 @@ public final class TiapAdminrpcpb {
             mergeFrom(parsedMessage);
           }
         }
+        return this;
+      }
+
+      private java.lang.Object token_ = "";
+      /**
+       * <code>string token = 1;</code>
+       * @return The token.
+       */
+      public java.lang.String getToken() {
+        java.lang.Object ref = token_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          token_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string token = 1;</code>
+       * @return The bytes for token.
+       */
+      public com.google.protobuf.ByteString
+          getTokenBytes() {
+        java.lang.Object ref = token_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          token_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string token = 1;</code>
+       * @param value The token to set.
+       * @return This builder for chaining.
+       */
+      public Builder setToken(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        token_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string token = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearToken() {
+        
+        token_ = getDefaultInstance().getToken();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string token = 1;</code>
+       * @param value The bytes for token to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTokenBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        token_ = value;
+        onChanged();
         return this;
       }
       @java.lang.Override
@@ -15141,20 +15291,20 @@ public final class TiapAdminrpcpb {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_tiap_adminrpcpb_TableInfo_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_tiap_adminrpcpb_RawTableExtraInfo_descriptor;
+    internal_static_tiap_adminrpcpb_RawTableExtendInfo_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_tiap_adminrpcpb_RawTableExtraInfo_fieldAccessorTable;
+      internal_static_tiap_adminrpcpb_RawTableExtendInfo_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_tiap_adminrpcpb_HBaseLikeTableInfo_descriptor;
+    internal_static_tiap_adminrpcpb_HBaseLikeTableExtendInfo_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_tiap_adminrpcpb_HBaseLikeTableInfo_fieldAccessorTable;
+      internal_static_tiap_adminrpcpb_HBaseLikeTableExtendInfo_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_tiap_adminrpcpb_HBaseLikeTableInfo_FamiliesEntry_descriptor;
+    internal_static_tiap_adminrpcpb_HBaseLikeTableExtendInfo_FamiliesEntry_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_tiap_adminrpcpb_HBaseLikeTableInfo_FamiliesEntry_fieldAccessorTable;
+      internal_static_tiap_adminrpcpb_HBaseLikeTableExtendInfo_FamiliesEntry_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_tiap_adminrpcpb_DBQuota_descriptor;
   private static final 
@@ -15233,44 +15383,45 @@ public final class TiapAdminrpcpb {
       "\0229\n\rlist_dbs_resp\030\004 \001(\0132 .tiap_adminrpcp" +
       "b.ListDBsResponseH\000\0227\n\014drop_db_resp\030\005 \001(" +
       "\0132\037.tiap_adminrpcpb.DropDBResponseH\000B\006\n\004" +
-      "resp\"\205\001\n\006DBInfo\022\014\n\004name\030\001 \001(\t\022\n\n\002id\030\002 \001(" +
+      "resp\"\225\001\n\006DBInfo\022\014\n\004name\030\001 \001(\t\022\n\n\002id\030\002 \001(" +
       "\003\022\'\n\005state\030\003 \001(\0162\030.tiap_adminrpcpb.DBSta" +
       "te\022\'\n\005quota\030\004 \001(\0132\030.tiap_adminrpcpb.DBQu" +
-      "ota\022\017\n\007comment\030\005 \003(\t\"\314\002\n\tTableInfo\022\014\n\004na" +
-      "me\030\001 \001(\t\022\n\n\002id\030\002 \001(\003\022\r\n\005db_id\030\003 \001(\003\022\r\n\005t" +
-      "oken\030\004 \001(\t\022(\n\004type\030\005 \001(\0162\032.tiap_adminrpc" +
-      "pb.TableType\022*\n\005state\030\006 \001(\0162\033.tiap_admin" +
-      "rpcpb.TableState\022*\n\005quota\030\007 \001(\0132\033.tiap_a" +
-      "dminrpcpb.TableQuota\022\017\n\007comment\030\010 \003(\t\0225\n" +
-      "\traw_extra\030\t \001(\0132\".tiap_adminrpcpb.RawTa" +
-      "bleExtraInfo\022=\n\020hbase_like_extra\030\n \001(\0132#" +
-      ".tiap_adminrpcpb.HBaseLikeTableInfo\"\023\n\021R" +
-      "awTableExtraInfo\"\261\001\n\022HBaseLikeTableInfo\022" +
-      "C\n\010families\030\001 \003(\01321.tiap_adminrpcpb.HBas" +
-      "eLikeTableInfo.FamiliesEntry\022\016\n\006salted\030\002" +
-      " \001(\010\022\025\n\rmulti_version\030\003 \001(\010\032/\n\rFamiliesE" +
-      "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"J\n\007" +
-      "DBQuota\022\024\n\014table_number\030\001 \001(\004\022\030\n\020storage" +
-      "_capacity\030\002 \001(\004\022\017\n\007max_qps\030\003 \001(\004\"7\n\nTabl" +
-      "eQuota\022\030\n\020storage_capacity\030\001 \001(\004\022\017\n\007max_" +
-      "qps\030\002 \001(\004\"H\n\017CreateDBRequest\022\014\n\004name\030\001 \001" +
-      "(\t\022\'\n\005quota\030\002 \001(\0132\030.tiap_adminrpcpb.DBQu" +
-      "ota\"\022\n\020CreateDBResponse\"\034\n\014GetDBRequest\022" +
-      "\014\n\004name\030\001 \001(\t\"6\n\rGetDBResponse\022%\n\004info\030\001" +
-      " \001(\0132\027.tiap_adminrpcpb.DBInfo\"\020\n\016ListDBs" +
-      "Request\"9\n\017ListDBsResponse\022&\n\005infos\030\001 \003(" +
-      "\0132\027.tiap_adminrpcpb.DBInfo\"\035\n\rDropDBRequ" +
-      "est\022\014\n\004name\030\001 \001(\t\"\020\n\016DropDBResponse*N\n\tT" +
-      "ableType\022\025\n\021TableType_Invalid\020\000\022\021\n\rTable" +
-      "Type_Raw\020\001\022\027\n\023TableType_HBaseLike\020\002*\210\001\n\n" +
-      "TableState\022\027\n\023TableState_Creating\020\000\022\026\n\022T" +
-      "ableState_Created\020\001\022\030\n\024TableState_Tombst" +
-      "one\020\002\022\027\n\023TableState_Deleting\020\003\022\026\n\022TableS" +
-      "tate_Deleted\020\004*v\n\007DBState\022\024\n\020DBState_Cre" +
-      "ating\020\000\022\023\n\017DBState_Created\020\001\022\025\n\021DBState_" +
-      "Tombstone\020\002\022\024\n\020DBState_Deleting\020\003\022\023\n\017DBS" +
-      "tate_Deleted\020\004B\035\n\033com.shopee.di.kvstore." +
-      "protob\006proto3"
+      "ota\022\r\n\005token\030\005 \001(\t\022\020\n\010comments\030\006 \003(\t\"\313\002\n" +
+      "\tTableInfo\022\014\n\004name\030\001 \001(\t\022\n\n\002id\030\002 \001(\003\022\r\n\005" +
+      "db_id\030\003 \001(\003\022(\n\004type\030\005 \001(\0162\032.tiap_adminrp" +
+      "cpb.TableType\022*\n\005state\030\006 \001(\0162\033.tiap_admi" +
+      "nrpcpb.TableState\022*\n\005quota\030\007 \001(\0132\033.tiap_" +
+      "adminrpcpb.TableQuota\022\020\n\010comments\030\010 \003(\t\022" +
+      "9\n\014raw_ext_info\030\t \001(\0132#.tiap_adminrpcpb." +
+      "RawTableExtendInfo\022F\n\023hbase_like_ext_inf" +
+      "o\030\n \001(\0132).tiap_adminrpcpb.HBaseLikeTable" +
+      "ExtendInfo\"\024\n\022RawTableExtendInfo\"\275\001\n\030HBa" +
+      "seLikeTableExtendInfo\022I\n\010families\030\001 \003(\0132" +
+      "7.tiap_adminrpcpb.HBaseLikeTableExtendIn" +
+      "fo.FamiliesEntry\022\016\n\006salted\030\002 \001(\010\022\025\n\rmult" +
+      "i_version\030\003 \001(\010\032/\n\rFamiliesEntry\022\013\n\003key\030" +
+      "\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"J\n\007DBQuota\022\024\n\014t" +
+      "able_number\030\001 \001(\004\022\030\n\020storage_capacity\030\002 " +
+      "\001(\004\022\017\n\007max_qps\030\003 \001(\004\"7\n\nTableQuota\022\030\n\020st" +
+      "orage_capacity\030\001 \001(\004\022\017\n\007max_qps\030\002 \001(\004\"H\n" +
+      "\017CreateDBRequest\022\014\n\004name\030\001 \001(\t\022\'\n\005quota\030" +
+      "\002 \001(\0132\030.tiap_adminrpcpb.DBQuota\"!\n\020Creat" +
+      "eDBResponse\022\r\n\005token\030\001 \001(\t\"\034\n\014GetDBReque" +
+      "st\022\014\n\004name\030\001 \001(\t\"6\n\rGetDBResponse\022%\n\004inf" +
+      "o\030\001 \001(\0132\027.tiap_adminrpcpb.DBInfo\"\020\n\016List" +
+      "DBsRequest\"9\n\017ListDBsResponse\022&\n\005infos\030\001" +
+      " \003(\0132\027.tiap_adminrpcpb.DBInfo\"\035\n\rDropDBR" +
+      "equest\022\014\n\004name\030\001 \001(\t\"\020\n\016DropDBResponse*N" +
+      "\n\tTableType\022\025\n\021TableType_Invalid\020\000\022\021\n\rTa" +
+      "bleType_Raw\020\001\022\027\n\023TableType_HBaseLike\020\002*\210" +
+      "\001\n\nTableState\022\027\n\023TableState_Creating\020\000\022\026" +
+      "\n\022TableState_Created\020\001\022\030\n\024TableState_Tom" +
+      "bstone\020\002\022\027\n\023TableState_Deleting\020\003\022\026\n\022Tab" +
+      "leState_Deleted\020\004*v\n\007DBState\022\024\n\020DBState_" +
+      "Creating\020\000\022\023\n\017DBState_Created\020\001\022\025\n\021DBSta" +
+      "te_Tombstone\020\002\022\024\n\020DBState_Deleting\020\003\022\023\n\017" +
+      "DBState_Deleted\020\004B\035\n\033com.shopee.di.kvsto" +
+      "re.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -15305,30 +15456,30 @@ public final class TiapAdminrpcpb {
     internal_static_tiap_adminrpcpb_DBInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tiap_adminrpcpb_DBInfo_descriptor,
-        new java.lang.String[] { "Name", "Id", "State", "Quota", "Comment", });
+        new java.lang.String[] { "Name", "Id", "State", "Quota", "Token", "Comments", });
     internal_static_tiap_adminrpcpb_TableInfo_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_tiap_adminrpcpb_TableInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tiap_adminrpcpb_TableInfo_descriptor,
-        new java.lang.String[] { "Name", "Id", "DbId", "Token", "Type", "State", "Quota", "Comment", "RawExtra", "HbaseLikeExtra", });
-    internal_static_tiap_adminrpcpb_RawTableExtraInfo_descriptor =
+        new java.lang.String[] { "Name", "Id", "DbId", "Type", "State", "Quota", "Comments", "RawExtInfo", "HbaseLikeExtInfo", });
+    internal_static_tiap_adminrpcpb_RawTableExtendInfo_descriptor =
       getDescriptor().getMessageTypes().get(6);
-    internal_static_tiap_adminrpcpb_RawTableExtraInfo_fieldAccessorTable = new
+    internal_static_tiap_adminrpcpb_RawTableExtendInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_tiap_adminrpcpb_RawTableExtraInfo_descriptor,
+        internal_static_tiap_adminrpcpb_RawTableExtendInfo_descriptor,
         new java.lang.String[] { });
-    internal_static_tiap_adminrpcpb_HBaseLikeTableInfo_descriptor =
+    internal_static_tiap_adminrpcpb_HBaseLikeTableExtendInfo_descriptor =
       getDescriptor().getMessageTypes().get(7);
-    internal_static_tiap_adminrpcpb_HBaseLikeTableInfo_fieldAccessorTable = new
+    internal_static_tiap_adminrpcpb_HBaseLikeTableExtendInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_tiap_adminrpcpb_HBaseLikeTableInfo_descriptor,
+        internal_static_tiap_adminrpcpb_HBaseLikeTableExtendInfo_descriptor,
         new java.lang.String[] { "Families", "Salted", "MultiVersion", });
-    internal_static_tiap_adminrpcpb_HBaseLikeTableInfo_FamiliesEntry_descriptor =
-      internal_static_tiap_adminrpcpb_HBaseLikeTableInfo_descriptor.getNestedTypes().get(0);
-    internal_static_tiap_adminrpcpb_HBaseLikeTableInfo_FamiliesEntry_fieldAccessorTable = new
+    internal_static_tiap_adminrpcpb_HBaseLikeTableExtendInfo_FamiliesEntry_descriptor =
+      internal_static_tiap_adminrpcpb_HBaseLikeTableExtendInfo_descriptor.getNestedTypes().get(0);
+    internal_static_tiap_adminrpcpb_HBaseLikeTableExtendInfo_FamiliesEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_tiap_adminrpcpb_HBaseLikeTableInfo_FamiliesEntry_descriptor,
+        internal_static_tiap_adminrpcpb_HBaseLikeTableExtendInfo_FamiliesEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_tiap_adminrpcpb_DBQuota_descriptor =
       getDescriptor().getMessageTypes().get(8);
@@ -15353,7 +15504,7 @@ public final class TiapAdminrpcpb {
     internal_static_tiap_adminrpcpb_CreateDBResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tiap_adminrpcpb_CreateDBResponse_descriptor,
-        new java.lang.String[] { });
+        new java.lang.String[] { "Token", });
     internal_static_tiap_adminrpcpb_GetDBRequest_descriptor =
       getDescriptor().getMessageTypes().get(12);
     internal_static_tiap_adminrpcpb_GetDBRequest_fieldAccessorTable = new

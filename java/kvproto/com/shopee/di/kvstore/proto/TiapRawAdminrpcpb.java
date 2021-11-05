@@ -4154,18 +4154,6 @@ public final class TiapRawAdminrpcpb {
   public interface CreateTableResponseOrBuilder extends
       // @@protoc_insertion_point(interface_extends:tiap_raw_adminrpcpb.CreateTableResponse)
       com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>string token = 1;</code>
-     * @return The token.
-     */
-    java.lang.String getToken();
-    /**
-     * <code>string token = 1;</code>
-     * @return The bytes for token.
-     */
-    com.google.protobuf.ByteString
-        getTokenBytes();
   }
   /**
    * Protobuf type {@code tiap_raw_adminrpcpb.CreateTableResponse}
@@ -4180,7 +4168,6 @@ public final class TiapRawAdminrpcpb {
       super(builder);
     }
     private CreateTableResponse() {
-      token_ = "";
     }
 
     @java.lang.Override
@@ -4213,12 +4200,6 @@ public final class TiapRawAdminrpcpb {
             case 0:
               done = true;
               break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              token_ = s;
-              break;
-            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -4251,44 +4232,6 @@ public final class TiapRawAdminrpcpb {
               com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.CreateTableResponse.class, com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.CreateTableResponse.Builder.class);
     }
 
-    public static final int TOKEN_FIELD_NUMBER = 1;
-    private volatile java.lang.Object token_;
-    /**
-     * <code>string token = 1;</code>
-     * @return The token.
-     */
-    @java.lang.Override
-    public java.lang.String getToken() {
-      java.lang.Object ref = token_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        token_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string token = 1;</code>
-     * @return The bytes for token.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getTokenBytes() {
-      java.lang.Object ref = token_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        token_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -4303,9 +4246,6 @@ public final class TiapRawAdminrpcpb {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getTokenBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, token_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -4315,9 +4255,6 @@ public final class TiapRawAdminrpcpb {
       if (size != -1) return size;
 
       size = 0;
-      if (!getTokenBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, token_);
-      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -4333,8 +4270,6 @@ public final class TiapRawAdminrpcpb {
       }
       com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.CreateTableResponse other = (com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.CreateTableResponse) obj;
 
-      if (!getToken()
-          .equals(other.getToken())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -4346,8 +4281,6 @@ public final class TiapRawAdminrpcpb {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + TOKEN_FIELD_NUMBER;
-      hash = (53 * hash) + getToken().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -4481,8 +4414,6 @@ public final class TiapRawAdminrpcpb {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        token_ = "";
-
         return this;
       }
 
@@ -4509,7 +4440,6 @@ public final class TiapRawAdminrpcpb {
       @java.lang.Override
       public com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.CreateTableResponse buildPartial() {
         com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.CreateTableResponse result = new com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.CreateTableResponse(this);
-        result.token_ = token_;
         onBuilt();
         return result;
       }
@@ -4558,10 +4488,6 @@ public final class TiapRawAdminrpcpb {
 
       public Builder mergeFrom(com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.CreateTableResponse other) {
         if (other == com.shopee.di.kvstore.proto.TiapRawAdminrpcpb.CreateTableResponse.getDefaultInstance()) return this;
-        if (!other.getToken().isEmpty()) {
-          token_ = other.token_;
-          onChanged();
-        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -4588,82 +4514,6 @@ public final class TiapRawAdminrpcpb {
             mergeFrom(parsedMessage);
           }
         }
-        return this;
-      }
-
-      private java.lang.Object token_ = "";
-      /**
-       * <code>string token = 1;</code>
-       * @return The token.
-       */
-      public java.lang.String getToken() {
-        java.lang.Object ref = token_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          token_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string token = 1;</code>
-       * @return The bytes for token.
-       */
-      public com.google.protobuf.ByteString
-          getTokenBytes() {
-        java.lang.Object ref = token_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          token_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string token = 1;</code>
-       * @param value The token to set.
-       * @return This builder for chaining.
-       */
-      public Builder setToken(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        token_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string token = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearToken() {
-        
-        token_ = getDefaultInstance().getToken();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string token = 1;</code>
-       * @param value The bytes for token to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTokenBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        token_ = value;
-        onChanged();
         return this;
       }
       @java.lang.Override
@@ -8635,16 +8485,16 @@ public final class TiapRawAdminrpcpb {
       "p_raw_adminrpcpb.DropTableResponseH\000B\006\n\004" +
       "resp\"_\n\022CreateTableRequest\022\017\n\007db_name\030\001 " +
       "\001(\t\022\014\n\004name\030\002 \001(\t\022*\n\005quota\030\003 \001(\0132\033.tiap_" +
-      "adminrpcpb.TableQuota\"$\n\023CreateTableResp" +
-      "onse\022\r\n\005token\030\001 \001(\t\"0\n\017GetTableRequest\022\017" +
-      "\n\007db_name\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\"<\n\020GetTabl" +
-      "eResponse\022(\n\004info\030\001 \001(\0132\032.tiap_adminrpcp" +
-      "b.TableInfo\"$\n\021ListTablesRequest\022\017\n\007db_n" +
-      "ame\030\001 \001(\t\"?\n\022ListTablesResponse\022)\n\005infos" +
-      "\030\001 \003(\0132\032.tiap_adminrpcpb.TableInfo\"1\n\020Dr" +
-      "opTableRequest\022\017\n\007db_name\030\001 \001(\t\022\014\n\004name\030" +
-      "\002 \001(\t\"\023\n\021DropTableResponseB\035\n\033com.shopee" +
-      ".di.kvstore.protob\006proto3"
+      "adminrpcpb.TableQuota\"\025\n\023CreateTableResp" +
+      "onse\"0\n\017GetTableRequest\022\017\n\007db_name\030\001 \001(\t" +
+      "\022\014\n\004name\030\002 \001(\t\"<\n\020GetTableResponse\022(\n\004in" +
+      "fo\030\001 \001(\0132\032.tiap_adminrpcpb.TableInfo\"$\n\021" +
+      "ListTablesRequest\022\017\n\007db_name\030\001 \001(\t\"?\n\022Li" +
+      "stTablesResponse\022)\n\005infos\030\001 \003(\0132\032.tiap_a" +
+      "dminrpcpb.TableInfo\"1\n\020DropTableRequest\022" +
+      "\017\n\007db_name\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\"\023\n\021DropTa" +
+      "bleResponseB\035\n\033com.shopee.di.kvstore.pro" +
+      "tob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -8674,7 +8524,7 @@ public final class TiapRawAdminrpcpb {
     internal_static_tiap_raw_adminrpcpb_CreateTableResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tiap_raw_adminrpcpb_CreateTableResponse_descriptor,
-        new java.lang.String[] { "Token", });
+        new java.lang.String[] { });
     internal_static_tiap_raw_adminrpcpb_GetTableRequest_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_tiap_raw_adminrpcpb_GetTableRequest_fieldAccessorTable = new

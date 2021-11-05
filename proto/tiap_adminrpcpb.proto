@@ -43,26 +43,26 @@ message DBInfo {
   int64 id      = 2;
   DBState state = 3;
   DBQuota quota = 4;
-  repeated string comment = 5;
+  string token  = 5;
+  repeated string comments = 6;
 }
 
 message TableInfo {
   string name       = 1;
   int64 id          = 2;
   int64 db_id       = 3;
-  string token      = 4;
   TableType type    = 5;
   TableState state  = 6;
   TableQuota quota  = 7;
-  repeated string comment = 8;
-  RawTableExtraInfo raw_extra = 9;
-  HBaseLikeTableInfo hbase_like_extra = 10;
+  repeated string comments = 8;
+  RawTableExtendInfo raw_ext_info = 9;
+  HBaseLikeTableExtendInfo hbase_like_ext_info = 10;
 }
 
-message RawTableExtraInfo {
+message RawTableExtendInfo {
 }
 
-message HBaseLikeTableInfo {
+message HBaseLikeTableExtendInfo {
   map<string, string> families = 1;
   bool salted = 2;
   bool multi_version = 3;
@@ -107,6 +107,7 @@ message CreateDBRequest {
 }
 
 message CreateDBResponse {
+  string token = 1;
 }
 
 message GetDBRequest {

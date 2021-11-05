@@ -36,7 +36,6 @@ message CreateTableRequest {
 }
 
 message CreateTableResponse {
-  string token = 1;
 }
 
 message GetTableRequest {
