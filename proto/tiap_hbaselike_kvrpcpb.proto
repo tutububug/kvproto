@@ -15,6 +15,8 @@ message KVRequest {
     BatchGetRowRequest batch_get_row_req = 2;
     BatchPutRowRequest batch_put_row_req = 3;
     BatchDeleteRowRequest batch_delete_row_req = 4;
+    GetRowVersionRequest get_row_version_req = 5;
+    ScanRowRequest scan_req = 6;
   }
 }
 
@@ -24,6 +26,8 @@ message KVResponse {
     BatchGetRowResponse batch_get_row_resp = 2;
     BatchPutRowResponse batch_put_row_resp = 3;
     BatchDeleteRowResponse batch_delete_row_resp = 4;
+    GetRowVersionResponse get_row_version_resp = 5;
+    ScanRowResponse scan_resp = 6;
   }
 }
 
@@ -49,12 +53,38 @@ message BatchDeleteRowRequest {
 message BatchDeleteRowResponse {
 }
 
+message GetRowVersionRequest {
+  string db_name = 1;
+  string table_name = 2;
+  bytes row_key = 3;
+  ColumnFamily families = 4;
+  int64 column_version = 5;
+  int64 column_limit = 6;
+}
+
+message GetRowVersionResponse {
+  repeated RowValue row_values = 1;
+}
+
+message ScanRowRequest {
+  string db_name = 1;
+  string table_name = 2;
+  bytes row_key_start = 3;
+  bytes row_key_end = 4;
+  ColumnFamily families = 5;
+  int64 row_version = 6;
+  int64 row_limit = 7;
+}
+
+message ScanRowResponse {
+  repeated RowValue row_values = 1;
+}
+
 message Row {
   string db_name = 1;
   string table_name = 2;
   bytes row_key = 3;
   ColumnFamily families = 4;
-  int64 ttl = 5;
 }
 
 message ColumnFamily {
@@ -67,8 +97,7 @@ message Columns {
 
 message Column {
   string name = 1;
-  int64 timestamp = 2;
-  int64 limit = 3;
+  int64 version = 2;
 }
 
 message RowValue {
@@ -88,7 +117,7 @@ message ColumnValues {
 
 message ColumnValue {
   string name = 1;
-  bytes value = 2;
-  int64 timestamp = 3;
+  int64 version = 2;
+  bytes value = 3;
   int64 ttl = 4;
 }

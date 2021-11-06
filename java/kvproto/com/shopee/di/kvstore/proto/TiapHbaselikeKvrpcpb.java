@@ -78,6 +78,36 @@ public final class TiapHbaselikeKvrpcpb {
      */
     com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowRequestOrBuilder getBatchDeleteRowReqOrBuilder();
 
+    /**
+     * <code>.tiap_hbaselike_kvrpcpb.GetRowVersionRequest get_row_version_req = 5;</code>
+     * @return Whether the getRowVersionReq field is set.
+     */
+    boolean hasGetRowVersionReq();
+    /**
+     * <code>.tiap_hbaselike_kvrpcpb.GetRowVersionRequest get_row_version_req = 5;</code>
+     * @return The getRowVersionReq.
+     */
+    com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest getGetRowVersionReq();
+    /**
+     * <code>.tiap_hbaselike_kvrpcpb.GetRowVersionRequest get_row_version_req = 5;</code>
+     */
+    com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequestOrBuilder getGetRowVersionReqOrBuilder();
+
+    /**
+     * <code>.tiap_hbaselike_kvrpcpb.ScanRowRequest scan_req = 6;</code>
+     * @return Whether the scanReq field is set.
+     */
+    boolean hasScanReq();
+    /**
+     * <code>.tiap_hbaselike_kvrpcpb.ScanRowRequest scan_req = 6;</code>
+     * @return The scanReq.
+     */
+    com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest getScanReq();
+    /**
+     * <code>.tiap_hbaselike_kvrpcpb.ScanRowRequest scan_req = 6;</code>
+     */
+    com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequestOrBuilder getScanReqOrBuilder();
+
     public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.KVRequest.ReqCase getReqCase();
   }
   /**
@@ -180,6 +210,34 @@ public final class TiapHbaselikeKvrpcpb {
               reqCase_ = 4;
               break;
             }
+            case 42: {
+              com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest.Builder subBuilder = null;
+              if (reqCase_ == 5) {
+                subBuilder = ((com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest) req_).toBuilder();
+              }
+              req_ =
+                  input.readMessage(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest) req_);
+                req_ = subBuilder.buildPartial();
+              }
+              reqCase_ = 5;
+              break;
+            }
+            case 50: {
+              com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest.Builder subBuilder = null;
+              if (reqCase_ == 6) {
+                subBuilder = ((com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest) req_).toBuilder();
+              }
+              req_ =
+                  input.readMessage(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest) req_);
+                req_ = subBuilder.buildPartial();
+              }
+              reqCase_ = 6;
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -220,6 +278,8 @@ public final class TiapHbaselikeKvrpcpb {
       BATCH_GET_ROW_REQ(2),
       BATCH_PUT_ROW_REQ(3),
       BATCH_DELETE_ROW_REQ(4),
+      GET_ROW_VERSION_REQ(5),
+      SCAN_REQ(6),
       REQ_NOT_SET(0);
       private final int value;
       private ReqCase(int value) {
@@ -240,6 +300,8 @@ public final class TiapHbaselikeKvrpcpb {
           case 2: return BATCH_GET_ROW_REQ;
           case 3: return BATCH_PUT_ROW_REQ;
           case 4: return BATCH_DELETE_ROW_REQ;
+          case 5: return GET_ROW_VERSION_REQ;
+          case 6: return SCAN_REQ;
           case 0: return REQ_NOT_SET;
           default: return null;
         }
@@ -374,6 +436,68 @@ public final class TiapHbaselikeKvrpcpb {
       return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowRequest.getDefaultInstance();
     }
 
+    public static final int GET_ROW_VERSION_REQ_FIELD_NUMBER = 5;
+    /**
+     * <code>.tiap_hbaselike_kvrpcpb.GetRowVersionRequest get_row_version_req = 5;</code>
+     * @return Whether the getRowVersionReq field is set.
+     */
+    @java.lang.Override
+    public boolean hasGetRowVersionReq() {
+      return reqCase_ == 5;
+    }
+    /**
+     * <code>.tiap_hbaselike_kvrpcpb.GetRowVersionRequest get_row_version_req = 5;</code>
+     * @return The getRowVersionReq.
+     */
+    @java.lang.Override
+    public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest getGetRowVersionReq() {
+      if (reqCase_ == 5) {
+         return (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest) req_;
+      }
+      return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest.getDefaultInstance();
+    }
+    /**
+     * <code>.tiap_hbaselike_kvrpcpb.GetRowVersionRequest get_row_version_req = 5;</code>
+     */
+    @java.lang.Override
+    public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequestOrBuilder getGetRowVersionReqOrBuilder() {
+      if (reqCase_ == 5) {
+         return (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest) req_;
+      }
+      return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest.getDefaultInstance();
+    }
+
+    public static final int SCAN_REQ_FIELD_NUMBER = 6;
+    /**
+     * <code>.tiap_hbaselike_kvrpcpb.ScanRowRequest scan_req = 6;</code>
+     * @return Whether the scanReq field is set.
+     */
+    @java.lang.Override
+    public boolean hasScanReq() {
+      return reqCase_ == 6;
+    }
+    /**
+     * <code>.tiap_hbaselike_kvrpcpb.ScanRowRequest scan_req = 6;</code>
+     * @return The scanReq.
+     */
+    @java.lang.Override
+    public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest getScanReq() {
+      if (reqCase_ == 6) {
+         return (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest) req_;
+      }
+      return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest.getDefaultInstance();
+    }
+    /**
+     * <code>.tiap_hbaselike_kvrpcpb.ScanRowRequest scan_req = 6;</code>
+     */
+    @java.lang.Override
+    public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequestOrBuilder getScanReqOrBuilder() {
+      if (reqCase_ == 6) {
+         return (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest) req_;
+      }
+      return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -400,6 +524,12 @@ public final class TiapHbaselikeKvrpcpb {
       if (reqCase_ == 4) {
         output.writeMessage(4, (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowRequest) req_);
       }
+      if (reqCase_ == 5) {
+        output.writeMessage(5, (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest) req_);
+      }
+      if (reqCase_ == 6) {
+        output.writeMessage(6, (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest) req_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -424,6 +554,14 @@ public final class TiapHbaselikeKvrpcpb {
       if (reqCase_ == 4) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowRequest) req_);
+      }
+      if (reqCase_ == 5) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest) req_);
+      }
+      if (reqCase_ == 6) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest) req_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -459,6 +597,14 @@ public final class TiapHbaselikeKvrpcpb {
           if (!getBatchDeleteRowReq()
               .equals(other.getBatchDeleteRowReq())) return false;
           break;
+        case 5:
+          if (!getGetRowVersionReq()
+              .equals(other.getGetRowVersionReq())) return false;
+          break;
+        case 6:
+          if (!getScanReq()
+              .equals(other.getScanReq())) return false;
+          break;
         case 0:
         default:
       }
@@ -489,6 +635,14 @@ public final class TiapHbaselikeKvrpcpb {
         case 4:
           hash = (37 * hash) + BATCH_DELETE_ROW_REQ_FIELD_NUMBER;
           hash = (53 * hash) + getBatchDeleteRowReq().hashCode();
+          break;
+        case 5:
+          hash = (37 * hash) + GET_ROW_VERSION_REQ_FIELD_NUMBER;
+          hash = (53 * hash) + getGetRowVersionReq().hashCode();
+          break;
+        case 6:
+          hash = (37 * hash) + SCAN_REQ_FIELD_NUMBER;
+          hash = (53 * hash) + getScanReq().hashCode();
           break;
         case 0:
         default:
@@ -686,6 +840,20 @@ public final class TiapHbaselikeKvrpcpb {
             result.req_ = batchDeleteRowReqBuilder_.build();
           }
         }
+        if (reqCase_ == 5) {
+          if (getRowVersionReqBuilder_ == null) {
+            result.req_ = req_;
+          } else {
+            result.req_ = getRowVersionReqBuilder_.build();
+          }
+        }
+        if (reqCase_ == 6) {
+          if (scanReqBuilder_ == null) {
+            result.req_ = req_;
+          } else {
+            result.req_ = scanReqBuilder_.build();
+          }
+        }
         result.reqCase_ = reqCase_;
         onBuilt();
         return result;
@@ -749,6 +917,14 @@ public final class TiapHbaselikeKvrpcpb {
           }
           case BATCH_DELETE_ROW_REQ: {
             mergeBatchDeleteRowReq(other.getBatchDeleteRowReq());
+            break;
+          }
+          case GET_ROW_VERSION_REQ: {
+            mergeGetRowVersionReq(other.getGetRowVersionReq());
+            break;
+          }
+          case SCAN_REQ: {
+            mergeScanReq(other.getScanReq());
             break;
           }
           case REQ_NOT_SET: {
@@ -1340,6 +1516,288 @@ public final class TiapHbaselikeKvrpcpb {
         onChanged();;
         return batchDeleteRowReqBuilder_;
       }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequestOrBuilder> getRowVersionReqBuilder_;
+      /**
+       * <code>.tiap_hbaselike_kvrpcpb.GetRowVersionRequest get_row_version_req = 5;</code>
+       * @return Whether the getRowVersionReq field is set.
+       */
+      @java.lang.Override
+      public boolean hasGetRowVersionReq() {
+        return reqCase_ == 5;
+      }
+      /**
+       * <code>.tiap_hbaselike_kvrpcpb.GetRowVersionRequest get_row_version_req = 5;</code>
+       * @return The getRowVersionReq.
+       */
+      @java.lang.Override
+      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest getGetRowVersionReq() {
+        if (getRowVersionReqBuilder_ == null) {
+          if (reqCase_ == 5) {
+            return (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest) req_;
+          }
+          return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest.getDefaultInstance();
+        } else {
+          if (reqCase_ == 5) {
+            return getRowVersionReqBuilder_.getMessage();
+          }
+          return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.tiap_hbaselike_kvrpcpb.GetRowVersionRequest get_row_version_req = 5;</code>
+       */
+      public Builder setGetRowVersionReq(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest value) {
+        if (getRowVersionReqBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          req_ = value;
+          onChanged();
+        } else {
+          getRowVersionReqBuilder_.setMessage(value);
+        }
+        reqCase_ = 5;
+        return this;
+      }
+      /**
+       * <code>.tiap_hbaselike_kvrpcpb.GetRowVersionRequest get_row_version_req = 5;</code>
+       */
+      public Builder setGetRowVersionReq(
+          com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest.Builder builderForValue) {
+        if (getRowVersionReqBuilder_ == null) {
+          req_ = builderForValue.build();
+          onChanged();
+        } else {
+          getRowVersionReqBuilder_.setMessage(builderForValue.build());
+        }
+        reqCase_ = 5;
+        return this;
+      }
+      /**
+       * <code>.tiap_hbaselike_kvrpcpb.GetRowVersionRequest get_row_version_req = 5;</code>
+       */
+      public Builder mergeGetRowVersionReq(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest value) {
+        if (getRowVersionReqBuilder_ == null) {
+          if (reqCase_ == 5 &&
+              req_ != com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest.getDefaultInstance()) {
+            req_ = com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest.newBuilder((com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest) req_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            req_ = value;
+          }
+          onChanged();
+        } else {
+          if (reqCase_ == 5) {
+            getRowVersionReqBuilder_.mergeFrom(value);
+          }
+          getRowVersionReqBuilder_.setMessage(value);
+        }
+        reqCase_ = 5;
+        return this;
+      }
+      /**
+       * <code>.tiap_hbaselike_kvrpcpb.GetRowVersionRequest get_row_version_req = 5;</code>
+       */
+      public Builder clearGetRowVersionReq() {
+        if (getRowVersionReqBuilder_ == null) {
+          if (reqCase_ == 5) {
+            reqCase_ = 0;
+            req_ = null;
+            onChanged();
+          }
+        } else {
+          if (reqCase_ == 5) {
+            reqCase_ = 0;
+            req_ = null;
+          }
+          getRowVersionReqBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.tiap_hbaselike_kvrpcpb.GetRowVersionRequest get_row_version_req = 5;</code>
+       */
+      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest.Builder getGetRowVersionReqBuilder() {
+        return getGetRowVersionReqFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.tiap_hbaselike_kvrpcpb.GetRowVersionRequest get_row_version_req = 5;</code>
+       */
+      @java.lang.Override
+      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequestOrBuilder getGetRowVersionReqOrBuilder() {
+        if ((reqCase_ == 5) && (getRowVersionReqBuilder_ != null)) {
+          return getRowVersionReqBuilder_.getMessageOrBuilder();
+        } else {
+          if (reqCase_ == 5) {
+            return (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest) req_;
+          }
+          return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.tiap_hbaselike_kvrpcpb.GetRowVersionRequest get_row_version_req = 5;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequestOrBuilder> 
+          getGetRowVersionReqFieldBuilder() {
+        if (getRowVersionReqBuilder_ == null) {
+          if (!(reqCase_ == 5)) {
+            req_ = com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest.getDefaultInstance();
+          }
+          getRowVersionReqBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequestOrBuilder>(
+                  (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest) req_,
+                  getParentForChildren(),
+                  isClean());
+          req_ = null;
+        }
+        reqCase_ = 5;
+        onChanged();;
+        return getRowVersionReqBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequestOrBuilder> scanReqBuilder_;
+      /**
+       * <code>.tiap_hbaselike_kvrpcpb.ScanRowRequest scan_req = 6;</code>
+       * @return Whether the scanReq field is set.
+       */
+      @java.lang.Override
+      public boolean hasScanReq() {
+        return reqCase_ == 6;
+      }
+      /**
+       * <code>.tiap_hbaselike_kvrpcpb.ScanRowRequest scan_req = 6;</code>
+       * @return The scanReq.
+       */
+      @java.lang.Override
+      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest getScanReq() {
+        if (scanReqBuilder_ == null) {
+          if (reqCase_ == 6) {
+            return (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest) req_;
+          }
+          return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest.getDefaultInstance();
+        } else {
+          if (reqCase_ == 6) {
+            return scanReqBuilder_.getMessage();
+          }
+          return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.tiap_hbaselike_kvrpcpb.ScanRowRequest scan_req = 6;</code>
+       */
+      public Builder setScanReq(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest value) {
+        if (scanReqBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          req_ = value;
+          onChanged();
+        } else {
+          scanReqBuilder_.setMessage(value);
+        }
+        reqCase_ = 6;
+        return this;
+      }
+      /**
+       * <code>.tiap_hbaselike_kvrpcpb.ScanRowRequest scan_req = 6;</code>
+       */
+      public Builder setScanReq(
+          com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest.Builder builderForValue) {
+        if (scanReqBuilder_ == null) {
+          req_ = builderForValue.build();
+          onChanged();
+        } else {
+          scanReqBuilder_.setMessage(builderForValue.build());
+        }
+        reqCase_ = 6;
+        return this;
+      }
+      /**
+       * <code>.tiap_hbaselike_kvrpcpb.ScanRowRequest scan_req = 6;</code>
+       */
+      public Builder mergeScanReq(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest value) {
+        if (scanReqBuilder_ == null) {
+          if (reqCase_ == 6 &&
+              req_ != com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest.getDefaultInstance()) {
+            req_ = com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest.newBuilder((com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest) req_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            req_ = value;
+          }
+          onChanged();
+        } else {
+          if (reqCase_ == 6) {
+            scanReqBuilder_.mergeFrom(value);
+          }
+          scanReqBuilder_.setMessage(value);
+        }
+        reqCase_ = 6;
+        return this;
+      }
+      /**
+       * <code>.tiap_hbaselike_kvrpcpb.ScanRowRequest scan_req = 6;</code>
+       */
+      public Builder clearScanReq() {
+        if (scanReqBuilder_ == null) {
+          if (reqCase_ == 6) {
+            reqCase_ = 0;
+            req_ = null;
+            onChanged();
+          }
+        } else {
+          if (reqCase_ == 6) {
+            reqCase_ = 0;
+            req_ = null;
+          }
+          scanReqBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.tiap_hbaselike_kvrpcpb.ScanRowRequest scan_req = 6;</code>
+       */
+      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest.Builder getScanReqBuilder() {
+        return getScanReqFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.tiap_hbaselike_kvrpcpb.ScanRowRequest scan_req = 6;</code>
+       */
+      @java.lang.Override
+      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequestOrBuilder getScanReqOrBuilder() {
+        if ((reqCase_ == 6) && (scanReqBuilder_ != null)) {
+          return scanReqBuilder_.getMessageOrBuilder();
+        } else {
+          if (reqCase_ == 6) {
+            return (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest) req_;
+          }
+          return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.tiap_hbaselike_kvrpcpb.ScanRowRequest scan_req = 6;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequestOrBuilder> 
+          getScanReqFieldBuilder() {
+        if (scanReqBuilder_ == null) {
+          if (!(reqCase_ == 6)) {
+            req_ = com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest.getDefaultInstance();
+          }
+          scanReqBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequestOrBuilder>(
+                  (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest) req_,
+                  getParentForChildren(),
+                  isClean());
+          req_ = null;
+        }
+        reqCase_ = 6;
+        onChanged();;
+        return scanReqBuilder_;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1457,6 +1915,36 @@ public final class TiapHbaselikeKvrpcpb {
      */
     com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowResponseOrBuilder getBatchDeleteRowRespOrBuilder();
 
+    /**
+     * <code>.tiap_hbaselike_kvrpcpb.GetRowVersionResponse get_row_version_resp = 5;</code>
+     * @return Whether the getRowVersionResp field is set.
+     */
+    boolean hasGetRowVersionResp();
+    /**
+     * <code>.tiap_hbaselike_kvrpcpb.GetRowVersionResponse get_row_version_resp = 5;</code>
+     * @return The getRowVersionResp.
+     */
+    com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse getGetRowVersionResp();
+    /**
+     * <code>.tiap_hbaselike_kvrpcpb.GetRowVersionResponse get_row_version_resp = 5;</code>
+     */
+    com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponseOrBuilder getGetRowVersionRespOrBuilder();
+
+    /**
+     * <code>.tiap_hbaselike_kvrpcpb.ScanRowResponse scan_resp = 6;</code>
+     * @return Whether the scanResp field is set.
+     */
+    boolean hasScanResp();
+    /**
+     * <code>.tiap_hbaselike_kvrpcpb.ScanRowResponse scan_resp = 6;</code>
+     * @return The scanResp.
+     */
+    com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse getScanResp();
+    /**
+     * <code>.tiap_hbaselike_kvrpcpb.ScanRowResponse scan_resp = 6;</code>
+     */
+    com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponseOrBuilder getScanRespOrBuilder();
+
     public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.KVResponse.RespCase getRespCase();
   }
   /**
@@ -1559,6 +2047,34 @@ public final class TiapHbaselikeKvrpcpb {
               respCase_ = 4;
               break;
             }
+            case 42: {
+              com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse.Builder subBuilder = null;
+              if (respCase_ == 5) {
+                subBuilder = ((com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse) resp_).toBuilder();
+              }
+              resp_ =
+                  input.readMessage(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse) resp_);
+                resp_ = subBuilder.buildPartial();
+              }
+              respCase_ = 5;
+              break;
+            }
+            case 50: {
+              com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse.Builder subBuilder = null;
+              if (respCase_ == 6) {
+                subBuilder = ((com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse) resp_).toBuilder();
+              }
+              resp_ =
+                  input.readMessage(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse) resp_);
+                resp_ = subBuilder.buildPartial();
+              }
+              respCase_ = 6;
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -1599,6 +2115,8 @@ public final class TiapHbaselikeKvrpcpb {
       BATCH_GET_ROW_RESP(2),
       BATCH_PUT_ROW_RESP(3),
       BATCH_DELETE_ROW_RESP(4),
+      GET_ROW_VERSION_RESP(5),
+      SCAN_RESP(6),
       RESP_NOT_SET(0);
       private final int value;
       private RespCase(int value) {
@@ -1619,6 +2137,8 @@ public final class TiapHbaselikeKvrpcpb {
           case 2: return BATCH_GET_ROW_RESP;
           case 3: return BATCH_PUT_ROW_RESP;
           case 4: return BATCH_DELETE_ROW_RESP;
+          case 5: return GET_ROW_VERSION_RESP;
+          case 6: return SCAN_RESP;
           case 0: return RESP_NOT_SET;
           default: return null;
         }
@@ -1753,6 +2273,68 @@ public final class TiapHbaselikeKvrpcpb {
       return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowResponse.getDefaultInstance();
     }
 
+    public static final int GET_ROW_VERSION_RESP_FIELD_NUMBER = 5;
+    /**
+     * <code>.tiap_hbaselike_kvrpcpb.GetRowVersionResponse get_row_version_resp = 5;</code>
+     * @return Whether the getRowVersionResp field is set.
+     */
+    @java.lang.Override
+    public boolean hasGetRowVersionResp() {
+      return respCase_ == 5;
+    }
+    /**
+     * <code>.tiap_hbaselike_kvrpcpb.GetRowVersionResponse get_row_version_resp = 5;</code>
+     * @return The getRowVersionResp.
+     */
+    @java.lang.Override
+    public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse getGetRowVersionResp() {
+      if (respCase_ == 5) {
+         return (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse) resp_;
+      }
+      return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse.getDefaultInstance();
+    }
+    /**
+     * <code>.tiap_hbaselike_kvrpcpb.GetRowVersionResponse get_row_version_resp = 5;</code>
+     */
+    @java.lang.Override
+    public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponseOrBuilder getGetRowVersionRespOrBuilder() {
+      if (respCase_ == 5) {
+         return (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse) resp_;
+      }
+      return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse.getDefaultInstance();
+    }
+
+    public static final int SCAN_RESP_FIELD_NUMBER = 6;
+    /**
+     * <code>.tiap_hbaselike_kvrpcpb.ScanRowResponse scan_resp = 6;</code>
+     * @return Whether the scanResp field is set.
+     */
+    @java.lang.Override
+    public boolean hasScanResp() {
+      return respCase_ == 6;
+    }
+    /**
+     * <code>.tiap_hbaselike_kvrpcpb.ScanRowResponse scan_resp = 6;</code>
+     * @return The scanResp.
+     */
+    @java.lang.Override
+    public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse getScanResp() {
+      if (respCase_ == 6) {
+         return (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse) resp_;
+      }
+      return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse.getDefaultInstance();
+    }
+    /**
+     * <code>.tiap_hbaselike_kvrpcpb.ScanRowResponse scan_resp = 6;</code>
+     */
+    @java.lang.Override
+    public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponseOrBuilder getScanRespOrBuilder() {
+      if (respCase_ == 6) {
+         return (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse) resp_;
+      }
+      return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1779,6 +2361,12 @@ public final class TiapHbaselikeKvrpcpb {
       if (respCase_ == 4) {
         output.writeMessage(4, (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowResponse) resp_);
       }
+      if (respCase_ == 5) {
+        output.writeMessage(5, (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse) resp_);
+      }
+      if (respCase_ == 6) {
+        output.writeMessage(6, (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse) resp_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -1803,6 +2391,14 @@ public final class TiapHbaselikeKvrpcpb {
       if (respCase_ == 4) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowResponse) resp_);
+      }
+      if (respCase_ == 5) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse) resp_);
+      }
+      if (respCase_ == 6) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse) resp_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1838,6 +2434,14 @@ public final class TiapHbaselikeKvrpcpb {
           if (!getBatchDeleteRowResp()
               .equals(other.getBatchDeleteRowResp())) return false;
           break;
+        case 5:
+          if (!getGetRowVersionResp()
+              .equals(other.getGetRowVersionResp())) return false;
+          break;
+        case 6:
+          if (!getScanResp()
+              .equals(other.getScanResp())) return false;
+          break;
         case 0:
         default:
       }
@@ -1868,6 +2472,14 @@ public final class TiapHbaselikeKvrpcpb {
         case 4:
           hash = (37 * hash) + BATCH_DELETE_ROW_RESP_FIELD_NUMBER;
           hash = (53 * hash) + getBatchDeleteRowResp().hashCode();
+          break;
+        case 5:
+          hash = (37 * hash) + GET_ROW_VERSION_RESP_FIELD_NUMBER;
+          hash = (53 * hash) + getGetRowVersionResp().hashCode();
+          break;
+        case 6:
+          hash = (37 * hash) + SCAN_RESP_FIELD_NUMBER;
+          hash = (53 * hash) + getScanResp().hashCode();
           break;
         case 0:
         default:
@@ -2065,6 +2677,20 @@ public final class TiapHbaselikeKvrpcpb {
             result.resp_ = batchDeleteRowRespBuilder_.build();
           }
         }
+        if (respCase_ == 5) {
+          if (getRowVersionRespBuilder_ == null) {
+            result.resp_ = resp_;
+          } else {
+            result.resp_ = getRowVersionRespBuilder_.build();
+          }
+        }
+        if (respCase_ == 6) {
+          if (scanRespBuilder_ == null) {
+            result.resp_ = resp_;
+          } else {
+            result.resp_ = scanRespBuilder_.build();
+          }
+        }
         result.respCase_ = respCase_;
         onBuilt();
         return result;
@@ -2128,6 +2754,14 @@ public final class TiapHbaselikeKvrpcpb {
           }
           case BATCH_DELETE_ROW_RESP: {
             mergeBatchDeleteRowResp(other.getBatchDeleteRowResp());
+            break;
+          }
+          case GET_ROW_VERSION_RESP: {
+            mergeGetRowVersionResp(other.getGetRowVersionResp());
+            break;
+          }
+          case SCAN_RESP: {
+            mergeScanResp(other.getScanResp());
             break;
           }
           case RESP_NOT_SET: {
@@ -2718,6 +3352,288 @@ public final class TiapHbaselikeKvrpcpb {
         respCase_ = 4;
         onChanged();;
         return batchDeleteRowRespBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponseOrBuilder> getRowVersionRespBuilder_;
+      /**
+       * <code>.tiap_hbaselike_kvrpcpb.GetRowVersionResponse get_row_version_resp = 5;</code>
+       * @return Whether the getRowVersionResp field is set.
+       */
+      @java.lang.Override
+      public boolean hasGetRowVersionResp() {
+        return respCase_ == 5;
+      }
+      /**
+       * <code>.tiap_hbaselike_kvrpcpb.GetRowVersionResponse get_row_version_resp = 5;</code>
+       * @return The getRowVersionResp.
+       */
+      @java.lang.Override
+      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse getGetRowVersionResp() {
+        if (getRowVersionRespBuilder_ == null) {
+          if (respCase_ == 5) {
+            return (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse) resp_;
+          }
+          return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse.getDefaultInstance();
+        } else {
+          if (respCase_ == 5) {
+            return getRowVersionRespBuilder_.getMessage();
+          }
+          return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.tiap_hbaselike_kvrpcpb.GetRowVersionResponse get_row_version_resp = 5;</code>
+       */
+      public Builder setGetRowVersionResp(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse value) {
+        if (getRowVersionRespBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          resp_ = value;
+          onChanged();
+        } else {
+          getRowVersionRespBuilder_.setMessage(value);
+        }
+        respCase_ = 5;
+        return this;
+      }
+      /**
+       * <code>.tiap_hbaselike_kvrpcpb.GetRowVersionResponse get_row_version_resp = 5;</code>
+       */
+      public Builder setGetRowVersionResp(
+          com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse.Builder builderForValue) {
+        if (getRowVersionRespBuilder_ == null) {
+          resp_ = builderForValue.build();
+          onChanged();
+        } else {
+          getRowVersionRespBuilder_.setMessage(builderForValue.build());
+        }
+        respCase_ = 5;
+        return this;
+      }
+      /**
+       * <code>.tiap_hbaselike_kvrpcpb.GetRowVersionResponse get_row_version_resp = 5;</code>
+       */
+      public Builder mergeGetRowVersionResp(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse value) {
+        if (getRowVersionRespBuilder_ == null) {
+          if (respCase_ == 5 &&
+              resp_ != com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse.getDefaultInstance()) {
+            resp_ = com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse.newBuilder((com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse) resp_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            resp_ = value;
+          }
+          onChanged();
+        } else {
+          if (respCase_ == 5) {
+            getRowVersionRespBuilder_.mergeFrom(value);
+          }
+          getRowVersionRespBuilder_.setMessage(value);
+        }
+        respCase_ = 5;
+        return this;
+      }
+      /**
+       * <code>.tiap_hbaselike_kvrpcpb.GetRowVersionResponse get_row_version_resp = 5;</code>
+       */
+      public Builder clearGetRowVersionResp() {
+        if (getRowVersionRespBuilder_ == null) {
+          if (respCase_ == 5) {
+            respCase_ = 0;
+            resp_ = null;
+            onChanged();
+          }
+        } else {
+          if (respCase_ == 5) {
+            respCase_ = 0;
+            resp_ = null;
+          }
+          getRowVersionRespBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.tiap_hbaselike_kvrpcpb.GetRowVersionResponse get_row_version_resp = 5;</code>
+       */
+      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse.Builder getGetRowVersionRespBuilder() {
+        return getGetRowVersionRespFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.tiap_hbaselike_kvrpcpb.GetRowVersionResponse get_row_version_resp = 5;</code>
+       */
+      @java.lang.Override
+      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponseOrBuilder getGetRowVersionRespOrBuilder() {
+        if ((respCase_ == 5) && (getRowVersionRespBuilder_ != null)) {
+          return getRowVersionRespBuilder_.getMessageOrBuilder();
+        } else {
+          if (respCase_ == 5) {
+            return (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse) resp_;
+          }
+          return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.tiap_hbaselike_kvrpcpb.GetRowVersionResponse get_row_version_resp = 5;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponseOrBuilder> 
+          getGetRowVersionRespFieldBuilder() {
+        if (getRowVersionRespBuilder_ == null) {
+          if (!(respCase_ == 5)) {
+            resp_ = com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse.getDefaultInstance();
+          }
+          getRowVersionRespBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponseOrBuilder>(
+                  (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse) resp_,
+                  getParentForChildren(),
+                  isClean());
+          resp_ = null;
+        }
+        respCase_ = 5;
+        onChanged();;
+        return getRowVersionRespBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponseOrBuilder> scanRespBuilder_;
+      /**
+       * <code>.tiap_hbaselike_kvrpcpb.ScanRowResponse scan_resp = 6;</code>
+       * @return Whether the scanResp field is set.
+       */
+      @java.lang.Override
+      public boolean hasScanResp() {
+        return respCase_ == 6;
+      }
+      /**
+       * <code>.tiap_hbaselike_kvrpcpb.ScanRowResponse scan_resp = 6;</code>
+       * @return The scanResp.
+       */
+      @java.lang.Override
+      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse getScanResp() {
+        if (scanRespBuilder_ == null) {
+          if (respCase_ == 6) {
+            return (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse) resp_;
+          }
+          return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse.getDefaultInstance();
+        } else {
+          if (respCase_ == 6) {
+            return scanRespBuilder_.getMessage();
+          }
+          return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.tiap_hbaselike_kvrpcpb.ScanRowResponse scan_resp = 6;</code>
+       */
+      public Builder setScanResp(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse value) {
+        if (scanRespBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          resp_ = value;
+          onChanged();
+        } else {
+          scanRespBuilder_.setMessage(value);
+        }
+        respCase_ = 6;
+        return this;
+      }
+      /**
+       * <code>.tiap_hbaselike_kvrpcpb.ScanRowResponse scan_resp = 6;</code>
+       */
+      public Builder setScanResp(
+          com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse.Builder builderForValue) {
+        if (scanRespBuilder_ == null) {
+          resp_ = builderForValue.build();
+          onChanged();
+        } else {
+          scanRespBuilder_.setMessage(builderForValue.build());
+        }
+        respCase_ = 6;
+        return this;
+      }
+      /**
+       * <code>.tiap_hbaselike_kvrpcpb.ScanRowResponse scan_resp = 6;</code>
+       */
+      public Builder mergeScanResp(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse value) {
+        if (scanRespBuilder_ == null) {
+          if (respCase_ == 6 &&
+              resp_ != com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse.getDefaultInstance()) {
+            resp_ = com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse.newBuilder((com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse) resp_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            resp_ = value;
+          }
+          onChanged();
+        } else {
+          if (respCase_ == 6) {
+            scanRespBuilder_.mergeFrom(value);
+          }
+          scanRespBuilder_.setMessage(value);
+        }
+        respCase_ = 6;
+        return this;
+      }
+      /**
+       * <code>.tiap_hbaselike_kvrpcpb.ScanRowResponse scan_resp = 6;</code>
+       */
+      public Builder clearScanResp() {
+        if (scanRespBuilder_ == null) {
+          if (respCase_ == 6) {
+            respCase_ = 0;
+            resp_ = null;
+            onChanged();
+          }
+        } else {
+          if (respCase_ == 6) {
+            respCase_ = 0;
+            resp_ = null;
+          }
+          scanRespBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.tiap_hbaselike_kvrpcpb.ScanRowResponse scan_resp = 6;</code>
+       */
+      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse.Builder getScanRespBuilder() {
+        return getScanRespFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.tiap_hbaselike_kvrpcpb.ScanRowResponse scan_resp = 6;</code>
+       */
+      @java.lang.Override
+      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponseOrBuilder getScanRespOrBuilder() {
+        if ((respCase_ == 6) && (scanRespBuilder_ != null)) {
+          return scanRespBuilder_.getMessageOrBuilder();
+        } else {
+          if (respCase_ == 6) {
+            return (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse) resp_;
+          }
+          return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.tiap_hbaselike_kvrpcpb.ScanRowResponse scan_resp = 6;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponseOrBuilder> 
+          getScanRespFieldBuilder() {
+        if (scanRespBuilder_ == null) {
+          if (!(respCase_ == 6)) {
+            resp_ = com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse.getDefaultInstance();
+          }
+          scanRespBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponseOrBuilder>(
+                  (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse) resp_,
+                  getParentForChildren(),
+                  isClean());
+          resp_ = null;
+        }
+        respCase_ = 6;
+        onChanged();;
+        return scanRespBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -6780,8 +7696,8 @@ public final class TiapHbaselikeKvrpcpb {
 
   }
 
-  public interface RowOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:tiap_hbaselike_kvrpcpb.Row)
+  public interface GetRowVersionRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:tiap_hbaselike_kvrpcpb.GetRowVersionRequest)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -6830,10 +7746,3938 @@ public final class TiapHbaselikeKvrpcpb {
     com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamilyOrBuilder getFamiliesOrBuilder();
 
     /**
-     * <code>int64 ttl = 5;</code>
-     * @return The ttl.
+     * <code>int64 column_version = 5;</code>
+     * @return The columnVersion.
      */
-    long getTtl();
+    long getColumnVersion();
+
+    /**
+     * <code>int64 column_limit = 6;</code>
+     * @return The columnLimit.
+     */
+    long getColumnLimit();
+  }
+  /**
+   * Protobuf type {@code tiap_hbaselike_kvrpcpb.GetRowVersionRequest}
+   */
+  public static final class GetRowVersionRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:tiap_hbaselike_kvrpcpb.GetRowVersionRequest)
+      GetRowVersionRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use GetRowVersionRequest.newBuilder() to construct.
+    private GetRowVersionRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private GetRowVersionRequest() {
+      dbName_ = "";
+      tableName_ = "";
+      rowKey_ = com.google.protobuf.ByteString.EMPTY;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new GetRowVersionRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private GetRowVersionRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              dbName_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              tableName_ = s;
+              break;
+            }
+            case 26: {
+
+              rowKey_ = input.readBytes();
+              break;
+            }
+            case 34: {
+              com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily.Builder subBuilder = null;
+              if (families_ != null) {
+                subBuilder = families_.toBuilder();
+              }
+              families_ = input.readMessage(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(families_);
+                families_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 40: {
+
+              columnVersion_ = input.readInt64();
+              break;
+            }
+            case 48: {
+
+              columnLimit_ = input.readInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.internal_static_tiap_hbaselike_kvrpcpb_GetRowVersionRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.internal_static_tiap_hbaselike_kvrpcpb_GetRowVersionRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest.class, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest.Builder.class);
+    }
+
+    public static final int DB_NAME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object dbName_;
+    /**
+     * <code>string db_name = 1;</code>
+     * @return The dbName.
+     */
+    @java.lang.Override
+    public java.lang.String getDbName() {
+      java.lang.Object ref = dbName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        dbName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string db_name = 1;</code>
+     * @return The bytes for dbName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getDbNameBytes() {
+      java.lang.Object ref = dbName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        dbName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TABLE_NAME_FIELD_NUMBER = 2;
+    private volatile java.lang.Object tableName_;
+    /**
+     * <code>string table_name = 2;</code>
+     * @return The tableName.
+     */
+    @java.lang.Override
+    public java.lang.String getTableName() {
+      java.lang.Object ref = tableName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        tableName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string table_name = 2;</code>
+     * @return The bytes for tableName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getTableNameBytes() {
+      java.lang.Object ref = tableName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        tableName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ROW_KEY_FIELD_NUMBER = 3;
+    private com.google.protobuf.ByteString rowKey_;
+    /**
+     * <code>bytes row_key = 3;</code>
+     * @return The rowKey.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getRowKey() {
+      return rowKey_;
+    }
+
+    public static final int FAMILIES_FIELD_NUMBER = 4;
+    private com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily families_;
+    /**
+     * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 4;</code>
+     * @return Whether the families field is set.
+     */
+    @java.lang.Override
+    public boolean hasFamilies() {
+      return families_ != null;
+    }
+    /**
+     * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 4;</code>
+     * @return The families.
+     */
+    @java.lang.Override
+    public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily getFamilies() {
+      return families_ == null ? com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily.getDefaultInstance() : families_;
+    }
+    /**
+     * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 4;</code>
+     */
+    @java.lang.Override
+    public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamilyOrBuilder getFamiliesOrBuilder() {
+      return getFamilies();
+    }
+
+    public static final int COLUMN_VERSION_FIELD_NUMBER = 5;
+    private long columnVersion_;
+    /**
+     * <code>int64 column_version = 5;</code>
+     * @return The columnVersion.
+     */
+    @java.lang.Override
+    public long getColumnVersion() {
+      return columnVersion_;
+    }
+
+    public static final int COLUMN_LIMIT_FIELD_NUMBER = 6;
+    private long columnLimit_;
+    /**
+     * <code>int64 column_limit = 6;</code>
+     * @return The columnLimit.
+     */
+    @java.lang.Override
+    public long getColumnLimit() {
+      return columnLimit_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getDbNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, dbName_);
+      }
+      if (!getTableNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, tableName_);
+      }
+      if (!rowKey_.isEmpty()) {
+        output.writeBytes(3, rowKey_);
+      }
+      if (families_ != null) {
+        output.writeMessage(4, getFamilies());
+      }
+      if (columnVersion_ != 0L) {
+        output.writeInt64(5, columnVersion_);
+      }
+      if (columnLimit_ != 0L) {
+        output.writeInt64(6, columnLimit_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getDbNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, dbName_);
+      }
+      if (!getTableNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, tableName_);
+      }
+      if (!rowKey_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(3, rowKey_);
+      }
+      if (families_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, getFamilies());
+      }
+      if (columnVersion_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(5, columnVersion_);
+      }
+      if (columnLimit_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(6, columnLimit_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest)) {
+        return super.equals(obj);
+      }
+      com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest other = (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest) obj;
+
+      if (!getDbName()
+          .equals(other.getDbName())) return false;
+      if (!getTableName()
+          .equals(other.getTableName())) return false;
+      if (!getRowKey()
+          .equals(other.getRowKey())) return false;
+      if (hasFamilies() != other.hasFamilies()) return false;
+      if (hasFamilies()) {
+        if (!getFamilies()
+            .equals(other.getFamilies())) return false;
+      }
+      if (getColumnVersion()
+          != other.getColumnVersion()) return false;
+      if (getColumnLimit()
+          != other.getColumnLimit()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + DB_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getDbName().hashCode();
+      hash = (37 * hash) + TABLE_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getTableName().hashCode();
+      hash = (37 * hash) + ROW_KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getRowKey().hashCode();
+      if (hasFamilies()) {
+        hash = (37 * hash) + FAMILIES_FIELD_NUMBER;
+        hash = (53 * hash) + getFamilies().hashCode();
+      }
+      hash = (37 * hash) + COLUMN_VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getColumnVersion());
+      hash = (37 * hash) + COLUMN_LIMIT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getColumnLimit());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code tiap_hbaselike_kvrpcpb.GetRowVersionRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:tiap_hbaselike_kvrpcpb.GetRowVersionRequest)
+        com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.internal_static_tiap_hbaselike_kvrpcpb_GetRowVersionRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.internal_static_tiap_hbaselike_kvrpcpb_GetRowVersionRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest.class, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest.Builder.class);
+      }
+
+      // Construct using com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        dbName_ = "";
+
+        tableName_ = "";
+
+        rowKey_ = com.google.protobuf.ByteString.EMPTY;
+
+        if (familiesBuilder_ == null) {
+          families_ = null;
+        } else {
+          families_ = null;
+          familiesBuilder_ = null;
+        }
+        columnVersion_ = 0L;
+
+        columnLimit_ = 0L;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.internal_static_tiap_hbaselike_kvrpcpb_GetRowVersionRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest getDefaultInstanceForType() {
+        return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest build() {
+        com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest buildPartial() {
+        com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest result = new com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest(this);
+        result.dbName_ = dbName_;
+        result.tableName_ = tableName_;
+        result.rowKey_ = rowKey_;
+        if (familiesBuilder_ == null) {
+          result.families_ = families_;
+        } else {
+          result.families_ = familiesBuilder_.build();
+        }
+        result.columnVersion_ = columnVersion_;
+        result.columnLimit_ = columnLimit_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest) {
+          return mergeFrom((com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest other) {
+        if (other == com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest.getDefaultInstance()) return this;
+        if (!other.getDbName().isEmpty()) {
+          dbName_ = other.dbName_;
+          onChanged();
+        }
+        if (!other.getTableName().isEmpty()) {
+          tableName_ = other.tableName_;
+          onChanged();
+        }
+        if (other.getRowKey() != com.google.protobuf.ByteString.EMPTY) {
+          setRowKey(other.getRowKey());
+        }
+        if (other.hasFamilies()) {
+          mergeFamilies(other.getFamilies());
+        }
+        if (other.getColumnVersion() != 0L) {
+          setColumnVersion(other.getColumnVersion());
+        }
+        if (other.getColumnLimit() != 0L) {
+          setColumnLimit(other.getColumnLimit());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object dbName_ = "";
+      /**
+       * <code>string db_name = 1;</code>
+       * @return The dbName.
+       */
+      public java.lang.String getDbName() {
+        java.lang.Object ref = dbName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          dbName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string db_name = 1;</code>
+       * @return The bytes for dbName.
+       */
+      public com.google.protobuf.ByteString
+          getDbNameBytes() {
+        java.lang.Object ref = dbName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          dbName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string db_name = 1;</code>
+       * @param value The dbName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDbName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        dbName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string db_name = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDbName() {
+        
+        dbName_ = getDefaultInstance().getDbName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string db_name = 1;</code>
+       * @param value The bytes for dbName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDbNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        dbName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object tableName_ = "";
+      /**
+       * <code>string table_name = 2;</code>
+       * @return The tableName.
+       */
+      public java.lang.String getTableName() {
+        java.lang.Object ref = tableName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          tableName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string table_name = 2;</code>
+       * @return The bytes for tableName.
+       */
+      public com.google.protobuf.ByteString
+          getTableNameBytes() {
+        java.lang.Object ref = tableName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          tableName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string table_name = 2;</code>
+       * @param value The tableName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTableName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        tableName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string table_name = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTableName() {
+        
+        tableName_ = getDefaultInstance().getTableName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string table_name = 2;</code>
+       * @param value The bytes for tableName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTableNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        tableName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.ByteString rowKey_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>bytes row_key = 3;</code>
+       * @return The rowKey.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getRowKey() {
+        return rowKey_;
+      }
+      /**
+       * <code>bytes row_key = 3;</code>
+       * @param value The rowKey to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRowKey(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        rowKey_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bytes row_key = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRowKey() {
+        
+        rowKey_ = getDefaultInstance().getRowKey();
+        onChanged();
+        return this;
+      }
+
+      private com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily families_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamilyOrBuilder> familiesBuilder_;
+      /**
+       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 4;</code>
+       * @return Whether the families field is set.
+       */
+      public boolean hasFamilies() {
+        return familiesBuilder_ != null || families_ != null;
+      }
+      /**
+       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 4;</code>
+       * @return The families.
+       */
+      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily getFamilies() {
+        if (familiesBuilder_ == null) {
+          return families_ == null ? com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily.getDefaultInstance() : families_;
+        } else {
+          return familiesBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 4;</code>
+       */
+      public Builder setFamilies(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily value) {
+        if (familiesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          families_ = value;
+          onChanged();
+        } else {
+          familiesBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 4;</code>
+       */
+      public Builder setFamilies(
+          com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily.Builder builderForValue) {
+        if (familiesBuilder_ == null) {
+          families_ = builderForValue.build();
+          onChanged();
+        } else {
+          familiesBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 4;</code>
+       */
+      public Builder mergeFamilies(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily value) {
+        if (familiesBuilder_ == null) {
+          if (families_ != null) {
+            families_ =
+              com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily.newBuilder(families_).mergeFrom(value).buildPartial();
+          } else {
+            families_ = value;
+          }
+          onChanged();
+        } else {
+          familiesBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 4;</code>
+       */
+      public Builder clearFamilies() {
+        if (familiesBuilder_ == null) {
+          families_ = null;
+          onChanged();
+        } else {
+          families_ = null;
+          familiesBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 4;</code>
+       */
+      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily.Builder getFamiliesBuilder() {
+        
+        onChanged();
+        return getFamiliesFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 4;</code>
+       */
+      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamilyOrBuilder getFamiliesOrBuilder() {
+        if (familiesBuilder_ != null) {
+          return familiesBuilder_.getMessageOrBuilder();
+        } else {
+          return families_ == null ?
+              com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily.getDefaultInstance() : families_;
+        }
+      }
+      /**
+       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamilyOrBuilder> 
+          getFamiliesFieldBuilder() {
+        if (familiesBuilder_ == null) {
+          familiesBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamilyOrBuilder>(
+                  getFamilies(),
+                  getParentForChildren(),
+                  isClean());
+          families_ = null;
+        }
+        return familiesBuilder_;
+      }
+
+      private long columnVersion_ ;
+      /**
+       * <code>int64 column_version = 5;</code>
+       * @return The columnVersion.
+       */
+      @java.lang.Override
+      public long getColumnVersion() {
+        return columnVersion_;
+      }
+      /**
+       * <code>int64 column_version = 5;</code>
+       * @param value The columnVersion to set.
+       * @return This builder for chaining.
+       */
+      public Builder setColumnVersion(long value) {
+        
+        columnVersion_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 column_version = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearColumnVersion() {
+        
+        columnVersion_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long columnLimit_ ;
+      /**
+       * <code>int64 column_limit = 6;</code>
+       * @return The columnLimit.
+       */
+      @java.lang.Override
+      public long getColumnLimit() {
+        return columnLimit_;
+      }
+      /**
+       * <code>int64 column_limit = 6;</code>
+       * @param value The columnLimit to set.
+       * @return This builder for chaining.
+       */
+      public Builder setColumnLimit(long value) {
+        
+        columnLimit_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 column_limit = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearColumnLimit() {
+        
+        columnLimit_ = 0L;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:tiap_hbaselike_kvrpcpb.GetRowVersionRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:tiap_hbaselike_kvrpcpb.GetRowVersionRequest)
+    private static final com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest();
+    }
+
+    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GetRowVersionRequest>
+        PARSER = new com.google.protobuf.AbstractParser<GetRowVersionRequest>() {
+      @java.lang.Override
+      public GetRowVersionRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GetRowVersionRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<GetRowVersionRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetRowVersionRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface GetRowVersionResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:tiap_hbaselike_kvrpcpb.GetRowVersionResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .tiap_hbaselike_kvrpcpb.RowValue row_values = 1;</code>
+     */
+    java.util.List<com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue> 
+        getRowValuesList();
+    /**
+     * <code>repeated .tiap_hbaselike_kvrpcpb.RowValue row_values = 1;</code>
+     */
+    com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue getRowValues(int index);
+    /**
+     * <code>repeated .tiap_hbaselike_kvrpcpb.RowValue row_values = 1;</code>
+     */
+    int getRowValuesCount();
+    /**
+     * <code>repeated .tiap_hbaselike_kvrpcpb.RowValue row_values = 1;</code>
+     */
+    java.util.List<? extends com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValueOrBuilder> 
+        getRowValuesOrBuilderList();
+    /**
+     * <code>repeated .tiap_hbaselike_kvrpcpb.RowValue row_values = 1;</code>
+     */
+    com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValueOrBuilder getRowValuesOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code tiap_hbaselike_kvrpcpb.GetRowVersionResponse}
+   */
+  public static final class GetRowVersionResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:tiap_hbaselike_kvrpcpb.GetRowVersionResponse)
+      GetRowVersionResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use GetRowVersionResponse.newBuilder() to construct.
+    private GetRowVersionResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private GetRowVersionResponse() {
+      rowValues_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new GetRowVersionResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private GetRowVersionResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                rowValues_ = new java.util.ArrayList<com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              rowValues_.add(
+                  input.readMessage(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          rowValues_ = java.util.Collections.unmodifiableList(rowValues_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.internal_static_tiap_hbaselike_kvrpcpb_GetRowVersionResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.internal_static_tiap_hbaselike_kvrpcpb_GetRowVersionResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse.class, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse.Builder.class);
+    }
+
+    public static final int ROW_VALUES_FIELD_NUMBER = 1;
+    private java.util.List<com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue> rowValues_;
+    /**
+     * <code>repeated .tiap_hbaselike_kvrpcpb.RowValue row_values = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue> getRowValuesList() {
+      return rowValues_;
+    }
+    /**
+     * <code>repeated .tiap_hbaselike_kvrpcpb.RowValue row_values = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValueOrBuilder> 
+        getRowValuesOrBuilderList() {
+      return rowValues_;
+    }
+    /**
+     * <code>repeated .tiap_hbaselike_kvrpcpb.RowValue row_values = 1;</code>
+     */
+    @java.lang.Override
+    public int getRowValuesCount() {
+      return rowValues_.size();
+    }
+    /**
+     * <code>repeated .tiap_hbaselike_kvrpcpb.RowValue row_values = 1;</code>
+     */
+    @java.lang.Override
+    public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue getRowValues(int index) {
+      return rowValues_.get(index);
+    }
+    /**
+     * <code>repeated .tiap_hbaselike_kvrpcpb.RowValue row_values = 1;</code>
+     */
+    @java.lang.Override
+    public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValueOrBuilder getRowValuesOrBuilder(
+        int index) {
+      return rowValues_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < rowValues_.size(); i++) {
+        output.writeMessage(1, rowValues_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < rowValues_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, rowValues_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse)) {
+        return super.equals(obj);
+      }
+      com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse other = (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse) obj;
+
+      if (!getRowValuesList()
+          .equals(other.getRowValuesList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getRowValuesCount() > 0) {
+        hash = (37 * hash) + ROW_VALUES_FIELD_NUMBER;
+        hash = (53 * hash) + getRowValuesList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code tiap_hbaselike_kvrpcpb.GetRowVersionResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:tiap_hbaselike_kvrpcpb.GetRowVersionResponse)
+        com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.internal_static_tiap_hbaselike_kvrpcpb_GetRowVersionResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.internal_static_tiap_hbaselike_kvrpcpb_GetRowVersionResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse.class, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse.Builder.class);
+      }
+
+      // Construct using com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getRowValuesFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (rowValuesBuilder_ == null) {
+          rowValues_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          rowValuesBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.internal_static_tiap_hbaselike_kvrpcpb_GetRowVersionResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse getDefaultInstanceForType() {
+        return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse build() {
+        com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse buildPartial() {
+        com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse result = new com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse(this);
+        int from_bitField0_ = bitField0_;
+        if (rowValuesBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            rowValues_ = java.util.Collections.unmodifiableList(rowValues_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.rowValues_ = rowValues_;
+        } else {
+          result.rowValues_ = rowValuesBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse) {
+          return mergeFrom((com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse other) {
+        if (other == com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse.getDefaultInstance()) return this;
+        if (rowValuesBuilder_ == null) {
+          if (!other.rowValues_.isEmpty()) {
+            if (rowValues_.isEmpty()) {
+              rowValues_ = other.rowValues_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureRowValuesIsMutable();
+              rowValues_.addAll(other.rowValues_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.rowValues_.isEmpty()) {
+            if (rowValuesBuilder_.isEmpty()) {
+              rowValuesBuilder_.dispose();
+              rowValuesBuilder_ = null;
+              rowValues_ = other.rowValues_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              rowValuesBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getRowValuesFieldBuilder() : null;
+            } else {
+              rowValuesBuilder_.addAllMessages(other.rowValues_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue> rowValues_ =
+        java.util.Collections.emptyList();
+      private void ensureRowValuesIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          rowValues_ = new java.util.ArrayList<com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue>(rowValues_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValueOrBuilder> rowValuesBuilder_;
+
+      /**
+       * <code>repeated .tiap_hbaselike_kvrpcpb.RowValue row_values = 1;</code>
+       */
+      public java.util.List<com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue> getRowValuesList() {
+        if (rowValuesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(rowValues_);
+        } else {
+          return rowValuesBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .tiap_hbaselike_kvrpcpb.RowValue row_values = 1;</code>
+       */
+      public int getRowValuesCount() {
+        if (rowValuesBuilder_ == null) {
+          return rowValues_.size();
+        } else {
+          return rowValuesBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .tiap_hbaselike_kvrpcpb.RowValue row_values = 1;</code>
+       */
+      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue getRowValues(int index) {
+        if (rowValuesBuilder_ == null) {
+          return rowValues_.get(index);
+        } else {
+          return rowValuesBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .tiap_hbaselike_kvrpcpb.RowValue row_values = 1;</code>
+       */
+      public Builder setRowValues(
+          int index, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue value) {
+        if (rowValuesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureRowValuesIsMutable();
+          rowValues_.set(index, value);
+          onChanged();
+        } else {
+          rowValuesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .tiap_hbaselike_kvrpcpb.RowValue row_values = 1;</code>
+       */
+      public Builder setRowValues(
+          int index, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue.Builder builderForValue) {
+        if (rowValuesBuilder_ == null) {
+          ensureRowValuesIsMutable();
+          rowValues_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          rowValuesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .tiap_hbaselike_kvrpcpb.RowValue row_values = 1;</code>
+       */
+      public Builder addRowValues(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue value) {
+        if (rowValuesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureRowValuesIsMutable();
+          rowValues_.add(value);
+          onChanged();
+        } else {
+          rowValuesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .tiap_hbaselike_kvrpcpb.RowValue row_values = 1;</code>
+       */
+      public Builder addRowValues(
+          int index, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue value) {
+        if (rowValuesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureRowValuesIsMutable();
+          rowValues_.add(index, value);
+          onChanged();
+        } else {
+          rowValuesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .tiap_hbaselike_kvrpcpb.RowValue row_values = 1;</code>
+       */
+      public Builder addRowValues(
+          com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue.Builder builderForValue) {
+        if (rowValuesBuilder_ == null) {
+          ensureRowValuesIsMutable();
+          rowValues_.add(builderForValue.build());
+          onChanged();
+        } else {
+          rowValuesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .tiap_hbaselike_kvrpcpb.RowValue row_values = 1;</code>
+       */
+      public Builder addRowValues(
+          int index, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue.Builder builderForValue) {
+        if (rowValuesBuilder_ == null) {
+          ensureRowValuesIsMutable();
+          rowValues_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          rowValuesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .tiap_hbaselike_kvrpcpb.RowValue row_values = 1;</code>
+       */
+      public Builder addAllRowValues(
+          java.lang.Iterable<? extends com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue> values) {
+        if (rowValuesBuilder_ == null) {
+          ensureRowValuesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, rowValues_);
+          onChanged();
+        } else {
+          rowValuesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .tiap_hbaselike_kvrpcpb.RowValue row_values = 1;</code>
+       */
+      public Builder clearRowValues() {
+        if (rowValuesBuilder_ == null) {
+          rowValues_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          rowValuesBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .tiap_hbaselike_kvrpcpb.RowValue row_values = 1;</code>
+       */
+      public Builder removeRowValues(int index) {
+        if (rowValuesBuilder_ == null) {
+          ensureRowValuesIsMutable();
+          rowValues_.remove(index);
+          onChanged();
+        } else {
+          rowValuesBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .tiap_hbaselike_kvrpcpb.RowValue row_values = 1;</code>
+       */
+      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue.Builder getRowValuesBuilder(
+          int index) {
+        return getRowValuesFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .tiap_hbaselike_kvrpcpb.RowValue row_values = 1;</code>
+       */
+      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValueOrBuilder getRowValuesOrBuilder(
+          int index) {
+        if (rowValuesBuilder_ == null) {
+          return rowValues_.get(index);  } else {
+          return rowValuesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .tiap_hbaselike_kvrpcpb.RowValue row_values = 1;</code>
+       */
+      public java.util.List<? extends com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValueOrBuilder> 
+           getRowValuesOrBuilderList() {
+        if (rowValuesBuilder_ != null) {
+          return rowValuesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(rowValues_);
+        }
+      }
+      /**
+       * <code>repeated .tiap_hbaselike_kvrpcpb.RowValue row_values = 1;</code>
+       */
+      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue.Builder addRowValuesBuilder() {
+        return getRowValuesFieldBuilder().addBuilder(
+            com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .tiap_hbaselike_kvrpcpb.RowValue row_values = 1;</code>
+       */
+      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue.Builder addRowValuesBuilder(
+          int index) {
+        return getRowValuesFieldBuilder().addBuilder(
+            index, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .tiap_hbaselike_kvrpcpb.RowValue row_values = 1;</code>
+       */
+      public java.util.List<com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue.Builder> 
+           getRowValuesBuilderList() {
+        return getRowValuesFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValueOrBuilder> 
+          getRowValuesFieldBuilder() {
+        if (rowValuesBuilder_ == null) {
+          rowValuesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValueOrBuilder>(
+                  rowValues_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          rowValues_ = null;
+        }
+        return rowValuesBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:tiap_hbaselike_kvrpcpb.GetRowVersionResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:tiap_hbaselike_kvrpcpb.GetRowVersionResponse)
+    private static final com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse();
+    }
+
+    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GetRowVersionResponse>
+        PARSER = new com.google.protobuf.AbstractParser<GetRowVersionResponse>() {
+      @java.lang.Override
+      public GetRowVersionResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GetRowVersionResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<GetRowVersionResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetRowVersionResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ScanRowRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:tiap_hbaselike_kvrpcpb.ScanRowRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string db_name = 1;</code>
+     * @return The dbName.
+     */
+    java.lang.String getDbName();
+    /**
+     * <code>string db_name = 1;</code>
+     * @return The bytes for dbName.
+     */
+    com.google.protobuf.ByteString
+        getDbNameBytes();
+
+    /**
+     * <code>string table_name = 2;</code>
+     * @return The tableName.
+     */
+    java.lang.String getTableName();
+    /**
+     * <code>string table_name = 2;</code>
+     * @return The bytes for tableName.
+     */
+    com.google.protobuf.ByteString
+        getTableNameBytes();
+
+    /**
+     * <code>bytes row_key_start = 3;</code>
+     * @return The rowKeyStart.
+     */
+    com.google.protobuf.ByteString getRowKeyStart();
+
+    /**
+     * <code>bytes row_key_end = 4;</code>
+     * @return The rowKeyEnd.
+     */
+    com.google.protobuf.ByteString getRowKeyEnd();
+
+    /**
+     * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 5;</code>
+     * @return Whether the families field is set.
+     */
+    boolean hasFamilies();
+    /**
+     * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 5;</code>
+     * @return The families.
+     */
+    com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily getFamilies();
+    /**
+     * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 5;</code>
+     */
+    com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamilyOrBuilder getFamiliesOrBuilder();
+
+    /**
+     * <code>int64 row_version = 6;</code>
+     * @return The rowVersion.
+     */
+    long getRowVersion();
+
+    /**
+     * <code>int64 row_limit = 7;</code>
+     * @return The rowLimit.
+     */
+    long getRowLimit();
+  }
+  /**
+   * Protobuf type {@code tiap_hbaselike_kvrpcpb.ScanRowRequest}
+   */
+  public static final class ScanRowRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:tiap_hbaselike_kvrpcpb.ScanRowRequest)
+      ScanRowRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ScanRowRequest.newBuilder() to construct.
+    private ScanRowRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ScanRowRequest() {
+      dbName_ = "";
+      tableName_ = "";
+      rowKeyStart_ = com.google.protobuf.ByteString.EMPTY;
+      rowKeyEnd_ = com.google.protobuf.ByteString.EMPTY;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ScanRowRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ScanRowRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              dbName_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              tableName_ = s;
+              break;
+            }
+            case 26: {
+
+              rowKeyStart_ = input.readBytes();
+              break;
+            }
+            case 34: {
+
+              rowKeyEnd_ = input.readBytes();
+              break;
+            }
+            case 42: {
+              com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily.Builder subBuilder = null;
+              if (families_ != null) {
+                subBuilder = families_.toBuilder();
+              }
+              families_ = input.readMessage(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(families_);
+                families_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 48: {
+
+              rowVersion_ = input.readInt64();
+              break;
+            }
+            case 56: {
+
+              rowLimit_ = input.readInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.internal_static_tiap_hbaselike_kvrpcpb_ScanRowRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.internal_static_tiap_hbaselike_kvrpcpb_ScanRowRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest.class, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest.Builder.class);
+    }
+
+    public static final int DB_NAME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object dbName_;
+    /**
+     * <code>string db_name = 1;</code>
+     * @return The dbName.
+     */
+    @java.lang.Override
+    public java.lang.String getDbName() {
+      java.lang.Object ref = dbName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        dbName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string db_name = 1;</code>
+     * @return The bytes for dbName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getDbNameBytes() {
+      java.lang.Object ref = dbName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        dbName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TABLE_NAME_FIELD_NUMBER = 2;
+    private volatile java.lang.Object tableName_;
+    /**
+     * <code>string table_name = 2;</code>
+     * @return The tableName.
+     */
+    @java.lang.Override
+    public java.lang.String getTableName() {
+      java.lang.Object ref = tableName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        tableName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string table_name = 2;</code>
+     * @return The bytes for tableName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getTableNameBytes() {
+      java.lang.Object ref = tableName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        tableName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ROW_KEY_START_FIELD_NUMBER = 3;
+    private com.google.protobuf.ByteString rowKeyStart_;
+    /**
+     * <code>bytes row_key_start = 3;</code>
+     * @return The rowKeyStart.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getRowKeyStart() {
+      return rowKeyStart_;
+    }
+
+    public static final int ROW_KEY_END_FIELD_NUMBER = 4;
+    private com.google.protobuf.ByteString rowKeyEnd_;
+    /**
+     * <code>bytes row_key_end = 4;</code>
+     * @return The rowKeyEnd.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getRowKeyEnd() {
+      return rowKeyEnd_;
+    }
+
+    public static final int FAMILIES_FIELD_NUMBER = 5;
+    private com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily families_;
+    /**
+     * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 5;</code>
+     * @return Whether the families field is set.
+     */
+    @java.lang.Override
+    public boolean hasFamilies() {
+      return families_ != null;
+    }
+    /**
+     * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 5;</code>
+     * @return The families.
+     */
+    @java.lang.Override
+    public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily getFamilies() {
+      return families_ == null ? com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily.getDefaultInstance() : families_;
+    }
+    /**
+     * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 5;</code>
+     */
+    @java.lang.Override
+    public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamilyOrBuilder getFamiliesOrBuilder() {
+      return getFamilies();
+    }
+
+    public static final int ROW_VERSION_FIELD_NUMBER = 6;
+    private long rowVersion_;
+    /**
+     * <code>int64 row_version = 6;</code>
+     * @return The rowVersion.
+     */
+    @java.lang.Override
+    public long getRowVersion() {
+      return rowVersion_;
+    }
+
+    public static final int ROW_LIMIT_FIELD_NUMBER = 7;
+    private long rowLimit_;
+    /**
+     * <code>int64 row_limit = 7;</code>
+     * @return The rowLimit.
+     */
+    @java.lang.Override
+    public long getRowLimit() {
+      return rowLimit_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getDbNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, dbName_);
+      }
+      if (!getTableNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, tableName_);
+      }
+      if (!rowKeyStart_.isEmpty()) {
+        output.writeBytes(3, rowKeyStart_);
+      }
+      if (!rowKeyEnd_.isEmpty()) {
+        output.writeBytes(4, rowKeyEnd_);
+      }
+      if (families_ != null) {
+        output.writeMessage(5, getFamilies());
+      }
+      if (rowVersion_ != 0L) {
+        output.writeInt64(6, rowVersion_);
+      }
+      if (rowLimit_ != 0L) {
+        output.writeInt64(7, rowLimit_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getDbNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, dbName_);
+      }
+      if (!getTableNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, tableName_);
+      }
+      if (!rowKeyStart_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(3, rowKeyStart_);
+      }
+      if (!rowKeyEnd_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(4, rowKeyEnd_);
+      }
+      if (families_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, getFamilies());
+      }
+      if (rowVersion_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(6, rowVersion_);
+      }
+      if (rowLimit_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(7, rowLimit_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest)) {
+        return super.equals(obj);
+      }
+      com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest other = (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest) obj;
+
+      if (!getDbName()
+          .equals(other.getDbName())) return false;
+      if (!getTableName()
+          .equals(other.getTableName())) return false;
+      if (!getRowKeyStart()
+          .equals(other.getRowKeyStart())) return false;
+      if (!getRowKeyEnd()
+          .equals(other.getRowKeyEnd())) return false;
+      if (hasFamilies() != other.hasFamilies()) return false;
+      if (hasFamilies()) {
+        if (!getFamilies()
+            .equals(other.getFamilies())) return false;
+      }
+      if (getRowVersion()
+          != other.getRowVersion()) return false;
+      if (getRowLimit()
+          != other.getRowLimit()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + DB_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getDbName().hashCode();
+      hash = (37 * hash) + TABLE_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getTableName().hashCode();
+      hash = (37 * hash) + ROW_KEY_START_FIELD_NUMBER;
+      hash = (53 * hash) + getRowKeyStart().hashCode();
+      hash = (37 * hash) + ROW_KEY_END_FIELD_NUMBER;
+      hash = (53 * hash) + getRowKeyEnd().hashCode();
+      if (hasFamilies()) {
+        hash = (37 * hash) + FAMILIES_FIELD_NUMBER;
+        hash = (53 * hash) + getFamilies().hashCode();
+      }
+      hash = (37 * hash) + ROW_VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getRowVersion());
+      hash = (37 * hash) + ROW_LIMIT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getRowLimit());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code tiap_hbaselike_kvrpcpb.ScanRowRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:tiap_hbaselike_kvrpcpb.ScanRowRequest)
+        com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.internal_static_tiap_hbaselike_kvrpcpb_ScanRowRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.internal_static_tiap_hbaselike_kvrpcpb_ScanRowRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest.class, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest.Builder.class);
+      }
+
+      // Construct using com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        dbName_ = "";
+
+        tableName_ = "";
+
+        rowKeyStart_ = com.google.protobuf.ByteString.EMPTY;
+
+        rowKeyEnd_ = com.google.protobuf.ByteString.EMPTY;
+
+        if (familiesBuilder_ == null) {
+          families_ = null;
+        } else {
+          families_ = null;
+          familiesBuilder_ = null;
+        }
+        rowVersion_ = 0L;
+
+        rowLimit_ = 0L;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.internal_static_tiap_hbaselike_kvrpcpb_ScanRowRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest getDefaultInstanceForType() {
+        return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest build() {
+        com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest buildPartial() {
+        com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest result = new com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest(this);
+        result.dbName_ = dbName_;
+        result.tableName_ = tableName_;
+        result.rowKeyStart_ = rowKeyStart_;
+        result.rowKeyEnd_ = rowKeyEnd_;
+        if (familiesBuilder_ == null) {
+          result.families_ = families_;
+        } else {
+          result.families_ = familiesBuilder_.build();
+        }
+        result.rowVersion_ = rowVersion_;
+        result.rowLimit_ = rowLimit_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest) {
+          return mergeFrom((com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest other) {
+        if (other == com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest.getDefaultInstance()) return this;
+        if (!other.getDbName().isEmpty()) {
+          dbName_ = other.dbName_;
+          onChanged();
+        }
+        if (!other.getTableName().isEmpty()) {
+          tableName_ = other.tableName_;
+          onChanged();
+        }
+        if (other.getRowKeyStart() != com.google.protobuf.ByteString.EMPTY) {
+          setRowKeyStart(other.getRowKeyStart());
+        }
+        if (other.getRowKeyEnd() != com.google.protobuf.ByteString.EMPTY) {
+          setRowKeyEnd(other.getRowKeyEnd());
+        }
+        if (other.hasFamilies()) {
+          mergeFamilies(other.getFamilies());
+        }
+        if (other.getRowVersion() != 0L) {
+          setRowVersion(other.getRowVersion());
+        }
+        if (other.getRowLimit() != 0L) {
+          setRowLimit(other.getRowLimit());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object dbName_ = "";
+      /**
+       * <code>string db_name = 1;</code>
+       * @return The dbName.
+       */
+      public java.lang.String getDbName() {
+        java.lang.Object ref = dbName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          dbName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string db_name = 1;</code>
+       * @return The bytes for dbName.
+       */
+      public com.google.protobuf.ByteString
+          getDbNameBytes() {
+        java.lang.Object ref = dbName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          dbName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string db_name = 1;</code>
+       * @param value The dbName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDbName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        dbName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string db_name = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDbName() {
+        
+        dbName_ = getDefaultInstance().getDbName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string db_name = 1;</code>
+       * @param value The bytes for dbName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDbNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        dbName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object tableName_ = "";
+      /**
+       * <code>string table_name = 2;</code>
+       * @return The tableName.
+       */
+      public java.lang.String getTableName() {
+        java.lang.Object ref = tableName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          tableName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string table_name = 2;</code>
+       * @return The bytes for tableName.
+       */
+      public com.google.protobuf.ByteString
+          getTableNameBytes() {
+        java.lang.Object ref = tableName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          tableName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string table_name = 2;</code>
+       * @param value The tableName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTableName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        tableName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string table_name = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTableName() {
+        
+        tableName_ = getDefaultInstance().getTableName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string table_name = 2;</code>
+       * @param value The bytes for tableName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTableNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        tableName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.ByteString rowKeyStart_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>bytes row_key_start = 3;</code>
+       * @return The rowKeyStart.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getRowKeyStart() {
+        return rowKeyStart_;
+      }
+      /**
+       * <code>bytes row_key_start = 3;</code>
+       * @param value The rowKeyStart to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRowKeyStart(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        rowKeyStart_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bytes row_key_start = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRowKeyStart() {
+        
+        rowKeyStart_ = getDefaultInstance().getRowKeyStart();
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.ByteString rowKeyEnd_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>bytes row_key_end = 4;</code>
+       * @return The rowKeyEnd.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getRowKeyEnd() {
+        return rowKeyEnd_;
+      }
+      /**
+       * <code>bytes row_key_end = 4;</code>
+       * @param value The rowKeyEnd to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRowKeyEnd(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        rowKeyEnd_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bytes row_key_end = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRowKeyEnd() {
+        
+        rowKeyEnd_ = getDefaultInstance().getRowKeyEnd();
+        onChanged();
+        return this;
+      }
+
+      private com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily families_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamilyOrBuilder> familiesBuilder_;
+      /**
+       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 5;</code>
+       * @return Whether the families field is set.
+       */
+      public boolean hasFamilies() {
+        return familiesBuilder_ != null || families_ != null;
+      }
+      /**
+       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 5;</code>
+       * @return The families.
+       */
+      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily getFamilies() {
+        if (familiesBuilder_ == null) {
+          return families_ == null ? com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily.getDefaultInstance() : families_;
+        } else {
+          return familiesBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 5;</code>
+       */
+      public Builder setFamilies(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily value) {
+        if (familiesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          families_ = value;
+          onChanged();
+        } else {
+          familiesBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 5;</code>
+       */
+      public Builder setFamilies(
+          com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily.Builder builderForValue) {
+        if (familiesBuilder_ == null) {
+          families_ = builderForValue.build();
+          onChanged();
+        } else {
+          familiesBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 5;</code>
+       */
+      public Builder mergeFamilies(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily value) {
+        if (familiesBuilder_ == null) {
+          if (families_ != null) {
+            families_ =
+              com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily.newBuilder(families_).mergeFrom(value).buildPartial();
+          } else {
+            families_ = value;
+          }
+          onChanged();
+        } else {
+          familiesBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 5;</code>
+       */
+      public Builder clearFamilies() {
+        if (familiesBuilder_ == null) {
+          families_ = null;
+          onChanged();
+        } else {
+          families_ = null;
+          familiesBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 5;</code>
+       */
+      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily.Builder getFamiliesBuilder() {
+        
+        onChanged();
+        return getFamiliesFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 5;</code>
+       */
+      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamilyOrBuilder getFamiliesOrBuilder() {
+        if (familiesBuilder_ != null) {
+          return familiesBuilder_.getMessageOrBuilder();
+        } else {
+          return families_ == null ?
+              com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily.getDefaultInstance() : families_;
+        }
+      }
+      /**
+       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 5;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamilyOrBuilder> 
+          getFamiliesFieldBuilder() {
+        if (familiesBuilder_ == null) {
+          familiesBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamilyOrBuilder>(
+                  getFamilies(),
+                  getParentForChildren(),
+                  isClean());
+          families_ = null;
+        }
+        return familiesBuilder_;
+      }
+
+      private long rowVersion_ ;
+      /**
+       * <code>int64 row_version = 6;</code>
+       * @return The rowVersion.
+       */
+      @java.lang.Override
+      public long getRowVersion() {
+        return rowVersion_;
+      }
+      /**
+       * <code>int64 row_version = 6;</code>
+       * @param value The rowVersion to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRowVersion(long value) {
+        
+        rowVersion_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 row_version = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRowVersion() {
+        
+        rowVersion_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long rowLimit_ ;
+      /**
+       * <code>int64 row_limit = 7;</code>
+       * @return The rowLimit.
+       */
+      @java.lang.Override
+      public long getRowLimit() {
+        return rowLimit_;
+      }
+      /**
+       * <code>int64 row_limit = 7;</code>
+       * @param value The rowLimit to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRowLimit(long value) {
+        
+        rowLimit_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 row_limit = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRowLimit() {
+        
+        rowLimit_ = 0L;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:tiap_hbaselike_kvrpcpb.ScanRowRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:tiap_hbaselike_kvrpcpb.ScanRowRequest)
+    private static final com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest();
+    }
+
+    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ScanRowRequest>
+        PARSER = new com.google.protobuf.AbstractParser<ScanRowRequest>() {
+      @java.lang.Override
+      public ScanRowRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ScanRowRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ScanRowRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ScanRowRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ScanRowResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:tiap_hbaselike_kvrpcpb.ScanRowResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .tiap_hbaselike_kvrpcpb.RowValue row_values = 1;</code>
+     */
+    java.util.List<com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue> 
+        getRowValuesList();
+    /**
+     * <code>repeated .tiap_hbaselike_kvrpcpb.RowValue row_values = 1;</code>
+     */
+    com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue getRowValues(int index);
+    /**
+     * <code>repeated .tiap_hbaselike_kvrpcpb.RowValue row_values = 1;</code>
+     */
+    int getRowValuesCount();
+    /**
+     * <code>repeated .tiap_hbaselike_kvrpcpb.RowValue row_values = 1;</code>
+     */
+    java.util.List<? extends com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValueOrBuilder> 
+        getRowValuesOrBuilderList();
+    /**
+     * <code>repeated .tiap_hbaselike_kvrpcpb.RowValue row_values = 1;</code>
+     */
+    com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValueOrBuilder getRowValuesOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code tiap_hbaselike_kvrpcpb.ScanRowResponse}
+   */
+  public static final class ScanRowResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:tiap_hbaselike_kvrpcpb.ScanRowResponse)
+      ScanRowResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ScanRowResponse.newBuilder() to construct.
+    private ScanRowResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ScanRowResponse() {
+      rowValues_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ScanRowResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ScanRowResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                rowValues_ = new java.util.ArrayList<com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              rowValues_.add(
+                  input.readMessage(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          rowValues_ = java.util.Collections.unmodifiableList(rowValues_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.internal_static_tiap_hbaselike_kvrpcpb_ScanRowResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.internal_static_tiap_hbaselike_kvrpcpb_ScanRowResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse.class, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse.Builder.class);
+    }
+
+    public static final int ROW_VALUES_FIELD_NUMBER = 1;
+    private java.util.List<com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue> rowValues_;
+    /**
+     * <code>repeated .tiap_hbaselike_kvrpcpb.RowValue row_values = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue> getRowValuesList() {
+      return rowValues_;
+    }
+    /**
+     * <code>repeated .tiap_hbaselike_kvrpcpb.RowValue row_values = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValueOrBuilder> 
+        getRowValuesOrBuilderList() {
+      return rowValues_;
+    }
+    /**
+     * <code>repeated .tiap_hbaselike_kvrpcpb.RowValue row_values = 1;</code>
+     */
+    @java.lang.Override
+    public int getRowValuesCount() {
+      return rowValues_.size();
+    }
+    /**
+     * <code>repeated .tiap_hbaselike_kvrpcpb.RowValue row_values = 1;</code>
+     */
+    @java.lang.Override
+    public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue getRowValues(int index) {
+      return rowValues_.get(index);
+    }
+    /**
+     * <code>repeated .tiap_hbaselike_kvrpcpb.RowValue row_values = 1;</code>
+     */
+    @java.lang.Override
+    public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValueOrBuilder getRowValuesOrBuilder(
+        int index) {
+      return rowValues_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < rowValues_.size(); i++) {
+        output.writeMessage(1, rowValues_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < rowValues_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, rowValues_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse)) {
+        return super.equals(obj);
+      }
+      com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse other = (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse) obj;
+
+      if (!getRowValuesList()
+          .equals(other.getRowValuesList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getRowValuesCount() > 0) {
+        hash = (37 * hash) + ROW_VALUES_FIELD_NUMBER;
+        hash = (53 * hash) + getRowValuesList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code tiap_hbaselike_kvrpcpb.ScanRowResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:tiap_hbaselike_kvrpcpb.ScanRowResponse)
+        com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.internal_static_tiap_hbaselike_kvrpcpb_ScanRowResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.internal_static_tiap_hbaselike_kvrpcpb_ScanRowResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse.class, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse.Builder.class);
+      }
+
+      // Construct using com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getRowValuesFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (rowValuesBuilder_ == null) {
+          rowValues_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          rowValuesBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.internal_static_tiap_hbaselike_kvrpcpb_ScanRowResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse getDefaultInstanceForType() {
+        return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse build() {
+        com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse buildPartial() {
+        com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse result = new com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse(this);
+        int from_bitField0_ = bitField0_;
+        if (rowValuesBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            rowValues_ = java.util.Collections.unmodifiableList(rowValues_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.rowValues_ = rowValues_;
+        } else {
+          result.rowValues_ = rowValuesBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse) {
+          return mergeFrom((com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse other) {
+        if (other == com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse.getDefaultInstance()) return this;
+        if (rowValuesBuilder_ == null) {
+          if (!other.rowValues_.isEmpty()) {
+            if (rowValues_.isEmpty()) {
+              rowValues_ = other.rowValues_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureRowValuesIsMutable();
+              rowValues_.addAll(other.rowValues_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.rowValues_.isEmpty()) {
+            if (rowValuesBuilder_.isEmpty()) {
+              rowValuesBuilder_.dispose();
+              rowValuesBuilder_ = null;
+              rowValues_ = other.rowValues_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              rowValuesBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getRowValuesFieldBuilder() : null;
+            } else {
+              rowValuesBuilder_.addAllMessages(other.rowValues_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue> rowValues_ =
+        java.util.Collections.emptyList();
+      private void ensureRowValuesIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          rowValues_ = new java.util.ArrayList<com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue>(rowValues_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValueOrBuilder> rowValuesBuilder_;
+
+      /**
+       * <code>repeated .tiap_hbaselike_kvrpcpb.RowValue row_values = 1;</code>
+       */
+      public java.util.List<com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue> getRowValuesList() {
+        if (rowValuesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(rowValues_);
+        } else {
+          return rowValuesBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .tiap_hbaselike_kvrpcpb.RowValue row_values = 1;</code>
+       */
+      public int getRowValuesCount() {
+        if (rowValuesBuilder_ == null) {
+          return rowValues_.size();
+        } else {
+          return rowValuesBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .tiap_hbaselike_kvrpcpb.RowValue row_values = 1;</code>
+       */
+      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue getRowValues(int index) {
+        if (rowValuesBuilder_ == null) {
+          return rowValues_.get(index);
+        } else {
+          return rowValuesBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .tiap_hbaselike_kvrpcpb.RowValue row_values = 1;</code>
+       */
+      public Builder setRowValues(
+          int index, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue value) {
+        if (rowValuesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureRowValuesIsMutable();
+          rowValues_.set(index, value);
+          onChanged();
+        } else {
+          rowValuesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .tiap_hbaselike_kvrpcpb.RowValue row_values = 1;</code>
+       */
+      public Builder setRowValues(
+          int index, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue.Builder builderForValue) {
+        if (rowValuesBuilder_ == null) {
+          ensureRowValuesIsMutable();
+          rowValues_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          rowValuesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .tiap_hbaselike_kvrpcpb.RowValue row_values = 1;</code>
+       */
+      public Builder addRowValues(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue value) {
+        if (rowValuesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureRowValuesIsMutable();
+          rowValues_.add(value);
+          onChanged();
+        } else {
+          rowValuesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .tiap_hbaselike_kvrpcpb.RowValue row_values = 1;</code>
+       */
+      public Builder addRowValues(
+          int index, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue value) {
+        if (rowValuesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureRowValuesIsMutable();
+          rowValues_.add(index, value);
+          onChanged();
+        } else {
+          rowValuesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .tiap_hbaselike_kvrpcpb.RowValue row_values = 1;</code>
+       */
+      public Builder addRowValues(
+          com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue.Builder builderForValue) {
+        if (rowValuesBuilder_ == null) {
+          ensureRowValuesIsMutable();
+          rowValues_.add(builderForValue.build());
+          onChanged();
+        } else {
+          rowValuesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .tiap_hbaselike_kvrpcpb.RowValue row_values = 1;</code>
+       */
+      public Builder addRowValues(
+          int index, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue.Builder builderForValue) {
+        if (rowValuesBuilder_ == null) {
+          ensureRowValuesIsMutable();
+          rowValues_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          rowValuesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .tiap_hbaselike_kvrpcpb.RowValue row_values = 1;</code>
+       */
+      public Builder addAllRowValues(
+          java.lang.Iterable<? extends com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue> values) {
+        if (rowValuesBuilder_ == null) {
+          ensureRowValuesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, rowValues_);
+          onChanged();
+        } else {
+          rowValuesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .tiap_hbaselike_kvrpcpb.RowValue row_values = 1;</code>
+       */
+      public Builder clearRowValues() {
+        if (rowValuesBuilder_ == null) {
+          rowValues_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          rowValuesBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .tiap_hbaselike_kvrpcpb.RowValue row_values = 1;</code>
+       */
+      public Builder removeRowValues(int index) {
+        if (rowValuesBuilder_ == null) {
+          ensureRowValuesIsMutable();
+          rowValues_.remove(index);
+          onChanged();
+        } else {
+          rowValuesBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .tiap_hbaselike_kvrpcpb.RowValue row_values = 1;</code>
+       */
+      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue.Builder getRowValuesBuilder(
+          int index) {
+        return getRowValuesFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .tiap_hbaselike_kvrpcpb.RowValue row_values = 1;</code>
+       */
+      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValueOrBuilder getRowValuesOrBuilder(
+          int index) {
+        if (rowValuesBuilder_ == null) {
+          return rowValues_.get(index);  } else {
+          return rowValuesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .tiap_hbaselike_kvrpcpb.RowValue row_values = 1;</code>
+       */
+      public java.util.List<? extends com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValueOrBuilder> 
+           getRowValuesOrBuilderList() {
+        if (rowValuesBuilder_ != null) {
+          return rowValuesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(rowValues_);
+        }
+      }
+      /**
+       * <code>repeated .tiap_hbaselike_kvrpcpb.RowValue row_values = 1;</code>
+       */
+      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue.Builder addRowValuesBuilder() {
+        return getRowValuesFieldBuilder().addBuilder(
+            com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .tiap_hbaselike_kvrpcpb.RowValue row_values = 1;</code>
+       */
+      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue.Builder addRowValuesBuilder(
+          int index) {
+        return getRowValuesFieldBuilder().addBuilder(
+            index, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .tiap_hbaselike_kvrpcpb.RowValue row_values = 1;</code>
+       */
+      public java.util.List<com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue.Builder> 
+           getRowValuesBuilderList() {
+        return getRowValuesFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValueOrBuilder> 
+          getRowValuesFieldBuilder() {
+        if (rowValuesBuilder_ == null) {
+          rowValuesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValueOrBuilder>(
+                  rowValues_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          rowValues_ = null;
+        }
+        return rowValuesBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:tiap_hbaselike_kvrpcpb.ScanRowResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:tiap_hbaselike_kvrpcpb.ScanRowResponse)
+    private static final com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse();
+    }
+
+    public static com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ScanRowResponse>
+        PARSER = new com.google.protobuf.AbstractParser<ScanRowResponse>() {
+      @java.lang.Override
+      public ScanRowResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ScanRowResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ScanRowResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ScanRowResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface RowOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:tiap_hbaselike_kvrpcpb.Row)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string db_name = 1;</code>
+     * @return The dbName.
+     */
+    java.lang.String getDbName();
+    /**
+     * <code>string db_name = 1;</code>
+     * @return The bytes for dbName.
+     */
+    com.google.protobuf.ByteString
+        getDbNameBytes();
+
+    /**
+     * <code>string table_name = 2;</code>
+     * @return The tableName.
+     */
+    java.lang.String getTableName();
+    /**
+     * <code>string table_name = 2;</code>
+     * @return The bytes for tableName.
+     */
+    com.google.protobuf.ByteString
+        getTableNameBytes();
+
+    /**
+     * <code>bytes row_key = 3;</code>
+     * @return The rowKey.
+     */
+    com.google.protobuf.ByteString getRowKey();
+
+    /**
+     * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 4;</code>
+     * @return Whether the families field is set.
+     */
+    boolean hasFamilies();
+    /**
+     * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 4;</code>
+     * @return The families.
+     */
+    com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily getFamilies();
+    /**
+     * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 4;</code>
+     */
+    com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamilyOrBuilder getFamiliesOrBuilder();
   }
   /**
    * Protobuf type {@code tiap_hbaselike_kvrpcpb.Row}
@@ -6911,11 +11755,6 @@ public final class TiapHbaselikeKvrpcpb {
                 families_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-            case 40: {
-
-              ttl_ = input.readInt64();
               break;
             }
             default: {
@@ -7063,17 +11902,6 @@ public final class TiapHbaselikeKvrpcpb {
       return getFamilies();
     }
 
-    public static final int TTL_FIELD_NUMBER = 5;
-    private long ttl_;
-    /**
-     * <code>int64 ttl = 5;</code>
-     * @return The ttl.
-     */
-    @java.lang.Override
-    public long getTtl() {
-      return ttl_;
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -7100,9 +11928,6 @@ public final class TiapHbaselikeKvrpcpb {
       if (families_ != null) {
         output.writeMessage(4, getFamilies());
       }
-      if (ttl_ != 0L) {
-        output.writeInt64(5, ttl_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -7125,10 +11950,6 @@ public final class TiapHbaselikeKvrpcpb {
       if (families_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, getFamilies());
-      }
-      if (ttl_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(5, ttl_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -7156,8 +11977,6 @@ public final class TiapHbaselikeKvrpcpb {
         if (!getFamilies()
             .equals(other.getFamilies())) return false;
       }
-      if (getTtl()
-          != other.getTtl()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -7179,9 +11998,6 @@ public final class TiapHbaselikeKvrpcpb {
         hash = (37 * hash) + FAMILIES_FIELD_NUMBER;
         hash = (53 * hash) + getFamilies().hashCode();
       }
-      hash = (37 * hash) + TTL_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getTtl());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -7327,8 +12143,6 @@ public final class TiapHbaselikeKvrpcpb {
           families_ = null;
           familiesBuilder_ = null;
         }
-        ttl_ = 0L;
-
         return this;
       }
 
@@ -7363,7 +12177,6 @@ public final class TiapHbaselikeKvrpcpb {
         } else {
           result.families_ = familiesBuilder_.build();
         }
-        result.ttl_ = ttl_;
         onBuilt();
         return result;
       }
@@ -7425,9 +12238,6 @@ public final class TiapHbaselikeKvrpcpb {
         }
         if (other.hasFamilies()) {
           mergeFamilies(other.getFamilies());
-        }
-        if (other.getTtl() != 0L) {
-          setTtl(other.getTtl());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -7761,37 +12571,6 @@ public final class TiapHbaselikeKvrpcpb {
           families_ = null;
         }
         return familiesBuilder_;
-      }
-
-      private long ttl_ ;
-      /**
-       * <code>int64 ttl = 5;</code>
-       * @return The ttl.
-       */
-      @java.lang.Override
-      public long getTtl() {
-        return ttl_;
-      }
-      /**
-       * <code>int64 ttl = 5;</code>
-       * @param value The ttl to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTtl(long value) {
-        
-        ttl_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int64 ttl = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTtl() {
-        
-        ttl_ = 0L;
-        onChanged();
-        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -9394,16 +14173,10 @@ public final class TiapHbaselikeKvrpcpb {
         getNameBytes();
 
     /**
-     * <code>int64 timestamp = 2;</code>
-     * @return The timestamp.
+     * <code>int64 version = 2;</code>
+     * @return The version.
      */
-    long getTimestamp();
-
-    /**
-     * <code>int64 limit = 3;</code>
-     * @return The limit.
-     */
-    long getLimit();
+    long getVersion();
   }
   /**
    * Protobuf type {@code tiap_hbaselike_kvrpcpb.Column}
@@ -9459,12 +14232,7 @@ public final class TiapHbaselikeKvrpcpb {
             }
             case 16: {
 
-              timestamp_ = input.readInt64();
-              break;
-            }
-            case 24: {
-
-              limit_ = input.readInt64();
+              version_ = input.readInt64();
               break;
             }
             default: {
@@ -9537,26 +14305,15 @@ public final class TiapHbaselikeKvrpcpb {
       }
     }
 
-    public static final int TIMESTAMP_FIELD_NUMBER = 2;
-    private long timestamp_;
+    public static final int VERSION_FIELD_NUMBER = 2;
+    private long version_;
     /**
-     * <code>int64 timestamp = 2;</code>
-     * @return The timestamp.
+     * <code>int64 version = 2;</code>
+     * @return The version.
      */
     @java.lang.Override
-    public long getTimestamp() {
-      return timestamp_;
-    }
-
-    public static final int LIMIT_FIELD_NUMBER = 3;
-    private long limit_;
-    /**
-     * <code>int64 limit = 3;</code>
-     * @return The limit.
-     */
-    @java.lang.Override
-    public long getLimit() {
-      return limit_;
+    public long getVersion() {
+      return version_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -9576,11 +14333,8 @@ public final class TiapHbaselikeKvrpcpb {
       if (!getNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
       }
-      if (timestamp_ != 0L) {
-        output.writeInt64(2, timestamp_);
-      }
-      if (limit_ != 0L) {
-        output.writeInt64(3, limit_);
+      if (version_ != 0L) {
+        output.writeInt64(2, version_);
       }
       unknownFields.writeTo(output);
     }
@@ -9594,13 +14348,9 @@ public final class TiapHbaselikeKvrpcpb {
       if (!getNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
       }
-      if (timestamp_ != 0L) {
+      if (version_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, timestamp_);
-      }
-      if (limit_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(3, limit_);
+          .computeInt64Size(2, version_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -9619,10 +14369,8 @@ public final class TiapHbaselikeKvrpcpb {
 
       if (!getName()
           .equals(other.getName())) return false;
-      if (getTimestamp()
-          != other.getTimestamp()) return false;
-      if (getLimit()
-          != other.getLimit()) return false;
+      if (getVersion()
+          != other.getVersion()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -9636,12 +14384,9 @@ public final class TiapHbaselikeKvrpcpb {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
-      hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
+      hash = (37 * hash) + VERSION_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getTimestamp());
-      hash = (37 * hash) + LIMIT_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getLimit());
+          getVersion());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -9777,9 +14522,7 @@ public final class TiapHbaselikeKvrpcpb {
         super.clear();
         name_ = "";
 
-        timestamp_ = 0L;
-
-        limit_ = 0L;
+        version_ = 0L;
 
         return this;
       }
@@ -9808,8 +14551,7 @@ public final class TiapHbaselikeKvrpcpb {
       public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Column buildPartial() {
         com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Column result = new com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Column(this);
         result.name_ = name_;
-        result.timestamp_ = timestamp_;
-        result.limit_ = limit_;
+        result.version_ = version_;
         onBuilt();
         return result;
       }
@@ -9862,11 +14604,8 @@ public final class TiapHbaselikeKvrpcpb {
           name_ = other.name_;
           onChanged();
         }
-        if (other.getTimestamp() != 0L) {
-          setTimestamp(other.getTimestamp());
-        }
-        if (other.getLimit() != 0L) {
-          setLimit(other.getLimit());
+        if (other.getVersion() != 0L) {
+          setVersion(other.getVersion());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -9973,64 +14712,33 @@ public final class TiapHbaselikeKvrpcpb {
         return this;
       }
 
-      private long timestamp_ ;
+      private long version_ ;
       /**
-       * <code>int64 timestamp = 2;</code>
-       * @return The timestamp.
+       * <code>int64 version = 2;</code>
+       * @return The version.
        */
       @java.lang.Override
-      public long getTimestamp() {
-        return timestamp_;
+      public long getVersion() {
+        return version_;
       }
       /**
-       * <code>int64 timestamp = 2;</code>
-       * @param value The timestamp to set.
+       * <code>int64 version = 2;</code>
+       * @param value The version to set.
        * @return This builder for chaining.
        */
-      public Builder setTimestamp(long value) {
+      public Builder setVersion(long value) {
         
-        timestamp_ = value;
+        version_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int64 timestamp = 2;</code>
+       * <code>int64 version = 2;</code>
        * @return This builder for chaining.
        */
-      public Builder clearTimestamp() {
+      public Builder clearVersion() {
         
-        timestamp_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long limit_ ;
-      /**
-       * <code>int64 limit = 3;</code>
-       * @return The limit.
-       */
-      @java.lang.Override
-      public long getLimit() {
-        return limit_;
-      }
-      /**
-       * <code>int64 limit = 3;</code>
-       * @param value The limit to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLimit(long value) {
-        
-        limit_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int64 limit = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLimit() {
-        
-        limit_ = 0L;
+        version_ = 0L;
         onChanged();
         return this;
       }
@@ -12630,16 +17338,16 @@ public final class TiapHbaselikeKvrpcpb {
         getNameBytes();
 
     /**
-     * <code>bytes value = 2;</code>
+     * <code>int64 version = 2;</code>
+     * @return The version.
+     */
+    long getVersion();
+
+    /**
+     * <code>bytes value = 3;</code>
      * @return The value.
      */
     com.google.protobuf.ByteString getValue();
-
-    /**
-     * <code>int64 timestamp = 3;</code>
-     * @return The timestamp.
-     */
-    long getTimestamp();
 
     /**
      * <code>int64 ttl = 4;</code>
@@ -12700,14 +17408,14 @@ public final class TiapHbaselikeKvrpcpb {
               name_ = s;
               break;
             }
-            case 18: {
+            case 16: {
 
-              value_ = input.readBytes();
+              version_ = input.readInt64();
               break;
             }
-            case 24: {
+            case 26: {
 
-              timestamp_ = input.readInt64();
+              value_ = input.readBytes();
               break;
             }
             case 32: {
@@ -12785,26 +17493,26 @@ public final class TiapHbaselikeKvrpcpb {
       }
     }
 
-    public static final int VALUE_FIELD_NUMBER = 2;
+    public static final int VERSION_FIELD_NUMBER = 2;
+    private long version_;
+    /**
+     * <code>int64 version = 2;</code>
+     * @return The version.
+     */
+    @java.lang.Override
+    public long getVersion() {
+      return version_;
+    }
+
+    public static final int VALUE_FIELD_NUMBER = 3;
     private com.google.protobuf.ByteString value_;
     /**
-     * <code>bytes value = 2;</code>
+     * <code>bytes value = 3;</code>
      * @return The value.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString getValue() {
       return value_;
-    }
-
-    public static final int TIMESTAMP_FIELD_NUMBER = 3;
-    private long timestamp_;
-    /**
-     * <code>int64 timestamp = 3;</code>
-     * @return The timestamp.
-     */
-    @java.lang.Override
-    public long getTimestamp() {
-      return timestamp_;
     }
 
     public static final int TTL_FIELD_NUMBER = 4;
@@ -12835,11 +17543,11 @@ public final class TiapHbaselikeKvrpcpb {
       if (!getNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
       }
-      if (!value_.isEmpty()) {
-        output.writeBytes(2, value_);
+      if (version_ != 0L) {
+        output.writeInt64(2, version_);
       }
-      if (timestamp_ != 0L) {
-        output.writeInt64(3, timestamp_);
+      if (!value_.isEmpty()) {
+        output.writeBytes(3, value_);
       }
       if (ttl_ != 0L) {
         output.writeInt64(4, ttl_);
@@ -12856,13 +17564,13 @@ public final class TiapHbaselikeKvrpcpb {
       if (!getNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
       }
+      if (version_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(2, version_);
+      }
       if (!value_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, value_);
-      }
-      if (timestamp_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(3, timestamp_);
+          .computeBytesSize(3, value_);
       }
       if (ttl_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
@@ -12885,10 +17593,10 @@ public final class TiapHbaselikeKvrpcpb {
 
       if (!getName()
           .equals(other.getName())) return false;
+      if (getVersion()
+          != other.getVersion()) return false;
       if (!getValue()
           .equals(other.getValue())) return false;
-      if (getTimestamp()
-          != other.getTimestamp()) return false;
       if (getTtl()
           != other.getTtl()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -12904,11 +17612,11 @@ public final class TiapHbaselikeKvrpcpb {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getVersion());
       hash = (37 * hash) + VALUE_FIELD_NUMBER;
       hash = (53 * hash) + getValue().hashCode();
-      hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getTimestamp());
       hash = (37 * hash) + TTL_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTtl());
@@ -13047,9 +17755,9 @@ public final class TiapHbaselikeKvrpcpb {
         super.clear();
         name_ = "";
 
-        value_ = com.google.protobuf.ByteString.EMPTY;
+        version_ = 0L;
 
-        timestamp_ = 0L;
+        value_ = com.google.protobuf.ByteString.EMPTY;
 
         ttl_ = 0L;
 
@@ -13080,8 +17788,8 @@ public final class TiapHbaselikeKvrpcpb {
       public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnValue buildPartial() {
         com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnValue result = new com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnValue(this);
         result.name_ = name_;
+        result.version_ = version_;
         result.value_ = value_;
-        result.timestamp_ = timestamp_;
         result.ttl_ = ttl_;
         onBuilt();
         return result;
@@ -13135,11 +17843,11 @@ public final class TiapHbaselikeKvrpcpb {
           name_ = other.name_;
           onChanged();
         }
+        if (other.getVersion() != 0L) {
+          setVersion(other.getVersion());
+        }
         if (other.getValue() != com.google.protobuf.ByteString.EMPTY) {
           setValue(other.getValue());
-        }
-        if (other.getTimestamp() != 0L) {
-          setTimestamp(other.getTimestamp());
         }
         if (other.getTtl() != 0L) {
           setTtl(other.getTtl());
@@ -13249,9 +17957,40 @@ public final class TiapHbaselikeKvrpcpb {
         return this;
       }
 
+      private long version_ ;
+      /**
+       * <code>int64 version = 2;</code>
+       * @return The version.
+       */
+      @java.lang.Override
+      public long getVersion() {
+        return version_;
+      }
+      /**
+       * <code>int64 version = 2;</code>
+       * @param value The version to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVersion(long value) {
+        
+        version_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 version = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearVersion() {
+        
+        version_ = 0L;
+        onChanged();
+        return this;
+      }
+
       private com.google.protobuf.ByteString value_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>bytes value = 2;</code>
+       * <code>bytes value = 3;</code>
        * @return The value.
        */
       @java.lang.Override
@@ -13259,7 +17998,7 @@ public final class TiapHbaselikeKvrpcpb {
         return value_;
       }
       /**
-       * <code>bytes value = 2;</code>
+       * <code>bytes value = 3;</code>
        * @param value The value to set.
        * @return This builder for chaining.
        */
@@ -13273,43 +18012,12 @@ public final class TiapHbaselikeKvrpcpb {
         return this;
       }
       /**
-       * <code>bytes value = 2;</code>
+       * <code>bytes value = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearValue() {
         
         value_ = getDefaultInstance().getValue();
-        onChanged();
-        return this;
-      }
-
-      private long timestamp_ ;
-      /**
-       * <code>int64 timestamp = 3;</code>
-       * @return The timestamp.
-       */
-      @java.lang.Override
-      public long getTimestamp() {
-        return timestamp_;
-      }
-      /**
-       * <code>int64 timestamp = 3;</code>
-       * @param value The timestamp to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTimestamp(long value) {
-        
-        timestamp_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int64 timestamp = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTimestamp() {
-        
-        timestamp_ = 0L;
         onChanged();
         return this;
       }
@@ -13438,6 +18146,26 @@ public final class TiapHbaselikeKvrpcpb {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_tiap_hbaselike_kvrpcpb_BatchDeleteRowResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_tiap_hbaselike_kvrpcpb_GetRowVersionRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_tiap_hbaselike_kvrpcpb_GetRowVersionRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_tiap_hbaselike_kvrpcpb_GetRowVersionResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_tiap_hbaselike_kvrpcpb_GetRowVersionResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_tiap_hbaselike_kvrpcpb_ScanRowRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_tiap_hbaselike_kvrpcpb_ScanRowRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_tiap_hbaselike_kvrpcpb_ScanRowResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_tiap_hbaselike_kvrpcpb_ScanRowResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_tiap_hbaselike_kvrpcpb_Row_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -13497,7 +18225,7 @@ public final class TiapHbaselikeKvrpcpb {
   static {
     java.lang.String[] descriptorData = {
       "\n\034tiap_hbaselike_kvrpcpb.proto\022\026tiap_hba" +
-      "selike_kvrpcpb\032\022tiap_kvrpcpb.proto\"\242\002\n\tK" +
+      "selike_kvrpcpb\032\022tiap_kvrpcpb.proto\"\253\003\n\tK" +
       "VRequest\022-\n\006header\030\001 \001(\0132\035.tiap_kvrpcpb." +
       "KVRequestHeader\022G\n\021batch_get_row_req\030\002 \001" +
       "(\0132*.tiap_hbaselike_kvrpcpb.BatchGetRowR" +
@@ -13505,45 +18233,64 @@ public final class TiapHbaselikeKvrpcpb {
       "ap_hbaselike_kvrpcpb.BatchPutRowRequestH" +
       "\000\022M\n\024batch_delete_row_req\030\004 \001(\0132-.tiap_h" +
       "baselike_kvrpcpb.BatchDeleteRowRequestH\000" +
-      "B\005\n\003req\"\253\002\n\nKVResponse\022.\n\006header\030\001 \001(\0132\036" +
-      ".tiap_kvrpcpb.KVResponseHeader\022I\n\022batch_" +
-      "get_row_resp\030\002 \001(\0132+.tiap_hbaselike_kvrp" +
-      "cpb.BatchGetRowResponseH\000\022I\n\022batch_put_r" +
-      "ow_resp\030\003 \001(\0132+.tiap_hbaselike_kvrpcpb.B" +
-      "atchPutRowResponseH\000\022O\n\025batch_delete_row" +
-      "_resp\030\004 \001(\0132..tiap_hbaselike_kvrpcpb.Bat" +
-      "chDeleteRowResponseH\000B\006\n\004resp\"?\n\022BatchGe" +
-      "tRowRequest\022)\n\004rows\030\001 \003(\0132\033.tiap_hbaseli" +
-      "ke_kvrpcpb.Row\"K\n\023BatchGetRowResponse\0224\n" +
+      "\022K\n\023get_row_version_req\030\005 \001(\0132,.tiap_hba" +
+      "selike_kvrpcpb.GetRowVersionRequestH\000\022:\n" +
+      "\010scan_req\030\006 \001(\0132&.tiap_hbaselike_kvrpcpb" +
+      ".ScanRowRequestH\000B\005\n\003req\"\270\003\n\nKVResponse\022" +
+      ".\n\006header\030\001 \001(\0132\036.tiap_kvrpcpb.KVRespons" +
+      "eHeader\022I\n\022batch_get_row_resp\030\002 \001(\0132+.ti" +
+      "ap_hbaselike_kvrpcpb.BatchGetRowResponse" +
+      "H\000\022I\n\022batch_put_row_resp\030\003 \001(\0132+.tiap_hb" +
+      "aselike_kvrpcpb.BatchPutRowResponseH\000\022O\n" +
+      "\025batch_delete_row_resp\030\004 \001(\0132..tiap_hbas" +
+      "elike_kvrpcpb.BatchDeleteRowResponseH\000\022M" +
+      "\n\024get_row_version_resp\030\005 \001(\0132-.tiap_hbas" +
+      "elike_kvrpcpb.GetRowVersionResponseH\000\022<\n" +
+      "\tscan_resp\030\006 \001(\0132\'.tiap_hbaselike_kvrpcp" +
+      "b.ScanRowResponseH\000B\006\n\004resp\"?\n\022BatchGetR" +
+      "owRequest\022)\n\004rows\030\001 \003(\0132\033.tiap_hbaselike" +
+      "_kvrpcpb.Row\"K\n\023BatchGetRowResponse\0224\n\nr" +
+      "ow_values\030\001 \003(\0132 .tiap_hbaselike_kvrpcpb" +
+      ".RowValue\"J\n\022BatchPutRowRequest\0224\n\nrow_v" +
+      "alues\030\001 \003(\0132 .tiap_hbaselike_kvrpcpb.Row" +
+      "Value\"\025\n\023BatchPutRowResponse\"B\n\025BatchDel" +
+      "eteRowRequest\022)\n\004rows\030\001 \003(\0132\033.tiap_hbase" +
+      "like_kvrpcpb.Row\"\030\n\026BatchDeleteRowRespon" +
+      "se\"\262\001\n\024GetRowVersionRequest\022\017\n\007db_name\030\001" +
+      " \001(\t\022\022\n\ntable_name\030\002 \001(\t\022\017\n\007row_key\030\003 \001(" +
+      "\014\0226\n\010families\030\004 \001(\0132$.tiap_hbaselike_kvr" +
+      "pcpb.ColumnFamily\022\026\n\016column_version\030\005 \001(" +
+      "\003\022\024\n\014column_limit\030\006 \001(\003\"M\n\025GetRowVersion" +
+      "Response\0224\n\nrow_values\030\001 \003(\0132 .tiap_hbas" +
+      "elike_kvrpcpb.RowValue\"\301\001\n\016ScanRowReques" +
+      "t\022\017\n\007db_name\030\001 \001(\t\022\022\n\ntable_name\030\002 \001(\t\022\025" +
+      "\n\rrow_key_start\030\003 \001(\014\022\023\n\013row_key_end\030\004 \001" +
+      "(\014\0226\n\010families\030\005 \001(\0132$.tiap_hbaselike_kv" +
+      "rpcpb.ColumnFamily\022\023\n\013row_version\030\006 \001(\003\022" +
+      "\021\n\trow_limit\030\007 \001(\003\"G\n\017ScanRowResponse\0224\n" +
       "\nrow_values\030\001 \003(\0132 .tiap_hbaselike_kvrpc" +
-      "pb.RowValue\"J\n\022BatchPutRowRequest\0224\n\nrow" +
-      "_values\030\001 \003(\0132 .tiap_hbaselike_kvrpcpb.R" +
-      "owValue\"\025\n\023BatchPutRowResponse\"B\n\025BatchD" +
-      "eleteRowRequest\022)\n\004rows\030\001 \003(\0132\033.tiap_hba" +
-      "selike_kvrpcpb.Row\"\030\n\026BatchDeleteRowResp" +
-      "onse\"\200\001\n\003Row\022\017\n\007db_name\030\001 \001(\t\022\022\n\ntable_n" +
-      "ame\030\002 \001(\t\022\017\n\007row_key\030\003 \001(\014\0226\n\010families\030\004" +
-      " \001(\0132$.tiap_hbaselike_kvrpcpb.ColumnFami" +
-      "ly\022\013\n\003ttl\030\005 \001(\003\"\221\001\n\014ColumnFamily\0226\n\001m\030\001 " +
-      "\003(\0132+.tiap_hbaselike_kvrpcpb.ColumnFamil" +
-      "y.MEntry\032I\n\006MEntry\022\013\n\003key\030\001 \001(\t\022.\n\005value" +
-      "\030\002 \001(\0132\037.tiap_hbaselike_kvrpcpb.Columns:" +
-      "\0028\001\":\n\007Columns\022/\n\007columns\030\001 \003(\0132\036.tiap_h" +
-      "baselike_kvrpcpb.Column\"8\n\006Column\022\014\n\004nam" +
-      "e\030\001 \001(\t\022\021\n\ttimestamp\030\002 \001(\003\022\r\n\005limit\030\003 \001(" +
-      "\003\"\202\001\n\010RowValue\022\017\n\007db_name\030\001 \001(\t\022\022\n\ntable" +
-      "_name\030\002 \001(\t\022\017\n\007row_key\030\003 \001(\014\022@\n\rfamily_v" +
-      "alues\030\004 \001(\0132).tiap_hbaselike_kvrpcpb.Col" +
-      "umnFamilyValue\"\240\001\n\021ColumnFamilyValue\022;\n\001" +
-      "m\030\001 \003(\01320.tiap_hbaselike_kvrpcpb.ColumnF" +
-      "amilyValue.MEntry\032N\n\006MEntry\022\013\n\003key\030\001 \001(\t" +
-      "\0223\n\005value\030\002 \001(\0132$.tiap_hbaselike_kvrpcpb" +
-      ".ColumnValues:\0028\001\"J\n\014ColumnValues\022:\n\rcol" +
-      "umn_values\030\001 \003(\0132#.tiap_hbaselike_kvrpcp" +
-      "b.ColumnValue\"J\n\013ColumnValue\022\014\n\004name\030\001 \001" +
-      "(\t\022\r\n\005value\030\002 \001(\014\022\021\n\ttimestamp\030\003 \001(\003\022\013\n\003" +
-      "ttl\030\004 \001(\003B\035\n\033com.shopee.di.kvstore.proto" +
-      "b\006proto3"
+      "pb.RowValue\"s\n\003Row\022\017\n\007db_name\030\001 \001(\t\022\022\n\nt" +
+      "able_name\030\002 \001(\t\022\017\n\007row_key\030\003 \001(\014\0226\n\010fami" +
+      "lies\030\004 \001(\0132$.tiap_hbaselike_kvrpcpb.Colu" +
+      "mnFamily\"\221\001\n\014ColumnFamily\0226\n\001m\030\001 \003(\0132+.t" +
+      "iap_hbaselike_kvrpcpb.ColumnFamily.MEntr" +
+      "y\032I\n\006MEntry\022\013\n\003key\030\001 \001(\t\022.\n\005value\030\002 \001(\0132" +
+      "\037.tiap_hbaselike_kvrpcpb.Columns:\0028\001\":\n\007" +
+      "Columns\022/\n\007columns\030\001 \003(\0132\036.tiap_hbaselik" +
+      "e_kvrpcpb.Column\"\'\n\006Column\022\014\n\004name\030\001 \001(\t" +
+      "\022\017\n\007version\030\002 \001(\003\"\202\001\n\010RowValue\022\017\n\007db_nam" +
+      "e\030\001 \001(\t\022\022\n\ntable_name\030\002 \001(\t\022\017\n\007row_key\030\003" +
+      " \001(\014\022@\n\rfamily_values\030\004 \001(\0132).tiap_hbase" +
+      "like_kvrpcpb.ColumnFamilyValue\"\240\001\n\021Colum" +
+      "nFamilyValue\022;\n\001m\030\001 \003(\01320.tiap_hbaselike" +
+      "_kvrpcpb.ColumnFamilyValue.MEntry\032N\n\006MEn" +
+      "try\022\013\n\003key\030\001 \001(\t\0223\n\005value\030\002 \001(\0132$.tiap_h" +
+      "baselike_kvrpcpb.ColumnValues:\0028\001\"J\n\014Col" +
+      "umnValues\022:\n\rcolumn_values\030\001 \003(\0132#.tiap_" +
+      "hbaselike_kvrpcpb.ColumnValue\"H\n\013ColumnV" +
+      "alue\022\014\n\004name\030\001 \001(\t\022\017\n\007version\030\002 \001(\003\022\r\n\005v" +
+      "alue\030\003 \001(\014\022\013\n\003ttl\030\004 \001(\003B\035\n\033com.shopee.di" +
+      ".kvstore.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -13555,13 +18302,13 @@ public final class TiapHbaselikeKvrpcpb {
     internal_static_tiap_hbaselike_kvrpcpb_KVRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tiap_hbaselike_kvrpcpb_KVRequest_descriptor,
-        new java.lang.String[] { "Header", "BatchGetRowReq", "BatchPutRowReq", "BatchDeleteRowReq", "Req", });
+        new java.lang.String[] { "Header", "BatchGetRowReq", "BatchPutRowReq", "BatchDeleteRowReq", "GetRowVersionReq", "ScanReq", "Req", });
     internal_static_tiap_hbaselike_kvrpcpb_KVResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_tiap_hbaselike_kvrpcpb_KVResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tiap_hbaselike_kvrpcpb_KVResponse_descriptor,
-        new java.lang.String[] { "Header", "BatchGetRowResp", "BatchPutRowResp", "BatchDeleteRowResp", "Resp", });
+        new java.lang.String[] { "Header", "BatchGetRowResp", "BatchPutRowResp", "BatchDeleteRowResp", "GetRowVersionResp", "ScanResp", "Resp", });
     internal_static_tiap_hbaselike_kvrpcpb_BatchGetRowRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_tiap_hbaselike_kvrpcpb_BatchGetRowRequest_fieldAccessorTable = new
@@ -13598,14 +18345,38 @@ public final class TiapHbaselikeKvrpcpb {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tiap_hbaselike_kvrpcpb_BatchDeleteRowResponse_descriptor,
         new java.lang.String[] { });
-    internal_static_tiap_hbaselike_kvrpcpb_Row_descriptor =
+    internal_static_tiap_hbaselike_kvrpcpb_GetRowVersionRequest_descriptor =
       getDescriptor().getMessageTypes().get(8);
+    internal_static_tiap_hbaselike_kvrpcpb_GetRowVersionRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_tiap_hbaselike_kvrpcpb_GetRowVersionRequest_descriptor,
+        new java.lang.String[] { "DbName", "TableName", "RowKey", "Families", "ColumnVersion", "ColumnLimit", });
+    internal_static_tiap_hbaselike_kvrpcpb_GetRowVersionResponse_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_tiap_hbaselike_kvrpcpb_GetRowVersionResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_tiap_hbaselike_kvrpcpb_GetRowVersionResponse_descriptor,
+        new java.lang.String[] { "RowValues", });
+    internal_static_tiap_hbaselike_kvrpcpb_ScanRowRequest_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_tiap_hbaselike_kvrpcpb_ScanRowRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_tiap_hbaselike_kvrpcpb_ScanRowRequest_descriptor,
+        new java.lang.String[] { "DbName", "TableName", "RowKeyStart", "RowKeyEnd", "Families", "RowVersion", "RowLimit", });
+    internal_static_tiap_hbaselike_kvrpcpb_ScanRowResponse_descriptor =
+      getDescriptor().getMessageTypes().get(11);
+    internal_static_tiap_hbaselike_kvrpcpb_ScanRowResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_tiap_hbaselike_kvrpcpb_ScanRowResponse_descriptor,
+        new java.lang.String[] { "RowValues", });
+    internal_static_tiap_hbaselike_kvrpcpb_Row_descriptor =
+      getDescriptor().getMessageTypes().get(12);
     internal_static_tiap_hbaselike_kvrpcpb_Row_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tiap_hbaselike_kvrpcpb_Row_descriptor,
-        new java.lang.String[] { "DbName", "TableName", "RowKey", "Families", "Ttl", });
+        new java.lang.String[] { "DbName", "TableName", "RowKey", "Families", });
     internal_static_tiap_hbaselike_kvrpcpb_ColumnFamily_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_tiap_hbaselike_kvrpcpb_ColumnFamily_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tiap_hbaselike_kvrpcpb_ColumnFamily_descriptor,
@@ -13617,25 +18388,25 @@ public final class TiapHbaselikeKvrpcpb {
         internal_static_tiap_hbaselike_kvrpcpb_ColumnFamily_MEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_tiap_hbaselike_kvrpcpb_Columns_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_tiap_hbaselike_kvrpcpb_Columns_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tiap_hbaselike_kvrpcpb_Columns_descriptor,
         new java.lang.String[] { "Columns", });
     internal_static_tiap_hbaselike_kvrpcpb_Column_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_tiap_hbaselike_kvrpcpb_Column_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tiap_hbaselike_kvrpcpb_Column_descriptor,
-        new java.lang.String[] { "Name", "Timestamp", "Limit", });
+        new java.lang.String[] { "Name", "Version", });
     internal_static_tiap_hbaselike_kvrpcpb_RowValue_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_tiap_hbaselike_kvrpcpb_RowValue_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tiap_hbaselike_kvrpcpb_RowValue_descriptor,
         new java.lang.String[] { "DbName", "TableName", "RowKey", "FamilyValues", });
     internal_static_tiap_hbaselike_kvrpcpb_ColumnFamilyValue_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_tiap_hbaselike_kvrpcpb_ColumnFamilyValue_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tiap_hbaselike_kvrpcpb_ColumnFamilyValue_descriptor,
@@ -13647,17 +18418,17 @@ public final class TiapHbaselikeKvrpcpb {
         internal_static_tiap_hbaselike_kvrpcpb_ColumnFamilyValue_MEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_tiap_hbaselike_kvrpcpb_ColumnValues_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_tiap_hbaselike_kvrpcpb_ColumnValues_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tiap_hbaselike_kvrpcpb_ColumnValues_descriptor,
         new java.lang.String[] { "ColumnValues", });
     internal_static_tiap_hbaselike_kvrpcpb_ColumnValue_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_tiap_hbaselike_kvrpcpb_ColumnValue_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tiap_hbaselike_kvrpcpb_ColumnValue_descriptor,
-        new java.lang.String[] { "Name", "Value", "Timestamp", "Ttl", });
+        new java.lang.String[] { "Name", "Version", "Value", "Ttl", });
     com.shopee.di.kvstore.proto.TiapKvrpcpb.getDescriptor();
   }
 
