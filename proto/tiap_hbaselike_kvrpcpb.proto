@@ -54,10 +54,10 @@ message BatchDeleteRowResponse {
 }
 
 message GetRowVersionRequest {
-  bytes row_key = 3;
-  ColumnFamily families = 4;
-  int64 version = 5;
-  int64 limit = 6;
+  bytes row_key = 1;
+  ColumnFamily families = 2;
+  int64 version = 3;
+  int64 limit = 4;
 }
 
 message GetRowVersionResponse {
@@ -65,10 +65,10 @@ message GetRowVersionResponse {
 }
 
 message ScanRowRequest {
-  bytes row_key_start = 3;
-  bytes row_key_end = 4;
-  ColumnFamily families = 5;
-  int64 limit = 6;
+  bytes row_key_start = 1;
+  bytes row_key_end = 2;
+  ColumnFamily families = 3;
+  int64 limit = 4;
 }
 
 message ScanRowResponse {

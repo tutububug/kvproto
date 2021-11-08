@@ -7701,34 +7701,34 @@ public final class TiapHbaselikeKvrpcpb {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bytes row_key = 3;</code>
+     * <code>bytes row_key = 1;</code>
      * @return The rowKey.
      */
     com.google.protobuf.ByteString getRowKey();
 
     /**
-     * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 4;</code>
+     * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 2;</code>
      * @return Whether the families field is set.
      */
     boolean hasFamilies();
     /**
-     * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 4;</code>
+     * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 2;</code>
      * @return The families.
      */
     com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily getFamilies();
     /**
-     * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 4;</code>
+     * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 2;</code>
      */
     com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamilyOrBuilder getFamiliesOrBuilder();
 
     /**
-     * <code>int64 version = 5;</code>
+     * <code>int64 version = 3;</code>
      * @return The version.
      */
     long getVersion();
 
     /**
-     * <code>int64 limit = 6;</code>
+     * <code>int64 limit = 4;</code>
      * @return The limit.
      */
     long getLimit();
@@ -7779,12 +7779,12 @@ public final class TiapHbaselikeKvrpcpb {
             case 0:
               done = true;
               break;
-            case 26: {
+            case 10: {
 
               rowKey_ = input.readBytes();
               break;
             }
-            case 34: {
+            case 18: {
               com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily.Builder subBuilder = null;
               if (families_ != null) {
                 subBuilder = families_.toBuilder();
@@ -7797,12 +7797,12 @@ public final class TiapHbaselikeKvrpcpb {
 
               break;
             }
-            case 40: {
+            case 24: {
 
               version_ = input.readInt64();
               break;
             }
-            case 48: {
+            case 32: {
 
               limit_ = input.readInt64();
               break;
@@ -7839,10 +7839,10 @@ public final class TiapHbaselikeKvrpcpb {
               com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest.class, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest.Builder.class);
     }
 
-    public static final int ROW_KEY_FIELD_NUMBER = 3;
+    public static final int ROW_KEY_FIELD_NUMBER = 1;
     private com.google.protobuf.ByteString rowKey_;
     /**
-     * <code>bytes row_key = 3;</code>
+     * <code>bytes row_key = 1;</code>
      * @return The rowKey.
      */
     @java.lang.Override
@@ -7850,10 +7850,10 @@ public final class TiapHbaselikeKvrpcpb {
       return rowKey_;
     }
 
-    public static final int FAMILIES_FIELD_NUMBER = 4;
+    public static final int FAMILIES_FIELD_NUMBER = 2;
     private com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily families_;
     /**
-     * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 4;</code>
+     * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 2;</code>
      * @return Whether the families field is set.
      */
     @java.lang.Override
@@ -7861,7 +7861,7 @@ public final class TiapHbaselikeKvrpcpb {
       return families_ != null;
     }
     /**
-     * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 4;</code>
+     * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 2;</code>
      * @return The families.
      */
     @java.lang.Override
@@ -7869,17 +7869,17 @@ public final class TiapHbaselikeKvrpcpb {
       return families_ == null ? com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily.getDefaultInstance() : families_;
     }
     /**
-     * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 4;</code>
+     * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 2;</code>
      */
     @java.lang.Override
     public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamilyOrBuilder getFamiliesOrBuilder() {
       return getFamilies();
     }
 
-    public static final int VERSION_FIELD_NUMBER = 5;
+    public static final int VERSION_FIELD_NUMBER = 3;
     private long version_;
     /**
-     * <code>int64 version = 5;</code>
+     * <code>int64 version = 3;</code>
      * @return The version.
      */
     @java.lang.Override
@@ -7887,10 +7887,10 @@ public final class TiapHbaselikeKvrpcpb {
       return version_;
     }
 
-    public static final int LIMIT_FIELD_NUMBER = 6;
+    public static final int LIMIT_FIELD_NUMBER = 4;
     private long limit_;
     /**
-     * <code>int64 limit = 6;</code>
+     * <code>int64 limit = 4;</code>
      * @return The limit.
      */
     @java.lang.Override
@@ -7913,16 +7913,16 @@ public final class TiapHbaselikeKvrpcpb {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!rowKey_.isEmpty()) {
-        output.writeBytes(3, rowKey_);
+        output.writeBytes(1, rowKey_);
       }
       if (families_ != null) {
-        output.writeMessage(4, getFamilies());
+        output.writeMessage(2, getFamilies());
       }
       if (version_ != 0L) {
-        output.writeInt64(5, version_);
+        output.writeInt64(3, version_);
       }
       if (limit_ != 0L) {
-        output.writeInt64(6, limit_);
+        output.writeInt64(4, limit_);
       }
       unknownFields.writeTo(output);
     }
@@ -7935,19 +7935,19 @@ public final class TiapHbaselikeKvrpcpb {
       size = 0;
       if (!rowKey_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(3, rowKey_);
+          .computeBytesSize(1, rowKey_);
       }
       if (families_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, getFamilies());
+          .computeMessageSize(2, getFamilies());
       }
       if (version_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(5, version_);
+          .computeInt64Size(3, version_);
       }
       if (limit_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(6, limit_);
+          .computeInt64Size(4, limit_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -8268,7 +8268,7 @@ public final class TiapHbaselikeKvrpcpb {
 
       private com.google.protobuf.ByteString rowKey_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>bytes row_key = 3;</code>
+       * <code>bytes row_key = 1;</code>
        * @return The rowKey.
        */
       @java.lang.Override
@@ -8276,7 +8276,7 @@ public final class TiapHbaselikeKvrpcpb {
         return rowKey_;
       }
       /**
-       * <code>bytes row_key = 3;</code>
+       * <code>bytes row_key = 1;</code>
        * @param value The rowKey to set.
        * @return This builder for chaining.
        */
@@ -8290,7 +8290,7 @@ public final class TiapHbaselikeKvrpcpb {
         return this;
       }
       /**
-       * <code>bytes row_key = 3;</code>
+       * <code>bytes row_key = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearRowKey() {
@@ -8304,14 +8304,14 @@ public final class TiapHbaselikeKvrpcpb {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamilyOrBuilder> familiesBuilder_;
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 4;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 2;</code>
        * @return Whether the families field is set.
        */
       public boolean hasFamilies() {
         return familiesBuilder_ != null || families_ != null;
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 4;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 2;</code>
        * @return The families.
        */
       public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily getFamilies() {
@@ -8322,7 +8322,7 @@ public final class TiapHbaselikeKvrpcpb {
         }
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 4;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 2;</code>
        */
       public Builder setFamilies(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily value) {
         if (familiesBuilder_ == null) {
@@ -8338,7 +8338,7 @@ public final class TiapHbaselikeKvrpcpb {
         return this;
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 4;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 2;</code>
        */
       public Builder setFamilies(
           com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily.Builder builderForValue) {
@@ -8352,7 +8352,7 @@ public final class TiapHbaselikeKvrpcpb {
         return this;
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 4;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 2;</code>
        */
       public Builder mergeFamilies(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily value) {
         if (familiesBuilder_ == null) {
@@ -8370,7 +8370,7 @@ public final class TiapHbaselikeKvrpcpb {
         return this;
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 4;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 2;</code>
        */
       public Builder clearFamilies() {
         if (familiesBuilder_ == null) {
@@ -8384,7 +8384,7 @@ public final class TiapHbaselikeKvrpcpb {
         return this;
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 4;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 2;</code>
        */
       public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily.Builder getFamiliesBuilder() {
         
@@ -8392,7 +8392,7 @@ public final class TiapHbaselikeKvrpcpb {
         return getFamiliesFieldBuilder().getBuilder();
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 4;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 2;</code>
        */
       public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamilyOrBuilder getFamiliesOrBuilder() {
         if (familiesBuilder_ != null) {
@@ -8403,7 +8403,7 @@ public final class TiapHbaselikeKvrpcpb {
         }
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 4;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamilyOrBuilder> 
@@ -8421,7 +8421,7 @@ public final class TiapHbaselikeKvrpcpb {
 
       private long version_ ;
       /**
-       * <code>int64 version = 5;</code>
+       * <code>int64 version = 3;</code>
        * @return The version.
        */
       @java.lang.Override
@@ -8429,7 +8429,7 @@ public final class TiapHbaselikeKvrpcpb {
         return version_;
       }
       /**
-       * <code>int64 version = 5;</code>
+       * <code>int64 version = 3;</code>
        * @param value The version to set.
        * @return This builder for chaining.
        */
@@ -8440,7 +8440,7 @@ public final class TiapHbaselikeKvrpcpb {
         return this;
       }
       /**
-       * <code>int64 version = 5;</code>
+       * <code>int64 version = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearVersion() {
@@ -8452,7 +8452,7 @@ public final class TiapHbaselikeKvrpcpb {
 
       private long limit_ ;
       /**
-       * <code>int64 limit = 6;</code>
+       * <code>int64 limit = 4;</code>
        * @return The limit.
        */
       @java.lang.Override
@@ -8460,7 +8460,7 @@ public final class TiapHbaselikeKvrpcpb {
         return limit_;
       }
       /**
-       * <code>int64 limit = 6;</code>
+       * <code>int64 limit = 4;</code>
        * @param value The limit to set.
        * @return This builder for chaining.
        */
@@ -8471,7 +8471,7 @@ public final class TiapHbaselikeKvrpcpb {
         return this;
       }
       /**
-       * <code>int64 limit = 6;</code>
+       * <code>int64 limit = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearLimit() {
@@ -9331,34 +9331,34 @@ public final class TiapHbaselikeKvrpcpb {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bytes row_key_start = 3;</code>
+     * <code>bytes row_key_start = 1;</code>
      * @return The rowKeyStart.
      */
     com.google.protobuf.ByteString getRowKeyStart();
 
     /**
-     * <code>bytes row_key_end = 4;</code>
+     * <code>bytes row_key_end = 2;</code>
      * @return The rowKeyEnd.
      */
     com.google.protobuf.ByteString getRowKeyEnd();
 
     /**
-     * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 5;</code>
+     * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 3;</code>
      * @return Whether the families field is set.
      */
     boolean hasFamilies();
     /**
-     * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 5;</code>
+     * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 3;</code>
      * @return The families.
      */
     com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily getFamilies();
     /**
-     * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 5;</code>
+     * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 3;</code>
      */
     com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamilyOrBuilder getFamiliesOrBuilder();
 
     /**
-     * <code>int64 limit = 6;</code>
+     * <code>int64 limit = 4;</code>
      * @return The limit.
      */
     long getLimit();
@@ -9410,17 +9410,17 @@ public final class TiapHbaselikeKvrpcpb {
             case 0:
               done = true;
               break;
-            case 26: {
+            case 10: {
 
               rowKeyStart_ = input.readBytes();
               break;
             }
-            case 34: {
+            case 18: {
 
               rowKeyEnd_ = input.readBytes();
               break;
             }
-            case 42: {
+            case 26: {
               com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily.Builder subBuilder = null;
               if (families_ != null) {
                 subBuilder = families_.toBuilder();
@@ -9433,7 +9433,7 @@ public final class TiapHbaselikeKvrpcpb {
 
               break;
             }
-            case 48: {
+            case 32: {
 
               limit_ = input.readInt64();
               break;
@@ -9470,10 +9470,10 @@ public final class TiapHbaselikeKvrpcpb {
               com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest.class, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest.Builder.class);
     }
 
-    public static final int ROW_KEY_START_FIELD_NUMBER = 3;
+    public static final int ROW_KEY_START_FIELD_NUMBER = 1;
     private com.google.protobuf.ByteString rowKeyStart_;
     /**
-     * <code>bytes row_key_start = 3;</code>
+     * <code>bytes row_key_start = 1;</code>
      * @return The rowKeyStart.
      */
     @java.lang.Override
@@ -9481,10 +9481,10 @@ public final class TiapHbaselikeKvrpcpb {
       return rowKeyStart_;
     }
 
-    public static final int ROW_KEY_END_FIELD_NUMBER = 4;
+    public static final int ROW_KEY_END_FIELD_NUMBER = 2;
     private com.google.protobuf.ByteString rowKeyEnd_;
     /**
-     * <code>bytes row_key_end = 4;</code>
+     * <code>bytes row_key_end = 2;</code>
      * @return The rowKeyEnd.
      */
     @java.lang.Override
@@ -9492,10 +9492,10 @@ public final class TiapHbaselikeKvrpcpb {
       return rowKeyEnd_;
     }
 
-    public static final int FAMILIES_FIELD_NUMBER = 5;
+    public static final int FAMILIES_FIELD_NUMBER = 3;
     private com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily families_;
     /**
-     * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 5;</code>
+     * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 3;</code>
      * @return Whether the families field is set.
      */
     @java.lang.Override
@@ -9503,7 +9503,7 @@ public final class TiapHbaselikeKvrpcpb {
       return families_ != null;
     }
     /**
-     * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 5;</code>
+     * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 3;</code>
      * @return The families.
      */
     @java.lang.Override
@@ -9511,17 +9511,17 @@ public final class TiapHbaselikeKvrpcpb {
       return families_ == null ? com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily.getDefaultInstance() : families_;
     }
     /**
-     * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 5;</code>
+     * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 3;</code>
      */
     @java.lang.Override
     public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamilyOrBuilder getFamiliesOrBuilder() {
       return getFamilies();
     }
 
-    public static final int LIMIT_FIELD_NUMBER = 6;
+    public static final int LIMIT_FIELD_NUMBER = 4;
     private long limit_;
     /**
-     * <code>int64 limit = 6;</code>
+     * <code>int64 limit = 4;</code>
      * @return The limit.
      */
     @java.lang.Override
@@ -9544,16 +9544,16 @@ public final class TiapHbaselikeKvrpcpb {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!rowKeyStart_.isEmpty()) {
-        output.writeBytes(3, rowKeyStart_);
+        output.writeBytes(1, rowKeyStart_);
       }
       if (!rowKeyEnd_.isEmpty()) {
-        output.writeBytes(4, rowKeyEnd_);
+        output.writeBytes(2, rowKeyEnd_);
       }
       if (families_ != null) {
-        output.writeMessage(5, getFamilies());
+        output.writeMessage(3, getFamilies());
       }
       if (limit_ != 0L) {
-        output.writeInt64(6, limit_);
+        output.writeInt64(4, limit_);
       }
       unknownFields.writeTo(output);
     }
@@ -9566,19 +9566,19 @@ public final class TiapHbaselikeKvrpcpb {
       size = 0;
       if (!rowKeyStart_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(3, rowKeyStart_);
+          .computeBytesSize(1, rowKeyStart_);
       }
       if (!rowKeyEnd_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(4, rowKeyEnd_);
+          .computeBytesSize(2, rowKeyEnd_);
       }
       if (families_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, getFamilies());
+          .computeMessageSize(3, getFamilies());
       }
       if (limit_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(6, limit_);
+          .computeInt64Size(4, limit_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -9898,7 +9898,7 @@ public final class TiapHbaselikeKvrpcpb {
 
       private com.google.protobuf.ByteString rowKeyStart_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>bytes row_key_start = 3;</code>
+       * <code>bytes row_key_start = 1;</code>
        * @return The rowKeyStart.
        */
       @java.lang.Override
@@ -9906,7 +9906,7 @@ public final class TiapHbaselikeKvrpcpb {
         return rowKeyStart_;
       }
       /**
-       * <code>bytes row_key_start = 3;</code>
+       * <code>bytes row_key_start = 1;</code>
        * @param value The rowKeyStart to set.
        * @return This builder for chaining.
        */
@@ -9920,7 +9920,7 @@ public final class TiapHbaselikeKvrpcpb {
         return this;
       }
       /**
-       * <code>bytes row_key_start = 3;</code>
+       * <code>bytes row_key_start = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearRowKeyStart() {
@@ -9932,7 +9932,7 @@ public final class TiapHbaselikeKvrpcpb {
 
       private com.google.protobuf.ByteString rowKeyEnd_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>bytes row_key_end = 4;</code>
+       * <code>bytes row_key_end = 2;</code>
        * @return The rowKeyEnd.
        */
       @java.lang.Override
@@ -9940,7 +9940,7 @@ public final class TiapHbaselikeKvrpcpb {
         return rowKeyEnd_;
       }
       /**
-       * <code>bytes row_key_end = 4;</code>
+       * <code>bytes row_key_end = 2;</code>
        * @param value The rowKeyEnd to set.
        * @return This builder for chaining.
        */
@@ -9954,7 +9954,7 @@ public final class TiapHbaselikeKvrpcpb {
         return this;
       }
       /**
-       * <code>bytes row_key_end = 4;</code>
+       * <code>bytes row_key_end = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearRowKeyEnd() {
@@ -9968,14 +9968,14 @@ public final class TiapHbaselikeKvrpcpb {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamilyOrBuilder> familiesBuilder_;
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 5;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 3;</code>
        * @return Whether the families field is set.
        */
       public boolean hasFamilies() {
         return familiesBuilder_ != null || families_ != null;
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 5;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 3;</code>
        * @return The families.
        */
       public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily getFamilies() {
@@ -9986,7 +9986,7 @@ public final class TiapHbaselikeKvrpcpb {
         }
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 5;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 3;</code>
        */
       public Builder setFamilies(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily value) {
         if (familiesBuilder_ == null) {
@@ -10002,7 +10002,7 @@ public final class TiapHbaselikeKvrpcpb {
         return this;
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 5;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 3;</code>
        */
       public Builder setFamilies(
           com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily.Builder builderForValue) {
@@ -10016,7 +10016,7 @@ public final class TiapHbaselikeKvrpcpb {
         return this;
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 5;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 3;</code>
        */
       public Builder mergeFamilies(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily value) {
         if (familiesBuilder_ == null) {
@@ -10034,7 +10034,7 @@ public final class TiapHbaselikeKvrpcpb {
         return this;
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 5;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 3;</code>
        */
       public Builder clearFamilies() {
         if (familiesBuilder_ == null) {
@@ -10048,7 +10048,7 @@ public final class TiapHbaselikeKvrpcpb {
         return this;
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 5;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 3;</code>
        */
       public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily.Builder getFamiliesBuilder() {
         
@@ -10056,7 +10056,7 @@ public final class TiapHbaselikeKvrpcpb {
         return getFamiliesFieldBuilder().getBuilder();
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 5;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 3;</code>
        */
       public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamilyOrBuilder getFamiliesOrBuilder() {
         if (familiesBuilder_ != null) {
@@ -10067,7 +10067,7 @@ public final class TiapHbaselikeKvrpcpb {
         }
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 5;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamilyOrBuilder> 
@@ -10085,7 +10085,7 @@ public final class TiapHbaselikeKvrpcpb {
 
       private long limit_ ;
       /**
-       * <code>int64 limit = 6;</code>
+       * <code>int64 limit = 4;</code>
        * @return The limit.
        */
       @java.lang.Override
@@ -10093,7 +10093,7 @@ public final class TiapHbaselikeKvrpcpb {
         return limit_;
       }
       /**
-       * <code>int64 limit = 6;</code>
+       * <code>int64 limit = 4;</code>
        * @param value The limit to set.
        * @return This builder for chaining.
        */
@@ -10104,7 +10104,7 @@ public final class TiapHbaselikeKvrpcpb {
         return this;
       }
       /**
-       * <code>int64 limit = 6;</code>
+       * <code>int64 limit = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearLimit() {
@@ -16914,15 +16914,15 @@ public final class TiapHbaselikeKvrpcpb {
       "Value\"\025\n\023BatchPutRowResponse\"B\n\025BatchDel" +
       "eteRowRequest\022)\n\004rows\030\001 \003(\0132\033.tiap_hbase" +
       "like_kvrpcpb.Row\"\030\n\026BatchDeleteRowRespon" +
-      "se\"\177\n\024GetRowVersionRequest\022\017\n\007row_key\030\003 " +
-      "\001(\014\0226\n\010families\030\004 \001(\0132$.tiap_hbaselike_k" +
-      "vrpcpb.ColumnFamily\022\017\n\007version\030\005 \001(\003\022\r\n\005" +
-      "limit\030\006 \001(\003\"M\n\025GetRowVersionResponse\0224\n\n" +
+      "se\"\177\n\024GetRowVersionRequest\022\017\n\007row_key\030\001 " +
+      "\001(\014\0226\n\010families\030\002 \001(\0132$.tiap_hbaselike_k" +
+      "vrpcpb.ColumnFamily\022\017\n\007version\030\003 \001(\003\022\r\n\005" +
+      "limit\030\004 \001(\003\"M\n\025GetRowVersionResponse\0224\n\n" +
       "row_values\030\001 \003(\0132 .tiap_hbaselike_kvrpcp" +
       "b.RowValue\"\203\001\n\016ScanRowRequest\022\025\n\rrow_key" +
-      "_start\030\003 \001(\014\022\023\n\013row_key_end\030\004 \001(\014\0226\n\010fam" +
-      "ilies\030\005 \001(\0132$.tiap_hbaselike_kvrpcpb.Col" +
-      "umnFamily\022\r\n\005limit\030\006 \001(\003\"G\n\017ScanRowRespo" +
+      "_start\030\001 \001(\014\022\023\n\013row_key_end\030\002 \001(\014\0226\n\010fam" +
+      "ilies\030\003 \001(\0132$.tiap_hbaselike_kvrpcpb.Col" +
+      "umnFamily\022\r\n\005limit\030\004 \001(\003\"G\n\017ScanRowRespo" +
       "nse\0224\n\nrow_values\030\001 \003(\0132 .tiap_hbaselike" +
       "_kvrpcpb.RowValue\"N\n\003Row\022\017\n\007row_key\030\001 \001(" +
       "\014\0226\n\010families\030\002 \001(\0132$.tiap_hbaselike_kvr" +
