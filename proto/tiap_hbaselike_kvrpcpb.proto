@@ -58,8 +58,8 @@ message GetRowVersionRequest {
   string table_name = 2;
   bytes row_key = 3;
   ColumnFamily families = 4;
-  int64 column_version = 5;
-  int64 column_limit = 6;
+  int64 version = 5;
+  int64 limit = 6;
 }
 
 message GetRowVersionResponse {
@@ -72,8 +72,7 @@ message ScanRowRequest {
   bytes row_key_start = 3;
   bytes row_key_end = 4;
   ColumnFamily families = 5;
-  int64 row_version = 6;
-  int64 row_limit = 7;
+  int64 limit = 6;
 }
 
 message ScanRowResponse {
@@ -97,7 +96,6 @@ message Columns {
 
 message Column {
   string name = 1;
-  int64 version = 2;
 }
 
 message RowValue {
