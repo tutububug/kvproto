@@ -41,7 +41,7 @@ message AdminResponse {
 message DBInfo {
   string name   = 1;
   int64 id      = 2;
-  DBState state = 3;
+  SchemaState state = 3;
   DBQuota quota = 4;
   string token  = 5;
   repeated string comments = 6;
@@ -52,7 +52,7 @@ message TableInfo {
   int64 id          = 2;
   int64 db_id       = 3;
   TableType type    = 5;
-  TableState state  = 6;
+  SchemaState state  = 6;
   TableQuota quota  = 7;
   repeated string comments = 8;
   RawTableExtendInfo raw_ext_info = 9;
@@ -63,31 +63,37 @@ message RawTableExtendInfo {
 }
 
 message HBaseLikeTableExtendInfo {
-  map<string, string> families = 1;
-  bool salted = 2;
-  bool multi_version = 3;
+  bool salted = 1;
+  bool multi_version = 2;
+  repeated ColumnFamily families = 3;
+  int64 max_assign_id = 4;
+}
+
+message ColumnFamily {
+  string name = 1;
+  int64 id = 2;
+  SchemaState state = 3;
+  repeated Column columns = 4;
+}
+
+message Column {
+  string name = 1;
+  int64 id = 2;
+  SchemaState state = 3;
 }
 
 enum TableType {
-  TableType_Invalid   = 0;
-  TableType_Raw       = 1;
-  TableType_HBaseLike = 2;
+  TypeInvalid   = 0;
+  TypeRaw       = 1;
+  TypeHBaseLike = 2;
 }
 
-enum TableState {
-  TableState_Creating  = 0;
-  TableState_Created   = 1;
-  TableState_Tombstone = 2;
-  TableState_Deleting  = 3;
-  TableState_Deleted   = 4;
-}
-
-enum DBState {
-  DBState_Creating  = 0;
-  DBState_Created   = 1;
-  DBState_Tombstone = 2;
-  DBState_Deleting  = 3;
-  DBState_Deleted   = 4;
+enum SchemaState {
+  StateInvalid = 0;
+  StateCreating = 1;
+  StateCreated = 2;
+  StateDeleting = 3;
+  StateDeleted = 5;
 }
 
 message DBQuota {
@@ -99,6 +105,8 @@ message DBQuota {
 message TableQuota {
   uint64 storage_capacity = 1;
   uint64 max_qps          = 2;
+  uint64 max_column_family = 3;
+  uint64 max_column_per_family = 4;
 }
 
 message CreateDBRequest {

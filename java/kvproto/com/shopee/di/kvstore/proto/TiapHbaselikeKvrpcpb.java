@@ -7701,30 +7701,6 @@ public final class TiapHbaselikeKvrpcpb {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string db_name = 1;</code>
-     * @return The dbName.
-     */
-    java.lang.String getDbName();
-    /**
-     * <code>string db_name = 1;</code>
-     * @return The bytes for dbName.
-     */
-    com.google.protobuf.ByteString
-        getDbNameBytes();
-
-    /**
-     * <code>string table_name = 2;</code>
-     * @return The tableName.
-     */
-    java.lang.String getTableName();
-    /**
-     * <code>string table_name = 2;</code>
-     * @return The bytes for tableName.
-     */
-    com.google.protobuf.ByteString
-        getTableNameBytes();
-
-    /**
      * <code>bytes row_key = 3;</code>
      * @return The rowKey.
      */
@@ -7746,16 +7722,16 @@ public final class TiapHbaselikeKvrpcpb {
     com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamilyOrBuilder getFamiliesOrBuilder();
 
     /**
-     * <code>int64 column_version = 5;</code>
-     * @return The columnVersion.
+     * <code>int64 version = 5;</code>
+     * @return The version.
      */
-    long getColumnVersion();
+    long getVersion();
 
     /**
-     * <code>int64 column_limit = 6;</code>
-     * @return The columnLimit.
+     * <code>int64 limit = 6;</code>
+     * @return The limit.
      */
-    long getColumnLimit();
+    long getLimit();
   }
   /**
    * Protobuf type {@code tiap_hbaselike_kvrpcpb.GetRowVersionRequest}
@@ -7770,8 +7746,6 @@ public final class TiapHbaselikeKvrpcpb {
       super(builder);
     }
     private GetRowVersionRequest() {
-      dbName_ = "";
-      tableName_ = "";
       rowKey_ = com.google.protobuf.ByteString.EMPTY;
     }
 
@@ -7805,18 +7779,6 @@ public final class TiapHbaselikeKvrpcpb {
             case 0:
               done = true;
               break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              dbName_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              tableName_ = s;
-              break;
-            }
             case 26: {
 
               rowKey_ = input.readBytes();
@@ -7837,12 +7799,12 @@ public final class TiapHbaselikeKvrpcpb {
             }
             case 40: {
 
-              columnVersion_ = input.readInt64();
+              version_ = input.readInt64();
               break;
             }
             case 48: {
 
-              columnLimit_ = input.readInt64();
+              limit_ = input.readInt64();
               break;
             }
             default: {
@@ -7875,82 +7837,6 @@ public final class TiapHbaselikeKvrpcpb {
       return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.internal_static_tiap_hbaselike_kvrpcpb_GetRowVersionRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest.class, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest.Builder.class);
-    }
-
-    public static final int DB_NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object dbName_;
-    /**
-     * <code>string db_name = 1;</code>
-     * @return The dbName.
-     */
-    @java.lang.Override
-    public java.lang.String getDbName() {
-      java.lang.Object ref = dbName_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        dbName_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string db_name = 1;</code>
-     * @return The bytes for dbName.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getDbNameBytes() {
-      java.lang.Object ref = dbName_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        dbName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int TABLE_NAME_FIELD_NUMBER = 2;
-    private volatile java.lang.Object tableName_;
-    /**
-     * <code>string table_name = 2;</code>
-     * @return The tableName.
-     */
-    @java.lang.Override
-    public java.lang.String getTableName() {
-      java.lang.Object ref = tableName_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        tableName_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string table_name = 2;</code>
-     * @return The bytes for tableName.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getTableNameBytes() {
-      java.lang.Object ref = tableName_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        tableName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
     }
 
     public static final int ROW_KEY_FIELD_NUMBER = 3;
@@ -7990,26 +7876,26 @@ public final class TiapHbaselikeKvrpcpb {
       return getFamilies();
     }
 
-    public static final int COLUMN_VERSION_FIELD_NUMBER = 5;
-    private long columnVersion_;
+    public static final int VERSION_FIELD_NUMBER = 5;
+    private long version_;
     /**
-     * <code>int64 column_version = 5;</code>
-     * @return The columnVersion.
+     * <code>int64 version = 5;</code>
+     * @return The version.
      */
     @java.lang.Override
-    public long getColumnVersion() {
-      return columnVersion_;
+    public long getVersion() {
+      return version_;
     }
 
-    public static final int COLUMN_LIMIT_FIELD_NUMBER = 6;
-    private long columnLimit_;
+    public static final int LIMIT_FIELD_NUMBER = 6;
+    private long limit_;
     /**
-     * <code>int64 column_limit = 6;</code>
-     * @return The columnLimit.
+     * <code>int64 limit = 6;</code>
+     * @return The limit.
      */
     @java.lang.Override
-    public long getColumnLimit() {
-      return columnLimit_;
+    public long getLimit() {
+      return limit_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -8026,23 +7912,17 @@ public final class TiapHbaselikeKvrpcpb {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getDbNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, dbName_);
-      }
-      if (!getTableNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, tableName_);
-      }
       if (!rowKey_.isEmpty()) {
         output.writeBytes(3, rowKey_);
       }
       if (families_ != null) {
         output.writeMessage(4, getFamilies());
       }
-      if (columnVersion_ != 0L) {
-        output.writeInt64(5, columnVersion_);
+      if (version_ != 0L) {
+        output.writeInt64(5, version_);
       }
-      if (columnLimit_ != 0L) {
-        output.writeInt64(6, columnLimit_);
+      if (limit_ != 0L) {
+        output.writeInt64(6, limit_);
       }
       unknownFields.writeTo(output);
     }
@@ -8053,12 +7933,6 @@ public final class TiapHbaselikeKvrpcpb {
       if (size != -1) return size;
 
       size = 0;
-      if (!getDbNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, dbName_);
-      }
-      if (!getTableNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, tableName_);
-      }
       if (!rowKey_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(3, rowKey_);
@@ -8067,13 +7941,13 @@ public final class TiapHbaselikeKvrpcpb {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, getFamilies());
       }
-      if (columnVersion_ != 0L) {
+      if (version_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(5, columnVersion_);
+          .computeInt64Size(5, version_);
       }
-      if (columnLimit_ != 0L) {
+      if (limit_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(6, columnLimit_);
+          .computeInt64Size(6, limit_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -8090,10 +7964,6 @@ public final class TiapHbaselikeKvrpcpb {
       }
       com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest other = (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest) obj;
 
-      if (!getDbName()
-          .equals(other.getDbName())) return false;
-      if (!getTableName()
-          .equals(other.getTableName())) return false;
       if (!getRowKey()
           .equals(other.getRowKey())) return false;
       if (hasFamilies() != other.hasFamilies()) return false;
@@ -8101,10 +7971,10 @@ public final class TiapHbaselikeKvrpcpb {
         if (!getFamilies()
             .equals(other.getFamilies())) return false;
       }
-      if (getColumnVersion()
-          != other.getColumnVersion()) return false;
-      if (getColumnLimit()
-          != other.getColumnLimit()) return false;
+      if (getVersion()
+          != other.getVersion()) return false;
+      if (getLimit()
+          != other.getLimit()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -8116,22 +7986,18 @@ public final class TiapHbaselikeKvrpcpb {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + DB_NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getDbName().hashCode();
-      hash = (37 * hash) + TABLE_NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getTableName().hashCode();
       hash = (37 * hash) + ROW_KEY_FIELD_NUMBER;
       hash = (53 * hash) + getRowKey().hashCode();
       if (hasFamilies()) {
         hash = (37 * hash) + FAMILIES_FIELD_NUMBER;
         hash = (53 * hash) + getFamilies().hashCode();
       }
-      hash = (37 * hash) + COLUMN_VERSION_FIELD_NUMBER;
+      hash = (37 * hash) + VERSION_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getColumnVersion());
-      hash = (37 * hash) + COLUMN_LIMIT_FIELD_NUMBER;
+          getVersion());
+      hash = (37 * hash) + LIMIT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getColumnLimit());
+          getLimit());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -8265,10 +8131,6 @@ public final class TiapHbaselikeKvrpcpb {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        dbName_ = "";
-
-        tableName_ = "";
-
         rowKey_ = com.google.protobuf.ByteString.EMPTY;
 
         if (familiesBuilder_ == null) {
@@ -8277,9 +8139,9 @@ public final class TiapHbaselikeKvrpcpb {
           families_ = null;
           familiesBuilder_ = null;
         }
-        columnVersion_ = 0L;
+        version_ = 0L;
 
-        columnLimit_ = 0L;
+        limit_ = 0L;
 
         return this;
       }
@@ -8307,16 +8169,14 @@ public final class TiapHbaselikeKvrpcpb {
       @java.lang.Override
       public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest buildPartial() {
         com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest result = new com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest(this);
-        result.dbName_ = dbName_;
-        result.tableName_ = tableName_;
         result.rowKey_ = rowKey_;
         if (familiesBuilder_ == null) {
           result.families_ = families_;
         } else {
           result.families_ = familiesBuilder_.build();
         }
-        result.columnVersion_ = columnVersion_;
-        result.columnLimit_ = columnLimit_;
+        result.version_ = version_;
+        result.limit_ = limit_;
         onBuilt();
         return result;
       }
@@ -8365,25 +8225,17 @@ public final class TiapHbaselikeKvrpcpb {
 
       public Builder mergeFrom(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest other) {
         if (other == com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.GetRowVersionRequest.getDefaultInstance()) return this;
-        if (!other.getDbName().isEmpty()) {
-          dbName_ = other.dbName_;
-          onChanged();
-        }
-        if (!other.getTableName().isEmpty()) {
-          tableName_ = other.tableName_;
-          onChanged();
-        }
         if (other.getRowKey() != com.google.protobuf.ByteString.EMPTY) {
           setRowKey(other.getRowKey());
         }
         if (other.hasFamilies()) {
           mergeFamilies(other.getFamilies());
         }
-        if (other.getColumnVersion() != 0L) {
-          setColumnVersion(other.getColumnVersion());
+        if (other.getVersion() != 0L) {
+          setVersion(other.getVersion());
         }
-        if (other.getColumnLimit() != 0L) {
-          setColumnLimit(other.getColumnLimit());
+        if (other.getLimit() != 0L) {
+          setLimit(other.getLimit());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -8411,158 +8263,6 @@ public final class TiapHbaselikeKvrpcpb {
             mergeFrom(parsedMessage);
           }
         }
-        return this;
-      }
-
-      private java.lang.Object dbName_ = "";
-      /**
-       * <code>string db_name = 1;</code>
-       * @return The dbName.
-       */
-      public java.lang.String getDbName() {
-        java.lang.Object ref = dbName_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          dbName_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string db_name = 1;</code>
-       * @return The bytes for dbName.
-       */
-      public com.google.protobuf.ByteString
-          getDbNameBytes() {
-        java.lang.Object ref = dbName_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          dbName_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string db_name = 1;</code>
-       * @param value The dbName to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDbName(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        dbName_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string db_name = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDbName() {
-        
-        dbName_ = getDefaultInstance().getDbName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string db_name = 1;</code>
-       * @param value The bytes for dbName to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDbNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        dbName_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object tableName_ = "";
-      /**
-       * <code>string table_name = 2;</code>
-       * @return The tableName.
-       */
-      public java.lang.String getTableName() {
-        java.lang.Object ref = tableName_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          tableName_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string table_name = 2;</code>
-       * @return The bytes for tableName.
-       */
-      public com.google.protobuf.ByteString
-          getTableNameBytes() {
-        java.lang.Object ref = tableName_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          tableName_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string table_name = 2;</code>
-       * @param value The tableName to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTableName(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        tableName_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string table_name = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTableName() {
-        
-        tableName_ = getDefaultInstance().getTableName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string table_name = 2;</code>
-       * @param value The bytes for tableName to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTableNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        tableName_ = value;
-        onChanged();
         return this;
       }
 
@@ -8719,64 +8419,64 @@ public final class TiapHbaselikeKvrpcpb {
         return familiesBuilder_;
       }
 
-      private long columnVersion_ ;
+      private long version_ ;
       /**
-       * <code>int64 column_version = 5;</code>
-       * @return The columnVersion.
+       * <code>int64 version = 5;</code>
+       * @return The version.
        */
       @java.lang.Override
-      public long getColumnVersion() {
-        return columnVersion_;
+      public long getVersion() {
+        return version_;
       }
       /**
-       * <code>int64 column_version = 5;</code>
-       * @param value The columnVersion to set.
+       * <code>int64 version = 5;</code>
+       * @param value The version to set.
        * @return This builder for chaining.
        */
-      public Builder setColumnVersion(long value) {
+      public Builder setVersion(long value) {
         
-        columnVersion_ = value;
+        version_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int64 column_version = 5;</code>
+       * <code>int64 version = 5;</code>
        * @return This builder for chaining.
        */
-      public Builder clearColumnVersion() {
+      public Builder clearVersion() {
         
-        columnVersion_ = 0L;
+        version_ = 0L;
         onChanged();
         return this;
       }
 
-      private long columnLimit_ ;
+      private long limit_ ;
       /**
-       * <code>int64 column_limit = 6;</code>
-       * @return The columnLimit.
+       * <code>int64 limit = 6;</code>
+       * @return The limit.
        */
       @java.lang.Override
-      public long getColumnLimit() {
-        return columnLimit_;
+      public long getLimit() {
+        return limit_;
       }
       /**
-       * <code>int64 column_limit = 6;</code>
-       * @param value The columnLimit to set.
+       * <code>int64 limit = 6;</code>
+       * @param value The limit to set.
        * @return This builder for chaining.
        */
-      public Builder setColumnLimit(long value) {
+      public Builder setLimit(long value) {
         
-        columnLimit_ = value;
+        limit_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int64 column_limit = 6;</code>
+       * <code>int64 limit = 6;</code>
        * @return This builder for chaining.
        */
-      public Builder clearColumnLimit() {
+      public Builder clearLimit() {
         
-        columnLimit_ = 0L;
+        limit_ = 0L;
         onChanged();
         return this;
       }
@@ -9631,30 +9331,6 @@ public final class TiapHbaselikeKvrpcpb {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string db_name = 1;</code>
-     * @return The dbName.
-     */
-    java.lang.String getDbName();
-    /**
-     * <code>string db_name = 1;</code>
-     * @return The bytes for dbName.
-     */
-    com.google.protobuf.ByteString
-        getDbNameBytes();
-
-    /**
-     * <code>string table_name = 2;</code>
-     * @return The tableName.
-     */
-    java.lang.String getTableName();
-    /**
-     * <code>string table_name = 2;</code>
-     * @return The bytes for tableName.
-     */
-    com.google.protobuf.ByteString
-        getTableNameBytes();
-
-    /**
      * <code>bytes row_key_start = 3;</code>
      * @return The rowKeyStart.
      */
@@ -9682,16 +9358,10 @@ public final class TiapHbaselikeKvrpcpb {
     com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamilyOrBuilder getFamiliesOrBuilder();
 
     /**
-     * <code>int64 row_version = 6;</code>
-     * @return The rowVersion.
+     * <code>int64 limit = 6;</code>
+     * @return The limit.
      */
-    long getRowVersion();
-
-    /**
-     * <code>int64 row_limit = 7;</code>
-     * @return The rowLimit.
-     */
-    long getRowLimit();
+    long getLimit();
   }
   /**
    * Protobuf type {@code tiap_hbaselike_kvrpcpb.ScanRowRequest}
@@ -9706,8 +9376,6 @@ public final class TiapHbaselikeKvrpcpb {
       super(builder);
     }
     private ScanRowRequest() {
-      dbName_ = "";
-      tableName_ = "";
       rowKeyStart_ = com.google.protobuf.ByteString.EMPTY;
       rowKeyEnd_ = com.google.protobuf.ByteString.EMPTY;
     }
@@ -9742,18 +9410,6 @@ public final class TiapHbaselikeKvrpcpb {
             case 0:
               done = true;
               break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              dbName_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              tableName_ = s;
-              break;
-            }
             case 26: {
 
               rowKeyStart_ = input.readBytes();
@@ -9779,12 +9435,7 @@ public final class TiapHbaselikeKvrpcpb {
             }
             case 48: {
 
-              rowVersion_ = input.readInt64();
-              break;
-            }
-            case 56: {
-
-              rowLimit_ = input.readInt64();
+              limit_ = input.readInt64();
               break;
             }
             default: {
@@ -9817,82 +9468,6 @@ public final class TiapHbaselikeKvrpcpb {
       return com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.internal_static_tiap_hbaselike_kvrpcpb_ScanRowRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest.class, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest.Builder.class);
-    }
-
-    public static final int DB_NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object dbName_;
-    /**
-     * <code>string db_name = 1;</code>
-     * @return The dbName.
-     */
-    @java.lang.Override
-    public java.lang.String getDbName() {
-      java.lang.Object ref = dbName_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        dbName_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string db_name = 1;</code>
-     * @return The bytes for dbName.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getDbNameBytes() {
-      java.lang.Object ref = dbName_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        dbName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int TABLE_NAME_FIELD_NUMBER = 2;
-    private volatile java.lang.Object tableName_;
-    /**
-     * <code>string table_name = 2;</code>
-     * @return The tableName.
-     */
-    @java.lang.Override
-    public java.lang.String getTableName() {
-      java.lang.Object ref = tableName_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        tableName_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string table_name = 2;</code>
-     * @return The bytes for tableName.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getTableNameBytes() {
-      java.lang.Object ref = tableName_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        tableName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
     }
 
     public static final int ROW_KEY_START_FIELD_NUMBER = 3;
@@ -9943,26 +9518,15 @@ public final class TiapHbaselikeKvrpcpb {
       return getFamilies();
     }
 
-    public static final int ROW_VERSION_FIELD_NUMBER = 6;
-    private long rowVersion_;
+    public static final int LIMIT_FIELD_NUMBER = 6;
+    private long limit_;
     /**
-     * <code>int64 row_version = 6;</code>
-     * @return The rowVersion.
+     * <code>int64 limit = 6;</code>
+     * @return The limit.
      */
     @java.lang.Override
-    public long getRowVersion() {
-      return rowVersion_;
-    }
-
-    public static final int ROW_LIMIT_FIELD_NUMBER = 7;
-    private long rowLimit_;
-    /**
-     * <code>int64 row_limit = 7;</code>
-     * @return The rowLimit.
-     */
-    @java.lang.Override
-    public long getRowLimit() {
-      return rowLimit_;
+    public long getLimit() {
+      return limit_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -9979,12 +9543,6 @@ public final class TiapHbaselikeKvrpcpb {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getDbNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, dbName_);
-      }
-      if (!getTableNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, tableName_);
-      }
       if (!rowKeyStart_.isEmpty()) {
         output.writeBytes(3, rowKeyStart_);
       }
@@ -9994,11 +9552,8 @@ public final class TiapHbaselikeKvrpcpb {
       if (families_ != null) {
         output.writeMessage(5, getFamilies());
       }
-      if (rowVersion_ != 0L) {
-        output.writeInt64(6, rowVersion_);
-      }
-      if (rowLimit_ != 0L) {
-        output.writeInt64(7, rowLimit_);
+      if (limit_ != 0L) {
+        output.writeInt64(6, limit_);
       }
       unknownFields.writeTo(output);
     }
@@ -10009,12 +9564,6 @@ public final class TiapHbaselikeKvrpcpb {
       if (size != -1) return size;
 
       size = 0;
-      if (!getDbNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, dbName_);
-      }
-      if (!getTableNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, tableName_);
-      }
       if (!rowKeyStart_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(3, rowKeyStart_);
@@ -10027,13 +9576,9 @@ public final class TiapHbaselikeKvrpcpb {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(5, getFamilies());
       }
-      if (rowVersion_ != 0L) {
+      if (limit_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(6, rowVersion_);
-      }
-      if (rowLimit_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(7, rowLimit_);
+          .computeInt64Size(6, limit_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -10050,10 +9595,6 @@ public final class TiapHbaselikeKvrpcpb {
       }
       com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest other = (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest) obj;
 
-      if (!getDbName()
-          .equals(other.getDbName())) return false;
-      if (!getTableName()
-          .equals(other.getTableName())) return false;
       if (!getRowKeyStart()
           .equals(other.getRowKeyStart())) return false;
       if (!getRowKeyEnd()
@@ -10063,10 +9604,8 @@ public final class TiapHbaselikeKvrpcpb {
         if (!getFamilies()
             .equals(other.getFamilies())) return false;
       }
-      if (getRowVersion()
-          != other.getRowVersion()) return false;
-      if (getRowLimit()
-          != other.getRowLimit()) return false;
+      if (getLimit()
+          != other.getLimit()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -10078,10 +9617,6 @@ public final class TiapHbaselikeKvrpcpb {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + DB_NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getDbName().hashCode();
-      hash = (37 * hash) + TABLE_NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getTableName().hashCode();
       hash = (37 * hash) + ROW_KEY_START_FIELD_NUMBER;
       hash = (53 * hash) + getRowKeyStart().hashCode();
       hash = (37 * hash) + ROW_KEY_END_FIELD_NUMBER;
@@ -10090,12 +9625,9 @@ public final class TiapHbaselikeKvrpcpb {
         hash = (37 * hash) + FAMILIES_FIELD_NUMBER;
         hash = (53 * hash) + getFamilies().hashCode();
       }
-      hash = (37 * hash) + ROW_VERSION_FIELD_NUMBER;
+      hash = (37 * hash) + LIMIT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getRowVersion());
-      hash = (37 * hash) + ROW_LIMIT_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getRowLimit());
+          getLimit());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -10229,10 +9761,6 @@ public final class TiapHbaselikeKvrpcpb {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        dbName_ = "";
-
-        tableName_ = "";
-
         rowKeyStart_ = com.google.protobuf.ByteString.EMPTY;
 
         rowKeyEnd_ = com.google.protobuf.ByteString.EMPTY;
@@ -10243,9 +9771,7 @@ public final class TiapHbaselikeKvrpcpb {
           families_ = null;
           familiesBuilder_ = null;
         }
-        rowVersion_ = 0L;
-
-        rowLimit_ = 0L;
+        limit_ = 0L;
 
         return this;
       }
@@ -10273,8 +9799,6 @@ public final class TiapHbaselikeKvrpcpb {
       @java.lang.Override
       public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest buildPartial() {
         com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest result = new com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest(this);
-        result.dbName_ = dbName_;
-        result.tableName_ = tableName_;
         result.rowKeyStart_ = rowKeyStart_;
         result.rowKeyEnd_ = rowKeyEnd_;
         if (familiesBuilder_ == null) {
@@ -10282,8 +9806,7 @@ public final class TiapHbaselikeKvrpcpb {
         } else {
           result.families_ = familiesBuilder_.build();
         }
-        result.rowVersion_ = rowVersion_;
-        result.rowLimit_ = rowLimit_;
+        result.limit_ = limit_;
         onBuilt();
         return result;
       }
@@ -10332,14 +9855,6 @@ public final class TiapHbaselikeKvrpcpb {
 
       public Builder mergeFrom(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest other) {
         if (other == com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ScanRowRequest.getDefaultInstance()) return this;
-        if (!other.getDbName().isEmpty()) {
-          dbName_ = other.dbName_;
-          onChanged();
-        }
-        if (!other.getTableName().isEmpty()) {
-          tableName_ = other.tableName_;
-          onChanged();
-        }
         if (other.getRowKeyStart() != com.google.protobuf.ByteString.EMPTY) {
           setRowKeyStart(other.getRowKeyStart());
         }
@@ -10349,11 +9864,8 @@ public final class TiapHbaselikeKvrpcpb {
         if (other.hasFamilies()) {
           mergeFamilies(other.getFamilies());
         }
-        if (other.getRowVersion() != 0L) {
-          setRowVersion(other.getRowVersion());
-        }
-        if (other.getRowLimit() != 0L) {
-          setRowLimit(other.getRowLimit());
+        if (other.getLimit() != 0L) {
+          setLimit(other.getLimit());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -10381,158 +9893,6 @@ public final class TiapHbaselikeKvrpcpb {
             mergeFrom(parsedMessage);
           }
         }
-        return this;
-      }
-
-      private java.lang.Object dbName_ = "";
-      /**
-       * <code>string db_name = 1;</code>
-       * @return The dbName.
-       */
-      public java.lang.String getDbName() {
-        java.lang.Object ref = dbName_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          dbName_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string db_name = 1;</code>
-       * @return The bytes for dbName.
-       */
-      public com.google.protobuf.ByteString
-          getDbNameBytes() {
-        java.lang.Object ref = dbName_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          dbName_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string db_name = 1;</code>
-       * @param value The dbName to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDbName(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        dbName_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string db_name = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDbName() {
-        
-        dbName_ = getDefaultInstance().getDbName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string db_name = 1;</code>
-       * @param value The bytes for dbName to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDbNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        dbName_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object tableName_ = "";
-      /**
-       * <code>string table_name = 2;</code>
-       * @return The tableName.
-       */
-      public java.lang.String getTableName() {
-        java.lang.Object ref = tableName_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          tableName_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string table_name = 2;</code>
-       * @return The bytes for tableName.
-       */
-      public com.google.protobuf.ByteString
-          getTableNameBytes() {
-        java.lang.Object ref = tableName_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          tableName_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string table_name = 2;</code>
-       * @param value The tableName to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTableName(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        tableName_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string table_name = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTableName() {
-        
-        tableName_ = getDefaultInstance().getTableName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string table_name = 2;</code>
-       * @param value The bytes for tableName to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTableNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        tableName_ = value;
-        onChanged();
         return this;
       }
 
@@ -10723,64 +10083,33 @@ public final class TiapHbaselikeKvrpcpb {
         return familiesBuilder_;
       }
 
-      private long rowVersion_ ;
+      private long limit_ ;
       /**
-       * <code>int64 row_version = 6;</code>
-       * @return The rowVersion.
+       * <code>int64 limit = 6;</code>
+       * @return The limit.
        */
       @java.lang.Override
-      public long getRowVersion() {
-        return rowVersion_;
+      public long getLimit() {
+        return limit_;
       }
       /**
-       * <code>int64 row_version = 6;</code>
-       * @param value The rowVersion to set.
+       * <code>int64 limit = 6;</code>
+       * @param value The limit to set.
        * @return This builder for chaining.
        */
-      public Builder setRowVersion(long value) {
+      public Builder setLimit(long value) {
         
-        rowVersion_ = value;
+        limit_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int64 row_version = 6;</code>
+       * <code>int64 limit = 6;</code>
        * @return This builder for chaining.
        */
-      public Builder clearRowVersion() {
+      public Builder clearLimit() {
         
-        rowVersion_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long rowLimit_ ;
-      /**
-       * <code>int64 row_limit = 7;</code>
-       * @return The rowLimit.
-       */
-      @java.lang.Override
-      public long getRowLimit() {
-        return rowLimit_;
-      }
-      /**
-       * <code>int64 row_limit = 7;</code>
-       * @param value The rowLimit to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRowLimit(long value) {
-        
-        rowLimit_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int64 row_limit = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRowLimit() {
-        
-        rowLimit_ = 0L;
+        limit_ = 0L;
         onChanged();
         return this;
       }
@@ -11635,47 +10964,23 @@ public final class TiapHbaselikeKvrpcpb {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string db_name = 1;</code>
-     * @return The dbName.
-     */
-    java.lang.String getDbName();
-    /**
-     * <code>string db_name = 1;</code>
-     * @return The bytes for dbName.
-     */
-    com.google.protobuf.ByteString
-        getDbNameBytes();
-
-    /**
-     * <code>string table_name = 2;</code>
-     * @return The tableName.
-     */
-    java.lang.String getTableName();
-    /**
-     * <code>string table_name = 2;</code>
-     * @return The bytes for tableName.
-     */
-    com.google.protobuf.ByteString
-        getTableNameBytes();
-
-    /**
-     * <code>bytes row_key = 3;</code>
+     * <code>bytes row_key = 1;</code>
      * @return The rowKey.
      */
     com.google.protobuf.ByteString getRowKey();
 
     /**
-     * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 4;</code>
+     * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 2;</code>
      * @return Whether the families field is set.
      */
     boolean hasFamilies();
     /**
-     * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 4;</code>
+     * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 2;</code>
      * @return The families.
      */
     com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily getFamilies();
     /**
-     * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 4;</code>
+     * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 2;</code>
      */
     com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamilyOrBuilder getFamiliesOrBuilder();
   }
@@ -11692,8 +10997,6 @@ public final class TiapHbaselikeKvrpcpb {
       super(builder);
     }
     private Row() {
-      dbName_ = "";
-      tableName_ = "";
       rowKey_ = com.google.protobuf.ByteString.EMPTY;
     }
 
@@ -11728,23 +11031,11 @@ public final class TiapHbaselikeKvrpcpb {
               done = true;
               break;
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              dbName_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              tableName_ = s;
-              break;
-            }
-            case 26: {
 
               rowKey_ = input.readBytes();
               break;
             }
-            case 34: {
+            case 18: {
               com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily.Builder subBuilder = null;
               if (families_ != null) {
                 subBuilder = families_.toBuilder();
@@ -11789,86 +11080,10 @@ public final class TiapHbaselikeKvrpcpb {
               com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row.class, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row.Builder.class);
     }
 
-    public static final int DB_NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object dbName_;
-    /**
-     * <code>string db_name = 1;</code>
-     * @return The dbName.
-     */
-    @java.lang.Override
-    public java.lang.String getDbName() {
-      java.lang.Object ref = dbName_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        dbName_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string db_name = 1;</code>
-     * @return The bytes for dbName.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getDbNameBytes() {
-      java.lang.Object ref = dbName_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        dbName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int TABLE_NAME_FIELD_NUMBER = 2;
-    private volatile java.lang.Object tableName_;
-    /**
-     * <code>string table_name = 2;</code>
-     * @return The tableName.
-     */
-    @java.lang.Override
-    public java.lang.String getTableName() {
-      java.lang.Object ref = tableName_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        tableName_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string table_name = 2;</code>
-     * @return The bytes for tableName.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getTableNameBytes() {
-      java.lang.Object ref = tableName_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        tableName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int ROW_KEY_FIELD_NUMBER = 3;
+    public static final int ROW_KEY_FIELD_NUMBER = 1;
     private com.google.protobuf.ByteString rowKey_;
     /**
-     * <code>bytes row_key = 3;</code>
+     * <code>bytes row_key = 1;</code>
      * @return The rowKey.
      */
     @java.lang.Override
@@ -11876,10 +11091,10 @@ public final class TiapHbaselikeKvrpcpb {
       return rowKey_;
     }
 
-    public static final int FAMILIES_FIELD_NUMBER = 4;
+    public static final int FAMILIES_FIELD_NUMBER = 2;
     private com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily families_;
     /**
-     * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 4;</code>
+     * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 2;</code>
      * @return Whether the families field is set.
      */
     @java.lang.Override
@@ -11887,7 +11102,7 @@ public final class TiapHbaselikeKvrpcpb {
       return families_ != null;
     }
     /**
-     * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 4;</code>
+     * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 2;</code>
      * @return The families.
      */
     @java.lang.Override
@@ -11895,7 +11110,7 @@ public final class TiapHbaselikeKvrpcpb {
       return families_ == null ? com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily.getDefaultInstance() : families_;
     }
     /**
-     * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 4;</code>
+     * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 2;</code>
      */
     @java.lang.Override
     public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamilyOrBuilder getFamiliesOrBuilder() {
@@ -11916,17 +11131,11 @@ public final class TiapHbaselikeKvrpcpb {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getDbNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, dbName_);
-      }
-      if (!getTableNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, tableName_);
-      }
       if (!rowKey_.isEmpty()) {
-        output.writeBytes(3, rowKey_);
+        output.writeBytes(1, rowKey_);
       }
       if (families_ != null) {
-        output.writeMessage(4, getFamilies());
+        output.writeMessage(2, getFamilies());
       }
       unknownFields.writeTo(output);
     }
@@ -11937,19 +11146,13 @@ public final class TiapHbaselikeKvrpcpb {
       if (size != -1) return size;
 
       size = 0;
-      if (!getDbNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, dbName_);
-      }
-      if (!getTableNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, tableName_);
-      }
       if (!rowKey_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(3, rowKey_);
+          .computeBytesSize(1, rowKey_);
       }
       if (families_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, getFamilies());
+          .computeMessageSize(2, getFamilies());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -11966,10 +11169,6 @@ public final class TiapHbaselikeKvrpcpb {
       }
       com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row other = (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row) obj;
 
-      if (!getDbName()
-          .equals(other.getDbName())) return false;
-      if (!getTableName()
-          .equals(other.getTableName())) return false;
       if (!getRowKey()
           .equals(other.getRowKey())) return false;
       if (hasFamilies() != other.hasFamilies()) return false;
@@ -11988,10 +11187,6 @@ public final class TiapHbaselikeKvrpcpb {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + DB_NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getDbName().hashCode();
-      hash = (37 * hash) + TABLE_NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getTableName().hashCode();
       hash = (37 * hash) + ROW_KEY_FIELD_NUMBER;
       hash = (53 * hash) + getRowKey().hashCode();
       if (hasFamilies()) {
@@ -12131,10 +11326,6 @@ public final class TiapHbaselikeKvrpcpb {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        dbName_ = "";
-
-        tableName_ = "";
-
         rowKey_ = com.google.protobuf.ByteString.EMPTY;
 
         if (familiesBuilder_ == null) {
@@ -12169,8 +11360,6 @@ public final class TiapHbaselikeKvrpcpb {
       @java.lang.Override
       public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row buildPartial() {
         com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row result = new com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row(this);
-        result.dbName_ = dbName_;
-        result.tableName_ = tableName_;
         result.rowKey_ = rowKey_;
         if (familiesBuilder_ == null) {
           result.families_ = families_;
@@ -12225,14 +11414,6 @@ public final class TiapHbaselikeKvrpcpb {
 
       public Builder mergeFrom(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row other) {
         if (other == com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row.getDefaultInstance()) return this;
-        if (!other.getDbName().isEmpty()) {
-          dbName_ = other.dbName_;
-          onChanged();
-        }
-        if (!other.getTableName().isEmpty()) {
-          tableName_ = other.tableName_;
-          onChanged();
-        }
         if (other.getRowKey() != com.google.protobuf.ByteString.EMPTY) {
           setRowKey(other.getRowKey());
         }
@@ -12268,161 +11449,9 @@ public final class TiapHbaselikeKvrpcpb {
         return this;
       }
 
-      private java.lang.Object dbName_ = "";
-      /**
-       * <code>string db_name = 1;</code>
-       * @return The dbName.
-       */
-      public java.lang.String getDbName() {
-        java.lang.Object ref = dbName_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          dbName_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string db_name = 1;</code>
-       * @return The bytes for dbName.
-       */
-      public com.google.protobuf.ByteString
-          getDbNameBytes() {
-        java.lang.Object ref = dbName_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          dbName_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string db_name = 1;</code>
-       * @param value The dbName to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDbName(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        dbName_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string db_name = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDbName() {
-        
-        dbName_ = getDefaultInstance().getDbName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string db_name = 1;</code>
-       * @param value The bytes for dbName to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDbNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        dbName_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object tableName_ = "";
-      /**
-       * <code>string table_name = 2;</code>
-       * @return The tableName.
-       */
-      public java.lang.String getTableName() {
-        java.lang.Object ref = tableName_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          tableName_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string table_name = 2;</code>
-       * @return The bytes for tableName.
-       */
-      public com.google.protobuf.ByteString
-          getTableNameBytes() {
-        java.lang.Object ref = tableName_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          tableName_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string table_name = 2;</code>
-       * @param value The tableName to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTableName(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        tableName_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string table_name = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTableName() {
-        
-        tableName_ = getDefaultInstance().getTableName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string table_name = 2;</code>
-       * @param value The bytes for tableName to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTableNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        tableName_ = value;
-        onChanged();
-        return this;
-      }
-
       private com.google.protobuf.ByteString rowKey_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>bytes row_key = 3;</code>
+       * <code>bytes row_key = 1;</code>
        * @return The rowKey.
        */
       @java.lang.Override
@@ -12430,7 +11459,7 @@ public final class TiapHbaselikeKvrpcpb {
         return rowKey_;
       }
       /**
-       * <code>bytes row_key = 3;</code>
+       * <code>bytes row_key = 1;</code>
        * @param value The rowKey to set.
        * @return This builder for chaining.
        */
@@ -12444,7 +11473,7 @@ public final class TiapHbaselikeKvrpcpb {
         return this;
       }
       /**
-       * <code>bytes row_key = 3;</code>
+       * <code>bytes row_key = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearRowKey() {
@@ -12458,14 +11487,14 @@ public final class TiapHbaselikeKvrpcpb {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamilyOrBuilder> familiesBuilder_;
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 4;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 2;</code>
        * @return Whether the families field is set.
        */
       public boolean hasFamilies() {
         return familiesBuilder_ != null || families_ != null;
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 4;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 2;</code>
        * @return The families.
        */
       public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily getFamilies() {
@@ -12476,7 +11505,7 @@ public final class TiapHbaselikeKvrpcpb {
         }
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 4;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 2;</code>
        */
       public Builder setFamilies(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily value) {
         if (familiesBuilder_ == null) {
@@ -12492,7 +11521,7 @@ public final class TiapHbaselikeKvrpcpb {
         return this;
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 4;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 2;</code>
        */
       public Builder setFamilies(
           com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily.Builder builderForValue) {
@@ -12506,7 +11535,7 @@ public final class TiapHbaselikeKvrpcpb {
         return this;
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 4;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 2;</code>
        */
       public Builder mergeFamilies(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily value) {
         if (familiesBuilder_ == null) {
@@ -12524,7 +11553,7 @@ public final class TiapHbaselikeKvrpcpb {
         return this;
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 4;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 2;</code>
        */
       public Builder clearFamilies() {
         if (familiesBuilder_ == null) {
@@ -12538,7 +11567,7 @@ public final class TiapHbaselikeKvrpcpb {
         return this;
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 4;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 2;</code>
        */
       public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily.Builder getFamiliesBuilder() {
         
@@ -12546,7 +11575,7 @@ public final class TiapHbaselikeKvrpcpb {
         return getFamiliesFieldBuilder().getBuilder();
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 4;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 2;</code>
        */
       public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamilyOrBuilder getFamiliesOrBuilder() {
         if (familiesBuilder_ != null) {
@@ -12557,7 +11586,7 @@ public final class TiapHbaselikeKvrpcpb {
         }
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 4;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamilyOrBuilder> 
@@ -14171,12 +13200,6 @@ public final class TiapHbaselikeKvrpcpb {
      */
     com.google.protobuf.ByteString
         getNameBytes();
-
-    /**
-     * <code>int64 version = 2;</code>
-     * @return The version.
-     */
-    long getVersion();
   }
   /**
    * Protobuf type {@code tiap_hbaselike_kvrpcpb.Column}
@@ -14228,11 +13251,6 @@ public final class TiapHbaselikeKvrpcpb {
               java.lang.String s = input.readStringRequireUtf8();
 
               name_ = s;
-              break;
-            }
-            case 16: {
-
-              version_ = input.readInt64();
               break;
             }
             default: {
@@ -14305,17 +13323,6 @@ public final class TiapHbaselikeKvrpcpb {
       }
     }
 
-    public static final int VERSION_FIELD_NUMBER = 2;
-    private long version_;
-    /**
-     * <code>int64 version = 2;</code>
-     * @return The version.
-     */
-    @java.lang.Override
-    public long getVersion() {
-      return version_;
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -14333,9 +13340,6 @@ public final class TiapHbaselikeKvrpcpb {
       if (!getNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
       }
-      if (version_ != 0L) {
-        output.writeInt64(2, version_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -14347,10 +13351,6 @@ public final class TiapHbaselikeKvrpcpb {
       size = 0;
       if (!getNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
-      }
-      if (version_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, version_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -14369,8 +13369,6 @@ public final class TiapHbaselikeKvrpcpb {
 
       if (!getName()
           .equals(other.getName())) return false;
-      if (getVersion()
-          != other.getVersion()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -14384,9 +13382,6 @@ public final class TiapHbaselikeKvrpcpb {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
-      hash = (37 * hash) + VERSION_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getVersion());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -14522,8 +13517,6 @@ public final class TiapHbaselikeKvrpcpb {
         super.clear();
         name_ = "";
 
-        version_ = 0L;
-
         return this;
       }
 
@@ -14551,7 +13544,6 @@ public final class TiapHbaselikeKvrpcpb {
       public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Column buildPartial() {
         com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Column result = new com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Column(this);
         result.name_ = name_;
-        result.version_ = version_;
         onBuilt();
         return result;
       }
@@ -14603,9 +13595,6 @@ public final class TiapHbaselikeKvrpcpb {
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
           onChanged();
-        }
-        if (other.getVersion() != 0L) {
-          setVersion(other.getVersion());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -14711,37 +13700,6 @@ public final class TiapHbaselikeKvrpcpb {
         onChanged();
         return this;
       }
-
-      private long version_ ;
-      /**
-       * <code>int64 version = 2;</code>
-       * @return The version.
-       */
-      @java.lang.Override
-      public long getVersion() {
-        return version_;
-      }
-      /**
-       * <code>int64 version = 2;</code>
-       * @param value The version to set.
-       * @return This builder for chaining.
-       */
-      public Builder setVersion(long value) {
-        
-        version_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int64 version = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearVersion() {
-        
-        version_ = 0L;
-        onChanged();
-        return this;
-      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -14800,47 +13758,23 @@ public final class TiapHbaselikeKvrpcpb {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string db_name = 1;</code>
-     * @return The dbName.
-     */
-    java.lang.String getDbName();
-    /**
-     * <code>string db_name = 1;</code>
-     * @return The bytes for dbName.
-     */
-    com.google.protobuf.ByteString
-        getDbNameBytes();
-
-    /**
-     * <code>string table_name = 2;</code>
-     * @return The tableName.
-     */
-    java.lang.String getTableName();
-    /**
-     * <code>string table_name = 2;</code>
-     * @return The bytes for tableName.
-     */
-    com.google.protobuf.ByteString
-        getTableNameBytes();
-
-    /**
-     * <code>bytes row_key = 3;</code>
+     * <code>bytes row_key = 1;</code>
      * @return The rowKey.
      */
     com.google.protobuf.ByteString getRowKey();
 
     /**
-     * <code>.tiap_hbaselike_kvrpcpb.ColumnFamilyValue family_values = 4;</code>
+     * <code>.tiap_hbaselike_kvrpcpb.ColumnFamilyValue family_values = 2;</code>
      * @return Whether the familyValues field is set.
      */
     boolean hasFamilyValues();
     /**
-     * <code>.tiap_hbaselike_kvrpcpb.ColumnFamilyValue family_values = 4;</code>
+     * <code>.tiap_hbaselike_kvrpcpb.ColumnFamilyValue family_values = 2;</code>
      * @return The familyValues.
      */
     com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamilyValue getFamilyValues();
     /**
-     * <code>.tiap_hbaselike_kvrpcpb.ColumnFamilyValue family_values = 4;</code>
+     * <code>.tiap_hbaselike_kvrpcpb.ColumnFamilyValue family_values = 2;</code>
      */
     com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamilyValueOrBuilder getFamilyValuesOrBuilder();
   }
@@ -14857,8 +13791,6 @@ public final class TiapHbaselikeKvrpcpb {
       super(builder);
     }
     private RowValue() {
-      dbName_ = "";
-      tableName_ = "";
       rowKey_ = com.google.protobuf.ByteString.EMPTY;
     }
 
@@ -14893,23 +13825,11 @@ public final class TiapHbaselikeKvrpcpb {
               done = true;
               break;
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              dbName_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              tableName_ = s;
-              break;
-            }
-            case 26: {
 
               rowKey_ = input.readBytes();
               break;
             }
-            case 34: {
+            case 18: {
               com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamilyValue.Builder subBuilder = null;
               if (familyValues_ != null) {
                 subBuilder = familyValues_.toBuilder();
@@ -14954,86 +13874,10 @@ public final class TiapHbaselikeKvrpcpb {
               com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue.class, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue.Builder.class);
     }
 
-    public static final int DB_NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object dbName_;
-    /**
-     * <code>string db_name = 1;</code>
-     * @return The dbName.
-     */
-    @java.lang.Override
-    public java.lang.String getDbName() {
-      java.lang.Object ref = dbName_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        dbName_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string db_name = 1;</code>
-     * @return The bytes for dbName.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getDbNameBytes() {
-      java.lang.Object ref = dbName_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        dbName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int TABLE_NAME_FIELD_NUMBER = 2;
-    private volatile java.lang.Object tableName_;
-    /**
-     * <code>string table_name = 2;</code>
-     * @return The tableName.
-     */
-    @java.lang.Override
-    public java.lang.String getTableName() {
-      java.lang.Object ref = tableName_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        tableName_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string table_name = 2;</code>
-     * @return The bytes for tableName.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getTableNameBytes() {
-      java.lang.Object ref = tableName_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        tableName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int ROW_KEY_FIELD_NUMBER = 3;
+    public static final int ROW_KEY_FIELD_NUMBER = 1;
     private com.google.protobuf.ByteString rowKey_;
     /**
-     * <code>bytes row_key = 3;</code>
+     * <code>bytes row_key = 1;</code>
      * @return The rowKey.
      */
     @java.lang.Override
@@ -15041,10 +13885,10 @@ public final class TiapHbaselikeKvrpcpb {
       return rowKey_;
     }
 
-    public static final int FAMILY_VALUES_FIELD_NUMBER = 4;
+    public static final int FAMILY_VALUES_FIELD_NUMBER = 2;
     private com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamilyValue familyValues_;
     /**
-     * <code>.tiap_hbaselike_kvrpcpb.ColumnFamilyValue family_values = 4;</code>
+     * <code>.tiap_hbaselike_kvrpcpb.ColumnFamilyValue family_values = 2;</code>
      * @return Whether the familyValues field is set.
      */
     @java.lang.Override
@@ -15052,7 +13896,7 @@ public final class TiapHbaselikeKvrpcpb {
       return familyValues_ != null;
     }
     /**
-     * <code>.tiap_hbaselike_kvrpcpb.ColumnFamilyValue family_values = 4;</code>
+     * <code>.tiap_hbaselike_kvrpcpb.ColumnFamilyValue family_values = 2;</code>
      * @return The familyValues.
      */
     @java.lang.Override
@@ -15060,7 +13904,7 @@ public final class TiapHbaselikeKvrpcpb {
       return familyValues_ == null ? com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamilyValue.getDefaultInstance() : familyValues_;
     }
     /**
-     * <code>.tiap_hbaselike_kvrpcpb.ColumnFamilyValue family_values = 4;</code>
+     * <code>.tiap_hbaselike_kvrpcpb.ColumnFamilyValue family_values = 2;</code>
      */
     @java.lang.Override
     public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamilyValueOrBuilder getFamilyValuesOrBuilder() {
@@ -15081,17 +13925,11 @@ public final class TiapHbaselikeKvrpcpb {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getDbNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, dbName_);
-      }
-      if (!getTableNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, tableName_);
-      }
       if (!rowKey_.isEmpty()) {
-        output.writeBytes(3, rowKey_);
+        output.writeBytes(1, rowKey_);
       }
       if (familyValues_ != null) {
-        output.writeMessage(4, getFamilyValues());
+        output.writeMessage(2, getFamilyValues());
       }
       unknownFields.writeTo(output);
     }
@@ -15102,19 +13940,13 @@ public final class TiapHbaselikeKvrpcpb {
       if (size != -1) return size;
 
       size = 0;
-      if (!getDbNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, dbName_);
-      }
-      if (!getTableNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, tableName_);
-      }
       if (!rowKey_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(3, rowKey_);
+          .computeBytesSize(1, rowKey_);
       }
       if (familyValues_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, getFamilyValues());
+          .computeMessageSize(2, getFamilyValues());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -15131,10 +13963,6 @@ public final class TiapHbaselikeKvrpcpb {
       }
       com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue other = (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue) obj;
 
-      if (!getDbName()
-          .equals(other.getDbName())) return false;
-      if (!getTableName()
-          .equals(other.getTableName())) return false;
       if (!getRowKey()
           .equals(other.getRowKey())) return false;
       if (hasFamilyValues() != other.hasFamilyValues()) return false;
@@ -15153,10 +13981,6 @@ public final class TiapHbaselikeKvrpcpb {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + DB_NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getDbName().hashCode();
-      hash = (37 * hash) + TABLE_NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getTableName().hashCode();
       hash = (37 * hash) + ROW_KEY_FIELD_NUMBER;
       hash = (53 * hash) + getRowKey().hashCode();
       if (hasFamilyValues()) {
@@ -15296,10 +14120,6 @@ public final class TiapHbaselikeKvrpcpb {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        dbName_ = "";
-
-        tableName_ = "";
-
         rowKey_ = com.google.protobuf.ByteString.EMPTY;
 
         if (familyValuesBuilder_ == null) {
@@ -15334,8 +14154,6 @@ public final class TiapHbaselikeKvrpcpb {
       @java.lang.Override
       public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue buildPartial() {
         com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue result = new com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue(this);
-        result.dbName_ = dbName_;
-        result.tableName_ = tableName_;
         result.rowKey_ = rowKey_;
         if (familyValuesBuilder_ == null) {
           result.familyValues_ = familyValues_;
@@ -15390,14 +14208,6 @@ public final class TiapHbaselikeKvrpcpb {
 
       public Builder mergeFrom(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue other) {
         if (other == com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowValue.getDefaultInstance()) return this;
-        if (!other.getDbName().isEmpty()) {
-          dbName_ = other.dbName_;
-          onChanged();
-        }
-        if (!other.getTableName().isEmpty()) {
-          tableName_ = other.tableName_;
-          onChanged();
-        }
         if (other.getRowKey() != com.google.protobuf.ByteString.EMPTY) {
           setRowKey(other.getRowKey());
         }
@@ -15433,161 +14243,9 @@ public final class TiapHbaselikeKvrpcpb {
         return this;
       }
 
-      private java.lang.Object dbName_ = "";
-      /**
-       * <code>string db_name = 1;</code>
-       * @return The dbName.
-       */
-      public java.lang.String getDbName() {
-        java.lang.Object ref = dbName_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          dbName_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string db_name = 1;</code>
-       * @return The bytes for dbName.
-       */
-      public com.google.protobuf.ByteString
-          getDbNameBytes() {
-        java.lang.Object ref = dbName_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          dbName_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string db_name = 1;</code>
-       * @param value The dbName to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDbName(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        dbName_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string db_name = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDbName() {
-        
-        dbName_ = getDefaultInstance().getDbName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string db_name = 1;</code>
-       * @param value The bytes for dbName to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDbNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        dbName_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object tableName_ = "";
-      /**
-       * <code>string table_name = 2;</code>
-       * @return The tableName.
-       */
-      public java.lang.String getTableName() {
-        java.lang.Object ref = tableName_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          tableName_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string table_name = 2;</code>
-       * @return The bytes for tableName.
-       */
-      public com.google.protobuf.ByteString
-          getTableNameBytes() {
-        java.lang.Object ref = tableName_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          tableName_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string table_name = 2;</code>
-       * @param value The tableName to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTableName(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        tableName_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string table_name = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTableName() {
-        
-        tableName_ = getDefaultInstance().getTableName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string table_name = 2;</code>
-       * @param value The bytes for tableName to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTableNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        tableName_ = value;
-        onChanged();
-        return this;
-      }
-
       private com.google.protobuf.ByteString rowKey_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>bytes row_key = 3;</code>
+       * <code>bytes row_key = 1;</code>
        * @return The rowKey.
        */
       @java.lang.Override
@@ -15595,7 +14253,7 @@ public final class TiapHbaselikeKvrpcpb {
         return rowKey_;
       }
       /**
-       * <code>bytes row_key = 3;</code>
+       * <code>bytes row_key = 1;</code>
        * @param value The rowKey to set.
        * @return This builder for chaining.
        */
@@ -15609,7 +14267,7 @@ public final class TiapHbaselikeKvrpcpb {
         return this;
       }
       /**
-       * <code>bytes row_key = 3;</code>
+       * <code>bytes row_key = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearRowKey() {
@@ -15623,14 +14281,14 @@ public final class TiapHbaselikeKvrpcpb {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamilyValue, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamilyValue.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamilyValueOrBuilder> familyValuesBuilder_;
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamilyValue family_values = 4;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamilyValue family_values = 2;</code>
        * @return Whether the familyValues field is set.
        */
       public boolean hasFamilyValues() {
         return familyValuesBuilder_ != null || familyValues_ != null;
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamilyValue family_values = 4;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamilyValue family_values = 2;</code>
        * @return The familyValues.
        */
       public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamilyValue getFamilyValues() {
@@ -15641,7 +14299,7 @@ public final class TiapHbaselikeKvrpcpb {
         }
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamilyValue family_values = 4;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamilyValue family_values = 2;</code>
        */
       public Builder setFamilyValues(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamilyValue value) {
         if (familyValuesBuilder_ == null) {
@@ -15657,7 +14315,7 @@ public final class TiapHbaselikeKvrpcpb {
         return this;
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamilyValue family_values = 4;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamilyValue family_values = 2;</code>
        */
       public Builder setFamilyValues(
           com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamilyValue.Builder builderForValue) {
@@ -15671,7 +14329,7 @@ public final class TiapHbaselikeKvrpcpb {
         return this;
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamilyValue family_values = 4;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamilyValue family_values = 2;</code>
        */
       public Builder mergeFamilyValues(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamilyValue value) {
         if (familyValuesBuilder_ == null) {
@@ -15689,7 +14347,7 @@ public final class TiapHbaselikeKvrpcpb {
         return this;
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamilyValue family_values = 4;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamilyValue family_values = 2;</code>
        */
       public Builder clearFamilyValues() {
         if (familyValuesBuilder_ == null) {
@@ -15703,7 +14361,7 @@ public final class TiapHbaselikeKvrpcpb {
         return this;
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamilyValue family_values = 4;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamilyValue family_values = 2;</code>
        */
       public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamilyValue.Builder getFamilyValuesBuilder() {
         
@@ -15711,7 +14369,7 @@ public final class TiapHbaselikeKvrpcpb {
         return getFamilyValuesFieldBuilder().getBuilder();
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamilyValue family_values = 4;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamilyValue family_values = 2;</code>
        */
       public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamilyValueOrBuilder getFamilyValuesOrBuilder() {
         if (familyValuesBuilder_ != null) {
@@ -15722,7 +14380,7 @@ public final class TiapHbaselikeKvrpcpb {
         }
       }
       /**
-       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamilyValue family_values = 4;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamilyValue family_values = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamilyValue, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamilyValue.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamilyValueOrBuilder> 
@@ -18256,41 +16914,36 @@ public final class TiapHbaselikeKvrpcpb {
       "Value\"\025\n\023BatchPutRowResponse\"B\n\025BatchDel" +
       "eteRowRequest\022)\n\004rows\030\001 \003(\0132\033.tiap_hbase" +
       "like_kvrpcpb.Row\"\030\n\026BatchDeleteRowRespon" +
-      "se\"\262\001\n\024GetRowVersionRequest\022\017\n\007db_name\030\001" +
-      " \001(\t\022\022\n\ntable_name\030\002 \001(\t\022\017\n\007row_key\030\003 \001(" +
-      "\014\0226\n\010families\030\004 \001(\0132$.tiap_hbaselike_kvr" +
-      "pcpb.ColumnFamily\022\026\n\016column_version\030\005 \001(" +
-      "\003\022\024\n\014column_limit\030\006 \001(\003\"M\n\025GetRowVersion" +
-      "Response\0224\n\nrow_values\030\001 \003(\0132 .tiap_hbas" +
-      "elike_kvrpcpb.RowValue\"\301\001\n\016ScanRowReques" +
-      "t\022\017\n\007db_name\030\001 \001(\t\022\022\n\ntable_name\030\002 \001(\t\022\025" +
-      "\n\rrow_key_start\030\003 \001(\014\022\023\n\013row_key_end\030\004 \001" +
-      "(\014\0226\n\010families\030\005 \001(\0132$.tiap_hbaselike_kv" +
-      "rpcpb.ColumnFamily\022\023\n\013row_version\030\006 \001(\003\022" +
-      "\021\n\trow_limit\030\007 \001(\003\"G\n\017ScanRowResponse\0224\n" +
-      "\nrow_values\030\001 \003(\0132 .tiap_hbaselike_kvrpc" +
-      "pb.RowValue\"s\n\003Row\022\017\n\007db_name\030\001 \001(\t\022\022\n\nt" +
-      "able_name\030\002 \001(\t\022\017\n\007row_key\030\003 \001(\014\0226\n\010fami" +
-      "lies\030\004 \001(\0132$.tiap_hbaselike_kvrpcpb.Colu" +
-      "mnFamily\"\221\001\n\014ColumnFamily\0226\n\001m\030\001 \003(\0132+.t" +
-      "iap_hbaselike_kvrpcpb.ColumnFamily.MEntr" +
-      "y\032I\n\006MEntry\022\013\n\003key\030\001 \001(\t\022.\n\005value\030\002 \001(\0132" +
-      "\037.tiap_hbaselike_kvrpcpb.Columns:\0028\001\":\n\007" +
-      "Columns\022/\n\007columns\030\001 \003(\0132\036.tiap_hbaselik" +
-      "e_kvrpcpb.Column\"\'\n\006Column\022\014\n\004name\030\001 \001(\t" +
-      "\022\017\n\007version\030\002 \001(\003\"\202\001\n\010RowValue\022\017\n\007db_nam" +
-      "e\030\001 \001(\t\022\022\n\ntable_name\030\002 \001(\t\022\017\n\007row_key\030\003" +
-      " \001(\014\022@\n\rfamily_values\030\004 \001(\0132).tiap_hbase" +
-      "like_kvrpcpb.ColumnFamilyValue\"\240\001\n\021Colum" +
-      "nFamilyValue\022;\n\001m\030\001 \003(\01320.tiap_hbaselike" +
-      "_kvrpcpb.ColumnFamilyValue.MEntry\032N\n\006MEn" +
-      "try\022\013\n\003key\030\001 \001(\t\0223\n\005value\030\002 \001(\0132$.tiap_h" +
-      "baselike_kvrpcpb.ColumnValues:\0028\001\"J\n\014Col" +
-      "umnValues\022:\n\rcolumn_values\030\001 \003(\0132#.tiap_" +
-      "hbaselike_kvrpcpb.ColumnValue\"H\n\013ColumnV" +
-      "alue\022\014\n\004name\030\001 \001(\t\022\017\n\007version\030\002 \001(\003\022\r\n\005v" +
-      "alue\030\003 \001(\014\022\013\n\003ttl\030\004 \001(\003B\035\n\033com.shopee.di" +
-      ".kvstore.protob\006proto3"
+      "se\"\177\n\024GetRowVersionRequest\022\017\n\007row_key\030\003 " +
+      "\001(\014\0226\n\010families\030\004 \001(\0132$.tiap_hbaselike_k" +
+      "vrpcpb.ColumnFamily\022\017\n\007version\030\005 \001(\003\022\r\n\005" +
+      "limit\030\006 \001(\003\"M\n\025GetRowVersionResponse\0224\n\n" +
+      "row_values\030\001 \003(\0132 .tiap_hbaselike_kvrpcp" +
+      "b.RowValue\"\203\001\n\016ScanRowRequest\022\025\n\rrow_key" +
+      "_start\030\003 \001(\014\022\023\n\013row_key_end\030\004 \001(\014\0226\n\010fam" +
+      "ilies\030\005 \001(\0132$.tiap_hbaselike_kvrpcpb.Col" +
+      "umnFamily\022\r\n\005limit\030\006 \001(\003\"G\n\017ScanRowRespo" +
+      "nse\0224\n\nrow_values\030\001 \003(\0132 .tiap_hbaselike" +
+      "_kvrpcpb.RowValue\"N\n\003Row\022\017\n\007row_key\030\001 \001(" +
+      "\014\0226\n\010families\030\002 \001(\0132$.tiap_hbaselike_kvr" +
+      "pcpb.ColumnFamily\"\221\001\n\014ColumnFamily\0226\n\001m\030" +
+      "\001 \003(\0132+.tiap_hbaselike_kvrpcpb.ColumnFam" +
+      "ily.MEntry\032I\n\006MEntry\022\013\n\003key\030\001 \001(\t\022.\n\005val" +
+      "ue\030\002 \001(\0132\037.tiap_hbaselike_kvrpcpb.Column" +
+      "s:\0028\001\":\n\007Columns\022/\n\007columns\030\001 \003(\0132\036.tiap" +
+      "_hbaselike_kvrpcpb.Column\"\026\n\006Column\022\014\n\004n" +
+      "ame\030\001 \001(\t\"]\n\010RowValue\022\017\n\007row_key\030\001 \001(\014\022@" +
+      "\n\rfamily_values\030\002 \001(\0132).tiap_hbaselike_k" +
+      "vrpcpb.ColumnFamilyValue\"\240\001\n\021ColumnFamil" +
+      "yValue\022;\n\001m\030\001 \003(\01320.tiap_hbaselike_kvrpc" +
+      "pb.ColumnFamilyValue.MEntry\032N\n\006MEntry\022\013\n" +
+      "\003key\030\001 \001(\t\0223\n\005value\030\002 \001(\0132$.tiap_hbaseli" +
+      "ke_kvrpcpb.ColumnValues:\0028\001\"J\n\014ColumnVal" +
+      "ues\022:\n\rcolumn_values\030\001 \003(\0132#.tiap_hbasel" +
+      "ike_kvrpcpb.ColumnValue\"H\n\013ColumnValue\022\014" +
+      "\n\004name\030\001 \001(\t\022\017\n\007version\030\002 \001(\003\022\r\n\005value\030\003" +
+      " \001(\014\022\013\n\003ttl\030\004 \001(\003B\035\n\033com.shopee.di.kvsto" +
+      "re.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -18350,7 +17003,7 @@ public final class TiapHbaselikeKvrpcpb {
     internal_static_tiap_hbaselike_kvrpcpb_GetRowVersionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tiap_hbaselike_kvrpcpb_GetRowVersionRequest_descriptor,
-        new java.lang.String[] { "DbName", "TableName", "RowKey", "Families", "ColumnVersion", "ColumnLimit", });
+        new java.lang.String[] { "RowKey", "Families", "Version", "Limit", });
     internal_static_tiap_hbaselike_kvrpcpb_GetRowVersionResponse_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_tiap_hbaselike_kvrpcpb_GetRowVersionResponse_fieldAccessorTable = new
@@ -18362,7 +17015,7 @@ public final class TiapHbaselikeKvrpcpb {
     internal_static_tiap_hbaselike_kvrpcpb_ScanRowRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tiap_hbaselike_kvrpcpb_ScanRowRequest_descriptor,
-        new java.lang.String[] { "DbName", "TableName", "RowKeyStart", "RowKeyEnd", "Families", "RowVersion", "RowLimit", });
+        new java.lang.String[] { "RowKeyStart", "RowKeyEnd", "Families", "Limit", });
     internal_static_tiap_hbaselike_kvrpcpb_ScanRowResponse_descriptor =
       getDescriptor().getMessageTypes().get(11);
     internal_static_tiap_hbaselike_kvrpcpb_ScanRowResponse_fieldAccessorTable = new
@@ -18374,7 +17027,7 @@ public final class TiapHbaselikeKvrpcpb {
     internal_static_tiap_hbaselike_kvrpcpb_Row_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tiap_hbaselike_kvrpcpb_Row_descriptor,
-        new java.lang.String[] { "DbName", "TableName", "RowKey", "Families", });
+        new java.lang.String[] { "RowKey", "Families", });
     internal_static_tiap_hbaselike_kvrpcpb_ColumnFamily_descriptor =
       getDescriptor().getMessageTypes().get(13);
     internal_static_tiap_hbaselike_kvrpcpb_ColumnFamily_fieldAccessorTable = new
@@ -18398,13 +17051,13 @@ public final class TiapHbaselikeKvrpcpb {
     internal_static_tiap_hbaselike_kvrpcpb_Column_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tiap_hbaselike_kvrpcpb_Column_descriptor,
-        new java.lang.String[] { "Name", "Version", });
+        new java.lang.String[] { "Name", });
     internal_static_tiap_hbaselike_kvrpcpb_RowValue_descriptor =
       getDescriptor().getMessageTypes().get(16);
     internal_static_tiap_hbaselike_kvrpcpb_RowValue_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tiap_hbaselike_kvrpcpb_RowValue_descriptor,
-        new java.lang.String[] { "DbName", "TableName", "RowKey", "FamilyValues", });
+        new java.lang.String[] { "RowKey", "FamilyValues", });
     internal_static_tiap_hbaselike_kvrpcpb_ColumnFamilyValue_descriptor =
       getDescriptor().getMessageTypes().get(17);
     internal_static_tiap_hbaselike_kvrpcpb_ColumnFamilyValue_fieldAccessorTable = new
