@@ -4648,29 +4648,28 @@ public final class TiapHbaselikeAdminrpcpb {
     com.shopee.di.kvstore.proto.TiapAdminrpcpb.TableQuotaOrBuilder getQuotaOrBuilder();
 
     /**
-     * <code>repeated string column_families = 4;</code>
-     * @return A list containing the columnFamilies.
+     * <code>repeated .tiap_adminrpcpb.ColumnFamily families = 4;</code>
      */
-    java.util.List<java.lang.String>
-        getColumnFamiliesList();
+    java.util.List<com.shopee.di.kvstore.proto.TiapAdminrpcpb.ColumnFamily> 
+        getFamiliesList();
     /**
-     * <code>repeated string column_families = 4;</code>
-     * @return The count of columnFamilies.
+     * <code>repeated .tiap_adminrpcpb.ColumnFamily families = 4;</code>
      */
-    int getColumnFamiliesCount();
+    com.shopee.di.kvstore.proto.TiapAdminrpcpb.ColumnFamily getFamilies(int index);
     /**
-     * <code>repeated string column_families = 4;</code>
-     * @param index The index of the element to return.
-     * @return The columnFamilies at the given index.
+     * <code>repeated .tiap_adminrpcpb.ColumnFamily families = 4;</code>
      */
-    java.lang.String getColumnFamilies(int index);
+    int getFamiliesCount();
     /**
-     * <code>repeated string column_families = 4;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the columnFamilies at the given index.
+     * <code>repeated .tiap_adminrpcpb.ColumnFamily families = 4;</code>
      */
-    com.google.protobuf.ByteString
-        getColumnFamiliesBytes(int index);
+    java.util.List<? extends com.shopee.di.kvstore.proto.TiapAdminrpcpb.ColumnFamilyOrBuilder> 
+        getFamiliesOrBuilderList();
+    /**
+     * <code>repeated .tiap_adminrpcpb.ColumnFamily families = 4;</code>
+     */
+    com.shopee.di.kvstore.proto.TiapAdminrpcpb.ColumnFamilyOrBuilder getFamiliesOrBuilder(
+        int index);
 
     /**
      * <code>bool salted = 5;</code>
@@ -4699,7 +4698,7 @@ public final class TiapHbaselikeAdminrpcpb {
     private CreateTableRequest() {
       dbName_ = "";
       name_ = "";
-      columnFamilies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      families_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -4759,12 +4758,12 @@ public final class TiapHbaselikeAdminrpcpb {
               break;
             }
             case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                columnFamilies_ = new com.google.protobuf.LazyStringArrayList();
+                families_ = new java.util.ArrayList<com.shopee.di.kvstore.proto.TiapAdminrpcpb.ColumnFamily>();
                 mutable_bitField0_ |= 0x00000001;
               }
-              columnFamilies_.add(s);
+              families_.add(
+                  input.readMessage(com.shopee.di.kvstore.proto.TiapAdminrpcpb.ColumnFamily.parser(), extensionRegistry));
               break;
             }
             case 40: {
@@ -4793,7 +4792,7 @@ public final class TiapHbaselikeAdminrpcpb {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          columnFamilies_ = columnFamilies_.getUnmodifiableView();
+          families_ = java.util.Collections.unmodifiableList(families_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -4914,39 +4913,44 @@ public final class TiapHbaselikeAdminrpcpb {
       return getQuota();
     }
 
-    public static final int COLUMN_FAMILIES_FIELD_NUMBER = 4;
-    private com.google.protobuf.LazyStringList columnFamilies_;
+    public static final int FAMILIES_FIELD_NUMBER = 4;
+    private java.util.List<com.shopee.di.kvstore.proto.TiapAdminrpcpb.ColumnFamily> families_;
     /**
-     * <code>repeated string column_families = 4;</code>
-     * @return A list containing the columnFamilies.
+     * <code>repeated .tiap_adminrpcpb.ColumnFamily families = 4;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getColumnFamiliesList() {
-      return columnFamilies_;
+    @java.lang.Override
+    public java.util.List<com.shopee.di.kvstore.proto.TiapAdminrpcpb.ColumnFamily> getFamiliesList() {
+      return families_;
     }
     /**
-     * <code>repeated string column_families = 4;</code>
-     * @return The count of columnFamilies.
+     * <code>repeated .tiap_adminrpcpb.ColumnFamily families = 4;</code>
      */
-    public int getColumnFamiliesCount() {
-      return columnFamilies_.size();
+    @java.lang.Override
+    public java.util.List<? extends com.shopee.di.kvstore.proto.TiapAdminrpcpb.ColumnFamilyOrBuilder> 
+        getFamiliesOrBuilderList() {
+      return families_;
     }
     /**
-     * <code>repeated string column_families = 4;</code>
-     * @param index The index of the element to return.
-     * @return The columnFamilies at the given index.
+     * <code>repeated .tiap_adminrpcpb.ColumnFamily families = 4;</code>
      */
-    public java.lang.String getColumnFamilies(int index) {
-      return columnFamilies_.get(index);
+    @java.lang.Override
+    public int getFamiliesCount() {
+      return families_.size();
     }
     /**
-     * <code>repeated string column_families = 4;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the columnFamilies at the given index.
+     * <code>repeated .tiap_adminrpcpb.ColumnFamily families = 4;</code>
      */
-    public com.google.protobuf.ByteString
-        getColumnFamiliesBytes(int index) {
-      return columnFamilies_.getByteString(index);
+    @java.lang.Override
+    public com.shopee.di.kvstore.proto.TiapAdminrpcpb.ColumnFamily getFamilies(int index) {
+      return families_.get(index);
+    }
+    /**
+     * <code>repeated .tiap_adminrpcpb.ColumnFamily families = 4;</code>
+     */
+    @java.lang.Override
+    public com.shopee.di.kvstore.proto.TiapAdminrpcpb.ColumnFamilyOrBuilder getFamiliesOrBuilder(
+        int index) {
+      return families_.get(index);
     }
 
     public static final int SALTED_FIELD_NUMBER = 5;
@@ -4994,8 +4998,8 @@ public final class TiapHbaselikeAdminrpcpb {
       if (quota_ != null) {
         output.writeMessage(3, getQuota());
       }
-      for (int i = 0; i < columnFamilies_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, columnFamilies_.getRaw(i));
+      for (int i = 0; i < families_.size(); i++) {
+        output.writeMessage(4, families_.get(i));
       }
       if (salted_ != false) {
         output.writeBool(5, salted_);
@@ -5022,13 +5026,9 @@ public final class TiapHbaselikeAdminrpcpb {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getQuota());
       }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < columnFamilies_.size(); i++) {
-          dataSize += computeStringSizeNoTag(columnFamilies_.getRaw(i));
-        }
-        size += dataSize;
-        size += 1 * getColumnFamiliesList().size();
+      for (int i = 0; i < families_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, families_.get(i));
       }
       if (salted_ != false) {
         size += com.google.protobuf.CodedOutputStream
@@ -5062,8 +5062,8 @@ public final class TiapHbaselikeAdminrpcpb {
         if (!getQuota()
             .equals(other.getQuota())) return false;
       }
-      if (!getColumnFamiliesList()
-          .equals(other.getColumnFamiliesList())) return false;
+      if (!getFamiliesList()
+          .equals(other.getFamiliesList())) return false;
       if (getSalted()
           != other.getSalted()) return false;
       if (getMultiVersion()
@@ -5087,9 +5087,9 @@ public final class TiapHbaselikeAdminrpcpb {
         hash = (37 * hash) + QUOTA_FIELD_NUMBER;
         hash = (53 * hash) + getQuota().hashCode();
       }
-      if (getColumnFamiliesCount() > 0) {
-        hash = (37 * hash) + COLUMN_FAMILIES_FIELD_NUMBER;
-        hash = (53 * hash) + getColumnFamiliesList().hashCode();
+      if (getFamiliesCount() > 0) {
+        hash = (37 * hash) + FAMILIES_FIELD_NUMBER;
+        hash = (53 * hash) + getFamiliesList().hashCode();
       }
       hash = (37 * hash) + SALTED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
@@ -5225,6 +5225,7 @@ public final class TiapHbaselikeAdminrpcpb {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getFamiliesFieldBuilder();
         }
       }
       @java.lang.Override
@@ -5240,8 +5241,12 @@ public final class TiapHbaselikeAdminrpcpb {
           quota_ = null;
           quotaBuilder_ = null;
         }
-        columnFamilies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        if (familiesBuilder_ == null) {
+          families_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          familiesBuilder_.clear();
+        }
         salted_ = false;
 
         multiVersion_ = false;
@@ -5280,11 +5285,15 @@ public final class TiapHbaselikeAdminrpcpb {
         } else {
           result.quota_ = quotaBuilder_.build();
         }
-        if (((bitField0_ & 0x00000001) != 0)) {
-          columnFamilies_ = columnFamilies_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
+        if (familiesBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            families_ = java.util.Collections.unmodifiableList(families_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.families_ = families_;
+        } else {
+          result.families_ = familiesBuilder_.build();
         }
-        result.columnFamilies_ = columnFamilies_;
         result.salted_ = salted_;
         result.multiVersion_ = multiVersion_;
         onBuilt();
@@ -5346,15 +5355,31 @@ public final class TiapHbaselikeAdminrpcpb {
         if (other.hasQuota()) {
           mergeQuota(other.getQuota());
         }
-        if (!other.columnFamilies_.isEmpty()) {
-          if (columnFamilies_.isEmpty()) {
-            columnFamilies_ = other.columnFamilies_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureColumnFamiliesIsMutable();
-            columnFamilies_.addAll(other.columnFamilies_);
+        if (familiesBuilder_ == null) {
+          if (!other.families_.isEmpty()) {
+            if (families_.isEmpty()) {
+              families_ = other.families_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureFamiliesIsMutable();
+              families_.addAll(other.families_);
+            }
+            onChanged();
           }
-          onChanged();
+        } else {
+          if (!other.families_.isEmpty()) {
+            if (familiesBuilder_.isEmpty()) {
+              familiesBuilder_.dispose();
+              familiesBuilder_ = null;
+              families_ = other.families_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              familiesBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getFamiliesFieldBuilder() : null;
+            } else {
+              familiesBuilder_.addAllMessages(other.families_);
+            }
+          }
         }
         if (other.getSalted() != false) {
           setSalted(other.getSalted());
@@ -5663,114 +5688,244 @@ public final class TiapHbaselikeAdminrpcpb {
         return quotaBuilder_;
       }
 
-      private com.google.protobuf.LazyStringList columnFamilies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      private void ensureColumnFamiliesIsMutable() {
+      private java.util.List<com.shopee.di.kvstore.proto.TiapAdminrpcpb.ColumnFamily> families_ =
+        java.util.Collections.emptyList();
+      private void ensureFamiliesIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          columnFamilies_ = new com.google.protobuf.LazyStringArrayList(columnFamilies_);
+          families_ = new java.util.ArrayList<com.shopee.di.kvstore.proto.TiapAdminrpcpb.ColumnFamily>(families_);
           bitField0_ |= 0x00000001;
          }
       }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.shopee.di.kvstore.proto.TiapAdminrpcpb.ColumnFamily, com.shopee.di.kvstore.proto.TiapAdminrpcpb.ColumnFamily.Builder, com.shopee.di.kvstore.proto.TiapAdminrpcpb.ColumnFamilyOrBuilder> familiesBuilder_;
+
       /**
-       * <code>repeated string column_families = 4;</code>
-       * @return A list containing the columnFamilies.
+       * <code>repeated .tiap_adminrpcpb.ColumnFamily families = 4;</code>
        */
-      public com.google.protobuf.ProtocolStringList
-          getColumnFamiliesList() {
-        return columnFamilies_.getUnmodifiableView();
+      public java.util.List<com.shopee.di.kvstore.proto.TiapAdminrpcpb.ColumnFamily> getFamiliesList() {
+        if (familiesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(families_);
+        } else {
+          return familiesBuilder_.getMessageList();
+        }
       }
       /**
-       * <code>repeated string column_families = 4;</code>
-       * @return The count of columnFamilies.
+       * <code>repeated .tiap_adminrpcpb.ColumnFamily families = 4;</code>
        */
-      public int getColumnFamiliesCount() {
-        return columnFamilies_.size();
+      public int getFamiliesCount() {
+        if (familiesBuilder_ == null) {
+          return families_.size();
+        } else {
+          return familiesBuilder_.getCount();
+        }
       }
       /**
-       * <code>repeated string column_families = 4;</code>
-       * @param index The index of the element to return.
-       * @return The columnFamilies at the given index.
+       * <code>repeated .tiap_adminrpcpb.ColumnFamily families = 4;</code>
        */
-      public java.lang.String getColumnFamilies(int index) {
-        return columnFamilies_.get(index);
+      public com.shopee.di.kvstore.proto.TiapAdminrpcpb.ColumnFamily getFamilies(int index) {
+        if (familiesBuilder_ == null) {
+          return families_.get(index);
+        } else {
+          return familiesBuilder_.getMessage(index);
+        }
       }
       /**
-       * <code>repeated string column_families = 4;</code>
-       * @param index The index of the value to return.
-       * @return The bytes of the columnFamilies at the given index.
+       * <code>repeated .tiap_adminrpcpb.ColumnFamily families = 4;</code>
        */
-      public com.google.protobuf.ByteString
-          getColumnFamiliesBytes(int index) {
-        return columnFamilies_.getByteString(index);
-      }
-      /**
-       * <code>repeated string column_families = 4;</code>
-       * @param index The index to set the value at.
-       * @param value The columnFamilies to set.
-       * @return This builder for chaining.
-       */
-      public Builder setColumnFamilies(
-          int index, java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureColumnFamiliesIsMutable();
-        columnFamilies_.set(index, value);
-        onChanged();
+      public Builder setFamilies(
+          int index, com.shopee.di.kvstore.proto.TiapAdminrpcpb.ColumnFamily value) {
+        if (familiesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureFamiliesIsMutable();
+          families_.set(index, value);
+          onChanged();
+        } else {
+          familiesBuilder_.setMessage(index, value);
+        }
         return this;
       }
       /**
-       * <code>repeated string column_families = 4;</code>
-       * @param value The columnFamilies to add.
-       * @return This builder for chaining.
+       * <code>repeated .tiap_adminrpcpb.ColumnFamily families = 4;</code>
        */
-      public Builder addColumnFamilies(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureColumnFamiliesIsMutable();
-        columnFamilies_.add(value);
-        onChanged();
+      public Builder setFamilies(
+          int index, com.shopee.di.kvstore.proto.TiapAdminrpcpb.ColumnFamily.Builder builderForValue) {
+        if (familiesBuilder_ == null) {
+          ensureFamiliesIsMutable();
+          families_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          familiesBuilder_.setMessage(index, builderForValue.build());
+        }
         return this;
       }
       /**
-       * <code>repeated string column_families = 4;</code>
-       * @param values The columnFamilies to add.
-       * @return This builder for chaining.
+       * <code>repeated .tiap_adminrpcpb.ColumnFamily families = 4;</code>
        */
-      public Builder addAllColumnFamilies(
-          java.lang.Iterable<java.lang.String> values) {
-        ensureColumnFamiliesIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, columnFamilies_);
-        onChanged();
+      public Builder addFamilies(com.shopee.di.kvstore.proto.TiapAdminrpcpb.ColumnFamily value) {
+        if (familiesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureFamiliesIsMutable();
+          families_.add(value);
+          onChanged();
+        } else {
+          familiesBuilder_.addMessage(value);
+        }
         return this;
       }
       /**
-       * <code>repeated string column_families = 4;</code>
-       * @return This builder for chaining.
+       * <code>repeated .tiap_adminrpcpb.ColumnFamily families = 4;</code>
        */
-      public Builder clearColumnFamilies() {
-        columnFamilies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
+      public Builder addFamilies(
+          int index, com.shopee.di.kvstore.proto.TiapAdminrpcpb.ColumnFamily value) {
+        if (familiesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureFamiliesIsMutable();
+          families_.add(index, value);
+          onChanged();
+        } else {
+          familiesBuilder_.addMessage(index, value);
+        }
         return this;
       }
       /**
-       * <code>repeated string column_families = 4;</code>
-       * @param value The bytes of the columnFamilies to add.
-       * @return This builder for chaining.
+       * <code>repeated .tiap_adminrpcpb.ColumnFamily families = 4;</code>
        */
-      public Builder addColumnFamiliesBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        ensureColumnFamiliesIsMutable();
-        columnFamilies_.add(value);
-        onChanged();
+      public Builder addFamilies(
+          com.shopee.di.kvstore.proto.TiapAdminrpcpb.ColumnFamily.Builder builderForValue) {
+        if (familiesBuilder_ == null) {
+          ensureFamiliesIsMutable();
+          families_.add(builderForValue.build());
+          onChanged();
+        } else {
+          familiesBuilder_.addMessage(builderForValue.build());
+        }
         return this;
+      }
+      /**
+       * <code>repeated .tiap_adminrpcpb.ColumnFamily families = 4;</code>
+       */
+      public Builder addFamilies(
+          int index, com.shopee.di.kvstore.proto.TiapAdminrpcpb.ColumnFamily.Builder builderForValue) {
+        if (familiesBuilder_ == null) {
+          ensureFamiliesIsMutable();
+          families_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          familiesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .tiap_adminrpcpb.ColumnFamily families = 4;</code>
+       */
+      public Builder addAllFamilies(
+          java.lang.Iterable<? extends com.shopee.di.kvstore.proto.TiapAdminrpcpb.ColumnFamily> values) {
+        if (familiesBuilder_ == null) {
+          ensureFamiliesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, families_);
+          onChanged();
+        } else {
+          familiesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .tiap_adminrpcpb.ColumnFamily families = 4;</code>
+       */
+      public Builder clearFamilies() {
+        if (familiesBuilder_ == null) {
+          families_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          familiesBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .tiap_adminrpcpb.ColumnFamily families = 4;</code>
+       */
+      public Builder removeFamilies(int index) {
+        if (familiesBuilder_ == null) {
+          ensureFamiliesIsMutable();
+          families_.remove(index);
+          onChanged();
+        } else {
+          familiesBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .tiap_adminrpcpb.ColumnFamily families = 4;</code>
+       */
+      public com.shopee.di.kvstore.proto.TiapAdminrpcpb.ColumnFamily.Builder getFamiliesBuilder(
+          int index) {
+        return getFamiliesFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .tiap_adminrpcpb.ColumnFamily families = 4;</code>
+       */
+      public com.shopee.di.kvstore.proto.TiapAdminrpcpb.ColumnFamilyOrBuilder getFamiliesOrBuilder(
+          int index) {
+        if (familiesBuilder_ == null) {
+          return families_.get(index);  } else {
+          return familiesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .tiap_adminrpcpb.ColumnFamily families = 4;</code>
+       */
+      public java.util.List<? extends com.shopee.di.kvstore.proto.TiapAdminrpcpb.ColumnFamilyOrBuilder> 
+           getFamiliesOrBuilderList() {
+        if (familiesBuilder_ != null) {
+          return familiesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(families_);
+        }
+      }
+      /**
+       * <code>repeated .tiap_adminrpcpb.ColumnFamily families = 4;</code>
+       */
+      public com.shopee.di.kvstore.proto.TiapAdminrpcpb.ColumnFamily.Builder addFamiliesBuilder() {
+        return getFamiliesFieldBuilder().addBuilder(
+            com.shopee.di.kvstore.proto.TiapAdminrpcpb.ColumnFamily.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .tiap_adminrpcpb.ColumnFamily families = 4;</code>
+       */
+      public com.shopee.di.kvstore.proto.TiapAdminrpcpb.ColumnFamily.Builder addFamiliesBuilder(
+          int index) {
+        return getFamiliesFieldBuilder().addBuilder(
+            index, com.shopee.di.kvstore.proto.TiapAdminrpcpb.ColumnFamily.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .tiap_adminrpcpb.ColumnFamily families = 4;</code>
+       */
+      public java.util.List<com.shopee.di.kvstore.proto.TiapAdminrpcpb.ColumnFamily.Builder> 
+           getFamiliesBuilderList() {
+        return getFamiliesFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.shopee.di.kvstore.proto.TiapAdminrpcpb.ColumnFamily, com.shopee.di.kvstore.proto.TiapAdminrpcpb.ColumnFamily.Builder, com.shopee.di.kvstore.proto.TiapAdminrpcpb.ColumnFamilyOrBuilder> 
+          getFamiliesFieldBuilder() {
+        if (familiesBuilder_ == null) {
+          familiesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.shopee.di.kvstore.proto.TiapAdminrpcpb.ColumnFamily, com.shopee.di.kvstore.proto.TiapAdminrpcpb.ColumnFamily.Builder, com.shopee.di.kvstore.proto.TiapAdminrpcpb.ColumnFamilyOrBuilder>(
+                  families_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          families_ = null;
+        }
+        return familiesBuilder_;
       }
 
       private boolean salted_ ;
@@ -14190,28 +14345,28 @@ public final class TiapHbaselikeAdminrpcpb {
       "e_adminrpcpb.ListColumnFamiliesResponseH" +
       "\000\022O\n\016delete_cf_resp\030\010 \001(\01325.tiap_hbaseli" +
       "ke_adminrpcpb.DeleteColumnFamilyResponse" +
-      "H\000B\006\n\004resp\"\237\001\n\022CreateTableRequest\022\017\n\007db_" +
+      "H\000B\006\n\004resp\"\267\001\n\022CreateTableRequest\022\017\n\007db_" +
       "name\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022*\n\005quota\030\003 \001(\0132" +
-      "\033.tiap_adminrpcpb.TableQuota\022\027\n\017column_f" +
-      "amilies\030\004 \003(\t\022\016\n\006salted\030\005 \001(\010\022\025\n\rmulti_v" +
-      "ersion\030\006 \001(\010\"\025\n\023CreateTableResponse\"0\n\017G" +
-      "etTableRequest\022\017\n\007db_name\030\001 \001(\t\022\014\n\004name\030" +
-      "\002 \001(\t\"<\n\020GetTableResponse\022(\n\004info\030\001 \001(\0132" +
-      "\032.tiap_adminrpcpb.TableInfo\"$\n\021ListTable" +
-      "sRequest\022\017\n\007db_name\030\001 \001(\t\"?\n\022ListTablesR" +
-      "esponse\022)\n\005infos\030\001 \003(\0132\032.tiap_adminrpcpb" +
-      ".TableInfo\"1\n\020DropTableRequest\022\017\n\007db_nam" +
-      "e\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\"\023\n\021DropTableRespon" +
-      "se\"M\n\026AddColumnFamilyRequest\022\017\n\007db_name\030" +
-      "\001 \001(\t\022\022\n\ntable_name\030\002 \001(\t\022\016\n\006family\030\003 \001(" +
-      "\t\"\031\n\027AddColumnFamilyResponse\"@\n\031ListColu" +
-      "mnFamiliesRequest\022\017\n\007db_name\030\001 \001(\t\022\022\n\nta" +
-      "ble_name\030\002 \001(\t\".\n\032ListColumnFamiliesResp" +
-      "onse\022\020\n\010families\030\001 \003(\t\"P\n\031DeleteColumnFa" +
-      "milyRequest\022\017\n\007db_name\030\001 \001(\t\022\022\n\ntable_na" +
-      "me\030\002 \001(\t\022\016\n\006family\030\003 \001(\t\"\034\n\032DeleteColumn" +
-      "FamilyResponseB\035\n\033com.shopee.di.kvstore." +
-      "protob\006proto3"
+      "\033.tiap_adminrpcpb.TableQuota\022/\n\010families" +
+      "\030\004 \003(\0132\035.tiap_adminrpcpb.ColumnFamily\022\016\n" +
+      "\006salted\030\005 \001(\010\022\025\n\rmulti_version\030\006 \001(\010\"\025\n\023" +
+      "CreateTableResponse\"0\n\017GetTableRequest\022\017" +
+      "\n\007db_name\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\"<\n\020GetTabl" +
+      "eResponse\022(\n\004info\030\001 \001(\0132\032.tiap_adminrpcp" +
+      "b.TableInfo\"$\n\021ListTablesRequest\022\017\n\007db_n" +
+      "ame\030\001 \001(\t\"?\n\022ListTablesResponse\022)\n\005infos" +
+      "\030\001 \003(\0132\032.tiap_adminrpcpb.TableInfo\"1\n\020Dr" +
+      "opTableRequest\022\017\n\007db_name\030\001 \001(\t\022\014\n\004name\030" +
+      "\002 \001(\t\"\023\n\021DropTableResponse\"M\n\026AddColumnF" +
+      "amilyRequest\022\017\n\007db_name\030\001 \001(\t\022\022\n\ntable_n" +
+      "ame\030\002 \001(\t\022\016\n\006family\030\003 \001(\t\"\031\n\027AddColumnFa" +
+      "milyResponse\"@\n\031ListColumnFamiliesReques" +
+      "t\022\017\n\007db_name\030\001 \001(\t\022\022\n\ntable_name\030\002 \001(\t\"." +
+      "\n\032ListColumnFamiliesResponse\022\020\n\010families" +
+      "\030\001 \003(\t\"P\n\031DeleteColumnFamilyRequest\022\017\n\007d" +
+      "b_name\030\001 \001(\t\022\022\n\ntable_name\030\002 \001(\t\022\016\n\006fami" +
+      "ly\030\003 \001(\t\"\034\n\032DeleteColumnFamilyResponseB\035" +
+      "\n\033com.shopee.di.kvstore.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -14235,7 +14390,7 @@ public final class TiapHbaselikeAdminrpcpb {
     internal_static_tiap_hbaselike_adminrpcpb_CreateTableRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tiap_hbaselike_adminrpcpb_CreateTableRequest_descriptor,
-        new java.lang.String[] { "DbName", "Name", "Quota", "ColumnFamilies", "Salted", "MultiVersion", });
+        new java.lang.String[] { "DbName", "Name", "Quota", "Families", "Salted", "MultiVersion", });
     internal_static_tiap_hbaselike_adminrpcpb_CreateTableResponse_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_tiap_hbaselike_adminrpcpb_CreateTableResponse_fieldAccessorTable = new

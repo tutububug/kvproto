@@ -39,7 +39,7 @@ message CreateTableRequest {
   string db_name  = 1;
   string name     = 2;
   tiap_adminrpcpb.TableQuota quota = 3;
-  repeated string column_families = 4;
+  repeated tiap_adminrpcpb.ColumnFamily families = 4;
   bool salted     = 5;
   bool multi_version = 6;
 }
