@@ -93,9 +93,8 @@ message DeleteRangeResponse {
 
 message ScanRequest {
     bytes start_key = 1;
-    uint32 limit = 2;
-    bool key_only = 3;
-    bytes end_key = 4;
+    bytes end_key = 2;
+    int64 limit = 3;
 }
 
 message ScanResponse {

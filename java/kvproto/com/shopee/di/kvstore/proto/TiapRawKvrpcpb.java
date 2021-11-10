@@ -12345,22 +12345,16 @@ public final class TiapRawKvrpcpb {
     com.google.protobuf.ByteString getStartKey();
 
     /**
-     * <code>uint32 limit = 2;</code>
-     * @return The limit.
-     */
-    int getLimit();
-
-    /**
-     * <code>bool key_only = 3;</code>
-     * @return The keyOnly.
-     */
-    boolean getKeyOnly();
-
-    /**
-     * <code>bytes end_key = 4;</code>
+     * <code>bytes end_key = 2;</code>
      * @return The endKey.
      */
     com.google.protobuf.ByteString getEndKey();
+
+    /**
+     * <code>int64 limit = 3;</code>
+     * @return The limit.
+     */
+    long getLimit();
   }
   /**
    * Protobuf type {@code tiap_raw_kvrpcpb.ScanRequest}
@@ -12414,19 +12408,14 @@ public final class TiapRawKvrpcpb {
               startKey_ = input.readBytes();
               break;
             }
-            case 16: {
+            case 18: {
 
-              limit_ = input.readUInt32();
+              endKey_ = input.readBytes();
               break;
             }
             case 24: {
 
-              keyOnly_ = input.readBool();
-              break;
-            }
-            case 34: {
-
-              endKey_ = input.readBytes();
+              limit_ = input.readInt64();
               break;
             }
             default: {
@@ -12472,37 +12461,26 @@ public final class TiapRawKvrpcpb {
       return startKey_;
     }
 
-    public static final int LIMIT_FIELD_NUMBER = 2;
-    private int limit_;
-    /**
-     * <code>uint32 limit = 2;</code>
-     * @return The limit.
-     */
-    @java.lang.Override
-    public int getLimit() {
-      return limit_;
-    }
-
-    public static final int KEY_ONLY_FIELD_NUMBER = 3;
-    private boolean keyOnly_;
-    /**
-     * <code>bool key_only = 3;</code>
-     * @return The keyOnly.
-     */
-    @java.lang.Override
-    public boolean getKeyOnly() {
-      return keyOnly_;
-    }
-
-    public static final int END_KEY_FIELD_NUMBER = 4;
+    public static final int END_KEY_FIELD_NUMBER = 2;
     private com.google.protobuf.ByteString endKey_;
     /**
-     * <code>bytes end_key = 4;</code>
+     * <code>bytes end_key = 2;</code>
      * @return The endKey.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString getEndKey() {
       return endKey_;
+    }
+
+    public static final int LIMIT_FIELD_NUMBER = 3;
+    private long limit_;
+    /**
+     * <code>int64 limit = 3;</code>
+     * @return The limit.
+     */
+    @java.lang.Override
+    public long getLimit() {
+      return limit_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -12522,14 +12500,11 @@ public final class TiapRawKvrpcpb {
       if (!startKey_.isEmpty()) {
         output.writeBytes(1, startKey_);
       }
-      if (limit_ != 0) {
-        output.writeUInt32(2, limit_);
-      }
-      if (keyOnly_ != false) {
-        output.writeBool(3, keyOnly_);
-      }
       if (!endKey_.isEmpty()) {
-        output.writeBytes(4, endKey_);
+        output.writeBytes(2, endKey_);
+      }
+      if (limit_ != 0L) {
+        output.writeInt64(3, limit_);
       }
       unknownFields.writeTo(output);
     }
@@ -12544,17 +12519,13 @@ public final class TiapRawKvrpcpb {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(1, startKey_);
       }
-      if (limit_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, limit_);
-      }
-      if (keyOnly_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(3, keyOnly_);
-      }
       if (!endKey_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(4, endKey_);
+          .computeBytesSize(2, endKey_);
+      }
+      if (limit_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(3, limit_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -12573,12 +12544,10 @@ public final class TiapRawKvrpcpb {
 
       if (!getStartKey()
           .equals(other.getStartKey())) return false;
-      if (getLimit()
-          != other.getLimit()) return false;
-      if (getKeyOnly()
-          != other.getKeyOnly()) return false;
       if (!getEndKey()
           .equals(other.getEndKey())) return false;
+      if (getLimit()
+          != other.getLimit()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -12592,13 +12561,11 @@ public final class TiapRawKvrpcpb {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + START_KEY_FIELD_NUMBER;
       hash = (53 * hash) + getStartKey().hashCode();
-      hash = (37 * hash) + LIMIT_FIELD_NUMBER;
-      hash = (53 * hash) + getLimit();
-      hash = (37 * hash) + KEY_ONLY_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getKeyOnly());
       hash = (37 * hash) + END_KEY_FIELD_NUMBER;
       hash = (53 * hash) + getEndKey().hashCode();
+      hash = (37 * hash) + LIMIT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getLimit());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -12734,11 +12701,9 @@ public final class TiapRawKvrpcpb {
         super.clear();
         startKey_ = com.google.protobuf.ByteString.EMPTY;
 
-        limit_ = 0;
-
-        keyOnly_ = false;
-
         endKey_ = com.google.protobuf.ByteString.EMPTY;
+
+        limit_ = 0L;
 
         return this;
       }
@@ -12767,9 +12732,8 @@ public final class TiapRawKvrpcpb {
       public com.shopee.di.kvstore.proto.TiapRawKvrpcpb.ScanRequest buildPartial() {
         com.shopee.di.kvstore.proto.TiapRawKvrpcpb.ScanRequest result = new com.shopee.di.kvstore.proto.TiapRawKvrpcpb.ScanRequest(this);
         result.startKey_ = startKey_;
-        result.limit_ = limit_;
-        result.keyOnly_ = keyOnly_;
         result.endKey_ = endKey_;
+        result.limit_ = limit_;
         onBuilt();
         return result;
       }
@@ -12821,14 +12785,11 @@ public final class TiapRawKvrpcpb {
         if (other.getStartKey() != com.google.protobuf.ByteString.EMPTY) {
           setStartKey(other.getStartKey());
         }
-        if (other.getLimit() != 0) {
-          setLimit(other.getLimit());
-        }
-        if (other.getKeyOnly() != false) {
-          setKeyOnly(other.getKeyOnly());
-        }
         if (other.getEndKey() != com.google.protobuf.ByteString.EMPTY) {
           setEndKey(other.getEndKey());
+        }
+        if (other.getLimit() != 0L) {
+          setLimit(other.getLimit());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -12893,71 +12854,9 @@ public final class TiapRawKvrpcpb {
         return this;
       }
 
-      private int limit_ ;
-      /**
-       * <code>uint32 limit = 2;</code>
-       * @return The limit.
-       */
-      @java.lang.Override
-      public int getLimit() {
-        return limit_;
-      }
-      /**
-       * <code>uint32 limit = 2;</code>
-       * @param value The limit to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLimit(int value) {
-        
-        limit_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 limit = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLimit() {
-        
-        limit_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private boolean keyOnly_ ;
-      /**
-       * <code>bool key_only = 3;</code>
-       * @return The keyOnly.
-       */
-      @java.lang.Override
-      public boolean getKeyOnly() {
-        return keyOnly_;
-      }
-      /**
-       * <code>bool key_only = 3;</code>
-       * @param value The keyOnly to set.
-       * @return This builder for chaining.
-       */
-      public Builder setKeyOnly(boolean value) {
-        
-        keyOnly_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool key_only = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearKeyOnly() {
-        
-        keyOnly_ = false;
-        onChanged();
-        return this;
-      }
-
       private com.google.protobuf.ByteString endKey_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>bytes end_key = 4;</code>
+       * <code>bytes end_key = 2;</code>
        * @return The endKey.
        */
       @java.lang.Override
@@ -12965,7 +12864,7 @@ public final class TiapRawKvrpcpb {
         return endKey_;
       }
       /**
-       * <code>bytes end_key = 4;</code>
+       * <code>bytes end_key = 2;</code>
        * @param value The endKey to set.
        * @return This builder for chaining.
        */
@@ -12979,12 +12878,43 @@ public final class TiapRawKvrpcpb {
         return this;
       }
       /**
-       * <code>bytes end_key = 4;</code>
+       * <code>bytes end_key = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearEndKey() {
         
         endKey_ = getDefaultInstance().getEndKey();
+        onChanged();
+        return this;
+      }
+
+      private long limit_ ;
+      /**
+       * <code>int64 limit = 3;</code>
+       * @return The limit.
+       */
+      @java.lang.Override
+      public long getLimit() {
+        return limit_;
+      }
+      /**
+       * <code>int64 limit = 3;</code>
+       * @param value The limit to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLimit(long value) {
+        
+        limit_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 limit = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLimit() {
+        
+        limit_ = 0L;
         onChanged();
         return this;
       }
@@ -18826,20 +18756,20 @@ public final class TiapRawKvrpcpb {
       "leteRequest\022\013\n\003key\030\001 \001(\014\"\020\n\016DeleteRespon" +
       "se\"8\n\022DeleteRangeRequest\022\021\n\tstart_key\030\001 " +
       "\001(\014\022\017\n\007end_key\030\002 \001(\014\"\025\n\023DeleteRangeRespo" +
-      "nse\"R\n\013ScanRequest\022\021\n\tstart_key\030\001 \001(\014\022\r\n" +
-      "\005limit\030\002 \001(\r\022\020\n\010key_only\030\003 \001(\010\022\017\n\007end_ke" +
-      "y\030\004 \001(\014\",\n\014ScanResponse\022\014\n\004keys\030\001 \003(\014\022\016\n" +
-      "\006values\030\002 \003(\014\"i\n\nCASRequest\022\013\n\003key\030\001 \001(\014" +
-      "\022\r\n\005value\030\002 \001(\014\022\032\n\022previous_not_exist\030\003 " +
-      "\001(\010\022\026\n\016previous_value\030\004 \001(\014\022\013\n\003ttl\030\005 \001(\003" +
-      "\"R\n\013CASResponse\022\017\n\007succeed\030\001 \001(\010\022\032\n\022prev" +
-      "ious_not_exist\030\002 \001(\010\022\026\n\016previous_value\030\003" +
-      " \001(\014\"\037\n\017BatchGetRequest\022\014\n\004keys\030\001 \003(\014\"\"\n" +
-      "\020BatchGetResponse\022\016\n\006values\030\001 \003(\014\"/\n\017Bat" +
-      "chPutRequest\022\014\n\004keys\030\001 \003(\014\022\016\n\006values\030\002 \003" +
-      "(\014\"\022\n\020BatchPutResponse\"\"\n\022BatchDeleteReq" +
-      "uest\022\014\n\004keys\030\001 \003(\014\"\025\n\023BatchDeleteRespons" +
-      "eB\035\n\033com.shopee.di.kvstore.protob\006proto3"
+      "nse\"@\n\013ScanRequest\022\021\n\tstart_key\030\001 \001(\014\022\017\n" +
+      "\007end_key\030\002 \001(\014\022\r\n\005limit\030\003 \001(\003\",\n\014ScanRes" +
+      "ponse\022\014\n\004keys\030\001 \003(\014\022\016\n\006values\030\002 \003(\014\"i\n\nC" +
+      "ASRequest\022\013\n\003key\030\001 \001(\014\022\r\n\005value\030\002 \001(\014\022\032\n" +
+      "\022previous_not_exist\030\003 \001(\010\022\026\n\016previous_va" +
+      "lue\030\004 \001(\014\022\013\n\003ttl\030\005 \001(\003\"R\n\013CASResponse\022\017\n" +
+      "\007succeed\030\001 \001(\010\022\032\n\022previous_not_exist\030\002 \001" +
+      "(\010\022\026\n\016previous_value\030\003 \001(\014\"\037\n\017BatchGetRe" +
+      "quest\022\014\n\004keys\030\001 \003(\014\"\"\n\020BatchGetResponse\022" +
+      "\016\n\006values\030\001 \003(\014\"/\n\017BatchPutRequest\022\014\n\004ke" +
+      "ys\030\001 \003(\014\022\016\n\006values\030\002 \003(\014\"\022\n\020BatchPutResp" +
+      "onse\"\"\n\022BatchDeleteRequest\022\014\n\004keys\030\001 \003(\014" +
+      "\"\025\n\023BatchDeleteResponseB\035\n\033com.shopee.di" +
+      ".kvstore.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -18935,7 +18865,7 @@ public final class TiapRawKvrpcpb {
     internal_static_tiap_raw_kvrpcpb_ScanRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tiap_raw_kvrpcpb_ScanRequest_descriptor,
-        new java.lang.String[] { "StartKey", "Limit", "KeyOnly", "EndKey", });
+        new java.lang.String[] { "StartKey", "EndKey", "Limit", });
     internal_static_tiap_raw_kvrpcpb_ScanResponse_descriptor =
       getDescriptor().getMessageTypes().get(15);
     internal_static_tiap_raw_kvrpcpb_ScanResponse_fieldAccessorTable = new
