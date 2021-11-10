@@ -7917,7 +7917,7 @@ public final class TiapRawKvrpcpb {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint64 ttl = 1;</code>
+     * <code>int64 ttl = 1;</code>
      * @return The ttl.
      */
     long getTtl();
@@ -7969,7 +7969,7 @@ public final class TiapRawKvrpcpb {
               break;
             case 8: {
 
-              ttl_ = input.readUInt64();
+              ttl_ = input.readInt64();
               break;
             }
             default: {
@@ -8007,7 +8007,7 @@ public final class TiapRawKvrpcpb {
     public static final int TTL_FIELD_NUMBER = 1;
     private long ttl_;
     /**
-     * <code>uint64 ttl = 1;</code>
+     * <code>int64 ttl = 1;</code>
      * @return The ttl.
      */
     @java.lang.Override
@@ -8030,7 +8030,7 @@ public final class TiapRawKvrpcpb {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (ttl_ != 0L) {
-        output.writeUInt64(1, ttl_);
+        output.writeInt64(1, ttl_);
       }
       unknownFields.writeTo(output);
     }
@@ -8043,7 +8043,7 @@ public final class TiapRawKvrpcpb {
       size = 0;
       if (ttl_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(1, ttl_);
+          .computeInt64Size(1, ttl_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -8320,7 +8320,7 @@ public final class TiapRawKvrpcpb {
 
       private long ttl_ ;
       /**
-       * <code>uint64 ttl = 1;</code>
+       * <code>int64 ttl = 1;</code>
        * @return The ttl.
        */
       @java.lang.Override
@@ -8328,7 +8328,7 @@ public final class TiapRawKvrpcpb {
         return ttl_;
       }
       /**
-       * <code>uint64 ttl = 1;</code>
+       * <code>int64 ttl = 1;</code>
        * @param value The ttl to set.
        * @return This builder for chaining.
        */
@@ -8339,7 +8339,7 @@ public final class TiapRawKvrpcpb {
         return this;
       }
       /**
-       * <code>uint64 ttl = 1;</code>
+       * <code>int64 ttl = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearTtl() {
@@ -9402,7 +9402,7 @@ public final class TiapRawKvrpcpb {
     com.google.protobuf.ByteString getValue();
 
     /**
-     * <code>uint64 ttl = 3;</code>
+     * <code>int64 ttl = 3;</code>
      * @return The ttl.
      */
     long getTtl();
@@ -9466,7 +9466,7 @@ public final class TiapRawKvrpcpb {
             }
             case 24: {
 
-              ttl_ = input.readUInt64();
+              ttl_ = input.readInt64();
               break;
             }
             default: {
@@ -9526,7 +9526,7 @@ public final class TiapRawKvrpcpb {
     public static final int TTL_FIELD_NUMBER = 3;
     private long ttl_;
     /**
-     * <code>uint64 ttl = 3;</code>
+     * <code>int64 ttl = 3;</code>
      * @return The ttl.
      */
     @java.lang.Override
@@ -9555,7 +9555,7 @@ public final class TiapRawKvrpcpb {
         output.writeBytes(2, value_);
       }
       if (ttl_ != 0L) {
-        output.writeUInt64(3, ttl_);
+        output.writeInt64(3, ttl_);
       }
       unknownFields.writeTo(output);
     }
@@ -9576,7 +9576,7 @@ public final class TiapRawKvrpcpb {
       }
       if (ttl_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(3, ttl_);
+          .computeInt64Size(3, ttl_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -9941,7 +9941,7 @@ public final class TiapRawKvrpcpb {
 
       private long ttl_ ;
       /**
-       * <code>uint64 ttl = 3;</code>
+       * <code>int64 ttl = 3;</code>
        * @return The ttl.
        */
       @java.lang.Override
@@ -9949,7 +9949,7 @@ public final class TiapRawKvrpcpb {
         return ttl_;
       }
       /**
-       * <code>uint64 ttl = 3;</code>
+       * <code>int64 ttl = 3;</code>
        * @param value The ttl to set.
        * @return This builder for chaining.
        */
@@ -9960,7 +9960,7 @@ public final class TiapRawKvrpcpb {
         return this;
       }
       /**
-       * <code>uint64 ttl = 3;</code>
+       * <code>int64 ttl = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearTtl() {
@@ -13843,7 +13843,7 @@ public final class TiapRawKvrpcpb {
     com.google.protobuf.ByteString getPreviousValue();
 
     /**
-     * <code>uint64 ttl = 5;</code>
+     * <code>int64 ttl = 5;</code>
      * @return The ttl.
      */
     long getTtl();
@@ -13918,7 +13918,7 @@ public final class TiapRawKvrpcpb {
             }
             case 40: {
 
-              ttl_ = input.readUInt64();
+              ttl_ = input.readInt64();
               break;
             }
             default: {
@@ -14000,7 +14000,7 @@ public final class TiapRawKvrpcpb {
     public static final int TTL_FIELD_NUMBER = 5;
     private long ttl_;
     /**
-     * <code>uint64 ttl = 5;</code>
+     * <code>int64 ttl = 5;</code>
      * @return The ttl.
      */
     @java.lang.Override
@@ -14035,7 +14035,7 @@ public final class TiapRawKvrpcpb {
         output.writeBytes(4, previousValue_);
       }
       if (ttl_ != 0L) {
-        output.writeUInt64(5, ttl_);
+        output.writeInt64(5, ttl_);
       }
       unknownFields.writeTo(output);
     }
@@ -14064,7 +14064,7 @@ public final class TiapRawKvrpcpb {
       }
       if (ttl_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(5, ttl_);
+          .computeInt64Size(5, ttl_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -14515,7 +14515,7 @@ public final class TiapRawKvrpcpb {
 
       private long ttl_ ;
       /**
-       * <code>uint64 ttl = 5;</code>
+       * <code>int64 ttl = 5;</code>
        * @return The ttl.
        */
       @java.lang.Override
@@ -14523,7 +14523,7 @@ public final class TiapRawKvrpcpb {
         return ttl_;
       }
       /**
-       * <code>uint64 ttl = 5;</code>
+       * <code>int64 ttl = 5;</code>
        * @param value The ttl to set.
        * @return This builder for chaining.
        */
@@ -14534,7 +14534,7 @@ public final class TiapRawKvrpcpb {
         return this;
       }
       /**
-       * <code>uint64 ttl = 5;</code>
+       * <code>int64 ttl = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearTtl() {
@@ -18819,10 +18819,10 @@ public final class TiapRawKvrpcpb {
       "\000B\006\n\004resp\"\031\n\nGetRequest\022\013\n\003key\030\001 \001(\014\"\034\n\013" +
       "GetResponse\022\r\n\005value\030\001 \001(\014\"\037\n\020GetKeyTTLR" +
       "equest\022\013\n\003key\030\001 \001(\014\" \n\021GetKeyTTLResponse" +
-      "\022\013\n\003ttl\030\001 \001(\004\"(\n\nPutRequest\022\013\n\003key\030\001 \001(\014" +
+      "\022\013\n\003ttl\030\001 \001(\003\"(\n\nPutRequest\022\013\n\003key\030\001 \001(\014" +
       "\022\r\n\005value\030\002 \001(\014\"\r\n\013PutResponse\"<\n\021PutWit" +
       "hTTLRequest\022\013\n\003key\030\001 \001(\014\022\r\n\005value\030\002 \001(\014\022" +
-      "\013\n\003ttl\030\003 \001(\004\"\024\n\022PutWithTTLResponse\"\034\n\rDe" +
+      "\013\n\003ttl\030\003 \001(\003\"\024\n\022PutWithTTLResponse\"\034\n\rDe" +
       "leteRequest\022\013\n\003key\030\001 \001(\014\"\020\n\016DeleteRespon" +
       "se\"8\n\022DeleteRangeRequest\022\021\n\tstart_key\030\001 " +
       "\001(\014\022\017\n\007end_key\030\002 \001(\014\"\025\n\023DeleteRangeRespo" +
@@ -18831,7 +18831,7 @@ public final class TiapRawKvrpcpb {
       "y\030\004 \001(\014\",\n\014ScanResponse\022\014\n\004keys\030\001 \003(\014\022\016\n" +
       "\006values\030\002 \003(\014\"i\n\nCASRequest\022\013\n\003key\030\001 \001(\014" +
       "\022\r\n\005value\030\002 \001(\014\022\032\n\022previous_not_exist\030\003 " +
-      "\001(\010\022\026\n\016previous_value\030\004 \001(\014\022\013\n\003ttl\030\005 \001(\004" +
+      "\001(\010\022\026\n\016previous_value\030\004 \001(\014\022\013\n\003ttl\030\005 \001(\003" +
       "\"R\n\013CASResponse\022\017\n\007succeed\030\001 \001(\010\022\032\n\022prev" +
       "ious_not_exist\030\002 \001(\010\022\026\n\016previous_value\030\003" +
       " \001(\014\"\037\n\017BatchGetRequest\022\014\n\004keys\030\001 \003(\014\"\"\n" +
