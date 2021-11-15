@@ -32,7 +32,8 @@ message KVResponse {
 }
 
 message BatchGetRowRequest {
-  repeated Row rows = 1;
+  repeated bytes row_keys = 1;
+  ColumnFamily families = 2;
 }
 
 message BatchGetRowResponse {
@@ -47,7 +48,7 @@ message BatchPutRowResponse {
 }
 
 message BatchDeleteRowRequest {
-  repeated Row rows = 1;
+  repeated bytes row_keys = 1;
 }
 
 message BatchDeleteRowResponse {

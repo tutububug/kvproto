@@ -13761,19 +13761,13 @@ public final class TiapRawKvrpcpb {
     com.google.protobuf.ByteString getValue();
 
     /**
-     * <code>bool previous_not_exist = 3;</code>
-     * @return The previousNotExist.
-     */
-    boolean getPreviousNotExist();
-
-    /**
-     * <code>bytes previous_value = 4;</code>
+     * <code>bytes previous_value = 3;</code>
      * @return The previousValue.
      */
     com.google.protobuf.ByteString getPreviousValue();
 
     /**
-     * <code>int64 ttl = 5;</code>
+     * <code>int64 ttl = 4;</code>
      * @return The ttl.
      */
     long getTtl();
@@ -13836,17 +13830,12 @@ public final class TiapRawKvrpcpb {
               value_ = input.readBytes();
               break;
             }
-            case 24: {
-
-              previousNotExist_ = input.readBool();
-              break;
-            }
-            case 34: {
+            case 26: {
 
               previousValue_ = input.readBytes();
               break;
             }
-            case 40: {
+            case 32: {
 
               ttl_ = input.readInt64();
               break;
@@ -13905,21 +13894,10 @@ public final class TiapRawKvrpcpb {
       return value_;
     }
 
-    public static final int PREVIOUS_NOT_EXIST_FIELD_NUMBER = 3;
-    private boolean previousNotExist_;
-    /**
-     * <code>bool previous_not_exist = 3;</code>
-     * @return The previousNotExist.
-     */
-    @java.lang.Override
-    public boolean getPreviousNotExist() {
-      return previousNotExist_;
-    }
-
-    public static final int PREVIOUS_VALUE_FIELD_NUMBER = 4;
+    public static final int PREVIOUS_VALUE_FIELD_NUMBER = 3;
     private com.google.protobuf.ByteString previousValue_;
     /**
-     * <code>bytes previous_value = 4;</code>
+     * <code>bytes previous_value = 3;</code>
      * @return The previousValue.
      */
     @java.lang.Override
@@ -13927,10 +13905,10 @@ public final class TiapRawKvrpcpb {
       return previousValue_;
     }
 
-    public static final int TTL_FIELD_NUMBER = 5;
+    public static final int TTL_FIELD_NUMBER = 4;
     private long ttl_;
     /**
-     * <code>int64 ttl = 5;</code>
+     * <code>int64 ttl = 4;</code>
      * @return The ttl.
      */
     @java.lang.Override
@@ -13958,14 +13936,11 @@ public final class TiapRawKvrpcpb {
       if (!value_.isEmpty()) {
         output.writeBytes(2, value_);
       }
-      if (previousNotExist_ != false) {
-        output.writeBool(3, previousNotExist_);
-      }
       if (!previousValue_.isEmpty()) {
-        output.writeBytes(4, previousValue_);
+        output.writeBytes(3, previousValue_);
       }
       if (ttl_ != 0L) {
-        output.writeInt64(5, ttl_);
+        output.writeInt64(4, ttl_);
       }
       unknownFields.writeTo(output);
     }
@@ -13984,17 +13959,13 @@ public final class TiapRawKvrpcpb {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(2, value_);
       }
-      if (previousNotExist_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(3, previousNotExist_);
-      }
       if (!previousValue_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(4, previousValue_);
+          .computeBytesSize(3, previousValue_);
       }
       if (ttl_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(5, ttl_);
+          .computeInt64Size(4, ttl_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -14015,8 +13986,6 @@ public final class TiapRawKvrpcpb {
           .equals(other.getKey())) return false;
       if (!getValue()
           .equals(other.getValue())) return false;
-      if (getPreviousNotExist()
-          != other.getPreviousNotExist()) return false;
       if (!getPreviousValue()
           .equals(other.getPreviousValue())) return false;
       if (getTtl()
@@ -14036,9 +14005,6 @@ public final class TiapRawKvrpcpb {
       hash = (53 * hash) + getKey().hashCode();
       hash = (37 * hash) + VALUE_FIELD_NUMBER;
       hash = (53 * hash) + getValue().hashCode();
-      hash = (37 * hash) + PREVIOUS_NOT_EXIST_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getPreviousNotExist());
       hash = (37 * hash) + PREVIOUS_VALUE_FIELD_NUMBER;
       hash = (53 * hash) + getPreviousValue().hashCode();
       hash = (37 * hash) + TTL_FIELD_NUMBER;
@@ -14181,8 +14147,6 @@ public final class TiapRawKvrpcpb {
 
         value_ = com.google.protobuf.ByteString.EMPTY;
 
-        previousNotExist_ = false;
-
         previousValue_ = com.google.protobuf.ByteString.EMPTY;
 
         ttl_ = 0L;
@@ -14215,7 +14179,6 @@ public final class TiapRawKvrpcpb {
         com.shopee.di.kvstore.proto.TiapRawKvrpcpb.CASRequest result = new com.shopee.di.kvstore.proto.TiapRawKvrpcpb.CASRequest(this);
         result.key_ = key_;
         result.value_ = value_;
-        result.previousNotExist_ = previousNotExist_;
         result.previousValue_ = previousValue_;
         result.ttl_ = ttl_;
         onBuilt();
@@ -14271,9 +14234,6 @@ public final class TiapRawKvrpcpb {
         }
         if (other.getValue() != com.google.protobuf.ByteString.EMPTY) {
           setValue(other.getValue());
-        }
-        if (other.getPreviousNotExist() != false) {
-          setPreviousNotExist(other.getPreviousNotExist());
         }
         if (other.getPreviousValue() != com.google.protobuf.ByteString.EMPTY) {
           setPreviousValue(other.getPreviousValue());
@@ -14378,40 +14338,9 @@ public final class TiapRawKvrpcpb {
         return this;
       }
 
-      private boolean previousNotExist_ ;
-      /**
-       * <code>bool previous_not_exist = 3;</code>
-       * @return The previousNotExist.
-       */
-      @java.lang.Override
-      public boolean getPreviousNotExist() {
-        return previousNotExist_;
-      }
-      /**
-       * <code>bool previous_not_exist = 3;</code>
-       * @param value The previousNotExist to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPreviousNotExist(boolean value) {
-        
-        previousNotExist_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool previous_not_exist = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPreviousNotExist() {
-        
-        previousNotExist_ = false;
-        onChanged();
-        return this;
-      }
-
       private com.google.protobuf.ByteString previousValue_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>bytes previous_value = 4;</code>
+       * <code>bytes previous_value = 3;</code>
        * @return The previousValue.
        */
       @java.lang.Override
@@ -14419,7 +14348,7 @@ public final class TiapRawKvrpcpb {
         return previousValue_;
       }
       /**
-       * <code>bytes previous_value = 4;</code>
+       * <code>bytes previous_value = 3;</code>
        * @param value The previousValue to set.
        * @return This builder for chaining.
        */
@@ -14433,7 +14362,7 @@ public final class TiapRawKvrpcpb {
         return this;
       }
       /**
-       * <code>bytes previous_value = 4;</code>
+       * <code>bytes previous_value = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearPreviousValue() {
@@ -14445,7 +14374,7 @@ public final class TiapRawKvrpcpb {
 
       private long ttl_ ;
       /**
-       * <code>int64 ttl = 5;</code>
+       * <code>int64 ttl = 4;</code>
        * @return The ttl.
        */
       @java.lang.Override
@@ -14453,7 +14382,7 @@ public final class TiapRawKvrpcpb {
         return ttl_;
       }
       /**
-       * <code>int64 ttl = 5;</code>
+       * <code>int64 ttl = 4;</code>
        * @param value The ttl to set.
        * @return This builder for chaining.
        */
@@ -14464,7 +14393,7 @@ public final class TiapRawKvrpcpb {
         return this;
       }
       /**
-       * <code>int64 ttl = 5;</code>
+       * <code>int64 ttl = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearTtl() {
@@ -14537,17 +14466,7 @@ public final class TiapRawKvrpcpb {
     boolean getSucceed();
 
     /**
-     * <pre>
-     * The previous value regardless of whether the comparison is succeed.
-     * </pre>
-     *
-     * <code>bool previous_not_exist = 2;</code>
-     * @return The previousNotExist.
-     */
-    boolean getPreviousNotExist();
-
-    /**
-     * <code>bytes previous_value = 3;</code>
+     * <code>bytes previous_value = 2;</code>
      * @return The previousValue.
      */
     com.google.protobuf.ByteString getPreviousValue();
@@ -14603,12 +14522,7 @@ public final class TiapRawKvrpcpb {
               succeed_ = input.readBool();
               break;
             }
-            case 16: {
-
-              previousNotExist_ = input.readBool();
-              break;
-            }
-            case 26: {
+            case 18: {
 
               previousValue_ = input.readBytes();
               break;
@@ -14656,25 +14570,10 @@ public final class TiapRawKvrpcpb {
       return succeed_;
     }
 
-    public static final int PREVIOUS_NOT_EXIST_FIELD_NUMBER = 2;
-    private boolean previousNotExist_;
-    /**
-     * <pre>
-     * The previous value regardless of whether the comparison is succeed.
-     * </pre>
-     *
-     * <code>bool previous_not_exist = 2;</code>
-     * @return The previousNotExist.
-     */
-    @java.lang.Override
-    public boolean getPreviousNotExist() {
-      return previousNotExist_;
-    }
-
-    public static final int PREVIOUS_VALUE_FIELD_NUMBER = 3;
+    public static final int PREVIOUS_VALUE_FIELD_NUMBER = 2;
     private com.google.protobuf.ByteString previousValue_;
     /**
-     * <code>bytes previous_value = 3;</code>
+     * <code>bytes previous_value = 2;</code>
      * @return The previousValue.
      */
     @java.lang.Override
@@ -14699,11 +14598,8 @@ public final class TiapRawKvrpcpb {
       if (succeed_ != false) {
         output.writeBool(1, succeed_);
       }
-      if (previousNotExist_ != false) {
-        output.writeBool(2, previousNotExist_);
-      }
       if (!previousValue_.isEmpty()) {
-        output.writeBytes(3, previousValue_);
+        output.writeBytes(2, previousValue_);
       }
       unknownFields.writeTo(output);
     }
@@ -14718,13 +14614,9 @@ public final class TiapRawKvrpcpb {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(1, succeed_);
       }
-      if (previousNotExist_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(2, previousNotExist_);
-      }
       if (!previousValue_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(3, previousValue_);
+          .computeBytesSize(2, previousValue_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -14743,8 +14635,6 @@ public final class TiapRawKvrpcpb {
 
       if (getSucceed()
           != other.getSucceed()) return false;
-      if (getPreviousNotExist()
-          != other.getPreviousNotExist()) return false;
       if (!getPreviousValue()
           .equals(other.getPreviousValue())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -14761,9 +14651,6 @@ public final class TiapRawKvrpcpb {
       hash = (37 * hash) + SUCCEED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getSucceed());
-      hash = (37 * hash) + PREVIOUS_NOT_EXIST_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getPreviousNotExist());
       hash = (37 * hash) + PREVIOUS_VALUE_FIELD_NUMBER;
       hash = (53 * hash) + getPreviousValue().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -14901,8 +14788,6 @@ public final class TiapRawKvrpcpb {
         super.clear();
         succeed_ = false;
 
-        previousNotExist_ = false;
-
         previousValue_ = com.google.protobuf.ByteString.EMPTY;
 
         return this;
@@ -14932,7 +14817,6 @@ public final class TiapRawKvrpcpb {
       public com.shopee.di.kvstore.proto.TiapRawKvrpcpb.CASResponse buildPartial() {
         com.shopee.di.kvstore.proto.TiapRawKvrpcpb.CASResponse result = new com.shopee.di.kvstore.proto.TiapRawKvrpcpb.CASResponse(this);
         result.succeed_ = succeed_;
-        result.previousNotExist_ = previousNotExist_;
         result.previousValue_ = previousValue_;
         onBuilt();
         return result;
@@ -14984,9 +14868,6 @@ public final class TiapRawKvrpcpb {
         if (other == com.shopee.di.kvstore.proto.TiapRawKvrpcpb.CASResponse.getDefaultInstance()) return this;
         if (other.getSucceed() != false) {
           setSucceed(other.getSucceed());
-        }
-        if (other.getPreviousNotExist() != false) {
-          setPreviousNotExist(other.getPreviousNotExist());
         }
         if (other.getPreviousValue() != com.google.protobuf.ByteString.EMPTY) {
           setPreviousValue(other.getPreviousValue());
@@ -15051,52 +14932,9 @@ public final class TiapRawKvrpcpb {
         return this;
       }
 
-      private boolean previousNotExist_ ;
-      /**
-       * <pre>
-       * The previous value regardless of whether the comparison is succeed.
-       * </pre>
-       *
-       * <code>bool previous_not_exist = 2;</code>
-       * @return The previousNotExist.
-       */
-      @java.lang.Override
-      public boolean getPreviousNotExist() {
-        return previousNotExist_;
-      }
-      /**
-       * <pre>
-       * The previous value regardless of whether the comparison is succeed.
-       * </pre>
-       *
-       * <code>bool previous_not_exist = 2;</code>
-       * @param value The previousNotExist to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPreviousNotExist(boolean value) {
-        
-        previousNotExist_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The previous value regardless of whether the comparison is succeed.
-       * </pre>
-       *
-       * <code>bool previous_not_exist = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPreviousNotExist() {
-        
-        previousNotExist_ = false;
-        onChanged();
-        return this;
-      }
-
       private com.google.protobuf.ByteString previousValue_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>bytes previous_value = 3;</code>
+       * <code>bytes previous_value = 2;</code>
        * @return The previousValue.
        */
       @java.lang.Override
@@ -15104,7 +14942,7 @@ public final class TiapRawKvrpcpb {
         return previousValue_;
       }
       /**
-       * <code>bytes previous_value = 3;</code>
+       * <code>bytes previous_value = 2;</code>
        * @param value The previousValue to set.
        * @return This builder for chaining.
        */
@@ -15118,7 +14956,7 @@ public final class TiapRawKvrpcpb {
         return this;
       }
       /**
-       * <code>bytes previous_value = 3;</code>
+       * <code>bytes previous_value = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearPreviousValue() {
@@ -18758,18 +18596,17 @@ public final class TiapRawKvrpcpb {
       "\001(\014\022\017\n\007end_key\030\002 \001(\014\"\025\n\023DeleteRangeRespo" +
       "nse\"@\n\013ScanRequest\022\021\n\tstart_key\030\001 \001(\014\022\017\n" +
       "\007end_key\030\002 \001(\014\022\r\n\005limit\030\003 \001(\003\",\n\014ScanRes" +
-      "ponse\022\014\n\004keys\030\001 \003(\014\022\016\n\006values\030\002 \003(\014\"i\n\nC" +
-      "ASRequest\022\013\n\003key\030\001 \001(\014\022\r\n\005value\030\002 \001(\014\022\032\n" +
-      "\022previous_not_exist\030\003 \001(\010\022\026\n\016previous_va" +
-      "lue\030\004 \001(\014\022\013\n\003ttl\030\005 \001(\003\"R\n\013CASResponse\022\017\n" +
-      "\007succeed\030\001 \001(\010\022\032\n\022previous_not_exist\030\002 \001" +
-      "(\010\022\026\n\016previous_value\030\003 \001(\014\"\037\n\017BatchGetRe" +
-      "quest\022\014\n\004keys\030\001 \003(\014\"\"\n\020BatchGetResponse\022" +
-      "\016\n\006values\030\001 \003(\014\"/\n\017BatchPutRequest\022\014\n\004ke" +
-      "ys\030\001 \003(\014\022\016\n\006values\030\002 \003(\014\"\022\n\020BatchPutResp" +
-      "onse\"\"\n\022BatchDeleteRequest\022\014\n\004keys\030\001 \003(\014" +
-      "\"\025\n\023BatchDeleteResponseB\035\n\033com.shopee.di" +
-      ".kvstore.protob\006proto3"
+      "ponse\022\014\n\004keys\030\001 \003(\014\022\016\n\006values\030\002 \003(\014\"M\n\nC" +
+      "ASRequest\022\013\n\003key\030\001 \001(\014\022\r\n\005value\030\002 \001(\014\022\026\n" +
+      "\016previous_value\030\003 \001(\014\022\013\n\003ttl\030\004 \001(\003\"6\n\013CA" +
+      "SResponse\022\017\n\007succeed\030\001 \001(\010\022\026\n\016previous_v" +
+      "alue\030\002 \001(\014\"\037\n\017BatchGetRequest\022\014\n\004keys\030\001 " +
+      "\003(\014\"\"\n\020BatchGetResponse\022\016\n\006values\030\001 \003(\014\"" +
+      "/\n\017BatchPutRequest\022\014\n\004keys\030\001 \003(\014\022\016\n\006valu" +
+      "es\030\002 \003(\014\"\022\n\020BatchPutResponse\"\"\n\022BatchDel" +
+      "eteRequest\022\014\n\004keys\030\001 \003(\014\"\025\n\023BatchDeleteR" +
+      "esponseB\035\n\033com.shopee.di.kvstore.protob\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -18877,13 +18714,13 @@ public final class TiapRawKvrpcpb {
     internal_static_tiap_raw_kvrpcpb_CASRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tiap_raw_kvrpcpb_CASRequest_descriptor,
-        new java.lang.String[] { "Key", "Value", "PreviousNotExist", "PreviousValue", "Ttl", });
+        new java.lang.String[] { "Key", "Value", "PreviousValue", "Ttl", });
     internal_static_tiap_raw_kvrpcpb_CASResponse_descriptor =
       getDescriptor().getMessageTypes().get(17);
     internal_static_tiap_raw_kvrpcpb_CASResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tiap_raw_kvrpcpb_CASResponse_descriptor,
-        new java.lang.String[] { "Succeed", "PreviousNotExist", "PreviousValue", });
+        new java.lang.String[] { "Succeed", "PreviousValue", });
     internal_static_tiap_raw_kvrpcpb_BatchGetRequest_descriptor =
       getDescriptor().getMessageTypes().get(18);
     internal_static_tiap_raw_kvrpcpb_BatchGetRequest_fieldAccessorTable = new

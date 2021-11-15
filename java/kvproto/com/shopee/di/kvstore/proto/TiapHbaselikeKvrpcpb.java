@@ -3693,28 +3693,36 @@ public final class TiapHbaselikeKvrpcpb {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .tiap_hbaselike_kvrpcpb.Row rows = 1;</code>
+     * <code>repeated bytes row_keys = 1;</code>
+     * @return A list containing the rowKeys.
      */
-    java.util.List<com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row> 
-        getRowsList();
+    java.util.List<com.google.protobuf.ByteString> getRowKeysList();
     /**
-     * <code>repeated .tiap_hbaselike_kvrpcpb.Row rows = 1;</code>
+     * <code>repeated bytes row_keys = 1;</code>
+     * @return The count of rowKeys.
      */
-    com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row getRows(int index);
+    int getRowKeysCount();
     /**
-     * <code>repeated .tiap_hbaselike_kvrpcpb.Row rows = 1;</code>
+     * <code>repeated bytes row_keys = 1;</code>
+     * @param index The index of the element to return.
+     * @return The rowKeys at the given index.
      */
-    int getRowsCount();
+    com.google.protobuf.ByteString getRowKeys(int index);
+
     /**
-     * <code>repeated .tiap_hbaselike_kvrpcpb.Row rows = 1;</code>
+     * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 2;</code>
+     * @return Whether the families field is set.
      */
-    java.util.List<? extends com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowOrBuilder> 
-        getRowsOrBuilderList();
+    boolean hasFamilies();
     /**
-     * <code>repeated .tiap_hbaselike_kvrpcpb.Row rows = 1;</code>
+     * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 2;</code>
+     * @return The families.
      */
-    com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowOrBuilder getRowsOrBuilder(
-        int index);
+    com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily getFamilies();
+    /**
+     * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 2;</code>
+     */
+    com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamilyOrBuilder getFamiliesOrBuilder();
   }
   /**
    * Protobuf type {@code tiap_hbaselike_kvrpcpb.BatchGetRowRequest}
@@ -3729,7 +3737,7 @@ public final class TiapHbaselikeKvrpcpb {
       super(builder);
     }
     private BatchGetRowRequest() {
-      rows_ = java.util.Collections.emptyList();
+      rowKeys_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -3765,11 +3773,23 @@ public final class TiapHbaselikeKvrpcpb {
               break;
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                rows_ = new java.util.ArrayList<com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row>();
+                rowKeys_ = new java.util.ArrayList<com.google.protobuf.ByteString>();
                 mutable_bitField0_ |= 0x00000001;
               }
-              rows_.add(
-                  input.readMessage(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row.parser(), extensionRegistry));
+              rowKeys_.add(input.readBytes());
+              break;
+            }
+            case 18: {
+              com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily.Builder subBuilder = null;
+              if (families_ != null) {
+                subBuilder = families_.toBuilder();
+              }
+              families_ = input.readMessage(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(families_);
+                families_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             default: {
@@ -3788,7 +3808,7 @@ public final class TiapHbaselikeKvrpcpb {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          rows_ = java.util.Collections.unmodifiableList(rows_);
+          rowKeys_ = java.util.Collections.unmodifiableList(rowKeys_); // C
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -3807,44 +3827,57 @@ public final class TiapHbaselikeKvrpcpb {
               com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowRequest.class, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowRequest.Builder.class);
     }
 
-    public static final int ROWS_FIELD_NUMBER = 1;
-    private java.util.List<com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row> rows_;
+    public static final int ROW_KEYS_FIELD_NUMBER = 1;
+    private java.util.List<com.google.protobuf.ByteString> rowKeys_;
     /**
-     * <code>repeated .tiap_hbaselike_kvrpcpb.Row rows = 1;</code>
+     * <code>repeated bytes row_keys = 1;</code>
+     * @return A list containing the rowKeys.
      */
     @java.lang.Override
-    public java.util.List<com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row> getRowsList() {
-      return rows_;
+    public java.util.List<com.google.protobuf.ByteString>
+        getRowKeysList() {
+      return rowKeys_;
     }
     /**
-     * <code>repeated .tiap_hbaselike_kvrpcpb.Row rows = 1;</code>
+     * <code>repeated bytes row_keys = 1;</code>
+     * @return The count of rowKeys.
      */
-    @java.lang.Override
-    public java.util.List<? extends com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowOrBuilder> 
-        getRowsOrBuilderList() {
-      return rows_;
+    public int getRowKeysCount() {
+      return rowKeys_.size();
     }
     /**
-     * <code>repeated .tiap_hbaselike_kvrpcpb.Row rows = 1;</code>
+     * <code>repeated bytes row_keys = 1;</code>
+     * @param index The index of the element to return.
+     * @return The rowKeys at the given index.
+     */
+    public com.google.protobuf.ByteString getRowKeys(int index) {
+      return rowKeys_.get(index);
+    }
+
+    public static final int FAMILIES_FIELD_NUMBER = 2;
+    private com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily families_;
+    /**
+     * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 2;</code>
+     * @return Whether the families field is set.
      */
     @java.lang.Override
-    public int getRowsCount() {
-      return rows_.size();
+    public boolean hasFamilies() {
+      return families_ != null;
     }
     /**
-     * <code>repeated .tiap_hbaselike_kvrpcpb.Row rows = 1;</code>
+     * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 2;</code>
+     * @return The families.
      */
     @java.lang.Override
-    public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row getRows(int index) {
-      return rows_.get(index);
+    public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily getFamilies() {
+      return families_ == null ? com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily.getDefaultInstance() : families_;
     }
     /**
-     * <code>repeated .tiap_hbaselike_kvrpcpb.Row rows = 1;</code>
+     * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 2;</code>
      */
     @java.lang.Override
-    public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowOrBuilder getRowsOrBuilder(
-        int index) {
-      return rows_.get(index);
+    public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamilyOrBuilder getFamiliesOrBuilder() {
+      return getFamilies();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -3861,8 +3894,11 @@ public final class TiapHbaselikeKvrpcpb {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < rows_.size(); i++) {
-        output.writeMessage(1, rows_.get(i));
+      for (int i = 0; i < rowKeys_.size(); i++) {
+        output.writeBytes(1, rowKeys_.get(i));
+      }
+      if (families_ != null) {
+        output.writeMessage(2, getFamilies());
       }
       unknownFields.writeTo(output);
     }
@@ -3873,9 +3909,18 @@ public final class TiapHbaselikeKvrpcpb {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < rows_.size(); i++) {
+      {
+        int dataSize = 0;
+        for (int i = 0; i < rowKeys_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeBytesSizeNoTag(rowKeys_.get(i));
+        }
+        size += dataSize;
+        size += 1 * getRowKeysList().size();
+      }
+      if (families_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, rows_.get(i));
+          .computeMessageSize(2, getFamilies());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3892,8 +3937,13 @@ public final class TiapHbaselikeKvrpcpb {
       }
       com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowRequest other = (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowRequest) obj;
 
-      if (!getRowsList()
-          .equals(other.getRowsList())) return false;
+      if (!getRowKeysList()
+          .equals(other.getRowKeysList())) return false;
+      if (hasFamilies() != other.hasFamilies()) return false;
+      if (hasFamilies()) {
+        if (!getFamilies()
+            .equals(other.getFamilies())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3905,9 +3955,13 @@ public final class TiapHbaselikeKvrpcpb {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getRowsCount() > 0) {
-        hash = (37 * hash) + ROWS_FIELD_NUMBER;
-        hash = (53 * hash) + getRowsList().hashCode();
+      if (getRowKeysCount() > 0) {
+        hash = (37 * hash) + ROW_KEYS_FIELD_NUMBER;
+        hash = (53 * hash) + getRowKeysList().hashCode();
+      }
+      if (hasFamilies()) {
+        hash = (37 * hash) + FAMILIES_FIELD_NUMBER;
+        hash = (53 * hash) + getFamilies().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -4037,17 +4091,18 @@ public final class TiapHbaselikeKvrpcpb {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getRowsFieldBuilder();
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (rowsBuilder_ == null) {
-          rows_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+        rowKeys_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        if (familiesBuilder_ == null) {
+          families_ = null;
         } else {
-          rowsBuilder_.clear();
+          families_ = null;
+          familiesBuilder_ = null;
         }
         return this;
       }
@@ -4076,14 +4131,15 @@ public final class TiapHbaselikeKvrpcpb {
       public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowRequest buildPartial() {
         com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowRequest result = new com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowRequest(this);
         int from_bitField0_ = bitField0_;
-        if (rowsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
-            rows_ = java.util.Collections.unmodifiableList(rows_);
-            bitField0_ = (bitField0_ & ~0x00000001);
-          }
-          result.rows_ = rows_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          rowKeys_ = java.util.Collections.unmodifiableList(rowKeys_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.rowKeys_ = rowKeys_;
+        if (familiesBuilder_ == null) {
+          result.families_ = families_;
         } else {
-          result.rows_ = rowsBuilder_.build();
+          result.families_ = familiesBuilder_.build();
         }
         onBuilt();
         return result;
@@ -4133,31 +4189,18 @@ public final class TiapHbaselikeKvrpcpb {
 
       public Builder mergeFrom(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowRequest other) {
         if (other == com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchGetRowRequest.getDefaultInstance()) return this;
-        if (rowsBuilder_ == null) {
-          if (!other.rows_.isEmpty()) {
-            if (rows_.isEmpty()) {
-              rows_ = other.rows_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-            } else {
-              ensureRowsIsMutable();
-              rows_.addAll(other.rows_);
-            }
-            onChanged();
+        if (!other.rowKeys_.isEmpty()) {
+          if (rowKeys_.isEmpty()) {
+            rowKeys_ = other.rowKeys_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureRowKeysIsMutable();
+            rowKeys_.addAll(other.rowKeys_);
           }
-        } else {
-          if (!other.rows_.isEmpty()) {
-            if (rowsBuilder_.isEmpty()) {
-              rowsBuilder_.dispose();
-              rowsBuilder_ = null;
-              rows_ = other.rows_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-              rowsBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getRowsFieldBuilder() : null;
-            } else {
-              rowsBuilder_.addAllMessages(other.rows_);
-            }
-          }
+          onChanged();
+        }
+        if (other.hasFamilies()) {
+          mergeFamilies(other.getFamilies());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -4189,244 +4232,208 @@ public final class TiapHbaselikeKvrpcpb {
       }
       private int bitField0_;
 
-      private java.util.List<com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row> rows_ =
-        java.util.Collections.emptyList();
-      private void ensureRowsIsMutable() {
+      private java.util.List<com.google.protobuf.ByteString> rowKeys_ = java.util.Collections.emptyList();
+      private void ensureRowKeysIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          rows_ = new java.util.ArrayList<com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row>(rows_);
+          rowKeys_ = new java.util.ArrayList<com.google.protobuf.ByteString>(rowKeys_);
           bitField0_ |= 0x00000001;
          }
       }
+      /**
+       * <code>repeated bytes row_keys = 1;</code>
+       * @return A list containing the rowKeys.
+       */
+      public java.util.List<com.google.protobuf.ByteString>
+          getRowKeysList() {
+        return ((bitField0_ & 0x00000001) != 0) ?
+                 java.util.Collections.unmodifiableList(rowKeys_) : rowKeys_;
+      }
+      /**
+       * <code>repeated bytes row_keys = 1;</code>
+       * @return The count of rowKeys.
+       */
+      public int getRowKeysCount() {
+        return rowKeys_.size();
+      }
+      /**
+       * <code>repeated bytes row_keys = 1;</code>
+       * @param index The index of the element to return.
+       * @return The rowKeys at the given index.
+       */
+      public com.google.protobuf.ByteString getRowKeys(int index) {
+        return rowKeys_.get(index);
+      }
+      /**
+       * <code>repeated bytes row_keys = 1;</code>
+       * @param index The index to set the value at.
+       * @param value The rowKeys to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRowKeys(
+          int index, com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureRowKeysIsMutable();
+        rowKeys_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated bytes row_keys = 1;</code>
+       * @param value The rowKeys to add.
+       * @return This builder for chaining.
+       */
+      public Builder addRowKeys(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureRowKeysIsMutable();
+        rowKeys_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated bytes row_keys = 1;</code>
+       * @param values The rowKeys to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllRowKeys(
+          java.lang.Iterable<? extends com.google.protobuf.ByteString> values) {
+        ensureRowKeysIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, rowKeys_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated bytes row_keys = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRowKeys() {
+        rowKeys_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
 
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowOrBuilder> rowsBuilder_;
+      private com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily families_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamilyOrBuilder> familiesBuilder_;
+      /**
+       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 2;</code>
+       * @return Whether the families field is set.
+       */
+      public boolean hasFamilies() {
+        return familiesBuilder_ != null || families_ != null;
+      }
+      /**
+       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 2;</code>
+       * @return The families.
+       */
+      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily getFamilies() {
+        if (familiesBuilder_ == null) {
+          return families_ == null ? com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily.getDefaultInstance() : families_;
+        } else {
+          return familiesBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 2;</code>
+       */
+      public Builder setFamilies(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily value) {
+        if (familiesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          families_ = value;
+          onChanged();
+        } else {
+          familiesBuilder_.setMessage(value);
+        }
 
-      /**
-       * <code>repeated .tiap_hbaselike_kvrpcpb.Row rows = 1;</code>
-       */
-      public java.util.List<com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row> getRowsList() {
-        if (rowsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(rows_);
-        } else {
-          return rowsBuilder_.getMessageList();
-        }
+        return this;
       }
       /**
-       * <code>repeated .tiap_hbaselike_kvrpcpb.Row rows = 1;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 2;</code>
        */
-      public int getRowsCount() {
-        if (rowsBuilder_ == null) {
-          return rows_.size();
+      public Builder setFamilies(
+          com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily.Builder builderForValue) {
+        if (familiesBuilder_ == null) {
+          families_ = builderForValue.build();
+          onChanged();
         } else {
-          return rowsBuilder_.getCount();
+          familiesBuilder_.setMessage(builderForValue.build());
         }
+
+        return this;
       }
       /**
-       * <code>repeated .tiap_hbaselike_kvrpcpb.Row rows = 1;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 2;</code>
        */
-      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row getRows(int index) {
-        if (rowsBuilder_ == null) {
-          return rows_.get(index);
-        } else {
-          return rowsBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .tiap_hbaselike_kvrpcpb.Row rows = 1;</code>
-       */
-      public Builder setRows(
-          int index, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row value) {
-        if (rowsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
+      public Builder mergeFamilies(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily value) {
+        if (familiesBuilder_ == null) {
+          if (families_ != null) {
+            families_ =
+              com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily.newBuilder(families_).mergeFrom(value).buildPartial();
+          } else {
+            families_ = value;
           }
-          ensureRowsIsMutable();
-          rows_.set(index, value);
           onChanged();
         } else {
-          rowsBuilder_.setMessage(index, value);
+          familiesBuilder_.mergeFrom(value);
         }
+
         return this;
       }
       /**
-       * <code>repeated .tiap_hbaselike_kvrpcpb.Row rows = 1;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 2;</code>
        */
-      public Builder setRows(
-          int index, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row.Builder builderForValue) {
-        if (rowsBuilder_ == null) {
-          ensureRowsIsMutable();
-          rows_.set(index, builderForValue.build());
+      public Builder clearFamilies() {
+        if (familiesBuilder_ == null) {
+          families_ = null;
           onChanged();
         } else {
-          rowsBuilder_.setMessage(index, builderForValue.build());
+          families_ = null;
+          familiesBuilder_ = null;
         }
+
         return this;
       }
       /**
-       * <code>repeated .tiap_hbaselike_kvrpcpb.Row rows = 1;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 2;</code>
        */
-      public Builder addRows(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row value) {
-        if (rowsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureRowsIsMutable();
-          rows_.add(value);
-          onChanged();
+      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily.Builder getFamiliesBuilder() {
+        
+        onChanged();
+        return getFamiliesFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 2;</code>
+       */
+      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamilyOrBuilder getFamiliesOrBuilder() {
+        if (familiesBuilder_ != null) {
+          return familiesBuilder_.getMessageOrBuilder();
         } else {
-          rowsBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .tiap_hbaselike_kvrpcpb.Row rows = 1;</code>
-       */
-      public Builder addRows(
-          int index, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row value) {
-        if (rowsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureRowsIsMutable();
-          rows_.add(index, value);
-          onChanged();
-        } else {
-          rowsBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .tiap_hbaselike_kvrpcpb.Row rows = 1;</code>
-       */
-      public Builder addRows(
-          com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row.Builder builderForValue) {
-        if (rowsBuilder_ == null) {
-          ensureRowsIsMutable();
-          rows_.add(builderForValue.build());
-          onChanged();
-        } else {
-          rowsBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .tiap_hbaselike_kvrpcpb.Row rows = 1;</code>
-       */
-      public Builder addRows(
-          int index, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row.Builder builderForValue) {
-        if (rowsBuilder_ == null) {
-          ensureRowsIsMutable();
-          rows_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          rowsBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .tiap_hbaselike_kvrpcpb.Row rows = 1;</code>
-       */
-      public Builder addAllRows(
-          java.lang.Iterable<? extends com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row> values) {
-        if (rowsBuilder_ == null) {
-          ensureRowsIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, rows_);
-          onChanged();
-        } else {
-          rowsBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .tiap_hbaselike_kvrpcpb.Row rows = 1;</code>
-       */
-      public Builder clearRows() {
-        if (rowsBuilder_ == null) {
-          rows_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-          onChanged();
-        } else {
-          rowsBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .tiap_hbaselike_kvrpcpb.Row rows = 1;</code>
-       */
-      public Builder removeRows(int index) {
-        if (rowsBuilder_ == null) {
-          ensureRowsIsMutable();
-          rows_.remove(index);
-          onChanged();
-        } else {
-          rowsBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .tiap_hbaselike_kvrpcpb.Row rows = 1;</code>
-       */
-      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row.Builder getRowsBuilder(
-          int index) {
-        return getRowsFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .tiap_hbaselike_kvrpcpb.Row rows = 1;</code>
-       */
-      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowOrBuilder getRowsOrBuilder(
-          int index) {
-        if (rowsBuilder_ == null) {
-          return rows_.get(index);  } else {
-          return rowsBuilder_.getMessageOrBuilder(index);
+          return families_ == null ?
+              com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily.getDefaultInstance() : families_;
         }
       }
       /**
-       * <code>repeated .tiap_hbaselike_kvrpcpb.Row rows = 1;</code>
+       * <code>.tiap_hbaselike_kvrpcpb.ColumnFamily families = 2;</code>
        */
-      public java.util.List<? extends com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowOrBuilder> 
-           getRowsOrBuilderList() {
-        if (rowsBuilder_ != null) {
-          return rowsBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(rows_);
-        }
-      }
-      /**
-       * <code>repeated .tiap_hbaselike_kvrpcpb.Row rows = 1;</code>
-       */
-      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row.Builder addRowsBuilder() {
-        return getRowsFieldBuilder().addBuilder(
-            com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .tiap_hbaselike_kvrpcpb.Row rows = 1;</code>
-       */
-      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row.Builder addRowsBuilder(
-          int index) {
-        return getRowsFieldBuilder().addBuilder(
-            index, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .tiap_hbaselike_kvrpcpb.Row rows = 1;</code>
-       */
-      public java.util.List<com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row.Builder> 
-           getRowsBuilderList() {
-        return getRowsFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowOrBuilder> 
-          getRowsFieldBuilder() {
-        if (rowsBuilder_ == null) {
-          rowsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowOrBuilder>(
-                  rows_,
-                  ((bitField0_ & 0x00000001) != 0),
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamilyOrBuilder> 
+          getFamiliesFieldBuilder() {
+        if (familiesBuilder_ == null) {
+          familiesBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamily.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.ColumnFamilyOrBuilder>(
+                  getFamilies(),
                   getParentForChildren(),
                   isClean());
-          rows_ = null;
+          families_ = null;
         }
-        return rowsBuilder_;
+        return familiesBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -6490,28 +6497,21 @@ public final class TiapHbaselikeKvrpcpb {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .tiap_hbaselike_kvrpcpb.Row rows = 1;</code>
+     * <code>repeated bytes row_keys = 1;</code>
+     * @return A list containing the rowKeys.
      */
-    java.util.List<com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row> 
-        getRowsList();
+    java.util.List<com.google.protobuf.ByteString> getRowKeysList();
     /**
-     * <code>repeated .tiap_hbaselike_kvrpcpb.Row rows = 1;</code>
+     * <code>repeated bytes row_keys = 1;</code>
+     * @return The count of rowKeys.
      */
-    com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row getRows(int index);
+    int getRowKeysCount();
     /**
-     * <code>repeated .tiap_hbaselike_kvrpcpb.Row rows = 1;</code>
+     * <code>repeated bytes row_keys = 1;</code>
+     * @param index The index of the element to return.
+     * @return The rowKeys at the given index.
      */
-    int getRowsCount();
-    /**
-     * <code>repeated .tiap_hbaselike_kvrpcpb.Row rows = 1;</code>
-     */
-    java.util.List<? extends com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowOrBuilder> 
-        getRowsOrBuilderList();
-    /**
-     * <code>repeated .tiap_hbaselike_kvrpcpb.Row rows = 1;</code>
-     */
-    com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowOrBuilder getRowsOrBuilder(
-        int index);
+    com.google.protobuf.ByteString getRowKeys(int index);
   }
   /**
    * Protobuf type {@code tiap_hbaselike_kvrpcpb.BatchDeleteRowRequest}
@@ -6526,7 +6526,7 @@ public final class TiapHbaselikeKvrpcpb {
       super(builder);
     }
     private BatchDeleteRowRequest() {
-      rows_ = java.util.Collections.emptyList();
+      rowKeys_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -6562,11 +6562,10 @@ public final class TiapHbaselikeKvrpcpb {
               break;
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                rows_ = new java.util.ArrayList<com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row>();
+                rowKeys_ = new java.util.ArrayList<com.google.protobuf.ByteString>();
                 mutable_bitField0_ |= 0x00000001;
               }
-              rows_.add(
-                  input.readMessage(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row.parser(), extensionRegistry));
+              rowKeys_.add(input.readBytes());
               break;
             }
             default: {
@@ -6585,7 +6584,7 @@ public final class TiapHbaselikeKvrpcpb {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          rows_ = java.util.Collections.unmodifiableList(rows_);
+          rowKeys_ = java.util.Collections.unmodifiableList(rowKeys_); // C
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -6604,44 +6603,31 @@ public final class TiapHbaselikeKvrpcpb {
               com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowRequest.class, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowRequest.Builder.class);
     }
 
-    public static final int ROWS_FIELD_NUMBER = 1;
-    private java.util.List<com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row> rows_;
+    public static final int ROW_KEYS_FIELD_NUMBER = 1;
+    private java.util.List<com.google.protobuf.ByteString> rowKeys_;
     /**
-     * <code>repeated .tiap_hbaselike_kvrpcpb.Row rows = 1;</code>
+     * <code>repeated bytes row_keys = 1;</code>
+     * @return A list containing the rowKeys.
      */
     @java.lang.Override
-    public java.util.List<com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row> getRowsList() {
-      return rows_;
+    public java.util.List<com.google.protobuf.ByteString>
+        getRowKeysList() {
+      return rowKeys_;
     }
     /**
-     * <code>repeated .tiap_hbaselike_kvrpcpb.Row rows = 1;</code>
+     * <code>repeated bytes row_keys = 1;</code>
+     * @return The count of rowKeys.
      */
-    @java.lang.Override
-    public java.util.List<? extends com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowOrBuilder> 
-        getRowsOrBuilderList() {
-      return rows_;
+    public int getRowKeysCount() {
+      return rowKeys_.size();
     }
     /**
-     * <code>repeated .tiap_hbaselike_kvrpcpb.Row rows = 1;</code>
+     * <code>repeated bytes row_keys = 1;</code>
+     * @param index The index of the element to return.
+     * @return The rowKeys at the given index.
      */
-    @java.lang.Override
-    public int getRowsCount() {
-      return rows_.size();
-    }
-    /**
-     * <code>repeated .tiap_hbaselike_kvrpcpb.Row rows = 1;</code>
-     */
-    @java.lang.Override
-    public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row getRows(int index) {
-      return rows_.get(index);
-    }
-    /**
-     * <code>repeated .tiap_hbaselike_kvrpcpb.Row rows = 1;</code>
-     */
-    @java.lang.Override
-    public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowOrBuilder getRowsOrBuilder(
-        int index) {
-      return rows_.get(index);
+    public com.google.protobuf.ByteString getRowKeys(int index) {
+      return rowKeys_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -6658,8 +6644,8 @@ public final class TiapHbaselikeKvrpcpb {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < rows_.size(); i++) {
-        output.writeMessage(1, rows_.get(i));
+      for (int i = 0; i < rowKeys_.size(); i++) {
+        output.writeBytes(1, rowKeys_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -6670,9 +6656,14 @@ public final class TiapHbaselikeKvrpcpb {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < rows_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, rows_.get(i));
+      {
+        int dataSize = 0;
+        for (int i = 0; i < rowKeys_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeBytesSizeNoTag(rowKeys_.get(i));
+        }
+        size += dataSize;
+        size += 1 * getRowKeysList().size();
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -6689,8 +6680,8 @@ public final class TiapHbaselikeKvrpcpb {
       }
       com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowRequest other = (com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowRequest) obj;
 
-      if (!getRowsList()
-          .equals(other.getRowsList())) return false;
+      if (!getRowKeysList()
+          .equals(other.getRowKeysList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -6702,9 +6693,9 @@ public final class TiapHbaselikeKvrpcpb {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getRowsCount() > 0) {
-        hash = (37 * hash) + ROWS_FIELD_NUMBER;
-        hash = (53 * hash) + getRowsList().hashCode();
+      if (getRowKeysCount() > 0) {
+        hash = (37 * hash) + ROW_KEYS_FIELD_NUMBER;
+        hash = (53 * hash) + getRowKeysList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -6834,18 +6825,13 @@ public final class TiapHbaselikeKvrpcpb {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getRowsFieldBuilder();
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (rowsBuilder_ == null) {
-          rows_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        } else {
-          rowsBuilder_.clear();
-        }
+        rowKeys_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -6873,15 +6859,11 @@ public final class TiapHbaselikeKvrpcpb {
       public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowRequest buildPartial() {
         com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowRequest result = new com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowRequest(this);
         int from_bitField0_ = bitField0_;
-        if (rowsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
-            rows_ = java.util.Collections.unmodifiableList(rows_);
-            bitField0_ = (bitField0_ & ~0x00000001);
-          }
-          result.rows_ = rows_;
-        } else {
-          result.rows_ = rowsBuilder_.build();
+        if (((bitField0_ & 0x00000001) != 0)) {
+          rowKeys_ = java.util.Collections.unmodifiableList(rowKeys_);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
+        result.rowKeys_ = rowKeys_;
         onBuilt();
         return result;
       }
@@ -6930,31 +6912,15 @@ public final class TiapHbaselikeKvrpcpb {
 
       public Builder mergeFrom(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowRequest other) {
         if (other == com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.BatchDeleteRowRequest.getDefaultInstance()) return this;
-        if (rowsBuilder_ == null) {
-          if (!other.rows_.isEmpty()) {
-            if (rows_.isEmpty()) {
-              rows_ = other.rows_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-            } else {
-              ensureRowsIsMutable();
-              rows_.addAll(other.rows_);
-            }
-            onChanged();
+        if (!other.rowKeys_.isEmpty()) {
+          if (rowKeys_.isEmpty()) {
+            rowKeys_ = other.rowKeys_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureRowKeysIsMutable();
+            rowKeys_.addAll(other.rowKeys_);
           }
-        } else {
-          if (!other.rows_.isEmpty()) {
-            if (rowsBuilder_.isEmpty()) {
-              rowsBuilder_.dispose();
-              rowsBuilder_ = null;
-              rows_ = other.rows_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-              rowsBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getRowsFieldBuilder() : null;
-            } else {
-              rowsBuilder_.addAllMessages(other.rows_);
-            }
-          }
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -6986,244 +6952,89 @@ public final class TiapHbaselikeKvrpcpb {
       }
       private int bitField0_;
 
-      private java.util.List<com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row> rows_ =
-        java.util.Collections.emptyList();
-      private void ensureRowsIsMutable() {
+      private java.util.List<com.google.protobuf.ByteString> rowKeys_ = java.util.Collections.emptyList();
+      private void ensureRowKeysIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          rows_ = new java.util.ArrayList<com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row>(rows_);
+          rowKeys_ = new java.util.ArrayList<com.google.protobuf.ByteString>(rowKeys_);
           bitField0_ |= 0x00000001;
          }
       }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowOrBuilder> rowsBuilder_;
-
       /**
-       * <code>repeated .tiap_hbaselike_kvrpcpb.Row rows = 1;</code>
+       * <code>repeated bytes row_keys = 1;</code>
+       * @return A list containing the rowKeys.
        */
-      public java.util.List<com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row> getRowsList() {
-        if (rowsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(rows_);
-        } else {
-          return rowsBuilder_.getMessageList();
-        }
+      public java.util.List<com.google.protobuf.ByteString>
+          getRowKeysList() {
+        return ((bitField0_ & 0x00000001) != 0) ?
+                 java.util.Collections.unmodifiableList(rowKeys_) : rowKeys_;
       }
       /**
-       * <code>repeated .tiap_hbaselike_kvrpcpb.Row rows = 1;</code>
+       * <code>repeated bytes row_keys = 1;</code>
+       * @return The count of rowKeys.
        */
-      public int getRowsCount() {
-        if (rowsBuilder_ == null) {
-          return rows_.size();
-        } else {
-          return rowsBuilder_.getCount();
-        }
+      public int getRowKeysCount() {
+        return rowKeys_.size();
       }
       /**
-       * <code>repeated .tiap_hbaselike_kvrpcpb.Row rows = 1;</code>
+       * <code>repeated bytes row_keys = 1;</code>
+       * @param index The index of the element to return.
+       * @return The rowKeys at the given index.
        */
-      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row getRows(int index) {
-        if (rowsBuilder_ == null) {
-          return rows_.get(index);
-        } else {
-          return rowsBuilder_.getMessage(index);
-        }
+      public com.google.protobuf.ByteString getRowKeys(int index) {
+        return rowKeys_.get(index);
       }
       /**
-       * <code>repeated .tiap_hbaselike_kvrpcpb.Row rows = 1;</code>
+       * <code>repeated bytes row_keys = 1;</code>
+       * @param index The index to set the value at.
+       * @param value The rowKeys to set.
+       * @return This builder for chaining.
        */
-      public Builder setRows(
-          int index, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row value) {
-        if (rowsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureRowsIsMutable();
-          rows_.set(index, value);
-          onChanged();
-        } else {
-          rowsBuilder_.setMessage(index, value);
-        }
+      public Builder setRowKeys(
+          int index, com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureRowKeysIsMutable();
+        rowKeys_.set(index, value);
+        onChanged();
         return this;
       }
       /**
-       * <code>repeated .tiap_hbaselike_kvrpcpb.Row rows = 1;</code>
+       * <code>repeated bytes row_keys = 1;</code>
+       * @param value The rowKeys to add.
+       * @return This builder for chaining.
        */
-      public Builder setRows(
-          int index, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row.Builder builderForValue) {
-        if (rowsBuilder_ == null) {
-          ensureRowsIsMutable();
-          rows_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          rowsBuilder_.setMessage(index, builderForValue.build());
-        }
+      public Builder addRowKeys(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureRowKeysIsMutable();
+        rowKeys_.add(value);
+        onChanged();
         return this;
       }
       /**
-       * <code>repeated .tiap_hbaselike_kvrpcpb.Row rows = 1;</code>
+       * <code>repeated bytes row_keys = 1;</code>
+       * @param values The rowKeys to add.
+       * @return This builder for chaining.
        */
-      public Builder addRows(com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row value) {
-        if (rowsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureRowsIsMutable();
-          rows_.add(value);
-          onChanged();
-        } else {
-          rowsBuilder_.addMessage(value);
-        }
+      public Builder addAllRowKeys(
+          java.lang.Iterable<? extends com.google.protobuf.ByteString> values) {
+        ensureRowKeysIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, rowKeys_);
+        onChanged();
         return this;
       }
       /**
-       * <code>repeated .tiap_hbaselike_kvrpcpb.Row rows = 1;</code>
+       * <code>repeated bytes row_keys = 1;</code>
+       * @return This builder for chaining.
        */
-      public Builder addRows(
-          int index, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row value) {
-        if (rowsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureRowsIsMutable();
-          rows_.add(index, value);
-          onChanged();
-        } else {
-          rowsBuilder_.addMessage(index, value);
-        }
+      public Builder clearRowKeys() {
+        rowKeys_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
         return this;
-      }
-      /**
-       * <code>repeated .tiap_hbaselike_kvrpcpb.Row rows = 1;</code>
-       */
-      public Builder addRows(
-          com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row.Builder builderForValue) {
-        if (rowsBuilder_ == null) {
-          ensureRowsIsMutable();
-          rows_.add(builderForValue.build());
-          onChanged();
-        } else {
-          rowsBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .tiap_hbaselike_kvrpcpb.Row rows = 1;</code>
-       */
-      public Builder addRows(
-          int index, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row.Builder builderForValue) {
-        if (rowsBuilder_ == null) {
-          ensureRowsIsMutable();
-          rows_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          rowsBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .tiap_hbaselike_kvrpcpb.Row rows = 1;</code>
-       */
-      public Builder addAllRows(
-          java.lang.Iterable<? extends com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row> values) {
-        if (rowsBuilder_ == null) {
-          ensureRowsIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, rows_);
-          onChanged();
-        } else {
-          rowsBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .tiap_hbaselike_kvrpcpb.Row rows = 1;</code>
-       */
-      public Builder clearRows() {
-        if (rowsBuilder_ == null) {
-          rows_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-          onChanged();
-        } else {
-          rowsBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .tiap_hbaselike_kvrpcpb.Row rows = 1;</code>
-       */
-      public Builder removeRows(int index) {
-        if (rowsBuilder_ == null) {
-          ensureRowsIsMutable();
-          rows_.remove(index);
-          onChanged();
-        } else {
-          rowsBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .tiap_hbaselike_kvrpcpb.Row rows = 1;</code>
-       */
-      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row.Builder getRowsBuilder(
-          int index) {
-        return getRowsFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .tiap_hbaselike_kvrpcpb.Row rows = 1;</code>
-       */
-      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowOrBuilder getRowsOrBuilder(
-          int index) {
-        if (rowsBuilder_ == null) {
-          return rows_.get(index);  } else {
-          return rowsBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .tiap_hbaselike_kvrpcpb.Row rows = 1;</code>
-       */
-      public java.util.List<? extends com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowOrBuilder> 
-           getRowsOrBuilderList() {
-        if (rowsBuilder_ != null) {
-          return rowsBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(rows_);
-        }
-      }
-      /**
-       * <code>repeated .tiap_hbaselike_kvrpcpb.Row rows = 1;</code>
-       */
-      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row.Builder addRowsBuilder() {
-        return getRowsFieldBuilder().addBuilder(
-            com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .tiap_hbaselike_kvrpcpb.Row rows = 1;</code>
-       */
-      public com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row.Builder addRowsBuilder(
-          int index) {
-        return getRowsFieldBuilder().addBuilder(
-            index, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .tiap_hbaselike_kvrpcpb.Row rows = 1;</code>
-       */
-      public java.util.List<com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row.Builder> 
-           getRowsBuilderList() {
-        return getRowsFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowOrBuilder> 
-          getRowsFieldBuilder() {
-        if (rowsBuilder_ == null) {
-          rowsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.Row.Builder, com.shopee.di.kvstore.proto.TiapHbaselikeKvrpcpb.RowOrBuilder>(
-                  rows_,
-                  ((bitField0_ & 0x00000001) != 0),
-                  getParentForChildren(),
-                  isClean());
-          rows_ = null;
-        }
-        return rowsBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -16905,45 +16716,45 @@ public final class TiapHbaselikeKvrpcpb {
       "\n\024get_row_version_resp\030\005 \001(\0132-.tiap_hbas" +
       "elike_kvrpcpb.GetRowVersionResponseH\000\022<\n" +
       "\tscan_resp\030\006 \001(\0132\'.tiap_hbaselike_kvrpcp" +
-      "b.ScanRowResponseH\000B\006\n\004resp\"?\n\022BatchGetR" +
-      "owRequest\022)\n\004rows\030\001 \003(\0132\033.tiap_hbaselike" +
-      "_kvrpcpb.Row\"K\n\023BatchGetRowResponse\0224\n\nr" +
-      "ow_values\030\001 \003(\0132 .tiap_hbaselike_kvrpcpb" +
-      ".RowValue\"J\n\022BatchPutRowRequest\0224\n\nrow_v" +
-      "alues\030\001 \003(\0132 .tiap_hbaselike_kvrpcpb.Row" +
-      "Value\"\025\n\023BatchPutRowResponse\"B\n\025BatchDel" +
-      "eteRowRequest\022)\n\004rows\030\001 \003(\0132\033.tiap_hbase" +
-      "like_kvrpcpb.Row\"\030\n\026BatchDeleteRowRespon" +
-      "se\"\177\n\024GetRowVersionRequest\022\017\n\007row_key\030\001 " +
-      "\001(\014\0226\n\010families\030\002 \001(\0132$.tiap_hbaselike_k" +
-      "vrpcpb.ColumnFamily\022\017\n\007version\030\003 \001(\003\022\r\n\005" +
-      "limit\030\004 \001(\003\"M\n\025GetRowVersionResponse\0224\n\n" +
-      "row_values\030\001 \003(\0132 .tiap_hbaselike_kvrpcp" +
-      "b.RowValue\"\203\001\n\016ScanRowRequest\022\025\n\rrow_key" +
-      "_start\030\001 \001(\014\022\023\n\013row_key_end\030\002 \001(\014\0226\n\010fam" +
-      "ilies\030\003 \001(\0132$.tiap_hbaselike_kvrpcpb.Col" +
-      "umnFamily\022\r\n\005limit\030\004 \001(\003\"G\n\017ScanRowRespo" +
-      "nse\0224\n\nrow_values\030\001 \003(\0132 .tiap_hbaselike" +
-      "_kvrpcpb.RowValue\"N\n\003Row\022\017\n\007row_key\030\001 \001(" +
-      "\014\0226\n\010families\030\002 \001(\0132$.tiap_hbaselike_kvr" +
-      "pcpb.ColumnFamily\"\221\001\n\014ColumnFamily\0226\n\001m\030" +
-      "\001 \003(\0132+.tiap_hbaselike_kvrpcpb.ColumnFam" +
-      "ily.MEntry\032I\n\006MEntry\022\013\n\003key\030\001 \001(\t\022.\n\005val" +
-      "ue\030\002 \001(\0132\037.tiap_hbaselike_kvrpcpb.Column" +
-      "s:\0028\001\":\n\007Columns\022/\n\007columns\030\001 \003(\0132\036.tiap" +
-      "_hbaselike_kvrpcpb.Column\"\026\n\006Column\022\014\n\004n" +
-      "ame\030\001 \001(\t\"]\n\010RowValue\022\017\n\007row_key\030\001 \001(\014\022@" +
-      "\n\rfamily_values\030\002 \001(\0132).tiap_hbaselike_k" +
-      "vrpcpb.ColumnFamilyValue\"\240\001\n\021ColumnFamil" +
-      "yValue\022;\n\001m\030\001 \003(\01320.tiap_hbaselike_kvrpc" +
-      "pb.ColumnFamilyValue.MEntry\032N\n\006MEntry\022\013\n" +
-      "\003key\030\001 \001(\t\0223\n\005value\030\002 \001(\0132$.tiap_hbaseli" +
-      "ke_kvrpcpb.ColumnValues:\0028\001\"J\n\014ColumnVal" +
-      "ues\022:\n\rcolumn_values\030\001 \003(\0132#.tiap_hbasel" +
-      "ike_kvrpcpb.ColumnValue\"H\n\013ColumnValue\022\014" +
-      "\n\004name\030\001 \001(\t\022\017\n\007version\030\002 \001(\003\022\r\n\005value\030\003" +
-      " \001(\014\022\013\n\003ttl\030\004 \001(\003B\035\n\033com.shopee.di.kvsto" +
-      "re.protob\006proto3"
+      "b.ScanRowResponseH\000B\006\n\004resp\"^\n\022BatchGetR" +
+      "owRequest\022\020\n\010row_keys\030\001 \003(\014\0226\n\010families\030" +
+      "\002 \001(\0132$.tiap_hbaselike_kvrpcpb.ColumnFam" +
+      "ily\"K\n\023BatchGetRowResponse\0224\n\nrow_values" +
+      "\030\001 \003(\0132 .tiap_hbaselike_kvrpcpb.RowValue" +
+      "\"J\n\022BatchPutRowRequest\0224\n\nrow_values\030\001 \003" +
+      "(\0132 .tiap_hbaselike_kvrpcpb.RowValue\"\025\n\023" +
+      "BatchPutRowResponse\")\n\025BatchDeleteRowReq" +
+      "uest\022\020\n\010row_keys\030\001 \003(\014\"\030\n\026BatchDeleteRow" +
+      "Response\"\177\n\024GetRowVersionRequest\022\017\n\007row_" +
+      "key\030\001 \001(\014\0226\n\010families\030\002 \001(\0132$.tiap_hbase" +
+      "like_kvrpcpb.ColumnFamily\022\017\n\007version\030\003 \001" +
+      "(\003\022\r\n\005limit\030\004 \001(\003\"M\n\025GetRowVersionRespon" +
+      "se\0224\n\nrow_values\030\001 \003(\0132 .tiap_hbaselike_" +
+      "kvrpcpb.RowValue\"\203\001\n\016ScanRowRequest\022\025\n\rr" +
+      "ow_key_start\030\001 \001(\014\022\023\n\013row_key_end\030\002 \001(\014\022" +
+      "6\n\010families\030\003 \001(\0132$.tiap_hbaselike_kvrpc" +
+      "pb.ColumnFamily\022\r\n\005limit\030\004 \001(\003\"G\n\017ScanRo" +
+      "wResponse\0224\n\nrow_values\030\001 \003(\0132 .tiap_hba" +
+      "selike_kvrpcpb.RowValue\"N\n\003Row\022\017\n\007row_ke" +
+      "y\030\001 \001(\014\0226\n\010families\030\002 \001(\0132$.tiap_hbaseli" +
+      "ke_kvrpcpb.ColumnFamily\"\221\001\n\014ColumnFamily" +
+      "\0226\n\001m\030\001 \003(\0132+.tiap_hbaselike_kvrpcpb.Col" +
+      "umnFamily.MEntry\032I\n\006MEntry\022\013\n\003key\030\001 \001(\t\022" +
+      ".\n\005value\030\002 \001(\0132\037.tiap_hbaselike_kvrpcpb." +
+      "Columns:\0028\001\":\n\007Columns\022/\n\007columns\030\001 \003(\0132" +
+      "\036.tiap_hbaselike_kvrpcpb.Column\"\026\n\006Colum" +
+      "n\022\014\n\004name\030\001 \001(\t\"]\n\010RowValue\022\017\n\007row_key\030\001" +
+      " \001(\014\022@\n\rfamily_values\030\002 \001(\0132).tiap_hbase" +
+      "like_kvrpcpb.ColumnFamilyValue\"\240\001\n\021Colum" +
+      "nFamilyValue\022;\n\001m\030\001 \003(\01320.tiap_hbaselike" +
+      "_kvrpcpb.ColumnFamilyValue.MEntry\032N\n\006MEn" +
+      "try\022\013\n\003key\030\001 \001(\t\0223\n\005value\030\002 \001(\0132$.tiap_h" +
+      "baselike_kvrpcpb.ColumnValues:\0028\001\"J\n\014Col" +
+      "umnValues\022:\n\rcolumn_values\030\001 \003(\0132#.tiap_" +
+      "hbaselike_kvrpcpb.ColumnValue\"H\n\013ColumnV" +
+      "alue\022\014\n\004name\030\001 \001(\t\022\017\n\007version\030\002 \001(\003\022\r\n\005v" +
+      "alue\030\003 \001(\014\022\013\n\003ttl\030\004 \001(\003B\035\n\033com.shopee.di" +
+      ".kvstore.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -16967,7 +16778,7 @@ public final class TiapHbaselikeKvrpcpb {
     internal_static_tiap_hbaselike_kvrpcpb_BatchGetRowRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tiap_hbaselike_kvrpcpb_BatchGetRowRequest_descriptor,
-        new java.lang.String[] { "Rows", });
+        new java.lang.String[] { "RowKeys", "Families", });
     internal_static_tiap_hbaselike_kvrpcpb_BatchGetRowResponse_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_tiap_hbaselike_kvrpcpb_BatchGetRowResponse_fieldAccessorTable = new
@@ -16991,7 +16802,7 @@ public final class TiapHbaselikeKvrpcpb {
     internal_static_tiap_hbaselike_kvrpcpb_BatchDeleteRowRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tiap_hbaselike_kvrpcpb_BatchDeleteRowRequest_descriptor,
-        new java.lang.String[] { "Rows", });
+        new java.lang.String[] { "RowKeys", });
     internal_static_tiap_hbaselike_kvrpcpb_BatchDeleteRowResponse_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_tiap_hbaselike_kvrpcpb_BatchDeleteRowResponse_fieldAccessorTable = new
