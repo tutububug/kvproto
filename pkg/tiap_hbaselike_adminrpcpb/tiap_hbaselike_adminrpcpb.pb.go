@@ -36,6 +36,7 @@ type AdminRequest struct {
 	//	*AdminRequest_AddCfReq
 	//	*AdminRequest_ListCfsReq
 	//	*AdminRequest_DeleteCfReq
+	//	*AdminRequest_CleanTableReq
 	Req                  isAdminRequest_Req `protobuf_oneof:"req"`
 	XXX_NoUnkeyedLiteral struct{}           `json:"-"`
 	XXX_unrecognized     []byte             `json:"-"`
@@ -46,7 +47,7 @@ func (m *AdminRequest) Reset()         { *m = AdminRequest{} }
 func (m *AdminRequest) String() string { return proto.CompactTextString(m) }
 func (*AdminRequest) ProtoMessage()    {}
 func (*AdminRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_tiap_hbaselike_adminrpcpb_e7d765ee66254522, []int{0}
+	return fileDescriptor_tiap_hbaselike_adminrpcpb_1708dbbed3590e5f, []int{0}
 }
 func (m *AdminRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -102,6 +103,9 @@ type AdminRequest_ListCfsReq struct {
 type AdminRequest_DeleteCfReq struct {
 	DeleteCfReq *DeleteColumnFamilyRequest `protobuf:"bytes,8,opt,name=delete_cf_req,json=deleteCfReq,oneof"`
 }
+type AdminRequest_CleanTableReq struct {
+	CleanTableReq *CleanTableRequest `protobuf:"bytes,9,opt,name=clean_table_req,json=cleanTableReq,oneof"`
+}
 
 func (*AdminRequest_CreateTableReq) isAdminRequest_Req() {}
 func (*AdminRequest_GetTableReq) isAdminRequest_Req()    {}
@@ -110,6 +114,7 @@ func (*AdminRequest_DropTableReq) isAdminRequest_Req()   {}
 func (*AdminRequest_AddCfReq) isAdminRequest_Req()       {}
 func (*AdminRequest_ListCfsReq) isAdminRequest_Req()     {}
 func (*AdminRequest_DeleteCfReq) isAdminRequest_Req()    {}
+func (*AdminRequest_CleanTableReq) isAdminRequest_Req()  {}
 
 func (m *AdminRequest) GetReq() isAdminRequest_Req {
 	if m != nil {
@@ -174,6 +179,13 @@ func (m *AdminRequest) GetDeleteCfReq() *DeleteColumnFamilyRequest {
 	return nil
 }
 
+func (m *AdminRequest) GetCleanTableReq() *CleanTableRequest {
+	if x, ok := m.GetReq().(*AdminRequest_CleanTableReq); ok {
+		return x.CleanTableReq
+	}
+	return nil
+}
+
 // XXX_OneofFuncs is for the internal use of the proto package.
 func (*AdminRequest) XXX_OneofFuncs() (func(msg proto.Message, b *proto.Buffer) error, func(msg proto.Message, tag, wire int, b *proto.Buffer) (bool, error), func(msg proto.Message) (n int), []interface{}) {
 	return _AdminRequest_OneofMarshaler, _AdminRequest_OneofUnmarshaler, _AdminRequest_OneofSizer, []interface{}{
@@ -184,6 +196,7 @@ func (*AdminRequest) XXX_OneofFuncs() (func(msg proto.Message, b *proto.Buffer) 
 		(*AdminRequest_AddCfReq)(nil),
 		(*AdminRequest_ListCfsReq)(nil),
 		(*AdminRequest_DeleteCfReq)(nil),
+		(*AdminRequest_CleanTableReq)(nil),
 	}
 }
 
@@ -224,6 +237,11 @@ func _AdminRequest_OneofMarshaler(msg proto.Message, b *proto.Buffer) error {
 	case *AdminRequest_DeleteCfReq:
 		_ = b.EncodeVarint(8<<3 | proto.WireBytes)
 		if err := b.EncodeMessage(x.DeleteCfReq); err != nil {
+			return err
+		}
+	case *AdminRequest_CleanTableReq:
+		_ = b.EncodeVarint(9<<3 | proto.WireBytes)
+		if err := b.EncodeMessage(x.CleanTableReq); err != nil {
 			return err
 		}
 	case nil:
@@ -292,6 +310,14 @@ func _AdminRequest_OneofUnmarshaler(msg proto.Message, tag, wire int, b *proto.B
 		err := b.DecodeMessage(msg)
 		m.Req = &AdminRequest_DeleteCfReq{msg}
 		return true, err
+	case 9: // req.clean_table_req
+		if wire != proto.WireBytes {
+			return true, proto.ErrInternalBadWireType
+		}
+		msg := new(CleanTableRequest)
+		err := b.DecodeMessage(msg)
+		m.Req = &AdminRequest_CleanTableReq{msg}
+		return true, err
 	default:
 		return false, nil
 	}
@@ -336,6 +362,11 @@ func _AdminRequest_OneofSizer(msg proto.Message) (n int) {
 		n += 1 // tag and wire
 		n += proto.SizeVarint(uint64(s))
 		n += s
+	case *AdminRequest_CleanTableReq:
+		s := proto.Size(x.CleanTableReq)
+		n += 1 // tag and wire
+		n += proto.SizeVarint(uint64(s))
+		n += s
 	case nil:
 	default:
 		panic(fmt.Sprintf("proto: unexpected type %T in oneof", x))
@@ -353,6 +384,7 @@ type AdminResponse struct {
 	//	*AdminResponse_AddCfResp
 	//	*AdminResponse_ListCfsResp
 	//	*AdminResponse_DeleteCfResp
+	//	*AdminResponse_CleanTableResp
 	Resp                 isAdminResponse_Resp `protobuf_oneof:"resp"`
 	XXX_NoUnkeyedLiteral struct{}             `json:"-"`
 	XXX_unrecognized     []byte               `json:"-"`
@@ -363,7 +395,7 @@ func (m *AdminResponse) Reset()         { *m = AdminResponse{} }
 func (m *AdminResponse) String() string { return proto.CompactTextString(m) }
 func (*AdminResponse) ProtoMessage()    {}
 func (*AdminResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_tiap_hbaselike_adminrpcpb_e7d765ee66254522, []int{1}
+	return fileDescriptor_tiap_hbaselike_adminrpcpb_1708dbbed3590e5f, []int{1}
 }
 func (m *AdminResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -419,6 +451,9 @@ type AdminResponse_ListCfsResp struct {
 type AdminResponse_DeleteCfResp struct {
 	DeleteCfResp *DeleteColumnFamilyResponse `protobuf:"bytes,8,opt,name=delete_cf_resp,json=deleteCfResp,oneof"`
 }
+type AdminResponse_CleanTableResp struct {
+	CleanTableResp *CleanTableResponse `protobuf:"bytes,9,opt,name=clean_table_resp,json=cleanTableResp,oneof"`
+}
 
 func (*AdminResponse_CreateTableResp) isAdminResponse_Resp() {}
 func (*AdminResponse_GetTableResp) isAdminResponse_Resp()    {}
@@ -427,6 +462,7 @@ func (*AdminResponse_DropTableResp) isAdminResponse_Resp()   {}
 func (*AdminResponse_AddCfResp) isAdminResponse_Resp()       {}
 func (*AdminResponse_ListCfsResp) isAdminResponse_Resp()     {}
 func (*AdminResponse_DeleteCfResp) isAdminResponse_Resp()    {}
+func (*AdminResponse_CleanTableResp) isAdminResponse_Resp()  {}
 
 func (m *AdminResponse) GetResp() isAdminResponse_Resp {
 	if m != nil {
@@ -491,6 +527,13 @@ func (m *AdminResponse) GetDeleteCfResp() *DeleteColumnFamilyResponse {
 	return nil
 }
 
+func (m *AdminResponse) GetCleanTableResp() *CleanTableResponse {
+	if x, ok := m.GetResp().(*AdminResponse_CleanTableResp); ok {
+		return x.CleanTableResp
+	}
+	return nil
+}
+
 // XXX_OneofFuncs is for the internal use of the proto package.
 func (*AdminResponse) XXX_OneofFuncs() (func(msg proto.Message, b *proto.Buffer) error, func(msg proto.Message, tag, wire int, b *proto.Buffer) (bool, error), func(msg proto.Message) (n int), []interface{}) {
 	return _AdminResponse_OneofMarshaler, _AdminResponse_OneofUnmarshaler, _AdminResponse_OneofSizer, []interface{}{
@@ -501,6 +544,7 @@ func (*AdminResponse) XXX_OneofFuncs() (func(msg proto.Message, b *proto.Buffer)
 		(*AdminResponse_AddCfResp)(nil),
 		(*AdminResponse_ListCfsResp)(nil),
 		(*AdminResponse_DeleteCfResp)(nil),
+		(*AdminResponse_CleanTableResp)(nil),
 	}
 }
 
@@ -541,6 +585,11 @@ func _AdminResponse_OneofMarshaler(msg proto.Message, b *proto.Buffer) error {
 	case *AdminResponse_DeleteCfResp:
 		_ = b.EncodeVarint(8<<3 | proto.WireBytes)
 		if err := b.EncodeMessage(x.DeleteCfResp); err != nil {
+			return err
+		}
+	case *AdminResponse_CleanTableResp:
+		_ = b.EncodeVarint(9<<3 | proto.WireBytes)
+		if err := b.EncodeMessage(x.CleanTableResp); err != nil {
 			return err
 		}
 	case nil:
@@ -609,6 +658,14 @@ func _AdminResponse_OneofUnmarshaler(msg proto.Message, tag, wire int, b *proto.
 		err := b.DecodeMessage(msg)
 		m.Resp = &AdminResponse_DeleteCfResp{msg}
 		return true, err
+	case 9: // resp.clean_table_resp
+		if wire != proto.WireBytes {
+			return true, proto.ErrInternalBadWireType
+		}
+		msg := new(CleanTableResponse)
+		err := b.DecodeMessage(msg)
+		m.Resp = &AdminResponse_CleanTableResp{msg}
+		return true, err
 	default:
 		return false, nil
 	}
@@ -653,6 +710,11 @@ func _AdminResponse_OneofSizer(msg proto.Message) (n int) {
 		n += 1 // tag and wire
 		n += proto.SizeVarint(uint64(s))
 		n += s
+	case *AdminResponse_CleanTableResp:
+		s := proto.Size(x.CleanTableResp)
+		n += 1 // tag and wire
+		n += proto.SizeVarint(uint64(s))
+		n += s
 	case nil:
 	default:
 		panic(fmt.Sprintf("proto: unexpected type %T in oneof", x))
@@ -667,6 +729,8 @@ type CreateTableRequest struct {
 	Families             []*tiap_adminrpcpb.ColumnFamily `protobuf:"bytes,4,rep,name=families" json:"families,omitempty"`
 	Salted               bool                            `protobuf:"varint,5,opt,name=salted,proto3" json:"salted,omitempty"`
 	MultiVersion         bool                            `protobuf:"varint,6,opt,name=multi_version,json=multiVersion,proto3" json:"multi_version,omitempty"`
+	PreSplitRangeKeys    [][]byte                        `protobuf:"bytes,7,rep,name=pre_split_range_keys,json=preSplitRangeKeys" json:"pre_split_range_keys,omitempty"`
+	PreSplitHashSlotStep uint64                          `protobuf:"varint,8,opt,name=pre_split_hash_slot_step,json=preSplitHashSlotStep,proto3" json:"pre_split_hash_slot_step,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}                        `json:"-"`
 	XXX_unrecognized     []byte                          `json:"-"`
 	XXX_sizecache        int32                           `json:"-"`
@@ -676,7 +740,7 @@ func (m *CreateTableRequest) Reset()         { *m = CreateTableRequest{} }
 func (m *CreateTableRequest) String() string { return proto.CompactTextString(m) }
 func (*CreateTableRequest) ProtoMessage()    {}
 func (*CreateTableRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_tiap_hbaselike_adminrpcpb_e7d765ee66254522, []int{2}
+	return fileDescriptor_tiap_hbaselike_adminrpcpb_1708dbbed3590e5f, []int{2}
 }
 func (m *CreateTableRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -747,6 +811,20 @@ func (m *CreateTableRequest) GetMultiVersion() bool {
 	return false
 }
 
+func (m *CreateTableRequest) GetPreSplitRangeKeys() [][]byte {
+	if m != nil {
+		return m.PreSplitRangeKeys
+	}
+	return nil
+}
+
+func (m *CreateTableRequest) GetPreSplitHashSlotStep() uint64 {
+	if m != nil {
+		return m.PreSplitHashSlotStep
+	}
+	return 0
+}
+
 type CreateTableResponse struct {
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
@@ -757,7 +835,7 @@ func (m *CreateTableResponse) Reset()         { *m = CreateTableResponse{} }
 func (m *CreateTableResponse) String() string { return proto.CompactTextString(m) }
 func (*CreateTableResponse) ProtoMessage()    {}
 func (*CreateTableResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_tiap_hbaselike_adminrpcpb_e7d765ee66254522, []int{3}
+	return fileDescriptor_tiap_hbaselike_adminrpcpb_1708dbbed3590e5f, []int{3}
 }
 func (m *CreateTableResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -798,7 +876,7 @@ func (m *GetTableRequest) Reset()         { *m = GetTableRequest{} }
 func (m *GetTableRequest) String() string { return proto.CompactTextString(m) }
 func (*GetTableRequest) ProtoMessage()    {}
 func (*GetTableRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_tiap_hbaselike_adminrpcpb_e7d765ee66254522, []int{4}
+	return fileDescriptor_tiap_hbaselike_adminrpcpb_1708dbbed3590e5f, []int{4}
 }
 func (m *GetTableRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -852,7 +930,7 @@ func (m *GetTableResponse) Reset()         { *m = GetTableResponse{} }
 func (m *GetTableResponse) String() string { return proto.CompactTextString(m) }
 func (*GetTableResponse) ProtoMessage()    {}
 func (*GetTableResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_tiap_hbaselike_adminrpcpb_e7d765ee66254522, []int{5}
+	return fileDescriptor_tiap_hbaselike_adminrpcpb_1708dbbed3590e5f, []int{5}
 }
 func (m *GetTableResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -899,7 +977,7 @@ func (m *ListTablesRequest) Reset()         { *m = ListTablesRequest{} }
 func (m *ListTablesRequest) String() string { return proto.CompactTextString(m) }
 func (*ListTablesRequest) ProtoMessage()    {}
 func (*ListTablesRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_tiap_hbaselike_adminrpcpb_e7d765ee66254522, []int{6}
+	return fileDescriptor_tiap_hbaselike_adminrpcpb_1708dbbed3590e5f, []int{6}
 }
 func (m *ListTablesRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -946,7 +1024,7 @@ func (m *ListTablesResponse) Reset()         { *m = ListTablesResponse{} }
 func (m *ListTablesResponse) String() string { return proto.CompactTextString(m) }
 func (*ListTablesResponse) ProtoMessage()    {}
 func (*ListTablesResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_tiap_hbaselike_adminrpcpb_e7d765ee66254522, []int{7}
+	return fileDescriptor_tiap_hbaselike_adminrpcpb_1708dbbed3590e5f, []int{7}
 }
 func (m *ListTablesResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -994,7 +1072,7 @@ func (m *DropTableRequest) Reset()         { *m = DropTableRequest{} }
 func (m *DropTableRequest) String() string { return proto.CompactTextString(m) }
 func (*DropTableRequest) ProtoMessage()    {}
 func (*DropTableRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_tiap_hbaselike_adminrpcpb_e7d765ee66254522, []int{8}
+	return fileDescriptor_tiap_hbaselike_adminrpcpb_1708dbbed3590e5f, []int{8}
 }
 func (m *DropTableRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1047,7 +1125,7 @@ func (m *DropTableResponse) Reset()         { *m = DropTableResponse{} }
 func (m *DropTableResponse) String() string { return proto.CompactTextString(m) }
 func (*DropTableResponse) ProtoMessage()    {}
 func (*DropTableResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_tiap_hbaselike_adminrpcpb_e7d765ee66254522, []int{9}
+	return fileDescriptor_tiap_hbaselike_adminrpcpb_1708dbbed3590e5f, []int{9}
 }
 func (m *DropTableResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1089,7 +1167,7 @@ func (m *AddColumnFamilyRequest) Reset()         { *m = AddColumnFamilyRequest{}
 func (m *AddColumnFamilyRequest) String() string { return proto.CompactTextString(m) }
 func (*AddColumnFamilyRequest) ProtoMessage()    {}
 func (*AddColumnFamilyRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_tiap_hbaselike_adminrpcpb_e7d765ee66254522, []int{10}
+	return fileDescriptor_tiap_hbaselike_adminrpcpb_1708dbbed3590e5f, []int{10}
 }
 func (m *AddColumnFamilyRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1149,7 +1227,7 @@ func (m *AddColumnFamilyResponse) Reset()         { *m = AddColumnFamilyResponse
 func (m *AddColumnFamilyResponse) String() string { return proto.CompactTextString(m) }
 func (*AddColumnFamilyResponse) ProtoMessage()    {}
 func (*AddColumnFamilyResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_tiap_hbaselike_adminrpcpb_e7d765ee66254522, []int{11}
+	return fileDescriptor_tiap_hbaselike_adminrpcpb_1708dbbed3590e5f, []int{11}
 }
 func (m *AddColumnFamilyResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1190,7 +1268,7 @@ func (m *ListColumnFamiliesRequest) Reset()         { *m = ListColumnFamiliesReq
 func (m *ListColumnFamiliesRequest) String() string { return proto.CompactTextString(m) }
 func (*ListColumnFamiliesRequest) ProtoMessage()    {}
 func (*ListColumnFamiliesRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_tiap_hbaselike_adminrpcpb_e7d765ee66254522, []int{12}
+	return fileDescriptor_tiap_hbaselike_adminrpcpb_1708dbbed3590e5f, []int{12}
 }
 func (m *ListColumnFamiliesRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1244,7 +1322,7 @@ func (m *ListColumnFamiliesResponse) Reset()         { *m = ListColumnFamiliesRe
 func (m *ListColumnFamiliesResponse) String() string { return proto.CompactTextString(m) }
 func (*ListColumnFamiliesResponse) ProtoMessage()    {}
 func (*ListColumnFamiliesResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_tiap_hbaselike_adminrpcpb_e7d765ee66254522, []int{13}
+	return fileDescriptor_tiap_hbaselike_adminrpcpb_1708dbbed3590e5f, []int{13}
 }
 func (m *ListColumnFamiliesResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1293,7 +1371,7 @@ func (m *DeleteColumnFamilyRequest) Reset()         { *m = DeleteColumnFamilyReq
 func (m *DeleteColumnFamilyRequest) String() string { return proto.CompactTextString(m) }
 func (*DeleteColumnFamilyRequest) ProtoMessage()    {}
 func (*DeleteColumnFamilyRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_tiap_hbaselike_adminrpcpb_e7d765ee66254522, []int{14}
+	return fileDescriptor_tiap_hbaselike_adminrpcpb_1708dbbed3590e5f, []int{14}
 }
 func (m *DeleteColumnFamilyRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1353,7 +1431,7 @@ func (m *DeleteColumnFamilyResponse) Reset()         { *m = DeleteColumnFamilyRe
 func (m *DeleteColumnFamilyResponse) String() string { return proto.CompactTextString(m) }
 func (*DeleteColumnFamilyResponse) ProtoMessage()    {}
 func (*DeleteColumnFamilyResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_tiap_hbaselike_adminrpcpb_e7d765ee66254522, []int{15}
+	return fileDescriptor_tiap_hbaselike_adminrpcpb_1708dbbed3590e5f, []int{15}
 }
 func (m *DeleteColumnFamilyResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1382,6 +1460,92 @@ func (m *DeleteColumnFamilyResponse) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_DeleteColumnFamilyResponse proto.InternalMessageInfo
 
+type CleanTableRequest struct {
+	Name                 string   `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *CleanTableRequest) Reset()         { *m = CleanTableRequest{} }
+func (m *CleanTableRequest) String() string { return proto.CompactTextString(m) }
+func (*CleanTableRequest) ProtoMessage()    {}
+func (*CleanTableRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_tiap_hbaselike_adminrpcpb_1708dbbed3590e5f, []int{16}
+}
+func (m *CleanTableRequest) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *CleanTableRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_CleanTableRequest.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *CleanTableRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CleanTableRequest.Merge(dst, src)
+}
+func (m *CleanTableRequest) XXX_Size() int {
+	return m.Size()
+}
+func (m *CleanTableRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_CleanTableRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CleanTableRequest proto.InternalMessageInfo
+
+func (m *CleanTableRequest) GetName() string {
+	if m != nil {
+		return m.Name
+	}
+	return ""
+}
+
+type CleanTableResponse struct {
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *CleanTableResponse) Reset()         { *m = CleanTableResponse{} }
+func (m *CleanTableResponse) String() string { return proto.CompactTextString(m) }
+func (*CleanTableResponse) ProtoMessage()    {}
+func (*CleanTableResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_tiap_hbaselike_adminrpcpb_1708dbbed3590e5f, []int{17}
+}
+func (m *CleanTableResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *CleanTableResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_CleanTableResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (dst *CleanTableResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CleanTableResponse.Merge(dst, src)
+}
+func (m *CleanTableResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *CleanTableResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_CleanTableResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CleanTableResponse proto.InternalMessageInfo
+
 func init() {
 	proto.RegisterType((*AdminRequest)(nil), "tiap_hbaselike_adminrpcpb.AdminRequest")
 	proto.RegisterType((*AdminResponse)(nil), "tiap_hbaselike_adminrpcpb.AdminResponse")
@@ -1399,6 +1563,8 @@ func init() {
 	proto.RegisterType((*ListColumnFamiliesResponse)(nil), "tiap_hbaselike_adminrpcpb.ListColumnFamiliesResponse")
 	proto.RegisterType((*DeleteColumnFamilyRequest)(nil), "tiap_hbaselike_adminrpcpb.DeleteColumnFamilyRequest")
 	proto.RegisterType((*DeleteColumnFamilyResponse)(nil), "tiap_hbaselike_adminrpcpb.DeleteColumnFamilyResponse")
+	proto.RegisterType((*CleanTableRequest)(nil), "tiap_hbaselike_adminrpcpb.CleanTableRequest")
+	proto.RegisterType((*CleanTableResponse)(nil), "tiap_hbaselike_adminrpcpb.CleanTableResponse")
 }
 func (m *AdminRequest) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
@@ -1536,6 +1702,20 @@ func (m *AdminRequest_DeleteCfReq) MarshalTo(dAtA []byte) (int, error) {
 	}
 	return i, nil
 }
+func (m *AdminRequest_CleanTableReq) MarshalTo(dAtA []byte) (int, error) {
+	i := 0
+	if m.CleanTableReq != nil {
+		dAtA[i] = 0x4a
+		i++
+		i = encodeVarintTiapHbaselikeAdminrpcpb(dAtA, i, uint64(m.CleanTableReq.Size()))
+		n10, err := m.CleanTableReq.MarshalTo(dAtA[i:])
+		if err != nil {
+			return 0, err
+		}
+		i += n10
+	}
+	return i, nil
+}
 func (m *AdminResponse) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
@@ -1555,18 +1735,18 @@ func (m *AdminResponse) MarshalTo(dAtA []byte) (int, error) {
 		dAtA[i] = 0xa
 		i++
 		i = encodeVarintTiapHbaselikeAdminrpcpb(dAtA, i, uint64(m.Header.Size()))
-		n10, err := m.Header.MarshalTo(dAtA[i:])
+		n11, err := m.Header.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
-		i += n10
+		i += n11
 	}
 	if m.Resp != nil {
-		nn11, err := m.Resp.MarshalTo(dAtA[i:])
+		nn12, err := m.Resp.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
-		i += nn11
+		i += nn12
 	}
 	if m.XXX_unrecognized != nil {
 		i += copy(dAtA[i:], m.XXX_unrecognized)
@@ -1580,11 +1760,11 @@ func (m *AdminResponse_CreateTableResp) MarshalTo(dAtA []byte) (int, error) {
 		dAtA[i] = 0x12
 		i++
 		i = encodeVarintTiapHbaselikeAdminrpcpb(dAtA, i, uint64(m.CreateTableResp.Size()))
-		n12, err := m.CreateTableResp.MarshalTo(dAtA[i:])
+		n13, err := m.CreateTableResp.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
-		i += n12
+		i += n13
 	}
 	return i, nil
 }
@@ -1594,11 +1774,11 @@ func (m *AdminResponse_GetTableResp) MarshalTo(dAtA []byte) (int, error) {
 		dAtA[i] = 0x1a
 		i++
 		i = encodeVarintTiapHbaselikeAdminrpcpb(dAtA, i, uint64(m.GetTableResp.Size()))
-		n13, err := m.GetTableResp.MarshalTo(dAtA[i:])
+		n14, err := m.GetTableResp.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
-		i += n13
+		i += n14
 	}
 	return i, nil
 }
@@ -1608,11 +1788,11 @@ func (m *AdminResponse_ListTablesResp) MarshalTo(dAtA []byte) (int, error) {
 		dAtA[i] = 0x22
 		i++
 		i = encodeVarintTiapHbaselikeAdminrpcpb(dAtA, i, uint64(m.ListTablesResp.Size()))
-		n14, err := m.ListTablesResp.MarshalTo(dAtA[i:])
+		n15, err := m.ListTablesResp.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
-		i += n14
+		i += n15
 	}
 	return i, nil
 }
@@ -1622,11 +1802,11 @@ func (m *AdminResponse_DropTableResp) MarshalTo(dAtA []byte) (int, error) {
 		dAtA[i] = 0x2a
 		i++
 		i = encodeVarintTiapHbaselikeAdminrpcpb(dAtA, i, uint64(m.DropTableResp.Size()))
-		n15, err := m.DropTableResp.MarshalTo(dAtA[i:])
+		n16, err := m.DropTableResp.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
-		i += n15
+		i += n16
 	}
 	return i, nil
 }
@@ -1636,11 +1816,11 @@ func (m *AdminResponse_AddCfResp) MarshalTo(dAtA []byte) (int, error) {
 		dAtA[i] = 0x32
 		i++
 		i = encodeVarintTiapHbaselikeAdminrpcpb(dAtA, i, uint64(m.AddCfResp.Size()))
-		n16, err := m.AddCfResp.MarshalTo(dAtA[i:])
+		n17, err := m.AddCfResp.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
-		i += n16
+		i += n17
 	}
 	return i, nil
 }
@@ -1650,11 +1830,11 @@ func (m *AdminResponse_ListCfsResp) MarshalTo(dAtA []byte) (int, error) {
 		dAtA[i] = 0x3a
 		i++
 		i = encodeVarintTiapHbaselikeAdminrpcpb(dAtA, i, uint64(m.ListCfsResp.Size()))
-		n17, err := m.ListCfsResp.MarshalTo(dAtA[i:])
+		n18, err := m.ListCfsResp.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
-		i += n17
+		i += n18
 	}
 	return i, nil
 }
@@ -1664,11 +1844,25 @@ func (m *AdminResponse_DeleteCfResp) MarshalTo(dAtA []byte) (int, error) {
 		dAtA[i] = 0x42
 		i++
 		i = encodeVarintTiapHbaselikeAdminrpcpb(dAtA, i, uint64(m.DeleteCfResp.Size()))
-		n18, err := m.DeleteCfResp.MarshalTo(dAtA[i:])
+		n19, err := m.DeleteCfResp.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
-		i += n18
+		i += n19
+	}
+	return i, nil
+}
+func (m *AdminResponse_CleanTableResp) MarshalTo(dAtA []byte) (int, error) {
+	i := 0
+	if m.CleanTableResp != nil {
+		dAtA[i] = 0x4a
+		i++
+		i = encodeVarintTiapHbaselikeAdminrpcpb(dAtA, i, uint64(m.CleanTableResp.Size()))
+		n20, err := m.CleanTableResp.MarshalTo(dAtA[i:])
+		if err != nil {
+			return 0, err
+		}
+		i += n20
 	}
 	return i, nil
 }
@@ -1703,11 +1897,11 @@ func (m *CreateTableRequest) MarshalTo(dAtA []byte) (int, error) {
 		dAtA[i] = 0x1a
 		i++
 		i = encodeVarintTiapHbaselikeAdminrpcpb(dAtA, i, uint64(m.Quota.Size()))
-		n19, err := m.Quota.MarshalTo(dAtA[i:])
+		n21, err := m.Quota.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
-		i += n19
+		i += n21
 	}
 	if len(m.Families) > 0 {
 		for _, msg := range m.Families {
@@ -1740,6 +1934,19 @@ func (m *CreateTableRequest) MarshalTo(dAtA []byte) (int, error) {
 			dAtA[i] = 0
 		}
 		i++
+	}
+	if len(m.PreSplitRangeKeys) > 0 {
+		for _, b := range m.PreSplitRangeKeys {
+			dAtA[i] = 0x3a
+			i++
+			i = encodeVarintTiapHbaselikeAdminrpcpb(dAtA, i, uint64(len(b)))
+			i += copy(dAtA[i:], b)
+		}
+	}
+	if m.PreSplitHashSlotStep != 0 {
+		dAtA[i] = 0x40
+		i++
+		i = encodeVarintTiapHbaselikeAdminrpcpb(dAtA, i, uint64(m.PreSplitHashSlotStep))
 	}
 	if m.XXX_unrecognized != nil {
 		i += copy(dAtA[i:], m.XXX_unrecognized)
@@ -1820,11 +2027,11 @@ func (m *GetTableResponse) MarshalTo(dAtA []byte) (int, error) {
 		dAtA[i] = 0xa
 		i++
 		i = encodeVarintTiapHbaselikeAdminrpcpb(dAtA, i, uint64(m.Info.Size()))
-		n20, err := m.Info.MarshalTo(dAtA[i:])
+		n22, err := m.Info.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
-		i += n20
+		i += n22
 	}
 	if m.XXX_unrecognized != nil {
 		i += copy(dAtA[i:], m.XXX_unrecognized)
@@ -2135,6 +2342,54 @@ func (m *DeleteColumnFamilyResponse) MarshalTo(dAtA []byte) (int, error) {
 	return i, nil
 }
 
+func (m *CleanTableRequest) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalTo(dAtA)
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *CleanTableRequest) MarshalTo(dAtA []byte) (int, error) {
+	var i int
+	_ = i
+	var l int
+	_ = l
+	if len(m.Name) > 0 {
+		dAtA[i] = 0xa
+		i++
+		i = encodeVarintTiapHbaselikeAdminrpcpb(dAtA, i, uint64(len(m.Name)))
+		i += copy(dAtA[i:], m.Name)
+	}
+	if m.XXX_unrecognized != nil {
+		i += copy(dAtA[i:], m.XXX_unrecognized)
+	}
+	return i, nil
+}
+
+func (m *CleanTableResponse) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalTo(dAtA)
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *CleanTableResponse) MarshalTo(dAtA []byte) (int, error) {
+	var i int
+	_ = i
+	var l int
+	_ = l
+	if m.XXX_unrecognized != nil {
+		i += copy(dAtA[i:], m.XXX_unrecognized)
+	}
+	return i, nil
+}
+
 func encodeVarintTiapHbaselikeAdminrpcpb(dAtA []byte, offset int, v uint64) int {
 	for v >= 1<<7 {
 		dAtA[offset] = uint8(v&0x7f | 0x80)
@@ -2223,6 +2478,15 @@ func (m *AdminRequest_DeleteCfReq) Size() (n int) {
 	}
 	return n
 }
+func (m *AdminRequest_CleanTableReq) Size() (n int) {
+	var l int
+	_ = l
+	if m.CleanTableReq != nil {
+		l = m.CleanTableReq.Size()
+		n += 1 + l + sovTiapHbaselikeAdminrpcpb(uint64(l))
+	}
+	return n
+}
 func (m *AdminResponse) Size() (n int) {
 	var l int
 	_ = l
@@ -2302,6 +2566,15 @@ func (m *AdminResponse_DeleteCfResp) Size() (n int) {
 	}
 	return n
 }
+func (m *AdminResponse_CleanTableResp) Size() (n int) {
+	var l int
+	_ = l
+	if m.CleanTableResp != nil {
+		l = m.CleanTableResp.Size()
+		n += 1 + l + sovTiapHbaselikeAdminrpcpb(uint64(l))
+	}
+	return n
+}
 func (m *CreateTableRequest) Size() (n int) {
 	var l int
 	_ = l
@@ -2328,6 +2601,15 @@ func (m *CreateTableRequest) Size() (n int) {
 	}
 	if m.MultiVersion {
 		n += 2
+	}
+	if len(m.PreSplitRangeKeys) > 0 {
+		for _, b := range m.PreSplitRangeKeys {
+			l = len(b)
+			n += 1 + l + sovTiapHbaselikeAdminrpcpb(uint64(l))
+		}
+	}
+	if m.PreSplitHashSlotStep != 0 {
+		n += 1 + sovTiapHbaselikeAdminrpcpb(uint64(m.PreSplitHashSlotStep))
 	}
 	if m.XXX_unrecognized != nil {
 		n += len(m.XXX_unrecognized)
@@ -2512,6 +2794,28 @@ func (m *DeleteColumnFamilyRequest) Size() (n int) {
 }
 
 func (m *DeleteColumnFamilyResponse) Size() (n int) {
+	var l int
+	_ = l
+	if m.XXX_unrecognized != nil {
+		n += len(m.XXX_unrecognized)
+	}
+	return n
+}
+
+func (m *CleanTableRequest) Size() (n int) {
+	var l int
+	_ = l
+	l = len(m.Name)
+	if l > 0 {
+		n += 1 + l + sovTiapHbaselikeAdminrpcpb(uint64(l))
+	}
+	if m.XXX_unrecognized != nil {
+		n += len(m.XXX_unrecognized)
+	}
+	return n
+}
+
+func (m *CleanTableResponse) Size() (n int) {
 	var l int
 	_ = l
 	if m.XXX_unrecognized != nil {
@@ -2818,6 +3122,38 @@ func (m *AdminRequest) Unmarshal(dAtA []byte) error {
 				return err
 			}
 			m.Req = &AdminRequest_DeleteCfReq{v}
+			iNdEx = postIndex
+		case 9:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field CleanTableReq", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTiapHbaselikeAdminrpcpb
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= (int(b) & 0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthTiapHbaselikeAdminrpcpb
+			}
+			postIndex := iNdEx + msglen
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			v := &CleanTableRequest{}
+			if err := v.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			m.Req = &AdminRequest_CleanTableReq{v}
 			iNdEx = postIndex
 		default:
 			iNdEx = preIndex
@@ -3127,6 +3463,38 @@ func (m *AdminResponse) Unmarshal(dAtA []byte) error {
 			}
 			m.Resp = &AdminResponse_DeleteCfResp{v}
 			iNdEx = postIndex
+		case 9:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field CleanTableResp", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTiapHbaselikeAdminrpcpb
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= (int(b) & 0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthTiapHbaselikeAdminrpcpb
+			}
+			postIndex := iNdEx + msglen
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			v := &CleanTableResponse{}
+			if err := v.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			m.Resp = &AdminResponse_CleanTableResp{v}
+			iNdEx = postIndex
 		default:
 			iNdEx = preIndex
 			skippy, err := skipTiapHbaselikeAdminrpcpb(dAtA[iNdEx:])
@@ -3340,6 +3708,54 @@ func (m *CreateTableRequest) Unmarshal(dAtA []byte) error {
 				}
 			}
 			m.MultiVersion = bool(v != 0)
+		case 7:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field PreSplitRangeKeys", wireType)
+			}
+			var byteLen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTiapHbaselikeAdminrpcpb
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				byteLen |= (int(b) & 0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if byteLen < 0 {
+				return ErrInvalidLengthTiapHbaselikeAdminrpcpb
+			}
+			postIndex := iNdEx + byteLen
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.PreSplitRangeKeys = append(m.PreSplitRangeKeys, make([]byte, postIndex-iNdEx))
+			copy(m.PreSplitRangeKeys[len(m.PreSplitRangeKeys)-1], dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 8:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field PreSplitHashSlotStep", wireType)
+			}
+			m.PreSplitHashSlotStep = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTiapHbaselikeAdminrpcpb
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.PreSplitHashSlotStep |= (uint64(b) & 0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
 		default:
 			iNdEx = preIndex
 			skippy, err := skipTiapHbaselikeAdminrpcpb(dAtA[iNdEx:])
@@ -4495,6 +4911,137 @@ func (m *DeleteColumnFamilyResponse) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
+func (m *CleanTableRequest) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowTiapHbaselikeAdminrpcpb
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= (uint64(b) & 0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: CleanTableRequest: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: CleanTableRequest: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Name", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTiapHbaselikeAdminrpcpb
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= (uint64(b) & 0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTiapHbaselikeAdminrpcpb
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Name = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipTiapHbaselikeAdminrpcpb(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if skippy < 0 {
+				return ErrInvalidLengthTiapHbaselikeAdminrpcpb
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.XXX_unrecognized = append(m.XXX_unrecognized, dAtA[iNdEx:iNdEx+skippy]...)
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *CleanTableResponse) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowTiapHbaselikeAdminrpcpb
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= (uint64(b) & 0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: CleanTableResponse: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: CleanTableResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		default:
+			iNdEx = preIndex
+			skippy, err := skipTiapHbaselikeAdminrpcpb(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if skippy < 0 {
+				return ErrInvalidLengthTiapHbaselikeAdminrpcpb
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.XXX_unrecognized = append(m.XXX_unrecognized, dAtA[iNdEx:iNdEx+skippy]...)
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
 func skipTiapHbaselikeAdminrpcpb(dAtA []byte) (n int, err error) {
 	l := len(dAtA)
 	iNdEx := 0
@@ -4601,61 +5148,68 @@ var (
 )
 
 func init() {
-	proto.RegisterFile("tiap_hbaselike_adminrpcpb.proto", fileDescriptor_tiap_hbaselike_adminrpcpb_e7d765ee66254522)
+	proto.RegisterFile("tiap_hbaselike_adminrpcpb.proto", fileDescriptor_tiap_hbaselike_adminrpcpb_1708dbbed3590e5f)
 }
 
-var fileDescriptor_tiap_hbaselike_adminrpcpb_e7d765ee66254522 = []byte{
-	// 821 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xac, 0x96, 0xdd, 0x4e, 0xdb, 0x48,
-	0x14, 0xc7, 0x09, 0x24, 0x21, 0x39, 0xf9, 0x00, 0x86, 0x05, 0x92, 0xb0, 0x64, 0x91, 0xd9, 0x0b,
-	0xb4, 0x80, 0x77, 0x61, 0x17, 0x69, 0x57, 0xbb, 0xda, 0x15, 0x09, 0x62, 0x5b, 0xa9, 0xaa, 0x8a,
-	0x41, 0xa8, 0x9f, 0x8a, 0x9c, 0xcc, 0x24, 0xb1, 0x70, 0xe2, 0x89, 0xc7, 0x41, 0xe2, 0x4d, 0xfa,
-	0x22, 0x7d, 0x87, 0xde, 0x54, 0xea, 0x23, 0x54, 0xf4, 0xb6, 0x0f, 0x51, 0xf9, 0x78, 0x70, 0x1c,
-	0x27, 0x0e, 0x49, 0xd5, 0x2b, 0x92, 0x3f, 0x67, 0x7e, 0x9e, 0x19, 0xff, 0xce, 0x4c, 0xe0, 0x27,
-	0xc7, 0xd0, 0x79, 0xad, 0x5d, 0xd7, 0x05, 0x33, 0x8d, 0x6b, 0x56, 0xd3, 0x69, 0xc7, 0xe8, 0xda,
-	0xbc, 0xc1, 0xeb, 0x2a, 0xb7, 0x2d, 0xc7, 0x22, 0xc5, 0xc8, 0x82, 0xd2, 0x0f, 0x2d, 0xab, 0x65,
-	0x61, 0xd5, 0xaf, 0xee, 0x27, 0x6f, 0x40, 0x69, 0x0d, 0x07, 0x84, 0x39, 0xca, 0xbb, 0x04, 0x64,
-	0x4f, 0xdc, 0x50, 0x63, 0xbd, 0x3e, 0x13, 0x0e, 0xf9, 0x1b, 0x92, 0x6d, 0xa6, 0x53, 0x66, 0x17,
-	0x62, 0xdb, 0xb1, 0xdd, 0xcc, 0xd1, 0x8e, 0x1a, 0x1e, 0x18, 0x2c, 0x7f, 0x84, 0xa5, 0x9a, 0x1c,
-	0x42, 0x5e, 0xc0, 0x72, 0xc3, 0x66, 0xba, 0xc3, 0x6a, 0x8e, 0x5e, 0x37, 0x59, 0xcd, 0x66, 0xbd,
-	0xc2, 0x3c, 0x62, 0x0e, 0xd4, 0xe8, 0x15, 0x55, 0x71, 0xc8, 0xa5, 0x3b, 0xe2, 0x1e, 0x3b, 0xa7,
-	0xe5, 0x1b, 0x43, 0x29, 0x79, 0x06, 0xb9, 0x16, 0x73, 0x02, 0xdc, 0x05, 0xe4, 0xfe, 0x32, 0x81,
-	0xfb, 0x3f, 0x73, 0x42, 0xd0, 0x4c, 0x6b, 0x10, 0x91, 0x2b, 0x58, 0x32, 0x0d, 0x21, 0x91, 0x02,
-	0x99, 0x71, 0x64, 0xee, 0x4f, 0x60, 0x3e, 0x31, 0x84, 0x47, 0x10, 0x03, 0x6a, 0xce, 0x0c, 0x86,
-	0xe4, 0x02, 0xf2, 0xd4, 0xb6, 0x78, 0x60, 0xaa, 0x09, 0xc4, 0xee, 0x4d, 0xc0, 0x9e, 0xda, 0x16,
-	0x0f, 0xcd, 0x35, 0x4b, 0x03, 0x19, 0x39, 0x07, 0xd0, 0x29, 0xad, 0x35, 0x9a, 0x08, 0x4c, 0x22,
-	0xf0, 0x70, 0x02, 0xf0, 0x84, 0xd2, 0xaa, 0x65, 0xf6, 0x3b, 0xdd, 0x33, 0xbd, 0x63, 0x98, 0xb7,
-	0x03, 0x6c, 0x4a, 0xa7, 0xb4, 0xda, 0x74, 0x91, 0xcf, 0x21, 0x8b, 0xeb, 0x6f, 0x34, 0xbd, 0xc5,
-	0x2f, 0x22, 0xf4, 0x8f, 0x07, 0x16, 0x1f, 0xa0, 0x1a, 0xc1, 0x4d, 0x00, 0x97, 0x55, 0x6d, 0xe2,
-	0x0e, 0xbc, 0x84, 0x1c, 0x65, 0x26, 0x73, 0xd8, 0xfd, 0x7c, 0x53, 0x0f, 0xa2, 0x4f, 0xb1, 0x7e,
-	0xfc, 0x94, 0x33, 0x1e, 0x0c, 0x67, 0x5d, 0x49, 0xc0, 0x82, 0xcd, 0x7a, 0xca, 0x87, 0x04, 0xe4,
-	0xa4, 0x88, 0x82, 0x5b, 0x5d, 0xc1, 0xc8, 0x3f, 0x21, 0x71, 0x7f, 0x8e, 0x12, 0xd7, 0xab, 0x0f,
-	0x99, 0xfb, 0x1a, 0x56, 0x42, 0xe6, 0x0a, 0x2e, 0xd5, 0x55, 0xa7, 0x55, 0x57, 0x82, 0xe7, 0xb4,
-	0xa5, 0xc6, 0x70, 0xec, 0x2a, 0x11, 0x94, 0x57, 0x70, 0x69, 0xef, 0xde, 0x54, 0xf6, 0xfa, 0xdc,
-	0x6c, 0x2b, 0x90, 0xb9, 0xcd, 0x36, 0xec, 0xaf, 0xe0, 0x52, 0xe0, 0x83, 0x29, 0x05, 0xf6, 0xc1,
-	0x79, 0x73, 0x28, 0x75, 0x5b, 0x63, 0x48, 0x61, 0xc1, 0xa5, 0xc3, 0xfb, 0xd3, 0x39, 0xec, 0x83,
-	0x73, 0x34, 0x18, 0x92, 0x4b, 0xc8, 0xf8, 0x16, 0x0b, 0x2e, 0x35, 0x3e, 0x9a, 0x45, 0x63, 0x9f,
-	0x9c, 0x96, 0x1e, 0x0b, 0x4e, 0x5e, 0x41, 0x2e, 0x20, 0xb2, 0xe0, 0xd2, 0xe4, 0xe3, 0x19, 0x4d,
-	0xf6, 0xd1, 0x19, 0x5f, 0x65, 0xc1, 0xc9, 0x1b, 0xc8, 0x07, 0x5d, 0x16, 0x5c, 0xca, 0x7c, 0x3c,
-	0xa3, 0xcc, 0x83, 0x97, 0x38, 0xb0, 0x59, 0xf0, 0x4a, 0x12, 0xe2, 0x2e, 0x54, 0xf9, 0x12, 0x03,
-	0x32, 0x7a, 0x0e, 0x92, 0x0d, 0x58, 0xa4, 0xf5, 0x5a, 0x57, 0xef, 0x30, 0xb4, 0x3a, 0xad, 0x25,
-	0x69, 0xfd, 0xa9, 0xde, 0x61, 0x84, 0x40, 0x1c, 0xd3, 0x79, 0x4c, 0xf1, 0x33, 0x39, 0x84, 0x44,
-	0xaf, 0x6f, 0x39, 0xba, 0x94, 0x6b, 0x73, 0xa4, 0x01, 0x10, 0x7d, 0xee, 0x96, 0x68, 0x5e, 0x25,
-	0xf9, 0x0b, 0x52, 0x4d, 0xb9, 0x01, 0x85, 0xf8, 0xf6, 0xc2, 0x6e, 0xe6, 0x68, 0x6b, 0x64, 0xd4,
-	0xd0, 0x3a, 0xfc, 0x72, 0xb2, 0x0e, 0x49, 0xa1, 0x9b, 0x0e, 0xa3, 0xa8, 0x46, 0x4a, 0x93, 0xdf,
-	0xc8, 0x0e, 0xe4, 0x3a, 0x7d, 0xd3, 0x31, 0x6a, 0x37, 0xcc, 0x16, 0x86, 0xd5, 0xc5, 0xb7, 0x9c,
-	0xd2, 0xb2, 0x18, 0x5e, 0x79, 0x99, 0xb2, 0x06, 0xab, 0x63, 0x5a, 0x47, 0xf9, 0x17, 0x96, 0x42,
-	0x87, 0xf6, 0x4c, 0x3b, 0xa0, 0x54, 0x60, 0x39, 0xdc, 0x36, 0x44, 0x85, 0xb8, 0xd1, 0x6d, 0x5a,
-	0xf2, 0x54, 0x28, 0x8d, 0xdf, 0x94, 0xc7, 0xdd, 0xa6, 0xa5, 0x61, 0x9d, 0xb2, 0x0f, 0x2b, 0x23,
-	0x87, 0x7c, 0xe4, 0x2c, 0x94, 0x33, 0x20, 0xa3, 0x1d, 0x45, 0x7e, 0x83, 0x84, 0xcb, 0x12, 0x85,
-	0x18, 0xee, 0xe9, 0xa4, 0x87, 0x7a, 0x85, 0xca, 0x7f, 0xb0, 0x1c, 0xbe, 0x03, 0x66, 0x5b, 0xfa,
-	0x2a, 0xac, 0x8c, 0x34, 0xa0, 0xd2, 0x86, 0xf5, 0xf1, 0x17, 0x41, 0x34, 0x7b, 0x0b, 0xc0, 0xeb,
-	0xfa, 0xc0, 0x13, 0xd2, 0x98, 0xe0, 0xbf, 0xd7, 0x21, 0x89, 0x06, 0xdc, 0xa2, 0x64, 0x69, 0x4d,
-	0x7e, 0x53, 0x8a, 0xb0, 0x11, 0xd1, 0xab, 0xca, 0x05, 0x14, 0x23, 0x2f, 0x8e, 0x6f, 0x9d, 0x87,
-	0xf2, 0x27, 0x94, 0xa2, 0x7b, 0x98, 0x94, 0x02, 0x5a, 0xbb, 0xaf, 0x20, 0x3d, 0xf0, 0x56, 0xb9,
-	0x86, 0x62, 0xe4, 0x65, 0xf3, 0xdd, 0xb7, 0xe5, 0x47, 0x28, 0x45, 0x1f, 0x06, 0x95, 0x83, 0xf7,
-	0x77, 0xe5, 0xd8, 0xc7, 0xbb, 0x72, 0xec, 0xd3, 0x5d, 0x39, 0xf6, 0xf6, 0x73, 0x79, 0x0e, 0x36,
-	0x1b, 0x56, 0x47, 0x15, 0x6d, 0x8b, 0x33, 0xa6, 0x52, 0x43, 0xbd, 0xbe, 0x11, 0x8e, 0x65, 0x33,
-	0xef, 0xb7, 0x5a, 0x3d, 0x89, 0x7f, 0x7e, 0xff, 0x1a, 0x00, 0x00, 0xff, 0xff, 0x18, 0x4e, 0xc6,
-	0x4b, 0x1d, 0x0a, 0x00, 0x00,
+var fileDescriptor_tiap_hbaselike_adminrpcpb_1708dbbed3590e5f = []byte{
+	// 943 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xac, 0x96, 0xdd, 0x6e, 0x1b, 0x45,
+	0x14, 0x80, 0xe3, 0xc4, 0xd9, 0xd8, 0xc7, 0x76, 0x12, 0x4f, 0xd3, 0xd4, 0x71, 0x69, 0x88, 0xb6,
+	0x48, 0x44, 0x34, 0x71, 0x69, 0xa0, 0x08, 0x04, 0x02, 0x35, 0xae, 0x4a, 0x11, 0x08, 0xd1, 0x75,
+	0x15, 0xf1, 0xab, 0xd5, 0x78, 0x67, 0x6c, 0xaf, 0xb2, 0xde, 0x99, 0xec, 0x4c, 0x2a, 0xe5, 0x21,
+	0xb8, 0xe7, 0x11, 0x78, 0x14, 0x2e, 0xb9, 0xe1, 0x1e, 0x85, 0x17, 0x41, 0x3b, 0x3b, 0x59, 0x8f,
+	0x77, 0xbd, 0x8e, 0x8d, 0xb8, 0x8a, 0x7d, 0xf6, 0x9c, 0xcf, 0xb3, 0xe7, 0xcc, 0x37, 0x13, 0x78,
+	0x5b, 0xfa, 0x98, 0xbb, 0xa3, 0x3e, 0x16, 0x34, 0xf0, 0xcf, 0xa9, 0x8b, 0xc9, 0xd8, 0x0f, 0x23,
+	0xee, 0xf1, 0x7e, 0x87, 0x47, 0x4c, 0x32, 0xb4, 0x57, 0x98, 0xd0, 0xde, 0x19, 0xb2, 0x21, 0x53,
+	0x59, 0x8f, 0xe3, 0x4f, 0x49, 0x41, 0xfb, 0xae, 0x2a, 0xc8, 0x72, 0xec, 0x5f, 0x2d, 0xa8, 0x3f,
+	0x8b, 0x83, 0x0e, 0xbd, 0xb8, 0xa4, 0x42, 0xa2, 0x4f, 0xc1, 0x1a, 0x51, 0x4c, 0x68, 0xd4, 0x2a,
+	0x1d, 0x94, 0x0e, 0x6b, 0x27, 0x0f, 0x3b, 0xd9, 0x42, 0x33, 0xfd, 0xa5, 0x4a, 0x75, 0x74, 0x09,
+	0xfa, 0x01, 0xb6, 0xbd, 0x88, 0x62, 0x49, 0x5d, 0x89, 0xfb, 0x01, 0x75, 0x23, 0x7a, 0xd1, 0x5a,
+	0x55, 0x98, 0xe3, 0x4e, 0xf1, 0x1b, 0x75, 0x55, 0xc9, 0xeb, 0xb8, 0xe2, 0x06, 0xbb, 0xe2, 0x6c,
+	0x7a, 0x53, 0x51, 0xf4, 0x1d, 0x34, 0x86, 0x54, 0x1a, 0xdc, 0x35, 0xc5, 0x7d, 0x6f, 0x0e, 0xf7,
+	0x4b, 0x2a, 0x33, 0xd0, 0xda, 0x70, 0x12, 0x42, 0x67, 0xb0, 0x15, 0xf8, 0x42, 0x23, 0x85, 0x62,
+	0x96, 0x15, 0xf3, 0x68, 0x0e, 0xf3, 0x1b, 0x5f, 0x24, 0x04, 0x31, 0xa1, 0x36, 0x02, 0x33, 0x88,
+	0x7a, 0xb0, 0x49, 0x22, 0xc6, 0x8d, 0xa5, 0xae, 0x2b, 0xec, 0xa3, 0x39, 0xd8, 0xe7, 0x11, 0xe3,
+	0x99, 0xb5, 0xd6, 0x89, 0x11, 0x43, 0xaf, 0x00, 0x30, 0x21, 0xae, 0x37, 0x50, 0x40, 0x4b, 0x01,
+	0x9f, 0xcc, 0x01, 0x3e, 0x23, 0xa4, 0xcb, 0x82, 0xcb, 0x71, 0xf8, 0x02, 0x8f, 0xfd, 0xe0, 0x6a,
+	0x82, 0xad, 0x60, 0x42, 0xba, 0x83, 0x18, 0xf9, 0x3d, 0xd4, 0xd5, 0xfb, 0x7b, 0x83, 0xe4, 0xe5,
+	0x37, 0x14, 0xf4, 0xc3, 0x5b, 0x5e, 0xde, 0xa0, 0xfa, 0x66, 0x13, 0x20, 0x66, 0x75, 0x07, 0xaa,
+	0x03, 0x3f, 0x42, 0x83, 0xd0, 0x80, 0x4a, 0x7a, 0xb3, 0xde, 0xca, 0xad, 0xe8, 0xe7, 0x2a, 0x7f,
+	0xf6, 0x92, 0x6b, 0x09, 0x2c, 0x59, 0xf5, 0x19, 0x6c, 0x79, 0x01, 0xc5, 0xa1, 0xd1, 0xde, 0xea,
+	0xad, 0x53, 0xeb, 0xc6, 0x15, 0x99, 0xfe, 0x36, 0x3c, 0x33, 0x78, 0xba, 0x0e, 0x6b, 0x11, 0xbd,
+	0xb0, 0x7f, 0xb7, 0xa0, 0xa1, 0x37, 0xb8, 0xe0, 0x2c, 0x14, 0x14, 0x7d, 0x96, 0x11, 0xe2, 0x9d,
+	0x22, 0x21, 0x92, 0xfc, 0x8c, 0x11, 0x3f, 0x43, 0x33, 0x63, 0x84, 0xe0, 0x5a, 0x89, 0xce, 0xa2,
+	0x4a, 0x68, 0xf0, 0x8a, 0xb3, 0xe5, 0x4d, 0x87, 0xe3, 0xad, 0x66, 0x4a, 0x21, 0xb8, 0xb6, 0xe2,
+	0xd1, 0x42, 0x56, 0xa4, 0xdc, 0xfa, 0xd0, 0x88, 0xc5, 0x12, 0x4f, 0x7b, 0x21, 0xb8, 0x16, 0xe3,
+	0x78, 0x41, 0x31, 0x52, 0xf0, 0x66, 0x30, 0x15, 0x8d, 0x87, 0x37, 0xa5, 0x86, 0xe0, 0xda, 0x8d,
+	0xa3, 0xc5, 0xdc, 0x48, 0xc1, 0x0d, 0x62, 0x06, 0xd1, 0x6b, 0xa8, 0xa5, 0x76, 0x08, 0xae, 0xf5,
+	0x38, 0x59, 0x46, 0x8f, 0x94, 0x5c, 0xd5, 0x7e, 0x08, 0x8e, 0x7e, 0x82, 0x86, 0x21, 0x88, 0xe0,
+	0xda, 0x90, 0xa7, 0x4b, 0x1a, 0x92, 0xa2, 0x6b, 0xa9, 0x22, 0x82, 0xa3, 0x5f, 0x60, 0xd3, 0x74,
+	0x44, 0x70, 0x2d, 0xc9, 0xd3, 0x25, 0x25, 0x99, 0x0c, 0x71, 0x62, 0x49, 0x32, 0xc4, 0x69, 0x4d,
+	0x04, 0xd7, 0x9e, 0x1c, 0x2f, 0xe8, 0xc9, 0x64, 0x88, 0xde, 0x54, 0xf4, 0xd4, 0x82, 0x72, 0x8c,
+	0xb3, 0xff, 0x5a, 0x05, 0x94, 0x3f, 0xba, 0xd1, 0x3d, 0xd8, 0x20, 0x7d, 0x37, 0xc4, 0x63, 0xaa,
+	0x84, 0xa9, 0x3a, 0x16, 0xe9, 0x7f, 0x8b, 0xc7, 0x14, 0x21, 0x28, 0xab, 0xe8, 0xaa, 0x8a, 0xaa,
+	0xcf, 0xe8, 0x09, 0xac, 0x5f, 0x5c, 0x32, 0x89, 0xf5, 0xbe, 0xbd, 0x9f, 0x73, 0x4b, 0xa1, 0x5f,
+	0xc5, 0x29, 0x4e, 0x92, 0x89, 0x3e, 0x81, 0xca, 0x40, 0xf7, 0xb6, 0x55, 0x3e, 0x58, 0x3b, 0xac,
+	0x9d, 0x3c, 0xc8, 0x55, 0x4d, 0xb5, 0x28, 0x4d, 0x47, 0xbb, 0x60, 0x09, 0x1c, 0x48, 0x4a, 0xd4,
+	0xae, 0xab, 0x38, 0xfa, 0x1b, 0x7a, 0x08, 0x8d, 0xf1, 0x65, 0x20, 0x7d, 0xf7, 0x0d, 0x8d, 0x84,
+	0xcf, 0x42, 0xb5, 0x81, 0x2a, 0x4e, 0x5d, 0x05, 0xcf, 0x92, 0x18, 0x7a, 0x0c, 0x3b, 0x3c, 0xa2,
+	0xae, 0xe0, 0x81, 0x2f, 0xdd, 0x08, 0x87, 0x43, 0xea, 0x9e, 0xd3, 0x2b, 0xd1, 0xda, 0x38, 0x58,
+	0x3b, 0xac, 0x3b, 0x4d, 0x1e, 0xd1, 0x5e, 0xfc, 0xc8, 0x89, 0x9f, 0x7c, 0x4d, 0xaf, 0x04, 0xfa,
+	0x08, 0x5a, 0x93, 0x82, 0x11, 0x16, 0x23, 0x57, 0x04, 0x4c, 0xba, 0x42, 0xd2, 0x64, 0xd6, 0x65,
+	0x67, 0xe7, 0xa6, 0xe8, 0x25, 0x16, 0xa3, 0x5e, 0xc0, 0x64, 0x4f, 0x52, 0x6e, 0xdf, 0x85, 0x3b,
+	0x33, 0xf4, 0xb7, 0x3f, 0x87, 0xad, 0xcc, 0x85, 0xb6, 0x54, 0xab, 0xed, 0x53, 0xd8, 0xce, 0xaa,
+	0x8f, 0x3a, 0x50, 0xf6, 0xc3, 0x01, 0xd3, 0x27, 0x5b, 0x7b, 0x76, 0xf7, 0xbf, 0x0a, 0x07, 0xcc,
+	0x51, 0x79, 0xf6, 0x11, 0x34, 0x73, 0x17, 0x60, 0xe1, 0x2a, 0xec, 0x17, 0x80, 0xf2, 0xa7, 0x02,
+	0x7a, 0x1f, 0xd6, 0x63, 0x96, 0x68, 0x95, 0xd4, 0xf0, 0xe6, 0xfd, 0x68, 0x92, 0x68, 0x7f, 0x01,
+	0xdb, 0xd9, 0xfb, 0x71, 0xb9, 0x57, 0xbf, 0x03, 0xcd, 0xdc, 0x21, 0x62, 0x8f, 0x60, 0x77, 0xf6,
+	0x25, 0x59, 0xcc, 0x7e, 0x00, 0x90, 0xe8, 0x64, 0xfc, 0x42, 0x55, 0x45, 0xd4, 0xe3, 0x5d, 0xb0,
+	0xd4, 0x56, 0xbb, 0x52, 0xbb, 0xb9, 0xea, 0xe8, 0x6f, 0xf6, 0x1e, 0xdc, 0x2b, 0x38, 0x6f, 0xec,
+	0x1e, 0xec, 0x15, 0x5e, 0xaa, 0xff, 0x75, 0x1d, 0xf6, 0xc7, 0xd0, 0x2e, 0x3e, 0x87, 0x50, 0xdb,
+	0xf0, 0x27, 0x1e, 0x41, 0x75, 0x22, 0x88, 0x7d, 0x0e, 0x7b, 0x85, 0x17, 0xf1, 0xff, 0xde, 0x96,
+	0xb7, 0xa0, 0x5d, 0x7c, 0xa0, 0xd9, 0xef, 0x42, 0x33, 0x77, 0x6b, 0xa7, 0xc3, 0x2d, 0x19, 0xc3,
+	0xdd, 0x01, 0x94, 0x3f, 0xb6, 0x4e, 0x8f, 0xff, 0xb8, 0xde, 0x2f, 0xfd, 0x79, 0xbd, 0x5f, 0xfa,
+	0xfb, 0x7a, 0xbf, 0xf4, 0xdb, 0x3f, 0xfb, 0x2b, 0x70, 0xdf, 0x63, 0xe3, 0x8e, 0x18, 0x31, 0x4e,
+	0x69, 0x87, 0xf8, 0x9d, 0xf3, 0x37, 0x42, 0xb2, 0x88, 0x26, 0xff, 0x06, 0xf7, 0x2d, 0xf5, 0xe7,
+	0x83, 0x7f, 0x03, 0x00, 0x00, 0xff, 0xff, 0x3a, 0xcb, 0xb2, 0xd3, 0x78, 0x0b, 0x00, 0x00,
 }

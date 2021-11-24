@@ -19,6 +19,7 @@ message AdminRequest {
     AddColumnFamilyRequest add_cf_req       = 6;
     ListColumnFamiliesRequest list_cfs_req  = 7;
     DeleteColumnFamilyRequest delete_cf_req = 8;
+    CleanTableRequest clean_table_req       = 9;
   }
 }
 
@@ -32,6 +33,7 @@ message AdminResponse {
     AddColumnFamilyResponse add_cf_resp       = 6;
     ListColumnFamiliesResponse list_cfs_resp  = 7;
     DeleteColumnFamilyResponse delete_cf_resp = 8;
+    CleanTableResponse clean_table_resp       = 9;
   }
 }
 
@@ -42,6 +44,8 @@ message CreateTableRequest {
   repeated tiap_adminrpcpb.ColumnFamily families = 4;
   bool salted     = 5;
   bool multi_version = 6;
+  repeated bytes pre_split_range_keys = 7;
+  uint64 pre_split_hash_slot_step = 8;
 }
 
 message CreateTableResponse {
@@ -97,4 +101,11 @@ message DeleteColumnFamilyRequest {
 }
 
 message DeleteColumnFamilyResponse {
+}
+
+message CleanTableRequest {
+  string name = 1;
+}
+
+message CleanTableResponse {
 }

@@ -107,6 +107,7 @@ message TableQuota {
   uint64 max_qps          = 2;
   uint64 max_column_family = 3;
   uint64 max_column_per_family = 4;
+  uint64 max_column_version_count = 5;
 }
 
 message CreateDBRequest {

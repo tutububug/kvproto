@@ -11860,6 +11860,12 @@ public final class TiapAdminrpcpb {
      * @return The maxColumnPerFamily.
      */
     long getMaxColumnPerFamily();
+
+    /**
+     * <code>uint64 max_column_version_count = 5;</code>
+     * @return The maxColumnVersionCount.
+     */
+    long getMaxColumnVersionCount();
   }
   /**
    * Protobuf type {@code tiap_adminrpcpb.TableQuota}
@@ -11924,6 +11930,11 @@ public final class TiapAdminrpcpb {
             case 32: {
 
               maxColumnPerFamily_ = input.readUInt64();
+              break;
+            }
+            case 40: {
+
+              maxColumnVersionCount_ = input.readUInt64();
               break;
             }
             default: {
@@ -12002,6 +12013,17 @@ public final class TiapAdminrpcpb {
       return maxColumnPerFamily_;
     }
 
+    public static final int MAX_COLUMN_VERSION_COUNT_FIELD_NUMBER = 5;
+    private long maxColumnVersionCount_;
+    /**
+     * <code>uint64 max_column_version_count = 5;</code>
+     * @return The maxColumnVersionCount.
+     */
+    @java.lang.Override
+    public long getMaxColumnVersionCount() {
+      return maxColumnVersionCount_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -12028,6 +12050,9 @@ public final class TiapAdminrpcpb {
       if (maxColumnPerFamily_ != 0L) {
         output.writeUInt64(4, maxColumnPerFamily_);
       }
+      if (maxColumnVersionCount_ != 0L) {
+        output.writeUInt64(5, maxColumnVersionCount_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -12053,6 +12078,10 @@ public final class TiapAdminrpcpb {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(4, maxColumnPerFamily_);
       }
+      if (maxColumnVersionCount_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(5, maxColumnVersionCount_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -12076,6 +12105,8 @@ public final class TiapAdminrpcpb {
           != other.getMaxColumnFamily()) return false;
       if (getMaxColumnPerFamily()
           != other.getMaxColumnPerFamily()) return false;
+      if (getMaxColumnVersionCount()
+          != other.getMaxColumnVersionCount()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -12099,6 +12130,9 @@ public final class TiapAdminrpcpb {
       hash = (37 * hash) + MAX_COLUMN_PER_FAMILY_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getMaxColumnPerFamily());
+      hash = (37 * hash) + MAX_COLUMN_VERSION_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getMaxColumnVersionCount());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -12240,6 +12274,8 @@ public final class TiapAdminrpcpb {
 
         maxColumnPerFamily_ = 0L;
 
+        maxColumnVersionCount_ = 0L;
+
         return this;
       }
 
@@ -12270,6 +12306,7 @@ public final class TiapAdminrpcpb {
         result.maxQps_ = maxQps_;
         result.maxColumnFamily_ = maxColumnFamily_;
         result.maxColumnPerFamily_ = maxColumnPerFamily_;
+        result.maxColumnVersionCount_ = maxColumnVersionCount_;
         onBuilt();
         return result;
       }
@@ -12329,6 +12366,9 @@ public final class TiapAdminrpcpb {
         }
         if (other.getMaxColumnPerFamily() != 0L) {
           setMaxColumnPerFamily(other.getMaxColumnPerFamily());
+        }
+        if (other.getMaxColumnVersionCount() != 0L) {
+          setMaxColumnVersionCount(other.getMaxColumnVersionCount());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -12479,6 +12519,37 @@ public final class TiapAdminrpcpb {
       public Builder clearMaxColumnPerFamily() {
         
         maxColumnPerFamily_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long maxColumnVersionCount_ ;
+      /**
+       * <code>uint64 max_column_version_count = 5;</code>
+       * @return The maxColumnVersionCount.
+       */
+      @java.lang.Override
+      public long getMaxColumnVersionCount() {
+        return maxColumnVersionCount_;
+      }
+      /**
+       * <code>uint64 max_column_version_count = 5;</code>
+       * @param value The maxColumnVersionCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMaxColumnVersionCount(long value) {
+        
+        maxColumnVersionCount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 max_column_version_count = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMaxColumnVersionCount() {
+        
+        maxColumnVersionCount_ = 0L;
         onChanged();
         return this;
       }
@@ -17411,23 +17482,24 @@ public final class TiapAdminrpcpb {
       "name\030\001 \001(\t\022\n\n\002id\030\002 \001(\003\022+\n\005state\030\003 \001(\0162\034." +
       "tiap_adminrpcpb.SchemaState\"J\n\007DBQuota\022\024" +
       "\n\014table_number\030\001 \001(\004\022\030\n\020storage_capacity" +
-      "\030\002 \001(\004\022\017\n\007max_qps\030\003 \001(\004\"q\n\nTableQuota\022\030\n" +
-      "\020storage_capacity\030\001 \001(\004\022\017\n\007max_qps\030\002 \001(\004" +
-      "\022\031\n\021max_column_family\030\003 \001(\004\022\035\n\025max_colum" +
-      "n_per_family\030\004 \001(\004\"H\n\017CreateDBRequest\022\014\n" +
-      "\004name\030\001 \001(\t\022\'\n\005quota\030\002 \001(\0132\030.tiap_adminr" +
-      "pcpb.DBQuota\"!\n\020CreateDBResponse\022\r\n\005toke" +
-      "n\030\001 \001(\t\"\034\n\014GetDBRequest\022\014\n\004name\030\001 \001(\t\"6\n" +
-      "\rGetDBResponse\022%\n\004info\030\001 \001(\0132\027.tiap_admi" +
-      "nrpcpb.DBInfo\"\020\n\016ListDBsRequest\"9\n\017ListD" +
-      "BsResponse\022&\n\005infos\030\001 \003(\0132\027.tiap_adminrp" +
-      "cpb.DBInfo\"\035\n\rDropDBRequest\022\014\n\004name\030\001 \001(" +
-      "\t\"\020\n\016DropDBResponse*<\n\tTableType\022\017\n\013Type" +
-      "Invalid\020\000\022\013\n\007TypeRaw\020\001\022\021\n\rTypeHBaseLike\020" +
-      "\002*i\n\013SchemaState\022\020\n\014StateInvalid\020\000\022\021\n\rSt" +
-      "ateCreating\020\001\022\020\n\014StateCreated\020\002\022\021\n\rState" +
-      "Deleting\020\003\022\020\n\014StateDeleted\020\005B\035\n\033com.shop" +
-      "ee.di.kvstore.protob\006proto3"
+      "\030\002 \001(\004\022\017\n\007max_qps\030\003 \001(\004\"\223\001\n\nTableQuota\022\030" +
+      "\n\020storage_capacity\030\001 \001(\004\022\017\n\007max_qps\030\002 \001(" +
+      "\004\022\031\n\021max_column_family\030\003 \001(\004\022\035\n\025max_colu" +
+      "mn_per_family\030\004 \001(\004\022 \n\030max_column_versio" +
+      "n_count\030\005 \001(\004\"H\n\017CreateDBRequest\022\014\n\004name" +
+      "\030\001 \001(\t\022\'\n\005quota\030\002 \001(\0132\030.tiap_adminrpcpb." +
+      "DBQuota\"!\n\020CreateDBResponse\022\r\n\005token\030\001 \001" +
+      "(\t\"\034\n\014GetDBRequest\022\014\n\004name\030\001 \001(\t\"6\n\rGetD" +
+      "BResponse\022%\n\004info\030\001 \001(\0132\027.tiap_adminrpcp" +
+      "b.DBInfo\"\020\n\016ListDBsRequest\"9\n\017ListDBsRes" +
+      "ponse\022&\n\005infos\030\001 \003(\0132\027.tiap_adminrpcpb.D" +
+      "BInfo\"\035\n\rDropDBRequest\022\014\n\004name\030\001 \001(\t\"\020\n\016" +
+      "DropDBResponse*<\n\tTableType\022\017\n\013TypeInval" +
+      "id\020\000\022\013\n\007TypeRaw\020\001\022\021\n\rTypeHBaseLike\020\002*i\n\013" +
+      "SchemaState\022\020\n\014StateInvalid\020\000\022\021\n\rStateCr" +
+      "eating\020\001\022\020\n\014StateCreated\020\002\022\021\n\rStateDelet" +
+      "ing\020\003\022\020\n\014StateDeleted\020\005B\035\n\033com.shopee.di" +
+      ".kvstore.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -17504,7 +17576,7 @@ public final class TiapAdminrpcpb {
     internal_static_tiap_adminrpcpb_TableQuota_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tiap_adminrpcpb_TableQuota_descriptor,
-        new java.lang.String[] { "StorageCapacity", "MaxQps", "MaxColumnFamily", "MaxColumnPerFamily", });
+        new java.lang.String[] { "StorageCapacity", "MaxQps", "MaxColumnFamily", "MaxColumnPerFamily", "MaxColumnVersionCount", });
     internal_static_tiap_adminrpcpb_CreateDBRequest_descriptor =
       getDescriptor().getMessageTypes().get(12);
     internal_static_tiap_adminrpcpb_CreateDBRequest_fieldAccessorTable = new
